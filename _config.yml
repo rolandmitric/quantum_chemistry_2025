@@ -40,9 +40,19 @@ launch_buttons:
 sphinx:
   config:
     thebe_config:
-      repository_url: https://github.com/rolandmitric/quantum_chemistry_2025
-      repository_branch: main       # ← keep in sync with 'repository.branch'
       binderhub_url: https://mybinder.org
+      repository_url: https://github.com/rolandmitric/quantum_chemistry_2025
+      repository_branch: HEAD         
+      path_to_notebooks: ""       
+      binderhub_url: https://mybinder.org
+      kernel_options:
+        name: python3
+      preloads:
+        - https://unpkg.com/@jupyter-widgets/html-manager@^1.0.0/dist/index.js
+
+
+
+      kernel_options:
     html_context:
       SPHINX_BUILD: "1"
 
@@ -52,4 +62,5 @@ tags:
   hide_input_tags: ["hide-input"]
   remove_output_tags: ["remove-output"]
   remove_cell_tags: ["remove-cell"]
+
 
