@@ -1,32 +1,29 @@
 # Book settings
-# Learn more at https://jupyterbook.org/customize/config.html
-
 title: Quantenchemie
 author: Roland Mitric
 logo: logo.png
 
-# Force re-execution of notebooks on each build.
-# See https://jupyterbook.org/content/execute.html
+# Notebook execution
 execute:
   execute_notebooks: force
+  timeout: 120
+  allow_errors: false
 
-# Define the name of the latex output file for PDF builds
+# LaTeX output
 latex:
   latex_documents:
     targetname: book.tex
 
-# Add a bibtex file so that we can create citations
+# Citations
 bibtex_bibfiles:
   - references.bib
 
-# Information about where the book exists on the web
+# Repository (must match your public GitHub repo)
 repository:
-  url: https://github.com/executablebooks/jupyter-book  # Online location of your book
-  path_to_book: docs  # Optional path to your book, relative to the repository root
-  branch: master  # Which branch of the repository should be used when creating links (optional)
+  url: https://github.com/rolandmitric/quantum_chemistry_2025
+  branch: main         # ← change to 'master' if your repo uses it
 
-# Add GitHub buttons to your book
-# See https://jupyterbook.org/customize/config.html#add-a-link-to-your-repository
+# HTML config
 html:
   use_issues_button: true
   use_repository_button: true
@@ -34,18 +31,22 @@ html:
     - _static/custom.css
   use_thebe: true
 
+# Launch buttons (Thebe + Binder)
 launch_buttons:
   binderhub_url: https://mybinder.org
   thebe: true
 
+# Sphinx/Thebe configuration
 sphinx:
   config:
     thebe_config:
-      repository_url: https://github.com/<USER>/<REPO>
-      repository_branch: master        # or main
+      repository_url: https://github.com/rolandmitric/quantum_chemistry_2025
+      repository_branch: main       # ← keep in sync with 'repository.branch'
       binderhub_url: https://mybinder.org
+    html_context:
+      SPHINX_BUILD: "1"
 
-
+# Cell tag rules
 tags:
   remove_input_tags: ["remove-input"]
   hide_input_tags: ["hide-input"]

@@ -1,11 +1,19 @@
-name: book
-channels: [conda-forge]
+name: qc-book
+channels:
+  - conda-forge
 dependencies:
   - python=3.11
   - numpy
   - sympy
   - matplotlib
   - ipywidgets>=8
-  - ipympl            # for `%matplotlib widget`
+  - ipympl                # for %matplotlib widget
   - jupyterlab
+  - notebook              # Binder uses classic notebook backend
+  - jupyterlab_widgets    # ensures widgets render correctly
+  - jupyter-book          # optional but keeps environment reproducible
+  - nbconvert
+  - pip
+  - pip:
+      - thebe             # lightweight front-end dependency
 
