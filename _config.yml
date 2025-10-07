@@ -21,7 +21,7 @@ bibtex_bibfiles:
 # Repository (must match your public GitHub repo)
 repository:
   url: https://github.com/rolandmitric/quantum_chemistry_2025
-  branch: main         # ← change to 'master' if your repo uses it
+  branch: main   # change if your default is 'master'
 
 # HTML config
 html:
@@ -36,13 +36,13 @@ launch_buttons:
   binderhub_url: https://mybinder.org
   thebe: true
 
-# Sphinx/Thebe configuration
- sphinx:
+# Sphinx/Thebe configuration  (← no leading space!)
+sphinx:
   config:
     thebe_config:
       binderhub_url: https://mybinder.org
       repository_url: https://github.com/rolandmitric/quantum_chemistry_2025
-      repository_branch: HEAD
+      repository_branch: HEAD          # robust against main/master mismatch
       kernel_options:
         name: python3
       preloads:
@@ -50,9 +50,6 @@ launch_buttons:
         - https://unpkg.com/@jupyter-widgets/html-manager@^1.0.0/dist/index.js
         # Matplotlib widget front-end (required for %matplotlib widget)
         - https://unpkg.com/jupyter-matplotlib@^0.11.3/dist/index.js
-      kernel_options:
-    html_context:
-      SPHINX_BUILD: "1"
 
 # Cell tag rules
 tags:
@@ -60,5 +57,4 @@ tags:
   hide_input_tags: ["hide-input"]
   remove_output_tags: ["remove-output"]
   remove_cell_tags: ["remove-cell"]
-
 
