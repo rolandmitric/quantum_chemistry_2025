@@ -1,0 +1,11 @@
+name: book
+channels: [conda-forge]
+dependencies:
+  - python=3.11
+  - numpy
+  - sympy
+  - matplotlib
+  - ipywidgets>=8
+  - ipympl            # for `%matplotlib widget`
+  - jupyterlab
+
