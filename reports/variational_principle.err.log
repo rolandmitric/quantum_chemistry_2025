@@ -17,61 +17,35 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-%matplotlib widget
-from sympy import symbols, exp, lambdify
 import numpy as np
 import matplotlib.pyplot as plt
-import ipywidgets as w
+import matplotlib
+matplotlib.rcParams['axes.linewidth'] = 2.
+matplotlib.rcParams['axes.grid'] = True
+matplotlib.rcParams['axes.labelsize'] = 18
+matplotlib.rcParams['figure.figsize'] = [8, 6]
+matplotlib.rcParams['animation.embed_limit'] = 1000
+matplotlib.rcParams['text.usetex'] =  False
+matplotlib.rcParams["font.family"] =  "sans-serif",
+matplotlib.rcParams["font.sans-serif"] = ["Times"]
+plt.rcParams['xtick.labelsize']=16
+plt.rcParams['ytick.labelsize']=16
+from ipywidgets import interact
+import ipywidgets as widgets
 
-x, alpha, beta = symbols('x alpha beta', real=True, positive=True)
-V   = alpha * x**4
-psi = exp(-beta * x**2)
-
-V_fn   = lambdify((alpha, x), V,   'numpy')
-psi_fn = lambdify((beta,  x), psi, 'numpy')
-
-xg = np.linspace(-1.5, 1.5, 600)
-Vg = V_fn(1.0, xg)
-
-fig, ax = plt.subplots(figsize=(7,5))
-(lineV,)  = ax.plot(xg, Vg,  lw=2.0, label=r'$V(x)=\alpha x^4$')
-(linePsi,)  = ax.plot(xg, 
-                      psi_fn(5.0, xg), 
-                      lw=2.0, 
-                      label=r'$\psi(x)$', 
-                      linestyle='--')
-ax.set_xlabel(r'$x$')
-ax.set_ylabel(r'$V(x),\,\psi(x)$')
-ax.grid(True, alpha=0.3)
-ax.set_ylim(0.0,1.5)
-ax.legend();
-fig.tight_layout()
-
-beta = w.FloatLogSlider(value=5.0, 
-                        base=10, 
-                        min=-2, 
-                        max=2, 
-                        step=0.01, 
-                        description='β', 
-                        continuous_update=True)
-
-def update(change):
-    y = psi_fn(beta.value, xg)
-    linePsi.set_ydata(y)
-    fig.canvas.draw_idle()
-
-beta.observe(update, names='value')
-display(beta)
+%matplotlib widget
+import ipywidgets as w; w.IntSlider(description='test')
 
 
 ------------------
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mValueError[0m                                Traceback (most recent call last)
-Cell [0;32mIn[4], line 1[0m
-[0;32m----> 1[0m [43mget_ipython[49m[43m([49m[43m)[49m[38;5;241;43m.[39;49m[43mrun_line_magic[49m[43m([49m[38;5;124;43m'[39;49m[38;5;124;43mmatplotlib[39;49m[38;5;124;43m'[39;49m[43m,[49m[43m [49m[38;5;124;43m'[39;49m[38;5;124;43mwidget[39;49m[38;5;124;43m'[39;49m[43m)[49m
-[1;32m      2[0m [38;5;28;01mfrom[39;00m[38;5;250m [39m[38;5;21;01msympy[39;00m[38;5;250m [39m[38;5;28;01mimport[39;00m symbols, exp, lambdify
-[1;32m      3[0m [38;5;28;01mimport[39;00m[38;5;250m [39m[38;5;21;01mnumpy[39;00m[38;5;250m [39m[38;5;28;01mas[39;00m[38;5;250m [39m[38;5;21;01mnp[39;00m
+Cell [0;32mIn[1], line 17[0m
+[1;32m     14[0m [38;5;28;01mfrom[39;00m[38;5;250m [39m[38;5;21;01mipywidgets[39;00m[38;5;250m [39m[38;5;28;01mimport[39;00m interact
+[1;32m     15[0m [38;5;28;01mimport[39;00m[38;5;250m [39m[38;5;21;01mipywidgets[39;00m[38;5;250m [39m[38;5;28;01mas[39;00m[38;5;250m [39m[38;5;21;01mwidgets[39;00m
+[0;32m---> 17[0m [43mget_ipython[49m[43m([49m[43m)[49m[38;5;241;43m.[39;49m[43mrun_line_magic[49m[43m([49m[38;5;124;43m'[39;49m[38;5;124;43mmatplotlib[39;49m[38;5;124;43m'[39;49m[43m,[49m[43m [49m[38;5;124;43m'[39;49m[38;5;124;43mwidget[39;49m[38;5;124;43m'[39;49m[43m)[49m
+[1;32m     18[0m [38;5;28;01mimport[39;00m[38;5;250m [39m[38;5;21;01mipywidgets[39;00m[38;5;250m [39m[38;5;28;01mas[39;00m[38;5;250m [39m[38;5;21;01mw[39;00m; w[38;5;241m.[39mIntSlider(description[38;5;241m=[39m[38;5;124m'[39m[38;5;124mtest[39m[38;5;124m'[39m)
 
 File [0;32m~/anaconda3/lib/python3.10/site-packages/IPython/core/interactiveshell.py:2369[0m, in [0;36mInteractiveShell.run_line_magic[0;34m(self, magic_name, line, _stack_depth)[0m
 [1;32m   2367[0m     kwargs[[38;5;124m'[39m[38;5;124mlocal_ns[39m[38;5;124m'[39m] [38;5;241m=[39m [38;5;28mself[39m[38;5;241m.[39mget_local_scope(stack_depth)
