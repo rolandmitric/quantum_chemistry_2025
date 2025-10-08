@@ -5,12 +5,11 @@ dependencies:
   - python=3.11
   - ipykernel
   - jupyter
-  - notebook
+  - notebook          # classic server (what Thebe talks to)
+  - jupyterlab        # optional, for Binder Lab button
   - numpy
   - sympy
   - matplotlib
   - ipywidgets>=8
-  - pip
-  - pip:
-      - ipympl==0.11.3
+  - ipympl=0.9.7      # if you want `%matplotlib widget`; remove if not needed
 
