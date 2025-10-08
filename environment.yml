@@ -10,6 +10,7 @@ dependencies:
   - ipympl                # for %matplotlib widget
   - jupyterlab
   - notebook              # Binder uses classic notebook backend
+  - ipympl=0.11.3      # backend for %matplotlib widget
   - jupyterlab_widgets    # ensures widgets render correctly
   - jupyter-book          # optional but keeps environment reproducible
   - nbconvert

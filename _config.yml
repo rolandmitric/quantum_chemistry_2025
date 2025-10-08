@@ -42,14 +42,13 @@ sphinx:
     thebe_config:
       binderhub_url: https://mybinder.org
       repository_url: https://github.com/rolandmitric/quantum_chemistry_2025
-      repository_branch: HEAD          # robust against main/master mismatch
+      repository_branch: HEAD
       kernel_options:
         name: python3
       preloads:
-        # Widget manager (required for ANY ipywidget)
         - https://unpkg.com/@jupyter-widgets/html-manager@^1.0.0/dist/index.js
-        # Matplotlib widget front-end (required for %matplotlib widget)
         - https://unpkg.com/jupyter-matplotlib@^0.11.3/dist/index.js
+
 
 # Cell tag rules
 tags:
