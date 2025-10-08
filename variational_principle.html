@@ -578,7 +578,7 @@ N^{2} \int_{-\infty}^{\infty} e^{-2\beta x^{2}}\,dx = 1 .
 </div>
 </div>
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "e6197ec1d52c409e9ca49fa740f8331c"}</script><img alt="_images/b1d6124987e394412e0cbd3ab2f476760b8e809c57c61fc770e9479f11af175d.png" src="_images/b1d6124987e394412e0cbd3ab2f476760b8e809c57c61fc770e9479f11af175d.png" />
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "a105f7207e4949c287782e361b147019"}</script><img alt="_images/b1d6124987e394412e0cbd3ab2f476760b8e809c57c61fc770e9479f11af175d.png" src="_images/b1d6124987e394412e0cbd3ab2f476760b8e809c57c61fc770e9479f11af175d.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2805,6 +2805,13 @@ if (IPython.notebook.kernel !== null) {
 \]</div>
 <p>Die variablen Parameter sind die <strong>Entwicklungskoeffizienten</strong> <span class="math notranslate nohighlight">\(c_i\)</span>, während die <span class="math notranslate nohighlight">\(\varphi_i\)</span> feste, von uns gewählte Basisfunktionen darstellen.<br />
 <span class="math notranslate nohighlight">\(N\)</span> bezeichnet die Anzahl der verwendeten Basisfunktionen. Im Grenzfall, dass die gewählte Menge <span class="math notranslate nohighlight">\(\{\varphi_i\}\)</span> eine <strong>vollständige Basis</strong> bildet, konvergiert der durch das Variationsverfahren berechnete Energieeigenwert bei <span class="math notranslate nohighlight">\(N \rightarrow \infty\)</span> gegen den <strong>exakten</strong> Wert. Der große Vorteil dieses <strong>linearen Variationsverfahrens</strong> besteht darin, dass die Optimierung der variationalen Parameter auf die Lösung <strong>linearer Gleichungssysteme</strong> zurückgeführt wird. Diese können mit den Methoden der <strong>numerischen linearen Algebra</strong> auf modernen Rechnern äußerst effizient gelöst werden. Aus diesem Grund bildet das lineare Variationsverfahren eine der <strong>zentralen theoretischen Grundlagen</strong> der Quantenchemie.</p>
+<p>Daraus folgt:</p>
+<div class="math notranslate nohighlight">
+\[ \frac{\partial\mathcal{L}}{\partial c_{i}}=0 \]</div>
+<p>und</p>
+<div class="math notranslate nohighlight">
+\[\frac{\partial\mathcal{L}}{\partial c_{i}^{*}}=0\]</div>
+<p>Wir sehen also, dass man <span class="math notranslate nohighlight">\(c_i\)</span> und <span class="math notranslate nohighlight">\(c_i^*\)</span> als unabhängige Variablen betrachten kann und separat beide Ableitungen verschwinden müssen. Dies ist ein nützlicher Trick, den man in der Quantenchemie oft verwendet…</p>
 <section id="berechnung-der-optimalen-entwicklungskoeffizienten-c-i">
 <h3>Berechnung der optimalen Entwicklungskoeffizienten <span class="math notranslate nohighlight">\(c_i\)</span><a class="headerlink" href="#berechnung-der-optimalen-entwicklungskoeffizienten-c-i" title="Link to this heading">#</a></h3>
 <p>Mit diesem linearen Ansatz können wir ähnlich wie bei dem Beweis des Variationssatzes den Erwartungswert der Energie berechnen.</p>
@@ -2864,13 +2871,6 @@ if (IPython.notebook.kernel !== null) {
 \[\frac{\partial\mathcal{L}}{\partial a_{i}}=0\rightarrow\frac{\partial\mathcal{L}}{\partial c_{i}}+\frac{\partial\mathcal{L}}{\partial c_{i}^{*}}=0\]</div>
 <div class="math notranslate nohighlight">
 \[\frac{\partial\mathcal{L}}{\partial b_{i}}=0\rightarrow\frac{\partial\mathcal{L}}{\partial c_{i}}-\frac{\partial\mathcal{L}}{\partial c_{i}^{*}}=0\]</div>
-<p>Daraus folgt:</p>
-<div class="math notranslate nohighlight">
-\[ \frac{\partial\mathcal{L}}{\partial c_{i}}=0 \]</div>
-<p>und</p>
-<div class="math notranslate nohighlight">
-\[\frac{\partial\mathcal{L}}{\partial c_{i}^{*}}=0\]</div>
-<p>Wir sehen also, dass man <span class="math notranslate nohighlight">\(c_i\)</span> und <span class="math notranslate nohighlight">\(c_i^*\)</span> als unabhängige Variablen betrachten kann und separat beide Ableitungen verschwinden müssen. Dies ist ein nützlicher Trick, den man in der Quantenchemie oft verwendet…</p>
 <p>Wir berechnen im Folgenden die beiden Ableitungen explizit. Für jeden beliebigen Wert des Indexes <span class="math notranslate nohighlight">\(k\)</span> gilt:</p>
 <div class="math notranslate nohighlight">
 \[\frac{\partial\mathcal{L}}{\partial c_{k}^{*}}=0\rightarrow\sum_{j}c_{j}\left(H_{kj}-(\lambda+\lambda^{*})S_{kj}\right)=0\quad\forall k=1,\cdots,N \]</div>
