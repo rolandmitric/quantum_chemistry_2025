@@ -1,3 +1,7 @@
+# =========================
+# Jupyter Book: _config.yml
+# =========================
+
 # Book settings
 title: Quantenchemie
 author: Roland Mitric
@@ -9,7 +13,7 @@ execute:
   timeout: 120
   allow_errors: false
 
-# LaTeX output
+# LaTeX/PDF
 latex:
   latex_documents:
     targetname: book.tex
@@ -23,32 +27,24 @@ repository:
   url: https://github.com/rolandmitric/quantum_chemistry_2025
   branch: main
 
-# HTML + Thebe
+# HTML options
 html:
   use_issues_button: true
   use_repository_button: true
   extra_css:
     - _static/custom.css
-  use_thebe: true
+  use_thebe: false   # keep OFF for reliability
 
-# Launch buttons (Binder for Thebe back-end)
+# Launch buttons (Binder only; opens full notebooks)
 launch_buttons:
   binderhub_url: https://mybinder.org
-  thebe: true
+  thebe: false
 
-# Sphinx/Thebe configuration
+# Sphinx config (minimal; no Thebe overrides)
 sphinx:
   config:
-    thebe_config:
-      binderhub_url: https://mybinder.org
-      repository_url: https://github.com/rolandmitric/quantum_chemistry_2025
-      repository_branch: main
-      kernel_options:
-        name: python3
-      # (Optional) widget preloads if you use ipywidgets / matplotlib widgets:
-      preloads:
-        - https://unpkg.com/@jupyter-widgets/html-manager@^1.0.0/dist/index.js
-        - https://unpkg.com/jupyter-matplotlib@^0.11.3/dist/index.js
+    html_theme_options:
+      use_download_button: true
 
 # Cell tag rules
 tags:
