@@ -36,4 +36,18 @@ thebe:
     ref: main
   kernelName: python3
   requestKernel: true
+  preloads:
+    - https://unpkg.com/@jupyter-widgets/html-manager@^1.0.0/dist/index.js
+    - https://unpkg.com/jupyter-matplotlib@^0.12.0/dist/index.js
+
+sphinx:
+  config:
+    html_theme_options:
+      use_download_button: true
+
+tags:
+  remove_input_tags: ["remove-input"]
+  hide_input_tags: ["hide-input"]
+  remove_output_tags: ["remove-output"]
+  remove_cell_tags: ["remove-cell"]
 
