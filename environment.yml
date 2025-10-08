@@ -4,7 +4,7 @@ channels:
 dependencies:
   - python=3.11
   - ipykernel
-  - jupyter            # meta: notebook + server + console
+  - jupyter
   - notebook
   - numpy
   - sympy
@@ -12,5 +12,5 @@ dependencies:
   - ipywidgets>=8
   - pip
   - pip:
-      - ipympl==0.11.3   # matches your Thebe preload
+      - ipympl==0.11.3
 

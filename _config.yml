@@ -1,46 +1,65 @@
+# =========================
+# Jupyter Book: _config.yml
+# =========================
+
+# Book metadata
 title: Quantenchemie
 author: Roland Mitric
 logo: logo.png
 
+# Build-time execution (for static outputs in the published book)
 execute:
   execute_notebooks: force
   timeout: 320
   allow_errors: false
 
+# LaTeX/PDF
 latex:
   latex_documents:
     targetname: book.tex
 
+# Citations
 bibtex_bibfiles:
   - references.bib
 
+# GitHub repo (must match your public repo exactly)
 repository:
   url: https://github.com/rolandmitric/quantum_chemistry_2025
   branch: main
 
-# HTML options
+# HTML options + Thebe switch
 html:
   use_issues_button: true
   use_repository_button: true
   extra_css:
     - _static/custom.css
-  use_thebe: true   # keep OFF for reliability
+  use_thebe: true          # enable in-page kernels
 
+# Launch buttons (Binder powers Thebe)
 launch_buttons:
-  notebook_interface: "jupyterlab"  # or "classic"
   binderhub_url: https://mybinder.org
+  notebook_interface: jupyterlab
   thebe: true
 
-# Sphinx config (minimal; no Thebe overrides)
+# Modern Thebe configuration (works with Jupyter Book ≥0.15)
+thebe:
+  binder:
+    url: https://mybinder.org
+    repo: rolandmitric/quantum_chemistry_2025   # owner/repo
+    ref: main                                   # branch
+  kernelName: python3
+  requestKernel: true
+
+# Minimal Sphinx extra config
 sphinx:
   config:
     html_theme_options:
       use_download_button: true
 
-# Cell tag rules
+# Cell tag rules (optional conveniences)
 tags:
   remove_input_tags: ["remove-input"]
   hide_input_tags: ["hide-input"]
   remove_output_tags: ["remove-output"]
   remove_cell_tags: ["remove-cell"]
-
+ZZZZ
