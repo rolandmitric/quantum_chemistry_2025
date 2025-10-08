@@ -3,7 +3,7 @@ title: Quantenchemie
 author: Roland Mitric
 logo: logo.png
 
-# Notebook execution
+# Notebook execution (build-time)
 execute:
   execute_notebooks: force
   timeout: 120
@@ -18,12 +18,12 @@ latex:
 bibtex_bibfiles:
   - references.bib
 
-# Repository (must match your public GitHub repo)
+# GitHub repository (must match your public repo)
 repository:
   url: https://github.com/rolandmitric/quantum_chemistry_2025
-  branch: main   # change if your default is 'master'
+  branch: main
 
-# HTML config
+# HTML + Thebe
 html:
   use_issues_button: true
   use_repository_button: true
@@ -31,24 +31,24 @@ html:
     - _static/custom.css
   use_thebe: true
 
-# Launch buttons (Thebe + Binder)
+# Launch buttons (Binder for Thebe back-end)
 launch_buttons:
   binderhub_url: https://mybinder.org
   thebe: true
 
-# Sphinx/Thebe configuration  (← no leading space!)
+# Sphinx/Thebe configuration
 sphinx:
   config:
     thebe_config:
       binderhub_url: https://mybinder.org
       repository_url: https://github.com/rolandmitric/quantum_chemistry_2025
-      repository_branch: HEAD
+      repository_branch: main
       kernel_options:
         name: python3
+      # (Optional) widget preloads if you use ipywidgets / matplotlib widgets:
       preloads:
         - https://unpkg.com/@jupyter-widgets/html-manager@^1.0.0/dist/index.js
         - https://unpkg.com/jupyter-matplotlib@^0.11.3/dist/index.js
-
 
 # Cell tag rules
 tags:

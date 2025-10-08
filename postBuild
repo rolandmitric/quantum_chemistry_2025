@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+set -e
+python -m ipykernel install --user --name=python3 --display-name "Python 3"
+jupyter nbextension enable --py widgetsnbextension --sys-prefix
+jupyter nbextension enable --py ipympl --sys-prefix
+
