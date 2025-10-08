@@ -1,28 +1,19 @@
-# =========================
-# Jupyter Book: _config.yml
-# =========================
-
-# Book settings
 title: Quantenchemie
 author: Roland Mitric
 logo: logo.png
 
-# Notebook execution (build-time)
 execute:
   execute_notebooks: force
-  timeout: 120
+  timeout: 320
   allow_errors: false
 
-# LaTeX/PDF
 latex:
   latex_documents:
     targetname: book.tex
 
-# Citations
 bibtex_bibfiles:
   - references.bib
 
-# GitHub repository (must match your public repo)
 repository:
   url: https://github.com/rolandmitric/quantum_chemistry_2025
   branch: main
@@ -33,12 +24,12 @@ html:
   use_repository_button: true
   extra_css:
     - _static/custom.css
-  use_thebe: false   # keep OFF for reliability
+  use_thebe: true   # keep OFF for reliability
 
-# Launch buttons (Binder only; opens full notebooks)
 launch_buttons:
+  notebook_interface: "jupyterlab"  # or "classic"
   binderhub_url: https://mybinder.org
-  thebe: false
+  thebe: true
 
 # Sphinx config (minimal; no Thebe overrides)
 sphinx:
