@@ -1,19 +1,17 @@
-/* Make main content wider and sidebars narrower */
-.bd-sidebar-primary {
-  width: 10rem;          /* left sidebar (default ~17rem) */
-}
+/* Wider text, slimmer sidebars on desktop */
+@media (min-width: 992px) {
+  :root {
+    /* make main text column wide */
+    --pst-content-max-width: 1200px;   /* try 1300–1400px if you like it even wider */
 
-.bd-sidebar-secondary {
-  width: 10rem;          /* right “in-page TOC” sidebar */
-}
+    /* make sidebars slimmer */
+    --pst-sidebar-primary-width: 11rem;    /* left nav */
+    --pst-sidebar-secondary-width: 11rem;  /* right in-page ToC */
+  }
 
-.bd-content {
-  max-width: 90%;        /* widen text column */
-}
-
-/* keep text nicely centered */
-.bd-main .bd-content {
-  margin-left: auto;
-  margin-right: auto;
+  /* ensure no old max-width clamps it */
+  .bd-content {
+    max-width: none !important;
+  }
 }
 
