@@ -44,6 +44,8 @@ sphinx:
   config:
     html_theme_options:
       use_download_button: true
+  extra_extensions:
+    - sphinx_thebe
 
 tags:
   remove_input_tags: ["remove-input"]
