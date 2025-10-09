@@ -1,12 +1,13 @@
 /* Wider text, slimmer sidebars on desktop */
+body { outline: 6px solid magenta !important; }
 @media (min-width: 992px) {
   :root {
     /* make main text column wide */
-    --pst-content-max-width: 1200px;   /* try 1300–1400px if you like it even wider */
+    --pst-content-max-width: 1400px;   /* try 1300–1400px if you like it even wider */
 
     /* make sidebars slimmer */
-    --pst-sidebar-primary-width: 11rem;    /* left nav */
-    --pst-sidebar-secondary-width: 11rem;  /* right in-page ToC */
+    --pst-sidebar-primary-width: 10rem;    /* left nav */
+    --pst-sidebar-secondary-width: 10rem;  /* right in-page ToC */
   }
 
   /* ensure no old max-width clamps it */
