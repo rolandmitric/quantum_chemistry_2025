@@ -1,55 +1,16 @@
 title: Quantenchemie
 author: Roland Mitric
-logo: logo.png
-
 execute:
-  execute_notebooks: force
-  timeout: 320
-  allow_errors: false
-
-latex:
-  latex_documents:
-    targetname: book.tex
-
-bibtex_bibfiles:
-  - references.bib
-
-repository:
-  url: https://github.com/rolandmitric/quantum_chemistry_2025
-  branch: main
-
+  execute_notebooks: "off"
 html:
-  use_issues_button: true
-  use_repository_button: true
-  extra_css: [_static/custom.css]
   use_thebe: true
-
+  extra_css: ["_static/custom.css"]
 launch_buttons:
-  binderhub_url: https://mybinder.org
-  notebook_interface: jupyterlab
   thebe: true
-
+  binderhub_url: https://mybinder.org
 thebe:
   binder:
-    url: https://mybinder.org
-    repo: rolandmitric/quantum_chemistry_2025
+    repo_url: https://github.com/rolandmitric/quantum_chemistry_2025
     ref: main
-  kernelName: python3
-  requestKernel: true
-  preloads:
-    - https://unpkg.com/@jupyter-widgets/html-manager@^1.0.0/dist/index.js
-    - https://unpkg.com/jupyter-matplotlib@^0.12.0/dist/index.js
-
-sphinx:
-  config:
-    html_theme_options:
-      use_download_button: true
-  extra_extensions:
-    - sphinx_thebe
-
-tags:
-  remove_input_tags: ["remove-input"]
-  hide_input_tags: ["hide-input"]
-  remove_output_tags: ["remove-output"]
-  remove_cell_tags: ["remove-cell"]
+  kernel_name: python3
 

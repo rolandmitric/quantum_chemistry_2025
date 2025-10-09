@@ -1,43 +1,17 @@
-/* --- Left navigation: narrower, hard clamp --- */
-.bd-sidebar-primary {
-  width: 220px !important;
-  max-width: 220px !important;
-  flex: 0 0 220px !important; /* grid/flex fallback */
-}
+/* Wider text, slimmer sidebars on desktop */
+@media (min-width: 992px) {
+  :root {
+    /* make main text column wide */
+    --pst-content-max-width: 1200px;   /* try 1300–1400px if you like it even wider */
 
-/* --- Keep right sidebar as-is (or comment out to hide it) --- */
-/* .bd-sidebar-secondary { display: none !important; width: 0 !important; } */
+    /* make sidebars slimmer */
+    --pst-sidebar-primary-width: 11rem;    /* left nav */
+    --pst-sidebar-secondary-width: 11rem;  /* right in-page ToC */
+  }
 
-/* --- Let the center content actually expand --- */
-.bd-page-width,
-.bd-content {
-  max-width: none !important;     /* remove theme clamp */
-  width: 100% !important;
-}
-
-/* The article container is the culprit for narrow text; lift its cap */
-.bd-content .bd-article-container {
-  max-width: none !important;
-  width: 100% !important;
-  padding-left: 0 !important;
-  padding-right: 0 !important;
-}
-
-/* Prevent stray margins from re-squeezing the grid */
-.bd-main {
-  margin: 0 !important;
-}
-
-/* Give the text a little breathing room so it doesn't touch sidebars */
-.bd-article {
-  padding-left: 1rem !important;
-  padding-right: 1rem !important;
-}
-
-/* Optional: make sidebar labels wrap nicely in a narrow column */
-.bd-sidebar-primary .nav {
-  font-size: 0.9em;
-  line-height: 1.3;
-  word-break: break-word;
+  /* ensure no old max-width clamps it */
+  .bd-content {
+    max-width: none !important;
+  }
 }
 
