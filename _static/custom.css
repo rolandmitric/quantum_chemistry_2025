@@ -1,4 +1,5 @@
 /* Wider text, slimmer sidebars on desktop */
+body { outline: 6px solid magenta !important; }
 @media (min-width: 992px) {
   :root {
     /* make main text column wide */
