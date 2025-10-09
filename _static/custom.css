@@ -1,10 +1,10 @@
 /* Make main content wider and sidebars narrower */
 .bd-sidebar-primary {
-  width: 14rem;          /* left sidebar (default ~17rem) */
+  width: 10rem;          /* left sidebar (default ~17rem) */
 }
 
 .bd-sidebar-secondary {
-  width: 14rem;          /* right “in-page TOC” sidebar */
+  width: 10rem;          /* right “in-page TOC” sidebar */
 }
 
 .bd-content {
