@@ -1,0 +1,19 @@
+/* Make main content wider and sidebars narrower */
+.bd-sidebar-primary {
+  width: 14rem;          /* left sidebar (default ~17rem) */
+}
+
+.bd-sidebar-secondary {
+  width: 14rem;          /* right “in-page TOC” sidebar */
+}
+
+.bd-content {
+  max-width: 90%;        /* widen text column */
+}
+
+/* keep text nicely centered */
+.bd-main .bd-content {
+  margin-left: auto;
+  margin-right: auto;
+}
+
