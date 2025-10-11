@@ -1,0 +1,11 @@
+:root {
+  --pst-sidebar-width: 12rem;          /* links */
+  --pst-sidebar-secondary-width: 10rem;/* rechts */
+  --pst-content-max-width: 96vw;       /* breite Lesespalte */
+}
+
+@media (min-width: 992px) {
+  .bd-content .bd-article-container,
+  .bd-main .bd-content { max-width: 90vw !important; }
+}
+
