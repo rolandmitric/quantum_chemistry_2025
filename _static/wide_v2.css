@@ -1,41 +1,8 @@
-@media (min-width: 992px) {
-  /* make sure both sidebars are visible */
-  .bd-sidebar-primary,
-  .bd-sidebar-secondary {
-    display: block !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-  }
-
-  /* slim left nav */
-  .bd-sidebar-primary {
-    width: 11rem !important;
-    flex: 0 0 11rem !important;
-    overflow: auto;
-  }
-
-  /* slim right ToC (subsection navigation) */
-  .bd-sidebar-secondary {
-    width: 9rem !important;
-    flex: 0 0 9rem !important;
-    overflow: auto;
-  }
-
-  /* allow center to use the remaining viewport width */
-  .bd-page-width, .bd-container, .bd-main, .bd-content {
-    width: 100% !important;
-    max-width: 100vw !important;
-  }
-
-  /* wide article: viewport minus both slim sidebars + small gaps */
-  .bd-main .bd-content .bd-article-container {
-    max-width: none !important;
-    width: calc(100vw - 11rem - 9rem - 2rem) !important; /* 2rem = margins */
-    margin-left: 1rem !important;
-    margin-right: 1rem !important;
-  }
-
-  /* prevent grid from re-narrowing content */
-  .bd-main .row, .bd-main [class*="col-"] { max-width: 100% !important; }
+@media (min-width: 992px){
+  .bd-sidebar-primary{width:11rem!important;flex:0 0 11rem!important;overflow:auto}
+  .bd-sidebar-secondary{width:9rem!important;flex:0 0 9rem!important;overflow:auto}
+  .bd-page-width,.bd-container,.bd-main,.bd-content{width:100%!important;max-width:100vw!important}
+  .bd-main .bd-content .bd-article-container{max-width:none!important;
+    width:calc(100vw - 11rem - 9rem - 2rem)!important;margin:0 1rem!important}
 }
 
