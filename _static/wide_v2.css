@@ -1,51 +1,41 @@
-/* Restore both sidebars and make text as wide as possible with slim sidebars */
 @media (min-width: 992px) {
-  /* UNDO any previous hiding */
+  /* make sure both sidebars are visible */
   .bd-sidebar-primary,
   .bd-sidebar-secondary {
     display: block !important;
     visibility: visible !important;
     opacity: 1 !important;
-    width: auto; /* base before fixing flex-basis below */
   }
 
-  /* Slim left nav */
+  /* slim left nav */
   .bd-sidebar-primary {
     width: 11rem !important;
     flex: 0 0 11rem !important;
-    position: sticky;
-    top: 0;
-    height: 100vh;
     overflow: auto;
   }
 
-  /* Slim right TOC */
+  /* slim right ToC (subsection navigation) */
   .bd-sidebar-secondary {
     width: 9rem !important;
     flex: 0 0 9rem !important;
-    position: sticky;
-    top: 0;
-    height: 100vh;
     overflow: auto;
   }
 
-  /* Let the center use the remaining viewport width */
+  /* allow center to use the remaining viewport width */
   .bd-page-width, .bd-container, .bd-main, .bd-content {
     width: 100% !important;
     max-width: 100vw !important;
   }
 
-  /* Wide article: full viewport minus both slim sidebars and a small gap */
+  /* wide article: viewport minus both slim sidebars + small gaps */
   .bd-main .bd-content .bd-article-container {
     max-width: none !important;
-    width: calc(100vw - 11rem - 9rem - 2rem) !important; /* 2rem = gaps */
+    width: calc(100vw - 11rem - 9rem - 2rem) !important; /* 2rem = margins */
     margin-left: 1rem !important;
     margin-right: 1rem !important;
   }
 
-  /* Prevent internal grid from re-narrowing content */
-  .bd-main .row, .bd-main [class*="col-"] {
-    max-width: 100% !important;
-  }
+  /* prevent grid from re-narrowing content */
+  .bd-main .row, .bd-main [class*="col-"] { max-width: 100% !important; }
 }
 
