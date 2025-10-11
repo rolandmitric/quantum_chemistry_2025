@@ -1,25 +1,54 @@
-/* Wide reading layout for Jupyter Book / PyData theme */
+/* custom.css — beide Sidebars sichtbar & schlank, Text sehr breit */
 @media (min-width: 992px) {
-  /* hide right in-page TOC */
+  /* sicherstellen, dass nichts versteckt ist */
+  .bd-sidebar-primary,
   .bd-sidebar-secondary {
-    display: none !important;
-    width: 0 !important;
-    flex: 0 0 0 !important;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
   }
-  /* narrow left nav */
+
+  /* linke Navi schlank */
   .bd-sidebar-primary {
     width: 10rem !important;
     flex: 0 0 10rem !important;
+    overflow: auto;
   }
-  /* let main area span the viewport */
-  .bd-page-width, .bd-container, .bd-main, .bd-content {
+
+  /* rechte In-Page-ToC schlank */
+  .bd-sidebar-secondary {
+    width: 8rem !important;
+    flex: 0 0 8rem !important;
+    overflow: auto;
+  }
+
+  /* globale Breitenbegrenzungen lösen */
+  .bd-page-width,
+  .bd-container,
+  .bd-main,
+  .bd-content {
     width: 100% !important;
     max-width: 100vw !important;
   }
-  /* make the article text wide */
+
+  /* Artikel fast über gesamte Breite (abzgl. Sidebars + kleine Ränder) */
   .bd-main .bd-content .bd-article-container {
-    width: vw !important;
-    max-width: 96vw !important;
+    max-width: none !important;
+    width: calc(100vw - 10rem - 8rem - 2rem) !important; /* 2rem = Seitenabstand */
+    margin-left: 1rem !important;
+    margin-right: 1rem !important;
+  }
+
+  /* Grid-Klammern entschärfen, damit nichts wieder schmal wird */
+  .bd-main .row,
+  .bd-main [class*="col-"] {
+    max-width: 100% !important;
   }
 }
-ZZ
+
+/* Tabellen/Math nicht künstlich einengen */
+.bd-article .table-wrapper,
+.bd-article table {
+  max-width: 100% !important;
+}
+
