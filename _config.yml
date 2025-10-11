@@ -10,15 +10,19 @@ html:
   use_edit_page_button: true
   use_issues_button: true
 
+# Rocket appears if binderhub_url is set here
 launch_buttons:
   thebe: true
   binderhub_url: https://mybinder.org
+  notebook_interface: jupyterlab
 
+# Must be the SOURCE repo (not gh-pages)
 repository:
   url: https://github.com/rolandmitric/quantum_chemistry_2025
   branch: main
-  path_to_book: ""   
+  path_to_book: ""   # set to subfolder if the book lives in one
 
+# This block prevents the sphinx-thebe NoneType error
 thebe:
   binder:
     repo_url: https://github.com/rolandmitric/quantum_chemistry_2025
