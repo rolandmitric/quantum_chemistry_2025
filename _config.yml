@@ -10,19 +10,19 @@ html:
   use_edit_page_button: true
   use_issues_button: true
 
-# Rocket appears if binderhub_url is set here
+# ⇩⇩ Rocket braucht das (TOP-LEVEL, nicht im Theme!)
 launch_buttons:
   thebe: true
   binderhub_url: https://mybinder.org
   notebook_interface: jupyterlab
 
-# Must be the SOURCE repo (not gh-pages)
+# ⇩⇩ Quelle-Repo (NICHT gh-pages), Branch = main
 repository:
   url: https://github.com/rolandmitric/quantum_chemistry_2025
   branch: main
-  path_to_book: ""   # set to subfolder if the book lives in one
+  path_to_book: ""     # falls das Buch in einem Unterordner liegt, hier setzen
 
-# This block prevents the sphinx-thebe NoneType error
+# ⇩⇩ Verhindert den NoneType-Crash von sphinx-thebe
 thebe:
   binder:
     repo_url: https://github.com/rolandmitric/quantum_chemistry_2025
@@ -33,7 +33,4 @@ sphinx:
   config:
     html_static_path: ["_static"]
     html_css_files: ["custom.css"]
-    html_theme_options:
-      secondary_sidebar_items: ["page-toc"]
-      show_toc_level: 3
 
