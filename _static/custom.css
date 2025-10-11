@@ -8,8 +8,8 @@
   }
   /* narrow left nav */
   .bd-sidebar-primary {
-    width: 12rem !important;
-    flex: 0 0 12rem !important;
+    width: 10rem !important;
+    flex: 0 0 10rem !important;
   }
   /* let main area span the viewport */
   .bd-page-width, .bd-container, .bd-main, .bd-content {
@@ -18,8 +18,8 @@
   }
   /* make the article text wide */
   .bd-main .bd-content .bd-article-container {
-    width: 96vw !important;
+    width: vw !important;
     max-width: 96vw !important;
   }
 }
-
+ZZ
