@@ -2,15 +2,25 @@ title: Quantenchemie
 author: Roland Mitric
 execute:
   execute_notebooks: "off"
+
 html:
   use_thebe: true
-  extra_css: ["_static/custom.css"]
+
 launch_buttons:
   thebe: true
   binderhub_url: https://mybinder.org
+
 thebe:
   binder:
     repo_url: https://github.com/rolandmitric/quantum_chemistry_2025
     ref: main
   kernel_name: python3
+
+sphinx:
+  config:
+    html_static_path: ["_static"]
+    html_css_files: ["custom.css"]
+    html_theme_options:
+      secondary_sidebar_items: ["page-toc"]
+      show_toc_level: 3
 
