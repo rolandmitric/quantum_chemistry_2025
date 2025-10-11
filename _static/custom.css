@@ -1,7 +1,7 @@
 :root {
-  --pst-sidebar-width: 10rem;          /* links */
-  --pst-sidebar-secondary-width: 10rem;/* rechts */
-  --pst-content-max-width: 100vw;       /* breite Lesespalte */
+  --pst-sidebar-width: 4rem;          /* links */
+  --pst-sidebar-secondary-width: 4rem;/* rechts */
+  --pst-content-max-width: 120vw;       /* breite Lesespalte */
 }
 
 @media (min-width: 992px) {
