@@ -1,40 +1,51 @@
-/* Wide text, both sidebars kept but slim */
+/* Restore both sidebars and make text as wide as possible with slim sidebars */
 @media (min-width: 992px) {
-  /* keep left nav, just slimmer */
-  .bd-sidebar-primary {
-    width: 12rem !important;
-    flex: 0 0 12rem !important;
-  }
-
-  /* keep right TOC, slimmer as well */
+  /* UNDO any previous hiding */
+  .bd-sidebar-primary,
   .bd-sidebar-secondary {
-    width: 10rem !important;
-    flex: 0 0 10rem !important;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    width: auto; /* base before fixing flex-basis below */
   }
 
-  /* remove global width caps so the center can breathe */
+  /* Slim left nav */
+  .bd-sidebar-primary {
+    width: 11rem !important;
+    flex: 0 0 11rem !important;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow: auto;
+  }
+
+  /* Slim right TOC */
+  .bd-sidebar-secondary {
+    width: 9rem !important;
+    flex: 0 0 9rem !important;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow: auto;
+  }
+
+  /* Let the center use the remaining viewport width */
   .bd-page-width, .bd-container, .bd-main, .bd-content {
     width: 100% !important;
     max-width: 100vw !important;
   }
 
-  /* make the article almost full width minus the two slim sidebars */
+  /* Wide article: full viewport minus both slim sidebars and a small gap */
   .bd-main .bd-content .bd-article-container {
-    width: calc(100vw - 12rem - 10rem - 2rem) !important; /* 2rem = small gap */
     max-width: none !important;
+    width: calc(100vw - 11rem - 9rem - 2rem) !important; /* 2rem = gaps */
     margin-left: 1rem !important;
     margin-right: 1rem !important;
   }
 
-  /* prevent internal grid from re-narrowing content */
+  /* Prevent internal grid from re-narrowing content */
   .bd-main .row, .bd-main [class*="col-"] {
     max-width: 100% !important;
   }
-}
-
-/* Optional: keep long headings from overflowing the tiny TOC */
-.bd-sidebar-secondary .bd-toc nav {
-  overflow: auto;
-  max-height: 90vh;
 }
 
