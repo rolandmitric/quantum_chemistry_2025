@@ -10,19 +10,16 @@ html:
   use_edit_page_button: true
   use_issues_button: true
 
-# ⇩⇩ Rocket braucht das (TOP-LEVEL, nicht im Theme!)
 launch_buttons:
   thebe: true
   binderhub_url: https://mybinder.org
   notebook_interface: jupyterlab
 
-# ⇩⇩ Quelle-Repo (NICHT gh-pages), Branch = main
 repository:
   url: https://github.com/rolandmitric/quantum_chemistry_2025
   branch: main
-  path_to_book: ""     # falls das Buch in einem Unterordner liegt, hier setzen
+  path_to_book: "."    # ← nicht leer lassen
 
-# ⇩⇩ Verhindert den NoneType-Crash von sphinx-thebe
 thebe:
   binder:
     repo_url: https://github.com/rolandmitric/quantum_chemistry_2025
@@ -30,7 +27,4 @@ thebe:
   kernel_name: python3
 
 sphinx:
-  config:
-    html_static_path: ["_static"]
-    html_css_files: ["custom.css"]
-
+  config: {}
