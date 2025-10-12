@@ -470,21 +470,6 @@ Im <strong>nichtrelativistischen</strong> Fall lautet der Hamiltonoperator in At
 H = \sum_{i=1}^2 \left(-\tfrac12 \nabla_i^2 - \frac{Z}{r_i}\right) + \frac{1}{r_{12}},
 \qquad r_i = |\mathbf r_i|,\quad r_{12}=|\mathbf r_1-\mathbf r_2|.
 \]</div>
-<div style="background-color:#e6f0ff; border:2px solid #3366cc; border-radius:8px; padding:10px; margin-top:1em;">
-<b>Verallgemeinerung: Hamiltonoperator für ein $N$-Elektronen-Atom</b><br><br>
-Für ein beliebiges Atom mit Kernladungszahl $Z$ und $N$ Elektronen ergibt sich der 
-nichtrelativistische Hamiltonoperator in atomaren Einheiten zu
-$$
-H =
-\underbrace{\sum_{i=1}^{N} \left(-\tfrac{1}{2}\nabla_i^2 - \frac{Z}{r_i}\right)}_{\text{Einzelektronen-Terme}}
-+
-\underbrace{\sum_{i<j}^{N} \frac{1}{r_{ij}}}_{\text{Elektron–Elektron-Wechselwirkung}},
-\qquad
-r_{ij} = |\mathbf r_i - \mathbf r_j|.
-$$
-Er umfasst die kinetische Energie aller Elektronen, die anziehende Wechselwirkung zwischen 
-Elektronen und Kern sowie die gegenseitige Coulomb-Abstoßung der Elektronen.
-</div>
 <p>Die <strong>exakte</strong> Lösung der Schrödingergleichung ist in diesem Fall nicht möglich, weil der Term <span class="math notranslate nohighlight">\(1/r_{12}\)</span> die beiden Elektronen koppelt.<br />
 Als Ausgangspunkt für unsere Behandlung des He-Atoms lassen wir im ersten Schritt die Elektron–Elektron-Abstoßung vollständig <strong>weg</strong> und erhalten damit den folgenden vereinfachten Hamiltonian:</p>
 <div class="math notranslate nohighlight">
@@ -677,7 +662,7 @@ H_0 = -\tfrac12 (\nabla_1^2 + \nabla_2^2) - \frac{Z}{r_1} - \frac{Z}{r_2}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Energie = -Z**2 Hartree
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Energie = -4 Hartree
 </pre></div>
 </div>
 </div>
