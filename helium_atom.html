@@ -1,0 +1,845 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Das Helium-Atom &#8212; Quantenchemie</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=efe75725" />
+    <link rel="stylesheet" type="text/css" href="_static/wide_v2.css?v=bfe64621" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'helium_atom';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Das Variationsprinzip" href="variational_principle.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Quantenchemie</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="index.html">
+                    Quantenchemie — WS 2025
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="variational_principle.html">Das Variationsprinzip</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Das Helium-Atom</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/rolandmitric/quantum_chemistry_2025/main?urlpath=lab/tree/./helium_atom.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Binder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Binder logo" src="_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/rolandmitric/quantum_chemistry_2025" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/rolandmitric/quantum_chemistry_2025/edit/main/./helium_atom.ipynb" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/rolandmitric/quantum_chemistry_2025/issues/new?title=Issue%20on%20page%20%2Fhelium_atom.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/helium_atom.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Das Helium-Atom</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#der-atomare-hamiltonoperator">Der atomare Hamiltonoperator</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#separationsansatz-hartree-produkt">Separationsansatz (Hartree-Produkt)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#erwartungwert-der-energie">Erwartungwert der Energie</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#erwartungswert-der-energie">Erwartungswert der Energie</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#symbolische-auswertung-mit-sympy">Symbolische Auswertung mit SymPy</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wie-grosz-ist-die-elektron-elektron-wechselwirkung">Wie groß ist die Elektron-Elektron Wechselwirkung ?</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="das-helium-atom">
+<h1>Das Helium-Atom<a class="headerlink" href="#das-helium-atom" title="Link to this heading">#</a></h1>
+<p>Nachdem wir das Variationsprinzip als Werkzeug zur näherungsweisen Lösung komplexer quantenmechanischer Probleme eingeführt haben, wenden wir uns nun dem ersten System zu, das bereits die für quantenchemische Fragestellungen typische Komplexität aufweist: dem Heliumatom. Obwohl es lediglich zwei Elektronen enthält, erweist es sich als deutlich schwieriger zu behandeln als das Wasserstoffatom. Dieses Beispiel soll vor allem dazu dienen, zentrale Konzepte und Ideen der Quantenchemie zu motivieren – an einem noch überschaubaren System, bei dem ein Teil der Rechnungen „von Hand“ nachvollzogen werden kann. Viele der hier am Heliumatom entwickelten Ansätze werden wir anschließend auf größere Mehrelektronen-Atome und molekulare Systeme übertragen und verallgemeinern.</p>
+<section id="der-atomare-hamiltonoperator">
+<h2>Der atomare Hamiltonoperator<a class="headerlink" href="#der-atomare-hamiltonoperator" title="Link to this heading">#</a></h2>
+<p>Das Heliumatom besteht aus einem Kern mit Ladungszahl <span class="math notranslate nohighlight">\(Z = 2\)</span> und zwei Elektronen.<br />
+Im <strong>nichtrelativistischen</strong> Fall lautet der Hamiltonoperator in Atomaren Einheiten<br />
+(a.u., also <span class="math notranslate nohighlight">\(\hbar = m_e = e = 4\pi\varepsilon_0 = 1\)</span>):</p>
+<div class="math notranslate nohighlight">
+\[
+H = \sum_{i=1}^2 \left(-\tfrac12 \nabla_i^2 - \frac{Z}{r_i}\right) + \frac{1}{r_{12}},
+\qquad r_i = |\mathbf r_i|,\quad r_{12}=|\mathbf r_1-\mathbf r_2|.
+\]</div>
+<div style="background-color:#e6f0ff; border:2px solid #3366cc; border-radius:8px; padding:10px; margin-top:1em;">
+<b>Verallgemeinerung: Hamiltonoperator für ein $N$-Elektronen-Atom</b><br><br>
+Für ein beliebiges Atom mit Kernladungszahl $Z$ und $N$ Elektronen ergibt sich der 
+nichtrelativistische Hamiltonoperator in atomaren Einheiten zu
+$$
+H =
+\underbrace{\sum_{i=1}^{N} \left(-\tfrac{1}{2}\nabla_i^2 - \frac{Z}{r_i}\right)}_{\text{Einzelektronen-Terme}}
++
+\underbrace{\sum_{i<j}^{N} \frac{1}{r_{ij}}}_{\text{Elektron–Elektron-Wechselwirkung}},
+\qquad
+r_{ij} = |\mathbf r_i - \mathbf r_j|.
+$$
+Er umfasst die kinetische Energie aller Elektronen, die anziehende Wechselwirkung zwischen 
+Elektronen und Kern sowie die gegenseitige Coulomb-Abstoßung der Elektronen.
+</div>
+<p>Die <strong>exakte</strong> Lösung der Schrödingergleichung ist in diesem Fall nicht möglich, weil der Term <span class="math notranslate nohighlight">\(1/r_{12}\)</span> die beiden Elektronen koppelt.<br />
+Als Ausgangspunkt für unsere Behandlung des He-Atoms lassen wir im ersten Schritt die Elektron–Elektron-Abstoßung vollständig <strong>weg</strong> und erhalten damit den folgenden vereinfachten Hamiltonian:</p>
+<div class="math notranslate nohighlight">
+\[
+H_0 = \sum_{i=1}^2 \left(-\tfrac12 \nabla_i^2 - \frac{Z}{r_i}\right).
+\]</div>
+<p>In diesem Hamiltonian sind beide Elektronen vollständig entkoppelt, und der Operator kann als Summe zweier Terme geschrieben werden, die jeweils nur von den Koordinaten des einen oder des anderen Elektrons abhängen.<br />
+Solche Terme bezeichnet man in der Quantenchemie als <strong>Ein-Elektron-Terme</strong>. Es gilt also</p>
+<div class="math notranslate nohighlight">
+\[
+H_0 = h(1) + h(2),
+\]</div>
+<p>mit dem bekannten wasserstoffähnlichen Hamiltonian</p>
+<div class="math notranslate nohighlight">
+\[
+h = -\tfrac12 \nabla^2 - \frac{Z}{r}.
+\]</div>
+<div style="background-color:#e6f0ff; border:2px solid #3366cc; border-radius:8px; padding:10px; margin-top:1em;">
+<b>Verallgemeinerung: Ungekoppelter Hamiltonoperator für ein $N$-Elektronen-Atom</b><br><br>
+Lässt man auch bei einem allgemeinen $N$-Elektronen-Atom die Elektron–Elektron-Wechselwirkung fort, so ergibt sich der ungekoppelte Hamiltonoperator zu
+$$
+H_0 = \sum_{i=1}^{N} \left(-\tfrac12 \nabla_i^2 - \frac{Z}{r_i}\right)
+    = \sum_{i=1}^{N} h(i),
+$$
+wobei jeder Summand $h(i)$ den Ein-Elektron-Hamiltonian für das $i$-te Elektron beschreibt:
+$$
+h(i) = -\tfrac12 \nabla_i^2 - \frac{Z}{r_i}.
+$$
+</div>
+</section>
+<section id="separationsansatz-hartree-produkt">
+<h2>Separationsansatz (Hartree-Produkt)<a class="headerlink" href="#separationsansatz-hartree-produkt" title="Link to this heading">#</a></h2>
+<p>Für den Grundzustand des He-Atoms wählen wir den <strong>Produktansatz</strong></p>
+<div class="math notranslate nohighlight">
+\[
+\Psi(\mathbf r_1,\mathbf r_2) = \phi(\mathbf r_1)\,\phi(\mathbf r_2),
+\]</div>
+<p>wobei <span class="math notranslate nohighlight">\(\phi\)</span> ein 1s-ähnliches Orbital am Kern ist.<br />
+Setzt man diesen Ansatz in die zeitunabhängige Schrödingergleichung mit dem vereinfachten Hamiltonoperator</p>
+<div class="math notranslate nohighlight">
+\[
+H_0 = h(1) + h(2), \qquad h = -\tfrac12 \nabla^2 - \frac{Z}{r},
+\]</div>
+<p>ein, erhält man</p>
+<div class="math notranslate nohighlight">
+\[
+H_0\,\Psi(\mathbf r_1,\mathbf r_2)
+= [\,h(1) + h(2)\,]\,\phi(\mathbf r_1)\phi(\mathbf r_2)
+= [\,h(1)\phi(\mathbf r_1)\,]\phi(\mathbf r_2) + \phi(\mathbf r_1)[\,h(2)\phi(\mathbf r_2)\,].
+\]</div>
+<p>Da beide Terme identisch sind, genügt es, das Ein-Elektron-Problem zu betrachten.<br />
+Erfüllt das Orbital <span class="math notranslate nohighlight">\(\phi\)</span> die Einteilchen-Gleichung</p>
+<div class="math notranslate nohighlight">
+\[
+h\,\phi = \varepsilon\,\phi,
+\]</div>
+<p>so folgt unmittelbar</p>
+<div class="math notranslate nohighlight">
+\[
+H_0\,\Psi = 2\varepsilon\,\Psi.
+\]</div>
+<p>Damit ist <span class="math notranslate nohighlight">\(\varepsilon\)</span> die Eigenenergie eines Elektrons im wasserstoffähnlichen Potential eines Kerns der Ladungszahl <span class="math notranslate nohighlight">\(Z\)</span>.<br />
+Für den 1s-Grundzustand gilt</p>
+<div class="math notranslate nohighlight">
+\[
+\varepsilon = E_{1s}(Z) = -\frac{Z^2}{2},
+\]</div>
+<p>und somit ergibt sich für das Gesamtsystem ohne Elektron–Elektron-Abstoßung</p>
+<div class="math notranslate nohighlight">
+\[
+E = 2\,E_{1s}(Z) = 2\!\left(-\frac{Z^2}{2}\right) = -Z^2.
+\]</div>
+<p>Für Helium (<span class="math notranslate nohighlight">\(Z = 2\)</span>) folgt daher <span class="math notranslate nohighlight">\(E = -4\)</span> Hartree. Der <strong>exakte nichtrelativistische Wert</strong> aus hochpräzisen numerischen Rechnungen beträgt</p>
+<div class="math notranslate nohighlight">
+\[
+E_\text{exakt} \approx -2.9037\ \text{Hartree},
+\]</div>
+<p>und das <strong>experimentell bestimmte Ionisationspotential</strong> des Heliumgrundzustands entspricht einer Gesamtenergie von etwa</p>
+<div class="math notranslate nohighlight">
+\[
+E_\text{exp} \approx -2.9034\ \text{Hartree}.
+\]</div>
+<p>Die Differenz von rund <strong>1.1 Hartree</strong> zeigt deutlich, dass die einfache Näherung ohne Elektron–Elektron-Abstoßung das System <strong>zu stark bindet</strong>.<br />
+Sie verdeutlicht damit den erheblichen Beitrag der Elektron–Elektron-Wechselwirkung zur realen Bindungsenergie des Heliumatoms. Wir lernen daraus, dass die Elektron-Elektron Wechselwirkung definitiv keine Vernachlässigbare Größe ist und die orbitalbasierte Produktansätze keine gute Näherungen für die exakte Wellenfunktion sind !</p>
+</section>
+<section id="erwartungwert-der-energie">
+<h2>Erwartungwert der Energie<a class="headerlink" href="#erwartungwert-der-energie" title="Link to this heading">#</a></h2>
+</section>
+<section id="erwartungswert-der-energie">
+<h2>Erwartungswert der Energie<a class="headerlink" href="#erwartungswert-der-energie" title="Link to this heading">#</a></h2>
+<p>Anstatt die Schrödingergleichung direkt zu lösen, können wir den Energieeigenwert auch über den <strong>Erwartungswert des Hamiltonoperators</strong> bestimmen. Für eine gegebene (nicht notwendigerweise exakte) Wellenfunktion <span class="math notranslate nohighlight">\(\Psi\)</span> ist der zugehörige Energieerwartungswert definiert als</p>
+<div class="math notranslate nohighlight">
+\[
+E[\Psi] = \frac{\langle \Psi | H | \Psi \rangle}{\langle \Psi | \Psi \rangle}.
+\]</div>
+<p>Dieser Ausdruck bildet die Grundlage der Anwendung des <strong>Variationsprinzips</strong> auf die atomaren und molekularen Systeme.</p>
+<p>Wenden wir dies auf das Heliumatom im Näherungshamiltonian <span class="math notranslate nohighlight">\(H_0 = h(1) + h(2)\)</span> an, so ergibt sich für den Produktansatz</p>
+<div class="math notranslate nohighlight">
+\[
+\Psi(\mathbf r_1,\mathbf r_2) = \phi(\mathbf r_1)\,\phi(\mathbf r_2)
+\]</div>
+<p>der Erwartungswert</p>
+<div class="math notranslate nohighlight">
+\[
+E[\Psi] = \frac{\langle \phi(1)\phi(2) |\, h(1) + h(2)\, | \phi(1)\phi(2) \rangle}{\langle \phi(1)\phi(2) | \phi(1)\phi(2) \rangle}.
+\]</div>
+<p>Da <span class="math notranslate nohighlight">\(h(1)\)</span> und <span class="math notranslate nohighlight">\(h(2)\)</span> auf verschiedene Koordinaten wirken, kann der Ausdruck separiert werden:</p>
+<div class="math notranslate nohighlight">
+\[
+E[\Psi] = 
+\frac{\langle \phi(1) | h(1) | \phi(1) \rangle}{\langle \phi(1) | \phi(1) \rangle}
++
+\frac{\langle \phi(2) | h(2) | \phi(2) \rangle}{\langle \phi(2) | \phi(2) \rangle}
+= 2\,\langle \phi | h | \phi \rangle = 2\,\varepsilon.
+\]</div>
+<p>Damit bestätigt der Erwartungswert formal das zuvor erhaltene Ergebnis:<br />
+Die Gesamtenergie ist gleich der Summe der beiden Einteilchenenergien. Erst wenn die Elektron–Elektron-Wechselwirkung berücksichtigt wird, liefert das Variationsprinzip eine Möglichkeit, realistischere Energien durch geeignete Wahl der Wellenfunktion zu bestimmen.</p>
+</section>
+<section id="symbolische-auswertung-mit-sympy">
+<h2>Symbolische Auswertung mit SymPy<a class="headerlink" href="#symbolische-auswertung-mit-sympy" title="Link to this heading">#</a></h2>
+<p>Für interessierte Studierende lässt sich die Energie des Heliumatoms mit vereinfachten Hamiltonian (ohne Elektron–Elektron-Abstoßung) auch <strong>symbolisch</strong> berechnen.<br />
+Wir wählen als Näherung für die räumliche Wellenfunktion das Produkt zweier exponentiell abfallender 1s-Funktionen</p>
+<div class="math notranslate nohighlight">
+\[
+\Psi(\mathbf r_1,\mathbf r_2) = e^{-Z(r_1 + r_2)}.
+\]</div>
+<p>Da wir s-Zustände betrachten,können die Winkelintegrationen für beide Elektronen sofort durchgeführt werden:<br />
+Das <strong>Volumenelement</strong> separiert zu</p>
+<div class="math notranslate nohighlight">
+\[
+\mathrm d^3 r = r^2 \sin\theta\, \mathrm dr\, \mathrm d\theta\, \mathrm d\phi,
+\qquad \int \mathrm d\Omega = 4\pi,
+\]</div>
+<p>und für zwei Elektronen ergibt sich nach Winkelintegration das radiale Maß</p>
+<div class="math notranslate nohighlight">
+\[
+(4\pi)^2 \int_0^\infty\!\!\int_0^\infty r_1^2 r_2^2\, f(r_1,r_2)\,\mathrm dr_1\,\mathrm dr_2,
+\]</div>
+<p>wobei die konstanten Faktoren <span class="math notranslate nohighlight">\((4\pi)^2\)</span> in der Energieratio herauskürzen und daher ohne Einfluss bleiben.</p>
+<p>Der <strong>Laplace-Operator</strong> reduziert sich für sphärisch symmetrische Funktionen auf seine radiale Form</p>
+<div class="math notranslate nohighlight">
+\[
+\nabla^2 f(r) = \frac{\mathrm d^2 f}{\mathrm d r^2} + \frac{2}{r}\frac{\mathrm d f}{\mathrm d r},
+\]</div>
+<p>sodass der nichtrelativistische Hamiltonoperator</p>
+<div class="math notranslate nohighlight">
+\[
+H_0 = -\tfrac12 (\nabla_1^2 + \nabla_2^2) - \frac{Z}{r_1} - \frac{Z}{r_2}
+\]</div>
+<p>im Code direkt mit radialen Ableitungen implementiert werden kann.</p>
+<p>Das folgende <strong>SymPy-Skript</strong> führt dies aus, integriert über beide Elektronenradien analytisch und berechnet schließlich den Erwartungswert der Energie symbolisch:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">sympy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sp</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sympy</span><span class="w"> </span><span class="kn">import</span> <span class="n">oo</span>
+<span class="n">r1</span><span class="p">,</span> <span class="n">r2</span><span class="p">,</span> <span class="n">Z</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;r1 r2 Z&#39;</span><span class="p">,</span> <span class="n">positive</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">laplacian_radial</span><span class="p">(</span><span class="n">psi</span><span class="p">,</span> <span class="n">r</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">psi</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="mi">2</span><span class="o">/</span><span class="n">r</span><span class="p">)</span><span class="o">*</span><span class="n">psi</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">T</span><span class="p">(</span><span class="n">psi</span><span class="p">):</span>
+    <span class="k">return</span> <span class="o">-</span><span class="n">sp</span><span class="o">.</span><span class="n">S</span><span class="o">.</span><span class="n">Half</span> <span class="o">*</span> <span class="p">(</span><span class="n">laplacian_radial</span><span class="p">(</span><span class="n">psi</span><span class="p">,</span> <span class="n">r1</span><span class="p">)</span> <span class="o">+</span> <span class="n">laplacian_radial</span><span class="p">(</span><span class="n">psi</span><span class="p">,</span> <span class="n">r2</span><span class="p">))</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">V_ne</span><span class="p">(</span><span class="n">psi</span><span class="p">):</span>
+    <span class="k">return</span> <span class="o">-</span><span class="p">(</span><span class="n">Z</span><span class="o">/</span><span class="n">r1</span> <span class="o">+</span> <span class="n">Z</span><span class="o">/</span><span class="n">r2</span><span class="p">)</span> <span class="o">*</span> <span class="n">psi</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">H0</span><span class="p">(</span><span class="n">psi</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">T</span><span class="p">(</span><span class="n">psi</span><span class="p">)</span> <span class="o">+</span> <span class="n">V_ne</span><span class="p">(</span><span class="n">psi</span><span class="p">)</span>
+
+<span class="n">psi0</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">Z</span><span class="o">*</span><span class="p">(</span><span class="n">r1</span> <span class="o">+</span> <span class="n">r2</span><span class="p">))</span>  
+
+<span class="k">def</span><span class="w"> </span><span class="nf">integrate_6d</span><span class="p">(</span><span class="n">f</span><span class="p">):</span>
+    <span class="n">integrand</span> <span class="o">=</span> <span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">*</span> <span class="n">r1</span><span class="o">**</span><span class="mi">2</span> <span class="o">*</span> <span class="n">r2</span><span class="o">**</span><span class="mi">2</span> <span class="o">*</span> <span class="n">f</span>
+    <span class="n">I_r2</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="n">integrand</span><span class="p">,</span> <span class="p">(</span><span class="n">r2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">sp</span><span class="o">.</span><span class="n">oo</span><span class="p">))</span>
+    <span class="n">I_r1</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="n">I_r2</span><span class="p">,</span> <span class="p">(</span><span class="n">r1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">sp</span><span class="o">.</span><span class="n">oo</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">sp</span><span class="o">.</span><span class="n">simplify</span><span class="p">(</span><span class="n">I_r1</span><span class="p">)</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">energy</span><span class="p">(</span><span class="n">psi</span><span class="p">,</span> <span class="n">H</span><span class="p">):</span>
+    <span class="n">num</span> <span class="o">=</span> <span class="n">integrate_6d</span><span class="p">(</span><span class="n">psi</span> <span class="o">*</span> <span class="n">H</span><span class="p">(</span><span class="n">psi</span><span class="p">))</span>
+    <span class="n">den</span> <span class="o">=</span> <span class="n">integrate_6d</span><span class="p">(</span><span class="n">psi</span> <span class="o">*</span> <span class="n">psi</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">sp</span><span class="o">.</span><span class="n">simplify</span><span class="p">(</span><span class="n">num</span><span class="o">/</span><span class="n">den</span><span class="p">)</span>
+
+<span class="n">E_Z</span> <span class="o">=</span> <span class="n">energy</span><span class="p">(</span><span class="n">psi0</span><span class="p">,</span> <span class="n">H0</span><span class="p">)</span>            
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">E_He</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">simplify</span><span class="p">(</span><span class="n">E_Z</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">Z</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>  <span class="c1"># Helium-Ergebnis</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Energie = </span><span class="si">{</span><span class="n">E_He</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Energie = -4
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="wie-grosz-ist-die-elektron-elektron-wechselwirkung">
+<h2>Wie groß ist die Elektron-Elektron Wechselwirkung ?<a class="headerlink" href="#wie-grosz-ist-die-elektron-elektron-wechselwirkung" title="Link to this heading">#</a></h2>
+<p>In order to estimate the electron-electron interaction we calculate its expectation value using our product Ansatz for the wavefunction. The expectation value of the electron-electron interaction term is given by the following expression:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">r1</span><span class="p">,</span> <span class="n">r2</span><span class="p">,</span> <span class="n">r12</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;r1 r2 r12&#39;</span><span class="p">,</span> <span class="n">positive</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">Z</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Integer</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="n">psi0</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">Z</span><span class="o">*</span><span class="p">(</span><span class="n">r1</span> <span class="o">+</span> <span class="n">r2</span><span class="p">))</span>
+
+<span class="n">dV</span> <span class="o">=</span> <span class="mi">8</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">pi</span><span class="o">**</span><span class="mi">2</span> <span class="o">*</span> <span class="n">r1</span> <span class="o">*</span> <span class="n">r2</span> <span class="o">*</span> <span class="n">r12</span>
+
+<span class="n">S</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span>
+        <span class="n">dV</span> <span class="o">*</span> <span class="n">psi0</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span>
+        <span class="p">(</span><span class="n">r12</span><span class="p">,</span> <span class="n">sp</span><span class="o">.</span><span class="n">Abs</span><span class="p">(</span><span class="n">r1</span> <span class="o">-</span> <span class="n">r2</span><span class="p">),</span> <span class="n">r1</span> <span class="o">+</span> <span class="n">r2</span><span class="p">),</span>
+        <span class="p">(</span><span class="n">r2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">sp</span><span class="o">.</span><span class="n">oo</span><span class="p">),</span>
+        <span class="p">(</span><span class="n">r1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">sp</span><span class="o">.</span><span class="n">oo</span><span class="p">)</span>
+    <span class="p">)</span>
+
+
+<span class="n">Vee</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span>
+        <span class="n">dV</span> <span class="o">*</span> <span class="n">psi0</span><span class="o">**</span><span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">r12</span><span class="p">),</span>
+        <span class="p">(</span><span class="n">r12</span><span class="p">,</span> <span class="n">sp</span><span class="o">.</span><span class="n">Abs</span><span class="p">(</span><span class="n">r1</span> <span class="o">-</span> <span class="n">r2</span><span class="p">),</span> <span class="n">r1</span> <span class="o">+</span> <span class="n">r2</span><span class="p">),</span>
+        <span class="p">(</span><span class="n">r2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">sp</span><span class="o">.</span><span class="n">oo</span><span class="p">),</span>
+        <span class="p">(</span><span class="n">r1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">sp</span><span class="o">.</span><span class="n">oo</span><span class="p">)</span>
+    <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">Vee</span><span class="o">/</span><span class="n">S</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5/4
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "rolandmitric/quantum_chemistry_2025",
+            ref: "main",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="variational_principle.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Das Variationsprinzip</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#der-atomare-hamiltonoperator">Der atomare Hamiltonoperator</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#separationsansatz-hartree-produkt">Separationsansatz (Hartree-Produkt)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#erwartungwert-der-energie">Erwartungwert der Energie</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#erwartungswert-der-energie">Erwartungswert der Energie</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#symbolische-auswertung-mit-sympy">Symbolische Auswertung mit SymPy</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wie-grosz-ist-die-elektron-elektron-wechselwirkung">Wie groß ist die Elektron-Elektron Wechselwirkung ?</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Roland Mitric
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
