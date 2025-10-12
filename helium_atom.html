@@ -445,7 +445,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#separationsansatz-hartree-produkt">Separationsansatz (Hartree-Produkt)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#erwartungwert-der-energie">Erwartungwert der Energie</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#symbolische-auswertung-mit-sympy">Symbolische Auswertung mit SymPy</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wie-grosz-ist-die-elektronelektron-wechselwirkung-koordinaten-r-1-r-2-r-12">Wie groß ist die Elektron–Elektron-Wechselwirkung? (Koordinaten <span class="math notranslate nohighlight">\((r_1,r_2,r_{12})\)</span>)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wie-grosz-ist-die-elektronelektron-wechselwirkung-eine-erste-abschatzung">Wie groß ist die Elektron–Elektron-Wechselwirkung? Eine erste Abschätzung.</a></li>
 </ul>
             </nav>
         </div>
@@ -668,8 +668,8 @@ H_0 = -\tfrac12 (\nabla_1^2 + \nabla_2^2) - \frac{Z}{r_1} - \frac{Z}{r_2}
 </div>
 </div>
 </section>
-<section id="wie-grosz-ist-die-elektronelektron-wechselwirkung-koordinaten-r-1-r-2-r-12">
-<h2>Wie groß ist die Elektron–Elektron-Wechselwirkung? (Koordinaten <span class="math notranslate nohighlight">\((r_1,r_2,r_{12})\)</span>)<a class="headerlink" href="#wie-grosz-ist-die-elektronelektron-wechselwirkung-koordinaten-r-1-r-2-r-12" title="Link to this heading">#</a></h2>
+<section id="wie-grosz-ist-die-elektronelektron-wechselwirkung-eine-erste-abschatzung">
+<h2>Wie groß ist die Elektron–Elektron-Wechselwirkung? Eine erste Abschätzung.<a class="headerlink" href="#wie-grosz-ist-die-elektronelektron-wechselwirkung-eine-erste-abschatzung" title="Link to this heading">#</a></h2>
 <p>Nachdem wir die Grundenergie des Heliumatoms ohne Elektron–Elektron-Abstoßung berechnet haben, wollen wir nun abschätzen, <strong>wie groß der Beitrag der Elektron–Elektron-Wechselwirkung tatsächlich ist</strong>.<br />
 Dazu berechnen wir den Erwartungswert des Coulomb-Terms <span class="math notranslate nohighlight">\(1/r_{12}\)</span> mit unserer Produktwellenfunktion</p>
 <div class="math notranslate nohighlight">
@@ -766,13 +766,13 @@ Der folgende Code führt diese Berechnung exakt aus:</p>
 \langle V_{ee}\rangle = \frac{5Z}{8}.
 \]</div>
 <p>Für Helium (<span class="math notranslate nohighlight">\(Z=2\)</span>) beträgt der Erwartungswert der Elektron–Elektron-Abstoßung also<br />
-<span class="math notranslate nohighlight">\(\langle V_{ee}\rangle = 1{,}25\)</span> Hartree. Addiert man diesen Beitrag zu der ungekoppelten Energie <span class="math notranslate nohighlight">\(E_0 = -4\)</span> Hartree ab, ergibt sich</p>
+<span class="math notranslate nohighlight">\(\langle V_{ee}\rangle = 1{,}25\)</span> Hartree. Addiert man diesen Beitrag zu der Energie zweier unabhängiger Elektrone (<span class="math notranslate nohighlight">\(E_0 = -4\)</span> Hartree), erhält man für die Gesamtenergie</p>
 <div class="math notranslate nohighlight">
 \[
 E \approx -4 + 1{,}25 = -2{,}75\ \text{Hartree},
 \]</div>
-<p>was bereits eine vernünftige Näherung an den exakten Grundzustandswert<br />
-<span class="math notranslate nohighlight">\(E_\text{exakt} = -2{,}9037\)</span> Hartree darstellt.Damit wird deutlich, dass die Elektron–Elektron-Wechselwirkung einen Beitrag von etwa <strong>1 Hartree</strong>, also rund einem Drittel der gesamten Bindungsenergie, liefert.</p>
+<p>was bereits eine vernünftige Näherung des exakten Grundzustandswerts<br />
+<span class="math notranslate nohighlight">\(E_\text{exakt} = -2{,}9037\)</span> Hartree darstellt.Damit wird deutlich, dass die Elektron–Elektron-Wechselwirkung einen Beitrag von etwa <strong>1 Hartree</strong>, also rund einem Drittel der gesamten Bindungsenergie des He-Atoms, liefert.</p>
 </section>
 </section>
 
@@ -835,7 +835,7 @@ E \approx -4 + 1{,}25 = -2{,}75\ \text{Hartree},
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#separationsansatz-hartree-produkt">Separationsansatz (Hartree-Produkt)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#erwartungwert-der-energie">Erwartungwert der Energie</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#symbolische-auswertung-mit-sympy">Symbolische Auswertung mit SymPy</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wie-grosz-ist-die-elektronelektron-wechselwirkung-koordinaten-r-1-r-2-r-12">Wie groß ist die Elektron–Elektron-Wechselwirkung? (Koordinaten <span class="math notranslate nohighlight">\((r_1,r_2,r_{12})\)</span>)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wie-grosz-ist-die-elektronelektron-wechselwirkung-eine-erste-abschatzung">Wie groß ist die Elektron–Elektron-Wechselwirkung? Eine erste Abschätzung.</a></li>
 </ul>
   </nav></div>
 
