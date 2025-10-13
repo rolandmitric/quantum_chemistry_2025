@@ -1,0 +1,988 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Elektronenkorrelation: Hylleraas‐Methode für Helium &#8212; Quantenchemie</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=efe75725" />
+    <link rel="stylesheet" type="text/css" href="_static/wide_v2.css?v=bfe64621" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'correlation_hylleraas';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Quantenchemie</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="index.html">
+                    Quantenchemie — WS 2025
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="variational_principle.html">Das Variationsprinzip</a></li>
+<li class="toctree-l1"><a class="reference internal" href="helium_atom.html">Das Helium-Atom</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/rolandmitric/quantum_chemistry_2025/main?urlpath=lab/tree/./correlation_hylleraas.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Binder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Binder logo" src="_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/rolandmitric/quantum_chemistry_2025" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/rolandmitric/quantum_chemistry_2025/edit/main/./correlation_hylleraas.ipynb" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/rolandmitric/quantum_chemistry_2025/issues/new?title=Issue%20on%20page%20%2Fcorrelation_hylleraas.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/correlation_hylleraas.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Elektronenkorrelation: Hylleraas‐Methode für Helium</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variationsansatz-von-hylleraas">Variationsansatz von Hylleraas$</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#energieerwartungswerte-fur-den-hylleraas-ansatz">Energieerwartungswerte für den Hylleraas-Ansatz</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transformation-des-volumenelements">Transformation des Volumenelements</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ergebnis-und-physikalische-bedeutung">Ergebnis und physikalische Bedeutung</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#minimize-energy">Minimize energy</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fully-general-hylleraas-calculation">Fully general Hylleraas calculation</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="elektronenkorrelation-hylleraasmethode-fur-helium">
+<h1>Elektronenkorrelation: Hylleraas‐Methode für Helium<a class="headerlink" href="#elektronenkorrelation-hylleraasmethode-fur-helium" title="Link to this heading">#</a></h1>
+<p>Das Heliumatom als das einfachste Mehr‐Elektronen‐System eignet sich gut, um den Einfluss der Elektronenkorrelation auf die Gesamtenergie zu untersuchen. Im Hartree‐Produktansatz, den wir vorher als einfachste Beschreibung der Zweielektronen-Wellenfunktion eingeführt haben,</p>
+<div class="math notranslate nohighlight">
+\[
+\Psi_0(\mathbf{r}_1,\mathbf{r}_2)=\psi(\mathbf{r}_1)\psi(\mathbf{r}_2)
+\]</div>
+<p>sind die Elektronenkoordinaten voneinander entkoppelt. Die Elektronen sind also unabhängig von einander und nicht korreliert! Die gegenseitige Abstoßung wird damit nur im Mittel beschrieben. Eine explizite Korrelation der Elektronenbewegungen fehlt, und die Energie liegt deshalb über dem exakten Wert. Hylleraas zeigte 1929, dass sich eine erhebliche Verbesserung erreichen lässt, wenn man den <strong>gegenseitigen Abstand</strong></p>
+<div class="math notranslate nohighlight">
+\[
+r_{12} = |\mathbf{r}_1 - \mathbf{r}_2|
+\]</div>
+<p>als zusätzliche Variable in den variationellen Ansatz einführt. Wir definieren nun die sogenannten <strong>Hylleraas‐Koordinaten</strong></p>
+<div class="math notranslate nohighlight">
+\[
+s = r_1 + r_2, \qquad
+t = r_1 - r_2, \qquad
+u = r_{12}
+\]</div>
+<p>die eine natürliche Grundlage für eine explizit korrelierte Beschreibung bilden.</p>
+<section id="variationsansatz-von-hylleraas">
+<h2>Variationsansatz von Hylleraas$<a class="headerlink" href="#variationsansatz-von-hylleraas" title="Link to this heading">#</a></h2>
+<p>Die Hylleraas‐Wellenfunktion wird  als Produkt eines exponentiellen Faktor mit einer polynomiellen Korrektur gewählt. Wenn man im einfachsten Fall nur den linearen Term in <span class="math notranslate nohighlight">\(u = r_{12}\)</span> behält, erhält man den folgenden Ansatz:</p>
+<div class="math notranslate nohighlight">
+\[
+\Psi(s,t,u)=e^{-\zeta s}\,(1+\gamma u).
+\]</div>
+<p>Den variationellen Parameter <span class="math notranslate nohighlight">\(\zeta\)</span> kann man als eine effektive (abgeschirmte) Kernladung aufpassen und <span class="math notranslate nohighlight">\(\gamma\)</span> ist ein Korrelationsparameter. Für <span class="math notranslate nohighlight">\(\gamma=0\)</span> reduziert sich der Ausdruck auf das unkorrelierte Hartree‐Produkt, während <span class="math notranslate nohighlight">\(\gamma\neq 0\)</span> eine explizite Abhängigkeit von <span class="math notranslate nohighlight">\(r_{12}=u\)</span> einführt.</p>
+</section>
+<section id="energieerwartungswerte-fur-den-hylleraas-ansatz">
+<h2>Energieerwartungswerte für den Hylleraas-Ansatz<a class="headerlink" href="#energieerwartungswerte-fur-den-hylleraas-ansatz" title="Link to this heading">#</a></h2>
+<p>Wir berechnen nun zunächst den Erwartungswert der Energie für den Hylleraas-Ansatz und zerlegen den in drei Beiträge nach:</p>
+<div class="math notranslate nohighlight">
+\[
+E = 
+\frac{
+\langle \Psi | \hat{H} | \Psi \rangle
+}{
+\langle \Psi | \Psi \rangle
+}
+=
+\frac{
+\langle T \rangle + \langle V_{ne} \rangle + \langle V_{ee} \rangle
+}{
+\langle \Psi | \Psi \rangle
+}.
+\]</div>
+<p>Dabei haben wir die folgenden Größen definiert:</p>
+<div class="math notranslate nohighlight">
+\[
+\langle T \rangle = -\tfrac{1}{2}\int \Psi\,\nabla^2\Psi\,d\tau, \qquad
+\langle V_{ne} \rangle = -Z\int \Psi^2\!\left(\frac{1}{r_1}+\frac{1}{r_2}\right)\!d\tau, \qquad
+\langle V_{ee} \rangle = \int \Psi^2\,\frac{1}{r_{12}}\,d\tau.
+\]</div>
+<p>Im Folgenden berechnen wir die Integrale analytisch und überprüfen unsere Ergebnisse durch symbolische Integration mit SymPy.</p>
+<div style="border:1px solid #1f6feb;border-left-width:8px;background:#f1f8ff;padding:14px 16px;border-radius:8px;">
+  <h4 style="margin:0 0 8px 0;">Mathematische Ergänzung: Transformation des Volumenelements</h4>
+  <p style="margin:0 0 8px 0;">
+    Gegeben sei eine (glatte) Transformation zwischen den karthesischen und allgemeinen (krummlinigen) Koordinaten: 
+<div class="math notranslate nohighlight">
+\[\mathbf{r} = \mathbf{r}(q_1,q_2,q_3)\]</div>
+<p>Bei einer solchen Transformation wirk lokalein kleines Koordinatenwürfelchen <span class="math notranslate nohighlight">\((dq_1\,dq_2\,dq_3\)\)</span> linear auf ein Parallelepiped im <span class="math notranslate nohighlight">\(\mathbf{r}\)</span>-Raum deformiert.</p>
+</p>
+<p style="margin:0 0 8px 0;">
+Die entsprechenden Basisvektoren, die das Parallelepiped aufspannen sind gegeben durch:
+<div class="math notranslate nohighlight">
+\[\mathbf{e}_i = \frac{\partial \mathbf{r}}{\partial q_i}.\]</div>
+<p>Das Volumen dieses Parallelepipeds lässt sich nun wie folgt ausdrücken:</p>
+<div class="math notranslate nohighlight">
+\[
+    dV = \bigl|\mathbf{e}_1 \cdot (\mathbf{e}_2 \times \mathbf{e}_3)\bigr|\,
+    dq_1\,dq_2\,dq_3
+    = 
+    \left|\det\!\left(\frac{\partial(x_1,x_2,x_3)}{\partial(q_1,q_2,q_3)}\right)\right|
+    dq_1\,dq_2\,dq_3.
+\]</div>
+</p>
+  <p style="margin:0 0 8px 0;">
+In orthogonalen krummlinigen Koordinaten mit  
+<div class="math notranslate nohighlight">
+\[h_i = \left\lVert \frac{\partial \mathbf{r}}{\partial q_i} \right\rVert\]</div>
+<p>reduziert sich dies auf das einfachere Rezept für die Transformation:</p>
+<div class="math notranslate nohighlight">
+\[
+dV = h_1\,h_2\,h_3\,dq_1\,dq_2\,dq_3,
+\]</div>
+<p>Zum Beispiel in sphärischen Polarkoordinaten gilt: <span class="math notranslate nohighlight">\(h_r = 1,\; h_\theta = r,\; h_\phi = r\sin\theta\)</span>.</p>
+</p>
+<p style="margin:0;">
+<strong>Kochrezept:</strong> Schreibe \(\mathbf{r}(q_1,q_2,q_3)\), bilde die Jacobi-Matrix 
+    \(\partial x_j/\partial q_i\) (oder die Basisvektoren \(\mathbf{e}_i\)),
+    und multipliziere \(dq_1dq_2dq_3\) mit \(|\det J|\) (bzw. \(\sqrt{\det g}\)).
+  </p>
+</div></section>
+<section id="transformation-des-volumenelements">
+<h2>Transformation des Volumenelements<a class="headerlink" href="#transformation-des-volumenelements" title="Link to this heading">#</a></h2>
+<p>Bei der Umrechnung der sechsdimensionalen Integration von <span class="math notranslate nohighlight">\((\mathbf{r}_1,\mathbf{r}_2)\)</span> auf <span class="math notranslate nohighlight">\((s,t,u)\)</span> wird das Volumenelement</p>
+<div class="math notranslate nohighlight">
+\[
+d\tau = d^3r_1\,d^3r_2
+\]</div>
+<p>durch den <strong>Jacobian</strong></p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial(r_1,r_2,r_{12})}{\partial(s,t,u)}
+\]</div>
+<p>skaliert. Nach analytischer Winkelintegration ergibt sich für das Volumenelement in Hylleraas-Koordinaten:</p>
+<div class="math notranslate nohighlight">
+\[
+d\tau = 8\pi^2\,u\,(s^2 - t^2)\,ds\,dt\,du.
+\]</div>
+</section>
+<section id="ergebnis-und-physikalische-bedeutung">
+<h2>Ergebnis und physikalische Bedeutung<a class="headerlink" href="#ergebnis-und-physikalische-bedeutung" title="Link to this heading">#</a></h2>
+<p>Bereits der einfachste Ansatz <span class="math notranslate nohighlight">\(\Psi = e^{-\zeta s}(1+\gamma u)\)</span> erfasst den Großteil der Elektronenkorrelationsenergie.<br />
+Während der unkorrelierte Hartree‐Wert etwa</p>
+<div class="math notranslate nohighlight">
+\[
+E_\text{Hartree} \approx -2.85\,\text{a.u.}
+\]</div>
+<p>beträgt, ergibt die Hylleraas‐Funktion bereits</p>
+<div class="math notranslate nohighlight">
+\[
+E_\text{Hylleraas} \approx -2.90\,\text{a.u.},
+\]</div>
+<p>was fast die gesamte Abweichung vom exakten Wert (<span class="math notranslate nohighlight">\(E_\text{exakt} = -2.9037\)</span> a.u.) erklärt.<br />
+Damit demonstriert die Hylleraas‐Methode eindrucksvoll, dass die <strong>explizite Einbeziehung von <span class="math notranslate nohighlight">\(r_{12}\)</span></strong> die korrelierte Bewegung der Elektronen korrekt beschreibt und den Energiefehler drastisch reduziert. Sie bildet den konzeptionellen Ausgangspunkt moderner <strong><span class="math notranslate nohighlight">\(r_{12}\)</span>‐ und F12‐Methoden</strong>, die bis heute in der quantenchemischen Behandlung elektronischer Korrelation eine zentrale Rolle spielen.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">sympy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sp</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sympy</span><span class="w"> </span><span class="kn">import</span> <span class="n">oo</span>
+
+<span class="c1"># symbols</span>
+<span class="n">r1</span><span class="p">,</span> <span class="n">theta1</span><span class="p">,</span> <span class="n">phi1</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;r1 theta1 phi1&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">positive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">r2</span><span class="p">,</span> <span class="n">theta2</span><span class="p">,</span> <span class="n">phi2</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;r2 theta2 phi2&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">positive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">zeta</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;zeta&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">positive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">gamma</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;gamma&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> 
+<span class="n">s</span><span class="p">,</span><span class="n">t</span><span class="p">,</span><span class="n">u</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;s t u&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">positive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">k</span><span class="p">,</span><span class="n">l</span><span class="p">,</span><span class="n">m</span><span class="p">,</span><span class="n">n</span><span class="p">,</span><span class="n">o</span><span class="p">,</span><span class="n">p</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;k l m n o p&#39;</span><span class="p">,</span> <span class="n">integer</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">positive</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">integral</span><span class="p">(</span><span class="n">expr</span><span class="p">):</span>
+    <span class="n">I1</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="n">expr</span> <span class="o">*</span> <span class="n">u</span><span class="o">*</span><span class="p">(</span><span class="n">s</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="n">t</span><span class="o">**</span><span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="o">-</span><span class="n">u</span><span class="p">,</span> <span class="n">u</span><span class="p">))</span> 
+    <span class="n">I2</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="n">I1</span><span class="p">,</span> <span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">s</span><span class="p">))</span>
+    <span class="n">I3</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="n">I2</span><span class="p">,</span> <span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">oo</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">I3</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">grad_stu</span><span class="p">(</span><span class="n">psi</span><span class="p">):</span>
+    <span class="n">A</span> <span class="o">=</span> <span class="n">psi</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">u</span><span class="p">)</span>
+    <span class="n">B</span> <span class="o">=</span> <span class="n">psi</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="o">+</span> <span class="n">psi</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+    <span class="n">C</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">s</span><span class="o">*</span><span class="n">t</span> <span class="o">+</span> <span class="n">u</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="p">((</span><span class="n">s</span><span class="o">+</span><span class="n">t</span><span class="p">)</span><span class="o">*</span><span class="n">u</span><span class="p">)</span>   
+    <span class="n">D</span> <span class="o">=</span> <span class="n">A</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">B</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">C</span><span class="o">*</span><span class="n">A</span><span class="o">*</span><span class="n">B</span>
+    <span class="n">D</span> <span class="o">=</span> <span class="n">D</span> <span class="o">+</span> <span class="n">D</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="o">-</span><span class="n">t</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">sp</span><span class="o">.</span><span class="n">simplify</span><span class="p">(</span><span class="n">D</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">psi_stu</span> <span class="o">=</span> <span class="p">[</span><span class="n">sp</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">zeta</span><span class="o">*</span><span class="n">s</span><span class="p">),</span> <span class="n">sp</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">zeta</span><span class="o">*</span><span class="n">s</span><span class="p">)</span><span class="o">*</span><span class="n">u</span><span class="p">]</span>
+
+<span class="n">D_psi</span><span class="o">=</span> <span class="p">[</span><span class="n">sp</span><span class="o">.</span><span class="n">simplify</span><span class="p">(</span><span class="n">grad_stu</span><span class="p">(</span><span class="n">psi_i</span><span class="p">))</span> <span class="k">for</span> <span class="n">psi_i</span> <span class="ow">in</span> <span class="n">psi_stu</span><span class="p">]</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">V</span><span class="p">(</span><span class="n">expr</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">u</span> <span class="o">-</span> <span class="mi">4</span><span class="o">/</span><span class="p">(</span><span class="n">s</span><span class="o">+</span><span class="n">t</span><span class="p">)</span> <span class="o">-</span> <span class="mi">4</span><span class="o">/</span><span class="p">(</span><span class="n">s</span><span class="o">-</span><span class="n">t</span><span class="p">))</span> <span class="o">*</span> <span class="n">expr</span>
+
+<span class="n">num</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">simplify</span><span class="p">(</span><span class="n">integral</span><span class="p">(((</span><span class="n">D_psi</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">/</span><span class="mi">2</span> <span class="o">+</span> <span class="n">psi_stu</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">V</span><span class="p">(</span><span class="n">psi_stu</span><span class="p">[</span><span class="mi">0</span><span class="p">]))))</span>
+
+<span class="n">den</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">simplify</span><span class="p">(</span><span class="n">integral</span><span class="p">(</span><span class="n">psi_stu</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span>
+<span class="n">E</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">simplify</span><span class="p">(</span><span class="n">num</span><span class="o">/</span><span class="n">den</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;E(zeta) =&quot;</span><span class="p">,</span> <span class="n">E</span><span class="p">)</span>
+
+<span class="n">sp</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">E</span><span class="p">,</span> <span class="n">xlim</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span><span class="n">ylim</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span> <span class="n">line_color</span><span class="o">=</span><span class="mf">3.0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>E(zeta) = zeta*(8*zeta - 27)/8
+</pre></div>
+</div>
+<img alt="_images/bd635e13a3f563290d604bff7ad5484385fdeec90681451838f7a41a9fc76c96.png" src="_images/bd635e13a3f563290d604bff7ad5484385fdeec90681451838f7a41a9fc76c96.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;sympy.plotting.plot.Plot at 0x1126245e0&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<section id="minimize-energy">
+<h3>Minimize energy<a class="headerlink" href="#minimize-energy" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">zeta_min</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">Eq</span><span class="p">(</span><span class="n">E</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">zeta</span><span class="p">),</span><span class="mi">0</span><span class="p">),</span><span class="n">zeta</span><span class="p">)</span>
+<span class="n">E</span> <span class="o">=</span> <span class="n">E</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">zeta</span><span class="p">,</span><span class="n">zeta_min</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Minimal energy = </span><span class="si">{</span><span class="nb">float</span><span class="p">(</span><span class="n">E</span><span class="p">)</span><span class="si">}</span><span class="s2"> E_H&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Minimal energy = -2.84765625 E_H
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">E_exp</span> <span class="o">=</span> <span class="o">-</span><span class="mf">2.90338583</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Relative error:&quot;</span> <span class="p">,</span><span class="mf">100.</span><span class="o">*</span><span class="p">(</span><span class="n">E</span><span class="o">-</span><span class="n">E_exp</span><span class="p">)</span><span class="o">/</span><span class="n">E_exp</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Relative error: -1.91946862260466
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="fully-general-hylleraas-calculation">
+<h2>Fully general Hylleraas calculation<a class="headerlink" href="#fully-general-hylleraas-calculation" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span><span class="p">,</span><span class="n">t</span><span class="p">,</span><span class="n">u</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;s t u&#39;</span><span class="p">,</span> <span class="n">real</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+<span class="n">zeta</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;zeta&#39;</span><span class="p">,</span> <span class="n">real</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">positive</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+<span class="n">k</span><span class="p">,</span><span class="n">l</span><span class="p">,</span><span class="n">m</span><span class="p">,</span><span class="n">n</span><span class="p">,</span><span class="n">o</span><span class="p">,</span><span class="n">p</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;k l m n o p&#39;</span><span class="p">,</span> <span class="n">real</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">positive</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">grad_stu_ij</span><span class="p">(</span><span class="n">psi_i</span><span class="p">,</span> <span class="n">psi_j</span><span class="p">):</span>
+    <span class="n">Ai</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">psi_i</span><span class="p">,</span> <span class="n">u</span><span class="p">)</span>
+    <span class="n">Bi</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">psi_i</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span> <span class="o">+</span> <span class="n">sp</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">psi_i</span><span class="p">,</span> <span class="n">t</span><span class="p">)</span>
+    <span class="n">Aj</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">psi_j</span><span class="p">,</span> <span class="n">u</span><span class="p">)</span>
+    <span class="n">Bj</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">psi_j</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span> <span class="o">+</span> <span class="n">sp</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">psi_j</span><span class="p">,</span> <span class="n">t</span><span class="p">)</span>
+    <span class="n">C</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">s</span><span class="o">*</span><span class="n">t</span> <span class="o">+</span> <span class="n">u</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="p">((</span><span class="n">s</span> <span class="o">+</span> <span class="n">t</span><span class="p">)</span><span class="o">*</span><span class="n">u</span><span class="p">)</span>
+    <span class="n">G</span> <span class="o">=</span> <span class="n">Ai</span><span class="o">*</span><span class="n">Aj</span> <span class="o">+</span> <span class="n">Bi</span><span class="o">*</span><span class="n">Bj</span> <span class="o">+</span> <span class="n">sp</span><span class="o">.</span><span class="n">Rational</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">C</span><span class="o">*</span><span class="p">(</span><span class="n">Ai</span><span class="o">*</span><span class="n">Bj</span> <span class="o">+</span> <span class="n">Aj</span><span class="o">*</span><span class="n">Bi</span><span class="p">)</span>
+    <span class="n">Gsym</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">simplify</span><span class="p">(</span><span class="n">G</span> <span class="o">+</span> <span class="n">G</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="o">-</span><span class="n">t</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">Gsym</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">integral</span><span class="p">(</span><span class="n">expr</span><span class="p">):</span>
+    <span class="n">I1</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="n">expr</span> <span class="o">*</span> <span class="n">u</span><span class="o">*</span><span class="p">(</span><span class="n">s</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="n">t</span><span class="o">**</span><span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="o">-</span><span class="n">u</span><span class="p">,</span> <span class="n">u</span><span class="p">))</span> 
+    <span class="n">I2</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="n">I1</span><span class="p">,</span> <span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">s</span><span class="p">))</span>
+    <span class="n">I3</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="n">I2</span><span class="p">,</span> <span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">oo</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">I3</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">V</span><span class="p">(</span><span class="n">psi</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">u</span> <span class="o">-</span> <span class="mi">4</span><span class="o">/</span><span class="p">(</span><span class="n">s</span><span class="o">+</span><span class="n">t</span><span class="p">)</span> <span class="o">-</span> <span class="mi">4</span><span class="o">/</span><span class="p">(</span><span class="n">s</span><span class="o">-</span><span class="n">t</span><span class="p">))</span> <span class="o">*</span> <span class="n">psi</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">psi0</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">zeta</span><span class="o">*</span><span class="n">s</span><span class="p">)</span>
+<span class="c1">#psi = [psi0, psi0*u, psi0*t**2, </span>
+<span class="c1">#       psi0*s, psi0*s**2, psi0*u**2, </span>
+<span class="c1">#       psi0*u*s, psi0*t**2*u, psi0*u**3, psi0*t**2*u**2 ]</span>
+<span class="n">psi</span> <span class="o">=</span> <span class="p">[</span><span class="n">psi0</span><span class="p">,</span> <span class="n">psi0</span><span class="o">*</span><span class="n">u</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">V</span><span class="p">(</span><span class="n">expr</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">u</span> <span class="o">-</span> <span class="mi">4</span><span class="o">/</span><span class="p">(</span><span class="n">s</span><span class="o">+</span><span class="n">t</span><span class="p">)</span> <span class="o">-</span> <span class="mi">4</span><span class="o">/</span><span class="p">(</span><span class="n">s</span><span class="o">-</span><span class="n">t</span><span class="p">))</span> <span class="o">*</span> <span class="n">expr</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">N</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">psi</span><span class="p">)</span>
+<span class="n">H</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">N</span><span class="p">,</span><span class="n">N</span><span class="p">)</span>
+<span class="n">S</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">N</span><span class="p">,</span><span class="n">N</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
+        <span class="n">S</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">integral</span><span class="p">(</span><span class="n">psi</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">*</span> <span class="n">psi</span><span class="p">[</span><span class="n">j</span><span class="p">])</span>
+        <span class="n">Tij</span> <span class="o">=</span> <span class="n">integral</span><span class="p">(</span><span class="n">grad_stu_ij</span><span class="p">(</span><span class="n">psi</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">psi</span><span class="p">[</span><span class="n">j</span><span class="p">])</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+        <span class="n">Vij</span> <span class="o">=</span> <span class="n">integral</span><span class="p">(</span><span class="n">psi</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">*</span><span class="n">V</span><span class="p">(</span><span class="n">psi</span><span class="p">[</span><span class="n">j</span><span class="p">]))</span>
+        <span class="n">H</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">Tij</span> <span class="o">+</span> <span class="n">Vij</span>
+
+<span class="n">E</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;E&#39;</span><span class="p">,</span> <span class="n">real</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+<span class="n">detH</span> <span class="o">=</span> <span class="p">(</span><span class="n">H</span><span class="o">-</span><span class="n">E</span><span class="o">*</span><span class="n">S</span><span class="p">)</span><span class="o">.</span><span class="n">det</span><span class="p">()</span>
+<span class="n">detH</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \frac{311 E^{2} - 810 E \zeta^{2} + 1952 E \zeta + 399 \zeta^{4} - 2304 \zeta^{3} + 2846 \zeta^{2}}{256 \zeta^{14}}\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">eqn</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Eq</span><span class="p">(</span><span class="n">Hmat</span><span class="o">.</span><span class="n">det</span><span class="p">(),</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">sol</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">eqn</span><span class="p">,</span><span class="n">E</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">zeta_min</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">nsolve</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">sol</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">zeta</span><span class="p">),</span> <span class="mf">.5</span><span class="p">)</span> 
+<span class="n">E_Hylleraas_2</span> <span class="o">=</span> <span class="n">sol</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">zeta</span><span class="p">,</span><span class="n">zeta_min</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">E_exp</span> <span class="o">=</span> <span class="o">-</span><span class="mf">2.90372438</span>
+<span class="n">Delta_E</span> <span class="o">=</span> <span class="n">E_Hylleraas_2</span> <span class="o">-</span> <span class="n">E_exp</span>
+<span class="n">rel_error</span> <span class="o">=</span> <span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">Delta_E</span><span class="p">)</span><span class="o">/</span><span class="nb">abs</span><span class="p">(</span><span class="n">E_exp</span><span class="p">))</span><span class="o">*</span><span class="mf">100.</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Experimental Energy = </span><span class="si">{</span><span class="n">E_exp</span><span class="si">}</span><span class="s2"> Hartree&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Theoretical (2-term Hylleraas) = </span><span class="si">{</span><span class="n">E_Hylleraas_2</span><span class="si">}</span><span class="s2"> Hartree&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Relative error = </span><span class="si">{</span><span class="n">rel_error</span><span class="si">}</span><span class="s2"> Percent&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Experimental Energy = -2.90372438 Hartree
+Theoretical (2-term Hylleraas) = -2.89112071679167 Hartree
+Relative error = 0.434051637102224 Percent
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">psi</span> <span class="o">=</span> <span class="p">[</span><span class="n">psi0</span><span class="p">,</span> <span class="n">psi0</span><span class="o">*</span><span class="n">u</span><span class="p">,</span> <span class="n">psi0</span><span class="o">*</span><span class="n">t</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> 
+       <span class="n">psi0</span><span class="o">*</span><span class="n">s</span><span class="p">,</span> <span class="n">psi0</span><span class="o">*</span><span class="n">s</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">psi0</span><span class="o">*</span><span class="n">u</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> 
+       <span class="n">psi0</span><span class="o">*</span><span class="n">u</span><span class="o">*</span><span class="n">s</span><span class="p">,</span> <span class="n">psi0</span><span class="o">*</span><span class="n">t</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">u</span><span class="p">,</span> <span class="n">psi0</span><span class="o">*</span><span class="n">u</span><span class="o">**</span><span class="mi">3</span><span class="p">,</span> <span class="n">psi0</span><span class="o">*</span><span class="n">t</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">u</span><span class="o">**</span><span class="mi">2</span> <span class="p">]</span>
+<span class="n">N</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">psi</span><span class="p">)</span>
+<span class="n">H</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">N</span><span class="p">,</span><span class="n">N</span><span class="p">)</span>
+<span class="n">S</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">N</span><span class="p">,</span><span class="n">N</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
+        <span class="n">S</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">integral</span><span class="p">(</span><span class="n">psi</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">*</span> <span class="n">psi</span><span class="p">[</span><span class="n">j</span><span class="p">])</span>
+        <span class="n">Tij</span> <span class="o">=</span> <span class="n">integral</span><span class="p">(</span><span class="n">grad_stu_ij</span><span class="p">(</span><span class="n">psi</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">psi</span><span class="p">[</span><span class="n">j</span><span class="p">])</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+        <span class="n">Vij</span> <span class="o">=</span> <span class="n">integral</span><span class="p">(</span><span class="n">psi</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">*</span><span class="n">V</span><span class="p">(</span><span class="n">psi</span><span class="p">[</span><span class="n">j</span><span class="p">]))</span>
+        <span class="n">H</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">Tij</span> <span class="o">+</span> <span class="n">Vij</span>
+
+<span class="n">E</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;E&#39;</span><span class="p">,</span> <span class="n">real</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+<span class="n">H</span> <span class="o">-</span> <span class="n">E</span><span class="o">*</span><span class="n">S</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Matrix([[-E/zeta**6 + zeta**(-4) - 27/(8*zeta**5), -35*E/(16*zeta**7) + 25/(16*zeta**5) - 13/(2*zeta**6), -3*E/(2*zeta**8) + 3/(2*zeta**6) - 87/(16*zeta**7), -3*E/zeta**7 + 2/zeta**5 - 135/(16*zeta**6), -21*E/(2*zeta**8) + 9/(2*zeta**6) - 405/(16*zeta**7), -6*E/zeta**8 + 3/zeta**6 - 253/(16*zeta**7), -245*E/(32*zeta**8) + 115/(32*zeta**6) - 39/(2*zeta**7), -77*E/(16*zeta**9) + 63/(16*zeta**7) - 16/zeta**8, -315*E/(16*zeta**9) + 105/(16*zeta**7) - 93/(2*zeta**8), -18*E/zeta**10 + 12/zeta**8 - 883/(16*zeta**9)], [-35*E/(16*zeta**7) + 25/(16*zeta**5) - 13/(2*zeta**6), -6*E/zeta**8 + 4/zeta**6 - 253/(16*zeta**7), -77*E/(16*zeta**9) + 73/(16*zeta**7) - 16/zeta**8, -245*E/(32*zeta**8) + 135/(32*zeta**6) - 39/(2*zeta**7), -245*E/(8*zeta**9) + 25/(2*zeta**7) - 273/(4*zeta**8), -315*E/(16*zeta**9) + 175/(16*zeta**7) - 93/(2*zeta**8), -24*E/zeta**9 + 12/zeta**7 - 1771/(32*zeta**8), -18*E/zeta**10 + 15/zeta**8 - 883/(16*zeta**9), -75*E/zeta**10 + 33/zeta**8 - 2565/(16*zeta**9), -2457*E/(32*zeta**11) + 1771/(32*zeta**9) - 873/(4*zeta**10)], [-3*E/(2*zeta**8) + 3/(2*zeta**6) - 87/(16*zeta**7), -77*E/(16*zeta**9) + 73/(16*zeta**7) - 16/zeta**8, -9*E/zeta**10 + 15/zeta**8 - 537/(16*zeta**9), -6*E/zeta**9 + 9/(2*zeta**7) - 609/(32*zeta**8), -27*E/zeta**10 + 15/zeta**8 - 609/(8*zeta**9), -18*E/zeta**10 + 15/zeta**8 - 883/(16*zeta**9), -693*E/(32*zeta**10) + 497/(32*zeta**8) - 64/zeta**9, -1215*E/(32*zeta**11) + 1753/(32*zeta**9) - 531/(4*zeta**10), -2457*E/(32*zeta**11) + 1743/(32*zeta**9) - 873/(4*zeta**10), -180*E/zeta**12 + 225/zeta**10 - 18945/(32*zeta**11)], [-3*E/zeta**7 + 2/zeta**5 - 135/(16*zeta**6), -245*E/(32*zeta**8) + 135/(32*zeta**6) - 39/(2*zeta**7), -6*E/zeta**9 + 9/(2*zeta**7) - 609/(32*zeta**8), -21*E/(2*zeta**8) + 11/(2*zeta**6) - 405/(16*zeta**7), -42*E/zeta**9 + 33/(2*zeta**7) - 2835/(32*zeta**8), -24*E/zeta**9 + 21/(2*zeta**7) - 1771/(32*zeta**8), -245*E/(8*zeta**9) + 205/(16*zeta**7) - 273/(4*zeta**8), -693*E/(32*zeta**10) + 455/(32*zeta**8) - 64/zeta**9, -2835*E/(32*zeta**10) + 945/(32*zeta**8) - 186/zeta**9, -90*E/zeta**11 + 51/zeta**9 - 7947/(32*zeta**10)], [-21*E/(2*zeta**8) + 9/(2*zeta**6) - 405/(16*zeta**7), -245*E/(8*zeta**9) + 25/(2*zeta**7) - 273/(4*zeta**8), -27*E/zeta**10 + 15/zeta**8 - 609/(8*zeta**9), -42*E/zeta**9 + 33/(2*zeta**7) - 2835/(32*zeta**8), -189*E/zeta**10 + 63/zeta**8 - 2835/(8*zeta**9), -108*E/zeta**10 + 39/zeta**8 - 1771/(8*zeta**9), -2205*E/(16*zeta**10) + 385/(8*zeta**8) - 273/zeta**9, -3465*E/(32*zeta**11) + 1799/(32*zeta**9) - 288/zeta**10, -14175*E/(32*zeta**11) + 4305/(32*zeta**9) - 837/zeta**10, -495*E/zeta**12 + 234/zeta**10 - 39735/(32*zeta**11)], [-6*E/zeta**8 + 3/zeta**6 - 253/(16*zeta**7), -315*E/(16*zeta**9) + 175/(16*zeta**7) - 93/(2*zeta**8), -18*E/zeta**10 + 15/zeta**8 - 883/(16*zeta**9), -24*E/zeta**9 + 21/(2*zeta**7) - 1771/(32*zeta**8), -108*E/zeta**10 + 39/zeta**8 - 1771/(8*zeta**9), -75*E/zeta**10 + 39/zeta**8 - 2565/(16*zeta**9), -2835*E/(32*zeta**10) + 1295/(32*zeta**8) - 186/zeta**9, -2457*E/(32*zeta**11) + 1911/(32*zeta**9) - 873/(4*zeta**10), -10395*E/(32*zeta**11) + 4725/(32*zeta**9) - 2535/(4*zeta**10), -735*E/(2*zeta**12) + 519/(2*zeta**10) - 31143/(32*zeta**11)], [-245*E/(32*zeta**8) + 115/(32*zeta**6) - 39/(2*zeta**7), -24*E/zeta**9 + 12/zeta**7 - 1771/(32*zeta**8), -693*E/(32*zeta**10) + 497/(32*zeta**8) - 64/zeta**9, -245*E/(8*zeta**9) + 205/(16*zeta**7) - 273/(4*zeta**8), -2205*E/(16*zeta**10) + 385/(8*zeta**8) - 273/zeta**9, -2835*E/(32*zeta**10) + 1295/(32*zeta**8) - 186/zeta**9, -108*E/zeta**10 + 45/zeta**8 - 1771/(8*zeta**9), -90*E/zeta**11 + 60/zeta**9 - 7947/(32*zeta**10), -375*E/zeta**11 + 147/zeta**9 - 23085/(32*zeta**10), -27027*E/(64*zeta**12) + 16317/(64*zeta**10) - 4365/(4*zeta**11)], [-77*E/(16*zeta**9) + 63/(16*zeta**7) - 16/zeta**8, -18*E/zeta**10 + 15/zeta**8 - 883/(16*zeta**9), -1215*E/(32*zeta**11) + 1753/(32*zeta**9) - 531/(4*zeta**10), -693*E/(32*zeta**10) + 455/(32*zeta**8) - 64/zeta**9, -3465*E/(32*zeta**11) + 1799/(32*zeta**9) - 288/zeta**10, -2457*E/(32*zeta**11) + 1911/(32*zeta**9) - 873/(4*zeta**10), -90*E/zeta**11 + 60/zeta**9 - 7947/(32*zeta**10), -180*E/zeta**12 + 234/zeta**10 - 18945/(32*zeta**11), -735*E/(2*zeta**12) + 513/(2*zeta**10) - 31143/(32*zeta**11), -15147*E/(16*zeta**13) + 17631/(16*zeta**11) - 5877/(2*zeta**12)], [-315*E/(16*zeta**9) + 105/(16*zeta**7) - 93/(2*zeta**8), -75*E/zeta**10 + 33/zeta**8 - 2565/(16*zeta**9), -2457*E/(32*zeta**11) + 1743/(32*zeta**9) - 873/(4*zeta**10), -2835*E/(32*zeta**10) + 945/(32*zeta**8) - 186/zeta**9, -14175*E/(32*zeta**11) + 4305/(32*zeta**9) - 837/zeta**10, -10395*E/(32*zeta**11) + 4725/(32*zeta**9) - 2535/(4*zeta**10), -375*E/zeta**11 + 147/zeta**9 - 23085/(32*zeta**10), -735*E/(2*zeta**12) + 513/(2*zeta**10) - 31143/(32*zeta**11), -1575*E/zeta**12 + 675/zeta**10 - 90405/(32*zeta**11), -31185*E/(16*zeta**13) + 20601/(16*zeta**11) - 4830/zeta**12], [-18*E/zeta**10 + 12/zeta**8 - 883/(16*zeta**9), -2457*E/(32*zeta**11) + 1771/(32*zeta**9) - 873/(4*zeta**10), -180*E/zeta**12 + 225/zeta**10 - 18945/(32*zeta**11), -90*E/zeta**11 + 51/zeta**9 - 7947/(32*zeta**10), -495*E/zeta**12 + 234/zeta**10 - 39735/(32*zeta**11), -735*E/(2*zeta**12) + 519/(2*zeta**10) - 31143/(32*zeta**11), -27027*E/(64*zeta**12) + 16317/(64*zeta**10) - 4365/(4*zeta**11), -15147*E/(16*zeta**13) + 17631/(16*zeta**11) - 5877/(2*zeta**12), -31185*E/(16*zeta**13) + 20601/(16*zeta**11) - 4830/zeta**12, -10935*E/(2*zeta**14) + 11715/(2*zeta**12) - 257013/(16*zeta**13)]])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">sympy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sp</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">scipy.linalg</span><span class="w"> </span><span class="kn">import</span> <span class="n">eigh</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">scipy.optimize</span><span class="w"> </span><span class="kn">import</span> <span class="n">minimize_scalar</span>
+
+<span class="n">H_fun</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">lambdify</span><span class="p">(</span><span class="n">zeta</span><span class="p">,</span> <span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">(</span><span class="n">H</span><span class="p">),</span> <span class="s1">&#39;numpy&#39;</span><span class="p">)</span>   <span class="c1"># H aus deinem Code</span>
+<span class="n">S_fun</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">lambdify</span><span class="p">(</span><span class="n">zeta</span><span class="p">,</span> <span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">(</span><span class="n">S</span><span class="p">),</span> <span class="s1">&#39;numpy&#39;</span><span class="p">)</span>   <span class="c1"># S aus deinem Code</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">ground_energy</span><span class="p">(</span><span class="n">z</span><span class="p">):</span>
+    <span class="n">H</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">H_fun</span><span class="p">(</span><span class="n">z</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
+    <span class="n">S</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">S_fun</span><span class="p">(</span><span class="n">z</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
+    <span class="n">w</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">eigh</span><span class="p">(</span><span class="n">H</span><span class="p">,</span> <span class="n">S</span><span class="p">)</span>          
+    <span class="k">return</span> <span class="n">w</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>                 
+<span class="c1"># ζ-Optimierung (Grenzen ggf. anpassen)</span>
+<span class="n">res</span> <span class="o">=</span> <span class="n">minimize_scalar</span><span class="p">(</span><span class="n">ground_energy</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;brent&#39;</span><span class="p">,</span> <span class="n">bracket</span><span class="o">=</span><span class="p">(</span><span class="mf">0.3</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">,</span> <span class="mf">6.0</span><span class="p">))</span>
+<span class="n">zeta_opt</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">x</span>
+<span class="n">E0_opt</span>   <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">fun</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;zeta_min = </span><span class="si">{</span><span class="n">zeta_opt</span><span class="si">:</span><span class="s2">.6f</span><span class="si">}</span><span class="s2">,  E_0 = </span><span class="si">{</span><span class="n">E0_opt</span><span class="si">:</span><span class="s2">.12f</span><span class="si">}</span><span class="s2"> Hartree&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>zeta_min = 1.757763,  E_0 = -2.903602728537 Hartree
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">E_exp</span> <span class="o">=</span> <span class="o">-</span><span class="mf">2.90372438</span>
+<span class="n">Delta_E</span> <span class="o">=</span> <span class="n">E0_opt</span> <span class="o">-</span> <span class="n">E_exp</span>
+<span class="n">rel_error</span> <span class="o">=</span> <span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">Delta_E</span><span class="p">)</span><span class="o">/</span><span class="nb">abs</span><span class="p">(</span><span class="n">E_exp</span><span class="p">))</span><span class="o">*</span><span class="mf">100.</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Experimental Energy = </span><span class="si">{</span><span class="n">E_exp</span><span class="si">}</span><span class="s2"> Hartree&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;10-term Hylleraas expansion = </span><span class="si">{</span><span class="n">E0_opt</span><span class="si">}</span><span class="s2"> Hartree&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Relative error = </span><span class="si">{</span><span class="n">rel_error</span><span class="si">}</span><span class="s2"> Percent&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Experimental Energy = -2.90372438 Hartree
+10-term Hylleraas expansion = -2.903602728537056 Hartree
+Relative error = 0.004189497590817224 Percent
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "rolandmitric/quantum_chemistry_2025",
+            ref: "main",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variationsansatz-von-hylleraas">Variationsansatz von Hylleraas$</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#energieerwartungswerte-fur-den-hylleraas-ansatz">Energieerwartungswerte für den Hylleraas-Ansatz</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transformation-des-volumenelements">Transformation des Volumenelements</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ergebnis-und-physikalische-bedeutung">Ergebnis und physikalische Bedeutung</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#minimize-energy">Minimize energy</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fully-general-hylleraas-calculation">Fully general Hylleraas calculation</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Roland Mitric
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
