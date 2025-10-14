@@ -514,10 +514,10 @@ E_{\text{test}} = \int dV\, \psi_{\text{test}}^{*}\,\hat{H}\,\psi_{\text{test}}
 <p>Für jede beliebige Test-Wellenfunktion gilt also die folgende Beziehung (Variationssatz):</p>
 <div class="math notranslate nohighlight">
 \[ \require{color}
-\fcolorbox{red}{#f2d5d3}{$  E[\psi_{test}]=\int dV\psi_{test}^{*}\hat{H}\psi_{test}\ge E_{0}  $}\]</div>
+\fcolorbox{red}{#f2d5d3}{$  E[\psi_{test}]=\int d\tau \psi_{test}^{*}\hat{H}\psi_{test}\ge E_{0}  $}\]</div>
 <p>mit der Normierungsbedingung:</p>
 <div class="math notranslate nohighlight">
-\[\fcolorbox{red}{#f2d5d3}{$\int dV\psi_{test}^{*}\psi_{test} = 1$}\]</div>
+\[\fcolorbox{red}{#f2d5d3}{$\int d\tau  \psi_{test}^{*}\psi_{test} = 1$}\]</div>
 </section>
 <section id="beweis-des-variationsprinzips">
 <h2>Beweis des Variationsprinzips<a class="headerlink" href="#beweis-des-variationsprinzips" title="Link to this heading">#</a></h2>
@@ -534,23 +534,23 @@ E_{\text{test}} = \int dV\, \psi_{\text{test}}^{*}\,\hat{H}\,\psi_{\text{test}}
 \[ \psi_{test}=\sum_{i}c_{i}\psi_{i} \]</div>
 <p>wobei <span class="math notranslate nohighlight">\(c_i\)</span> (unbekannte) Entwicklungskoeffizienten. Aus der Forderung, dass die Test-Wellenfunktion normiert sein muss, folgt:</p>
 <div class="math notranslate nohighlight">
-\[ \int dV\psi_{test}^{*}\psi_{test}=1\rightarrow\sum_{i}\sum_{j}c_{i}^{*}c_{j}\left[\int dV\psi_{i}^{*}\psi_{j}\right]=1 \]</div>
+\[ \int d\tau \psi_{test}^{*}\psi_{test}=1\rightarrow\sum_{i}\sum_{j}c_{i}^{*}c_{j}\left[\int d \tau \psi_{i}^{*}\psi_{j}\right]=1 \]</div>
 <p>Dies ist eine <strong>Nebenbedingung</strong>, die die Entwicklungskoeffzienten <span class="math notranslate nohighlight">\(c_i\)</span> erfüllen müssen.</p>
 <p>Wegen der Orthonormalität der exakten Eigenfunktionen des hermiteschen Operators <span class="math notranslate nohighlight">\(\hat H\)</span> gilt aber auch:</p>
 <div class="math notranslate nohighlight">
-\[ \int dV\psi_{i}^{*}\psi_{j}=\delta_{ij} \]</div>
+\[ \int d\tau \psi_{i}^{*}\psi_{j}=\delta_{ij} \]</div>
 <p>Damit vereinfacht sich die Normierungsbedingung auf:</p>
 <div class="math notranslate nohighlight">
 \[ \sum_{i}|c_{i}^{2}|=1. \]</div>
 <p>Für den Energie-Erwartungswert der Test-Wellenfunktion bekommen wir:</p>
 <div class="math notranslate nohighlight">
-\[ E[\psi_{test}]=\int dV\psi_{test}^{*}\hat{H}\psi_{test}=\sum_{i}\sum_{j}c_{i}^{*}c_{j}\int dV\psi_{i}^{*}\hat{H}\psi_{j}.  \]</div>
+\[ E[\psi_{test}]=\int d\tau \psi_{test}^{*}\hat{H}\psi_{test}=\sum_{i}\sum_{j}c_{i}^{*}c_{j}\int d\tau \psi_{i}^{*}\hat{H}\psi_{j}.  \]</div>
 <p>Wir nutzen nun wieder die Annahme, dass <span class="math notranslate nohighlight">\(\psi_i \)</span> und <span class="math notranslate nohighlight">\(\psi_j\)</span> exakte orthonormierte Eigenfunktionen sind,</p>
 <div class="math notranslate nohighlight">
 \[ \hat{H}\psi_{j}=E_{j}\psi_{j} \]</div>
 <p>Den Erwartungswert können wir damit in der folgenden Form schreiben:</p>
 <div class="math notranslate nohighlight">
-\[ E[\psi_{test}]=\sum_{i}\sum_{j}c_{i}^{*}c_{j}E_{j}\int dV\psi_{i}^{*}\psi_{j} \]</div>
+\[ E[\psi_{test}]=\sum_{i}\sum_{j}c_{i}^{*}c_{j}E_{j}\int d\tau \psi_{i}^{*}\psi_{j} \]</div>
 <p>Nun kommt wieder die Orthonormierung ins Spiel und wir erhalten:</p>
 <div class="math notranslate nohighlight">
 \[ E[\psi_{test}]=\sum_{i}|c_{i}^{2}|E_{i}. \]</div>
@@ -559,10 +559,10 @@ E_{\text{test}} = \int dV\, \psi_{\text{test}}^{*}\,\hat{H}\,\psi_{\text{test}}
 \[ E[\psi_{test}]=|c_{0}^{2}|E_{0}+|c_{1}^{2}|E_{1}+|c_{2}^{2}|E_{2}+\cdots\ge|c_{0}^{2}|E_{0}+|c_{1}^{2}|E_{0}+|c_{2}^{2}|E_{0}+\cdots \]</div>
 <div class="math notranslate nohighlight">
 \[ E[\psi_{test}]\ge E_{0}\left(|c_{0}^{2}|+|c_{1}^{2}|+|c_{2}^{2}|+\cdots\right). \]</div>
-<p>Da aber die Wellenfunktion normiert ist gilt,</p>
+<p>Da aber die Wellenfunktion normiert ist gilt auch,</p>
 <div class="math notranslate nohighlight">
 \[ \sum_{i}|c_{i}^{2}|=1 \]</div>
-<p>Damit haben wir bewiesen, dass die Energie der Test-Wellenfunktion immer größer oder gleich als die exakte Grundzustandsenergie ist. Für jede <strong>beliebige</strong> Test-Wellenfunktion:</p>
+<p>Damit haben wir gezeigt, dass die Energie der Test-Wellenfunktion immer größer oder gleich als die exakte Grundzustandsenergie ist. Für jede <strong>beliebige</strong> Test-Wellenfunktion gilt also die folgende Relation:</p>
 <div class="math notranslate nohighlight">
 \[ \require{color}\fcolorbox{red}{#f2d5d3}{$E[\psi_{test}]\ge E_{0}$} \]</div>
 </section>
@@ -583,15 +583,14 @@ E_{\text{test}} = \int dV\, \psi_{\text{test}}^{*}\,\hat{H}\,\psi_{\text{test}}
 <div class="math notranslate nohighlight">
 \[
 E[\psi_{\text{test}}] = 
-\langle \psi_{\text{test}} | \hat{H} | \psi_{\text{test}} \rangle
+\int d\tau \psi_{\text{test}}  \hat{H}  \psi_{\text{test}} 
 \]</div>
 <p><strong>mit Bezug auf die Variationsparameter</strong> <span class="math notranslate nohighlight">\(\beta_{1}, \beta_{2}, \ldots, \beta_{n}\)</span> <strong>minimiert</strong> unter der <strong>Nebenbedingung</strong>, dass der variationelle Ansatz normiert ist:</p>
 <div class="math notranslate nohighlight">
 \[
-\langle \psi_{\text{test}} |  \psi_{\text{test}} \rangle = 1
+\int d\tau \psi_{\text{test}}^*   \psi_{\text{test}}  = 1
 \]</div>
-<p>Auf diese Weise wird das Variationsprinzip zu einem <strong>Optimierungsproblem</strong>:<br />
-je besser der gewählte Ansatz den physikalischen Eigenschaften des Systems umfasst, desto näher liegt die minimale Energie an der exakten Grundzustandsenergie.</p>
+<p>Auf diese Weise wird das Variationsprinzip zu einem <strong>Optimierungsproblem</strong>: je besser der gewählte Ansatz den physikalischen Eigenschaften des Systems umfasst, desto näher liegt die minimale Energie an der exakten Grundzustandsenergie.</p>
 </section>
 </section>
 <section id="beispiel-teilchen-im-v-x-alpha-x-4-potential">

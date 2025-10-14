@@ -444,11 +444,11 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variationsansatz-von-hylleraas">Variationsansatz von Hylleraas$</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#energieerwartungswerte-fur-den-hylleraas-ansatz">Energieerwartungswerte für den Hylleraas-Ansatz</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transformation-des-volumenelements">Transformation des Volumenelements</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ergebnis-und-physikalische-bedeutung">Ergebnis und physikalische Bedeutung</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transformation-des-volumenelements">Transformation des Volumenelements</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#minimize-energy">Minimize energy</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ergebnis-und-physikalische-bedeutung">Ergebnis und physikalische Bedeutung</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fully-general-hylleraas-calculation">Fully general Hylleraas calculation</a></li>
 </ul>
             </nav>
@@ -522,7 +522,7 @@ E =
     Gegeben sei eine (glatte) Transformation zwischen den karthesischen und allgemeinen (krummlinigen) Koordinaten: 
 <div class="math notranslate nohighlight">
 \[\mathbf{r} = \mathbf{r}(q_1,q_2,q_3)\]</div>
-<p>Bei einer solchen Transformation wirk lokalein kleines Koordinatenwürfelchen <span class="math notranslate nohighlight">\((dq_1\,dq_2\,dq_3\)\)</span> linear auf ein Parallelepiped im <span class="math notranslate nohighlight">\(\mathbf{r}\)</span>-Raum deformiert.</p>
+<p>Bei einer solchen Transformation wirk lokalein kleines Koordinatenwürfelchen <span class="math notranslate nohighlight">\((dq_1\,dq_2\,dq_3)\)</span> linear auf ein Parallelepiped im <span class="math notranslate nohighlight">\(\mathbf{r}\)</span>-Raum deformiert.</p>
 </p>
 <p style="margin:0 0 8px 0;">
 Die entsprechenden Basisvektoren, die das Parallelepiped aufspannen sind gegeben durch:
@@ -552,42 +552,155 @@ dV = h_1\,h_2\,h_3\,dq_1\,dq_2\,dq_3,
 <p style="margin:0;">
 <strong>Kochrezept:</strong> Schreibe \(\mathbf{r}(q_1,q_2,q_3)\), bilde die Jacobi-Matrix 
     \(\partial x_j/\partial q_i\) (oder die Basisvektoren \(\mathbf{e}_i\)),
-    und multipliziere \(dq_1dq_2dq_3\) mit \(|\det J|\) (bzw. \(\sqrt{\det g}\)).
+    und multipliziere \(dq_1dq_2dq_3\) mit \(|\det J|\).
   </p>
 </div></section>
 <section id="transformation-des-volumenelements">
 <h2>Transformation des Volumenelements<a class="headerlink" href="#transformation-des-volumenelements" title="Link to this heading">#</a></h2>
-<p>Bei der Umrechnung der sechsdimensionalen Integration von <span class="math notranslate nohighlight">\((\mathbf{r}_1,\mathbf{r}_2)\)</span> auf <span class="math notranslate nohighlight">\((s,t,u)\)</span> wird das Volumenelement</p>
+<p>Für die Integration über die Koordinaten zweier Elektronen wird zunächst das volle sechsdimensionale Volumenelement betrachtet, das sich aus den Kugelkoordinaten des ersten Elektrons <span class="math notranslate nohighlight">\((r_1, \theta_1, \phi_1)\)</span> und den Kugelkoordinaten des relativen Ortsvektors <span class="math notranslate nohighlight">\(\mathbf{r}_{12} = \mathbf{r}_2 - \mathbf{r}_1\)</span> mit <span class="math notranslate nohighlight">\((r_{12}, \theta_{12}, \phi_{12})\)</span> zusammensetzt. Das zugehörige Volumenelement (Integratiosmaß) lautet</p>
 <div class="math notranslate nohighlight">
 \[
-d\tau = d^3r_1\,d^3r_2
+dV = \bigl(r_1^2 \sin\theta_1, dr_1, d\theta_1, d\phi_1\bigr),
+\bigl(r_{12}^2 \sin\theta_{12}, dr_{12}, d\theta_{12}, d\phi_{12}\bigr).
 \]</div>
-<p>durch den <strong>Jacobian</strong></p>
+<p>Da Hylleraas-Funktionen nur von den Abständen <span class="math notranslate nohighlight">\(r_1\)</span>, <span class="math notranslate nohighlight">\(r_2\)</span> und <span class="math notranslate nohighlight">\(r_{12}\)</span> abhängen und damit invariant gegenüber einer gemeinsamen Rotation beider Elektronen sind, treten die absoluten Winkel <span class="math notranslate nohighlight">\(\theta_1\)</span>, <span class="math notranslate nohighlight">\(\phi_1\)</span> und <span class="math notranslate nohighlight">\(\phi_{12}\)</span> nicht explizit auf. Diese Winkel können daher sofort integriert werden, was die Faktoren</p>
 <div class="math notranslate nohighlight">
 \[
-\frac{\partial(r_1,r_2,r_{12})}{\partial(s,t,u)}
+\int_0^{2\pi} d\phi_1 = 2\pi, \qquad
+\int_0^{\pi} \sin\theta_1, d\theta_1 = 2, \qquad
+\int_0^{2\pi} d\phi_{12} = 2\pi
 \]</div>
-<p>skaliert. Nach analytischer Winkelintegration ergibt sich für das Volumenelement in Hylleraas-Koordinaten:</p>
+<p>liefert. Übrig bleibt das reduzierte Volumenelement</p>
 <div class="math notranslate nohighlight">
 \[
-d\tau = 8\pi^2\,u\,(s^2 - t^2)\,ds\,dt\,du.
+dV = 8\pi^2 r_1^2 r_{12}^2 \sin\theta_{12} dr_1 dr_{12} d\theta_{12},
 \]</div>
-</section>
-<section id="ergebnis-und-physikalische-bedeutung">
-<h2>Ergebnis und physikalische Bedeutung<a class="headerlink" href="#ergebnis-und-physikalische-bedeutung" title="Link to this heading">#</a></h2>
-<p>Bereits der einfachste Ansatz <span class="math notranslate nohighlight">\(\Psi = e^{-\zeta s}(1+\gamma u)\)</span> erfasst den Großteil der Elektronenkorrelationsenergie.<br />
-Während der unkorrelierte Hartree‐Wert etwa</p>
+<p>das nur noch von <span class="math notranslate nohighlight">\(r_1\)</span>, <span class="math notranslate nohighlight">\(r_{12}\)</span> und dem Winkel <span class="math notranslate nohighlight">\(\theta_{12}\)</span> zwischen den Vektoren <span class="math notranslate nohighlight">\(\mathbf{r}_1\)</span> und <span class="math notranslate nohighlight">\(\mathbf{r}_{12}\)</span> abhängt. Es ist nun günstig den Winkel <span class="math notranslate nohighlight">\(\theta_{12}\)</span> durch den Abstand <span class="math notranslate nohighlight">\(r_2\)</span> des zweiten Elektrons vom Kern zu ersetzen. Dies erfolgt über den Kosinussatz:</p>
 <div class="math notranslate nohighlight">
 \[
-E_\text{Hartree} \approx -2.85\,\text{a.u.}
+r_2 = \sqrt{r_1^2 + r_{12}^2 + 2 r_1 r_{12} \cos\theta_{12}}.
 \]</div>
-<p>beträgt, ergibt die Hylleraas‐Funktion bereits</p>
+<p>Zur Transformation des Volumenelements wird die Jacobi-Determinante der Transformationsabbildung</p>
+<div class="math notranslate nohighlight">
+\[(r_1, r_{12}, \theta_{12}) \mapsto (r_1, r_{12}, r_2)\]</div>
+<p>benötigt. Da nur die letzte Variable transformiert wird, genügt die partielle Ableitung</p>
 <div class="math notranslate nohighlight">
 \[
-E_\text{Hylleraas} \approx -2.90\,\text{a.u.},
+\left|\frac{\partial r_2}{\partial \theta_{12}}\right|
+= \frac{r_1 r_{12}}{r_2} \sin\theta_{12},
 \]</div>
-<p>was fast die gesamte Abweichung vom exakten Wert (<span class="math notranslate nohighlight">\(E_\text{exakt} = -2.9037\)</span> a.u.) erklärt.<br />
-Damit demonstriert die Hylleraas‐Methode eindrucksvoll, dass die <strong>explizite Einbeziehung von <span class="math notranslate nohighlight">\(r_{12}\)</span></strong> die korrelierte Bewegung der Elektronen korrekt beschreibt und den Energiefehler drastisch reduziert. Sie bildet den konzeptionellen Ausgangspunkt moderner <strong><span class="math notranslate nohighlight">\(r_{12}\)</span>‐ und F12‐Methoden</strong>, die bis heute in der quantenchemischen Behandlung elektronischer Korrelation eine zentrale Rolle spielen.</p>
+<p>woraus sich</p>
+<div class="math notranslate nohighlight">
+\[
+d\theta_{12} = \frac{r_2}{r_1 r_{12} \sin\theta_{12}} dr_2
+\]</div>
+<p>ergibt. Eingesetzt in das reduzierte Volumenelement führt dies auf das Volumenelement in den neuen Koordinaten:</p>
+<div class="math notranslate nohighlight">
+\[
+dV = 8\pi^2 r_1 r_{12} r_2 dr_1 dr_{12} dr_2.
+\]</div>
+<p>Die Integrationsgrenzen ergeben sich aus den Dreiecksbeziehungen zwischen den drei Abständen:</p>
+<div class="math notranslate nohighlight">
+\[
+0 \le r_1 &lt; \infty, \qquad
+0 \le r_2 &lt; \infty, \qquad
+|r_1 - r_2| \le r_{12} \le r_1 + r_2.
+\]</div>
+<p>Die Hylleraas-Koordinaten dienen dazu, die Abhängigkeit der Zweielektronenwellenfunktion von den drei Abständen in eine besonders symmetrische Form zu bringen.
+Sie werden definiert als</p>
+<div class="math notranslate nohighlight">
+\[
+s = r_1 + r_2, \qquad
+t = r_1 - r_2, \qquad
+u = r_{12}.
+\]</div>
+<p>Diese Transformation von <span class="math notranslate nohighlight">\((r_1, r_2, r_{12})\)</span> nach <span class="math notranslate nohighlight">\((s, t, u)\)</span> ist linear in <span class="math notranslate nohighlight">\(r_1\)</span> und <span class="math notranslate nohighlight">\(r_2\)</span>, sodass die inverse Transformatin leicht berechnet werden kann:</p>
+<div class="math notranslate nohighlight">
+\[
+r_1 = \frac{s + t}{2}, \qquad
+r_2 = \frac{s - t}{2}.
+\]</div>
+<p>Das zuvor abgeleitete Volumenelement</p>
+<div class="math notranslate nohighlight">
+\[
+dV = 8\pi^2 r_1 r_2 r_{12} dr_1 dr_2 dr_{12}
+\]</div>
+<p>wird nun durch Einsetzen dieser Relationen transformiert.
+Zunächst ergibt sich die Jacobi-Determinante der Koordinatentransformation</p>
+<div class="math notranslate nohighlight">
+\[(r_1, r_2, r_{12}) \mapsto (s, t, u)\]</div>
+<p>als</p>
+<div class="math notranslate nohighlight">
+\[
+\left|\frac{\partial(r_1, r_2, r_{12})}{\partial(s, t, u)}\right|
+= \left|\begin{matrix}
+\frac{\partial r_1}{\partial s} &amp; \frac{\partial r_1}{\partial t} &amp; 0 \
+\frac{\partial r_2}{\partial s} &amp; \frac{\partial r_2}{\partial t} &amp; 0 \
+0 &amp; 0 &amp; 1
+\end{matrix}\right|
+= \frac{1}{2}.
+\]</div>
+<p>Damit gilt</p>
+<div class="math notranslate nohighlight">
+\[
+dr_1 dr_2 dr_{12} = \frac{1}{2} ds dt du.
+\]</div>
+<p>Das Volumenelement nimmt also die Form</p>
+<div class="math notranslate nohighlight">
+\[
+dV = 4\pi^2 r_1 r_2 r_{12} ds dt du.
+\]</div>
+<p>Setzt man <span class="math notranslate nohighlight">\(r_1 = (s + t)/2\)</span> und <span class="math notranslate nohighlight">\(r_2 = (s - t)/2\)</span> ein, erhält man schließlich das Volumenelement in Hylleraas-Koordinaten:</p>
+<div class="math notranslate nohighlight">
+\[
+dV = \pi^2  u (s^2 - t^2) ds, dt, du.
+\]</div>
+<p>Die Integrationsgrenzen werden wie folgt transformiert:</p>
+<div class="math notranslate nohighlight">
+\[
+0 \le u \le s, \qquad
+-u \le t \le u, \qquad
+0 \le s &lt; \infty.
+\]</div>
+<p>In diesen Koordinaten wird die Integration über die Winkel vollständig eliminiert, und das verbleibende dreidimensionale Integral über <span class="math notranslate nohighlight">\(s\)</span>, <span class="math notranslate nohighlight">\(t\)</span> und <span class="math notranslate nohighlight">\(u\)</span> ist besonders gut an die Struktur von Hylleraas-Funktionen angepasst, die typischerweise als Polynome in <span class="math notranslate nohighlight">\((s, t, u)\)</span> multipliziert mit exponentiellen Faktoren konstruiert sind.</p>
+<p>Für den Test wird die einfachste Hylleraas-Basis verwendet, nämlich nur eine einzige Funktion  :</p>
+<div class="math notranslate nohighlight">
+\[
+\psi_0(s,t,u)=e^{-\zeta s},
+\]</div>
+<p>sodass das Variationsproblem dem Hartree-Produkt mit einer  1s-artigen Radialfunktion entspricht.  In atomaren Einheiten lautet der Hamiltonoperator für Helium</p>
+<div class="math notranslate nohighlight">
+\[
+\hat H=-\tfrac12\bigl(\nabla_1^2+\nabla_2^2\bigr)-\frac{2}{r_1}-\frac{2}{r_2}+\frac{1}{r_{12}},
+\]</div>
+<p>und wegen <span class="math notranslate nohighlight">\(r_1=\tfrac{s+t}{2}\)</span> sowie <span class="math notranslate nohighlight">\(r_2=\tfrac{s-t}{2}\)</span> ergibt sich für die Elektron-Kern-Terme</p>
+<div class="math notranslate nohighlight">
+\[
+-\frac{2}{r_1}-\frac{2}{r_2}=-\frac{4}{s+t}-\frac{4}{s-t}.
+\]</div>
+<p>Der kinetische Anteil wird durch den in Hylleraas-Koordinaten hergeleiteten Differentialoperator ausgewertet. Im Code repräsentiert <code class="docutils literal notranslate"><span class="pre">grad_stu(ψ)</span></code> die Wirkung des kinetischen Operators auf eine Testfunktion.<br />
+Das Potential wird als multiplikativer Operator</p>
+<div class="math notranslate nohighlight">
+\[
+V(s,t,u)=\frac{1}{u}-\frac{4}{s+t}-\frac{4}{s-t}
+\]</div>
+<p>implementiert.</p>
+<p>Mit diesen Bausteinen ist der Zähler des Rayleigh-Quotienten</p>
+<div class="math notranslate nohighlight">
+\[
+\mathcal N(\zeta)=\int\!\Bigl[\tfrac12\,\texttt{grad\_stu}(\psi_0)+\psi_0\,V\,\psi_0\Bigr]\,dV
+=\bigl\langle\psi_0\big|\,-\tfrac12\Delta+V\,\big|\psi_0\bigr\rangle,
+\]</div>
+<p>und der Nenner lautet</p>
+<div class="math notranslate nohighlight">
+\[
+\mathcal D(\zeta)=\int\!\psi_0^2\,dV=\langle\psi_0|\psi_0\rangle. 
+\]</div>
+<p>Damit ergibt sich die Energie:</p>
+<div class="math notranslate nohighlight">
+\[
+E(\zeta)=\frac{\mathcal N(\zeta)}{\mathcal D(\zeta)}.
+\]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">sympy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sp</span>
@@ -621,7 +734,7 @@ Damit demonstriert die Hylleraas‐Methode eindrucksvoll, dass die <strong>expli
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">psi_stu</span> <span class="o">=</span> <span class="p">[</span><span class="n">sp</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">zeta</span><span class="o">*</span><span class="n">s</span><span class="p">),</span> <span class="n">sp</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">zeta</span><span class="o">*</span><span class="n">s</span><span class="p">)</span><span class="o">*</span><span class="n">u</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">psi_stu</span> <span class="o">=</span> <span class="p">[</span><span class="n">sp</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">zeta</span><span class="o">*</span><span class="n">s</span><span class="p">)]</span>
 
 <span class="n">D_psi</span><span class="o">=</span> <span class="p">[</span><span class="n">sp</span><span class="o">.</span><span class="n">simplify</span><span class="p">(</span><span class="n">grad_stu</span><span class="p">(</span><span class="n">psi_i</span><span class="p">))</span> <span class="k">for</span> <span class="n">psi_i</span> <span class="ow">in</span> <span class="n">psi_stu</span><span class="p">]</span>
 
@@ -642,8 +755,8 @@ Damit demonstriert die Hylleraas‐Methode eindrucksvoll, dass die <strong>expli
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>E(zeta) = zeta*(8*zeta - 27)/8
 </pre></div>
 </div>
-<img alt="_images/bd635e13a3f563290d604bff7ad5484385fdeec90681451838f7a41a9fc76c96.png" src="_images/bd635e13a3f563290d604bff7ad5484385fdeec90681451838f7a41a9fc76c96.png" />
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;sympy.plotting.plot.Plot at 0x1126245e0&gt;
+<img alt="_images/76a11af582bdaaa98509f4b929129efacb07f3061fde3a8919216da9f9c5972d.png" src="_images/76a11af582bdaaa98509f4b929129efacb07f3061fde3a8919216da9f9c5972d.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;sympy.plotting.plot.Plot at 0x113eac8e0&gt;
 </pre></div>
 </div>
 </div>
@@ -684,6 +797,22 @@ Damit demonstriert die Hylleraas‐Methode eindrucksvoll, dass die <strong>expli
 </div>
 </div>
 </section>
+</section>
+<section id="ergebnis-und-physikalische-bedeutung">
+<h2>Ergebnis und physikalische Bedeutung<a class="headerlink" href="#ergebnis-und-physikalische-bedeutung" title="Link to this heading">#</a></h2>
+<p>Bereits der einfachste Ansatz <span class="math notranslate nohighlight">\(\Psi = e^{-\zeta s}(1+\gamma u)\)</span> erfasst den Großteil der Elektronenkorrelationsenergie.<br />
+Während der unkorrelierte Hartree‐Wert etwa</p>
+<div class="math notranslate nohighlight">
+\[
+E_\text{Hartree} \approx -2.85\,\text{a.u.}
+\]</div>
+<p>beträgt, ergibt die Hylleraas‐Funktion bereits</p>
+<div class="math notranslate nohighlight">
+\[
+E_\text{Hylleraas} \approx -2.90\,\text{a.u.},
+\]</div>
+<p>was fast die gesamte Abweichung vom exakten Wert (<span class="math notranslate nohighlight">\(E_\text{exakt} = -2.9037\)</span> a.u.) erklärt.<br />
+Damit demonstriert die Hylleraas‐Methode eindrucksvoll, dass die <strong>explizite Einbeziehung von <span class="math notranslate nohighlight">\(r_{12}\)</span></strong> die korrelierte Bewegung der Elektronen korrekt beschreibt und den Energiefehler drastisch reduziert. Sie bildet den konzeptionellen Ausgangspunkt moderner <strong><span class="math notranslate nohighlight">\(r_{12}\)</span>‐ und F12‐Methoden</strong>, die bis heute in der quantenchemischen Behandlung elektronischer Korrelation eine zentrale Rolle spielen.</p>
 </section>
 <section id="fully-general-hylleraas-calculation">
 <h2>Fully general Hylleraas calculation<a class="headerlink" href="#fully-general-hylleraas-calculation" title="Link to this heading">#</a></h2>
@@ -925,11 +1054,11 @@ Relative error = 0.004189497590817224 Percent
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variationsansatz-von-hylleraas">Variationsansatz von Hylleraas$</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#energieerwartungswerte-fur-den-hylleraas-ansatz">Energieerwartungswerte für den Hylleraas-Ansatz</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transformation-des-volumenelements">Transformation des Volumenelements</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ergebnis-und-physikalische-bedeutung">Ergebnis und physikalische Bedeutung</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transformation-des-volumenelements">Transformation des Volumenelements</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#minimize-energy">Minimize energy</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ergebnis-und-physikalische-bedeutung">Ergebnis und physikalische Bedeutung</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fully-general-hylleraas-calculation">Fully general Hylleraas calculation</a></li>
 </ul>
   </nav></div>
