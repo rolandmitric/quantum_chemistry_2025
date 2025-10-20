@@ -3,4 +3,5 @@ root: index
 chapters:
   - file: introduction
   - file: variational_principle
+  - file: convergence_variational_principle
   - file: helium_atom
