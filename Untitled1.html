@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Introduction &#8212; Quantenchemie</title>
+    <title>&lt;no title&gt; &#8212; Quantenchemie</title>
   
   
   
@@ -59,13 +59,9 @@
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'introduction';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Untitled1';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Das Variationsprinzip" href="variational_principle.html" />
-    <link rel="prev" title="Quantenchemie — WS 2025" href="index.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -128,6 +124,8 @@
       
       
       
+        
+      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -177,8 +175,8 @@
                 </a>
             </li>
         </ul>
-        <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Introduction</a></li>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="variational_principle.html">Das Variationsprinzip</a></li>
 <li class="toctree-l1"><a class="reference internal" href="convergence_variational_principle.html">Über die Konvergenz des linearen Variationsprinzips: Verschachtelungs Satz</a></li>
 <li class="toctree-l1"><a class="reference internal" href="helium_atom.html">Das Helium-Atom</a></li>
@@ -236,7 +234,7 @@
       
       
       
-      <li><a href="https://mybinder.org/v2/gh/rolandmitric/quantum_chemistry_2025/main?urlpath=lab/tree/./introduction.ipynb" target="_blank"
+      <li><a href="https://mybinder.org/v2/gh/rolandmitric/quantum_chemistry_2025/main?urlpath=lab/tree/./Untitled1.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch on Binder"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -302,7 +300,7 @@
       
       
       
-      <li><a href="https://github.com/rolandmitric/quantum_chemistry_2025/edit/main/./introduction.ipynb" target="_blank"
+      <li><a href="https://github.com/rolandmitric/quantum_chemistry_2025/edit/main/./Untitled1.ipynb" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -319,7 +317,7 @@
       
       
       
-      <li><a href="https://github.com/rolandmitric/quantum_chemistry_2025/issues/new?title=Issue%20on%20page%20%2Fintroduction.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/rolandmitric/quantum_chemistry_2025/issues/new?title=Issue%20on%20page%20%2FUntitled1.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -349,7 +347,7 @@
       
       
       
-      <li><a href="_sources/introduction.ipynb" target="_blank"
+      <li><a href="_sources/Untitled1.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -433,7 +431,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Introduction</h1>
+    <h1><no title></h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -442,9 +440,9 @@ document.write(`
                 <h2> Contents </h2>
             </div>
             <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vom-der-quantenmechanik-zur-molekularen-schrodingergleichung">Vom der Quantenmechanik zur molekularen Schrödingergleichung</a></li>
+                <ul class="simple visible nav section-nav flex-column">
 </ul>
+
             </nav>
         </div>
     </div>
@@ -455,56 +453,7 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="introduction">
-<h1>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h1>
-<p>Diese Vorlesung führt in die Grundlagen und Methoden der <strong>Quantenchemie</strong> ein.</p>
-<p>Die <strong>Quantenchemie</strong>, auch <strong>molekulare Quantenmechanik</strong> genannt, ist ein Teilgebiet der physikalischen Chemie, das die Quantenmechanik auf molekulare Systeme anwendet. Sie bildet die theoretische Grundlage unseres Verständnisses von zentralen chemischen Konzepten wie <strong>molekularer Struktur</strong>, <strong>chemischer Bindung</strong>, <strong>Reaktivität</strong> und <strong>Spektroskopie</strong>.</p>
-<p>Das <strong>Hauptziel der Quantenchemie</strong> besteht darin, die <strong>physikalischen und chemischen Eigenschaften</strong> von Molekülen und Materialien <strong>aus den quantenmechanischen Grundgleichungen vorherzusagen</strong>. Dazu werden Näherungsverfahren entwickelt, die die sehr komplexen Vielteilchengleichungen der Quantenmechanik mathematisch und numerisch behandelbar machen. Diese Methoden reichen von der Hartree-Fock-Theorie (HF) über Dichtefunktionalverfahrenn(DFT) bis hin zu hochgenauen Korrelationsmethoden (CI) und erlauben es, Strukturen, Energien, Spektren und Reaktionspfade mit hoher Genauigkeit zu berechnen.</p>
-<p>Neben der Beschreibung stationärer Zustände gewinnt auch die <strong>zeitabhängige Quantenchemie</strong> an Bedeutung. Sie ermöglicht die Untersuchung von <strong>elektronischer Dynamik</strong>, <strong>nichtadiabatischen Übergängen</strong> und <strong>lichtinduzierten Reaktionen</strong>, die für Photochemie, Katalyse und Materialwissenschaften von zentraler Relevanz sind.</p>
-<p>Die Quantenchemie verbindet also die fundamentalen Prinzipien der Quantenphysik mit der
-Welt chemischer Phänomene. Sie eröffnet die Möglichkeit, die Eigenschaften komplexer Moleküle und Materialien bereits am Computer zu verstehen und gezielt vorherzusagen.</p>
-<div style="display: flex; align-items: flex-start; gap: 1.5rem;">
-  <figure style="margin: 0;">
-<img src="https://upload.wikimedia.org/wikipedia/commons/5/50/Paul_Dirac%2C_1933.jpg"
-     alt="Paul Dirac, 1933"
-     style="width:540px; border-radius:8px; box-shadow:0 0 6px rgba(0,0,0,0.2);">
-    <figcaption style="text-align:center; font-size:0.9em; color:#555;">Paul A. M. Dirac   (1902 – 1984)</figcaption>
-  </figure>
-  <blockquote style="font-size:1.05em; line-height:1.4; color:#222; margin:0;">
-    The underlying physical laws necessary for the mathematical theory of a large part of physics and the <b>whole of chemistry</b> are thus completely known, and the difficulty is only that the exact application of these laws leads to equations much too complicated to be soluble. It therefore becomes desirable that approximate practical methods of applying quantum mechanics should be developed, which can lead to an explanation of the main features of complex atomic systems without too much computation.
-    <br><br>
-    <span style="font-size:0.9em; color:#555;">— P. A. M. Dirac (1929)</span>
-  </blockquote>
-</div>
-<p style="font-size:0.8em; color:#777; margin-top:0.8rem;">
-Image source: <a href="https://commons.wikimedia.org/wiki/File:Paul_Dirac,_1933.jpg">Wikimedia Commons</a>, public domain.
-</p>
-<section id="vom-der-quantenmechanik-zur-molekularen-schrodingergleichung">
-<h2>Vom der Quantenmechanik zur molekularen Schrödingergleichung<a class="headerlink" href="#vom-der-quantenmechanik-zur-molekularen-schrodingergleichung" title="Link to this heading">#</a></h2>
-<p>Das obere berühmte Zitat von Dirac markiert den Ausgangspunkt und die Geburstsstunde der Quantenchemie. Unsere Aufgabe besteht nun darin zu verstehen, wie sich aus den bekannten Prinzipien der Quantenmechanik die Struktur, Reaktivität und andere Eigenschaften von Molekülen ableiten lässt.</p>
-<p>Im Zentrum der Quantenchemie steht die (stationäre) <strong>Schrödingergleichung</strong>, die uns Energie und stationäre Zustände eines molekularen Systems liefert. Diese hat die Form eines Eigenwertproblems:</p>
-<div class="math notranslate nohighlight">
-\[
-\hat H \Psi = E \Psi .
-\]</div>
-<p>Hier ist <span class="math notranslate nohighlight">\(\hat H\)</span> der <strong>Hamiltonoperator</strong> und <span class="math notranslate nohighlight">\(\Psi\)</span> die <strong>Wellenfunktion</strong>, die <strong>alle</strong>  Informationen über das System enthält.</p>
-<p>Für ein allgemeines Molekül, das eine bestimmte Anzahl von Elektronen und Kernen beinhaltet lautet der nichtrelativistische Hamiltonoperator (in atomaren Einheiten):</p>
-<div class="math notranslate nohighlight">
-\[
-\hat H = 
--\sum_i \frac{1}{2}\nabla_i^2 
-- \sum_A \frac{1}{2M_A}\nabla_A^2
-- \sum_{iA}\frac{Z_A}{r_{iA}}
-+ \sum_{i&lt;j}\frac{1}{r_{ij}}
-+ \sum_{A&lt;B}\frac{Z_A Z_B}{R_{AB}} .
-\]</div>
-<p>Die einzelnen Terme beschreiben (in dieser Reihenfolge) die <strong>kinetische Energie der Elektronen</strong>, die <strong>kinetische Energie der Kerne</strong>, die <strong>Anziehung zwischen Elektronen und Kernen</strong>, die <strong>Elektron–Elektron-Abstoßung</strong> sowie die <strong>Kern–Kern-Abstoßung</strong>.</p>
-<p>Obwohl diese Gleichung einfach aussieht, ist ihre exakte Lösung bereits für das einfachste Moleküle (z. B. H<span class="math notranslate nohighlight">\(_2^+\)</span> oder H<span class="math notranslate nohighlight">\(_2\)</span>) nicht mehr analytisch möglich.<br />
-Die zentrale Herausforderung der Quantenchemie besteht daher in der Entwicklung von <strong>Näherungen</strong>: Wir müssen Ansätze für die Wellenfunktionen konstruieren, die die wesentlichen physikalischen Effekte erfassen, aber noch berechenbar bleiben.</p>
-<p>Als erste Näherungsmethode zur Lösung der Schrödingergleichung entwickeln wir im Folgenden das sogenannte <strong>Variationsprinzip</strong>.  Aus diesem Prinzip lassen sich viele praktischen Methoden der Elektronenstrukturtheorie vom Hartree-Fock-Verfahren bis zu modernen korrelierten Ansätzen als systematische Verfeinerungen ableiten.</p>
-</section>
-</section>
-
+  
     <script type="text/x-thebe-config">
     {
         requestKernel: true,
@@ -535,24 +484,6 @@ Die zentrale Herausforderung der Quantenchemie besteht daher in der Entwicklung 
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="index.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Quantenchemie — WS 2025</p>
-      </div>
-    </a>
-    <a class="right-next"
-       href="variational_principle.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Das Variationsprinzip</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
 </div>
                 </footer>
               
@@ -568,9 +499,9 @@ Die zentrale Herausforderung der Quantenchemie besteht daher in der Entwicklung 
     <i class="fa-solid fa-list"></i> Contents
   </div>
   <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vom-der-quantenmechanik-zur-molekularen-schrodingergleichung">Vom der Quantenmechanik zur molekularen Schrödingergleichung</a></li>
+    <ul class="simple visible nav section-nav flex-column">
 </ul>
+
   </nav></div>
 
 </div></div>

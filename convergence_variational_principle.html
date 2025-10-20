@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Introduction &#8212; Quantenchemie</title>
+    <title>Über die Konvergenz des linearen Variationsprinzips: Verschachtelungs Satz &#8212; Quantenchemie</title>
   
   
   
@@ -61,11 +61,11 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'introduction';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'convergence_variational_principle';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Das Variationsprinzip" href="variational_principle.html" />
-    <link rel="prev" title="Quantenchemie — WS 2025" href="index.html" />
+    <link rel="next" title="Das Helium-Atom" href="helium_atom.html" />
+    <link rel="prev" title="Das Variationsprinzip" href="variational_principle.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -178,9 +178,9 @@
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="variational_principle.html">Das Variationsprinzip</a></li>
-<li class="toctree-l1"><a class="reference internal" href="convergence_variational_principle.html">Über die Konvergenz des linearen Variationsprinzips: Verschachtelungs Satz</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Über die Konvergenz des linearen Variationsprinzips: Verschachtelungs Satz</a></li>
 <li class="toctree-l1"><a class="reference internal" href="helium_atom.html">Das Helium-Atom</a></li>
 </ul>
 
@@ -236,7 +236,7 @@
       
       
       
-      <li><a href="https://mybinder.org/v2/gh/rolandmitric/quantum_chemistry_2025/main?urlpath=lab/tree/./introduction.ipynb" target="_blank"
+      <li><a href="https://mybinder.org/v2/gh/rolandmitric/quantum_chemistry_2025/main?urlpath=lab/tree/./convergence_variational_principle.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch on Binder"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -302,7 +302,7 @@
       
       
       
-      <li><a href="https://github.com/rolandmitric/quantum_chemistry_2025/edit/main/./introduction.ipynb" target="_blank"
+      <li><a href="https://github.com/rolandmitric/quantum_chemistry_2025/edit/main/./convergence_variational_principle.ipynb" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -319,7 +319,7 @@
       
       
       
-      <li><a href="https://github.com/rolandmitric/quantum_chemistry_2025/issues/new?title=Issue%20on%20page%20%2Fintroduction.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/rolandmitric/quantum_chemistry_2025/issues/new?title=Issue%20on%20page%20%2Fconvergence_variational_principle.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -349,7 +349,7 @@
       
       
       
-      <li><a href="_sources/introduction.ipynb" target="_blank"
+      <li><a href="_sources/convergence_variational_principle.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -433,7 +433,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Introduction</h1>
+    <h1>Über die Konvergenz des linearen Variationsprinzips: Verschachtelungs Satz</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -443,7 +443,8 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vom-der-quantenmechanik-zur-molekularen-schrodingergleichung">Vom der Quantenmechanik zur molekularen Schrödingergleichung</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wie-andert-sich-die-energie-des-grundzustandes-wenn-wir-eine-zweite-basisfunktion-hinzufugen">Wie ändert sich die Energie des Grundzustandes wenn wir eine zweite Basisfunktion hinzufügen?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#allgemeine-formulierung-des-verschachtelungssatzes">Allgemeine Formulierung des Verschachtelungssatzes</a></li>
 </ul>
             </nav>
         </div>
@@ -455,53 +456,118 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="introduction">
-<h1>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h1>
-<p>Diese Vorlesung führt in die Grundlagen und Methoden der <strong>Quantenchemie</strong> ein.</p>
-<p>Die <strong>Quantenchemie</strong>, auch <strong>molekulare Quantenmechanik</strong> genannt, ist ein Teilgebiet der physikalischen Chemie, das die Quantenmechanik auf molekulare Systeme anwendet. Sie bildet die theoretische Grundlage unseres Verständnisses von zentralen chemischen Konzepten wie <strong>molekularer Struktur</strong>, <strong>chemischer Bindung</strong>, <strong>Reaktivität</strong> und <strong>Spektroskopie</strong>.</p>
-<p>Das <strong>Hauptziel der Quantenchemie</strong> besteht darin, die <strong>physikalischen und chemischen Eigenschaften</strong> von Molekülen und Materialien <strong>aus den quantenmechanischen Grundgleichungen vorherzusagen</strong>. Dazu werden Näherungsverfahren entwickelt, die die sehr komplexen Vielteilchengleichungen der Quantenmechanik mathematisch und numerisch behandelbar machen. Diese Methoden reichen von der Hartree-Fock-Theorie (HF) über Dichtefunktionalverfahrenn(DFT) bis hin zu hochgenauen Korrelationsmethoden (CI) und erlauben es, Strukturen, Energien, Spektren und Reaktionspfade mit hoher Genauigkeit zu berechnen.</p>
-<p>Neben der Beschreibung stationärer Zustände gewinnt auch die <strong>zeitabhängige Quantenchemie</strong> an Bedeutung. Sie ermöglicht die Untersuchung von <strong>elektronischer Dynamik</strong>, <strong>nichtadiabatischen Übergängen</strong> und <strong>lichtinduzierten Reaktionen</strong>, die für Photochemie, Katalyse und Materialwissenschaften von zentraler Relevanz sind.</p>
-<p>Die Quantenchemie verbindet also die fundamentalen Prinzipien der Quantenphysik mit der
-Welt chemischer Phänomene. Sie eröffnet die Möglichkeit, die Eigenschaften komplexer Moleküle und Materialien bereits am Computer zu verstehen und gezielt vorherzusagen.</p>
-<div style="display: flex; align-items: flex-start; gap: 1.5rem;">
-  <figure style="margin: 0;">
-<img src="https://upload.wikimedia.org/wikipedia/commons/5/50/Paul_Dirac%2C_1933.jpg"
-     alt="Paul Dirac, 1933"
-     style="width:540px; border-radius:8px; box-shadow:0 0 6px rgba(0,0,0,0.2);">
-    <figcaption style="text-align:center; font-size:0.9em; color:#555;">Paul A. M. Dirac   (1902 – 1984)</figcaption>
-  </figure>
-  <blockquote style="font-size:1.05em; line-height:1.4; color:#222; margin:0;">
-    The underlying physical laws necessary for the mathematical theory of a large part of physics and the <b>whole of chemistry</b> are thus completely known, and the difficulty is only that the exact application of these laws leads to equations much too complicated to be soluble. It therefore becomes desirable that approximate practical methods of applying quantum mechanics should be developed, which can lead to an explanation of the main features of complex atomic systems without too much computation.
-    <br><br>
-    <span style="font-size:0.9em; color:#555;">— P. A. M. Dirac (1929)</span>
-  </blockquote>
-</div>
-<p style="font-size:0.8em; color:#777; margin-top:0.8rem;">
-Image source: <a href="https://commons.wikimedia.org/wiki/File:Paul_Dirac,_1933.jpg">Wikimedia Commons</a>, public domain.
-</p>
-<section id="vom-der-quantenmechanik-zur-molekularen-schrodingergleichung">
-<h2>Vom der Quantenmechanik zur molekularen Schrödingergleichung<a class="headerlink" href="#vom-der-quantenmechanik-zur-molekularen-schrodingergleichung" title="Link to this heading">#</a></h2>
-<p>Das obere berühmte Zitat von Dirac markiert den Ausgangspunkt und die Geburstsstunde der Quantenchemie. Unsere Aufgabe besteht nun darin zu verstehen, wie sich aus den bekannten Prinzipien der Quantenmechanik die Struktur, Reaktivität und andere Eigenschaften von Molekülen ableiten lässt.</p>
-<p>Im Zentrum der Quantenchemie steht die (stationäre) <strong>Schrödingergleichung</strong>, die uns Energie und stationäre Zustände eines molekularen Systems liefert. Diese hat die Form eines Eigenwertproblems:</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="uber-die-konvergenz-des-linearen-variationsprinzips-verschachtelungs-satz">
+<h1>Über die Konvergenz des linearen Variationsprinzips: Verschachtelungs Satz<a class="headerlink" href="#uber-die-konvergenz-des-linearen-variationsprinzips-verschachtelungs-satz" title="Link to this heading">#</a></h1>
+<p>Der <strong>Verschachtelungs Satz (auch Satz von MacDonald)</strong> beschreibt das Konvergenzverhalten der variationell bestimmten Energienäherungen, wenn die Größe der verwendeten Basis systematisch erweitert wird. Er liefert die mathematische Grundlage für die Erwartung, dass eine fortlaufende Erweiterung der Basis die angenäherte Grundzustandsenergie erniedrigt und dass die Näherungen für angeregte Zustände ineinander verschachtelt („interlaced“) sind.</p>
+<p>Sei <span class="math notranslate nohighlight">\(\{\phi_i\}\)</span> eine Menge normierter, linear unabhängiger Basisfunktionen.<br />
+Für <span class="math notranslate nohighlight">\(n = 1\)</span> ergibt sich wie wir schon an Beispielen gesehen haben die einfachste Variationsabschätzung der Energie zu</p>
+<div class="math notranslate nohighlight">
+\[\require{color}\fcolorbox{red}{#f2d5d3}{$\displaystyle
+\varepsilon_1^{(1)} = \langle \phi_1 | \hat H | \phi_1 \rangle \ge E_0
+$}\]</div>
+<p>wobei <span class="math notranslate nohighlight">\(E_0\)</span> die exakte Grundzustandsenergie des Systems bezeichnet.<br />
+Das Variationsprinzip garantiert, dass jede normierte Testfunktion eine obere Schranke für <span class="math notranslate nohighlight">\(E_0\)</span> liefert.</p>
+<section id="wie-andert-sich-die-energie-des-grundzustandes-wenn-wir-eine-zweite-basisfunktion-hinzufugen">
+<h2>Wie ändert sich die Energie des Grundzustandes wenn wir eine zweite Basisfunktion hinzufügen?<a class="headerlink" href="#wie-andert-sich-die-energie-des-grundzustandes-wenn-wir-eine-zweite-basisfunktion-hinzufugen" title="Link to this heading">#</a></h2>
+<p>Wir erweitern nun die Basis zu <span class="math notranslate nohighlight">\(\{\phi_1, \phi_2\}\)</span>.<br />
+Sind die Funktionen nicht orthogonal, können sie (z. B. durch das Gram–Schmidt-Verfahren) orthogonalisiert werden, sodass</p>
 <div class="math notranslate nohighlight">
 \[
-\hat H \Psi = E \Psi .
+\langle \phi_1 | \phi_2 \rangle = 0.
 \]</div>
-<p>Hier ist <span class="math notranslate nohighlight">\(\hat H\)</span> der <strong>Hamiltonoperator</strong> und <span class="math notranslate nohighlight">\(\Psi\)</span> die <strong>Wellenfunktion</strong>, die <strong>alle</strong>  Informationen über das System enthält.</p>
-<p>Für ein allgemeines Molekül, das eine bestimmte Anzahl von Elektronen und Kernen beinhaltet lautet der nichtrelativistische Hamiltonoperator (in atomaren Einheiten):</p>
+<p>Die Variationsenergien erhält man durch Lösung der <strong>säkulären Gleichung</strong></p>
 <div class="math notranslate nohighlight">
-\[
-\hat H = 
--\sum_i \frac{1}{2}\nabla_i^2 
-- \sum_A \frac{1}{2M_A}\nabla_A^2
-- \sum_{iA}\frac{Z_A}{r_{iA}}
-+ \sum_{i&lt;j}\frac{1}{r_{ij}}
-+ \sum_{A&lt;B}\frac{Z_A Z_B}{R_{AB}} .
+\[\begin{split}\require{color}\fcolorbox{red}{#f2d5d3}{$\displaystyle
+\det
+\begin{pmatrix}
+\langle \phi_1 | \hat H | \phi_1 \rangle - E &amp; \langle \phi_1 | \hat H | \phi_2 \rangle \\
+\langle \phi_2 | \hat H | \phi_1 \rangle &amp; \langle \phi_2 | \hat H | \phi_2 \rangle - E
+\end{pmatrix}
+= 0
+$}\end{split}\]</div>
+<p>Mit den Abkürzungen<br />
+<span class="math notranslate nohighlight">\(\varepsilon_1^{(1)} = \langle \phi_1 | \hat H | \phi_1 \rangle\)</span>,<br />
+<span class="math notranslate nohighlight">\(\varepsilon_2^{(1)} = \langle \phi_2 | \hat H | \phi_2 \rangle\)</span>,<br />
+und <span class="math notranslate nohighlight">\(H_{12} = \langle \phi_1 | \hat H | \phi_2 \rangle\)</span><br />
+ergibt sich dabei  das quadratische Polynom</p>
+<div class="math notranslate nohighlight">
+\[\require{color}\fcolorbox{red}{#f2d5d3}{$\displaystyle
+P^{(2)}(E) = (\varepsilon_1^{(1)} - E)(\varepsilon_2^{(1)} - E) - |H_{12}|^2 = 0
+$}\]</div>
+<p>Die beiden Wurzeln <span class="math notranslate nohighlight">\(\varepsilon_1^{(2)}\)</span> und <span class="math notranslate nohighlight">\(\varepsilon_2^{(2)}\)</span> sind die verbesserten Energieabschätzungen.</p>
+<p>Für <span class="math notranslate nohighlight">\(E = \varepsilon_1^{(1)}\)</span> gilt<br />
+<span class="math notranslate nohighlight">\(P^{(2)}(\varepsilon_1^{(1)}) = -|H_{12}|^2 &lt; 0\)</span>,<br />
+während für <span class="math notranslate nohighlight">\(E \to \pm \infty\)</span> gilt <span class="math notranslate nohighlight">\(P^{(2)}(E) \to +\infty\)</span>.<br />
+Daraus folgt, dass eine Nullstelle unterhalb und eine oberhalb von <span class="math notranslate nohighlight">\(\varepsilon_1^{(1)}\)</span> liegt, also</p>
+<div class="math notranslate nohighlight">
+\[\require{color}\fcolorbox{red}{#f2d5d3}{$\displaystyle
+\varepsilon_1^{(2)} \le \varepsilon_1^{(1)} \le \varepsilon_2^{(2)}
+$}\]</div>
+<p>Die niedrigste Eigenenergie im zweidimensionalen Unterraum liefert somit eine bessere (d. h. tiefere) Näherung von  <span class="math notranslate nohighlight">\(E_0\)</span>!</p>
+<p>Dies können wir nun induktiv fortsetzen. Wir betrachten nun explizit den Fall <span class="math notranslate nohighlight">\(n=\)</span>
+und fügen nun eine dritte orthogonale Funktion <span class="math notranslate nohighlight">\(\phi_3\)</span> hinzu.<br />
+Anstatt der ursprünglichen Basis <span class="math notranslate nohighlight">\(\{\phi_1, \phi_2, \phi_3\}\)</span> können wir die ersten beiden Funktionen durch ihre „optimalen“ Linearkombinationen ersetzen, die dem bereits diagonalisierten Zweizustandsproblem entsprechen.
+Die effektive Basis lautet dann <span class="math notranslate nohighlight">\(\{\tilde\phi_1, \tilde\phi_2, \phi_3\}\)</span>, und der Hamiltonoperator hat die Matrixdarstellung</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\mathbf{H}^{(3)} =
+\begin{pmatrix}
+\varepsilon_1^{(2)} &amp; 0 &amp; H_{13} \\
+0 &amp; \varepsilon_2^{(2)} &amp; H_{23} \\
+H_{13} &amp; H_{23} &amp; \varepsilon_3^{(1)}
+\end{pmatrix}.
+\end{split}\]</div>
+<p>Die säkuläre Determinante ist nun ein kubisches Polynom:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\displaystyle
+P^{(3)}(E) =
+\det
+\begin{pmatrix}
+\varepsilon_1^{(2)} - E &amp; 0 &amp; H_{13} \\
+0 &amp; \varepsilon_2^{(2)} - E &amp; H_{23} \\
+H_{13} &amp; H_{23} &amp; \varepsilon_3^{(1)} - E
+\end{pmatrix}
+= 0
+\end{split}\]</div>
+<p>Durch Ausmultiplizieren erhält man</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle
+P^{(3)}(E) =
+(\varepsilon_1^{(2)} - E)(\varepsilon_2^{(2)} - E)(\varepsilon_3^{(1)} - E)
+- (\varepsilon_1^{(2)} - E)H_{23}^2
+- (\varepsilon_2^{(2)} - E)H_{13}^2
 \]</div>
-<p>Die einzelnen Terme beschreiben (in dieser Reihenfolge) die <strong>kinetische Energie der Elektronen</strong>, die <strong>kinetische Energie der Kerne</strong>, die <strong>Anziehung zwischen Elektronen und Kernen</strong>, die <strong>Elektron–Elektron-Abstoßung</strong> sowie die <strong>Kern–Kern-Abstoßung</strong>.</p>
-<p>Obwohl diese Gleichung einfach aussieht, ist ihre exakte Lösung bereits für das einfachste Moleküle (z. B. H<span class="math notranslate nohighlight">\(_2^+\)</span> oder H<span class="math notranslate nohighlight">\(_2\)</span>) nicht mehr analytisch möglich.<br />
-Die zentrale Herausforderung der Quantenchemie besteht daher in der Entwicklung von <strong>Näherungen</strong>: Wir müssen Ansätze für die Wellenfunktionen konstruieren, die die wesentlichen physikalischen Effekte erfassen, aber noch berechenbar bleiben.</p>
-<p>Als erste Näherungsmethode zur Lösung der Schrödingergleichung entwickeln wir im Folgenden das sogenannte <strong>Variationsprinzip</strong>.  Aus diesem Prinzip lassen sich viele praktischen Methoden der Elektronenstrukturtheorie vom Hartree-Fock-Verfahren bis zu modernen korrelierten Ansätzen als systematische Verfeinerungen ableiten.</p>
+<p>Die drei Wurzeln von <span class="math notranslate nohighlight">\(P^{(3)}(E)\)</span>, bezeichnet mit <span class="math notranslate nohighlight">\(\varepsilon_1^{(3)} \le \varepsilon_2^{(3)} \le \varepsilon_3^{(3)}\)</span>, liefern die Energieabschätzungen im dreidimensionalen Unterraum.</p>
+<p>Aus dem Vorzeichenverlauf von <span class="math notranslate nohighlight">\(P^{(3)}(E)\)</span> ergibt sich die <strong>Verschachtelungseigenschaft</strong></p>
+<div class="math notranslate nohighlight">
+\[\require{color}\fcolorbox{red}{#f2d5d3}{$\displaystyle
+\varepsilon_1^{(3)} \le \varepsilon_1^{(2)} \le
+\varepsilon_2^{(3)} \le \varepsilon_2^{(2)} \le
+\varepsilon_3^{(3)}
+$}\]</div>
+</section>
+<section id="allgemeine-formulierung-des-verschachtelungssatzes">
+<h2>Allgemeine Formulierung des Verschachtelungssatzes<a class="headerlink" href="#allgemeine-formulierung-des-verschachtelungssatzes" title="Link to this heading">#</a></h2>
+<p>Für eine wachsende Folge von <span class="math notranslate nohighlight">\(n\)</span>-dimensionalen Variationsunterräumen<br />
+<span class="math notranslate nohighlight">\(\mathcal{H}_1 \subset \mathcal{H}_2 \subset \dots \subset \mathcal{H}_n\)</span><br />
+gelten für die aus den säkulären Gleichungen erhaltenen Näherungsenergien</p>
+<div class="math notranslate nohighlight">
+\[\require{color}\fcolorbox{red}{#f2d5d3}{$\displaystyle
+E_k^{(n+1)} \le E_k^{(n)} \le E_{k+1}^{(n+1)}, \qquad k = 1, \dots, n
+$}\]</div>
+<p>Jede angenäherte Eigenenergie nimmt also monoton ab (und nähert sich dem exakten Wert von oben), wenn die Basismenge vergrößert wird.<br />
+Das Spektrum für <span class="math notranslate nohighlight">\((n+1)\)</span> Basisfunktionen ist <strong>ineinander verschachtelt</strong> mit dem für <span class="math notranslate nohighlight">\(n\)</span> Basisfunktionen.</p>
+<ul class="simple">
+<li><p>Die niedrigste Variationsenergie konvergiert von oben gegen die exakte Grundzustandsenergie:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\require{color}\fcolorbox{red}{#f2d5d3}{$\displaystyle
+  E_0^{(1)} \ge E_0^{(2)} \ge \dots \ge E_0
+$}\]</div>
+<ul class="simple">
+<li><p>Auch die Näherungen für angeregte Zustände konvergieren analog; jede ist nach unten durch die exakte Energie des entsprechenden Zustands und nach oben durch die benachbarte höhere Wurzel des kleineren Unterraums beschränkt.</p></li>
+</ul>
+<p>Damit liefert der Satz von MacDonald eine strenge Begründung für die systematische Verbesserung von Elektronenstrukturmethoden durch hierarchische Basiserweiterungen und stellt das zentrale Prinzip moderner CI-, MCSCF- und variationaler Quantenalgorithmus-Verfahren dar.</p>
 </section>
 </section>
 
@@ -536,20 +602,20 @@ Die zentrale Herausforderung der Quantenchemie besteht daher in der Entwicklung 
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="index.html"
+       href="variational_principle.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Quantenchemie — WS 2025</p>
+        <p class="prev-next-title">Das Variationsprinzip</p>
       </div>
     </a>
     <a class="right-next"
-       href="variational_principle.html"
+       href="helium_atom.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Das Variationsprinzip</p>
+        <p class="prev-next-title">Das Helium-Atom</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -569,7 +635,8 @@ Die zentrale Herausforderung der Quantenchemie besteht daher in der Entwicklung 
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vom-der-quantenmechanik-zur-molekularen-schrodingergleichung">Vom der Quantenmechanik zur molekularen Schrödingergleichung</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wie-andert-sich-die-energie-des-grundzustandes-wenn-wir-eine-zweite-basisfunktion-hinzufugen">Wie ändert sich die Energie des Grundzustandes wenn wir eine zweite Basisfunktion hinzufügen?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#allgemeine-formulierung-des-verschachtelungssatzes">Allgemeine Formulierung des Verschachtelungssatzes</a></li>
 </ul>
   </nav></div>
 

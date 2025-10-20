@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>&lt;no title&gt; &#8212; Quantenchemie</title>
+    <title>Kinetic energy density in Hylleraas coordinates &#8212; Quantenchemie</title>
   
   
   
@@ -61,7 +61,7 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'Untitled';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'short_stuff';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -236,7 +236,7 @@
       
       
       
-      <li><a href="https://mybinder.org/v2/gh/rolandmitric/quantum_chemistry_2025/main?urlpath=lab/tree/./Untitled.ipynb" target="_blank"
+      <li><a href="https://mybinder.org/v2/gh/rolandmitric/quantum_chemistry_2025/main?urlpath=lab/tree/./short_stuff.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch on Binder"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -302,7 +302,7 @@
       
       
       
-      <li><a href="https://github.com/rolandmitric/quantum_chemistry_2025/edit/main/./Untitled.ipynb" target="_blank"
+      <li><a href="https://github.com/rolandmitric/quantum_chemistry_2025/edit/main/./short_stuff.ipynb" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -319,7 +319,7 @@
       
       
       
-      <li><a href="https://github.com/rolandmitric/quantum_chemistry_2025/issues/new?title=Issue%20on%20page%20%2FUntitled.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/rolandmitric/quantum_chemistry_2025/issues/new?title=Issue%20on%20page%20%2Fshort_stuff.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -349,7 +349,7 @@
       
       
       
-      <li><a href="_sources/Untitled.ipynb" target="_blank"
+      <li><a href="_sources/short_stuff.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -420,9 +420,7 @@ document.write(`
   </button>
 `);
 </script>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</button>
+
 </div></div>
       
     </div>
@@ -433,19 +431,11 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1><no title></h1>
+    <h1>Kinetic energy density in Hylleraas coordinates</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
-            <div>
-                <h2> Contents </h2>
-            </div>
-            <nav aria-label="Page">
-                <ul class="simple visible nav section-nav flex-column">
-</ul>
-
-            </nav>
         </div>
     </div>
 </div>
@@ -537,107 +527,122 @@ document.write(`
 \[\displaystyle \frac{5 \pi^{2}}{8 Z^{5}}\]</div>
 </div>
 </div>
+<section class="tex2jax_ignore mathjax_ignore" id="kinetic-energy-density-in-hylleraas-coordinates">
+<h1>Kinetic energy density in Hylleraas coordinates<a class="headerlink" href="#kinetic-energy-density-in-hylleraas-coordinates" title="Link to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x1</span><span class="p">,</span><span class="n">x2</span><span class="p">,</span><span class="n">x3</span><span class="p">,</span><span class="n">x4</span><span class="p">,</span><span class="n">x5</span><span class="p">,</span><span class="n">x6</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x1 x2 x3 x4 x5 x6&#39;</span><span class="p">,</span> <span class="n">real</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
-<span class="n">old_var</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">([</span><span class="n">x1</span><span class="p">,</span><span class="n">x2</span><span class="p">,</span><span class="n">x3</span><span class="p">,</span><span class="n">x4</span><span class="p">,</span><span class="n">x5</span><span class="p">,</span><span class="n">x6</span><span class="p">])</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">r1v</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">([</span><span class="n">x1</span><span class="p">,</span><span class="n">x2</span><span class="p">,</span><span class="n">x3</span><span class="p">])</span>
-<span class="n">r2v</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">([</span><span class="n">x4</span><span class="p">,</span><span class="n">x5</span><span class="p">,</span><span class="n">x6</span><span class="p">])</span>
-<span class="n">r1</span> <span class="o">=</span> <span class="n">r1v</span><span class="o">.</span><span class="n">norm</span><span class="p">()</span>
-<span class="n">r2</span> <span class="o">=</span> <span class="n">r2v</span><span class="o">.</span><span class="n">norm</span><span class="p">()</span>
-<span class="n">r12</span> <span class="o">=</span> <span class="p">(</span><span class="n">r2v</span><span class="o">-</span><span class="n">r1v</span><span class="p">)</span><span class="o">.</span><span class="n">norm</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">new_var</span><span class="o">=</span><span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">([</span><span class="n">r1</span><span class="p">,</span><span class="n">r2</span><span class="p">,</span><span class="n">r12</span><span class="p">])</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">D_s</span><span class="p">,</span> <span class="n">D_t</span><span class="p">,</span> <span class="n">D_u</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;D_s D_t D_u&#39;</span><span class="p">,</span> <span class="n">real</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">positive</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
-<span class="n">D</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">([</span><span class="n">D_s</span><span class="p">,</span> <span class="n">D_t</span><span class="p">,</span> <span class="n">D_u</span> <span class="p">])</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">J</span> <span class="o">=</span> <span class="n">new_var</span><span class="o">.</span><span class="n">jacobian</span><span class="p">(</span><span class="n">old_var</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">sympy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sp</span>
+
+<span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">z1</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="n">y2</span><span class="p">,</span> <span class="n">z2</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x1 y1 z1 x2 y2 z2&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">r1v</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">([</span><span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">z1</span><span class="p">])</span>
+<span class="n">r2v</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">([</span><span class="n">x2</span><span class="p">,</span> <span class="n">y2</span><span class="p">,</span> <span class="n">z2</span><span class="p">])</span>
+
+<span class="n">r1</span>  <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">r1v</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">r1v</span><span class="p">))</span>
+<span class="n">r2</span>  <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">r2v</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">r2v</span><span class="p">))</span>
+<span class="n">s</span> <span class="o">=</span> <span class="n">r1</span> <span class="o">+</span> <span class="n">r2</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">r1</span> <span class="o">-</span> <span class="n">r2</span>
+<span class="n">u</span>   <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="n">r2v</span> <span class="o">-</span> <span class="n">r1v</span><span class="p">)</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">r2v</span> <span class="o">-</span> <span class="n">r1v</span><span class="p">))</span>
+
+<span class="n">new_var</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">([</span><span class="n">s</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">u</span><span class="p">])</span>                 <span class="c1"># (r1, r2, u)</span>
+<span class="n">old_var</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">([</span><span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">z1</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="n">y2</span><span class="p">,</span> <span class="n">z2</span><span class="p">])</span>
+
+<span class="n">J</span> <span class="o">=</span> <span class="n">new_var</span><span class="o">.</span><span class="n">jacobian</span><span class="p">(</span><span class="n">old_var</span><span class="p">)</span>
 <span class="n">J</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_latex math notranslate nohighlight">
-\[\begin{split}\displaystyle \left[\begin{matrix}\frac{x_{1}}{\sqrt{x_{1}^{2} + x_{2}^{2} + x_{3}^{2}}} &amp; \frac{x_{2}}{\sqrt{x_{1}^{2} + x_{2}^{2} + x_{3}^{2}}} &amp; \frac{x_{3}}{\sqrt{x_{1}^{2} + x_{2}^{2} + x_{3}^{2}}} &amp; 0 &amp; 0 &amp; 0\\0 &amp; 0 &amp; 0 &amp; \frac{x_{4}}{\sqrt{x_{4}^{2} + x_{5}^{2} + x_{6}^{2}}} &amp; \frac{x_{5}}{\sqrt{x_{4}^{2} + x_{5}^{2} + x_{6}^{2}}} &amp; \frac{x_{6}}{\sqrt{x_{4}^{2} + x_{5}^{2} + x_{6}^{2}}}\\\frac{x_{1} - x_{4}}{\sqrt{\left(x_{1} - x_{4}\right)^{2} + \left(x_{2} - x_{5}\right)^{2} + \left(x_{3} - x_{6}\right)^{2}}} &amp; \frac{x_{2} - x_{5}}{\sqrt{\left(x_{1} - x_{4}\right)^{2} + \left(x_{2} - x_{5}\right)^{2} + \left(x_{3} - x_{6}\right)^{2}}} &amp; \frac{x_{3} - x_{6}}{\sqrt{\left(x_{1} - x_{4}\right)^{2} + \left(x_{2} - x_{5}\right)^{2} + \left(x_{3} - x_{6}\right)^{2}}} &amp; \frac{- x_{1} + x_{4}}{\sqrt{\left(x_{1} - x_{4}\right)^{2} + \left(x_{2} - x_{5}\right)^{2} + \left(x_{3} - x_{6}\right)^{2}}} &amp; \frac{- x_{2} + x_{5}}{\sqrt{\left(x_{1} - x_{4}\right)^{2} + \left(x_{2} - x_{5}\right)^{2} + \left(x_{3} - x_{6}\right)^{2}}} &amp; \frac{- x_{3} + x_{6}}{\sqrt{\left(x_{1} - x_{4}\right)^{2} + \left(x_{2} - x_{5}\right)^{2} + \left(x_{3} - x_{6}\right)^{2}}}\end{matrix}\right]\end{split}\]</div>
+\[\begin{split}\displaystyle \left[\begin{matrix}\frac{x_{1}}{\sqrt{x_{1}^{2} + y_{1}^{2} + z_{1}^{2}}} &amp; \frac{y_{1}}{\sqrt{x_{1}^{2} + y_{1}^{2} + z_{1}^{2}}} &amp; \frac{z_{1}}{\sqrt{x_{1}^{2} + y_{1}^{2} + z_{1}^{2}}} &amp; \frac{x_{2}}{\sqrt{x_{2}^{2} + y_{2}^{2} + z_{2}^{2}}} &amp; \frac{y_{2}}{\sqrt{x_{2}^{2} + y_{2}^{2} + z_{2}^{2}}} &amp; \frac{z_{2}}{\sqrt{x_{2}^{2} + y_{2}^{2} + z_{2}^{2}}}\\\frac{x_{1}}{\sqrt{x_{1}^{2} + y_{1}^{2} + z_{1}^{2}}} &amp; \frac{y_{1}}{\sqrt{x_{1}^{2} + y_{1}^{2} + z_{1}^{2}}} &amp; \frac{z_{1}}{\sqrt{x_{1}^{2} + y_{1}^{2} + z_{1}^{2}}} &amp; - \frac{x_{2}}{\sqrt{x_{2}^{2} + y_{2}^{2} + z_{2}^{2}}} &amp; - \frac{y_{2}}{\sqrt{x_{2}^{2} + y_{2}^{2} + z_{2}^{2}}} &amp; - \frac{z_{2}}{\sqrt{x_{2}^{2} + y_{2}^{2} + z_{2}^{2}}}\\\frac{x_{1} - x_{2}}{\sqrt{\left(- x_{1} + x_{2}\right)^{2} + \left(- y_{1} + y_{2}\right)^{2} + \left(- z_{1} + z_{2}\right)^{2}}} &amp; \frac{y_{1} - y_{2}}{\sqrt{\left(- x_{1} + x_{2}\right)^{2} + \left(- y_{1} + y_{2}\right)^{2} + \left(- z_{1} + z_{2}\right)^{2}}} &amp; \frac{z_{1} - z_{2}}{\sqrt{\left(- x_{1} + x_{2}\right)^{2} + \left(- y_{1} + y_{2}\right)^{2} + \left(- z_{1} + z_{2}\right)^{2}}} &amp; \frac{- x_{1} + x_{2}}{\sqrt{\left(- x_{1} + x_{2}\right)^{2} + \left(- y_{1} + y_{2}\right)^{2} + \left(- z_{1} + z_{2}\right)^{2}}} &amp; \frac{- y_{1} + y_{2}}{\sqrt{\left(- x_{1} + x_{2}\right)^{2} + \left(- y_{1} + y_{2}\right)^{2} + \left(- z_{1} + z_{2}\right)^{2}}} &amp; \frac{- z_{1} + z_{2}}{\sqrt{\left(- x_{1} + x_{2}\right)^{2} + \left(- y_{1} + y_{2}\right)^{2} + \left(- z_{1} + z_{2}\right)^{2}}}\end{matrix}\right]\end{split}\]</div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">D_new</span> <span class="o">=</span> <span class="n">J</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">D</span>
-<span class="n">D_new</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">D_s</span><span class="p">,</span> <span class="n">D_t</span><span class="p">,</span> <span class="n">D_u</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;D_s D_t D_u&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">D_stu</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">([</span><span class="n">D_s</span><span class="p">,</span> <span class="n">D_t</span><span class="p">,</span> <span class="n">D_u</span><span class="p">])</span>
+<span class="n">D_xyz</span> <span class="o">=</span> <span class="n">J</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">D_stu</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">D2</span> <span class="o">=</span> <span class="n">D_xyz</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">D_xyz</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">D2</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_latex math notranslate nohighlight">
-\[\begin{split}\displaystyle \left[\begin{matrix}\frac{D_{s} x_{1}}{\sqrt{x_{1}^{2} + x_{2}^{2} + x_{3}^{2}}} + \frac{D_{u} \left(x_{1} - x_{4}\right)}{\sqrt{\left(x_{1} - x_{4}\right)^{2} + \left(x_{2} - x_{5}\right)^{2} + \left(x_{3} - x_{6}\right)^{2}}}\\\frac{D_{s} x_{2}}{\sqrt{x_{1}^{2} + x_{2}^{2} + x_{3}^{2}}} + \frac{D_{u} \left(x_{2} - x_{5}\right)}{\sqrt{\left(x_{1} - x_{4}\right)^{2} + \left(x_{2} - x_{5}\right)^{2} + \left(x_{3} - x_{6}\right)^{2}}}\\\frac{D_{s} x_{3}}{\sqrt{x_{1}^{2} + x_{2}^{2} + x_{3}^{2}}} + \frac{D_{u} \left(x_{3} - x_{6}\right)}{\sqrt{\left(x_{1} - x_{4}\right)^{2} + \left(x_{2} - x_{5}\right)^{2} + \left(x_{3} - x_{6}\right)^{2}}}\\\frac{D_{t} x_{4}}{\sqrt{x_{4}^{2} + x_{5}^{2} + x_{6}^{2}}} + \frac{D_{u} \left(- x_{1} + x_{4}\right)}{\sqrt{\left(x_{1} - x_{4}\right)^{2} + \left(x_{2} - x_{5}\right)^{2} + \left(x_{3} - x_{6}\right)^{2}}}\\\frac{D_{t} x_{5}}{\sqrt{x_{4}^{2} + x_{5}^{2} + x_{6}^{2}}} + \frac{D_{u} \left(- x_{2} + x_{5}\right)}{\sqrt{\left(x_{1} - x_{4}\right)^{2} + \left(x_{2} - x_{5}\right)^{2} + \left(x_{3} - x_{6}\right)^{2}}}\\\frac{D_{t} x_{6}}{\sqrt{x_{4}^{2} + x_{5}^{2} + x_{6}^{2}}} + \frac{D_{u} \left(- x_{3} + x_{6}\right)}{\sqrt{\left(x_{1} - x_{4}\right)^{2} + \left(x_{2} - x_{5}\right)^{2} + \left(x_{3} - x_{6}\right)^{2}}}\end{matrix}\right]\end{split}\]</div>
+\[\displaystyle \left(\frac{D_{s} x_{1}}{\sqrt{x_{1}^{2} + y_{1}^{2} + z_{1}^{2}}} + \frac{D_{t} x_{1}}{\sqrt{x_{1}^{2} + y_{1}^{2} + z_{1}^{2}}} + \frac{D_{u} \left(x_{1} - x_{2}\right)}{\sqrt{\left(- x_{1} + x_{2}\right)^{2} + \left(- y_{1} + y_{2}\right)^{2} + \left(- z_{1} + z_{2}\right)^{2}}}\right)^{2} + \left(\frac{D_{s} x_{2}}{\sqrt{x_{2}^{2} + y_{2}^{2} + z_{2}^{2}}} - \frac{D_{t} x_{2}}{\sqrt{x_{2}^{2} + y_{2}^{2} + z_{2}^{2}}} + \frac{D_{u} \left(- x_{1} + x_{2}\right)}{\sqrt{\left(- x_{1} + x_{2}\right)^{2} + \left(- y_{1} + y_{2}\right)^{2} + \left(- z_{1} + z_{2}\right)^{2}}}\right)^{2} + \left(\frac{D_{s} y_{1}}{\sqrt{x_{1}^{2} + y_{1}^{2} + z_{1}^{2}}} + \frac{D_{t} y_{1}}{\sqrt{x_{1}^{2} + y_{1}^{2} + z_{1}^{2}}} + \frac{D_{u} \left(y_{1} - y_{2}\right)}{\sqrt{\left(- x_{1} + x_{2}\right)^{2} + \left(- y_{1} + y_{2}\right)^{2} + \left(- z_{1} + z_{2}\right)^{2}}}\right)^{2} + \left(\frac{D_{s} y_{2}}{\sqrt{x_{2}^{2} + y_{2}^{2} + z_{2}^{2}}} - \frac{D_{t} y_{2}}{\sqrt{x_{2}^{2} + y_{2}^{2} + z_{2}^{2}}} + \frac{D_{u} \left(- y_{1} + y_{2}\right)}{\sqrt{\left(- x_{1} + x_{2}\right)^{2} + \left(- y_{1} + y_{2}\right)^{2} + \left(- z_{1} + z_{2}\right)^{2}}}\right)^{2} + \left(\frac{D_{s} z_{1}}{\sqrt{x_{1}^{2} + y_{1}^{2} + z_{1}^{2}}} + \frac{D_{t} z_{1}}{\sqrt{x_{1}^{2} + y_{1}^{2} + z_{1}^{2}}} + \frac{D_{u} \left(z_{1} - z_{2}\right)}{\sqrt{\left(- x_{1} + x_{2}\right)^{2} + \left(- y_{1} + y_{2}\right)^{2} + \left(- z_{1} + z_{2}\right)^{2}}}\right)^{2} + \left(\frac{D_{s} z_{2}}{\sqrt{x_{2}^{2} + y_{2}^{2} + z_{2}^{2}}} - \frac{D_{t} z_{2}}{\sqrt{x_{2}^{2} + y_{2}^{2} + z_{2}^{2}}} + \frac{D_{u} \left(- z_{1} + z_{2}\right)}{\sqrt{\left(- x_{1} + x_{2}\right)^{2} + \left(- y_{1} + y_{2}\right)^{2} + \left(- z_{1} + z_{2}\right)^{2}}}\right)^{2}\]</div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">D2</span> <span class="o">=</span> <span class="n">D_new</span> <span class="o">@</span> <span class="n">D_new</span><span class="o">.</span><span class="n">T</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">subsdict</span> <span class="o">=</span> <span class="p">{</span><span class="n">r1</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;r1^2&#39;</span><span class="p">),</span>
+            <span class="n">r2</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;r2^2&#39;</span><span class="p">),</span>
+            <span class="n">r12</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span><span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;r12^2&#39;</span><span class="p">)</span> <span class="p">}</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">sum</span><span class="p">(</span><span class="n">D2</span><span class="p">)</span><span class="o">.</span><span class="n">expand</span><span class="p">()</span><span class="o">.</span><span class="n">collect</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">D2</span> <span class="o">=</span> <span class="n">D2</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">subsdict</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">112</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="nb">sum</span><span class="p">(</span><span class="n">D2</span><span class="p">)</span><span class="o">.</span><span class="n">expand</span><span class="p">()</span><span class="o">.</span><span class="n">collect</span><span class="p">(</span><span class="n">Ds</span><span class="p">)</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">213</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">D2</span> <span class="o">=</span> <span class="n">D2</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">subsdict</span><span class="p">)</span>
 
-<span class="ne">NameError</span>: name &#39;Ds&#39; is not defined
+<span class="nn">File ~/anaconda3/lib/python3.10/site-packages/sympy/matrices/common.py:2426,</span> in <span class="ni">MatrixOperations.subs</span><span class="nt">(self, *args, **kwargs)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2423</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span> <span class="ow">and</span>  <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="p">(</span><span class="nb">dict</span><span class="p">,</span> <span class="nb">set</span><span class="p">))</span> <span class="ow">and</span> <span class="nb">iter</span><span class="p">(</span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">is_sequence</span><span class="p">(</span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span>
+<span class="g g-Whitespace">   </span><span class="mi">2424</span>     <span class="n">args</span> <span class="o">=</span> <span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">]),)</span>
+<span class="ne">-&gt; </span><span class="mi">2426</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">applyfunc</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">))</span>
+
+<span class="nn">File ~/anaconda3/lib/python3.10/site-packages/sympy/matrices/common.py:2058,</span> in <span class="ni">MatrixOperations.applyfunc</span><span class="nt">(self, f)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2055</span> <span class="k">if</span> <span class="ow">not</span> <span class="nb">callable</span><span class="p">(</span><span class="n">f</span><span class="p">):</span>
+<span class="g g-Whitespace">   </span><span class="mi">2056</span>     <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;`f` must be callable.&quot;</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">2058</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_eval_applyfunc</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+
+<span class="nn">File ~/anaconda3/lib/python3.10/site-packages/sympy/matrices/common.py:2000,</span> in <span class="ni">MatrixOperations._eval_applyfunc</span><span class="nt">(self, f)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1999</span> <span class="k">def</span><span class="w"> </span><span class="nf">_eval_applyfunc</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">f</span><span class="p">):</span>
+<span class="ne">-&gt; </span><span class="mi">2000</span>     <span class="n">out</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_new</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">rows</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">cols</span><span class="p">,</span> <span class="p">[</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">])</span>
+<span class="g g-Whitespace">   </span><span class="mi">2001</span>     <span class="k">return</span> <span class="n">out</span>
+
+<span class="nn">File ~/anaconda3/lib/python3.10/site-packages/sympy/matrices/common.py:2000,</span> in <span class="ni">&lt;listcomp&gt;</span><span class="nt">(.0)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1999</span> <span class="k">def</span><span class="w"> </span><span class="nf">_eval_applyfunc</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">f</span><span class="p">):</span>
+<span class="ne">-&gt; </span><span class="mi">2000</span>     <span class="n">out</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_new</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">rows</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">cols</span><span class="p">,</span> <span class="p">[</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">])</span>
+<span class="g g-Whitespace">   </span><span class="mi">2001</span>     <span class="k">return</span> <span class="n">out</span>
+
+<span class="nn">File ~/anaconda3/lib/python3.10/site-packages/sympy/matrices/common.py:2426,</span> in <span class="ni">MatrixOperations.subs.&lt;locals&gt;.&lt;lambda&gt;</span><span class="nt">(x)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2423</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span> <span class="ow">and</span>  <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="p">(</span><span class="nb">dict</span><span class="p">,</span> <span class="nb">set</span><span class="p">))</span> <span class="ow">and</span> <span class="nb">iter</span><span class="p">(</span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">is_sequence</span><span class="p">(</span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span>
+<span class="g g-Whitespace">   </span><span class="mi">2424</span>     <span class="n">args</span> <span class="o">=</span> <span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">]),)</span>
+<span class="ne">-&gt; </span><span class="mi">2426</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">applyfunc</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">))</span>
+
+<span class="nn">File ~/anaconda3/lib/python3.10/site-packages/sympy/core/basic.py:940,</span> in <span class="ni">Basic.subs</span><span class="nt">(self, *args, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">938</span> <span class="n">sequence</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">sequence</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">939</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">s</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">sequence</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">940</span>     <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="nb">str</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">941</span>         <span class="c1"># when old is a string we prefer Symbol</span>
+<span class="g g-Whitespace">    </span><span class="mi">942</span>         <span class="n">s</span> <span class="o">=</span> <span class="n">Symbol</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="n">s</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="g g-Whitespace">    </span><span class="mi">943</span>     <span class="k">try</span><span class="p">:</span>
+
+<span class="ne">TypeError</span>: &#39;Symbol&#39; object is not subscriptable
 </pre></div>
 </div>
 </div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">D2</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>None
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">D2</span>
-</pre></div>
-</div>
-</div>
-</div>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -675,21 +680,6 @@ document.write(`
             </div>
             
             
-              
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
-  </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="simple visible nav section-nav flex-column">
-</ul>
-
-  </nav></div>
-
-</div></div>
               
             
           </div>
