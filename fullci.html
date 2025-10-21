@@ -1,0 +1,1075 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Konfigurationswe &#8212; Quantenchemie</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=efe75725" />
+    <link rel="stylesheet" type="text/css" href="_static/wide_v2.css?v=bfe64621" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'fullci';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Quantenchemie</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="index.html">
+                    Quantenchemie — WS 2025
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="variational_principle.html">Das Variationsprinzip</a></li>
+<li class="toctree-l1"><a class="reference internal" href="convergence_variational_principle.html">Über die Konvergenz des linearen Variationsprinzips: Verschachtelungs Satz</a></li>
+<li class="toctree-l1"><a class="reference internal" href="helium_atom.html">Das Helium-Atom</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/rolandmitric/quantum_chemistry_2025/main?urlpath=lab/tree/./fullci.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Binder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Binder logo" src="_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/rolandmitric/quantum_chemistry_2025" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/rolandmitric/quantum_chemistry_2025/edit/main/./fullci.ipynb" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/rolandmitric/quantum_chemistry_2025/issues/new?title=Issue%20on%20page%20%2Ffullci.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/fullci.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Konfigurationswe</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Konfigurationswe</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#das-hartree-fock-verfahren">Das Hartree-Fock-Verfahren</a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="konfigurationswe">
+<h1>Konfigurationswe<a class="headerlink" href="#konfigurationswe" title="Link to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib</span>
+<span class="n">matplotlib</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;axes.linewidth&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mf">2.</span>
+<span class="n">matplotlib</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;axes.grid&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">matplotlib</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;axes.labelsize&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">12</span>
+<span class="n">matplotlib</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;figure.figsize&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="n">matplotlib</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;animation.embed_limit&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1000</span>
+<span class="n">matplotlib</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;text.usetex&#39;</span><span class="p">]</span> <span class="o">=</span>  <span class="kc">False</span>
+<span class="n">matplotlib</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s2">&quot;font.family&quot;</span><span class="p">]</span> <span class="o">=</span>  <span class="s2">&quot;sans-serif&quot;</span><span class="p">,</span>
+<span class="n">matplotlib</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s2">&quot;font.sans-serif&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Times&quot;</span><span class="p">]</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="kn">import</span><span class="w"> </span><span class="nn">sympy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sp</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">mayavi</span><span class="w"> </span><span class="kn">import</span> <span class="n">mlab</span>
+<span class="n">mlab</span><span class="o">.</span><span class="n">init_notebook</span><span class="p">()</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">mlab</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">600</span><span class="p">,</span> <span class="mi">400</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Notebook initialized with ipy backend.
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="das-hartree-fock-verfahren">
+<h1>Das Hartree-Fock-Verfahren<a class="headerlink" href="#das-hartree-fock-verfahren" title="Link to this heading">#</a></h1>
+<p>Wir haben gesehen, dass der Grundzustand eines Systems aus zwei nichtwechselwirkenden Elektronen unter Berücksichtung des Pauli-Prinzips <u> exakt </u> in Form einer <span class="math notranslate nohighlight">\(2 \times 2\)</span>-Determinante ausgedrückt werden kann</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+|\psi(1,2)\rangle=\frac{1}{\sqrt{2}}\left|\begin{array}{ll}
+\chi_i(1) &amp; \chi_j(1) \\
+\chi_i(2) &amp; \chi_j(2)
+\end{array}\right|=\frac{1}{\sqrt{2}}\left(\chi_i(1) \chi_j(2)-\chi_j(1) \chi_i(2)\right)
+\end{split}\]</div>
+<p><span class="math notranslate nohighlight">\(\chi_i\)</span>, und <span class="math notranslate nohighlight">\(\chi_j\)</span> sind dabei zwei 1-Elektron-Spinorbitale, die man im Allgemeinen als Produkt einer Raum- und einer Spin-Wellenfunktion schreiben kann:</p>
+<div class="math notranslate nohighlight">
+\[
+\chi_i(1)=\varphi_i(1) \sigma(1)
+\]</div>
+<p>Alle solchen Determinanten, die man durch Besetzung von Paaren von Spinorbitalen konstruieren kann, bilden eine Basis des Vektorraums eines Zweielektronensystems, so dass man den <u> exakten Energieeigenzustand </u> eines Zweielektronensystems in die Basis aller möglichen Determinanten entwickeln kann:</p>
+<div class="math notranslate nohighlight">
+\[
+\psi_{FCI}(1,2)=\sum_i \sum_{j&gt;i} c_{i j}\left|\chi_i(1) \chi_j(2)\right\rangle
+\]</div>
+<p>Eine solche Wellenfunktion bezeichnet man als Konfigurationswechselwirkungs-Wellenfunktion (engl. “Configuration Interaction”). Wenn man alle möglichen Konfigurationen betrachtet, spricht man von der sogenannten “Full-CI”-Entwicklung, die für eine gegebene Wahl der Einelektron-Basis das exakte Ergebnis liefert.</p>
+<p>Diese Beobachtungen werden im Folgenden auf <span class="math notranslate nohighlight">\(N\)</span>-Elektronensysteme verallgemeinert.</p>
+<p>Die obere Zweielektronen-Determinante können wir formal auch so ausdrücken:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+|\psi(1,2)\rangle &amp; =\frac{1}{\sqrt{2}}\left(\chi_1(1) \chi_2(2)-\chi_2(1) \chi_1(2)\right) \\
+&amp; =\frac{1}{\sqrt{2}}\left(\chi_1(1) \chi_2(2)+(-1) P_{12} \chi_1(1) \chi_2(2)\right) \\
+&amp; =\frac{1}{\sqrt{2}} \sum_{p \in S_{12}}(-1)^{\sigma(p)} \chi_{p(1)}(1) \chi_{p(2)}(2)
+\end{aligned}
+\end{split}\]</div>
+<p>Dabei haben wir den zweiten Term durch die Einführung des Permutationsoperators <span class="math notranslate nohighlight">\(P_{12}\)</span> umgeformt. Die Summe kann nun formal als Summe über alle Permutationen der Menge <span class="math notranslate nohighlight">\(\{1,2\}\)</span> ausgedrückt werden.
+Jeder Term wird dabei mit dem Faktor <span class="math notranslate nohighlight">\((-1)^{\sigma(P)}\)</span> multipliziert. Diesen Faktor bezeichnet man als die Parität der Permutation, wobei <span class="math notranslate nohighlight">\({\sigma(P)}\)</span> die Anzahl der Vertauschungen von Paaren darstellt, die man vornehmen muss, um eine bestimmte Permutation zu generieren.</p>
+<p>Da es für zwei lndizes aus der Menge <span class="math notranslate nohighlight">\(\{1,2\}\)</span> nur zwei mögliche Permutationen gibt, gilt:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+&amp; I=\left(\begin{array}{ll}
+1 &amp; 2 \\
+1 &amp; 2
+\end{array}\right) \Rightarrow \sigma(I)=0 \\
+&amp; P_{12}=\left(\begin{array}{ll}
+1 &amp; 2 \\
+2 &amp; 1
+\end{array}\right) \Rightarrow \sigma\left(P_{12}\right)=1
+\end{aligned}
+\end{split}\]</div>
+<h1> Slater-Determinante für ein $N$-Elektronensystem </h1>
+<p>Die obigen Betrachtungen kann man nun direkt auf <span class="math notranslate nohighlight">\(N\)</span> Elektronen verallgemainern. Damit bekommen wir die Definition einer N-Elektron-Determinante, die man als Slater-Determinante bezeichnet:</p>
+<div class="math notranslate nohighlight">
+\[
+\left|\psi_{S D}(1,2, \ldots N)\right\rangle=\frac{1}{\sqrt{N !}} \cdot \sum_{P \in S_n}(-1)^{\sigma(P)} \chi_{P(1)}(1) \chi_{P(2)}(2) \cdots \chi_{P(N)}(N)
+\]</div>
+<p>Die Summe erstreckt sich dabei über alle Permutationen der Indizes aus der Menge <span class="math notranslate nohighlight">\(\{1,2, \ldots, N\}\)</span>. Da es insgesamt <span class="math notranslate nohighlight">\(N!\)</span> solche Permutationen gibt, enthält die Summe <span class="math notranslate nohighlight">\(N!\)</span> Terme. Unter der Annahme, dass die Einelektron-Basiszustände normiert sind, bekommen wir <span class="math notranslate nohighlight">\(\left(1 / \sqrt{N!}\right)\)</span> als Normierungsfaktor.</p>
+<h1> Full-CI-Wellenfunktion eines $N$-Elektronensystems </h1>
+<p>Analog zum Fall von zwei Elektronen lässt sich die <u> exakte </u> Wellenfunktion eines N-Elektronensystems als Linearkombination aller möglichen Slater-Determinanten entwickeln, die man ausgehend von einer Einelektronbasis konstruieren kann:</p>
+<div class="math notranslate nohighlight">
+\[
+\left|\psi_{F C I}(1,2, \ldots N)\right\rangle=\sum_i \sum_{j&gt;i} \ldots C_{i j k \ldots \ldots}\left|\chi_i(1) \chi_j(2) \chi_k(3) \cdots \chi_n(N)\right\rangle
+\]</div>
+<p>Die Anzahl der Konfigurationen ist dabei <span class="math notranslate nohighlight">\(\left(\begin{array}{c}N_{\text {Basis }} \\ N\end{array}\right)\)</span>. Dies wächst sehr schnell mit der Anzahl der Basisfunktionen und der Elektronen, so dass man exakte Full-CI-Rechnungen praktisch nur für sehr kleine Systeme praktisch durchführen kann <span class="math notranslate nohighlight">\((N \sim 10)\)</span>.
+Wir sind also gezwungen, auf Näherungen zurückzugreifen!
+Was ist der einfachste mögliche Ansatz für die Beschreibung eines wechselwirkenden N-Elektronensystems?</p>
+<p>Den einfachsten möglichen Ansatz für die Wellenfunktion eines <span class="math notranslate nohighlight">\(N\)</span>-Elektronensystems erhalten wir, indem wir die exakte Full-CI-Wellenfunktion auf eine einzige Determinante reduzieren:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+&amp; \left|\psi_{F C I}(1,2, \cdots N)\right\rangle=\sum_{i, j, k \ldots} C_{i j k \cdots \cdots}\left|\chi_i(1) \chi_j(2) \cdots \chi_n(N)\right\rangle \\
+&amp; \left|\psi_{H F}(1,2, \cdots, N)\right\rangle=\left|\chi_1(1) \chi_2(2) \ldots \chi_n(N)\right\rangle=\frac{1}{\sqrt{N !}}\left|\begin{array}{cccc}
+\chi_1(1) &amp; \chi_2(1) &amp; \cdots &amp; \chi_n(1) \\
+\chi_1(2) &amp; \chi_2(2) &amp; \cdots &amp; \chi_n(2) \\
+\vdots &amp; \vdots &amp; &amp; \vdots \\
+\chi_1(N) &amp; \chi_2(N) &amp; \cdots &amp; \chi_n(N)
+\end{array}\right|
+\end{aligned}
+\end{split}\]</div>
+<p>Während die Ergebnisse einer Full-Cl-Rechnung exakt und damit auch unabhängig von der Wahl der Einelektronbasis sind, hängt das Ergebnis bei Verwendung nur einer Determinante von der Basis ab. Das Ziel ist also die ‘’beste’’ Einelektronbasis zu konstruieren! Dies kann man mit Hilfe des Variationsprinzips erreichen.
+Die optimalen Basisfunktionen bestimmen wir, indem wir die Energie der Slaterdeterminante minimieren. Dabei müssen wir die Orthogonalität der Orbitale als Nebenbedingung berücksichtigen.</p>
+<p>Die so definierte Näherung wird als Hartree-Fock-Verfahren bezeichnet.</p>
+<h1> Berechnung der Energie einer Slater-Determinante </h1>
+<p>Damit wir die Hartree-Fock-Energie in Bezug auf die Variation der Einelektron-Spinorbitale variieren können, müssen wir zunächst in der Lage sein, die Energie einer beliebig besetzten Slater-Determinante allgemein zu berechnen. Die Hartree-Fock-Energie ergibt sich als der Erwartungswert des exakten Hamilton-Operators mit dem Hartree-Fock-Ansatz für die Wellenfunktion.</p>
+<div class="math notranslate nohighlight">
+\[
+E_{H F}=\left\langle\psi_{H F}(1,2, \ldots N)|\hat{H}| \psi_{H F}(1,2, \ldots N)\right\rangle
+\]</div>
+<p>Der Hamilton-Operator <span class="math notranslate nohighlight">\(\hat{H}\)</span> eines N-Elektronensystems hat die folgende allgemeine Form:</p>
+<div class="math notranslate nohighlight">
+\[
+\hat{H}=\sum_{i=1}^N \hat{h}(i)+\sum_{i=1}^N \sum_{j&gt;i} \frac{1}{r_{i j}}
+\]</div>
+<p><span class="math notranslate nohighlight">\(\hat{h}(i)\)</span> ist dabei die Abkürzung für den 1-Elektron Operator, der die kinetische Energie eines Elektrons und das externe Einelektron-Potenzial (z. B. Kern-Elektron-Wechselwirkung) enthält:</p>
+<div class="math notranslate nohighlight">
+\[
+ \hat{h}(i)=-\frac{1}{2} \nabla_i^2+V_{n e}(i)
+\]</div>
+<p>Die HF - Energie kann man also wie folgt ausdrücken:</p>
+<p>\begin{aligned}
+E_{H F} &amp; =\left\langle\psi_{H F}(1,2, \ldots N)\left|\sum_i \hat{h}(i)+\sum_i \sum_{j&gt;i} \frac{1}{r_{i j}}\right| \psi_{H F}(1,2, \ldots N)\right\rangle \
+&amp; =\underbrace{\sum_{i=1}^N\left\langle\psi_{H F}(1,2, \ldots, N)|h(i)| \psi_{H F}(1,2, \ldots N)\right\rangle}<em>{\text {1el. Terme }}+\underbrace{\sum_i\sum</em>{j&gt;i} \left\langle\psi_{H F}(1,2, \ldots, N)\left|\frac{1}{r_{i j}}\right| \psi_{HF}(1,2, \ldots N)\right\rangle}_{\text {2el. Terme}}
+\end{aligned}</p>
+<p>Die Einelektron- und Zweielektron-Terme berechnen wir im folgenden einzeln:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+\sum_{i=1}^N\left\langle\psi_{H F}(1,2, \ldots N)|h(i)| \psi_{H F}(1,2, \ldots N)\right\rangle= &amp; \left\langle\psi_{H F}(1,2, \ldots N)|h(1)| \psi_{H F}(1,2, \ldots N)\right\rangle \\
+&amp; +\left\langle\psi_{H F}(1,2, \ldots N)|h(2)| \psi_{H F}(1,2, \ldots N)\right\rangle \\
+&amp; +\cdots \\
+&amp; +\left\langle\psi_{H F}(1,2, \ldots N)|h(N)| \psi_{H F}(1,2, \ldots N)\right\rangle
+\end{aligned}
+\end{split}\]</div>
+<p>Wir können nun in allen Termen mit <span class="math notranslate nohighlight">\(i&gt;1\)</span> die jeweiligen Indizes so umbenennen, dass:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+&amp; 1 \rightarrow i \\
+&amp; i \rightarrow 1
+\end{aligned}
+\end{split}\]</div>
+<p>Damit kann man zeigen, dass die einzelnen Terme alle untereinander gleich sind. Speziell sind alle Terme in der Summe mit <span class="math notranslate nohighlight">\(i&gt;1\)</span> exakt gleich wie der erste Term mit <span class="math notranslate nohighlight">\(i=1\)</span>.</p>
+<p>Der Einelektron-Beitrag zur Energie sieht also wie folgt aus:</p>
+<div class="math notranslate nohighlight">
+\[\sum_{i=1}^N\left\langle\psi_{H F}(1,2, \ldots N)|h(i)| \psi_{H F}(1,2, \ldots N)\right\rangle =  N\left\langle\psi_{H F}(1,2, \cdots N)|h(1)| \psi_{HF}(1,2, \cdots N)\right\rangle\]</div>
+<p>Wie sieht der Zweielektronen-Beitrag aus?</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+\sum_i \sum_{j&gt;i}\left\langle\psi_{H F}(1,2, \ldots N)\left|\frac{1}{r_{12}}\right| \psi_{H F}(1,2, \ldots N)\right\rangle &amp; =\left\langle\psi_{H F}(1,2, \ldots N)\left|\frac{1}{r_{12}}\right| \psi_{H F}(1,2, \ldots N)\right\rangle \\
+&amp; +\left\langle\psi_{H F}(1,2, \ldots N)\left|\frac{1}{r_{13}}\right| \psi_{H F}(1,2, \ldots N)\right\rangle \\
+&amp; +\cdots \\
+&amp; +\left\langle\psi_{H F}(1,2, \ldots N)\left|\frac{1}{r_{N-1, N}}\right| \psi_{H F}(1,2, \ldots N)\right\rangle
+\end{aligned}
+\end{split}\]</div>
+<p>Wir können nun den gleichen Trick anwenden, wie bei der Berechnung des Einelektron-Terms. Diesmal benennen wir jedes Paar von Variablen <span class="math notranslate nohighlight">\(i, j\)</span> in dem entsprechenden Term <span class="math notranslate nohighlight">\(1 / r_{i j}\)</span> in <span class="math notranslate nohighlight">\(1\)</span> bzw. <span class="math notranslate nohighlight">\(2\)</span> um. Dies hat den gleichen Effekt wie die  Vertauschung von Indizes in der <span class="math notranslate nohighlight">\(N\)</span>-Elektronen-Wellenfunktion <span class="math notranslate nohighlight">\(\left|\psi_{HF}\right\rangle\)</span>. Da aber die Vertauschung immer zweimal vorgenommen wird (im Bra- und im Ket-Teil), führt sie letzendlich zu keinem Vorzeichenwechsel. Wir erhalten also insgesamt, da es <span class="math notranslate nohighlight">\(\frac{N(N-1)}{2}\)</span> Paare von Elektronen gibt:</p>
+<div class="math notranslate nohighlight">
+\[
+\sum_i \sum_{j&gt;i}\left\langle\psi_{H F}(1,2, \ldots N)\left|\frac{1}{r_{i j}}\right| \psi_{H F}(1,2, \ldots N)\right\rangle=\frac{N(N-1)}{2}\left\langle\psi_{H F}(1,2, \ldots, N)\left|\frac{1}{r_{12}}\right| \psi_{H F}(1,2, \ldots N)\right\rangle
+\]</div>
+<p>Mit diesen Vereinfachungen können wir nun die Hartree-Fock-Energie wie folgt ausdrücken:</p>
+<div class="math notranslate nohighlight">
+\[
+E_{H F}=N\left\langle\psi_{H F}(1,2, \cdots N)|h(1)| \psi_{H F}(1,2, \cdots N)\right\rangle+\frac{N(N-1)}{2}\left\langle\psi_{H F}(1,2, \cdots N)\left|\frac{1}{r_{12}}\right| \psi_{H F}(1,2,\cdots,N)\right)
+\]</div>
+<p>Die einzelnen Beiträge können wir nun explizit berechnen, indem wir die Definition der Slater-Determinante einsetzen. Diese beinhaltet die Summierung über alle Permutationen der Indizes aus der Menge <span class="math notranslate nohighlight">\(\{1,2,\cdots,N\}\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+&amp; \left\langle\psi_{H F}|h(1)| \psi_{H F}\right\rangle=N \cdot \frac{1}{N !} \sum_P \sum_{P^{\prime}}(-1)^{\sigma(P)+\sigma\left(P^{\prime}\right)}\left\langle \chi_{P(1)}(1) \chi_{P(2)}(2) \ldots|h(1)| \chi_{P^{\prime}(1)}(1) \chi_{P^{\prime}(2)}(2) \ldots\right\rangle \\
+&amp; =\frac{1}{(N-1) !} \sum_P \sum_{P^\prime}(-1)^{\sigma(P)+\sigma\left(P^{\prime}\right)}\left\langle \chi_{P(1)}|h(1)| \chi_{P^{\prime}(1)}\right\rangle_1\left\langle \chi_{P(2)} \mid \chi_{P^{\prime}(2)}\right\rangle_2 \cdots \left\langle \chi_{P(N)} \mid \chi_{P^{\prime}(N)}\right\rangle_N \\
+&amp;
+\end{aligned}
+\end{split}\]</div>
+<p>Wegen der Annahme, dass die Spinorbitale orthonormiert sind, bleiben in der oberen Doppelsumne nur solche Terme übrig, bei denen für die Permutationen <span class="math notranslate nohighlight">\(P\)</span> und <span class="math notranslate nohighlight">\(P'\)</span> folgende Relationen erfüllt sind:
+$<span class="math notranslate nohighlight">\(
+\begin{aligned}
+P^{\prime}(2) &amp; =P(2) \\
+P^{\prime}(3) &amp; =P(3) \\
+\vdots &amp; \\
+P^{\prime}(N) &amp; =P(N)
+\end{aligned}
+\)</span>$</p>
+<p>Die Werte von <span class="math notranslate nohighlight">\(P\)</span> und <span class="math notranslate nohighlight">\(P'\)</span> müssen also für alle Indizes von <span class="math notranslate nohighlight">\(2\)</span> bis <span class="math notranslate nohighlight">\(N\)</span> gleich sein.
+Daraus folgt aber automatisch, dass auch <span class="math notranslate nohighlight">\( P^{\prime}(1)=P(1)\)</span>. Daraus folgt, dass die Permutationen <span class="math notranslate nohighlight">\(P\)</span> und <span class="math notranslate nohighlight">\(P'\)</span> gleich sein müssen.</p>
+<p>Die Summen über <span class="math notranslate nohighlight">\(P\)</span> und <span class="math notranslate nohighlight">\(P^{\prime}\)</span> reduzieren sich auf die Terme, bei denen <span class="math notranslate nohighlight">\(P^{\prime}=P\)</span>. Das gibt uns für den 1el-Beitrag zur Energie:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+N\left\langle\psi_{H F}|h(1)| \psi_{H F}\right\rangle &amp; =\frac{1}{(N-1) !} \sum_P(-1)^{2 \sigma(p)}\left\langle \chi_{P(1)}|h(1)| \chi_{P(1)}\right\rangle \\
+&amp; =\frac{1}{(N-1) !} \sum_P\left\langle \chi_{P(1)}|h(1)| \chi_{P(1)}\right\rangle \\
+&amp; =\frac{1}{(N-1) !}\left[\left\langle \chi_1|h(1)| \chi_1\right\rangle \cdot(N-1) !+\left\langle \chi_2|h(1)| \chi_2\right\rangle(N-1) !+\ldots\right] \\
+&amp; =\sum_{i=1}^N\left\langle \chi_i|h| \chi_i\right\rangle
+\end{aligned}
+\end{split}\]</div>
+<p>Für den 2el-Term erhalten wir analog:</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{aligned}
+\left\langle\psi_{H F}\left|\frac{1}{r_{12}}\right| \psi_{H F}\right\rangle=\frac{1}{N !} \sum_P \sum_{P^{\prime}}(-1)^{\sigma(P)+\sigma(P')} &amp; \left\langle \chi_{P(1)} \chi_{P(2)}\left|\frac{1}{r_{12}}\right| \chi_{P^{\prime}(1)} \chi_{P^{\prime}(2)}\right\rangle \left\langle \chi_{P(3)} \mid \chi_{P^{\prime}(3)}\right\rangle_3 \cdots \left\langle \chi_{P(N)} \mid \chi_{P^{\prime}(N)}\right\rangle_N 
+\end{aligned}
+\]</div>
+<p>Wegen der Orthogonalität bleiben wiederum nur die Terme übrig, bei denen die Permutation ab der dritten Stelle übereinstimmen:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+P^{\prime}(3) &amp; =P(3) \\
+P^{\prime}(4) &amp; =P(4) \\
+\vdots &amp; \\
+P^{\prime}(N) &amp; =P(N)
+\end{aligned}
+\end{split}\]</div>
+<p>Dies lässt nun aber zwei Möglichkeiten für <span class="math notranslate nohighlight">\(P^{\prime}(1)\)</span> und <span class="math notranslate nohighlight">\(P^{\prime}(2)\)</span> übrig! Entweder ist</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+&amp; P^{\prime}(1)=P(1) \\
+&amp; P^{\prime}(2)=P(2) .
+\end{aligned}
+\end{split}\]</div>
+<p>In diesem Fall sind die Permutationen <span class="math notranslate nohighlight">\(P^{\prime}\)</span> und <span class="math notranslate nohighlight">\(P\)</span> identisch, <span class="math notranslate nohighlight">\(P^{\prime}=P\)</span>. Die zweite Möglichkeit ist:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+&amp; P^{\prime}(1)=P(2) \\
+&amp; P^{\prime}(2)=P(1)
+\end{aligned}
+\end{split}\]</div>
+<p>In diesem Fall unterscheiden sich <span class="math notranslate nohighlight">\(P^{\prime}\)</span> und <span class="math notranslate nohighlight">\(P\)</span> nur durch eine zusätzliche Vertauschung des Paares der Indizes 1,2. Für die Permutation gilt also</p>
+<div class="math notranslate nohighlight">
+\[\quad P^{\prime}=P_{12} P \Rightarrow \sigma (P') = \sigma (P) +1 \]</div>
+<p>Damit können wir den 2el-Beitrag wie folgt als Summe über alle Permutationen ausdrücken:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+\left\langle\psi_{H F}\left|\frac{1}{r_{12}}\right| \psi_{H F}\right\rangle &amp; =\frac{1}{N !} \sum_P\left[(-1)^{2 \sigma(p)}\left\langle \chi_{P(1)} \chi_{P(2)}\left|\frac{1}{r_{12}}\right| \chi_{P(1)} \chi_{P(2)}\right\rangle+(-1)^{2 \sigma(p)+1}\left\langle \chi_{P(1)} \chi_{P(2)}\left|\frac{1}{r_{12}}\right| \chi_{P(2)} \chi_{P(1)}\right \rangle \right] \\
+&amp; =\frac{1}{N !} \sum_P\left[\left\langle \chi_{P(1)} \chi_{P(2)}\left|\frac{1}{r_{12}}\right| \chi_{P(1)} \chi_{P(2)}\right\rangle-\left\langle \chi_{P(1)} \chi_{P(2)}\left|\frac{1}{r_{12}}\right| \chi_{P(2)} \chi_{P(1)}\right\rangle\right] \\
+\end{aligned}
+\end{split}\]</div>
+<p>Wenn man nun die Summe über alle Permutationen durchführt, nehmen <span class="math notranslate nohighlight">\(P(1)\)</span> und <span class="math notranslate nohighlight">\(P(2)\)</span> alle möglichen Paare von Werten an, so dass <span class="math notranslate nohighlight">\((P(1),P(2)) = (1,2),(2,1),(1,3),(3,1),\cdots \)</span>. Für jedes Paar <span class="math notranslate nohighlight">\((P(1),P(2))\)</span> gibt es genau <span class="math notranslate nohighlight">\((N-2)!\)</span> unterschiedliche Permutationen. Damit kann man die obige Summe auch als Summe über alle Paare von Orbitalindizes ausdrücken:</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{aligned}
+&amp; \left\langle\psi_{H F}\left|\frac{1}{r_{12}}\right| \psi_{H F}\right\rangle =2\frac{(N-2) !}{N !} \sum_i \sum_{j&gt;i}\left[\left\langle \chi_i \chi_j\left|\frac{1}{r_{12}}\right| \chi_i \chi_j\right\rangle-\left\langle \chi_i \chi_j\left|\frac{1}{r_{12}}\right| \chi_j \chi_i\right\rangle\right.
+\end{aligned}
+\]</div>
+<p>Wenn wir nun die 1el- und 2el-Terme zusammenfügen, erhalten wir die  Gesamtenergie einer HF-Determinante als:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{gathered}
+E_{H F}=\sum_{i=1}^N\left\langle \chi_i(1)|h(1)| \chi_i(1)\right\rangle+\sum_{i=1}^N \sum_{j&gt;i}\left[\left\langle \chi_i(1) \chi_j(2)\left|\frac{1}{r_{12}}\right| \chi_i(1) \chi_j(2)\right\rangle-\left\langle \chi_i(1) \chi_j(2)\left|\frac{1}{r_{12}}\right| \chi_j(1)\chi_i(2)\right\rangle\right] \\
+\end{gathered}
+\end{split}\]</div>
+<p>Die HF-Energie können wir nun etwas kürzer schreiben, indem wir die Indizes weglassen:</p>
+<div class="math notranslate nohighlight">
+\[
+E_{H F}=\sum_{i=1}^N\left\langle \chi_i|h| \chi_i\right\rangle+\sum_i \sum_{j&gt;i}\left[\left\langle \chi_i \chi_j\left|\frac{1}{r_{12}}\right| \chi_i \chi_j\right\rangle-\left\langle \chi_i \chi_j\left|\frac{1}{r_{12}}\right| \chi_j \chi_i\right\rangle\right.
+\]</div>
+<p>Wie bereits erwähnt, hängt <span class="math notranslate nohighlight">\(E_{HF}\)</span> von der Wahl der Spinorbitale <span class="math notranslate nohighlight">\(\left\{\chi_i\right\}\)</span> ab. Wir wollen nun die bestmöglichen Spinorbitale im Sinne des Variationsprinzips ermitteln. Dazu müssen wir die Energie unter der Nebenbedingung, dass die Spin-Orbitale orthonormiert bleiben, minimieren!</p>
+<h1> Minimieren der Energie einer HF-Determinante </h1>
+<p>Zum Minimieren der Energie der HF-Determinante können wir entweder die Methode der Lagrange-Multiplikatoren, die uns ermöglicht, die Nebenbedingungen zu behandeln, verwenden. Alternativ können wir uns von vornherein nur auf solche Orbitalvariationen beschränken, bei denen die Orthonormierung der Spinorbitale erhalten bleibt. Dies führt uns zu sogenannten <u> Orbitalrotationen,</u> die durch unitäre (oder im reellen Fall orthogonale) Transformationen realisiert werden können.</p>
+<p>Betrachten wir einen Satz von Spinorbitalen <span class="math notranslate nohighlight">\(\left\{\left|\chi_i\right\rangle, i=1, \ldots . M\right\}\)</span>, können wir daraus einen neuen Satz von orthonormierten Spinorbitalen <span class="math notranslate nohighlight">\(\left\{\left|\tilde{\chi}_i\right\rangle, i=1, \ldots M\right\}\)</span> erzeugen, indem wir eine unitäre Transformation vornehmen:
+$<span class="math notranslate nohighlight">\(
+\left|\tilde{\chi}_i\right\rangle=\sum_{j=1}^M U_{i j}\left|\chi_j\right\rangle
+\)</span>$</p>
+<p>Die Unitarität in diesem Fall bedeutet, dass:</p>
+<div class="math notranslate nohighlight">
+\[ 
+U^{\dagger}U = I \quad (U^T U = I\quad \text{im reellen Fall})
+\]</div>
+<p>Des Weiteren beschränken wir uns auf infinitesimale Orbitalrotationen, bei denen sich die Matrix <span class="math notranslate nohighlight">\(U\)</span> ‘’nur wenig’’ von der Einheitsmatrix <span class="math notranslate nohighlight">\(I\)</span> unterscheidet :</p>
+<div class="math notranslate nohighlight">
+\[
+U \approx I+A
+\]</div>
+<p><span class="math notranslate nohighlight">\(A\)</span> ist die Matrix, die solche infinitesimalen Rotationen beschreibt. Dann gilt bis zur zweiten Ordnung in den Elementen von <span class="math notranslate nohighlight">\(A\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+\left|\tilde{\chi}_i\right\rangle=\left|\chi_i\right\rangle+\sum_{k=1}^M A_{ik}\left|\chi_k\right\rangle+\mathcal{O}\left(A^2\right)
+\]</div>
+<p>Da die Orbitalrotationen das Skalarprodukt nicht verändern dürfen und damit die Orthonormierung erhalten bleibt, muss für alle Indizes <span class="math notranslate nohighlight">\(i\)</span> und <span class="math notranslate nohighlight">\(j\)</span> gelten:</p>
+<div class="math notranslate nohighlight">
+\[
+\left\langle\tilde{\chi}_i \mid \tilde{\chi}_j\right\rangle=\left\langle \chi_i \mid \chi_j\right\rangle=\delta_{i j}
+\]</div>
+<p>Wir setzen nun die obige infinitesimale Rotation ein und erhalten unter Vernachlässigung der Terme zweiter Ordnung:</p>
+<div class="math notranslate nohighlight">
+\[\left\langle\tilde{\chi}_i \mid \tilde{\chi}_j\right\rangle= \left\langle \chi_i \mid \chi_j\right\rangle+\sum_k A_{i k}^* \underbrace{\left\langle \chi_k \mid \chi_j\right\rangle}_{\delta_{k j}}+\sum_l A_{j l} \underbrace{\left\langle \chi_i \mid \chi_l\right\rangle}_{\delta_{i l}}\]</div>
+<p>Darans folgt:</p>
+<div class="math notranslate nohighlight">
+\[
+\left\langle\tilde{\chi}_i \mid \tilde{\chi}_j\right\rangle= \left\langle \chi_i \mid \chi_j\right\rangle+A_{ij}^*+A_{ji} 
+\]</div>
+<p>und damit die Bedingung:</p>
+<div class="math notranslate nohighlight">
+\[
+A_{i j}^*+A_{j i}=0
+\]</div>
+<p>oder</p>
+<div class="math notranslate nohighlight">
+\[
+A_{j i}=-A_{i j}^*
+\]</div>
+<p>Wir sehen also, dass Orbital-Rotationen durch eine (beliebige) antihermitesche Matrix <span class="math notranslate nohighlight">\(A\)</span> erzeugt werden können. Da wir im Folgenden der Einfachheit halber nur reelle Transformationen betrachten, reduziert sich die obige Bedingung auf</p>
+<div class="math notranslate nohighlight">
+\[
+A_{j i}=-A_{i j}
+\]</div>
+<p>Wir stellen fest, dass man eine reelle Orbitalrotation durch eine <u> reelle antisymmetrische Matrix </u> beschreiben kann. Eine solche Matrix wollen wir durch unabhängige Parameter parametrisieren.</p>
+<p>Wegen der Antisymmetrie muss die Orbital-Rotationsmatrix die folgende Form besitzen:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+A=\left[\begin{array}{ccccc}
+0 &amp; \tau_{12} &amp; \tau_{13} &amp; \cdots &amp; \tau_{1 M} \\
+-\tau_{12} &amp; 0 &amp; \tau_{23} &amp; \cdots &amp; \tau_{2 M} \\
+-\tau_{13} &amp; -\tau_{23} &amp; 0 &amp; &amp; \\
+\vdots &amp; &amp; \ddots &amp; \\
+\vdots &amp; &amp; &amp; \ddots \\
+-\tau_{1 M} &amp; &amp; &amp; \ddots
+\end{array}\right]
+\end{split}\]</div>
+<p>Die Matrix <span class="math notranslate nohighlight">\(A\)</span> enthält also <span class="math notranslate nohighlight">\(\frac{M(M-1)}{2}\)</span> unabhängige Parameter und kann auch in der Form :</p>
+<div class="math notranslate nohighlight">
+\[
+A=\sum_{p=1}^M \sum_{q&gt;p}^M \tau_{p q} E_{p q}
+\]</div>
+<p>parametrisiert werden. <span class="math notranslate nohighlight">\(E_{pq}\)</span> sind dabei Basismatrizen für die Darstellung antisymmetrischer Matrizen, die man als ‘’Erzeugende der unitären Transformationen’’ bezeichnet, und haben die Form:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}E_{pq}=\left[\begin{array}{cccccc}0 &amp; 0 &amp; \cdots &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; \cdots &amp; 0 &amp; 1 &amp; 0 \\ 0 &amp; 0 &amp; \cdots &amp; 0 &amp; 0 &amp; 0 \\ \cdots &amp; \cdots &amp; &amp; &amp; 0 &amp; 0 \\ \cdots &amp; \cdots &amp; &amp; &amp; \cdots &amp; 0 \\ 0 &amp; 0 &amp; &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; -1 &amp; \cdots &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; \cdots &amp; 0 &amp; 0 &amp; 0\end{array}\right]\end{split}\]</div>
+<p>Dabei sind alle Matrixelement gleich Null außer <span class="math notranslate nohighlight">\((E_{pq}))_{pq}=1)\)</span> und <span class="math notranslate nohighlight">\((E_{pq}))_{qp}=-1)\)</span>.</p>
+<p>Die Matrix <span class="math notranslate nohighlight">\(E_{pq}\)</span> kann mittels des Kroneckers-Symbols kompakt ausgedrückt werden:</p>
+<div class="math notranslate nohighlight">
+\[
+\left(E_{p q}\right)_{i j}=\delta_{i p} \delta_{j q}-\delta_{i q} \delta_{j p}
+\]</div>
+<p>Damit gilt für <span class="math notranslate nohighlight">\(A\)</span> :</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+&amp; A_{i j}=\sum_{p=1}^M \sum_{q&gt;p} \tau_{p q}\left(\delta_{i p} \delta_{j q}-\delta_{i q} \delta_{j p}\right) \\
+&amp; A_{i j}=\left\{\begin{array}{cc}
+\tau_{i j}, &amp; j&gt;i \\
+0 &amp; j=i \\
+-\tau_{j i} &amp; j&lt;i
+\end{array}\right. \\
+&amp;
+\end{aligned}
+\end{split}\]</div>
+<p>Jede Orbitalrotation kann also durch einen Satz unabhängiger Parameter <span class="math notranslate nohighlight">\(\tau_{i j}\)</span> parametrisiert werden:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+\left|\tilde{\chi}_i\right\rangle &amp; =\left|\chi_i\right\rangle+\sum_{k=1}^i A_{i k}\left|\chi_k\right\rangle+\sum_{k=i+1}^M A_{ik}\left| \chi_k\right\rangle \\
+&amp; =\left|\chi_i\right\rangle+\sum_{k=1}^i\left(-\tau_{ki}\right)\left|\chi_k\right\rangle+\sum_{k=i+1}^M \tau_{i k}\left|\chi_k\right\rangle
+\end{aligned}
+\end{split}\]</div>
+<h1> Wie verändert sich eine Slater-Determinante unter Orbital-Rotationen? </h1>
+<p>Wir haben gesehen, dass man durch Orbitalrotation eine orthonormierte Einelektronbasis in eine andere orthonormierte Einelektronbasis überführen kann. Im Folgenden untersuchen wir, wie sich eine N-Elektronen-Slaterdeterminante infolge einer solchen Basistransformation verändert:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+&amp; \left|\chi_i\right\rangle \rightarrow\left|\tilde{\chi}_i\right\rangle \\
+&amp; \left|\psi_{HF}\right\rangle = \left|\chi_1 \chi_2 \cdots \chi_N\right\rangle \rightarrow \left|\tilde{\psi}_{HF}\right\rangle =  \left|\tilde{\chi}_1 \tilde{\chi}_2 \ldots \tilde{\chi}_N\right\rangle
+\end{aligned}
+\end{split}\]</div>
+<p>In der neuen Determinante ist jede Spalte nun eine Linearkombination der Spinorbitale</p>
+<div class="math notranslate nohighlight">
+\[
+\left|\tilde{\chi}_1 \ldots \tilde{\chi}_i \ldots \tilde{\chi}_N\right\rangle=\left|\chi_1+\sum_k^M \tau_{1 k} \chi_k, \ldots, \chi_i+\sum_{k=1}^i\left(-\tau_{ki}\right)\chi_k+\sum_{k=i+1}^M \tau_{i k}\chi_k,\ldots\right\rangle
+\]</div>
+<p>Aber Determinanten sind linear in Spalten (und Zeilen). Des Weiteren können wir <span class="math notranslate nohighlight">\(k\)</span> beschränken auf <span class="math notranslate nohighlight">\(k&gt;N\)</span>, da wir ansonsten irgendwo in der Determinante zwei gleiche Spalten hätten. Damit summieren wir nur über virtuelle Orbitale (s.u.).
+Wir sehen, dass bei der Orbitaltransformation der HF-Determinante Konfigurationen beigemischt werden, bei denen jeweils ein Elektron aus einem besetzten Orbital in ein virtuelles angeregt wird:</p>
+<div class="math notranslate nohighlight">
+\[
+\left|\tilde{\psi}_{H F}\right\rangle=\left|\psi_{H F}\right\rangle+\sum_o \sum_v \tau_{o v}\left|\psi_o^v\right\rangle
+\]</div>
+<p>Wie verändert sich eine Slater-Determinante infolge einer Orbitalrotation?
+$<span class="math notranslate nohighlight">\(
+\begin{aligned}
+&amp; \left|\tilde{\chi}_1 \tilde{\chi}_2, \ldots \tilde{\chi}_N\right\rangle=\left|\chi_1+\sum_k \tau_{1 k} \chi_k, \chi_2+\sum_k \tau_{2 k} \chi_k, \ldots, \chi_N+\sum_k \tau_{N k} \chi_k\right\rangle
+\end{aligned}
+\)</span><span class="math notranslate nohighlight">\(
+Wegen der Linearität der Determinante:
+\)</span><span class="math notranslate nohighlight">\(
+\left|\tilde{\chi}_1 \tilde{\chi}_2, \ldots \tilde{\chi}_N\right\rangle=\left|\chi_1 \chi_2 \cdots \chi_N\right\rangle+\sum_k\left[\tau_{1 k}\left|\chi_k \chi_2 \ldots \chi_N\right\rangle+\tau_{2 k}\left|\chi_1 \chi_k \cdots \chi_N\right\rangle+\cdots \tau_{N k}\left|\chi_1 \chi_2 \ldots \chi_k\right\rangle\right]
+\)</span><span class="math notranslate nohighlight">\(
+Die Summe über \)</span>k<span class="math notranslate nohighlight">\( geht nur über die Orbitalindezes, die in der ursprünglichen Determinante unbesetzt waren. Solche Orbitale bezeichnet man als virtuell. Die Determinanten in der Summe unterscheiden sich von der ursprünglichen Determinante genau in einem Orbital. Dabei wird genau ein Elektron aus einem besetzten Orbital mit dem Index \)</span>o<span class="math notranslate nohighlight">\( in ein virtuelles Orbital mit dem Index \)</span>v$ angeregt.</p>
+<p>Die Änderung der Slaterdeterminante können wir also als:</p>
+<div class="math notranslate nohighlight">
+\[
+\left|\tilde{\chi}_1 \tilde{\chi}_2 \cdots \tilde{\chi}_N\right\rangle=\left|\chi_1 \chi_2 \ldots \chi_N\right\rangle+\sum_o \sum_v \tau_{ov}\left|\chi_1 \chi_2 \cdots \chi_{v} \cdots \chi_N\right\rangle
+\]</div>
+<p>ausdrücken, oder in kurzer Form:</p>
+<div class="math notranslate nohighlight">
+\[
+\left|\tilde{\psi}_{H F}\right\rangle=\left|\psi_{H F}\right\rangle+\sum_o \sum_v \tau_{o v}\left|\psi_o^v\right\rangle
+\]</div>
+<p>Dabei haben wir die Abkürzung <span class="math notranslate nohighlight">\(\left|\psi_o^v\right\rangle\)</span> für die einfach angeregte Determinante definiert:</p>
+<div class="math notranslate nohighlight">
+\[
+\left|\psi_o^v\right\rangle \equiv\left|\chi_1 \chi_2 \cdots \chi_v \cdots \chi_N\right\rangle
+\]</div>
+<h1> Wie verändert sich die Hartree-Fock-Energie infolge der Orbitalrotation? </h1>
+<p>Wir berechnen den Erwartungswert der Energie mit der neuen Slaterdeterminante:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+&amp; \tilde{E}_{H F}=\left\langle\tilde{\psi}_{H F}|\hat{H}| \tilde{\psi}_{H F}\right\rangle=\left\langle\psi_{H F}|\hat{H}| \psi_{H F}\right\rangle+\sum_o \sum_v \tau_{o v}\left\langle\psi_{H F}\left|\hat{H}\right| \psi_o^v\right\rangle+\ldots \\
+&amp; \tilde{E}_{H F}=E_{H F}+\sum_o \sum_v\tau_{o v}\left\langle\psi_{H F}|\hat{H}| \psi_o^v\right\rangle
+\end{aligned}
+\end{split}\]</div>
+<p>Die <u> optimalen Hartree-Fock-Orbitale </u> sind definiert als die Orbitale, für die die Energie stationär in Bezug auf die Orbitalrotationen ist. Da die Rotationsparameter <span class="math notranslate nohighlight">\(\tau_{ov}\)</span> alle unabhängig voneinander sind, lautet die Optimierungsbedingung:</p>
+<div class="math notranslate nohighlight">
+\[
+\left\langle\psi_{H F}|\hat{H}| \psi_o^v\right\rangle=0 \quad \forall o, \forall v
+\]</div>
+<p>Dies bezeichnet man als Brillouin-Bedingung (oder -Theorem in anderen, äquivalenten Herleitungen der HF-Methode). Die Orbitale in der Slaterdeterminante muss man also so wählen, dass das Matrixelement zwischen der HF-Determinante und allen einfach angeregten Determinanten verschwindet. Nur in diesem Fall wird die HF-Energie stationär in Bezug auf infinitesimale Orbitalrotationen sein.</p>
+<p>Das Matrixelement</p>
+<div class="math notranslate nohighlight">
+\[
+\left\langle\psi_{HF}|\hat{H}| \psi_o^v\right\rangle=\left\langle \chi_1 \chi_2 \ldots \chi_N|\hat{H}| \chi_1 \chi_2 \cdots \chi_v \cdots \chi_N\right\rangle
+\]</div>
+<p>kann genauso berechnet werden, wie z.B die Energie einer Determinante berechnet wurde. Unter Verwendung gleicher “Tricks” erhalten wir dafür den folgenden Ausdruck:</p>
+<div class="math notranslate nohighlight">
+\[
+\left\langle\psi_{H F}|\hat{H}| \psi_o v\right\rangle=\langle o|h| v\rangle+\sum_j\left[\left\langle o j\left|\frac{1}{r_{12}}\right| v j\right\rangle-\left\langle o j\left|\frac{1}{r_{12}}\right| j v\right\rangle\right]
+\]</div>
+<p>Für die optimalen Orbitale muss also die folgende Bedingung gelten</p>
+<div class="math notranslate nohighlight">
+\[
+\langle o|h| v\rangle+\sum_j\left[\left\langle o j\left|\frac{1}{r_{12}}\right| v j\right\rangle-\left\langle o j\left|\frac{1}{r_{12}}\right| j v\right\rangle\right]=0 \quad \forall o, \forall j
+\]</div>
+<p>Wann ist diese Bedingung erfüllt?</p>
+<p>Um diese Frage zu beantworten, schauen wir uns zunächst den Fall nichtwechselwirkender Elektronen an. In diesem Grenzfall reduziert sich die Bedingung auf:</p>
+<div class="math notranslate nohighlight">
+\[
+\langle o|h| v\rangle+\sum_j\left[\left\langle o j\left|\frac{1}{r_{12}}\right| v j\right\rangle-\left\langle o j\left|\frac{1}{r_{12}}\right| j v\right\rangle\right]=0 \Rightarrow\langle o|h| v\rangle=0 .
+\]</div>
+<p>Diese ‘’vereinfachte’’ Bedingung ist sicher erfüllt, wenn man die Orbitale als Eigenfunktionen des 1el-Operators <span class="math notranslate nohighlight">\(h\)</span> wählt. Für diese gilt:</p>
+<div class="math notranslate nohighlight">
+\[
+h|i\rangle=\varepsilon_i|i\rangle \Rightarrow h|o\rangle=\varepsilon_o|o\rangle, \quad h|v\rangle=\varepsilon_v|v\rangle
+\]</div>
+<p>und damit wegen der Orthogonalität der Eigenfunktionen auch automatisch:</p>
+<div class="math notranslate nohighlight">
+\[
+\langle o|h| v\rangle=0 \text {. }
+\]</div>
+<p>Im Folgenden werden wir sehen, dass man diese Betrachtung auch auf wechselwirkende Elektronen verallgemeinern kann, in dem man einen <u> effektiven Einelektronoperator </u> namens Fock-Operator einführt!</p>
+<p>Wir definieren zunächst den sog. Coulomb-Operator:</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{aligned}
+&amp; \hat{J}|v\rangle \equiv \sum_j\left\langle j\left|\frac{1}{r_{12}}\right| j\right\rangle_2|v\rangle 
+\end{aligned}
+\]</div>
+<p>und den Austausch-Operator:</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{aligned}
+&amp; \hat{K}|v\rangle \equiv \sum_j\left\langle j\left|\frac{1}{r_{12}}\right| v\right\rangle_2|j\rangle
+\end{aligned}
+\]</div>
+<p>Mit Hilfe dieser Definitionen können wir die Brillouin-Bedingung wie folgt schreiben:</p>
+<div class="math notranslate nohighlight">
+\[
+\langle o|\hat{h}+\hat{J}-\hat{K}| v\rangle=0
+\]</div>
+<p>Den Operator in diesem Ausdruck bezeichnet man als Fock-Operator:</p>
+<div class="math notranslate nohighlight">
+\[
+\hat{F}=\hat{h}+\hat{J}-\hat{K}
+\]</div>
+<p>Der Fock-Operator ist ein Einelektron-Operator, der für ein wechelwirkendes System von Elektronen  die gleiche Rolle spielt wie <span class="math notranslate nohighlight">\(h\)</span> im Falle eines nichtwechselwirkenden Systems!</p>
+<p>Die Brillouin-Bedingung lässt sich also auch in der folgenden Form ausdrücken:</p>
+<div class="math notranslate nohighlight">
+\[
+\langle o|F| v\rangle=0 \quad \forall o, \forall v
+\]</div>
+<p>Diese Bedingung ist aber sicher erfüllt, wenn wir die Orbitale als Eigenfunktionen des Fock-Operators wählen. Dies führt uns direkt zur Hartree-Fock-Gleichung:</p>
+<div class="math notranslate nohighlight">
+\[
+F|i\rangle=\varepsilon_i|i\rangle 
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+(\hat{h}+\hat{J}-\hat{K})|i\rangle=\varepsilon_i|i\rangle
+\]</div>
+<p>Die Lösung dieser Hartree-Fock-Gleichung liefert die optimalen Orbitale für die Beschreibung eines wechselwirkenden <span class="math notranslate nohighlight">\(N\)</span>-Elektronensystems.</p>
+<h1> Hartree-Fock-Gleichung </h1>
+<p>Das Eigenwertproblem für den Fock-Operator kann in Form einer Differentialgleichung geschrieben werden:</p>
+<div class="math notranslate nohighlight">
+\[\hat{F}\left|\chi_i\right\rangle=\varepsilon_i\left|\chi_i\right\rangle \Rightarrow-\frac{1}{2} \nabla^2 \chi_i+V_{n e} \chi_i+\sum_j\left[\int d 2 \frac{\left|\chi_j(2)\right|^2}{r_{12}}\right] \chi_i-\sum_j\left[\int d 2 \frac{\chi_j(2) \chi_i(2)}{r_{12}}\right] \chi_j=\varepsilon_i \chi_i\]</div>
+<p>Diese wiederum sieht aus wie die Schrödingergleichung für ein Elektron, das sich in einem “effektiven” Potential bewegt.</p>
+<div class="math notranslate nohighlight">
+\[
+ -\frac{1}{2} \nabla^2 \chi_i+V_{\mathrm{eff}} \chi_i=\varepsilon_i
+\]</div>
+<p>Wir haben somit das Problem <span class="math notranslate nohighlight">\(N\)</span> wechselwirkender Elektronen auf die Bewegung <i>eines</i> Elektrons in einem neuen “effektiven” Potential reduziert. Das effektive Potential besteht aus dem Potential der Kern-Elektron-Wechselwirkung und zwei weiteren Termen, die die Elektron-Elektron-Wechselwirkung beinhalten. Das wesentliche dabei ist, dass die Elektron-Elektron-Wechselwirkung hier Form eines <u> gemittelten </u> Ein-Elektron-Potentials auftritt, d.h., dass jedes Elektron dem gemittelten Potential aller anderen Elektronen ausgesetzt ist.</p>
+<h1> Zur Lösung der Hartree-Fock-Gleichung </h1>
+<p>Obwohl die HF-Gleichung auf den ersten Blick wie ein lineares Eigenwertproblem aussieht (vergleichbar mit der stationären Schrödingergleichung), handelt es sich dabei eigentlich um ein <u> nichtlineares </u> Eigenwertproblem. Denn der Fock-Operator, der die Orbitale bestimmt, enthält diese bereits in seiner Definition innerhalb der Coulomb- und Austauschterme. Daher erfordert bereits die Formulierung des Problems und die Konstruktion des Fock-Operators die Kenntnis der (unbekannten) Lösungen. Zu diesem Zweck werden die Hartree-Fock-Gleichungen im Allgemeinen durch ein iteratives Verfahren gelöst.</p>
+<p>Dieses Verfahren wird als “self-consistent field” (SCF)-Verfahren bezeichnet. Die Idee des SCF-Verfahrens besteht darin, mit einer anfänglichen Näherung für die Orbitale zu beginnen, die sogar schlecht sein kann. Beispielsweise könnten die anfänglichen Orbitale konstruiert werden, indem nur der Ein-Elektron-Operator ohne die effektive Elektron-Elektron-Wechselwirkung diagonalisiert wird. Solche anfänglichen Orbitale werden dann verwendet, um in der nächsten Iteration einen neuen Fock-Operator zu konstruieren. Der neue Fock-Operator wird wieder diagonalisiert, was zu verbesserten Orbitalen führt. Dieses Verfahren wird dann iterativ wiederholt, bis die Orbitale, die verwendet werden, um den Fock-Operator zu konstruieren, innerhalb einer vorgegebenen numerischen Genauigkeit dieselben werden wie die Orbitale, die durch seine anschließende Diagonalisierung erhalten werden.</p>
+<p>Die Lösung der HF-Gleichungen erfolgt somit meistens mit Hilfe des Computers…</p>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "rolandmitric/quantum_chemistry_2025",
+            ref: "main",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Konfigurationswe</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#das-hartree-fock-verfahren">Das Hartree-Fock-Verfahren</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Roland Mitric
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

@@ -446,7 +446,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variationsansatz-von-hylleraas">Variationsansatz von Hylleraas</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#energieerwartungswerte-fur-den-hylleraas-ansatz">Energieerwartungswerte für den Hylleraas-Ansatz</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transformation-des-volumenelements">Transformation des Volumenelements</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#minimize-energy">Minimize energy</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#energieminimierung">Energieminimierung</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ergebnis-und-physikalische-bedeutung">Ergebnis und physikalische Bedeutung</a></li>
@@ -762,8 +762,8 @@ E(\zeta)=\frac{\mathcal N(\zeta)}{\mathcal D(\zeta)}.
 </div>
 </div>
 </div>
-<section id="minimize-energy">
-<h3>Minimize energy<a class="headerlink" href="#minimize-energy" title="Link to this heading">#</a></h3>
+<section id="energieminimierung">
+<h3>Energieminimierung<a class="headerlink" href="#energieminimierung" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">zeta_min</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">Eq</span><span class="p">(</span><span class="n">E</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">zeta</span><span class="p">),</span><span class="mi">0</span><span class="p">),</span><span class="n">zeta</span><span class="p">)</span>
@@ -1056,7 +1056,7 @@ Relative error = 0.004189497590817224 Percent
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variationsansatz-von-hylleraas">Variationsansatz von Hylleraas</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#energieerwartungswerte-fur-den-hylleraas-ansatz">Energieerwartungswerte für den Hylleraas-Ansatz</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transformation-des-volumenelements">Transformation des Volumenelements</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#minimize-energy">Minimize energy</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#energieminimierung">Energieminimierung</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ergebnis-und-physikalische-bedeutung">Ergebnis und physikalische Bedeutung</a></li>
