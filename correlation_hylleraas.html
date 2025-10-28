@@ -449,8 +449,9 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#energieminimierung">Energieminimierung</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hylleraas-methode-n-2">Hylleraas-Methode (N=2)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ergebnis-und-physikalische-bedeutung">Ergebnis und physikalische Bedeutung</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fully-general-hylleraas-calculation">Fully general Hylleraas calculation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#weitere-vergroszerung-der-hylleraas-basis">Weitere Vergrößerung der Hylleraas-Basis</a></li>
 </ul>
             </nav>
         </div>
@@ -469,12 +470,12 @@ document.write(`
 \[
 \Psi_0(\mathbf{r}_1,\mathbf{r}_2)=\psi(\mathbf{r}_1)\psi(\mathbf{r}_2)
 \]</div>
-<p>sind die Elektronenkoordinaten voneinander entkoppelt. Die Elektronen sind also unabhängig von einander und nicht korreliert! Die gegenseitige Abstoßung wird damit nur im Mittel beschrieben. Eine explizite Korrelation der Elektronenbewegungen fehlt, und die Energie liegt deshalb über dem exakten Wert. Hylleraas zeigte 1929, dass sich eine erhebliche Verbesserung erreichen lässt, wenn man den <strong>gegenseitigen Abstand</strong></p>
+<p>sind die Elektronenkoordinaten voneinander entkoppelt. Die Elektronen sind also unabhängig voneinander und nicht korreliert! Die gegenseitige Abstoßung wird damit nur im Mittel beschrieben. Eine explizite Korrelation der Elektronenbewegungen fehlt, und die Energie liegt deshalb über dem exakten Wert. Hylleraas zeigte 1929, dass sich eine erhebliche Verbesserung erreichen lässt, wenn man den <strong>Abstand</strong></p>
 <div class="math notranslate nohighlight">
 \[
 r_{12} = |\mathbf{r}_1 - \mathbf{r}_2|
 \]</div>
-<p>als zusätzliche Variable in den variationellen Ansatz einführt. Wir definieren nun die sogenannten <strong>Hylleraas‐Koordinaten</strong></p>
+<p>als zusätzliche Variable in den variationellen Ansatz einführt. Zu diesem Zweck  definieren nun die sogenannten <strong>Hylleraas‐Koordinaten</strong></p>
 <div class="math notranslate nohighlight">
 \[
 s = r_1 + r_2, \qquad
@@ -484,7 +485,7 @@ u = r_{12}
 <p>die eine natürliche Grundlage für eine explizit korrelierte Beschreibung bilden.</p>
 <section id="variationsansatz-von-hylleraas">
 <h2>Variationsansatz von Hylleraas<a class="headerlink" href="#variationsansatz-von-hylleraas" title="Link to this heading">#</a></h2>
-<p>Die Hylleraas‐Wellenfunktion wird  als Produkt eines exponentiellen Faktor mit einer polynomiellen Korrektur gewählt. Wenn man im einfachsten Fall nur den linearen Term in <span class="math notranslate nohighlight">\(u = r_{12}\)</span> behält, erhält man den folgenden Ansatz:</p>
+<p>Die Hylleraas‐Wellenfunktion wird  als Produkt eines exponentiellen Faktor mit einer polynomiellen Korrektur gewählt. Wenn man im einfachsten Fall nur den linearen Term in <span class="math notranslate nohighlight">\(u = r_{12}\)</span> behält, erhält man den folgenden variationellen Ansatz:</p>
 <div class="math notranslate nohighlight">
 \[
 \Psi(s,t,u)=e^{-\zeta s}\,(1+\gamma u).
@@ -799,24 +800,8 @@ E(\zeta)=\frac{\mathcal N(\zeta)}{\mathcal D(\zeta)}.
 </div>
 </section>
 </section>
-<section id="ergebnis-und-physikalische-bedeutung">
-<h2>Ergebnis und physikalische Bedeutung<a class="headerlink" href="#ergebnis-und-physikalische-bedeutung" title="Link to this heading">#</a></h2>
-<p>Bereits der einfachste Ansatz <span class="math notranslate nohighlight">\(\Psi = e^{-\zeta s}(1+\gamma u)\)</span> erfasst den Großteil der Elektronenkorrelationsenergie.<br />
-Während der unkorrelierte Hartree‐Wert etwa</p>
-<div class="math notranslate nohighlight">
-\[
-E_\text{Hartree} \approx -2.85\,\text{a.u.}
-\]</div>
-<p>beträgt, ergibt die Hylleraas‐Funktion bereits</p>
-<div class="math notranslate nohighlight">
-\[
-E_\text{Hylleraas} \approx -2.90\,\text{a.u.},
-\]</div>
-<p>was fast die gesamte Abweichung vom exakten Wert (<span class="math notranslate nohighlight">\(E_\text{exakt} = -2.9037\)</span> a.u.) erklärt.<br />
-Damit demonstriert die Hylleraas‐Methode eindrucksvoll, dass die <strong>explizite Einbeziehung von <span class="math notranslate nohighlight">\(r_{12}\)</span></strong> die korrelierte Bewegung der Elektronen korrekt beschreibt und den Energiefehler drastisch reduziert. Sie bildet den konzeptionellen Ausgangspunkt moderner <strong><span class="math notranslate nohighlight">\(r_{12}\)</span>‐ und F12‐Methoden</strong>, die bis heute in der quantenchemischen Behandlung elektronischer Korrelation eine zentrale Rolle spielen.</p>
-</section>
-<section id="fully-general-hylleraas-calculation">
-<h2>Fully general Hylleraas calculation<a class="headerlink" href="#fully-general-hylleraas-calculation" title="Link to this heading">#</a></h2>
+<section id="hylleraas-methode-n-2">
+<h2>Hylleraas-Methode (N=2)<a class="headerlink" href="#hylleraas-methode-n-2" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span><span class="p">,</span><span class="n">t</span><span class="p">,</span><span class="n">u</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;s t u&#39;</span><span class="p">,</span> <span class="n">real</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
@@ -928,6 +913,26 @@ Relative error = 0.434051637102224 Percent
 </div>
 </div>
 </div>
+</section>
+<section id="ergebnis-und-physikalische-bedeutung">
+<h2>Ergebnis und physikalische Bedeutung<a class="headerlink" href="#ergebnis-und-physikalische-bedeutung" title="Link to this heading">#</a></h2>
+<p>Bereits der einfachste Ansatz <span class="math notranslate nohighlight">\(\Psi = e^{-\zeta s}(1+\gamma u)\)</span> erfasst den Großteil der Elektronenkorrelationsenergie.<br />
+Während der unkorrelierte Hartree‐Wert etwa</p>
+<div class="math notranslate nohighlight">
+\[
+E_\text{Hartree} \approx -2.85\,\text{a.u.}
+\]</div>
+<p>beträgt, ergibt der Hylleraas‐Ansatz mit zwei Basisfunktionen bereits</p>
+<div class="math notranslate nohighlight">
+\[
+E_\text{Hylleraas} \approx -2.90\,\text{a.u.},
+\]</div>
+<p>was wesentlich näher an dem exakten Wert (<span class="math notranslate nohighlight">\(E_\text{exakt} = -2.9037\)</span> a.u.) liegt.</p>
+<p>Damit demonstriert die Hylleraas‐Methode eindrucksvoll, dass die <strong>explizite Einbeziehung von <span class="math notranslate nohighlight">\(r_{12}\)</span></strong> die korrelierte Bewegung der Elektronen korrekt beschreibt und den Energiefehler drastisch reduziert.
+Dies bildet den konzeptionellen Ausgangspunkt moderner <strong><span class="math notranslate nohighlight">\(r_{12}\)</span>‐ und F12‐Methoden</strong>, die bis heute in der quantenchemischen Behandlung elektronischer Korrelation eine zentrale Rolle spielen.</p>
+</section>
+<section id="weitere-vergroszerung-der-hylleraas-basis">
+<h2>Weitere Vergrößerung der Hylleraas-Basis<a class="headerlink" href="#weitere-vergroszerung-der-hylleraas-basis" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">psi</span> <span class="o">=</span> <span class="p">[</span><span class="n">psi0</span><span class="p">,</span> <span class="n">psi0</span><span class="o">*</span><span class="n">u</span><span class="p">,</span> <span class="n">psi0</span><span class="o">*</span><span class="n">t</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> 
@@ -1059,8 +1064,9 @@ Relative error = 0.004189497590817224 Percent
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#energieminimierung">Energieminimierung</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hylleraas-methode-n-2">Hylleraas-Methode (N=2)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ergebnis-und-physikalische-bedeutung">Ergebnis und physikalische Bedeutung</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fully-general-hylleraas-calculation">Fully general Hylleraas calculation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#weitere-vergroszerung-der-hylleraas-basis">Weitere Vergrößerung der Hylleraas-Basis</a></li>
 </ul>
   </nav></div>
 
