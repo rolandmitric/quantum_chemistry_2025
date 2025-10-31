@@ -444,9 +444,10 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#der-atomare-hamiltonoperator">Der atomare Hamiltonoperator</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#separationsansatz-hartree-produkt">Separationsansatz (Hartree-Produkt)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#erwartungwert-der-energie">Erwartungwert der Energie</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#symbolische-auswertung-mit-sympy">Symbolische Auswertung mit SymPy</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#energieerwartungswert-des-hartree-produktansatzes">Energieerwartungswert des Hartree-Produktansatzes</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wie-grosz-ist-die-elektronelektron-wechselwirkung-eine-erste-abschatzung">Wie groß ist die Elektron–Elektron-Wechselwirkung? Eine erste Abschätzung.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#symbolische-berechnung-des-erwartungswertes">Symbolische Berechnung des Erwartungswertes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optimierung-der-effektiven-kernladung">Optimierung der effektiven Kernladung</a></li>
 </ul>
             </nav>
         </div>
@@ -502,18 +503,29 @@ $$
 </div></section>
 <section id="separationsansatz-hartree-produkt">
 <h2>Separationsansatz (Hartree-Produkt)<a class="headerlink" href="#separationsansatz-hartree-produkt" title="Link to this heading">#</a></h2>
-<p>Für den Grundzustand des He-Atoms wählen wir den <strong>Produktansatz</strong></p>
+<p>Um den Grundzustand des Heliumatoms zu beschreiben, wählen wir als Ausgangspunkt den <strong>Produktansatz</strong> den man in der Literatur auch als <strong>Hartree-Produkt</strong> bezeichnet:</p>
 <div class="math notranslate nohighlight">
 \[
 \Psi(\mathbf r_1,\mathbf r_2) = \phi(\mathbf r_1)\,\phi(\mathbf r_2),
 \]</div>
-<p>wobei <span class="math notranslate nohighlight">\(\phi\)</span> ein 1s-ähnliches Orbital am Kern ist.<br />
-Setzt man diesen Ansatz in die zeitunabhängige Schrödingergleichung mit dem vereinfachten Hamiltonoperator</p>
+<p>wobei <span class="math notranslate nohighlight">\(\phi\)</span> ein 1s-ähnliches Atomorbital mit Zentrum am Kern ist.</p>
+<p><strong>Bemerkung:</strong> Man könnte, wie in der Vorlesung diskutiert, auch eine Summe der Form</p>
+<div class="math notranslate nohighlight">
+\[
+\Psi(\mathbf r_1,\mathbf r_2) = \phi(\mathbf r_1) + \phi(\mathbf r_2)
+\]</div>
+<p>betrachten. Wir haben jedoch gesehen, dass eine derartige Wellenfunktion kein Zweielektronensystem beschreiben kann, da sie weder die Randbedingung</p>
+<div class="math notranslate nohighlight">
+\[
+\lim_{r_2 \to \infty} \Psi(\mathbf r_1,\mathbf r_2) = 0 \quad \forall\, \mathbf r_1
+\]</div>
+<p>erfüllt noch normierbar ist. Damit ist dies keine physikalisch sinnvolle Wellenfunktion. Wir arbeiten also mit dem Produktansatz weiter.</p>
+<p>Setzt man nun den Produktansatz in die zeitunabhängige Schrödingergleichung mit dem vereinfachten Hamiltonoperator</p>
 <div class="math notranslate nohighlight">
 \[
 H_0 = h(1) + h(2), \qquad h = -\tfrac12 \nabla^2 - \frac{Z}{r},
 \]</div>
-<p>ein, erhält man</p>
+<p>ein, so erhält man</p>
 <div class="math notranslate nohighlight">
 \[
 H_0\,\Psi(\mathbf r_1,\mathbf r_2)
@@ -531,8 +543,8 @@ h\,\phi = \varepsilon\,\phi,
 \[
 H_0\,\Psi = 2\varepsilon\,\Psi.
 \]</div>
-<p>Damit ist <span class="math notranslate nohighlight">\(\varepsilon\)</span> die Eigenenergie eines Elektrons im wasserstoffähnlichen Potential eines Kerns der Ladungszahl <span class="math notranslate nohighlight">\(Z\)</span>.<br />
-Für den 1s-Grundzustand gilt</p>
+<p>Damit ist <span class="math notranslate nohighlight">\(\varepsilon\)</span> die Eigenenergie eines Elektrons im wasserstoffähnlichen Potential eines Kerns der Ladungszahl <span class="math notranslate nohighlight">\(Z\)</span>. Wir sehen also, dass der Produktansatz eine günstige Eigenschaft besitzt: Er stellt die <strong>exakte</strong> Wellenfunktion für ein <strong>nicht wechselwirkendes</strong> System aus zwei Elektronen dar.</p>
+<p>Für den 1s-Grundzustand gilt</p>
 <div class="math notranslate nohighlight">
 \[
 \varepsilon = E_{1s}(Z) = -\frac{Z^2}{2},
@@ -542,7 +554,7 @@ Für den 1s-Grundzustand gilt</p>
 \[
 E = 2\,E_{1s}(Z) = 2\!\left(-\frac{Z^2}{2}\right) = -Z^2.
 \]</div>
-<p>Für Helium (<span class="math notranslate nohighlight">\(Z = 2\)</span>) folgt daher <span class="math notranslate nohighlight">\(E = -4\)</span> Hartree. Der <strong>exakte nichtrelativistische Wert</strong> aus hochpräzisen numerischen Rechnungen beträgt</p>
+<p>Für das Helium atom (<span class="math notranslate nohighlight">\(Z = 2\)</span>) folgt daher für die Energie <span class="math notranslate nohighlight">\(E = -4\)</span> Hartree. Der <strong>exakte nichtrelativistische Wert</strong> aus hochpräzisen numerischen Rechnungen beträgt</p>
 <div class="math notranslate nohighlight">
 \[
 E_\text{exakt} \approx -2.9037\ \text{Hartree},
@@ -553,41 +565,125 @@ E_\text{exakt} \approx -2.9037\ \text{Hartree},
 E_\text{exp} \approx -2.9034\ \text{Hartree}.
 \]</div>
 <p>Die Differenz von rund <strong>1.1 Hartree</strong> zeigt deutlich, dass die einfache Näherung ohne Elektron–Elektron-Abstoßung das System <strong>zu stark bindet</strong>.<br />
-Sie verdeutlicht damit den erheblichen Beitrag der Elektron–Elektron-Wechselwirkung zur realen Bindungsenergie des Heliumatoms. Wir lernen daraus, dass die Elektron-Elektron Wechselwirkung definitiv keine Vernachlässigbare Größe ist und die orbitalbasierte Produktansätze keine gute Näherungen für die exakte Wellenfunktion sind !</p>
+Sie verdeutlicht damit den erheblichen Beitrag der Elektron–Elektron-Wechselwirkung zur realen Bindungsenergie des Heliumatoms. Wir lernen daraus, dass die Elektron-Elektron Wechselwirkung definitiv keine Vernachlässigbare Größe ist und die orbitalbasierte Produktansätze, die für nichtwechselwirkende Elektronen exakt sind, keine gute Näherungen für die exakte Wellenfunktion eines wechselwirkenden Systems sind !</p>
 </section>
-<section id="erwartungwert-der-energie">
-<h2>Erwartungwert der Energie<a class="headerlink" href="#erwartungwert-der-energie" title="Link to this heading">#</a></h2>
-<p>Anstatt die Schrödingergleichung direkt zu lösen, können wir den Energieeigenwert auch über den <strong>Erwartungswert des Hamiltonoperators</strong> bestimmen. Für eine gegebene (nicht notwendigerweise exakte) Wellenfunktion <span class="math notranslate nohighlight">\(\Psi\)</span> ist der zugehörige Energieerwartungswert definiert als</p>
+<section id="energieerwartungswert-des-hartree-produktansatzes">
+<h2>Energieerwartungswert des Hartree-Produktansatzes<a class="headerlink" href="#energieerwartungswert-des-hartree-produktansatzes" title="Link to this heading">#</a></h2>
+<p>Wir berechnen als Nächstes den <strong>Erwartungswert des vollen Hamiltonoperators</strong> für das Heliumatom unter Verwendung des Hartree-Produktansatzes.<br />
+Für eine gegebene (nicht notwendigerweise exakte) Wellenfunktion <span class="math notranslate nohighlight">\(\Psi\)</span> ist der Energieerwartungswert definiert als</p>
 <div class="math notranslate nohighlight">
 \[
 E[\Psi] = \frac{\langle \Psi | H | \Psi \rangle}{\langle \Psi | \Psi \rangle}.
 \]</div>
-<p>Dieser Ausdruck bildet die Grundlage der Anwendung des <strong>Variationsprinzips</strong> auf die atomaren und molekularen Systeme.</p>
-<p>Wenden wir dies auf das Heliumatom im Näherungshamiltonian <span class="math notranslate nohighlight">\(H_0 = h(1) + h(2)\)</span> an, so ergibt sich für den Produktansatz</p>
+<p>Dieser Ausdruck bildet die Grundlage des <strong>Variationsprinzips</strong> in der Quantenmechanik.</p>
+<p>Für das Heliumatom lautet der volle Hamiltonoperator</p>
 <div class="math notranslate nohighlight">
 \[
-\Psi(\mathbf r_1,\mathbf r_2) = \phi(\mathbf r_1)\,\phi(\mathbf r_2)
+H = h(1) + h(2) + \frac{1}{r_{12}}, 
+\qquad 
+h = -\tfrac12 \nabla^2 - \frac{Z}{r}.
 \]</div>
-<p>der Erwartungswert</p>
+<p>Setzen wir nun den Hartree-Produktansatz</p>
 <div class="math notranslate nohighlight">
 \[
-E[\Psi] = \frac{\langle \phi(1)\phi(2) |\, h(1) + h(2)\, | \phi(1)\phi(2) \rangle}{\langle \phi(1)\phi(2) | \phi(1)\phi(2) \rangle}.
+\Psi(\mathbf r_1,\mathbf r_2) = \phi(\mathbf r_1)\,\phi(\mathbf r_2),
+\qquad
+\phi(\mathbf r) = N\,e^{-Z r},
 \]</div>
-<p>Da <span class="math notranslate nohighlight">\(h(1)\)</span> und <span class="math notranslate nohighlight">\(h(2)\)</span> auf verschiedene Koordinaten wirken, kann der Ausdruck separiert werden:</p>
+<p>ein, so ergibt sich für den Energieerwartungswert</p>
 <div class="math notranslate nohighlight">
 \[
-E[\Psi] = 
-\frac{\langle \phi(1) | h(1) | \phi(1) \rangle}{\langle \phi(1) | \phi(1) \rangle}
+E[\Psi] =
+\frac{
+\langle \phi(1)\phi(2) |\, h(1) + h(2) + \tfrac{1}{r_{12}}\, | \phi(1)\phi(2) \rangle
+}{
+\langle \phi(1)\phi(2) | \phi(1)\phi(2) \rangle
+}.
+\]</div>
+<p>Da <span class="math notranslate nohighlight">\(h(1)\)</span> und <span class="math notranslate nohighlight">\(h(2)\)</span> auf verschiedene Koordinaten wirken, kann der Ausdruck in einen <strong>Einteilchenanteil</strong> und einen <strong>Wechselwirkungsanteil</strong> zerlegt werden:</p>
+<div class="math notranslate nohighlight">
+\[
+E[\Psi] =
+2\,\langle \phi | h | \phi \rangle
 +
-\frac{\langle \phi(2) | h(2) | \phi(2) \rangle}{\langle \phi(2) | \phi(2) \rangle}
-= 2\,\langle \phi | h | \phi \rangle = 2\,\varepsilon.
+J,
 \]</div>
-<p>Damit bestätigt der Erwartungswert formal das zuvor erhaltene Ergebnis:<br />
-Die Gesamtenergie ist gleich der Summe der beiden Einteilchenenergien. Erst wenn die Elektron–Elektron-Wechselwirkung berücksichtigt wird, liefert das Variationsprinzip eine Möglichkeit, realistischere Energien durch geeignete Wahl der Wellenfunktion zu bestimmen.</p>
+<p>wobei das <strong>Coulomb-Integral</strong></p>
+<div class="math notranslate nohighlight">
+\[
+J = 
+\iint
+|\phi(\mathbf r_1)|^2\,\frac{1}{r_{12}}\,|\phi(\mathbf r_2)|^2
+\,\mathrm d^3 r_1\,\mathrm d^3 r_2
+\]</div>
+<p>den mittleren Beitrag der Elektron–Elektron-Abstoßung beschreibt.<br />
+Damit ergibt sich der Energieerwartungswert zu</p>
+<div class="math notranslate nohighlight">
+\[
+E[\Psi] = 2\langle \phi | h | \phi \rangle + J.
+\]</div>
+<p>Erst durch die Berücksichtigung dieses Coulomb-Integrals <span class="math notranslate nohighlight">\(J\)</span> liefert das Variationsprinzip eine realistische Näherung für die Gesamtenergie des Heliumatoms.</p>
 </section>
-<section id="symbolische-auswertung-mit-sympy">
-<h2>Symbolische Auswertung mit SymPy<a class="headerlink" href="#symbolische-auswertung-mit-sympy" title="Link to this heading">#</a></h2>
-<p>Für interessierte Studierende lässt sich die Energie des Heliumatoms mit vereinfachten Hamiltonian (ohne Elektron–Elektron-Abstoßung) auch <strong>symbolisch</strong> berechnen.<br />
+<hr class="docutils" />
+<section id="wie-grosz-ist-die-elektronelektron-wechselwirkung-eine-erste-abschatzung">
+<h2>Wie groß ist die Elektron–Elektron-Wechselwirkung? Eine erste Abschätzung.<a class="headerlink" href="#wie-grosz-ist-die-elektronelektron-wechselwirkung-eine-erste-abschatzung" title="Link to this heading">#</a></h2>
+<p>Nachdem wir die Grundenergie des Heliumatoms <strong>ohne</strong> Elektron–Elektron-Abstoßung berechnet haben, wollen wir nun abschätzen, <strong>wie groß der Beitrag des Coulomb-Integrals <span class="math notranslate nohighlight">\(J\)</span> tatsächlich ist</strong>.<br />
+Wir berechnen dazu den Erwartungswert des Terms <span class="math notranslate nohighlight">\(\tfrac{1}{r_{12}}\)</span> mit derselben Produktwellenfunktion</p>
+<div class="math notranslate nohighlight">
+\[
+\Psi(\mathbf r_1,\mathbf r_2) = \phi(\mathbf r_1)\,\phi(\mathbf r_2),
+\qquad
+\phi(\mathbf r) = N\,e^{-Z r}.
+\]</div>
+<p>Das Coulomb-Integral lautet definitionsgemäß</p>
+<div class="math notranslate nohighlight">
+\[
+J = 
+\big\langle \Psi \big| \frac{1}{r_{12}} \big| \Psi \big\rangle
+= \iint \Psi^*(\mathbf r_1,\mathbf r_2)\,
+\frac{1}{|\mathbf r_1 - \mathbf r_2|}\,
+\Psi(\mathbf r_1,\mathbf r_2)\,
+\mathrm d^3 r_1\,\mathrm d^3 r_2.
+\]</div>
+<p>Da es sich um ein Produkt zweier s-Orbitale handelt, ist es vorteilhaft, statt der sechs kartesischen Koordinaten <span class="math notranslate nohighlight">\((\mathbf r_1,\mathbf r_2)\)</span> auf <strong>Abstandskoordinaten</strong> zu wechseln:<br />
+<span class="math notranslate nohighlight">\(r_1 = |\mathbf r_1|\)</span>, <span class="math notranslate nohighlight">\(r_2 = |\mathbf r_2|\)</span> und <span class="math notranslate nohighlight">\(r_{12} = |\mathbf r_1 - \mathbf r_2|\)</span>.<br />
+Zwischen diesen gilt der <strong>Kosinussatz</strong></p>
+<div class="math notranslate nohighlight">
+\[
+r_{12}^2 = r_1^2 + r_2^2 - 2r_1r_2\cos\theta_{12},
+\]</div>
+<p>woraus sich die <strong>Dreiecksgrenzen</strong></p>
+<div class="math notranslate nohighlight">
+\[
+|r_1 - r_2| \le r_{12} \le r_1 + r_2
+\]</div>
+<p>ergeben. Nach der Winkelintegration reduziert sich das Maß auf das Volumenelement</p>
+<div class="math notranslate nohighlight">
+\[
+\mathrm d^3r_1\,\mathrm d^3r_2 = 8\pi^2\, r_1\,r_2\,r_{12}\,\mathrm dr_1\,\mathrm dr_2\,\mathrm dr_{12}.
+\]</div>
+<p>Damit lautet das zu berechnende Integral:</p>
+<div class="math notranslate nohighlight">
+\[
+J =
+8\pi^2 N^4 \int_0^\infty \!\!\int_0^\infty \!\!\int_{|r_1-r_2|}^{r_1+r_2}
+r_1 r_2 r_{12}\, \frac{e^{-2Z(r_1+r_2)}}{r_{12}}\,
+\mathrm d r_{12}\, \mathrm d r_2\, \mathrm d r_1.
+\]</div>
+<p>Zum Vergleich benötigen wir zusätzlich das Normintegral</p>
+<div class="math notranslate nohighlight">
+\[
+\langle \Psi|\Psi\rangle =
+8\pi^2 N^4 \int_0^\infty \!\!\int_0^\infty \!\!\int_{|r_1-r_2|}^{r_1+r_2}
+r_1 r_2 r_{12}\, e^{-2Z(r_1+r_2)}\,
+\mathrm d r_{12}\, \mathrm d r_2\, \mathrm d r_1.
+\]</div>
+<p>Beide Integrale können symbolisch mit <strong>SymPy</strong> ausgewertet werden.<br />
+Der folgende Code führt diese Berechnung exakt aus:</p>
+</section>
+<section id="symbolische-berechnung-des-erwartungswertes">
+<h2>Symbolische Berechnung des Erwartungswertes<a class="headerlink" href="#symbolische-berechnung-des-erwartungswertes" title="Link to this heading">#</a></h2>
+<p>Für <strong>interessierte</strong> Studierende lässt sich die Energie des Heliumatoms mit vereinfachten Hamiltonian (ohne Elektron–Elektron-Abstoßung) auch <strong>symbolisch</strong> berechnen.<br />
 Wir wählen als Näherung für die räumliche Wellenfunktion das Produkt zweier exponentiell abfallender 1s-Funktionen</p>
 <div class="math notranslate nohighlight">
 \[
@@ -668,60 +764,6 @@ H_0 = -\tfrac12 (\nabla_1^2 + \nabla_2^2) - \frac{Z}{r_1} - \frac{Z}{r_2}
 </div>
 </div>
 </div>
-</section>
-<section id="wie-grosz-ist-die-elektronelektron-wechselwirkung-eine-erste-abschatzung">
-<h2>Wie groß ist die Elektron–Elektron-Wechselwirkung? Eine erste Abschätzung.<a class="headerlink" href="#wie-grosz-ist-die-elektronelektron-wechselwirkung-eine-erste-abschatzung" title="Link to this heading">#</a></h2>
-<p>Nachdem wir die Grundenergie des Heliumatoms ohne Elektron–Elektron-Abstoßung berechnet haben, wollen wir nun abschätzen, <strong>wie groß der Beitrag der Elektron–Elektron-Wechselwirkung tatsächlich ist</strong>.<br />
-Dazu berechnen wir den Erwartungswert des Coulomb-Terms <span class="math notranslate nohighlight">\(1/r_{12}\)</span> mit unserer Produktwellenfunktion</p>
-<div class="math notranslate nohighlight">
-\[
-\Psi(\mathbf r_1,\mathbf r_2) = e^{-Z(r_1 + r_2)}.
-\]</div>
-<p>Der Erwartungswert der Elektron–Elektron-Wechselwirkung lautet</p>
-<div class="math notranslate nohighlight">
-\[
-\langle V_{ee} \rangle 
-= \big\langle \Psi \big| \frac{1}{r_{12}} \big| \Psi \big\rangle
-= \int \Psi^*(\mathbf r_1,\mathbf r_2)\,
-\frac{1}{|\mathbf r_1 - \mathbf r_2|}\,
-\Psi(\mathbf r_1,\mathbf r_2)\,
-\mathrm d^3 r_1\,\mathrm d^3 r_2.
-\]</div>
-<p>Statt über die sechs kartesischen Koordinaten <span class="math notranslate nohighlight">\((\mathbf r_1,\mathbf r_2)\)</span> zu integrieren, ist es für s-Zustände deutlich einfacher, auf <strong>Koordinaten der Abstände</strong> umzusteigen:<br />
-<span class="math notranslate nohighlight">\(r_1 = |\mathbf r_1|\)</span>, <span class="math notranslate nohighlight">\(r_2 = |\mathbf r_2|\)</span> und <span class="math notranslate nohighlight">\(r_{12} = |\mathbf r_1 - \mathbf r_2|\)</span>.<br />
-Zwischen ihnen gilt der <strong>Kosinussatz</strong></p>
-<div class="math notranslate nohighlight">
-\[
-r_{12}^2 = r_1^2 + r_2^2 - 2r_1r_2\cos\theta_{12},
-\]</div>
-<p>woraus sich die <strong>Dreiecksgrenzen</strong></p>
-<div class="math notranslate nohighlight">
-\[
-|r_1 - r_2| \le r_{12} \le r_1 + r_2
-\]</div>
-<p>ergeben. Nach der Winkelintegration reduziert sich das Maß auf das folgende Volumenelement:</p>
-<div class="math notranslate nohighlight">
-\[
-\mathrm d^3r_1\,\mathrm d^3r_2 = 8\pi^2\, r_1\,r_2\,r_{12}\,\mathrm dr_1\,\mathrm dr_2\,\mathrm dr_{12}.
-\]</div>
-<p>Damit lautet das zu berechnende Integral:</p>
-<div class="math notranslate nohighlight">
-\[
-\langle V_{ee} \rangle =
-8\pi^2 \int_0^\infty \!\!\int_0^\infty \!\!\int_{|r_1-r_2|}^{r_1+r_2}
-r_1 r_2 r_{12}\, \frac{e^{-2Z(r_1+r_2)}}{r_{12}}\,
-\mathrm d r_{12}\, \mathrm d r_2\, \mathrm d r_1.
-\]</div>
-<p>Zum Vergleich benötigen wir zusätzlich das Normintegral</p>
-<div class="math notranslate nohighlight">
-\[
-\langle \Psi|\Psi\rangle =
-8\pi^2 \int_0^\infty \!\!\int_0^\infty \!\!\int_{|r_1-r_2|}^{r_1+r_2}
-r_1 r_2 r_{12}\, e^{-2Z(r_1+r_2)}\,
-\mathrm d r_{12}\, \mathrm d r_2\, \mathrm d r_1.
-\]</div>
-<p>Beide Integrale können symbolisch mit <strong>SymPy</strong> ausgewertet werden.<br />
-Der folgende Code führt diese Berechnung exakt aus:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">sympy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sp</span>
@@ -764,16 +806,54 @@ Der folgende Code führt diese Berechnung exakt aus:</p>
 <p>Die symbolische Berechnung ergibt schließlich</p>
 <div class="math notranslate nohighlight">
 \[
-\langle V_{ee}\rangle = \frac{5Z}{8}.
+J = \frac{5Z}{8}.
 \]</div>
-<p>Für Helium (<span class="math notranslate nohighlight">\(Z=2\)</span>) beträgt der Erwartungswert der Elektron–Elektron-Abstoßung also<br />
-<span class="math notranslate nohighlight">\(\langle V_{ee}\rangle = 1{,}25\)</span> Hartree. Addiert man diesen Beitrag zu der Energie zweier unabhängiger Elektrone (<span class="math notranslate nohighlight">\(E_0 = -4\)</span> Hartree), erhält man für die Gesamtenergie</p>
+<p>Für Helium (<span class="math notranslate nohighlight">\(Z=2\)</span>) beträgt das Coulomb-Integral also<br />
+<span class="math notranslate nohighlight">\(J = 1{.}25\)</span> Hartree. Addiert man diesen Beitrag zur Energie zweier unabhängiger Elektronen (<span class="math notranslate nohighlight">\(E_0 = -4\)</span> Hartree), erhält man für die Gesamtenergie</p>
 <div class="math notranslate nohighlight">
 \[
-E \approx -4 + 1{,}25 = -2{,}75\ \text{Hartree},
+E \approx -4 + 1{.}25 = -2{.}75\ \text{Hartree},
 \]</div>
 <p>was bereits eine vernünftige Näherung des exakten Grundzustandswerts<br />
-<span class="math notranslate nohighlight">\(E_\text{exakt} = -2{,}9037\)</span> Hartree darstellt.Damit wird deutlich, dass die Elektron–Elektron-Wechselwirkung einen Beitrag von etwa <strong>1 Hartree</strong>, also rund einem Drittel der gesamten Bindungsenergie des He-Atoms, liefert.</p>
+<span class="math notranslate nohighlight">\(E_\text{exakt} = -2{.}9037\)</span> Hartree darstellt. Damit wird deutlich, dass die Elektron–Elektron-Wechselwirkung einen Beitrag von etwa <strong>1 Hartree</strong>, also rund einem Drittel der gesamten Bindungsenergie des Heliumatoms, liefert.</p>
+</section>
+<section id="optimierung-der-effektiven-kernladung">
+<h2>Optimierung der effektiven Kernladung<a class="headerlink" href="#optimierung-der-effektiven-kernladung" title="Link to this heading">#</a></h2>
+<p>Wie wir gerade gesehen haben, lässt sich die Energie als eine Funktion der Kernladung <span class="math notranslate nohighlight">\(Z\)</span> wie folgt ausdrücken:</p>
+<div class="math notranslate nohighlight">
+\[
+E(Z) = 2\langle \phi|h|\phi\rangle + J = -Z^{2} + \frac{5}{8}Z.
+\]</div>
+<p>Dies legt nahe, die feste Kernladung <span class="math notranslate nohighlight">\(Z\)</span> durch einen <strong>variationellen Exponenten</strong> <span class="math notranslate nohighlight">\(\zeta\)</span> zu ersetzen, während der wahre Kernterm im Hamiltonoperator <span class="math notranslate nohighlight">\(-\tfrac{Z}{r}\)</span> unverändert bleibt. Damit erhalten wir einen Energieausdruck</p>
+<div class="math notranslate nohighlight">
+\[
+E(\zeta;Z) = 2\Big(\tfrac{\zeta^{2}}{2} - Z\zeta\Big) + \frac{5}{8}\zeta
+= \zeta^{2} - 2Z\zeta + \frac{5}{8}\zeta,
+\]</div>
+<p>den wir nun im Bezug auf die effektive Kernladung <span class="math notranslate nohighlight">\(\zeta\)</span> optimieren können.<br />
+Die Optimierung der effektiven Kernladung folgt aus der Bedingung</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{dE}{d\zeta} = 2\zeta - 2Z + \frac{5}{8} = 0
+\quad \Rightarrow \quad
+\zeta^{\star} = Z - \frac{5}{16}.
+\]</div>
+<p>Damit ergibt sich für die optimierte Energie</p>
+<div class="math notranslate nohighlight">
+\[
+E^{\star}(Z) = E(\zeta^{\star};Z)
+= -Z^{2} + \frac{5}{8}Z - \frac{25}{256}.
+\]</div>
+<p>Für Helium (<span class="math notranslate nohighlight">\(Z = 2\)</span>) erhält man</p>
+<div class="math notranslate nohighlight">
+\[
+\zeta^{\star} = 1.6875, \qquad
+E^{\star} = -2.8477\ \text{Hartree},
+\]</div>
+<p>eine deutliche Verbesserung gegenüber dem unoptimierten Wert <span class="math notranslate nohighlight">\(E(Z) = -2.75\ \text{Hartree}\)</span>.<br />
+Vergleicht man diesen Wert mit der exakten Grundzustandsenergie <span class="math notranslate nohighlight">\(E_\text{exakt} = -2.9037\ \text{Hartree}\)</span>,<br />
+so beträgt der verbleibende Fehler nur etwa <strong>0.056 Hartree</strong>, also weniger als <strong>2 %</strong>.
+Nun kann man sich die Frage Stellen ob man die Genauigkeit des Produktansatzes noch weiter treiben kann?</p>
 </section>
 </section>
 
@@ -834,9 +914,10 @@ E \approx -4 + 1{,}25 = -2{,}75\ \text{Hartree},
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#der-atomare-hamiltonoperator">Der atomare Hamiltonoperator</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#separationsansatz-hartree-produkt">Separationsansatz (Hartree-Produkt)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#erwartungwert-der-energie">Erwartungwert der Energie</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#symbolische-auswertung-mit-sympy">Symbolische Auswertung mit SymPy</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#energieerwartungswert-des-hartree-produktansatzes">Energieerwartungswert des Hartree-Produktansatzes</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wie-grosz-ist-die-elektronelektron-wechselwirkung-eine-erste-abschatzung">Wie groß ist die Elektron–Elektron-Wechselwirkung? Eine erste Abschätzung.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#symbolische-berechnung-des-erwartungswertes">Symbolische Berechnung des Erwartungswertes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optimierung-der-effektiven-kernladung">Optimierung der effektiven Kernladung</a></li>
 </ul>
   </nav></div>
 
