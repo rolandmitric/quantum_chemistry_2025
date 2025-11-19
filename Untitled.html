@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>&lt;no title&gt; &#8212; Quantenchemie</title>
+    <title>Das Versagen der Hartree-Methode: Der Fall des Lithiumatoms &#8212; Quantenchemie</title>
   
   
   
@@ -61,7 +61,7 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'test_sum';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Untitled';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -244,7 +244,7 @@
       
       
       
-      <li><a href="https://mybinder.org/v2/gh/rolandmitric/quantum_chemistry_2025/main?urlpath=lab/tree/./test_sum.ipynb" target="_blank"
+      <li><a href="https://mybinder.org/v2/gh/rolandmitric/quantum_chemistry_2025/main?urlpath=lab/tree/./Untitled.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch on Binder"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -310,7 +310,7 @@
       
       
       
-      <li><a href="https://github.com/rolandmitric/quantum_chemistry_2025/edit/main/./test_sum.ipynb" target="_blank"
+      <li><a href="https://github.com/rolandmitric/quantum_chemistry_2025/edit/main/./Untitled.ipynb" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -327,7 +327,7 @@
       
       
       
-      <li><a href="https://github.com/rolandmitric/quantum_chemistry_2025/issues/new?title=Issue%20on%20page%20%2Ftest_sum.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/rolandmitric/quantum_chemistry_2025/issues/new?title=Issue%20on%20page%20%2FUntitled.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -357,7 +357,7 @@
       
       
       
-      <li><a href="_sources/test_sum.ipynb" target="_blank"
+      <li><a href="_sources/Untitled.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -428,9 +428,7 @@ document.write(`
   </button>
 `);
 </script>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</button>
+
 </div></div>
       
     </div>
@@ -441,19 +439,11 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1><no title></h1>
+    <h1>Das Versagen der Hartree-Methode: Der Fall des Lithiumatoms</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
-            <div>
-                <h2> Contents </h2>
-            </div>
-            <nav aria-label="Page">
-                <ul class="simple visible nav section-nav flex-column">
-</ul>
-
-            </nav>
         </div>
     </div>
 </div>
@@ -463,53 +453,114 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">sympy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sp</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">sympy</span><span class="w"> </span><span class="kn">import</span> <span class="n">oo</span>
-<span class="n">r1</span><span class="p">,</span> <span class="n">r2</span><span class="p">,</span> <span class="n">Z</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;r1 r2 Z&#39;</span><span class="p">,</span> <span class="n">positive</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-
-<span class="k">def</span><span class="w"> </span><span class="nf">laplacian_radial</span><span class="p">(</span><span class="n">psi</span><span class="p">,</span> <span class="n">r</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">psi</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="mi">2</span><span class="o">/</span><span class="n">r</span><span class="p">)</span><span class="o">*</span><span class="n">psi</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
-
-<span class="k">def</span><span class="w"> </span><span class="nf">T</span><span class="p">(</span><span class="n">psi</span><span class="p">):</span>
-    <span class="k">return</span> <span class="o">-</span><span class="n">sp</span><span class="o">.</span><span class="n">S</span><span class="o">.</span><span class="n">Half</span> <span class="o">*</span> <span class="p">(</span><span class="n">laplacian_radial</span><span class="p">(</span><span class="n">psi</span><span class="p">,</span> <span class="n">r1</span><span class="p">)</span> <span class="o">+</span> <span class="n">laplacian_radial</span><span class="p">(</span><span class="n">psi</span><span class="p">,</span> <span class="n">r2</span><span class="p">))</span>
-
-<span class="k">def</span><span class="w"> </span><span class="nf">V_ne</span><span class="p">(</span><span class="n">psi</span><span class="p">):</span>
-    <span class="k">return</span> <span class="o">-</span><span class="p">(</span><span class="n">Z</span><span class="o">/</span><span class="n">r1</span> <span class="o">+</span> <span class="n">Z</span><span class="o">/</span><span class="n">r2</span><span class="p">)</span> <span class="o">*</span> <span class="n">psi</span>
-
-<span class="k">def</span><span class="w"> </span><span class="nf">H0</span><span class="p">(</span><span class="n">psi</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">T</span><span class="p">(</span><span class="n">psi</span><span class="p">)</span> <span class="o">+</span> <span class="n">V_ne</span><span class="p">(</span><span class="n">psi</span><span class="p">)</span>
-
-<span class="n">psi0</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">Z</span><span class="o">*</span><span class="n">r1</span><span class="p">)</span> <span class="o">*</span>  <span class="n">sp</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">Z</span><span class="o">*</span><span class="n">r2</span><span class="p">)</span>
-
-<span class="k">def</span><span class="w"> </span><span class="nf">integrate_6d</span><span class="p">(</span><span class="n">f</span><span class="p">):</span>
-    <span class="n">integrand</span> <span class="o">=</span> <span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">*</span> <span class="n">r1</span><span class="o">**</span><span class="mi">2</span> <span class="o">*</span> <span class="n">r2</span><span class="o">**</span><span class="mi">2</span> <span class="o">*</span> <span class="n">f</span>
-    <span class="n">I_r2</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="n">integrand</span><span class="p">,</span> <span class="p">(</span><span class="n">r2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">sp</span><span class="o">.</span><span class="n">oo</span><span class="p">))</span>
-    <span class="n">I_r1</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="n">I_r2</span><span class="p">,</span> <span class="p">(</span><span class="n">r1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">sp</span><span class="o">.</span><span class="n">oo</span><span class="p">))</span>
-    <span class="k">return</span> <span class="n">sp</span><span class="o">.</span><span class="n">simplify</span><span class="p">(</span><span class="n">I_r1</span><span class="p">)</span>
-
-<span class="k">def</span><span class="w"> </span><span class="nf">energy</span><span class="p">(</span><span class="n">psi</span><span class="p">,</span> <span class="n">H</span><span class="p">):</span>
-    <span class="n">num</span> <span class="o">=</span> <span class="n">integrate_6d</span><span class="p">(</span><span class="n">psi</span> <span class="o">*</span> <span class="n">H</span><span class="p">(</span><span class="n">psi</span><span class="p">))</span>
-    <span class="n">den</span> <span class="o">=</span> <span class="n">integrate_6d</span><span class="p">(</span><span class="n">psi</span> <span class="o">*</span> <span class="n">psi</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">sp</span><span class="o">.</span><span class="n">simplify</span><span class="p">(</span><span class="n">num</span><span class="o">/</span><span class="n">den</span><span class="p">)</span>
-
-<span class="n">E_Z</span> <span class="o">=</span> <span class="n">energy</span><span class="p">(</span><span class="n">psi0</span><span class="p">,</span> <span class="n">H0</span><span class="p">)</span>            
-</pre></div>
+  <section id="das-versagen-der-hartree-methode-der-fall-des-lithiumatoms">
+<h1>Das Versagen der Hartree-Methode: Der Fall des Lithiumatoms<a class="headerlink" href="#das-versagen-der-hartree-methode-der-fall-des-lithiumatoms" title="Link to this heading">#</a></h1>
+<p>Nach der erfolgreichen Behandlung des Heliumatoms im Hartree-Ansatz liegt es nahe,
+die Methode auf das Lithiumatom anzuwenden und damit vielleicht bereits erste
+Strukturmerkmale des Periodensystems zu erklären. Wir werden jedoch sehen, dass die
+Hartree-Methode bei Lithium <strong>grundsätzlich scheitert</strong>.</p>
+<p>Der Grund ist <strong>fundamental</strong>: Das Hartree-Produkt besitzt die falsche
+Symmetrie und verletzt das Pauli-Prinzip, das wir in den kommenden
+Vorlesungen ausführlich behandeln werden!</p>
+<p>Um das Versagen zu verdeutlichen, setzen wir alle drei Elektronen in dasselbe
+räumliche Orbital. Wir betrachten die normierte wasserstoffartige (1s)-Funktion mit Exponent (Z),</p>
+<div class="math notranslate nohighlight">
+\[
+\phi_{1s}(\mathbf r)
+= \left(\frac{Z^3}{\pi}\right)^{1/2}\, e^{-Z r},
+\qquad r = |\mathbf r|.
+\]</div>
+<p>Der elektronische Hamiltonoperator für drei Elektronen lautet in atomaren Einheiten</p>
+<div class="math notranslate nohighlight">
+\[
+\hat H
+= \sum_{i=1}^3\left(
+-\frac12 \nabla_i^2
+ - \frac{Z}{r_i}
+\right)
++
+\sum_{i&lt;j} \frac{1}{r_{ij}}.
+\]</div>
+<p>Als (bewusst falschen) Versuchszustand verwenden wir das reine Hartree-Produkt</p>
+<div class="math notranslate nohighlight">
+\[
+\Psi(\mathbf r_1,\mathbf r_2,\mathbf r_3)
+=
+\phi_{1s}(\mathbf r_1)\,
+\phi_{1s}(\mathbf r_2)\,
+\phi_{1s}(\mathbf r_3).
+\]</div>
+<p>Für die wasserstoffartige (1s)-Funktion kennen wir den Erwartungswert des
+Einelektronenoperators:</p>
+<div class="math notranslate nohighlight">
+\[
+\langle \hat h \rangle_{1s}
+=
+\left\langle
+-\frac12\nabla^2 - \frac{Z}{r}
+\right\rangle_{1s}
+= -\frac{Z^2}{2}.
+\]</div>
+<p>Damit ergibt sich für drei Elektronen im selben Orbital</p>
+<div class="math notranslate nohighlight">
+\[
+E_{\text{1-el}}
+= 3\left(-\frac{Z^2}{2}\right)
+= -\frac{3Z^2}{2}.
+\]</div>
+<p>Die Coulomb-Wechselwirkung zweier Elektronen im selben Orbital beträgt</p>
+<div class="math notranslate nohighlight">
+\[
+J = \left\langle \frac{1}{r_{12}} \right\rangle_{1s,1s}
+= \frac{5}{8} Z.
+\]</div>
+<p>Im Lithiumfall gibt es drei mögliche Elektronenpaare, sodass</p>
+<div class="math notranslate nohighlight">
+\[
+E_{\text{ee}}
+= 3J
+= 3 \cdot \frac{5}{8} Z
+= \frac{15}{8} Z.
+\]</div>
+<p>Die Gesamtenergie lautet somit</p>
+<div class="math notranslate nohighlight">
+\[
+E(Z)
+= -\frac{3Z^2}{2} + \frac{15}{8} Z.
+\]</div>
+<p>Für Lithium ((Z=3)) erhält man explizit</p>
+<div class="math notranslate nohighlight">
+\[
+E(3)
+= -\frac{27}{2} + \frac{45}{8}
+= -\frac{63}{8}
+= -7.875\ \text{Hartree}.
+\]</div>
+<p>Zum Vergleich fassen wir die Werte in einer kleinen Tabelle zusammen:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Modell / Beschreibung</p></th>
+<th class="head"><p>Energie (Hartree)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Falsches Hartree-Produkt</strong> (alle 3 e⁻ im selben (1s))</p></td>
+<td><p><strong>–7.875</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Reales Lithiumatom</strong> (experimentell)</p></td>
+<td><p><strong>≈ –7.478</strong></p></td>
+</tr>
+</tbody>
+</table>
 </div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">E_Z</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_latex math notranslate nohighlight">
-\[\displaystyle \text{NaN}\]</div>
-</div>
-</div>
+<p>Auffällig ist, dass das Hartree-Produkt sogar eine <strong>niedrigere</strong>
+Energie liefert als der gemessene Grundzustand des realen Lithiumatoms.
+Dies scheint auf den ersten Blick dem Variationsprinzip zu widersprechen!
+Tatsächlich folgt daraus jedoch, dass der wahre Grundzustand des Li-Atoms
+<strong>orthogonal</strong> zum Hartree-Produkt sein muss. Das einfache Hartree-Produkt
+liefert also nicht einmal eine qualitativ korrekte Beschreibung des
+Dreielektronensystems.</p>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -547,21 +598,6 @@ document.write(`
             </div>
             
             
-              
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
-  </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="simple visible nav section-nav flex-column">
-</ul>
-
-  </nav></div>
-
-</div></div>
               
             
           </div>

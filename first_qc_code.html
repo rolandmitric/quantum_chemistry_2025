@@ -64,6 +64,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'first_qc_code';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Das Versagen der Hartree-Methode: Der Fall des Lithiumatoms" href="failure_hartree.html" />
     <link rel="prev" title="Optimales Hartree-Produkt und Hartree-Gleichung" href="hartree_equation.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -188,6 +189,7 @@
 
 
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Erstes Quantenchemieprogramm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="failure_hartree.html">Das Versagen der Hartree-Methode: Der Fall des Lithiumatoms</a></li>
 </ul>
 
     </div>
@@ -450,6 +452,7 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hartreesche-scf-methode-fur-helium">Hartreesche SCF-Methode für Helium</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#erganzung-losung-der-gauss-integrale-mit-sympy">Ergänzung: Lösung der Gauss-Integrale mit Sympy</a></li>
 </ul>
             </nav>
         </div>
@@ -509,6 +512,7 @@ document.write(`
 
 <span class="c1">#SCF loop </span>
 <span class="n">Energy_list</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">c_list</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="n">max_iter</span> <span class="o">=</span> <span class="mi">20</span>
 <span class="k">for</span> <span class="n">it</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">max_iter</span><span class="p">):</span>
     
@@ -523,6 +527,7 @@ document.write(`
     <span class="n">E</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">c_new</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">h</span> <span class="o">@</span> <span class="n">c_new</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">c_new</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">J</span> <span class="o">@</span> <span class="n">c_new</span><span class="p">)</span>
     <span class="n">Energy_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">E</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;SCF-Iteration  </span><span class="si">{</span><span class="n">it</span><span class="si">:</span><span class="s2">2d</span><span class="si">}</span><span class="s2">   E = </span><span class="si">{</span><span class="n">E</span><span class="si">:</span><span class="s2">.10f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">c_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">c_new</span><span class="o">.</span><span class="n">copy</span><span class="p">())</span>
     <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">c_new</span> <span class="o">-</span> <span class="n">c</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mf">1e-6</span><span class="p">:</span>
         <span class="k">break</span>
     <span class="n">c</span> <span class="o">=</span> <span class="n">c_new</span>
@@ -555,11 +560,12 @@ SCF-Iteration  12   E = -2.8603071715
 <img alt="_images/8b8aa37846835fbbde73e1839bc1f1e73eb5378a9448b5d1cb96551aadd66e45.png" src="_images/8b8aa37846835fbbde73e1839bc1f1e73eb5378a9448b5d1cb96551aadd66e45.png" />
 </div>
 </div>
+</section>
+<section id="erganzung-losung-der-gauss-integrale-mit-sympy">
+<h2>Ergänzung: Lösung der Gauss-Integrale mit Sympy<a class="headerlink" href="#erganzung-losung-der-gauss-integrale-mit-sympy" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Ergänzung: Lösung der Gauss-Integrale mit Sympy</span>
-
-<span class="kn">import</span><span class="w"> </span><span class="nn">sympy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sp</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">sympy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sp</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">sympy</span><span class="w"> </span><span class="kn">import</span> <span class="n">oo</span>
 
 <span class="n">alpha</span><span class="p">,</span> <span class="n">beta</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;alpha beta&#39;</span><span class="p">,</span> <span class="n">real</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">positive</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
@@ -663,6 +669,15 @@ Electron repulsion = 2*pi**(5/2)/((alpha + beta)*(delta + gamma)*sqrt(alpha + be
         <p class="prev-next-title">Optimales Hartree-Produkt und Hartree-Gleichung</p>
       </div>
     </a>
+    <a class="right-next"
+       href="failure_hartree.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Das Versagen der Hartree-Methode: Der Fall des Lithiumatoms</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
@@ -680,6 +695,7 @@ Electron repulsion = 2*pi**(5/2)/((alpha + beta)*(delta + gamma)*sqrt(alpha + be
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hartreesche-scf-methode-fur-helium">Hartreesche SCF-Methode für Helium</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#erganzung-losung-der-gauss-integrale-mit-sympy">Ergänzung: Lösung der Gauss-Integrale mit Sympy</a></li>
 </ul>
   </nav></div>
 
