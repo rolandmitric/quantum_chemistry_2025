@@ -1,0 +1,1303 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Optimales Hartree-Produkt und Hartree-Gleichung &#8212; Quantenchemie</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=efe75725" />
+    <link rel="stylesheet" type="text/css" href="_static/wide_v2.css?v=bfe64621" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'hartree_equation';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Erstes Quantenchemieprogramm" href="first_qc_code.html" />
+    <link rel="prev" title="Elektronenkorrelation" href="correlation_hylleraas.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Quantenchemie</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="index.html">
+                    Quantenchemie — WS 2025
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="variational_principle.html">Das Variationsprinzip</a></li>
+<li class="toctree-l1"><a class="reference internal" href="convergence_variational_principle.html">Über die Konvergenz des linearen Variationsprinzips: Verschachtelungs Satz</a></li>
+<li class="toctree-l1"><a class="reference internal" href="helium_atom.html">Das Helium-Atom</a></li>
+<li class="toctree-l1"><a class="reference internal" href="kinetic_energy_hylleraas.html">Hylleraas-Methode: Kinetische Energie</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="correlation_hylleraas.html">Elektronenkorrelation</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Optimales Hartree-Produkt und Hartree-Gleichung</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="first_qc_code.html">Erstes Quantenchemieprogramm</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/rolandmitric/quantum_chemistry_2025/main?urlpath=lab/tree/./hartree_equation.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Binder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Binder logo" src="_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/rolandmitric/quantum_chemistry_2025" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/rolandmitric/quantum_chemistry_2025/edit/main/./hartree_equation.ipynb" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/rolandmitric/quantum_chemistry_2025/issues/new?title=Issue%20on%20page%20%2Fhartree_equation.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/hartree_equation.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Optimales Hartree-Produkt und Hartree-Gleichung</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Optimales Hartree-Produkt und Hartree-Gleichung</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variation-des-energie-funktionals">Variation des Energie-Funktionals</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variation-der-normierungsbedingung">Variation der Normierungsbedingung</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#hartree-gleichung">Hartree-Gleichung</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zur-physikalischen-bedeuting-des-hartree-potentials">Zur physikalischen Bedeuting des Hartree-Potentials</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#losung-der-hartree-gleichung-in-der-gauss-basis">Lösung der Hartree-Gleichung in der Gauss-Basis</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#matrixelemente-des-einteilchenoperators">Matrixelemente des Einteilchenoperators</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#wobei-t-mu-nu-der-kinetischen-energie-t-mu-nu">wobei <span class="math notranslate nohighlight">\(T_{\mu\nu}\)</span> der kinetischen Energie
+$$
+T_{\mu\nu}</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#elektronelektron-wechselwirkung-in-der-basis">Elektron–Elektron-Wechselwirkung in der Basis</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matrixform-der-hartree-gleichung">Matrixform der Hartree-Gleichung</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scf-methode-fur-helium">SCF-Methode für Helium</a></li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="optimales-hartree-produkt-und-hartree-gleichung">
+<h1>Optimales Hartree-Produkt und Hartree-Gleichung<a class="headerlink" href="#optimales-hartree-produkt-und-hartree-gleichung" title="Link to this heading">#</a></h1>
+<p>In den vorangegangenen Vorlesungen haben wir das Heliumatom mit Hartree- und
+Hylleraas-Ansätzen untersucht, bei denen die Gesamtwellenfunktion aus einem Produkt
+zweier wasserstoffartiger Orbitale bestand, der durch systematisches Hinzufügen
+<span class="math notranslate nohighlight">\(r_{12}\)</span>-abhängiger Korrelationsterme verbessert werden konnte. Dies motiviert die
+Frage, ob es <em>optimale</em> Orbitale gibt, die im Rahmen des einfachsten Produktansatzes
+die Energie minimieren, und wie man diese Orbitale findet. Wir werden sehen, dass diese
+optimalen Orbitale tatsächlich existieren und als Lösung einer nichtlinearen
+Hartree-Gleichung erscheinen, die <strong>selbstkonsistent</strong> gelöst werden muss.</p>
+<p>Wir beginnen mit einem allgemeinen Produktansatz</p>
+<div class="math notranslate nohighlight">
+\[
+\Psi_H(1,2) = \phi(1)\,\phi(2)\,.
+\]</div>
+<p>Im Folgenden verwenden wir die Kurzschreibweise</p>
+<div class="math notranslate nohighlight">
+\[
+d1 \equiv d^3 r_1, \qquad d2 \equiv d^3 r_2,
+\]</div>
+<p>also Integrationsmaße über die Ortskoordinaten der Elektronen.</p>
+<p>Der elektronische Hamiltonoperator ist</p>
+<div class="math notranslate nohighlight">
+\[
+\hat H = \hat h(1) + \hat h(2) + \frac{1}{r_{12}}\,,
+\]</div>
+<p>mit</p>
+<div class="math notranslate nohighlight">
+\[
+\hat h(i)= -\frac{1}{2}\nabla_i^2 - \frac{Z}{r_i}, \qquad Z=2\,.
+\]</div>
+<p>Der Erwartungswert der Energie ergibt sich, wie wir schon gesehen haben, zu</p>
+<div class="math notranslate nohighlight">
+\[
+E[\phi]
+= 2\int d1\, \phi^*(1)\,\hat h\,\phi(1)
++ \int d1 \int d2\, |\phi(1)|^2\,\frac{1}{r_{12}}\,|\phi(2)|^2\,.
+\]</div>
+<p>Das Orbital muss normiert sein:</p>
+<div class="math notranslate nohighlight">
+\[
+\int d1\,|\phi(1)|^2 = 1\,.
+\]</div>
+<hr class="docutils" />
+<section id="variation-des-energie-funktionals">
+<h2>Variation des Energie-Funktionals<a class="headerlink" href="#variation-des-energie-funktionals" title="Link to this heading">#</a></h2>
+<p>Unter der Annahme, dass ein optimales Orbital existiert, können wir nun eine Bedingung
+herleiten, die dieses Orbital erfüllen muss, indem wir <em>kleine</em> Variationen um das
+optimum betrachten. Dazu führen wir die folgende Variation durch:</p>
+<div class="math notranslate nohighlight">
+\[
+\phi \rightarrow \phi + \delta\phi, \qquad 
+\phi^* \rightarrow \phi^* + \delta\phi^* .
+\]</div>
+<p>Der Einteilchen-Beitrag zur Energie liefert die Variation</p>
+<div class="math notranslate nohighlight">
+\[
+\delta E_1
+= 2\int d1 \left[
+\delta\phi^*(1)\,\hat h\,\phi(1)
++ \phi^*(1)\,\hat h\,\delta\phi(1)
+\right].
+\]</div>
+<p>Für den Elektron–Elektron-Term gilt</p>
+<div class="math notranslate nohighlight">
+\[
+E_{ee} = \int d1\int d2\, |\phi(1)|^2\,\frac{1}{r_{12}}\,|\phi(2)|^2\,,
+\]</div>
+<p>und seine Variation liefert</p>
+<div class="math notranslate nohighlight">
+\[
+\delta E_{ee}
+= 2\int d1 
+\left[\delta\phi^*(1)\phi(1) + \phi^*(1)\delta\phi(1)\right]
+\left(
+\int d2\,\frac{|\phi(2)|^2}{r_{12}}
+\right).
+\]</div>
+<p>Wir definieren das <strong>Hartree-Potential</strong></p>
+<div class="math notranslate nohighlight">
+\[
+V_H(1)=\int d2\,\frac{|\phi(2)|^2}{r_{12}}\,.
+\]</div>
+<p>Damit lässt sich die Variation der Gesamtenergie in der Form</p>
+<div class="math notranslate nohighlight">
+\[
+\delta E = 2\int d1\,
+\left[
+\delta\phi^* \left(\hat h\phi + V_H\phi \right)
++ 
+\left(\hat h\phi + V_H\phi \right)^* \delta\phi
+\right]
+\]</div>
+<p>schreiben.</p>
+</section>
+<hr class="docutils" />
+<section id="variation-der-normierungsbedingung">
+<h2>Variation der Normierungsbedingung<a class="headerlink" href="#variation-der-normierungsbedingung" title="Link to this heading">#</a></h2>
+<p>Da die Variation des optimalen Orbitals die Normierung nicht zerstören darf, muss gelten:</p>
+<div class="math notranslate nohighlight">
+\[
+\delta\left(\int d1\,|\phi|^2\right)
+= \int d1\,\big[\delta\phi^*\,\phi + \phi^*\,\delta\phi\big].
+\]</div>
+<p>Die Bestimmung des optimalen Orbitals ist äquivalent zur Minimierung der Energie
+mit der Normierung als Nebenbedingung. Wie wir bereits gesehen haben, lassen sich solche
+Probleme mithilfe der Methode der Lagrange-Multiplikatoren lösen. Wir definieren das
+Lagrange-Funktional</p>
+<div class="math notranslate nohighlight">
+\[
+\mathcal{L}[\phi,\phi^*]
+= E[\phi]
+- \varepsilon\left(\int d1\,|\phi|^2 -1\right).
+\]</div>
+<p>Die Variation ergibt</p>
+<div class="math notranslate nohighlight">
+\[
+\delta\mathcal L
+= \delta E
+- \varepsilon \int d1\,\big[\delta\phi^*\,\phi + \phi^*\,\delta\phi\big].
+\]</div>
+<p>Aus der Variation nach <span class="math notranslate nohighlight">\(\delta\phi^*\)</span> folgt</p>
+<div class="math notranslate nohighlight">
+\[
+2(\hat h\phi + V_H\phi) - \varepsilon\phi = 0.
+\]</div>
+</section>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="hartree-gleichung">
+<h1>Hartree-Gleichung<a class="headerlink" href="#hartree-gleichung" title="Link to this heading">#</a></h1>
+<p>Damit erhalten wir die Hartree-Gleichung, die die Form des optimalen Orbitals bestimmt:</p>
+<div class="math notranslate nohighlight">
+\[
+\require{color}\fcolorbox{red}{#f2d5d3}{
+$(\hat h + V_H)\,\phi = \varepsilon\,\phi$
+}
+\]</div>
+<p>In expliziter Form für Helium lautet sie:</p>
+<div class="math notranslate nohighlight">
+\[
+\require{color}
+\fcolorbox{red}{#f2d5d3}{
+$\left(
+-\frac{1}{2}\nabla^2
+- \frac{Z}{r}
++ \int d^3r'\,\frac{|\phi(\mathbf r')|^2}{|\mathbf r - \mathbf r'|}
+\right)\phi(\mathbf r)
+= \varepsilon\,\phi(\mathbf r)$.
+}
+\]</div>
+<p>Diese Gleichung ist nichtlinear, da das Hartree-Potential vom Orbital selbst abhängt.
+Die optimalen Orbitale erhält man daher erst durch eine selbstkonsistente Lösung
+(SCF-Verfahren): man wählt ein Startorbital, berechnet daraus <span class="math notranslate nohighlight">\(V_H\)</span>, löst die Gleichung
+für ein neues Orbital und wiederholt dies bis zur Konvergenz.</p>
+<section id="zur-physikalischen-bedeuting-des-hartree-potentials">
+<h2>Zur physikalischen Bedeuting des Hartree-Potentials<a class="headerlink" href="#zur-physikalischen-bedeuting-des-hartree-potentials" title="Link to this heading">#</a></h2>
+<div style="background-color:#f2d5d3; padding:15px; border-left:5px solid red; border-radius:4px;">
+<p>Das Hartree-Potential beschreibt das gemittelte elektrostatische Feld, das ein Elektron
+durch die räumliche Verteilung der übrigen Elektronen erfährt. Anstelle des vollen,
+korrelierten Zwei-Elektronen-Problems wird jedes Elektron so behandelt, als bewege es
+sich in der kontinuierlichen Ladungswolke mit Dichte <span class="math notranslate nohighlight">\(|\phi(\mathbf r)|^2\)</span>.<br />
+Damit enthält das effektive Potential bereits die Abschirmung des Kerns
+durch die übrigen Elektronen.</p>
+</div></section>
+<section id="losung-der-hartree-gleichung-in-der-gauss-basis">
+<h2>Lösung der Hartree-Gleichung in der Gauss-Basis<a class="headerlink" href="#losung-der-hartree-gleichung-in-der-gauss-basis" title="Link to this heading">#</a></h2>
+<p>Im nächsten Schritt wollen wir die Hartree-Gleichung nicht mehr direkt im Ortsraum,
+sondern in einer endlichen Basis von Einteilchenfunktionen formulieren. Dies erlaubt
+eine numerische Lösung, die strukturell genau dem Vorgehen in realen quantenchemischen
+Programmen entspricht. Der große Vorteil der gaußschen Basisfunktionen liegt darin,
+dass sämtliche für eine quantenchemische Rechnung benötigten Integrale effizient und
+vollständig analytisch berechnet werden können.</p>
+<p>Als Basis verwenden wir sphärisch symmetrische <span class="math notranslate nohighlight">\(s\)</span>-artige Gaußfunktionen,
+die am Kern zentriert sind. Für Helium genügt aufgrund der
+Symmetrie die Betrachtung nur solcher <span class="math notranslate nohighlight">\(s\)</span>-Funktionen.</p>
+<p>Die Basisfunktionen haben die folgende analytische Form:</p>
+<div class="math notranslate nohighlight">
+\[
+\chi_\mu(\mathbf r)
+=
+N_\mu \exp(-\alpha_\mu r^2), 
+\qquad r = |\mathbf r|,\quad \mu=1,\dots, M,
+\]</div>
+<p>wobei <span class="math notranslate nohighlight">\(\alpha_\mu &gt; 0\)</span> Exponenten und <span class="math notranslate nohighlight">\(N_\mu\)</span> Normierungskonstanten sind. Die Normierungskonstante lautet:</p>
+<div class="math notranslate nohighlight">
+\[
+N_\mu 
+= \left(\frac{2\alpha_\mu}{\pi}\right)^{3/4}.
+\]</div>
+<p>Das  Hartree-Orbital entwickeln wir als Linearkombination dieser Basisfunktionen:</p>
+<div class="math notranslate nohighlight">
+\[
+\phi(\mathbf r)
+=
+\sum_{\nu=1}^M c_\nu\,\chi_\nu(\mathbf r),
+\]</div>
+<p>wobei die Koeffizienten <span class="math notranslate nohighlight">\(c_\nu\)</span> variationell zu bestimmen sind.</p>
+<p>Die Normierungsbedingung <span class="math notranslate nohighlight">\(\int d^3r\,|\phi(\mathbf r)|^2=1\)</span> wird in der Basis zur
+Bedingung an die Koeffizienten:</p>
+<div class="math notranslate nohighlight">
+\[
+\int d^3r\,\phi^*(\mathbf r)\phi(\mathbf r)
+=
+\sum_{\mu,\nu} c_\mu^* c_\nu \int d^3r\,\chi_\mu(\mathbf r)\chi_\nu(\mathbf r)
+=
+\sum_{\mu,\nu} c_\mu^* S_{\mu\nu} c_\nu
+=1,
+\]</div>
+<p>mit der Überlappungsmatrix</p>
+<div class="math notranslate nohighlight">
+\[
+S_{\mu\nu}
+=
+\int d^3r\,\chi_\mu(\mathbf r)\chi_\nu(\mathbf r).
+\]</div>
+<section id="matrixelemente-des-einteilchenoperators">
+<h3>Matrixelemente des Einteilchenoperators<a class="headerlink" href="#matrixelemente-des-einteilchenoperators" title="Link to this heading">#</a></h3>
+<p>In der Gaußbasis benötigen wir die Matrixelemente</p>
+<div class="math notranslate nohighlight">
+\[
+h_{\mu\nu}
+=
+\int d^3r\,\chi_\mu(\mathbf r)\,\hat h\,\chi_\nu(\mathbf r)
+=
+T_{\mu\nu} + V_{\mu\nu},
+\]</div>
+</section>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="wobei-t-mu-nu-der-kinetischen-energie-t-mu-nu">
+<h1>wobei <span class="math notranslate nohighlight">\(T_{\mu\nu}\)</span> der kinetischen Energie
+$$
+T_{\mu\nu}<a class="headerlink" href="#wobei-t-mu-nu-der-kinetischen-energie-t-mu-nu" title="Link to this heading">#</a></h1>
+<p>-\frac{1}{2}
+\int d^3r,\chi_\mu(\mathbf r),\nabla^2 \chi_\nu(\mathbf r),
+$$</p>
+<p>und <span class="math notranslate nohighlight">\(V_{\mu\nu}\)</span> dem Kernpotential-Anteil</p>
+<div class="math notranslate nohighlight">
+\[
+V_{\mu\nu}
+=
+-\int d^3r\,\chi_\mu(\mathbf r)\,\frac{Z}{r}\,\chi_\nu(\mathbf r).
+\]</div>
+<p>entsprechen.</p>
+<p>Aufgrund der Kugelsymmetrie der <span class="math notranslate nohighlight">\(s\)</span>-Gaußfunktionen können alle Integrale auf radiale
+Integrale übergeführt und leicht analtyisch gelöst werden. Für die Überlappung erhält man</p>
+<div class="math notranslate nohighlight">
+\[
+S_{\mu\nu}
+=
+4\pi N_\mu N_\nu
+\int_0^\infty dr\,r^2 e^{-(\alpha_\mu + \alpha_\nu) r^2}
+=
+\left( \frac{2\sqrt{\alpha_\mu \alpha_\nu}}{\alpha_\mu+\alpha_\nu} \right)^{3/2}.
+\]</div>
+<p>Die kinetische Energie lässt sich durch explizites Auswerten des Laplace-Operators
+auf die Gaußfunktion berechnen. Für eine <span class="math notranslate nohighlight">\(s\)</span>-Gaußfunktion gilt</p>
+<div class="math notranslate nohighlight">
+\[
+\nabla^2 e^{-\alpha r^2}
+=
+\left(-6\alpha + 4\alpha^2 r^2\right)e^{-\alpha r^2},
+\]</div>
+<p>woraus man nach Einsetzen und Integration erhält:</p>
+<div class="math notranslate nohighlight">
+\[
+T_{\mu\nu}
+=
+\frac{3\alpha_\mu \alpha_\nu}{\alpha_\mu+\alpha_\nu}\,S_{\mu\nu}.
+\]</div>
+<p>Für das Kernpotential-Integral</p>
+<div class="math notranslate nohighlight">
+\[
+V_{\mu\nu}
+=
+-4\pi Z N_\mu N_\nu
+\int_0^\infty dr\, r\, e^{-(\alpha_\mu + \alpha_\nu) r^2}
+\]</div>
+<p>ergibt die Berechnung des radialen Integrals</p>
+<div class="math notranslate nohighlight">
+\[
+V_{\mu\nu}
+=
+-2Z\sqrt{\frac{\alpha_\mu+\alpha_\nu}{\pi}}\,S_{\mu\nu}.
+\]</div>
+<p>Damit sind alle benötigten Einteilchen-Matrixelemente <span class="math notranslate nohighlight">\(h_{\mu\nu}\)</span> in analytischer Form
+bekannt.</p>
+<section id="elektronelektron-wechselwirkung-in-der-basis">
+<h2>Elektron–Elektron-Wechselwirkung in der Basis<a class="headerlink" href="#elektronelektron-wechselwirkung-in-der-basis" title="Link to this heading">#</a></h2>
+<p>Für Helium und ein einzelnes Orbital <span class="math notranslate nohighlight">\(\phi\)</span> ist das Hartree-Potential gegeben durch</p>
+<div class="math notranslate nohighlight">
+\[
+V_H(\mathbf r_1)
+=
+\int d^3r_2\,\frac{|\phi(\mathbf r_2)|^2}{|\mathbf r_1 - \mathbf r_2|}.
+\]</div>
+<p>Setzen wir die Basisentwicklung</p>
+<div class="math notranslate nohighlight">
+\[
+\phi(\mathbf r)
+=
+\sum_{\gamma} c_\gamma \chi_\gamma(\mathbf r)
+\]</div>
+<p>ein, so folgt für die Elektronendichte des Elektrons 2</p>
+<div class="math notranslate nohighlight">
+\[
+|\phi(\mathbf r_2)|^2
+=
+\sum_{\gamma,\delta} c_\gamma c_\delta^*\,\chi_\gamma(\mathbf r_2)\chi_\delta(\mathbf r_2).
+\]</div>
+<p>Damit können wir die Matrixelemente des Hartree-Potentials in der Basis berechnen. Diese  sind gegeben durch:</p>
+<div class="math notranslate nohighlight">
+\[
+J_{\mu\nu}
+=
+\int d^3r_1\,\chi_\mu(\mathbf r_1)
+\left[
+\int d^3r_2\,\frac{|\phi(\mathbf r_2)|^2}{|\mathbf r_1-\mathbf r_2|}
+\right]
+\chi_\nu(\mathbf r_1).
+\]</div>
+<p>Einsetzen der oben definiereten Elektronendichte führt auf die <strong>Zwei-Elektronen-Integrale</strong> der Form:</p>
+<div class="math notranslate nohighlight">
+\[
+(\mu\nu|\gamma\delta)
+=
+\int d^3r_1\int d^3r_2\,
+\chi_\mu(\mathbf r_1)\chi_\nu(\mathbf r_1)
+\frac{1}{|\mathbf r_1-\mathbf r_2|}
+\chi_\gamma(\mathbf r_2)\chi_\delta(\mathbf r_2),
+\]</div>
+<p>so dass wir für die Matrixelemente des Hartree-Potentials den folgenden Ausdruck erhalten:</p>
+<div class="math notranslate nohighlight">
+\[
+J_{\mu\nu}
+=
+\sum_{\gamma,\delta}
+(\mu\nu|\gamma\delta)\,c_\gamma c_\delta^*.
+\]</div>
+<p>Für <span class="math notranslate nohighlight">\(s\)</span>-Typ-Gaußfunktionen am selben Zentrum mit Exponenten <span class="math notranslate nohighlight">\(\alpha_\mu,\alpha_\nu,
+\alpha_\gamma,\alpha_\delta\)</span> lassen sich die Integrale <span class="math notranslate nohighlight">\((\mu\nu|\gamma\delta)\)</span> ebenfalls
+analytisch berechnen. Verwendet man unnormierte Gaußfunktionen der Form
+<span class="math notranslate nohighlight">\(\exp(-\alpha r^2)\)</span>, so erhält man für gleiche Zentren den analytischen Ausdruck</p>
+<div class="math notranslate nohighlight">
+\[
+(\mu\nu|\gamma\delta)
+=
+\frac{2\pi^{5/2}}{(\alpha_\mu+\alpha_\nu)(\alpha_\gamma+\alpha_\delta)
+\sqrt{\alpha_\mu+\alpha_\nu+\alpha_\gamma+\alpha_\delta}},
+\]</div>
+<p>die durch Multiplikation mit den entsprechenden Normierungskonstanten <span class="math notranslate nohighlight">\(N_\mu,\dots,N_\delta\)</span>
+auch auf die normierten Funktionen erweitert werden kann.</p>
+</section>
+<section id="matrixform-der-hartree-gleichung">
+<h2>Matrixform der Hartree-Gleichung<a class="headerlink" href="#matrixform-der-hartree-gleichung" title="Link to this heading">#</a></h2>
+<p>Die Hartree-Gleichung  lautet</p>
+<div class="math notranslate nohighlight">
+\[
+\big(\hat h + V_H\big)\phi(\mathbf r)
+=
+\varepsilon\,\phi(\mathbf r).
+\]</div>
+<p>Setzen wir die Basisentwicklung
+<span class="math notranslate nohighlight">\(\phi(\mathbf r) = \sum_\nu c_\nu \chi_\nu(\mathbf r)\)</span> ein und multiplizieren von links
+mit <span class="math notranslate nohighlight">\(\chi_\mu(\mathbf r)\)</span> und integrieren über den Raum, so erhalten wir</p>
+<div class="math notranslate nohighlight">
+\[
+\int d^3r\,\chi_\mu(\mathbf r)\,\hat h\,\phi(\mathbf r)
++
+\int d^3r\,\chi_\mu(\mathbf r)\,V_H(\mathbf r)\,\phi(\mathbf r)
+=
+\varepsilon
+\int d^3r\,\chi_\mu(\mathbf r)\,\phi(\mathbf r).
+\]</div>
+<p>Die Einteilchen-Terme liefern</p>
+<div class="math notranslate nohighlight">
+\[
+\int d^3r\,\chi_\mu(\mathbf r)\,\hat h\,\phi(\mathbf r)
+=
+\sum_\nu c_\nu
+\int d^3r\,\chi_\mu(\mathbf r)\,\hat h\,\chi_\nu(\mathbf r)
+=
+\sum_\nu h_{\mu\nu} c_\nu.
+\]</div>
+<p>Für den Hartree-Beitrag erhalten wir unter Verwendung der Definition von <span class="math notranslate nohighlight">\(J_{\mu\nu}\)</span>
+und der Expansion von <span class="math notranslate nohighlight">\(\phi\)</span></p>
+<div class="math notranslate nohighlight">
+\[
+\int d^3r\,\chi_\mu(\mathbf r)\,V_H(\mathbf r)\,\phi(\mathbf r)
+=
+\sum_\nu c_\nu J_{\mu\nu},
+\]</div>
+<p>wobei <span class="math notranslate nohighlight">\(J_{\mu\nu}\)</span> seinerseits von den Koeffizienten <span class="math notranslate nohighlight">\(c_\gamma\)</span> abhängt.</p>
+<p>Auf der rechten Seite steht</p>
+<div class="math notranslate nohighlight">
+\[
+\varepsilon
+\int d^3r\,\chi_\mu(\mathbf r)\,\phi(\mathbf r)
+=
+\varepsilon
+\sum_\nu c_\nu
+\int d^3r\,\chi_\mu(\mathbf r)\chi_\nu(\mathbf r)
+=
+\varepsilon \sum_\nu S_{\mu\nu} c_\nu.
+\]</div>
+<p>Damit erhalten wir für jedes <span class="math notranslate nohighlight">\(\mu\)</span> eine lineare Gleichung der Form</p>
+<div class="math notranslate nohighlight">
+\[
+\sum_\nu (h_{\mu\nu} + J_{\mu\nu})\,c_\nu
+=
+\varepsilon \sum_\nu S_{\mu\nu} c_\nu.
+\]</div>
+<p>Wir definieren die Hartree-Matrix:</p>
+<div class="math notranslate nohighlight">
+\[
+F_{\mu\nu}
+=
+h_{\mu\nu} + J_{\mu\nu}
+=
+h_{\mu\nu}
++
+\sum_{\gamma,\delta}
+(\mu\nu|\gamma\delta)\,c_\gamma c_\delta^*,
+\]</div>
+<p>so dass die Hartree-Gleichung in der Basis als <em>verallgemeinertes</em> Eigenwertproblem erscheint:</p>
+<div class="math notranslate nohighlight">
+\[
+\mathbf F\,\mathbf c
+=
+\varepsilon\,\mathbf S\,\mathbf c.
+\]</div>
+<p>Hier ist <span class="math notranslate nohighlight">\(\mathbf c\)</span> der Koeffizientenvektor, <span class="math notranslate nohighlight">\(\mathbf S\)</span> die Überlappungsmatrix und
+<span class="math notranslate nohighlight">\(\mathbf F\)</span> die von <span class="math notranslate nohighlight">\(\mathbf c\)</span> abhängige Hartree-Matrix. Die Nichtlinearität der
+Hartree-Gleichung zeigt sich nun als Nichtlinearität dieses Eigenwertproblems:
+<span class="math notranslate nohighlight">\(\mathbf F\)</span> hängt selbst von der gesuchten Eigenlösung <span class="math notranslate nohighlight">\(\mathbf c\)</span> ab! Die Lösung der Hartree-Gleichung erfolgt numerisch mit der Methode des selbstkonsistentes Feldes (SCF für <em>self consistent field</em>).</p>
+</section>
+<section id="scf-methode-fur-helium">
+<h2>SCF-Methode für Helium<a class="headerlink" href="#scf-methode-fur-helium" title="Link to this heading">#</a></h2>
+<p>Für das Heliumatom im Hartree-Modell gibt es genau ein besetztes räumliches Orbital
+<span class="math notranslate nohighlight">\(\phi\)</span>, das von zwei Elektronen besetzt wird. Praktisch löst man das nichtlineare Eigenwertproblem, indem man mit einem Startvektor <span class="math notranslate nohighlight">\(\mathbf c^{(0)}\)</span> beginnt, daraus eine Hartree-Matrix <span class="math notranslate nohighlight">\(\mathbf F[\mathbf c^{(0)}]\)</span> konstruiert, das verallgemeinerte Eigenwertproblem löst, den Eigenvektor mit niedrigstem Eigenwert als neues <span class="math notranslate nohighlight">\(\mathbf c^{(1)}\)</span> verwendet und diesen selbstkonsistenten Zyklus fortsetzt, bis sich <span class="math notranslate nohighlight">\(\mathbf c\)</span> (und damit <span class="math notranslate nohighlight">\(\phi\)</span> und <span class="math notranslate nohighlight">\(V_H\)</span>) nicht mehr ändert. Wir schreiben nun unser allererstes Quantenchemie-Programm zur Lösung der Hartree-Gleichung für Helium.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">scipy.linalg</span><span class="w"> </span><span class="kn">import</span> <span class="n">eigh</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">Ng</span><span class="p">(</span><span class="n">a</span><span class="p">):</span> 
+    <span class="k">return</span> <span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">a</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span><span class="o">**</span><span class="mf">0.75</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">Sij</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">Ng</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="o">*</span><span class="n">Ng</span><span class="p">(</span><span class="n">b</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="p">(</span><span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="p">))</span><span class="o">**</span><span class="mf">1.5</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">Tij</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">Ng</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="o">*</span><span class="n">Ng</span><span class="p">(</span><span class="n">b</span><span class="p">)</span><span class="o">*</span><span class="mi">3</span><span class="o">*</span><span class="n">a</span><span class="o">*</span><span class="n">b</span><span class="o">/</span><span class="p">(</span><span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="p">(</span><span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="p">))</span><span class="o">**</span><span class="mf">1.5</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">Vij</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span> <span class="n">Z</span><span class="o">=</span><span class="mf">2.0</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">Ng</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="o">*</span><span class="n">Ng</span><span class="p">(</span><span class="n">b</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">Z</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="p">(</span><span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="p">)</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">Gijkl</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">,</span><span class="n">d</span><span class="p">):</span>
+    <span class="n">A</span> <span class="o">=</span> <span class="n">a</span><span class="o">+</span><span class="n">b</span>
+    <span class="n">B</span> <span class="o">=</span> <span class="n">c</span><span class="o">+</span><span class="n">d</span>
+    <span class="k">return</span> <span class="n">Ng</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="o">*</span><span class="n">Ng</span><span class="p">(</span><span class="n">b</span><span class="p">)</span><span class="o">*</span><span class="n">Ng</span><span class="p">(</span><span class="n">c</span><span class="p">)</span><span class="o">*</span><span class="n">Ng</span><span class="p">(</span><span class="n">d</span><span class="p">)</span> <span class="o">*</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">**</span><span class="mf">2.5</span><span class="o">/</span><span class="p">(</span><span class="n">A</span><span class="o">*</span><span class="n">B</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">A</span><span class="o">+</span><span class="n">B</span><span class="p">))</span>
+
+<span class="n">exps</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.05</span><span class="o">*</span><span class="p">(</span><span class="mf">4.</span><span class="o">**</span><span class="n">n</span><span class="p">)</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">15</span><span class="p">)])</span>
+<span class="n">ndim</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">exps</span><span class="p">)</span>
+
+<span class="c1"># Calculate one-electron integrals</span>
+<span class="n">A</span><span class="p">,</span><span class="n">B</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">exps</span><span class="p">,</span><span class="n">exps</span><span class="p">,</span><span class="n">indexing</span><span class="o">=</span><span class="s1">&#39;ij&#39;</span><span class="p">)</span>
+<span class="n">S</span> <span class="o">=</span> <span class="n">Sij</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">B</span><span class="p">)</span>
+<span class="n">T</span> <span class="o">=</span> <span class="n">Tij</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">B</span><span class="p">)</span>
+<span class="n">V</span> <span class="o">=</span> <span class="n">Vij</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">B</span><span class="p">)</span>
+<span class="n">h</span> <span class="o">=</span> <span class="n">T</span> <span class="o">+</span> <span class="n">V</span>
+<span class="c1"># Calculate two-electron integrals</span>
+<span class="n">A</span><span class="p">,</span><span class="n">B</span><span class="p">,</span><span class="n">C</span><span class="p">,</span><span class="n">D</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">exps</span><span class="p">,</span><span class="n">exps</span><span class="p">,</span><span class="n">exps</span><span class="p">,</span><span class="n">exps</span><span class="p">,</span><span class="n">indexing</span><span class="o">=</span><span class="s1">&#39;ij&#39;</span><span class="p">)</span>
+<span class="n">G</span> <span class="o">=</span> <span class="n">Gijkl</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">B</span><span class="p">,</span><span class="n">C</span><span class="p">,</span><span class="n">D</span><span class="p">)</span>
+
+<span class="c1"># Initial guess (starting orbital)</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">ndim</span><span class="p">)</span>
+<span class="n">c</span> <span class="o">/=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">S</span> <span class="o">@</span> <span class="n">c</span><span class="p">)</span>
+
+<span class="c1">#SCF loop </span>
+<span class="n">Energy_list</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">max_iter</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="k">for</span> <span class="n">it</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">max_iter</span><span class="p">):</span>
+    
+    <span class="n">J</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">einsum</span><span class="p">(</span><span class="s2">&quot;mnls,l,s-&gt;mn&quot;</span><span class="p">,</span> <span class="n">G</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
+    <span class="n">F</span> <span class="o">=</span> <span class="n">h</span> <span class="o">+</span> <span class="n">J</span>
+
+    <span class="n">epsilon</span><span class="p">,</span> <span class="n">Cmat</span> <span class="o">=</span> <span class="n">eigh</span><span class="p">(</span><span class="n">F</span><span class="p">,</span> <span class="n">S</span><span class="p">)</span>
+    <span class="n">c_new</span> <span class="o">=</span> <span class="n">Cmat</span><span class="p">[:,</span> <span class="n">epsilon</span><span class="o">.</span><span class="n">argmin</span><span class="p">()]</span>
+    <span class="n">c_new</span> <span class="o">/=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">c_new</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">S</span> <span class="o">@</span> <span class="n">c_new</span><span class="p">)</span>
+    
+    <span class="c1"># total Hartree energy</span>
+    <span class="n">E</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">c_new</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">h</span> <span class="o">@</span> <span class="n">c_new</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">c_new</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">J</span> <span class="o">@</span> <span class="n">c_new</span><span class="p">)</span>
+    <span class="n">Energy_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">E</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">it</span><span class="si">:</span><span class="s2">2d</span><span class="si">}</span><span class="s2">   E = </span><span class="si">{</span><span class="n">E</span><span class="si">:</span><span class="s2">.10f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">c_new</span> <span class="o">-</span> <span class="n">c</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mf">1e-12</span><span class="p">:</span>
+        <span class="k">break</span>
+    <span class="n">c</span> <span class="o">=</span> <span class="n">c_new</span>
+
+<span class="c1"># Plot convergence</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">Energy_list</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;red&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Iteration&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Energy/$E_h$&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 0   E = -2.2112633618
+ 1   E = -3.1048216670
+ 2   E = -2.7963403527
+ 3   E = -2.8798231903
+ 4   E = -2.8546222368
+ 5   E = -2.8619859849
+ 6   E = -2.8598139171
+ 7   E = -2.8604528015
+ 8   E = -2.8602647275
+ 9   E = -2.8603200794
+10   E = -2.8603037875
+11   E = -2.8603085821
+12   E = -2.8603071715
+13   E = -2.8603075862
+14   E = -2.8603074648
+15   E = -2.8603075002
+16   E = -2.8603074894
+17   E = -2.8603074930
+18   E = -2.8603074922
+19   E = -2.8603074918
+20   E = -2.8603074925
+21   E = -2.8603074918
+22   E = -2.8603074922
+23   E = -2.8603074923
+24   E = -2.8603074923
+25   E = -2.8603074915
+26   E = -2.8603074926
+27   E = -2.8603074920
+28   E = -2.8603074920
+29   E = -2.8603074923
+30   E = -2.8603074919
+31   E = -2.8603074924
+32   E = -2.8603074920
+33   E = -2.8603074925
+34   E = -2.8603074916
+35   E = -2.8603074928
+36   E = -2.8603074915
+37   E = -2.8603074927
+38   E = -2.8603074918
+39   E = -2.8603074921
+40   E = -2.8603074922
+41   E = -2.8603074918
+42   E = -2.8603074922
+43   E = -2.8603074926
+44   E = -2.8603074920
+45   E = -2.8603074921
+46   E = -2.8603074922
+47   E = -2.8603074916
+48   E = -2.8603074928
+49   E = -2.8603074914
+50   E = -2.8603074927
+51   E = -2.8603074921
+52   E = -2.8603074918
+53   E = -2.8603074924
+54   E = -2.8603074921
+55   E = -2.8603074916
+56   E = -2.8603074931
+57   E = -2.8603074916
+58   E = -2.8603074920
+59   E = -2.8603074925
+60   E = -2.8603074918
+61   E = -2.8603074920
+62   E = -2.8603074926
+63   E = -2.8603074920
+64   E = -2.8603074918
+65   E = -2.8603074922
+66   E = -2.8603074923
+67   E = -2.8603074920
+68   E = -2.8603074922
+69   E = -2.8603074924
+70   E = -2.8603074918
+71   E = -2.8603074925
+72   E = -2.8603074919
+73   E = -2.8603074919
+74   E = -2.8603074921
+75   E = -2.8603074922
+76   E = -2.8603074919
+77   E = -2.8603074925
+78   E = -2.8603074922
+79   E = -2.8603074922
+80   E = -2.8603074923
+81   E = -2.8603074916
+82   E = -2.8603074924
+83   E = -2.8603074916
+84   E = -2.8603074926
+85   E = -2.8603074918
+86   E = -2.8603074927
+87   E = -2.8603074918
+88   E = -2.8603074919
+89   E = -2.8603074928
+90   E = -2.8603074913
+91   E = -2.8603074926
+92   E = -2.8603074913
+93   E = -2.8603074930
+94   E = -2.8603074920
+95   E = -2.8603074919
+96   E = -2.8603074922
+97   E = -2.8603074921
+98   E = -2.8603074921
+99   E = -2.8603074920
+</pre></div>
+</div>
+<img alt="_images/385fd09a965e8271adaa01ac4d5a24463f4756216e797cf1297ef653701fc2c8.png" src="_images/385fd09a965e8271adaa01ac4d5a24463f4756216e797cf1297ef653701fc2c8.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Ergänzung: Lösung der Gauss-Integrale mit Sympy</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">sympy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sp</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sympy</span><span class="w"> </span><span class="kn">import</span> <span class="n">oo</span>
+
+<span class="n">alpha</span><span class="p">,</span> <span class="n">beta</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;alpha beta&#39;</span><span class="p">,</span> <span class="n">real</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">positive</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">real</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">positive</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+
+<span class="n">psi_mu</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">alpha</span> <span class="o">*</span> <span class="n">r</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">psi_nu</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">beta</span> <span class="o">*</span> <span class="n">r</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="n">S</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">pi</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">psi_mu</span><span class="o">*</span><span class="n">psi_nu</span><span class="o">*</span><span class="n">r</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">oo</span><span class="p">))</span>
+
+<span class="n">S</span> <span class="o">=</span> <span class="n">S</span><span class="o">.</span><span class="n">simplify</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">S</span><span class="p">)</span>
+
+<span class="n">N</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">pi</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">psi_mu</span><span class="o">*</span><span class="n">psi_mu</span><span class="o">*</span><span class="n">r</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">oo</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">((</span><span class="mi">1</span><span class="o">/</span><span class="n">sp</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">N</span><span class="p">))</span><span class="o">.</span><span class="n">simplify</span><span class="p">())</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">T</span><span class="p">(</span><span class="n">psi</span><span class="p">):</span>
+    <span class="k">return</span> <span class="o">-</span><span class="p">(</span><span class="n">psi</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="mi">2</span><span class="o">/</span><span class="n">r</span><span class="p">)</span><span class="o">*</span><span class="n">psi</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">r</span><span class="p">))</span><span class="o">/</span><span class="mi">2</span>
+<span class="n">T</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">r</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">psi_mu</span><span class="o">*</span><span class="n">T</span><span class="p">(</span><span class="n">psi_nu</span><span class="p">),</span> <span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">oo</span><span class="p">))</span><span class="o">.</span><span class="n">simplify</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">T</span><span class="p">)</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">V</span><span class="p">(</span><span class="n">psi</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="o">/</span><span class="n">r</span><span class="p">)</span><span class="o">*</span><span class="n">psi</span>
+<span class="n">V</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">pi</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">r</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">psi_mu</span><span class="o">*</span><span class="n">V</span><span class="p">(</span><span class="n">psi_nu</span><span class="p">),</span> <span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">oo</span><span class="p">))</span><span class="o">.</span><span class="n">simplify</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">V</span><span class="p">)</span>
+
+<span class="n">r1</span><span class="p">,</span> <span class="n">r2</span><span class="p">,</span> <span class="n">r12</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;r1 r2 r12&#39;</span><span class="p">,</span> <span class="n">positive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">alpha</span><span class="p">,</span> <span class="n">beta</span><span class="p">,</span> <span class="n">gamma</span><span class="p">,</span> <span class="n">delta</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;alpha beta gamma delta&#39;</span><span class="p">,</span> <span class="n">positive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">p</span><span class="p">,</span> <span class="n">q</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;p q&#39;</span><span class="p">,</span> <span class="n">real</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">positive</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+<span class="n">psi1</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">p</span><span class="o">*</span><span class="n">r1</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">psi2</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">q</span><span class="o">*</span><span class="n">r2</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="n">integrand</span> <span class="o">=</span> <span class="n">r1</span><span class="o">*</span><span class="n">r2</span><span class="o">*</span><span class="p">(</span><span class="n">psi1</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">psi2</span><span class="p">)</span>
+
+<span class="c1"># Region A: 0 &lt; r2 &lt; r1  ⇒  r12 ∈ [r1 - r2, r1 + r2]</span>
+<span class="n">I1</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="n">integrand</span><span class="p">,</span> <span class="p">(</span><span class="n">r12</span><span class="p">,</span> <span class="n">r1</span> <span class="o">-</span> <span class="n">r2</span><span class="p">,</span> <span class="n">r1</span> <span class="o">+</span> <span class="n">r2</span><span class="p">),</span>
+                               <span class="p">(</span><span class="n">r2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">r1</span><span class="p">),</span>
+                               <span class="p">(</span><span class="n">r1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">oo</span><span class="p">))</span>
+
+<span class="c1"># Region B: r1 &lt; r2 &lt; ∞  ⇒  r12 ∈ [r2 - r1, r1 + r2]</span>
+<span class="n">I2</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="n">integrand</span><span class="p">,</span> <span class="p">(</span><span class="n">r12</span><span class="p">,</span> <span class="n">r2</span> <span class="o">-</span> <span class="n">r1</span><span class="p">,</span> <span class="n">r1</span> <span class="o">+</span> <span class="n">r2</span><span class="p">),</span>
+                               <span class="p">(</span><span class="n">r2</span><span class="p">,</span> <span class="n">r1</span><span class="p">,</span> <span class="n">oo</span><span class="p">),</span>
+                               <span class="p">(</span><span class="n">r1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">oo</span><span class="p">))</span>
+
+<span class="n">I</span> <span class="o">=</span> <span class="mi">8</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">pi</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">I1</span> <span class="o">+</span> <span class="n">I2</span><span class="p">)</span>
+<span class="n">I_simplified</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">simplify</span><span class="p">(</span><span class="n">I</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">I_simplified</span><span class="o">.</span><span class="n">subs</span><span class="p">({</span><span class="n">p</span><span class="p">:</span> <span class="n">alpha</span><span class="o">+</span><span class="n">beta</span><span class="p">,</span> <span class="n">q</span><span class="p">:</span> <span class="n">gamma</span><span class="o">+</span><span class="n">delta</span><span class="p">}))</span>
+
+<span class="n">sp</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">pi</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">psi_mu</span><span class="o">*</span><span class="n">psi_mu</span><span class="o">*</span><span class="n">r</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">oo</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "rolandmitric/quantum_chemistry_2025",
+            ref: "main",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="correlation_hylleraas.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Elektronenkorrelation</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="first_qc_code.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Erstes Quantenchemieprogramm</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Optimales Hartree-Produkt und Hartree-Gleichung</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variation-des-energie-funktionals">Variation des Energie-Funktionals</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variation-der-normierungsbedingung">Variation der Normierungsbedingung</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#hartree-gleichung">Hartree-Gleichung</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zur-physikalischen-bedeuting-des-hartree-potentials">Zur physikalischen Bedeuting des Hartree-Potentials</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#losung-der-hartree-gleichung-in-der-gauss-basis">Lösung der Hartree-Gleichung in der Gauss-Basis</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#matrixelemente-des-einteilchenoperators">Matrixelemente des Einteilchenoperators</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#wobei-t-mu-nu-der-kinetischen-energie-t-mu-nu">wobei <span class="math notranslate nohighlight">\(T_{\mu\nu}\)</span> der kinetischen Energie
+$$
+T_{\mu\nu}</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#elektronelektron-wechselwirkung-in-der-basis">Elektron–Elektron-Wechselwirkung in der Basis</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matrixform-der-hartree-gleichung">Matrixform der Hartree-Gleichung</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scf-methode-fur-helium">SCF-Methode für Helium</a></li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Roland Mitric
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
