@@ -11,9 +11,9 @@
 
   /* LEFT nav slim */
   .bd-sidebar-primary {
-    width: 10rem !important;
-    flex: 0 0 10rem !important;
-    min-width: 10rem !important;
+    width: 14rem !important;
+    flex: 0 0 14rem !important;
+    min-width: 14rem !important;
     overflow: auto;
   }
 
