@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Spin &#8212; Quantenchemie</title>
+    <title>Spin: Einführung &#8212; Quantenchemie</title>
   
   
   
@@ -64,6 +64,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'spin';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Spin: Formalismus" href="bras_kets_etc.html" />
     <link rel="prev" title="Das Versagen der Hartree-Methode: Der Fall des Lithiumatoms" href="failure_hartree.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -189,7 +190,11 @@
 
 <li class="toctree-l1"><a class="reference internal" href="first_qc_code.html">Erstes Quantenchemieprogramm</a></li>
 <li class="toctree-l1"><a class="reference internal" href="failure_hartree.html">Das Versagen der Hartree-Methode: Der Fall des Lithiumatoms</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Spin</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Spin: Einführung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bras_kets_etc.html">Spin: Formalismus</a></li>
+
+
+
 </ul>
 
     </div>
@@ -428,7 +433,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -439,11 +446,22 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Spin</h1>
+    <h1>Spin: Einführung</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bras-kets-vektorraume-operatoren-dualraume-usw">Bras, Kets, Vektorräume, Operatoren, Dualräume usw…</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#komplexer-vektorraum-der-quantenzustande">Komplexer Vektorraum der Quantenzustände</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -453,733 +471,27 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="spin">
-<h1>Spin<a class="headerlink" href="#spin" title="Link to this heading">#</a></h1>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib</span>
-<span class="n">matplotlib</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;axes.linewidth&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mf">2.</span>
-<span class="n">matplotlib</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;axes.grid&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
-<span class="n">matplotlib</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;axes.labelsize&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">12</span>
-<span class="n">matplotlib</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;figure.figsize&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
-<span class="n">matplotlib</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;animation.embed_limit&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1000</span>
-<span class="n">matplotlib</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;text.usetex&#39;</span><span class="p">]</span> <span class="o">=</span>  <span class="kc">False</span>
-<span class="n">matplotlib</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s2">&quot;font.family&quot;</span><span class="p">]</span> <span class="o">=</span>  <span class="s2">&quot;sans-serif&quot;</span><span class="p">,</span>
-<span class="n">matplotlib</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s2">&quot;font.sans-serif&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Times&quot;</span><span class="p">]</span>
-<span class="o">%</span><span class="k">matplotlib</span> inline
-<span class="kn">import</span><span class="w"> </span><span class="nn">sympy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sp</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">mayavi</span><span class="w"> </span><span class="kn">import</span> <span class="n">mlab</span>
-<span class="n">mlab</span><span class="o">.</span><span class="n">init_notebook</span><span class="p">()</span>
-<span class="n">fig</span> <span class="o">=</span> <span class="n">mlab</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">600</span><span class="p">,</span> <span class="mi">400</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A module that was compiled using NumPy 1.x cannot be run in
-NumPy 2.2.6 as it may crash. To support both 1.x and 2.x
-versions of NumPy, modules must be compiled with NumPy 2.0.
-Some module may need to rebuild instead e.g. with &#39;pybind11&gt;=2.12&#39;.
-
-If you are a user of the module, the easiest solution will be to
-downgrade to &#39;numpy&lt;2&#39; or try to upgrade the affected module.
-We expect that some modules will need time to support NumPy 2.
-
-Traceback (most recent call last):  File &quot;/Users/rolandmitric/anaconda3/lib/python3.10/runpy.py&quot;, line 196, in _run_module_as_main
-    return _run_code(code, main_globals, None,
-  File &quot;/Users/rolandmitric/anaconda3/lib/python3.10/runpy.py&quot;, line 86, in _run_code
-    exec(code, run_globals)
-  File &quot;/Users/rolandmitric/anaconda3/lib/python3.10/site-packages/ipykernel_launcher.py&quot;, line 17, in &lt;module&gt;
-    app.launch_new_instance()
-  File &quot;/Users/rolandmitric/anaconda3/lib/python3.10/site-packages/traitlets/config/application.py&quot;, line 992, in launch_instance
-    app.start()
-  File &quot;/Users/rolandmitric/anaconda3/lib/python3.10/site-packages/ipykernel/kernelapp.py&quot;, line 711, in start
-    self.io_loop.start()
-  File &quot;/Users/rolandmitric/anaconda3/lib/python3.10/site-packages/tornado/platform/asyncio.py&quot;, line 199, in start
-    self.asyncio_loop.run_forever()
-  File &quot;/Users/rolandmitric/anaconda3/lib/python3.10/asyncio/base_events.py&quot;, line 603, in run_forever
-    self._run_once()
-  File &quot;/Users/rolandmitric/anaconda3/lib/python3.10/asyncio/base_events.py&quot;, line 1906, in _run_once
-    handle._run()
-  File &quot;/Users/rolandmitric/anaconda3/lib/python3.10/asyncio/events.py&quot;, line 80, in _run
-    self._context.run(self._callback, *self._args)
-  File &quot;/Users/rolandmitric/anaconda3/lib/python3.10/site-packages/ipykernel/kernelbase.py&quot;, line 510, in dispatch_queue
-    await self.process_one()
-  File &quot;/Users/rolandmitric/anaconda3/lib/python3.10/site-packages/ipykernel/kernelbase.py&quot;, line 499, in process_one
-    await dispatch(*args)
-  File &quot;/Users/rolandmitric/anaconda3/lib/python3.10/site-packages/ipykernel/kernelbase.py&quot;, line 406, in dispatch_shell
-    await result
-  File &quot;/Users/rolandmitric/anaconda3/lib/python3.10/site-packages/ipykernel/kernelbase.py&quot;, line 729, in execute_request
-    reply_content = await reply_content
-  File &quot;/Users/rolandmitric/anaconda3/lib/python3.10/site-packages/ipykernel/ipkernel.py&quot;, line 411, in do_execute
-    res = shell.run_cell(
-  File &quot;/Users/rolandmitric/anaconda3/lib/python3.10/site-packages/ipykernel/zmqshell.py&quot;, line 531, in run_cell
-    return super().run_cell(*args, **kwargs)
-  File &quot;/Users/rolandmitric/anaconda3/lib/python3.10/site-packages/IPython/core/interactiveshell.py&quot;, line 2961, in run_cell
-    result = self._run_cell(
-  File &quot;/Users/rolandmitric/anaconda3/lib/python3.10/site-packages/IPython/core/interactiveshell.py&quot;, line 3016, in _run_cell
-    result = runner(coro)
-  File &quot;/Users/rolandmitric/anaconda3/lib/python3.10/site-packages/IPython/core/async_helpers.py&quot;, line 129, in _pseudo_sync_runner
-    coro.send(None)
-  File &quot;/Users/rolandmitric/anaconda3/lib/python3.10/site-packages/IPython/core/interactiveshell.py&quot;, line 3221, in run_cell_async
-    has_raised = await self.run_ast_nodes(code_ast.body, cell_name,
-  File &quot;/Users/rolandmitric/anaconda3/lib/python3.10/site-packages/IPython/core/interactiveshell.py&quot;, line 3400, in run_ast_nodes
-    if await self.run_code(code, result, async_=asy):
-  File &quot;/Users/rolandmitric/anaconda3/lib/python3.10/site-packages/IPython/core/interactiveshell.py&quot;, line 3460, in run_code
-    exec(code_obj, self.user_global_ns, self.user_ns)
-  File &quot;/var/folders/jx/0m_kyw357_b256pffxmlcw2w0000gn/T/ipykernel_40583/2317757420.py&quot;, line 14, in &lt;module&gt;
-    from mayavi import mlab
-  File &quot;/Users/rolandmitric/anaconda3/lib/python3.10/site-packages/mayavi/mlab.py&quot;, line 16, in &lt;module&gt;
-    from mayavi.tools.camera import view, roll, yaw, pitch, move
-  File &quot;/Users/rolandmitric/anaconda3/lib/python3.10/site-packages/mayavi/tools/camera.py&quot;, line 24, in &lt;module&gt;
-    from .engine_manager import get_engine
-  File &quot;/Users/rolandmitric/anaconda3/lib/python3.10/site-packages/mayavi/tools/engine_manager.py&quot;, line 15, in &lt;module&gt;
-    from mayavi.core.engine import Engine
-  File &quot;/Users/rolandmitric/anaconda3/lib/python3.10/site-packages/mayavi/core/engine.py&quot;, line 27, in &lt;module&gt;
-    from mayavi.core.base import Base
-  File &quot;/Users/rolandmitric/anaconda3/lib/python3.10/site-packages/mayavi/core/base.py&quot;, line 19, in &lt;module&gt;
-    from tvtk.pyface.tvtk_scene import TVTKScene
-  File &quot;/Users/rolandmitric/anaconda3/lib/python3.10/site-packages/tvtk/pyface/tvtk_scene.py&quot;, line 25, in &lt;module&gt;
-    from tvtk.pyface import light_manager
-  File &quot;/Users/rolandmitric/anaconda3/lib/python3.10/site-packages/tvtk/pyface/light_manager.py&quot;, line 130, in &lt;module&gt;
-    class CameraLight(HasTraits):
-  File &quot;/Users/rolandmitric/anaconda3/lib/python3.10/site-packages/tvtk/pyface/light_manager.py&quot;, line 146, in CameraLight
-    source = Instance(tvtk.Light, ())
-  File &quot;/Users/rolandmitric/anaconda3/lib/python3.10/site-packages/tvtk/tvtk_classes.zip/tvtk_classes/tvtk_helper.py&quot;, line 265, in &lt;lambda&gt;
-    Light = property(lambda self: get_class(&#39;Light&#39;))
-  File &quot;/Users/rolandmitric/anaconda3/lib/python3.10/site-packages/tvtk/tvtk_classes.zip/tvtk_classes/tvtk_helper.py&quot;, line 47, in get_class
-    mod = get_module(fname)
-  File &quot;/Users/rolandmitric/anaconda3/lib/python3.10/site-packages/tvtk/tvtk_classes.zip/tvtk_classes/tvtk_helper.py&quot;, line 28, in get_module
-    mod = __import__(&#39;tvtk.tvtk_classes.%s&#39;%fname, globals(), locals(), [fname])
-  File &quot;/Users/rolandmitric/anaconda3/lib/python3.10/site-packages/tvtk/tvtk_classes.zip/tvtk_classes/light.py&quot;, line 12, in &lt;module&gt;
-    from tvtk import array_handler
-  File &quot;/Users/rolandmitric/anaconda3/lib/python3.10/site-packages/tvtk/array_handler.py&quot;, line 29, in &lt;module&gt;
-    from tvtk.array_ext import set_id_type_array
-</pre></div>
-</div>
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="nn">File ~/anaconda3/lib/python3.10/site-packages/tvtk/tvtk_classes.zip/tvtk_classes/tvtk_helper.py:22,</span> in <span class="ni">get_module</span><span class="nt">(fname)</span>
-<span class="g g-Whitespace">     </span><span class="mi">21</span> <span class="k">try</span><span class="p">:</span>
-<span class="ne">---&gt; </span><span class="mi">22</span>     <span class="n">mod</span> <span class="o">=</span> <span class="nb">__import__</span><span class="p">(</span><span class="s1">&#39;tvtk.custom.</span><span class="si">%s</span><span class="s1">&#39;</span><span class="o">%</span><span class="k">fname</span>,
-<span class="g g-Whitespace">     </span><span class="mi">23</span>                      <span class="nb">globals</span><span class="p">(),</span> <span class="nb">locals</span><span class="p">(),</span> <span class="p">[</span><span class="n">fname</span><span class="p">])</span>
-<span class="g g-Whitespace">     </span><span class="mi">24</span> <span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
-<span class="g g-Whitespace">     </span><span class="mi">25</span>     <span class="c1"># This is a local import since the tvtk modules are all</span>
-<span class="g g-Whitespace">     </span><span class="mi">26</span>     <span class="c1"># inside the tvtk_classes ZIP file and are local to the</span>
-<span class="g g-Whitespace">     </span><span class="mi">27</span>     <span class="c1"># current module: tvtk_helper.py</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;tvtk.custom.light&#39;
-
-<span class="n">During</span> <span class="n">handling</span> <span class="n">of</span> <span class="n">the</span> <span class="n">above</span> <span class="n">exception</span><span class="p">,</span> <span class="n">another</span> <span class="n">exception</span> <span class="n">occurred</span><span class="p">:</span>
-
-<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
-<span class="ne">AttributeError</span>: _ARRAY_API not found
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Notebook initialized with ipy backend.
-</pre></div>
-</div>
-</div>
-</div>
-<p>Wir haben gelernt, dass Wolfgang Pauli das dem Periodensystem der Elemente zugrunde liegende Aufbauprinzip erklärt hat, indem er annahm, dass ein Elektron eine Eigenschaft (Observable) hat, die nur <strong>zwei mögliche Werte</strong> annehmen kann. Darüber hinaus nahm Pauli an, dass sich in jedem Zustand, der durch eine räumliche Wellenfunktion definiert ist, nur Elektronen aufhalten können, die sich durch den Wert dieser etwas geheimnisvollen ‘’zweideutigen’’ Eigenschaft unterscheiden. Dies war historisch die erste Formulierung des (Paulischen) Ausschlussprinzips, das später allgemeiner formuliert wurde (wie wir noch sehen werden).</p>
-<p>Wir versuchen ausgehend von dieser Annahme eine konsistente quantenmechanische Beschreibung solcher Observablen aufzubauen, die nur zwei mögliche (Mess)-Werte haben können. Dabei werden wir den Spin des Elektrons entdecken!</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="spin-einfuhrung">
+<h1>Spin: Einführung<a class="headerlink" href="#spin-einfuhrung" title="Link to this heading">#</a></h1>
+<p>Wir haben bereits gesehen, dass sich die elektronische Struktur des einfachsten Atoms jenseits von Helium (also Lithium) nicht dadurch erklären lässt, dass alle drei Elektronen dasselbe räumliche Orbital besetzen. Wir erreichen eine zumindest qualitative Übereinstimmung mit Experiment indem wir das dritte Elektron in das nächsthöhere 2s-Orbital zu setzen. Offenbar neigen also Elektronen dazu, jedes räumliche Orbital nur paarweise zu besetzen; sobald ein Orbital „voll“ ist, wandern weitere Elektronen in energetisch höhere Zustände.</p>
+<p>Genau diese Beobachtung führte Wolfgang Pauli zu der Einsicht, dass ein Elektron nicht nur durch seine räumliche Bewegung charakterisiert ist, sondern darüber hinaus eine interne Eigenschaft besitzt (von Pauli ursprünglich ‘’Zweideutigkeit’’ genannt), die zwei unterschiedliche Werte annehmen kann.</p>
+<p>Man kann sich das bildlich gesprochen  wie einen kleinen Schalter vorstellen: Auch bei festgelegter Position kann das Elektron in zwei physikalisch verschiedenen Zuständen auftreten, gleichsam „ON“ oder „OFF“. Auf dieser Grundlage formulierte Pauli seine ursprüngliche Version des Ausschlussprinzips: In einem gegebenen räumlichen Zustand dürfen sich höchstens zwei Elektronen aufhalten, und dies nur dann, wenn sie sich genau in dieser inneren, zunächst rätselhaft anmutenden Zweideutigkeit unterscheiden.</p>
+<p>Wir versuchen ausgehend von dieser Annahme eine konsistente quantenmechanische Beschreibung eines Systems mir nur zwei möglichen Zuständen zu entwickeln. Insbesonder werden wir uns mit der Frage befassen, welche Art von Observablen kann ein solches System haben Dabei werden wir den Spin des Elektrons “entdecken”!</p>
 <p>Unsere Betrachtungen folgen nicht dem historischen Weg, der zur Entdeckung des Spins geführt hat. Wir versuchen vielmehr die Existenz des Spins basierend auf der modernen Formulierung der Quantenmechanik plausibel zu machen.</p>
-<p>Eine quantenmechanische Observable, die nur zwei mögliche Werte annehmen kann,  wird in der Quantenmechanik durch einen hermiteschen Operator mit zwei zueinander orthogonalen Eigenzuständen beschrieben.</p>
-<p>Diese zwei Basiszustände bezeichnen wir im Folgenden mit <span class="math notranslate nohighlight">\(|\alpha \rangle  \)</span> und <span class="math notranslate nohighlight">\(| \beta \rangle \)</span>. Dabei haben wir die sogennante <strong>Diracsche Bra-Ket-Notation</strong> für die quantenmechanischen Zustände eingeführt.</p>
-<p>In der Dirac-Notation wird ein allgemeiner Quantenzustand durch einen sog. Ket-Vektor <span class="math notranslate nohighlight">\(|\psi\rangle\)</span> beschrieben, den man als eine basisunabhängige Darstellung des Quantenzustands auffassen kann. Im Gegensatz dazu entspricht die übliche Beschreibung durch raumabhängige Wellenfunktionen einer speziellen Darstellung des Ket-Vektors in der Basis der Eigenzustände des Ortsoperators. Zur Erinnerung: Die Beschreibung der Quantenzustände durch Vektoren ist der mathematische Ausdruck für die experimentelle Tatsache, dass man Quantenzustände linear kombinieren kann, wodurch neue Quantenzustände entstehen. Dies ist die fundamentalste Eigenschaft der Quantenmechanik, die im völligen Gegensatz zu der klassischen Beschreibung steht.</p>
-<h1> Komplexer Vektorraum der Quantenzustände </h1> 
-<p>Die grundlegendste Eigenschaft quantenmechanischer Zustände ist also, dass wir Linearekombinationen aus ihnen aufbauen können, wodurch neue quantenmechanische Zustände erzeugt werden. Mathematisch gesehen, sind die quantenmechanischen Zustände <strong>Vektoren in einem komplexen Vektorraum</strong>.</p>
-<p>Da unsere bisher etwas mysteriöse zweideutige Observable mit zwei Basiszuständen beschrieben werden kann, können wir durch Bildung beliebiger Linearkombinationen der Basiszustände neue Quantenzustände erzeugen:</p>
+<p>Die Annahme, dass sich ein Elektron in zwei physikalisch unterscheidbaren internen Zuständen befinden kann, so ist dies gleichbedeutend mit der Annahme, dass eine quantenmechanische Observable existiert, die genau zwei mögliche Werte annehmen kann. Eine solche Größe wird in der Quantenmechanik durch einen hermiteschen Operator beschrieben, dessen Spektrum aus zwei zueinander orthogonalen Eigenzuständen besteht. Im Folgenden werden wir den bisher eingeführten Formalismus der Quantenmechanik am Beispiel eines solchen Zweizustandssystems leicht verallgemeinern und zugleich präziser formulieren. Dies bildet die Grundlage für eine systematische Behandlung des Spins.</p>
+<section id="bras-kets-vektorraume-operatoren-dualraume-usw">
+<h2>Bras, Kets, Vektorräume, Operatoren, Dualräume usw…<a class="headerlink" href="#bras-kets-vektorraume-operatoren-dualraume-usw" title="Link to this heading">#</a></h2>
+<p>Die Basiszustände der misteriösen ‘’Zweideutigkeit’’ bezeichnen wir im Folgenden mit <span class="math notranslate nohighlight">\(|\alpha\rangle\)</span> und <span class="math notranslate nohighlight">\(|\beta\rangle\)</span>. Damit führen wir zugleich die <strong>Diracsche Bra–Ket-Notation</strong> ein, die es erlaubt, Quantenzustände unabhängig von ihrer konkreten Basis-Darstellung zu formulieren.</p>
+<p>In dieser Notation wird ein beliebiger Quantenzustand durch einen sog. Ket-Vektor <span class="math notranslate nohighlight">\(|\psi\rangle\)</span> beschrieben, der als basisunabhängige Repräsentation des Zustands dient.</p>
+<p>Die übliche bisher bekannte Formulierung über raumabhängige Wellenfunktionen entspricht lediglich einer speziellen Darstellung dieses Ket-Vektors in der Basis der Eigenzustände des Ortsoperators. Zur Erinnerung: Die Beschreibung von Quantenzuständen als Vektoren spiegelt die experimentelle Tatsache wider, dass sich Quantenzustände linear überlagern lassen und so neue Zustände entstehen. Diese Fähigkeit zur Superposition ist eine der fundamentalsten Eigenschaften der Quantenmechanik und unterscheidet sie grundlegend von der klassischen Physik.</p>
+<section id="komplexer-vektorraum-der-quantenzustande">
+<h3>Komplexer Vektorraum der Quantenzustände<a class="headerlink" href="#komplexer-vektorraum-der-quantenzustande" title="Link to this heading">#</a></h3>
+<p>Mathematisch gesehen, sind die quantenmechanischen Zustände aslo <strong>Vektoren in einem komplexen Vektorraum</strong>. Da unsere bisher etwas mysteriöse zweideutige Observable mit zwei Basiszuständen beschrieben werden kann, können wir durch Bildung beliebiger Linearkombinationen der Basiszustände neue Quantenzustände erzeugen:</p>
 <div class="math notranslate nohighlight">
 \[ \psi = c_\alpha |\alpha \rangle  + c_\beta |\beta \rangle. \]</div>
-<p>So eine Linearkombination ist vollständig durch zwei <strong>komplexe Zahlen</strong>  <span class="math notranslate nohighlight">\(c_\alpha \)</span> and <span class="math notranslate nohighlight">\( c_\beta \)</span> charakterisiert. Diese können wir kompakt z. B. durch einen Spaltenvektor darstellen. So kann jedem Zustand des Systems ein Spaltenvektor zugeordnet werden:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split} \psi\rightarrow\left[\begin{array}{c}
-c_{\alpha}\\
-c_{\beta}
-\end{array}\right]\end{split}\]</div>
-<p>So einen Spaltenvektor können wir auch als:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}\left[\begin{array}{c}
-c_{\alpha}\\
-c_{\beta}
-\end{array}\right]=c_{\alpha}\left[\begin{array}{c}
-1\\
-0
-\end{array}\right]+c_{\beta}\left[\begin{array}{c}
-0\\
-1
-\end{array}\right] \end{split}\]</div>
-<p>darstellen.</p>
-<p>Daraus sehen wir, dass wir den Basiszuständen <span class="math notranslate nohighlight">\(|\alpha \rangle \)</span> und <span class="math notranslate nohighlight">\(|\beta \rangle \)</span> auch zwei entsprechende Spaltenvektoren zuordnen können:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}|\alpha\rangle\rightarrow\left[\begin{array}{c}
-1\\
-0
-\end{array}\right]\quad|\beta\rangle\rightarrow\left[\begin{array}{c}
-0\\
-1
-\end{array}\right]\end{split}\]</div>
-<p><u> Bemerkung </u> : Einen allgemeinen Vektor in einem zweidimesionalen komplexen Vektorraum bezeichnen man manchmal in der Literatur als <strong>Spinor</strong>.</p>
-<h1> Hermitesche Operatoren in einem zweidimensionalen komplexen Vektorraum </h1>
-<p>Wenn wir nun der Idee von Wolfgang Pauli folgen, müssen wir zur Beschreibung der ‘’Zweideutigkeit’’ einen hermiteschen Operator einführen, der nur zwei mögliche Eigenzustände und Eigenwerte hat. Dieser Operator, den wir zunächst mit <span class="math notranslate nohighlight">\(\hat{\sigma}\)</span> bezeichnen, sollte durch die folgende Wirkung auf die Basiszustände definiert sein:</p>
-<div class="math notranslate nohighlight">
-\[\hat{\sigma}|\alpha\rangle=+1|\alpha\rangle\]</div>
-<div class="math notranslate nohighlight">
-\[ \hat{\sigma}|\beta\rangle=-1|\beta\rangle \]</div>
-<p>Diesem Operator können wir also in der Matrix-Darstellung die folgende 2x2 Matrix zuordnen:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split} \hat{\sigma}\rightarrow\left[\begin{array}{cc}
-1 &amp; 0\\
-0 &amp; -1
-\end{array}\right] \end{split}\]</div>
-<p>Wir wollen uns im Folgenden die allgemeine Struktur der hermiteschen Operatoren in einem komplexen 2D-Vektorraum anschauen.</p>
-<p>Damit wir aber überhaupt den Begriff des hermiteschen Operators einführen können, müssen wir an unserem Vektorraum ein <strong>Skalarprodukt</strong>  definieren.</p>
-<p>Zur Erinnerung: Das Skalarprodukt wird in der Mathematik axiomatisch eingeführt, indem man auf dem gegebenen Vektorraum eine Abbildung (Funktion) definiert, die jedem Paar von Vektoren eine (komplexe) Zahl zuordnet. Zusätzlich muss diese Abbildung gewisse Eigenschaften haben, die analog zur üblichen Definition des Skalarproduktes aus der Geometrie sind. Die formale Definition lautet wie folgt:</p>
-<p>Ein Skalarprodukt auf einem Vektorraum V über einem Zahlenkörper C ist eine Abbildung von einem geordneten Vektorenpaar in V auf eine Zahl im Körper C, die die folgenden Eigenschaften erfüllt:</p>
-<ol>
-  <li> $$ \langle\psi|\psi\rangle\ge0\quad\forall|\psi\rangle  $$ </li>
-  <li> $$\langle\psi|\psi\rangle=0\Leftrightarrow|\psi\rangle=0 $$ </li>
-  <li> $$\langle\phi|\left(\lambda|\psi\rangle+\mu|\chi\rangle\right)=\lambda\langle\phi|\psi\rangle+\mu\langle\phi|\chi\rangle $$ </li>
-    <li> $$ \langle\phi|\psi\rangle=\langle\psi|\phi\rangle^{*} $$ </li>
-</ol>
-<p>Betrachten wir nun zwei beliebige Vektoren im zweidimensionalen komplexen Vektorraum, die durch folgende Spaltenvektoren dargestellt werden können:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}|\psi\rangle\rightarrow\left[\begin{array}{c}
-c_{\alpha}\\
-c_{\beta}
-\end{array}\right]\\
-|\phi\rangle\rightarrow\left[\begin{array}{c}
-d_{\alpha}\\
-d_{\beta}
-\end{array}\right] \end{split}\]</div>
-<p>Wir <u> definieren </u>  das Skalarprodukt als :</p>
-<div class="math notranslate nohighlight">
-\[ \langle\phi|\psi\rangle=d_{\alpha}^{*}c_{\alpha}+d_{\beta}^{*}c_{\beta} \]</div>
-<p>Diese Definition erfüllt alle Definitionseigenschaften eines Skalarprodukts.</p>
-<p>Bemerkung: Das Skalarprodukt kann formal auch in Form eines Matrixproduktes geschrieben werden :</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\langle\psi \mid \psi\rangle=c_\alpha^* c_\alpha+c_\beta^* c_\beta=\left[\begin{array}{ll}
-c_\alpha^* &amp; c_\alpha
-\end{array}\right]\left[\begin{array}{l}
-c_\alpha \\
-c_\beta
-\end{array}\right]
-\end{split}\]</div>
-<p>Wir sehen, dass man genauso, wie man den Ket-Vektoren einen Spaltenvektor <span class="math notranslate nohighlight">\(\left[\begin{array}{l}c_\alpha \\ c_\beta\end{array}\right]\)</span> zugeordnet hat, formal den Ausdruck <span class="math notranslate nohighlight">\(\langle\psi|\)</span> als einen Zeilenvektor auffassen kann:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{aligned}
-&amp; |\psi\rangle \rightarrow\left[\begin{array}{l}
-c_\alpha \\
-c_\beta
-\end{array}\right] \\
-&amp; \langle\psi| \rightarrow\left[\begin{array}{ll}
-c_\alpha^* &amp; c_\beta^*
-\end{array}\right]
-\end{aligned}
-\end{split}\]</div>
-<p>Diese neuen Zeilenvektoren bezeichnet man als Bra-Vektoren. Die Bra-Vektoren “leben” in einem anderen (dualen) Vektorraum V<span class="math notranslate nohighlight">\(^*\)</span>. Mathematiker identifizieren solche Bra-Vektoren mit linearen Funktionalen (Formen), die jedem Vektor aus dem Vektorraum V eine komplexe Zahl zuordnen (durch Bildung des Skalarprodukts). Wir haben also eine allgemeine Vorschrift, wie man aus einen Ket-Vektor im 2D-komplexen Vektorraum einen Bra-Vektor bildet.</p>
-<p>Betrachten wir einen allgemeinen Zustand <span class="math notranslate nohighlight">\(|\psi\rangle=c_\alpha|\alpha\rangle+c_\beta|\beta\rangle\)</span>, dem wir in der Matrix-Darstellung den Spaltenvektor</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-|\psi\rangle \rightarrow\left[\begin{array}{l}
-c_\alpha \\
-c_\beta
-\end{array}\right]
-\end{split}\]</div>
-<p>zugeordnet haben. Laut unserer Definition wäre das Skalarprodukt <span class="math notranslate nohighlight">\(\langle\psi \mid \psi\rangle\)</span> durch die folgende Beziehung gegeben:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{aligned}
-\langle\psi \mid \psi\rangle &amp; =c_\alpha^* c_\alpha+c_\beta^* c_\beta \\
-&amp; =\left|c_\alpha^2\right|^2+\left|c_\beta\right|^2
-\end{aligned}
-\end{split}\]</div>
-<p>Dies ist aber immer positiv und erfüllt damit die Definitionseigenschaft 1. Es gilt also</p>
-<div class="math notranslate nohighlight">
-\[
-\langle\psi \mid \psi\rangle \geqslant 0 \quad \forall \psi \text {. }
-\]</div>
-<p>Des Weiteren ist <span class="math notranslate nohighlight">\(\langle\psi \mid \psi\rangle=0\)</span> äquivalent mit <span class="math notranslate nohighlight">\(c_\alpha=c_\beta=0\)</span>, womit auch die Eigenschaft 2 erfüllt ist. Die Linearitat lässt sich ebenfalls durch direkte Anwendung der Definition überprüfen, so dass wir hiermit eine valide Definition eines Skalarprodukts auf unserem Vektorraum haben!</p>
-<p>Wir können nun analog zum Ket-Vektorraum eine Basis im dualen Vektorraum der Bras konstruieren:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{aligned}
-&amp; |\psi\rangle=c_\alpha|\alpha\rangle+c_\beta|\beta\rangle \Longleftrightarrow\langle\psi|=c_\alpha^*\langle\alpha|+c_\beta^*\langle\beta| \\
-&amp; \text { Matrix-Darstellung }|\psi\rangle \rightarrow c_\alpha\left[\begin{array}{l}
-1 \\
-0
-\end{array}\right]+c_\beta\left[\begin{array}{l}
-0 \\
-1
-\end{array}\right] \Leftrightarrow\langle\psi|=c_\alpha^*[1,0]+c_\beta[0,1] \\
-&amp;
-\end{aligned}
-\end{split}\]</div>
-<p>Dabei stellen wir fest, dass die Zeilenvektoren <span class="math notranslate nohighlight">\(\langle\alpha| \equiv[1,0]\)</span> und <span class="math notranslate nohighlight">\(\langle\beta| \equiv[0,1]\)</span> eine Basis des dualen Raumes bilden. Für die Skalarprodukte der Basisvektoren gilt speziell:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{aligned}
-&amp; \langle\alpha \mid \alpha\rangle=[1,0]\left[\begin{array}{l}
-1 \\
-0
-\end{array}\right]=1 \\
-&amp; \langle\beta \mid \beta\rangle=[0,1]\left[\begin{array}{l}
-0 \\
-1
-\end{array}\right]=1 \\
-&amp; \langle\alpha \mid \beta\rangle=[1,0]\left[\begin{array}{l}
-0 \\
-1
-\end{array}\right]=0 \\
-&amp; \langle\beta \mid \alpha\rangle=[0,1]\left[\begin{array}{l}
-1 \\
-0
-\end{array}\right]=0
-\end{aligned}
-\end{split}\]</div>
-<p>Im Folgenden führen wir lineare Operatoren im zweidimensionalen komplexen Vektorraum ein. Dazu erinnern wir uns zunächst an die allgemeine Definition eines linearen Operators.</p>
-<p><u> Definition </u> : Ein linearer Operator <span class="math notranslate nohighlight">\(\hat{A}: V \rightarrow V\)</span> ist eine Funktion mit folgenden Eigenschaften:</p>
-<ol class="arabic simple">
-<li><p>Linearität <span class="math notranslate nohighlight">\(\hat{A}(|u\rangle+|v\rangle)=\hat{A}|u\rangle+\hat{A}|v\rangle,\; \forall|u\rangle,|v\rangle\)</span></p></li>
-<li><p>Homogenität <span class="math notranslate nohighlight">\(\hat{A}(\lambda|u\rangle)=\lambda \hat{A}|u\rangle,\; \forall|u\rangle \in V, \forall \lambda \in \mathbb{C}\)</span></p></li>
-</ol>
-<p>Dies ist äquivalent zu der Aussage, dass</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\hat{A}\left(\lambda|u\rangle+\mu|v\rangle\right)=\lambda \hat{A}|u\rangle+\mu \hat{A}|v\rangle\\
-\forall |u\rangle,|v\rangle \in V\\
-\forall \lambda,\mu \in C
-\end{split}\]</div>
-<p>Wir erinnern uns an die Definition eines hermiteschen Operators, die wir bereits aus den vorherigen Vorlesungen kennen. Ein Operator <span class="math notranslate nohighlight">\(\hat{A}\)</span> ist hermitesch wenn die folgende Beziehung für zwei beliebige Wellenfunktionen erfüllt ist:</p>
-<div class="math notranslate nohighlight">
-\[
-\int d \tau\, \psi^* \hat{A} \phi=\left[\int d \tau\, \phi^* \hat{A} \psi\right]^* \quad \forall \phi, \psi
-\]</div>
-<p>Dies können wir nun allgemein in der basisfreien Dirac-Schreibweise wie folgt ausdrücken:</p>
-<div class="math notranslate nohighlight">
-\[
-\langle\psi|\hat{A}| \phi\rangle=\langle\phi|\hat{A}| \psi\rangle^*
-\]</div>
-<p>Wie sieht die Matrix-Darstellung eines hermiteschen Operators in unserem 2D-Vektorraum aus?</p>
-<p>Betrachten wir zunächst einen beliebigen Zustand <span class="math notranslate nohighlight">\(|\psi\rangle=c_\alpha|\alpha\rangle+c_\beta|\beta\rangle\)</span>.
-Es gilt:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{aligned}
-\hat{A}|\psi\rangle &amp; =\hat{A}\left(c _\alpha|\alpha\rangle+c_\beta|\beta\rangle\right) \quad \text { wegen der Linearität } \\
-&amp; =c_\alpha \hat{A}|\alpha\rangle+c_\beta \hat{A}|\beta\rangle
-\end{aligned}
-\end{split}\]</div>
-<p>Die Vektoren <span class="math notranslate nohighlight">\(\hat{A}|\alpha\rangle\)</span> und <span class="math notranslate nohighlight">\(\hat{A}|\beta\rangle\)</span> sind auch zwei Vektoren im 2D-Vektorraum und können in die Basis <span class="math notranslate nohighlight">\(|\alpha\rangle,|\beta\rangle\)</span> entwickelt werden:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{aligned}
-&amp; \hat{A}|\alpha\rangle=A_{11}|\alpha\rangle+A_{21}|\beta\rangle \\
-&amp; \hat{A}|\beta\rangle=A_{12}|\alpha\rangle+A_{22}|\beta\rangle
-\end{aligned}
-\end{split}\]</div>
-<p>Der Operator <span class="math notranslate nohighlight">\(\hat{A}\)</span> ist also im Allgemeinen durch 4 komplexe Zahlen ( <span class="math notranslate nohighlight">\(A_{11}, A_{21}, A_{12}, A_{22}\)</span> ), die man auch in einer <span class="math notranslate nohighlight">\(2 \times 2\)</span> Matrix zusammenfassen kann, definiert:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\hat{A} \rightarrow\left[\begin{array}{ll}
-A_{11} &amp; A_{12} \\
-A_{21} &amp; A_{22}
-\end{array}\right]
-\end{split}\]</div>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{aligned}
-\hat{A}|\psi\rangle &amp; =c_\alpha\left(A_{11}|\alpha\rangle+A_{21}|\beta\rangle\right)+c_\beta\left(A_{12}|\alpha\rangle+A_{22}|\beta\rangle\right) \\
-&amp; =\left(A_{11} c_\alpha+A_{12} c_\beta\right)|\alpha\rangle+\left(A_{21} c_\alpha+A_{22} c_\beta\right)|\beta\rangle
-\end{aligned}
-\end{split}\]</div>
-<p>In der Matrix-Darstellung kann der Operatorausdruck <span class="math notranslate nohighlight">\( \hat{A}|\psi\rangle\)</span> in Form eines Matrix-Vektor Produktes ausgedrückt werden:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\hat{A}|\psi\rangle \rightarrow\left[\begin{array}{l}
-A_{11} c_\alpha+A_{12} c_\beta \\
-A_{21} c_\alpha+A_{22} c_\beta
-\end{array}\right]=\left[\begin{array}{ll}
-A_{11} &amp; A_{12} \\
-A_{21} &amp; A_{12}
-\end{array}\right]\left[\begin{array}{l}
-c_\alpha \\
-c_\beta
-\end{array}\right]
-\end{split}\]</div>
-<p>Wir sehen, dass man einen beliebigen lineare Operator A durch eine <span class="math notranslate nohighlight">\(2 \times 2\)</span> Matrix dartellen bann. Das Ergebnis der Anwendung von <span class="math notranslate nohighlight">\(\hat{A}\)</span> auf einen belietigen Vector <span class="math notranslate nohighlight">\(|\psi\rangle\)</span> erhaten wir in der Matrix-Darstellung durch Matrix-Vektor Multiplikation.</p>
-<p>Betrachten wir nun den Ausdruck <span class="math notranslate nohighlight">\(\langle\phi|\hat{A}| \psi\rangle\)</span> für zwei beliebige Zustände:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{aligned}
-&amp; |\psi\rangle=\left[\begin{array}{l}
-c_\alpha \\
-c_\beta
-\end{array}\right] \\
-&amp; |\phi\rangle=\left[\begin{array}{l}
-d_\alpha \\
-d_\beta
-\end{array}\right]
-\end{aligned}
-\end{split}\]</div>
-<p>Es gilt :</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{aligned}
-&amp; \langle\phi|\hat{A}| \psi\rangle=\left[\begin{array}{ll}
-d_\alpha^* &amp; d_\beta^*
-\end{array}\right]\left[\begin{array}{ll}
-A_{11} &amp; A_{12} \\
-A_{21} &amp; A_{22}
-\end{array}\right]\left[\begin{array}{l}
-c_\alpha \\
-c_\beta
-\end{array}\right] \\
-&amp; =\left[d_\alpha^*, d_\beta^*\right]\left[\begin{array}{l}
-A_{11} c_\alpha+A_{12} c_\beta \\
-A_{11} c_\alpha+A_{22} c_\beta
-\end{array}\right] \\
-&amp;
-\end{aligned}
-\end{split}\]</div>
-<p>Damit kann man das obige Skalarprodukt in der folgenden allgemeinen Form schreiben:</p>
-<div class="math notranslate nohighlight">
-\[
-\langle\phi|\hat{A}| \psi\rangle=\left(A_{11} c_\alpha+A_{12} c_\beta\right) d_\alpha^*+\left(A_{21} c_\alpha+A_{22} c_\beta\right) d_\beta^*
-\]</div>
-<p>Betrachten wir nun:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{aligned}
-\langle\psi|A| \phi\rangle &amp; =\left[\begin{array}{ll}
-c_\alpha^* &amp; c_\beta^*
-\end{array}\right]\left[\begin{array}{ll}
-A_{11} &amp; A_{12} \\
-A_{21} &amp; A_{12}
-\end{array}\right]\left[\begin{array}{l}
-d_\alpha \\
-d_\beta
-\end{array}\right] \\
-&amp; =\left(A_{11} d_\alpha+A_{12} d_\beta\right) c_\alpha^*+\left(A_{21} d_\alpha+A_{22} d_\beta\right) c_\beta^*
-\end{aligned}
-\end{split}\]</div>
-<p>Damit der Operator <span class="math notranslate nohighlight">\(\hat{A}\)</span> die Eigenschaft der Hermitezität besitzt, muss für alle Paare von Zuständen die folgende Bedingung gelten:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{aligned}
-\langle\psi|\hat{A}| \phi\rangle=\langle\phi|\hat{A}| \psi\rangle^* \Rightarrow &amp; \left(A_{11} c_\alpha+A_{12} c_\beta\right) d_\alpha^*+\left(A_{21} c_\alpha+A_{22} c_\beta\right) d_\beta^* \\
-&amp; =\left(A_{11} d_\alpha+A_{12} d_\beta\right)^* c_\alpha+\left(A_{21} d_\alpha+A_{22} d_\beta\right)^* c_\beta
-\end{aligned}
-\end{split}\]</div>
-<p>Daraus folgt die Identität:</p>
-<div class="math notranslate nohighlight">
-\[
-\left(A_{11}-A_{11}^*\right) c_\alpha d_\alpha^*+\left(A_{22}-A_{22}^*\right) c_\beta d_\beta^*+\left(A_{12}-A_{21}\right)^* c_\beta d_\alpha^*+\left(A_{21}-A_{12}^*\right) c_\alpha d_\beta^*=0
-\]</div>
-<p>Diese muss nun für beliebige <span class="math notranslate nohighlight">\(c_\alpha, c_\beta, d_\alpha, d_\beta\)</span> gelten. Dies ist aber nur dann der Fall, wenn die folgenden Beziehungen zwischen den Matrixelementen <span class="math notranslate nohighlight">\(A_{ij}\)</span> bestehen:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{aligned}
-&amp; A_{11}=A_{11}^* \Rightarrow A_{11} \text { ist reell! } \\
-&amp; A_{22}=A_{22}^* \Rightarrow A_{22} \text { ist reell! } \\
-&amp; A_{21}=A_{12}^* \\
-&amp; A_{12}=A_{21}^*
-\end{aligned}
-\end{split}\]</div>
-<p>Die Matrix-Darstellung eines hermiteschen Operators hat unter diesen Bedingungen eine allgemeine Form:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-A=\left[\begin{array}{cc}
-a &amp; c-i d \\
-c+i d &amp; b
-\end{array}\right]
-\end{split}\]</div>
-<p><span class="math notranslate nohighlight">\(a, b, c, d\)</span> sind dabei beliebige reelle Zahlen.</p>
-<p>Ein beliebiger hermitescher Operator an einem 2D-Vektorraum kann als eine Linearkombination von 4 Basisoperatoren dargestellt werden:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-A=\left[\begin{array}{cc}
-a &amp; c-i d \\
-c+i d &amp; b
-\end{array}\right]=\left[\begin{array}{ll}
-a &amp; 0 \\
-0 &amp; b
-\end{array}\right]+\left[\begin{array}{cc}
-0 &amp; c-i d \\
-c+i d &amp; 0
-\end{array}\right]
-\end{split}\]</div>
-<p>oder</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{aligned}
-&amp; A=\left[\begin{array}{cc}
-\frac{a+b}{2}+\frac{a-b}{2} &amp; 0 \\
-0 &amp; \frac{a+b}{2}-\left(\frac{a-b}{2}\right)
-\end{array}\right]+c\left[\begin{array}{cc}
-0 &amp; 1 \\
-1 &amp; 0
-\end{array}\right]+d\left[\begin{array}{cc}
-0 &amp; -i \\
-i &amp; 0
-\end{array}\right] \\
-\end{aligned}
-\end{split}\]</div>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{aligned}
-&amp; A=\frac{a+b}{2}\left[\begin{array}{ll}
-1 &amp; 0 \\
-0 &amp; 1
-\end{array}\right]+\frac{a-b}{2}\left[\begin{array}{cc}
-1 &amp; 0 \\
-0 &amp; -1
-\end{array}\right]+c\left[\begin{array}{ll}
-0 &amp; 1 \\
-1 &amp; 0
-\end{array}\right]+d\left[\begin{array}{cc}
-0 &amp; -i \\
-i &amp; 0
-\end{array}\right]
-\end{aligned}
-\end{split}\]</div>
-<p>Wir definieren nun neue Parameter als</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{aligned}
-&amp; a_1=c \\
-&amp; a_2=d \\
-&amp; a_3=\frac{a-b}{2} \\
-&amp; a_0=\frac{a+b}{2}
-\end{aligned}
-\end{split}\]</div>
-<p>Mit den neuen Parametern könen wir A auch in der folgenden Form schreiben:
-$<span class="math notranslate nohighlight">\(
-A=a_0 \cdot \underbrace{\left[\begin{array}{ll}
-1 &amp; 0 \\
-0 &amp; 1
-\end{array}\right]}_I+a_1 \underbrace{\left[\begin{array}{ll}
-0 &amp; 1 \\
-1 &amp; 0
-\end{array}\right]}_{\sigma_1}+a_2 \underbrace{\left[\begin{array}{cc}
-0 &amp; -i \\
-i &amp; 0
-\end{array}\right]}_{\sigma_2}+a_{3}\underbrace{\left[\begin{array}{cc}
-1 &amp; 0 \\
-0 &amp; -1
-\end{array}\right]}_{\sigma_3}
-\)</span>$</p>
-<p>Dies liefert uns die Basis für die Darstellung eines beliebigen hermiteschen Operators, die aus 4 Matrizen bestent:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{aligned}
-&amp; I=\left[\begin{array}{ll}
-1 &amp; 0 \\
-0 &amp; 1
-\end{array}\right] \\
-&amp; \sigma_1=\left[\begin{array}{ll}
-0 &amp; 1 \\
-1 &amp; 0
-\end{array}\right] \\
-&amp; \sigma_2=\left[\begin{array}{cc}
-0 &amp; -i \\
-i &amp; 0
-\end{array}\right] \\
-&amp; \sigma_3=\left[\begin{array}{cc}
-1 &amp; 0 \\
-0 &amp; -1
-\end{array}\right]
-\end{aligned}
-\end{split}\]</div>
-<p>Die Matrizen <span class="math notranslate nohighlight">\(\sigma_1, \sigma_2, \sigma_3\)</span> bezeichnet man als <b> Pauli-Matrizen </b> !</p>
-<p>Welchen physikalischen Inhalt haben diese mathematischen Erkenntnisse über die allgemeine Form eines hermiteschen Operators im zweidimensionalen komplexen Vektorraum?</p>
-<p><u> Jede physikalische Observable </u>  in einem Quantensystem mit nur zwei Basiszuständen kann als Linearkombination von drei Basisobservablen dargestellt werden (ohne den trivialen Identitätsoperator <span class="math notranslate nohighlight">\(I\)</span>). Die Pauli-Annahme über die Existenz einer Eigenschaft mit nur zwei möglichen Werten führt also auf natürlichem Wege zur Existenz von nicht einem, sondern drei verwandten hermiteschen Operatoren (Observablen), die durch die drei Pauli-Matrizen dargestellt werden können. Diese stellen gewissermaßen die ‘’natürlichsten’’ Observablen überhaupt dar, die in einem System mit zwei Basiszuständen existieren können.</p>
-<p>Aber welche physikalische Observable stellen diese drei Operatoren dar? Wie kann man diese mysteriöse Observable messen und können alle drei <span class="math notranslate nohighlight">\(\sigma\)</span>’s gleichzeitig gemessen werden oder nicht?</p>
-<p>Die Antworten auf diese Fragen werden uns zur Entdeckung des Spins führen, der, wie wir zeigen werden, eine eigentümliche Form eines Drehimpulses darstellt, für die es kein klassisches Analogon gibt!</p>
-<h1> Einige Eigenschaften von Pauli-Matrizen </h1> 
-<p>Wir untersuchen im Folgenden einige mathematische Eigenschaften von Pauli-Matrizen.</p>
-<p>Zunächst bemerken wir, dass alle drei Pauli-Matrizen hermitesch sind und somit auch quantenmechanische Observablen darstellen. Die Messwerte von quantenmechanischen Observablen sind im Allgemeinen durch die Eigenwerte der entsprechenden Operatoren bestimmt.</p>
-<p>Welche Eigenwerte haben also <span class="math notranslate nohighlight">\(\sigma_1, \sigma_2\)</span> und <span class="math notranslate nohighlight">\(\sigma_3\)</span> ?</p>
-<p>Für alle drei Pauli-Matrizen gilt die folgende Beziehung, die man durch direkte Multiplikation überprüfen kann:</p>
-<div class="math notranslate nohighlight">
-\[\sigma_i^2=I, \quad i=1,2,3. \]</div>
-<p>Zum Beispiel haben wir für <span class="math notranslate nohighlight">\(\sigma_1\)</span> :</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\sigma_1^2=\left[\begin{array}{ll}
-0 &amp; 1 \\
-1 &amp; 0
-\end{array}\right] \cdot\left[\begin{array}{ll}
-0 &amp; 1 \\
-1 &amp; 0
-\end{array}\right]=\left[\begin{array}{ll}
-1 &amp; 0 \\
-0 &amp; 1
-\end{array}\right]=I
-\end{split}\]</div>
-<p>Aus der Relation <span class="math notranslate nohighlight">\(\sigma_i^2=I\)</span> folgt unmittelbar, dass die Eigenwerte der Pauli-Matrizen <span class="math notranslate nohighlight">\(\pm 1\)</span> sind. Dies können wir wie folgt beweisen:</p>
-<p>Sei <span class="math notranslate nohighlight">\(|v\rangle\)</span> ein Eigenvektor der Pauli-Matrix <span class="math notranslate nohighlight">\(\sigma_i\)</span> mit dem Eigenwert <span class="math notranslate nohighlight">\(\lambda\)</span> :</p>
-<div class="math notranslate nohighlight">
-\[
-\sigma_i|v\rangle=\lambda|v\rangle
-\]</div>
-<p>Dann gilt:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{aligned}
-\sigma_i^2|v\rangle &amp; =\sigma_i\left(\sigma_i|v\rangle\right) \\
-&amp; =\sigma_i(\lambda|v\rangle) \\
-&amp; =\lambda \sigma_i|v\rangle \\
-&amp; =\lambda^2|v\rangle
-\end{aligned}
-\end{split}\]</div>
-<p>Andererseits gilt aber <span class="math notranslate nohighlight">\(\sigma_i^2=I\)</span>. Daraus folgt:</p>
-<div class="math notranslate nohighlight">
-\[
-I|v\rangle=\lambda^2|v\rangle \Rightarrow\left(\lambda^2-1\right)|v\rangle=0
-\]</div>
-<p>Daraus ergibt sich, für <span class="math notranslate nohighlight">\(|v\rangle \neq|0\rangle\)</span>,  <span class="math notranslate nohighlight">\(\lambda=\pm 1\)</span>.</p>
-<p><b>Kommutatoren der Pauli-Matrizen</b></p>
-<p>Wir haben gesehen, dass Pauli-Matrizen als hermitesche Matrizen quantenmechanische Observablen darstellen. Nun fragen wir uns, ob unterschiedliche <span class="math notranslate nohighlight">\(\sigma_i\)</span>’s gemeinsame Eigenvektoren haben und damit gleichzeitig beliebig scharf messbar sind. Um diese Frage zu beantworten, berechnen wir den Kommutator zweier Pauli-Matrizen.</p>
-<p>Wir rechnen zunächst <span class="math notranslate nohighlight">\(\sigma_1 \sigma_2\)</span> aus:
-$<span class="math notranslate nohighlight">\(
-\sigma_1 \sigma_2=\left[\begin{array}{ll}
-0 &amp; 1 \\
-1 &amp; 0
-\end{array}\right]\left[\begin{array}{cc}
-0 &amp; -i \\
-i &amp; 0
-\end{array}\right]=\left[\begin{array}{cc}
-i &amp; 0 \\
-0 &amp; -i
-\end{array}\right]=i\left[\begin{array}{cc}
-1 &amp; 0 \\
-0 &amp; -1
-\end{array}\right]
-\)</span><span class="math notranslate nohighlight">\(
-Für \)</span>\sigma_1 \sigma_2<span class="math notranslate nohighlight">\( bekommen wir also:
-\)</span><span class="math notranslate nohighlight">\(
-\sigma_1 \sigma_2=i \sigma_3
-\)</span><span class="math notranslate nohighlight">\(
-Nun berechnen wir \)</span>\sigma_2 \sigma_1<span class="math notranslate nohighlight">\( :
-\)</span><span class="math notranslate nohighlight">\(
-\begin{aligned}
-&amp; \sigma_2 \sigma_1=\left[\begin{array}{cc}
-0 &amp; -i \\
-i &amp; 0
-\end{array}\right]\left[\begin{array}{ll}
-0 &amp; 1 \\
-1 &amp; 0
-\end{array}\right]=\left[\begin{array}{cc}
--i &amp; 0 \\
-0 &amp; i
-\end{array}\right]=-i\left[\begin{array}{cc}
-1 &amp; 0 \\
-0 &amp; -1
-\end{array}\right] \\
-&amp; \sigma_2 \sigma_1=-i \sigma_3
-\end{aligned}
-\)</span><span class="math notranslate nohighlight">\(
-Wir sehen, dass \)</span>\sigma_1<span class="math notranslate nohighlight">\( und \)</span>\sigma_2$ nicht vertauschbar sind!</p>
-<p>Der Kommutator von <span class="math notranslate nohighlight">\(\sigma_1\)</span> und <span class="math notranslate nohighlight">\(\sigma_2\)</span> ist damit:</p>
-<div class="math notranslate nohighlight">
-\[
-\left[\sigma_1, \sigma_2\right]=\sigma_1 \sigma_2-\sigma_2 \sigma_1=2 i \sigma_3
-\]</div>
-<p>Genauso kann man durch direkte Rechnung zeigen, dass</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{aligned}
-&amp; {\left[\sigma_2, \sigma_3\right]=2 i \sigma_1} \\
-&amp; {\left[\sigma_3, \sigma_1\right]=2 i \sigma_2}
-\end{aligned}
-\end{split}\]</div>
-<p>Wir haben nun ein sehr interessantes Ergebnis erhalten: Pauli-Matrizen erfüllen ähnliche Vertauschungsrelationen wie der quantenmechanische Drehimpuls, den wir bei der quantenmechanischen Behandlung der Drehbewegung kennengelernt haben:</p>
-<div class="math notranslate nohighlight">
-\[
-\left[\sigma_1, \sigma_2\right]=2 i \sigma_3 \leftrightarrow\left[L_x, L_y\right]=i \hbar L_z \text { usw. }
-\]</div>
-<p>Die mysteriöse zweideutige Eigenschaft der Elektronen, die Pauli eingeführt hat, um das Aufbau-Prinzip der Atome zu erklären, ist also eine Art des Drehimpulses! Diesen etwas besonderen Drehimpuls bezeichnet man als “<b>Spin</b>”.</p>
-<p>Die Vertauschungsrelationen der Pauli-Matrizen können wir ganz analog zu denen des Drehimpulses, indem wir folgende Spin-Operatoren definieren:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{aligned}
-&amp; S_x=\frac{\hbar}{2} \sigma_1 \\
-&amp; S_y=\frac{\hbar}{2} \sigma_2 \\
-&amp; S_z=\frac{\hbar}{2} \sigma_3
-\end{aligned}
-\end{split}\]</div>
-<p>Diese unterscheiden sich von den Pauli-Matrizen nur durch die geschickt eingefügte Plancksche Konstante.
-Mit diesen Definitionen gilt z. B.:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{aligned}
-{\left[S_x, S_y\right] } &amp; =\left[\frac{\hbar}{2} \sigma_1, \frac{\hbar}{2} \sigma_2\right] \\
-&amp; =\left(\frac{\hbar}{2}\right)^2\left[\sigma_1, \sigma_2\right] \\
-&amp; =\left(\frac{\hbar}{2}\right)^2 \cdot 2 i \sigma_3 \\
-&amp; =i \hbar S_z
-\end{aligned}
-\end{split}\]</div>
-<p>also völlig analog zum Drehimpuls <span class="math notranslate nohighlight">\(\hat{\mathbf{L}}\)</span>!</p>
-<p>Nachdem wir den Kommutator der Pauli-Matrizen berechnet haben, bemerken wir auch die folgende Relation:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{aligned}
-&amp; \sigma_1 \sigma_2+\sigma_2 \sigma_1=0 \\
-&amp; \sigma_2 \sigma_3+\sigma_3 \sigma_2=0 \\
-&amp; \sigma_3 \sigma_1+\sigma_1 \sigma_3=0
-\end{aligned}
-\end{split}\]</div>
-<p>Multiplikation von Pauli-Matrizen ist also antikommutativ! Wir definieren den <b>Anti-Kommutator</b> als:</p>
-<div class="math notranslate nohighlight">
-\[
-\left\{\sigma_i, \sigma_j\right\} \equiv \sigma_i \sigma_j+\sigma_j \sigma_i=0 \text { wenn } i \neq j
-\]</div>
-<p>Die Vertauschungsrelationen für den Drehimpuls und Spin können mit Hilfe des <b>Levi-Civita-Symbols</b> in einer kompakten allgemeinen Form umschreiben, die viele spätere Berechnungen erleichtert. Wir definieren das Levi-Civita-Symbol <span class="math notranslate nohighlight">\(\varepsilon_{i j k}\)</span> als</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\varepsilon_{i j k}=\left\{\begin{aligned}
-1, &amp; \text { wenn } i j k=123,231,312 \\
--1, &amp; \text { wenn } i j k=213,132,321 \\
-0, &amp; \text { ansonsten }
-\end{aligned}\right.
-\end{split}\]</div>
-<p>Das Levi-Civita-Symbol hat insgesamt 27 Komponenten. Wenn mindestens zwei Indizes gleich sind, ist jedoch <span class="math notranslate nohighlight">\(\varepsilon_{i j k}=0\)</span>. Für gerade Permutationen aus der Menge <span class="math notranslate nohighlight">\(\{1,2,3\}\)</span> ist <span class="math notranslate nohighlight">\(\varepsilon_{i j k}=+1\)</span> und für ungerade Permutationen ist <span class="math notranslate nohighlight">\(\varepsilon_{i j k}=-1\)</span>.</p>
-<p>Die Vertauschungsrelationen zwischen Pauli-Matrizen können mit Hilfe des Levi-Civitas Symbols in der folgenden kompakten Form geschrieben werden:</p>
-<div class="math notranslate nohighlight">
-\[
-\left[\sigma_i, \sigma_j\right]=2 i \sum_k \varepsilon_{i j k} \sigma_k
-\]</div>
-<p>oder noch kürzer unter Verwendung der Einsteinschen Summenkonvention (über doppelt auftretende Indizes innerhalb eines Produkts wird summiert):</p>
-<div class="math notranslate nohighlight">
-\[
-\left[\sigma_i, \sigma_j\right]=2 i \varepsilon_{i j k} \sigma_k \quad \text { (Summation über k implizit!) }
-\]</div>
-<p>Wir überprüfen an einem Beispiel, ob die obige Relation tatsächlich stimmt:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{aligned}
-{\left[\sigma_1, \sigma_2\right] } &amp; =2 i(\underbrace{\varepsilon_{121} \sigma_1}_{=0}+\underbrace{\varepsilon_{122} \sigma_2}_{=0}+\underbrace{\varepsilon_{123}}_{=1} \sigma_3) \\
-&amp; =2 i \sigma_3
-\end{aligned}
-\end{split}\]</div>
-<p>Eine weitere nützliche Beziehung erhalten wir, indem wir das Produkt der Pauli-Matrizen durch die Einführung des Levi-Civita-Symbols ausdrücken:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{aligned}
-\sigma_i \sigma_j &amp; =\frac{1}{2}\left(\sigma_i \sigma_j+\sigma_j \sigma_i\right)+\frac{1}{2}\left(\sigma_i \sigma_j-\sigma_j \sigma_i\right) \\
-&amp; =\frac{1}{2}\left\{\sigma_i, \sigma_j\right\}+\frac{1}{2}\left[\sigma_i, \sigma_j\right] \\
-&amp; =\frac{1}{2}\left(2 \delta_{i j} I\right)+\frac{1}{2} \cdot 2 i \sum_k \varepsilon_{i j k} \sigma_k
-\end{aligned}
-\end{split}\]</div>
-<p>Daraus folgt die Pauli-Identität:
-$<span class="math notranslate nohighlight">\(
-\sigma_i \sigma_j=\delta_{i j}+i \sum_k \varepsilon_{i j k} \sigma_k
-\)</span>$</p>
+<p>Bildlich gesprochen, trägt also ein Elektron in ‘’seiner Seele’’ einen zweidimensionalen komplexen Vektorraum! Wir erinnern im folgenden an die formale Definition eines Vektorraumes.</p>
+</section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -1221,12 +533,39 @@ $<span class="math notranslate nohighlight">\(
         <p class="prev-next-title">Das Versagen der Hartree-Methode: Der Fall des Lithiumatoms</p>
       </div>
     </a>
+    <a class="right-next"
+       href="bras_kets_etc.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Spin: Formalismus</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bras-kets-vektorraume-operatoren-dualraume-usw">Bras, Kets, Vektorräume, Operatoren, Dualräume usw…</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#komplexer-vektorraum-der-quantenzustande">Komplexer Vektorraum der Quantenzustände</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

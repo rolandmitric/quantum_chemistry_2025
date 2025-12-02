@@ -1,0 +1,1522 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Spin: Formalismus &#8212; Quantenchemie</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=e936a729" />
+    <link rel="stylesheet" type="text/css" href="_static/wide_v2.css?v=bfe64621" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'bras_kets_etc';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Spin: Einführung" href="spin.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Quantenchemie</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="index.html">
+                    Quantenchemie — WS 2025
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="variational_principle.html">Das Variationsprinzip</a></li>
+<li class="toctree-l1"><a class="reference internal" href="convergence_variational_principle.html">Über die Konvergenz des linearen Variationsprinzips: Verschachtelungs Satz</a></li>
+<li class="toctree-l1"><a class="reference internal" href="helium_atom.html">Das Helium-Atom</a></li>
+<li class="toctree-l1"><a class="reference internal" href="kinetic_energy_hylleraas.html">Hylleraas-Methode: Kinetische Energie</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="correlation_hylleraas.html">Elektronenkorrelation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hartree_equation.html">Optimales Hartree-Produkt und Hartree-Gleichung</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="first_qc_code.html">Erstes Quantenchemieprogramm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="failure_hartree.html">Das Versagen der Hartree-Methode: Der Fall des Lithiumatoms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="spin.html">Spin: Einführung</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Spin: Formalismus</a></li>
+
+
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/rolandmitric/quantum_chemistry_2025/main?urlpath=lab/tree/./bras_kets_etc.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Binder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Binder logo" src="_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/rolandmitric/quantum_chemistry_2025" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/rolandmitric/quantum_chemistry_2025/edit/main/./bras_kets_etc.ipynb" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/rolandmitric/quantum_chemistry_2025/issues/new?title=Issue%20on%20page%20%2Fbras_kets_etc.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/bras_kets_etc.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Spin: Formalismus</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Spin: Formalismus</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kets-bras-funktionale-operatoren-usw">Kets, Bras, Funktionale, Operatoren usw…</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#komplexer-vektorraum-der-quantenzustande">Komplexer Vektorraum der Quantenzustände</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#definition-vektorraum"><em>Definition: Vektorraum</em></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#skalarprodukt-und-quantenmechanische-messungen">Skalarprodukt und quantenmechanische Messungen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definition-skalarprodukt">Definition: Skalarprodukt</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#definition-dualraum"><em>Definition: Dualraum</em></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rieszscher-darstellungssatz-endlichdimensionale-version">Riesz’scher Darstellungssatz (endlichdimensionale Version)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#beweis">Beweis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eindeutigkeit">Eindeutigkeit</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dirac-notation">Dirac-Notation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#definition-linearer-operator">Definition: Linearer Operator</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#matrixdarstellung-eines-operators-in-einer-orthonormalbasis">Matrixdarstellung eines Operators in einer Orthonormalbasis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#das-adjungierte-hermitesche-konjugierte-eines-operators">Das adjungierte (hermitesche konjugierte) eines Operators</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hermitesche-operatoren-observablen">Hermitesche Operatoren (Observablen)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kommutatoren-der-pauli-matrizen">Kommutatoren der Pauli-Matrizen</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#damit-ergibt-sich-fur-den-kommutator-sigma-1-sigma-2">Damit ergibt sich für den Kommutator:
+$$
+[\sigma_1,\sigma_2]</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#sigma-1-sigma-2-sigma-2-sigma-1">\sigma_1\sigma_2 - \sigma_2\sigma_1</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#i-sigma-3-i-sigma-3">i\sigma_3 - (-i\sigma_3)</a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="spin-formalismus">
+<h1>Spin: Formalismus<a class="headerlink" href="#spin-formalismus" title="Link to this heading">#</a></h1>
+<section id="kets-bras-funktionale-operatoren-usw">
+<h2>Kets, Bras, Funktionale, Operatoren usw…<a class="headerlink" href="#kets-bras-funktionale-operatoren-usw" title="Link to this heading">#</a></h2>
+<section id="komplexer-vektorraum-der-quantenzustande">
+<h3>Komplexer Vektorraum der Quantenzustände<a class="headerlink" href="#komplexer-vektorraum-der-quantenzustande" title="Link to this heading">#</a></h3>
+<p>Mathematisch gesehen, sind die quantenmechanischen Zustände aslo <strong>Vektoren in einem komplexen Vektorraum</strong>. Da unsere bisher etwas mysteriöse zweideutige Observable mit zwei Basiszuständen beschrieben werden kann, können wir durch Bildung beliebiger Linearkombinationen der Basiszustände neue Quantenzustände erzeugen:</p>
+<div class="math notranslate nohighlight">
+\[ \psi = c_\alpha |\alpha \rangle  + c_\beta |\beta \rangle. \]</div>
+<p>Bildlich gesprochen, trägt also ein Elektron in ‘’seiner Seele’’ einen zweidimensionalen komplexen Vektorraum! Wir erinnern im folgenden an die formale Definition eines Vektorraumes.</p>
+<div style="border-left: 5px solid #1E90FF; padding: 1.2em; background: #E6F0FF;">
+</section>
+<section id="definition-vektorraum">
+<h3><em>Definition: Vektorraum</em><a class="headerlink" href="#definition-vektorraum" title="Link to this heading">#</a></h3>
+<p>Sei <span class="math notranslate nohighlight">\( \mathbb{K} \)</span> ein Körper (in der Quantenmechanik typischerweise <span class="math notranslate nohighlight">\( \mathbb{K}=\mathbb{C} \)</span>).<br />
+Ein <strong>Vektorraum über <span class="math notranslate nohighlight">\( \mathbb{K} \)</span></strong> besteht aus</p>
+<ol class="arabic simple">
+<li><p>einer <strong>Menge</strong> <span class="math notranslate nohighlight">\( V \)</span> von Vektoren (genannt Kets <span class="math notranslate nohighlight">\( \lvert\psi\rangle \)</span>),</p></li>
+<li><p>einer <strong>Addition von Vektoren</strong>, formal definiert als Abbildung</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[
+   + : V \times V \longrightarrow V, \qquad 
+   (\lvert\psi\rangle,\lvert\phi\rangle) \mapsto \lvert\psi\rangle + \lvert\phi\rangle ,
+\]</div>
+<ol class="arabic simple" start="3">
+<li><p>einer <strong>Skalarmultiplikation</strong>, definiert als Abbildung</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[
+   \cdot : \mathbb{K} \times V \longrightarrow V,\qquad 
+   (a,\lvert\psi\rangle) \mapsto a\,\lvert\psi\rangle ,
+\]</div>
+<p>so dass für alle <span class="math notranslate nohighlight">\( \lvert\psi\rangle, \lvert\phi\rangle, \lvert\chi\rangle \in V \)</span> und alle <span class="math notranslate nohighlight">\( a,b \in \mathbb{K} \)</span> die folgenden Axiome gelten:</p>
+<p><strong>(1) Kommutativität der Addition</strong></p>
+<div class="math notranslate nohighlight">
+\[
+\lvert\psi\rangle + \lvert\phi\rangle
+= \lvert\phi\rangle + \lvert\psi\rangle .
+\]</div>
+<p><strong>(2) Assoziativität der Addition</strong></p>
+<div class="math notranslate nohighlight">
+\[
+(\lvert\psi\rangle + \lvert\phi\rangle) + \lvert\chi\rangle
+= \lvert\psi\rangle + (\lvert\phi\rangle + \lvert\chi\rangle).
+\]</div>
+<p><strong>(3) Existenz des Nullvektors</strong><br />
+Es existiert ein <span class="math notranslate nohighlight">\( \lvert 0\rangle \in V \)</span> mit</p>
+<div class="math notranslate nohighlight">
+\[
+\lvert\psi\rangle + \lvert 0\rangle = \lvert\psi\rangle .
+\]</div>
+<p><strong>(4) Existenz additiver Inverser</strong><br />
+Zu jedem <span class="math notranslate nohighlight">\( \lvert\psi\rangle \in V \)</span> existiert ein <span class="math notranslate nohighlight">\( -\lvert\psi\rangle \in V \)</span> mit</p>
+<div class="math notranslate nohighlight">
+\[
+\lvert\psi\rangle + (-\lvert\psi\rangle)=\lvert 0\rangle .
+\]</div>
+<p><strong>(5) Assoziativität der Skalarmultiplikation</strong></p>
+<div class="math notranslate nohighlight">
+\[
+a\,(b\,\lvert\psi\rangle)= (ab)\,\lvert\psi\rangle .
+\]</div>
+<p><strong>(6) Neutrales Element der Skalarmultiplikation</strong></p>
+<div class="math notranslate nohighlight">
+\[
+1\cdot \lvert\psi\rangle = \lvert\psi\rangle .
+\]</div>
+<p><strong>(7) Distributivität über die Vektoraddition</strong></p>
+<div class="math notranslate nohighlight">
+\[
+a(\lvert\psi\rangle + \lvert\phi\rangle)
+= a\lvert\psi\rangle + a\lvert\phi\rangle .
+\]</div>
+<p><strong>(8) Distributivität über die Skalaraddition</strong></p>
+<div class="math notranslate nohighlight">
+\[
+(a+b)\lvert\psi\rangle
+= a\lvert\psi\rangle + b\lvert\psi\rangle .
+\]</div>
+</div>
+<p>Die zwei komplexe Zahlen  <span class="math notranslate nohighlight">\(c_\alpha \)</span> and <span class="math notranslate nohighlight">\( c_\beta \)</span> , die den “internen” Zustand des Elektrons vollstädig charakterisieren können wir kompakt durch einen Spaltenvektor darstellen:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split} \psi\rightarrow\left[\begin{array}{c}
+c_{\alpha}\\
+c_{\beta}
+\end{array}\right]\end{split}\]</div>
+<p><u> Bemerkung </u> : Einen allgemeinen Vektor in einem zweidimesionalen komplexen Vektorraum bezeichnen man manchmal in der Literatur als <strong>Spinor</strong>.</p>
+<p>Diesen Spaltenvektor können wir auch wie folgt zerlegen:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left[\begin{array}{c}
+c_{\alpha}\\
+c_{\beta}
+\end{array}\right]=c_{\alpha}\left[\begin{array}{c}
+1\\
+0
+\end{array}\right]+c_{\beta}\left[\begin{array}{c}
+0\\
+1
+\end{array}\right] \end{split}\]</div>
+<p>darstellen. Daraus sehen wir, dass wir den Basiszuständen <span class="math notranslate nohighlight">\(|\alpha \rangle \)</span> und <span class="math notranslate nohighlight">\(|\beta \rangle \)</span> auch zwei entsprechende Spaltenvektoren zuordnen können:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}|\alpha\rangle\rightarrow\left[\begin{array}{c}
+1\\
+0
+\end{array}\right]\quad|\beta\rangle\rightarrow\left[\begin{array}{c}
+0\\
+1
+\end{array}\right]\end{split}\]</div>
+</section>
+</section>
+<section id="skalarprodukt-und-quantenmechanische-messungen">
+<h2>Skalarprodukt und quantenmechanische Messungen<a class="headerlink" href="#skalarprodukt-und-quantenmechanische-messungen" title="Link to this heading">#</a></h2>
+<p>Wenn wir quantenmechanische Zustände als Vektoren auffassen, besitzen wir damit noch keinen Zugang zu etwas <em>Messbarem</em>. Wir können zwar Zustände kombinieren und neue Zustände bilden, aber wie charakterisieren wir einen einzelnen Zustand? Wir brauchen ein mathematisches Modell mit dem wir Messungen und die Messergebnisse beschreiben können!</p>
+<p>Experimentell werden Zustände eines System beschrieben, indem man ihnen Zahlen zuordnet, die dem Ergebnis einer bestimmten Messung entsprechen. Wir benötigen also eine mathematische Struktur, die es erlaubt, einem Zustand eines Quantensystems Zahlen zuzuordnen.</p>
+<p>In der elementaren Quantenmechanik haben wir gelernt, dass das Produkt einer Wellenfunktion mit ihrem komplex konjugierten Partner, also <span class="math notranslate nohighlight">\( \psi^\ast(x)\,\psi(x) \)</span>, physikalisch einer Wahrscheinlichkeitsdichte für den Ort eines Teilchens entspricht.</p>
+<p>Die Definition eines Vektorraums erlaubt es uns, Zustände <span class="math notranslate nohighlight">\( \lvert\psi\rangle \)</span> zu addieren und mit komplexen Zahlen zu skalieren. Aber diese Struktur erlaubt es noch nicht, Produkte von Zuständen zu definieren oder ihnen Zahlen zuzuordnen. Um physikalisch relevante Größen zu berechnen — etwa</p>
+<ul class="simple">
+<li><p>Wahrscheinlichkeitsamplituden <span class="math notranslate nohighlight">\( \langle\phi\mid\psi\rangle \)</span>,</p></li>
+<li><p>Erwartungswerte von Observablen,</p></li>
+<li><p>Übergangswahrscheinlichkeiten zwischen Zuständen,</p></li>
+</ul>
+<p>benötigen wir eine zusätzliche Struktur: eine Möglichkeit, zwei Vektoren zu „paaren“ und daraus eine komplexe Zahl zu erhalten. Dies motiviert die Einführung des <strong>Skalarprodukts</strong> (oder inneren Produkts).</p>
+</section>
+<section id="definition-skalarprodukt">
+<h2>Definition: Skalarprodukt<a class="headerlink" href="#definition-skalarprodukt" title="Link to this heading">#</a></h2>
+<div style="border-left: 5px solid #1E90FF; padding: 1.2em; background: #E6F0FF;">
+<p>Sei <span class="math notranslate nohighlight">\( V \)</span> ein komplexer Vektorraum. Ein <strong>Skalarprodukt</strong> auf <span class="math notranslate nohighlight">\( V \)</span> ist eine Abbildung</p>
+<div class="math notranslate nohighlight">
+\[
+\langle \,\cdot\,\mid\,\cdot\,\rangle : V \times V \rightarrow \mathbb{C},
+\]</div>
+<p>die jedem Paar von Vektoren <span class="math notranslate nohighlight">\(\lvert\psi\rangle, \lvert\phi\rangle\in V\)</span> eine komplexe Zahl <span class="math notranslate nohighlight">\(\langle\psi\mid\phi\rangle\)</span> zuordnet und für alle <span class="math notranslate nohighlight">\(\lvert\psi\rangle, \lvert\phi\rangle, \lvert\chi\rangle\in V \)</span> sowie alle <span class="math notranslate nohighlight">\(a\in\mathbb{C}\)</span> folgende Axiome erfüllt:</p>
+<p><strong>(1) Hermitizität:</strong></p>
+<div class="math notranslate nohighlight">
+\[ \langle\psi\mid\phi\rangle = \langle\phi\mid\psi\rangle^\ast \]</div>
+<p><strong>(2) Linearität im zweiten Argument:</strong></p>
+<div class="math notranslate nohighlight">
+\[ \langle\psi\mid(a\,\phi + \chi)\rangle = a\,\langle\psi\mid\phi\rangle + \langle\psi\mid\chi\rangle \]</div>
+<p><strong>(3) Homogenität im zweiten Argument:</strong><br />
+$<span class="math notranslate nohighlight">\( \langle\psi\mid(a\,\phi)\rangle = a\,\langle\psi\mid\phi\rangle \)</span>$</p>
+<p><strong>(4) Positive Definitheit:</strong></p>
+<div class="math notranslate nohighlight">
+\[ \langle\psi\mid\psi\rangle \ge 0 $$ und  
+    
+$$ \langle\psi\mid\psi\rangle = 0 \Longleftrightarrow \lvert\psi\rangle = \lvert 0\rangle \]</div>
+<p>📝 <em>Hinweis:</em> In der Mathematik wird die Linearität häufig im ersten Argument definiert. In der Physik ist es jedoch üblich, sie (wie hier) im zweiten Argument einzuführen. Ein Vektorraum, der mit einem Skalarprodukt ausgestattet ist, heißt <strong>unitärer Raum</strong>.</p>
+</div><p>Mit dieser Definition können den Vektorraum der inneren Zustände eines Elektrons zu einem unitären Raum erweitern indem wir ein Skalarprodukt wie folgt einführen. Betrachten wir zwei beliebige Vektoren, die durch folgende Spaltenvektoren dargestellt werden können:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}|\psi\rangle\rightarrow\left[\begin{array}{c}
+c_{\alpha}\\
+c_{\beta}
+\end{array}\right]\\
+|\phi\rangle\rightarrow\left[\begin{array}{c}
+d_{\alpha}\\
+d_{\beta}
+\end{array}\right] \end{split}\]</div>
+<p>Wir <em>definieren</em>  deren Skalarprodukt als :</p>
+<div class="math notranslate nohighlight">
+\[ \langle\phi|\psi\rangle=d_{\alpha}^{*}c_{\alpha}+d_{\beta}^{*}c_{\beta} \]</div>
+<p>Diese Definition erfüllt alle Definitionseigenschaften eines Skalarprodukts wie man direkt überprüfen kann:</p>
+<p>Betrachten wir einen allgemeinen Zustand <span class="math notranslate nohighlight">\(|\psi\rangle=c_\alpha|\alpha\rangle+c_\beta|\beta\rangle\)</span>, dem wir in der Matrix-Darstellung den Spaltenvektor</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+|\psi\rangle \rightarrow\left[\begin{array}{l}
+c_\alpha \\
+c_\beta
+\end{array}\right]
+\end{split}\]</div>
+<p>zugeordnet haben. Laut unserer Definition wäre das Skalarprodukt <span class="math notranslate nohighlight">\(\langle\psi \mid \psi\rangle\)</span> durch die folgende Beziehung gegeben:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+\langle\psi \mid \psi\rangle &amp; =c_\alpha^* c_\alpha+c_\beta^* c_\beta \\
+&amp; =\left|c_\alpha^2\right|^2+\left|c_\beta\right|^2
+\end{aligned}
+\end{split}\]</div>
+<p>Dies ist aber immer positiv und erfüllt damit die Definitionseigenschaft 1. Es gilt also</p>
+<div class="math notranslate nohighlight">
+\[
+\langle\psi \mid \psi\rangle \geqslant 0 \quad \forall \psi \text {. }
+\]</div>
+<p>Des Weiteren ist <span class="math notranslate nohighlight">\(\langle\psi \mid \psi\rangle=0\)</span> äquivalent mit <span class="math notranslate nohighlight">\(c_\alpha=c_\beta=0\)</span>, womit auch die Eigenschaft 2 erfüllt ist. Die Linearitat lässt sich ebenfalls durch direkte Anwendung der Definition überprüfen, so dass wir hiermit eine valide Definition eines Skalarprodukts auf unserem Vektorraum haben!</p>
+<p>Betrachten wir einen beliebigen, aber fixierten Vektor <span class="math notranslate nohighlight">\(|\phi\rangle \in V\)</span>. Mit Hilfe dieses Vektors definieren wir die Abbildung</p>
+<div class="math notranslate nohighlight">
+\[
+F_{|\phi\rangle} : V \longrightarrow \mathbb{K}, \qquad 
+F_{|\phi\rangle}(|\psi\rangle) := \langle \phi | \psi \rangle .
+\]</div>
+<p>Diese Zuordnung ordnet jedem Vektor <span class="math notranslate nohighlight">\(|\psi\rangle\)</span> die Zahl zu, die durch das Skalarprodukt mit <span class="math notranslate nohighlight">\(|\phi\rangle\)</span> entsteht. Wir wollen nun zeigen, dass <span class="math notranslate nohighlight">\(F_{|\phi\rangle}\)</span> eine <strong>lineare Abbildung</strong> ist, d.,h. dass <strong>Additivität</strong> und <strong>Homogenität</strong> erfüllt sind.</p>
+<p>Zunächst zeigen wir die <strong>Additivität</strong>. Für beliebige <span class="math notranslate nohighlight">\(|\psi\rangle, |\chi\rangle \in V\)</span> gilt</p>
+<div class="math notranslate nohighlight">
+\[
+F_{|\phi\rangle}(|\psi\rangle + |\chi\rangle)
+= \langle \phi \mid \psi + \chi \rangle .
+\]</div>
+<p>Aus der Linearität des Skalarprodukts im zweiten Argument folgt</p>
+<div class="math notranslate nohighlight">
+\[
+\langle \phi \mid \psi + \chi \rangle
+= \langle \phi \mid \psi \rangle + \langle \phi \mid \chi \rangle,
+\]</div>
+<p>und damit</p>
+<div class="math notranslate nohighlight">
+\[
+F_{|\phi\rangle}(|\psi\rangle + |\chi\rangle)
+= F_{|\phi\rangle}(|\psi\rangle) + F_{|\phi\rangle}(|\chi\rangle).
+\]</div>
+<p>Nun prüfen wir die <strong>Homogenität</strong>. Für ein beliebiges <span class="math notranslate nohighlight">\(a \in \mathbb{K}\)</span> und <span class="math notranslate nohighlight">\(|\psi\rangle \in V\)</span> erhalten wir</p>
+<div class="math notranslate nohighlight">
+\[
+F_{|\phi\rangle}(a\,|\psi\rangle)
+= \langle \phi \mid a\,\psi \rangle .
+\]</div>
+<p>Wiederum aus der Linearität des Skalarprodukts im zweiten Argument folgt</p>
+<div class="math notranslate nohighlight">
+\[
+\langle \phi \mid a\,\psi \rangle
+= a\,\langle \phi \mid \psi \rangle,
+\]</div>
+<p>also</p>
+<div class="math notranslate nohighlight">
+\[
+F_{|\phi\rangle}(a\,|\psi\rangle)
+= a\,F_{|\phi\rangle}(|\psi\rangle).
+\]</div>
+<p>Damit sind sowohl Additivität als auch Homogenität gezeigt, also ist <span class="math notranslate nohighlight">\(F_{|\phi\rangle}\)</span> linear.
+Solche Abbildungen <span class="math notranslate nohighlight">\(F : V \to \mathbb{K}\)</span>, die linear sind, bezeichnet man als <strong>lineare Funktionale</strong>. Sie stellen die einfachsten Beispiele für lineare Operatoren dar!</p>
+<section id="definition-dualraum">
+<h3><em>Definition: Dualraum</em><a class="headerlink" href="#definition-dualraum" title="Link to this heading">#</a></h3>
+<div style="border-left: 5px solid #1E90FF; padding: 1.2em; background: #E6F0FF;">
+<p>Der <strong>Dualraum</strong> eines Vektorraums <span class="math notranslate nohighlight">\(V\)</span> über einem Körper <span class="math notranslate nohighlight">\(\mathbb{K}\)</span> ist definiert als die Menge aller linearen Abbildungen von <span class="math notranslate nohighlight">\(V\)</span> nach <span class="math notranslate nohighlight">\(\mathbb{K}\)</span>:
+$<span class="math notranslate nohighlight">\(
+V^\ast := \{\, F : V \to \mathbb{K} \mid F \text{ ist linear} \,\}.
+\)</span><span class="math notranslate nohighlight">\(
+Zusammen mit der punktweisen Addition und der üblichen Skalarmultiplikation bildet \)</span>V^\ast<span class="math notranslate nohighlight">\( selbst wieder einen Vektorraum. Jedes lineare Funktional \)</span>F_{|\phi\rangle}$, das durch ein Skalarprodukt mit einem fixierten Vektor entsteht, ist also ein Element des Dualraums.</p>
+</div><p>Wie wir gerade gesehen haben kann man jedem Vektor <span class="math notranslate nohighlight">\(|\phi\rangle \in V\)</span> ein lineares Funktional der Form</p>
+<div class="math notranslate nohighlight">
+\[
+F_{|\phi\rangle} : V \to \mathbb{K}, \qquad
+F_{|\phi\rangle}(|\psi\rangle) = \langle \phi | \psi \rangle
+\]</div>
+<p>zuordnen. Die naheliegende Frage ist nun, ob umgekehrt <strong>jedes</strong> lineare Funktional <span class="math notranslate nohighlight">\(F \in V^\ast\)</span> auf diese Weise durch einen Vektor <span class="math notranslate nohighlight">\(|u\rangle\)</span> beschrieben werden kann, also ob es zu jedem <span class="math notranslate nohighlight">\(F\)</span> einen Vektor <span class="math notranslate nohighlight">\(|u\rangle\)</span> gibt mit</p>
+<div class="math notranslate nohighlight">
+\[
+F(|v\rangle) = \langle u | v \rangle \quad \text{für alle } |v\rangle \in V.
+\]</div>
+<p>Diese Frage wird durch den folgenden wichtigen Satz beantwortet.</p>
+</section>
+<section id="rieszscher-darstellungssatz-endlichdimensionale-version">
+<h3>Riesz’scher Darstellungssatz (endlichdimensionale Version)<a class="headerlink" href="#rieszscher-darstellungssatz-endlichdimensionale-version" title="Link to this heading">#</a></h3>
+<p>Sei <span class="math notranslate nohighlight">\((V,\langle \cdot \mid \cdot \rangle)\)</span> ein endlichdimensionaler unitärer Raum. Dann gilt:</p>
+<blockquote>
+<div><p><strong>Zu jedem linearen Funktional <span class="math notranslate nohighlight">\(F \in V^\ast\)</span> existiert genau ein Vektor <span class="math notranslate nohighlight">\(|u\rangle \in V\)</span>, so dass</strong></p>
+</div></blockquote>
+<div class="math notranslate nohighlight">
+\[
+F(|v\rangle) = \langle u \mid v \rangle 
+\qquad \text{für alle } |v\rangle \in V.
+\]</div>
+<p>Der Vektor <span class="math notranslate nohighlight">\(|u\rangle\)</span> heißt die <strong>Riesz-Darstellung</strong> des Funktionals <span class="math notranslate nohighlight">\(F\)</span>.</p>
+</section>
+<section id="beweis">
+<h3>Beweis<a class="headerlink" href="#beweis" title="Link to this heading">#</a></h3>
+<p>Sei <span class="math notranslate nohighlight">\(\{\,|e_1\rangle,\dots,|e_n\rangle\,\}\)</span> eine Orthonormalbasis von <span class="math notranslate nohighlight">\(V\)</span>.<br />
+Jeder Vektor <span class="math notranslate nohighlight">\(|v\rangle \in V\)</span> lässt sich eindeutig als Linearkombination dieser Basisvektoren schreiben:</p>
+<div class="math notranslate nohighlight">
+\[
+|v\rangle = \sum_{k=1}^n v_k\,|e_k\rangle, 
+\qquad v_k = \langle e_k \mid v \rangle.
+\]</div>
+<p>Wendet man das gegebene lineare Funktional <span class="math notranslate nohighlight">\(F\)</span> auf <span class="math notranslate nohighlight">\(|v\rangle\)</span> an, so erhält man wegen der Linearität von <span class="math notranslate nohighlight">\(F\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+F(|v\rangle)
+= F\!\left(\sum_{k=1}^n v_k\,|e_k\rangle\right)
+= \sum_{k=1}^n v_k\,F(|e_k\rangle).
+\]</div>
+<p>Nun wollen wir <span class="math notranslate nohighlight">\(F(|v\rangle)\)</span> in der Form eines Skalarprodukts <span class="math notranslate nohighlight">\(\langle u \mid v \rangle\)</span> schreiben. Dazu definieren wir den folgenden Vektor:</p>
+<div class="math notranslate nohighlight">
+\[
+|u\rangle = \sum_{k=1}^n F(|e_k\rangle)^\ast\,|e_k\rangle.
+\]</div>
+<p>Damit folgt für jedes <span class="math notranslate nohighlight">\(|v\rangle\)</span>:
+$<span class="math notranslate nohighlight">\(
+\langle u \mid v \rangle
+= \sum_{k=1}^n u_k^\ast\,v_k
+= \sum_{k=1}^n F(|e_k\rangle)\,v_k
+= F(|v\rangle).
+\)</span>$</p>
+<p>Damit haben wir gezeigt, dass es zu jedem linearen Funktional <span class="math notranslate nohighlight">\(F\)</span> tatsächlich einen Vektor <span class="math notranslate nohighlight">\(|u\rangle\)</span> gibt, so dass</p>
+<div class="math notranslate nohighlight">
+\[
+F(|v\rangle) = \langle u \mid v \rangle 
+\qquad \text{für alle } |v\rangle \in V.
+\]</div>
+</section>
+<section id="eindeutigkeit">
+<h3>Eindeutigkeit<a class="headerlink" href="#eindeutigkeit" title="Link to this heading">#</a></h3>
+<p>Die <strong>Eindeutigkeit</strong> von <span class="math notranslate nohighlight">\(|u\rangle\)</span> folgt aus der Nichtentartung des Skalarprodukts.<br />
+Angenommen, es gäbe zwei Vektoren <span class="math notranslate nohighlight">\(|u\rangle\)</span> und <span class="math notranslate nohighlight">\(|u'\rangle\)</span> in <span class="math notranslate nohighlight">\(V\)</span> mit</p>
+<div class="math notranslate nohighlight">
+\[
+\langle u \mid v \rangle = F(|v\rangle) = \langle u' \mid v \rangle 
+\qquad \text{für alle } |v\rangle \in V.
+\]</div>
+<p>Dann gilt für alle <span class="math notranslate nohighlight">\(|v\rangle\)</span>:
+$<span class="math notranslate nohighlight">\(
+\langle u - u' \mid v \rangle = 0.
+\)</span><span class="math notranslate nohighlight">\(
+Insbesondere folgt für \)</span>|v\rangle = |u - u’\rangle$:</p>
+<div class="math notranslate nohighlight">
+\[
+\langle u - u' \mid u - u' \rangle = 0.
+\]</div>
+<p>Da das Skalarprodukt positiv definit ist, folgt <span class="math notranslate nohighlight">\(|u - u'\rangle = 0\)</span>, also <span class="math notranslate nohighlight">\(|u\rangle = |u'\rangle\)</span>.<br />
+Die Darstellung ist somit eindeutig.</p>
+<p>Jedem Vektor <span class="math notranslate nohighlight">\(|u\rangle\)</span> können wir ein lineares Funktional <span class="math notranslate nohighlight">\(F_{|u\rangle}\)</span> zuordnen, und umgekehrt besitzt jedes lineare Funktional <span class="math notranslate nohighlight">\(F\)</span> genau eine Riesz-Darstellung <span class="math notranslate nohighlight">\(|u\rangle\)</span>. Die Abbildung</p>
+<div class="math notranslate nohighlight">
+\[
+V \longrightarrow V^\ast, \qquad
+|u\rangle \mapsto F_{|u\rangle}, 
+\qquad F_{|u\rangle}(|v\rangle) = \langle u \mid v \rangle,
+\]</div>
+<p>ist damit ein Isomorphismus von Vektorräumen. In der Sprache der Physik motiviert der Rieszsche Satz die Einführung der sog. Dirac-Notation.</p>
+</section>
+<section id="dirac-notation">
+<h3>Dirac-Notation<a class="headerlink" href="#dirac-notation" title="Link to this heading">#</a></h3>
+<p>Die Dirac-Notation trennt systematisch zwischen Vektoren und den zugehörigen linearen Funktionalen.  Ein <strong>Ket</strong> <span class="math notranslate nohighlight">\(|v\rangle\)</span> bezeichnet dabei einen Vektor in <span class="math notranslate nohighlight">\(V\)</span>. Durch den Rieszschen Darstellungssatz entspricht jedem Ket ein eindeutig bestimmtes lineares Funktional, das man als <strong>Bra</strong> schreibt:</p>
+<div class="math notranslate nohighlight">
+\[
+\langle v| : V \rightarrow \mathbb{C}, 
+\qquad
+\langle v|\,|w\rangle = \langle v \mid w \rangle.
+\]</div>
+<p>Der Bra <span class="math notranslate nohighlight">\(\langle v|\)</span> ist also nichts anderes als die Riesz-Darstellung des Funktionals
+<span class="math notranslate nohighlight">\(F_{|v\rangle}\)</span>. Die Bra–Ket-Schreibweise</p>
+<div class="math notranslate nohighlight">
+\[
+\langle v|w\rangle
+\]</div>
+<p>steht damit schlicht für das Skalarprodukt der beiden Vektoren. Auf diese Weise liefert der Rieszsche Darstellungssatz die mathematische Grundlage der Dirac-Notation:<br />
+Er erlaubt, jedem Vektor <span class="math notranslate nohighlight">\(|v\rangle\)</span> eindeutig ein „linkswirkendes“ lineares Funktional <span class="math notranslate nohighlight">\(\langle v|\)</span> zuzuordnen und so die Dualität zwischen Vektoren und Funktionalen in einer besonders eleganten und physikalisch intuitiven Form zu schreiben. Dies illustrieren wir nun am Beispiel des zweidimensionalen Vektroraumes mit dem wir die inneren Zustände des Elektrons beschreiben.</p>
+<p>Sei <span class="math notranslate nohighlight">\(\{\,|\alpha\rangle,|\beta\rangle\,\}\)</span> eine Orthonormalbasis des zweidimensionalen Vektorraums <span class="math notranslate nohighlight">\(V\)</span>. Jeder Vektor kann dann als</p>
+<div class="math notranslate nohighlight">
+\[
+|\psi\rangle = c_\alpha\,|\alpha\rangle + c_\beta\,|\beta\rangle
+\]</div>
+<p>geschrieben werden. Nach dem Riesz-Theorem korrespondiert hierzu genau ein Bra</p>
+<div class="math notranslate nohighlight">
+\[
+\langle\psi|
+= c_\alpha^\ast\,\langle\alpha|
++ c_\beta^\ast\,\langle\beta|,
+\]</div>
+<p>also ein Element des Dualraums <span class="math notranslate nohighlight">\(V^\ast\)</span>, das durch komplexe Konjugation der Komponenten entsteht.</p>
+<p>In Matrixschreibweise entsprechen die Basisvektoren den Spaltenvektoren</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+|\alpha\rangle \;\leftrightarrow\; 
+\begin{bmatrix}1 \\ 0\end{bmatrix},
+\qquad
+|\beta\rangle \;\leftrightarrow\;
+\begin{bmatrix}0 \\ 1\end{bmatrix},
+\end{split}\]</div>
+<p>während ihre zugehörigen Bras als Zeilenvektoren dargestellt werden:</p>
+<div class="math notranslate nohighlight">
+\[
+\langle\alpha| \;\leftrightarrow\; [\,1 \;\; 0\,], 
+\qquad
+\langle\beta| \;\leftrightarrow\; [\,0 \;\; 1\,].
+\]</div>
+<p>Die beiden Zeilenvektoren bilden damit eine Basis des Dualraums <span class="math notranslate nohighlight">\(V^\ast\)</span>.</p>
+<p>In dieser Notation nimmt das Skalarprodukt die Form einer üblichen Matrixmultiplikation an. Für die Basisvektoren erhält man daher</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\langle\alpha|\alpha\rangle = [1\;\;0]\begin{bmatrix}1 \\ 0\end{bmatrix} = 1,\qquad
+\langle\beta|\beta\rangle = [0\;\;1]\begin{bmatrix}0 \\ 1\end{bmatrix} = 1,
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\langle\alpha|\beta\rangle = [1\;\;0]\begin{bmatrix}0 \\ 1\end{bmatrix} = 0,\qquad
+\langle\beta|\alpha\rangle = [0\;\;1]\begin{bmatrix}1 \\ 0\end{bmatrix} = 0.
+\end{split}\]</div>
+<p>Damit zeigt die Matrixdarstellung anschaulich die Dualität zwischen Kets und Bras:<br />
+Spaltenvektoren repräsentieren Elemente des Vektorraums <span class="math notranslate nohighlight">\(V\)</span>, während Zeilenvektoren die zugehörigen Funktionale des Dualraums <span class="math notranslate nohighlight">\(V^\ast\)</span> darstellen.</p>
+<p>Nachdem wir nun Kets als Vektoren, Bras als zugehörige Funktionale und damit die Dualität zwischen <span class="math notranslate nohighlight">\(V\)</span> und <span class="math notranslate nohighlight">\(V^\ast\)</span> verstanden haben, wenden wir uns nun den <strong>linearen Operatoren</strong> zu, also den Abbildungen, die Vektoren wieder auf Vektoren abbilden und in der Quantenmechanik die Observablen repräsentieren.</p>
+</section>
+<section id="definition-linearer-operator">
+<h3>Definition: Linearer Operator<a class="headerlink" href="#definition-linearer-operator" title="Link to this heading">#</a></h3>
+<p>Ein <strong>linearer Operator</strong> auf einem komplexen Vektorraum <span class="math notranslate nohighlight">\(V\)</span> ist eine Abbildung</p>
+<div class="math notranslate nohighlight">
+\[
+\hat A : V \longrightarrow V,
+\]</div>
+<p>die für alle <span class="math notranslate nohighlight">\(|v\rangle, |w\rangle \in V\)</span> und alle <span class="math notranslate nohighlight">\(a,b \in \mathbb{C}\)</span> die folgende Eigenschaft hat:</p>
+<div class="math notranslate nohighlight">
+\[
+\hat A\,(a|v\rangle + b|w\rangle)
+= a\,\hat A|v\rangle + b\,\hat A|w\rangle.
+\]</div>
+</section>
+<section id="matrixdarstellung-eines-operators-in-einer-orthonormalbasis">
+<h3>Matrixdarstellung eines Operators in einer Orthonormalbasis<a class="headerlink" href="#matrixdarstellung-eines-operators-in-einer-orthonormalbasis" title="Link to this heading">#</a></h3>
+<p>Sei nun <span class="math notranslate nohighlight">\(V\)</span> zweidimensional mit der Orthonormalbasis <span class="math notranslate nohighlight">\(\{|\alpha\rangle,|\beta\rangle\}\)</span>.<br />
+Ein Operator <span class="math notranslate nohighlight">\(\hat A\)</span> ist vollständig bestimmt durch seine Wirkung auf die Basisvektoren:</p>
+<div class="math notranslate nohighlight">
+\[
+\hat A|\alpha\rangle , \qquad \hat A|\beta\rangle.
+\]</div>
+<p>Da diese wieder Vektoren in <span class="math notranslate nohighlight">\(V\)</span> sind, können sie in der Basis <span class="math notranslate nohighlight">\(\{|\alpha\rangle,|\beta\rangle\}\)</span> zerlegt werden:</p>
+<div class="math notranslate nohighlight">
+\[
+\hat A|\alpha\rangle = A_{\alpha\alpha}|\alpha\rangle + A_{\beta\alpha}|\beta\rangle,
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\hat A|\beta\rangle = A_{\alpha\beta}|\alpha\rangle + A_{\beta\beta}|\beta\rangle.
+\]</div>
+<p>Die vier komplexen Zahlen, die bei der Zerlegung auftauchen</p>
+<div class="math notranslate nohighlight">
+\[
+A_{\alpha\alpha},\; A_{\beta\alpha},\; A_{\alpha\beta},\; A_{\beta\beta}
+\]</div>
+<p>bestimmen also den Operator vollständig!</p>
+<p>In Matrixschreibweise entspricht dies der folgenden Darstellung:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\hat A \;\longleftrightarrow\;
+\begin{pmatrix}
+A_{\alpha\alpha} &amp; A_{\alpha\beta} \\
+A_{\beta\alpha} &amp; A_{\beta\beta}
+\end{pmatrix}.
+\end{split}\]</div>
+<p>Für einen beliebigen Vektor</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+|\psi\rangle = c_\alpha|\alpha\rangle + c_\beta|\beta\rangle
+\quad \leftrightarrow \quad
+\begin{bmatrix}
+c_\alpha \\ c_\beta
+\end{bmatrix}
+\end{split}\]</div>
+<p>lässt sich die Wirkung des Operators auf den Vektor
+durch gewöhnliche Matrixmultiplikation beschreiben:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\hat A|\psi\rangle
+\quad\leftrightarrow\quad
+\begin{pmatrix}
+A_{\alpha\alpha} &amp; A_{\alpha\beta} \\
+A_{\beta\alpha} &amp; A_{\beta\beta}
+\end{pmatrix}
+\begin{bmatrix}
+c_\alpha \\ c_\beta
+\end{bmatrix}.
+\end{split}\]</div>
+<p>Damit können wir jeden linearen Operator in einem endlichdimensionalen Raum direkt mit einer Matrix relativ zu einer gewählten Orthonormalbasis identifizieren!</p>
+</section>
+<section id="das-adjungierte-hermitesche-konjugierte-eines-operators">
+<h3>Das adjungierte (hermitesche konjugierte) eines Operators<a class="headerlink" href="#das-adjungierte-hermitesche-konjugierte-eines-operators" title="Link to this heading">#</a></h3>
+<p>Um Observablen beschreiben zu können, benötigen wir den Begriff des <strong>Adjungierten</strong> eines Operators. Für jeden Operator <span class="math notranslate nohighlight">\(\hat A\)</span> definieren wir den adjungierten Operator <span class="math notranslate nohighlight">\(\hat A^\dagger\)</span> durch die folgende Bedingung:</p>
+<div class="math notranslate nohighlight">
+\[
+\langle u|\hat A v\rangle = \langle \hat A^\dagger u | v\rangle
+\qquad\text{für alle } |u\rangle, |v\rangle \in V.
+\]</div>
+<p>Der adjungierte Operator ist also derjenige, der die Wirkung von <span class="math notranslate nohighlight">\(\hat A\)</span> „auf das Bra umwälzt“. Die Matrixdarstellung dieses Operators erhält man indem man die Matrix des Operators <span class="math notranslate nohighlight">\(\hat A\)</span>  <strong>konjugiert und transponierten</strong>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\hat A^\dagger \;\longleftrightarrow\;
+\begin{pmatrix}
+A_{\alpha\alpha} &amp; A_{\alpha\beta} \\
+A_{\beta\alpha} &amp; A_{\beta\beta}
+\end{pmatrix}^\dagger
+=
+\begin{pmatrix}
+A_{\alpha\alpha}^\ast &amp; A_{\beta\alpha}^\ast \\
+A_{\alpha\beta}^\ast &amp; A_{\beta\beta}^\ast
+\end{pmatrix}.
+\end{split}\]</div>
+</section>
+<section id="hermitesche-operatoren-observablen">
+<h3>Hermitesche Operatoren (Observablen)<a class="headerlink" href="#hermitesche-operatoren-observablen" title="Link to this heading">#</a></h3>
+<p>Ein Operator <span class="math notranslate nohighlight">\(\hat A\)</span> heißt <strong>hermitesch</strong> (oder selbstadjungiert),
+$<span class="math notranslate nohighlight">\(
+\hat A^\dagger = \hat A.
+\)</span>$</p>
+<p>In Matrixdarstellung bedeutet dies:</p>
+<div class="math notranslate nohighlight">
+\[
+A_{\alpha\alpha}=A_{\alpha\alpha}^\ast,\qquad
+A_{\beta\beta}=A_{\beta\beta}^\ast,\qquad
+A_{\beta\alpha}=A_{\alpha\beta}^\ast.
+\]</div>
+<p>Hermitesche Operatoren haben reelle Eigenwerte und bilden genau die Observablen in der Quantenmechanik.</p>
+<p>Wenn wir nun der Idee von Wolfgang Pauli folgen, müssen wir zur Beschreibung der ‘’Zweideutigkeit’’ einen hermiteschen Operator einführen, der nur zwei mögliche Eigenzustände und Eigenwerte hat. Dieser Operator, den wir zunächst mit <span class="math notranslate nohighlight">\(\hat{\sigma}\)</span> bezeichnen, sollte durch die folgende Wirkung auf die Basiszustände definiert sein:</p>
+<div class="math notranslate nohighlight">
+\[\hat{\sigma}|\alpha\rangle=+1|\alpha\rangle\]</div>
+<div class="math notranslate nohighlight">
+\[ \hat{\sigma}|\beta\rangle=-1|\beta\rangle \]</div>
+<p>Diesem Operator können wir also in der Matrix-Darstellung die folgende 2x2 Matrix zuordnen:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split} \hat{\sigma}\rightarrow\left[\begin{array}{cc}
+1 &amp; 0\\
+0 &amp; -1
+\end{array}\right] \end{split}\]</div>
+<p>Wir wollen uns im Folgenden die allgemeine Struktur der hermiteschen Operatoren in einem komplexen 2D-Vektorraum anschauen.</p>
+<p>Aus der allgemeinen Form eines hermiteschen Operators auf einem zweidimensionalen komplexen Vektorraum folgt unmittelbar, dass ein solcher Operator vollständig durch <strong>vier reelle Parameter</strong> beschrieben wird.</p>
+<p>Ein hermitescher Operator <span class="math notranslate nohighlight">\(\hat A\)</span> besitzt per Definition eine Matrixdarstellung, die gleich ihrem adjungierten Pendant ist:</p>
+<div class="math notranslate nohighlight">
+\[
+A^\dagger = A.
+\]</div>
+<p>Für eine <span class="math notranslate nohighlight">\(2\times 2\)</span>-Matrix bedeutet dies, dass die Diagonaleinträge reell sein müssen und die Nebendiagonalen komplex konjugiert zueinander stehen. Damit ergibt sich die allgemeine Darstellung</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+A=
+\begin{pmatrix}
+a &amp; c - i d \\
+c + i d &amp; b
+\end{pmatrix},
+\end{split}\]</div>
+<p>wobei <span class="math notranslate nohighlight">\(a,b,c,d \in \mathbb{R}\)</span> frei wählbar sind.</p>
+<p>Dies lässt sich besonders elegant darstellen, wenn man die Matrix <span class="math notranslate nohighlight">\(A\)</span> als Linearkombination geeigneter Basisoperatoren schreibt. Zunächst trennen wir Diagonal- und Off-Diagonalanteile:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+A=
+\begin{pmatrix}
+a &amp; 0 \\
+0 &amp; b
+\end{pmatrix}
++
+\begin{pmatrix}
+0 &amp; c - i d \\
+c + i d &amp; 0
+\end{pmatrix}.
+\end{split}\]</div>
+<p>Nun schreiben wir die Diagonalmatrix als Summe von Spur- und Spur-freiem Anteil:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{pmatrix}
+a &amp; 0 \\
+0 &amp; b
+\end{pmatrix}
+=
+\frac{a+b}{2}
+\begin{pmatrix}
+1 &amp; 0 \\
+0 &amp; 1
+\end{pmatrix}
++
+\frac{a-b}{2}
+\begin{pmatrix}
+1 &amp; 0 \\
+0 &amp; -1
+\end{pmatrix},
+\end{split}\]</div>
+<p>während der nichtdiagonale Teil wie folgt zerlegt werden kann:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{pmatrix}
+0 &amp; c - i d \\
+c + i d &amp; 0
+\end{pmatrix}
+=
+c\begin{pmatrix}
+0 &amp; 1 \\
+1 &amp; 0
+\end{pmatrix}
++
+d\begin{pmatrix}
+0 &amp; -i \\
+i &amp; 0
+\end{pmatrix}.
+\end{split}\]</div>
+<p>Damit lässt sich <strong>jeder</strong> hermitesche Operator im zweidimensionalen Raum als Linearkombination von vier Basisoperatoren schreiben:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+A=
+\frac{a+b}{2}
+\begin{pmatrix}
+1 &amp; 0 \\
+0 &amp; 1
+\end{pmatrix}
++
+\frac{a-b}{2}
+\begin{pmatrix}
+1 &amp; 0 \\
+0 &amp; -1
+\end{pmatrix}
++
+c\begin{pmatrix}
+0 &amp; 1 \\
+1 &amp; 0
+\end{pmatrix}
++
+d\begin{pmatrix}
+0 &amp; -i \\
+i &amp; 0
+\end{pmatrix}.
+\end{split}\]</div>
+<p>Zur Vereinfachung, führen wir nun die neuen reellen Parameter</p>
+<div class="math notranslate nohighlight">
+\[
+a_0 = \frac{a+b}{2}, \qquad
+a_3 = \frac{a-b}{2}, \qquad
+a_1 = c, \qquad
+a_2 = d
+\]</div>
+<p>ein.</p>
+<p>Mit den neuen Parametern lässt sich der Operator <span class="math notranslate nohighlight">\(A\)</span> besonders kompakt schreiben:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+A
+= a_0\,\underbrace{\begin{pmatrix}1 &amp; 0 \\ 0 &amp; 1\end{pmatrix}}_{I}
++ a_1\,\underbrace{\begin{pmatrix}0 &amp; 1 \\ 1 &amp; 0\end{pmatrix}}_{\sigma_1}
++ a_2\,\underbrace{\begin{pmatrix}0 &amp; -i \\ i &amp; 0\end{pmatrix}}_{\sigma_2}
++ a_3\,\underbrace{\begin{pmatrix}1 &amp; 0 \\ 0 &amp; -1\end{pmatrix}}_{\sigma_3}.
+\end{split}\]</div>
+<p>Damit besitzt jeder hermitesche Operator im zweidimensionalen komplexen Raum eine eindeutige Darstellung als Linearkombination von vier Matrizen. Diese bilden eine Basis des Raumes aller hermiteschen Operatoren:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+I &amp;= \begin{pmatrix}1 &amp; 0 \\ 0 &amp; 1\end{pmatrix}, \\
+\sigma_1 &amp;= \begin{pmatrix}0 &amp; 1 \\ 1 &amp; 0\end{pmatrix}, \\
+\sigma_2 &amp;= \begin{pmatrix}0 &amp; -i \\ i &amp; 0\end{pmatrix}, \\
+\sigma_3 &amp;= \begin{pmatrix}1 &amp; 0 \\ 0 &amp; -1\end{pmatrix}.
+\end{aligned}
+\end{split}\]</div>
+<p>Die drei Matrizen <span class="math notranslate nohighlight">\(\sigma_1, \sigma_2, \sigma_3\)</span> bezeichnet man als <strong>Pauli-Matrizen</strong>.<br />
+Sie spielen eine zentrale Rolle in der Quantenmechanik, da sie die grundlegenden Observablen eines Zweizustandssystems darstellen!</p>
+<p>Welchen physikalischen Inhalt haben diese mathematischen Einsichten über die allgemeine Form eines hermiteschen Operators im zweidimensionalen komplexen Vektorraum?</p>
+<p><strong>Jede physikalische Observable</strong> eines Quantensystems, das nur zwei orthonormale Basiszustände besitzt, lässt sich als Linearkombination von genau drei nichttrivialen Basisobservablen darstellen (zusätzlich zum Identitätsoperator <span class="math notranslate nohighlight">\(I\)</span>). Die Pauli-Annahme, dass es eine physikalische Eigenschaft mit nur zwei möglichen Messwerten gibt, führt daher auf natürlichem Wege nicht nur zu einem einzelnen Operator, sondern zu <strong>drei</strong> eng miteinander verknüpften hermiteschen Operatoren, die durch die drei Pauli-Matrizen repräsentiert werden. Diese drei Matrizen bilden gewissermaßen die <em>elementarsten</em>  Observablen, die in einem zweidimensionalen Quantensystem existieren können.</p>
+<p>Doch damit stellen sich unmittelbar grundlegende Fragen:<br />
+Welche physikalische Größe wird durch diese drei Operatoren beschrieben?<br />
+Wie lässt sich diese Observable experimentell messen?<br />
+Und ist es überhaupt möglich, alle drei <span class="math notranslate nohighlight">\(\sigma\)</span>–Operatoren gleichzeitig zu messen, oder schließen sie sich gegenseitig aus?</p>
+<p>Die Beantwortung dieser Fragen führt direkt zur Entdeckung einer neuen Form des Drehimpulses, des <strong>Spins</strong>, einer quantenmechanischen Eigenschaft ohne klassisches Analogon.</p>
+<h1> Algebra der Pauli-Matrizen </h1>
+<p>Wir untersuchen im Folgenden einige grundlegende mathematische Eigenschaften der Pauli-Matrizen.</p>
+<p>Zunächst stellen wir fest, dass alle drei Pauli-Matrizen hermitesch sind und somit selbst Observablen repräsentieren. Die möglichen Messergebnisse einer quantenmechanischen Observable entsprechen den Eigenwerten des zugehörigen hermiteschen Operators. Es liegt daher nahe zu fragen:</p>
+<p><strong>Welche Eigenwerte besitzen die Operatoren <span class="math notranslate nohighlight">\(\sigma_1\)</span>, <span class="math notranslate nohighlight">\(\sigma_2\)</span> und <span class="math notranslate nohighlight">\(\sigma_3\)</span>?</strong></p>
+<p>Eine erste wichtige Beobachtung erhält man durch direkte Multiplikation. Für alle drei Pauli-Matrizen gilt:</p>
+<div class="math notranslate nohighlight">
+\[
+\sigma_i^2 = I, \qquad i=1,2,3.
+\]</div>
+<p>Zum Beispiel ergibt die explizite Rechnung für <span class="math notranslate nohighlight">\(\sigma_1\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\sigma_1^2
+= 
+\begin{pmatrix}
+0 &amp; 1 \\
+1 &amp; 0
+\end{pmatrix}
+\begin{pmatrix}
+0 &amp; 1 \\
+1 &amp; 0
+\end{pmatrix}
+=
+\begin{pmatrix}
+1 &amp; 0 \\
+0 &amp; 1
+\end{pmatrix}
+= I.
+\end{split}\]</div>
+<p>Aus der Beziehung <span class="math notranslate nohighlight">\(\sigma_i^2 = I\)</span> folgt unmittelbar, dass die Eigenwerte der Pauli-Matrizen nur die Werte <span class="math notranslate nohighlight">\(\pm 1\)</span> annehmen können. Dies sieht man wie folgt: Sei <span class="math notranslate nohighlight">\(|v\rangle\)</span> ein Eigenvektor von <span class="math notranslate nohighlight">\(\sigma_i\)</span> zum Eigenwert <span class="math notranslate nohighlight">\(\lambda\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[
+\sigma_i |v\rangle = \lambda |v\rangle.
+\]</div>
+<p>Wenden wir erneut <span class="math notranslate nohighlight">\(\sigma_i\)</span> an, so ergibt sich</p>
+<div class="math notranslate nohighlight">
+\[
+\sigma_i^2 |v\rangle
+= \sigma_i(\lambda |v\rangle)
+= \lambda\, (\sigma_i |v\rangle)
+= \lambda^2 |v\rangle.
+\]</div>
+<p>Da <span class="math notranslate nohighlight">\(\sigma_i^2 = I\)</span> gilt, folgt</p>
+<div class="math notranslate nohighlight">
+\[
+I |v\rangle = \lambda^2 |v\rangle,
+\]</div>
+<p>also</p>
+<div class="math notranslate nohighlight">
+\[
+\lambda^2 = 1 \quad \Longrightarrow \quad \lambda = \pm 1.
+\]</div>
+<p>Damit besitzen alle drei Pauli-Operatoren genau zwei Eigenwerte, nämlich <span class="math notranslate nohighlight">\(+1\)</span> und <span class="math notranslate nohighlight">\(-1\)</span>.</p>
+</section>
+<section id="kommutatoren-der-pauli-matrizen">
+<h3>Kommutatoren der Pauli-Matrizen<a class="headerlink" href="#kommutatoren-der-pauli-matrizen" title="Link to this heading">#</a></h3>
+<p>Wir haben gesehen, dass die Pauli-Matrizen hermitesch sind und somit Observablen darstellen. Eine natürliche Frage lautet nun: <strong>Können verschiedene Pauli-Operatoren gleichzeitig exakt gemessen werden?</strong><br />
+Dies ist genau dann möglich, wenn sie gemeinsame Eigenvektoren besitzen – und das wiederum ist äquivalent dazu, dass die Operatoren miteinander <strong>kommutieren</strong>.</p>
+<p>Um dies zu untersuchen, bestimmen wir den Kommutator zweier Pauli-Matrizen.</p>
+<p>Wir beginnen mit dem Produkt <span class="math notranslate nohighlight">\(\sigma_1\sigma_2\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\sigma_1\sigma_2
+=
+\begin{pmatrix}
+0 &amp; 1 \\
+1 &amp; 0
+\end{pmatrix}
+\begin{pmatrix}
+0 &amp; -i \\
+i &amp; 0
+\end{pmatrix}
+=
+\begin{pmatrix}
+i &amp; 0 \\
+0 &amp; -i
+\end{pmatrix}
+= 
+i
+\begin{pmatrix}
+1 &amp; 0 \\
+0 &amp; -1
+\end{pmatrix}
+= i\,\sigma_3.
+\end{split}\]</div>
+<p>Nun berechnen wir das vertauschte Produkt <span class="math notranslate nohighlight">\(\sigma_2\sigma_1\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\sigma_2\sigma_1
+=
+\begin{pmatrix}
+0 &amp; -i \\
+i &amp; 0
+\end{pmatrix}
+\begin{pmatrix}
+0 &amp; 1 \\
+1 &amp; 0
+\end{pmatrix}
+=
+\begin{pmatrix}
+-i &amp; 0 \\
+0 &amp; i
+\end{pmatrix}
+=
+-\,i
+\begin{pmatrix}
+1 &amp; 0 \\
+0 &amp; -1
+\end{pmatrix}
+= -i\,\sigma_3.
+\end{split}\]</div>
+<p>Aus den beiden Rechnungen folgt:</p>
+<div class="math notranslate nohighlight">
+\[
+\sigma_1\sigma_2 = i\sigma_3, 
+\qquad
+\sigma_2\sigma_1 = -i\sigma_3.
+\]</div>
+</section>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="damit-ergibt-sich-fur-den-kommutator-sigma-1-sigma-2">
+<h1>Damit ergibt sich für den Kommutator:
+$$
+[\sigma_1,\sigma_2]<a class="headerlink" href="#damit-ergibt-sich-fur-den-kommutator-sigma-1-sigma-2" title="Link to this heading">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="sigma-1-sigma-2-sigma-2-sigma-1">
+<h1>\sigma_1\sigma_2 - \sigma_2\sigma_1<a class="headerlink" href="#sigma-1-sigma-2-sigma-2-sigma-1" title="Link to this heading">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="i-sigma-3-i-sigma-3">
+<h1>i\sigma_3 - (-i\sigma_3)<a class="headerlink" href="#i-sigma-3-i-sigma-3" title="Link to this heading">#</a></h1>
+<p>2i,\sigma_3.
+$$</p>
+<p>Wir sehen also unmittelbar:</p>
+<p><strong>Die Pauli-Matrizen kommutieren nicht miteinander.</strong><br />
+Damit können sie auch <strong>keine gemeinsamen Eigenvektoren</strong> besitzen und sind folglich <strong>nicht gleichzeitig beliebig scharf messbar</strong>.</p>
+<p>Der Kommutator von <span class="math notranslate nohighlight">\(\sigma_1\)</span> und <span class="math notranslate nohighlight">\(\sigma_2\)</span> ergibt daher</p>
+<div class="math notranslate nohighlight">
+\[
+[\sigma_1,\sigma_2]
+= \sigma_1\sigma_2 - \sigma_2\sigma_1
+= 2i\,\sigma_3.
+\]</div>
+<p>Ebenso erhält man durch direkte Rechnung</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+[\sigma_2,\sigma_3] &amp;= 2i\,\sigma_1, \\
+[\sigma_3,\sigma_1] &amp;= 2i\,\sigma_2.
+\end{aligned}
+\end{split}\]</div>
+<p>Damit haben wir ein bemerkenswertes Resultat gefunden:<br />
+<strong>Die Pauli-Matrizen erfüllen bis auf eine Konstante dieselben Vertauschungsrelationen wie die Komponenten des quantenmechanischen Drehimpulsoperators.</strong></p>
+<p>In der Theorie der quantenmechanischen Rotation gilt nämlich
+$<span class="math notranslate nohighlight">\(
+[L_x,\,L_y] = i\hbar\, L_z \quad \text{usw.}
+\)</span>$</p>
+<p>und die Struktur ist identisch (bis auf den Faktor <span class="math notranslate nohighlight">\(2\)</span> und den Wert von <span class="math notranslate nohighlight">\(\hbar\)</span>).</p>
+<p>Dieser Vergleich enthüllt den physikalischen Gehalt unserer bisherigen Rechnung:<br />
+Die von Pauli postulierte “zweideutige” Eigenschaft der Elektronen, die er zur Erklärung des atomaren Aufbauprinzips einführte, besitzt dieselbe algebraische Struktur wie ein Drehimpuls.</p>
+<p>Diese neue Form des Drehimpulses ist jedoch <strong>nicht</strong> mit einer räumlichen Rotation klassischer Teilchen verknüpft und besitzt daher kein direktes klassisches Analogon.<br />
+Man bezeichnet sie als <strong>Spin</strong> eine intrinsische quantenmechanische Eigenschaft, die erst durch die Algebra der Pauli-Matrizen erkennbar wird.</p>
+<p>Die Vertauschungsrelationen der Pauli-Matrizen lassen sich vollständig in die Sprache des quantenmechanischen Drehimpulses übertragen, indem wir die folgenden Operatoren einführen:</p>
+<div class="math notranslate nohighlight">
+\[
+S_x = \frac{\hbar}{2}\,\sigma_1, 
+\qquad 
+S_y = \frac{\hbar}{2}\,\sigma_2, 
+\qquad 
+S_z = \frac{\hbar}{2}\,\sigma_3.
+\]</div>
+<p>Diese Operatoren unterscheiden sich von den Pauli-Matrizen lediglich durch den sinnvoll gewählten Faktor <span class="math notranslate nohighlight">\(\hbar/2\)</span>, der sicherstellt, dass die Operatoren dieselbe physikalische Dimension und dieselben Vertauschungsrelationen besitzen wie der gewöhnliche Drehimpuls.</p>
+<p>Mit diesen Definitionen erhalten wir beispielsweise:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+[S_x, S_y] 
+&amp;= \left[\frac{\hbar}{2}\sigma_1,\, \frac{\hbar}{2}\sigma_2\right] \\
+&amp;= \left(\frac{\hbar}{2}\right)^2 [\sigma_1, \sigma_2] \\
+&amp;= \left(\frac{\hbar}{2}\right)^2 (2i\sigma_3) \\
+&amp;= i\hbar \left(\frac{\hbar}{2}\sigma_3\right) \\
+&amp;= i\hbar\, S_z.
+\end{aligned}
+\end{split}\]</div>
+<p>Damit haben die Operatoren <span class="math notranslate nohighlight">\(S_x\)</span>, <span class="math notranslate nohighlight">\(S_y\)</span> und <span class="math notranslate nohighlight">\(S_z\)</span> <strong>exakt dieselbe Algebra wie der mechanische Drehimpulsoperator</strong> <span class="math notranslate nohighlight">\(\hat{\mathbf{L}}\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+[S_x, S_y] = i\hbar S_z, \qquad
+[S_y, S_z] = i\hbar S_x, \qquad
+[S_z, S_x] = i\hbar S_y.
+\]</div>
+<p>Wir haben also gezeigt, dass die aus den Pauli-Matrizen konstruierten Operatoren <span class="math notranslate nohighlight">\(S_x\)</span>, <span class="math notranslate nohighlight">\(S_y\)</span> und <span class="math notranslate nohighlight">\(S_z\)</span> die mathematischen Eigenschaften eines Drehimpulses erfüllen. Dies bestätigt ausdrücklich die Interpretation des Spins als eine besondere Form des Drehimpulses.</p>
+<p>Nachdem wir den Kommutator der Pauli-Matrizen berechnet haben, bemerken wir auch die folgende Relation:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+&amp; \sigma_1 \sigma_2+\sigma_2 \sigma_1=0 \\
+&amp; \sigma_2 \sigma_3+\sigma_3 \sigma_2=0 \\
+&amp; \sigma_3 \sigma_1+\sigma_1 \sigma_3=0
+\end{aligned}
+\end{split}\]</div>
+<p>Multiplikation von Pauli-Matrizen ist also antikommutativ! Wir definieren den <b>Anti-Kommutator</b> als:</p>
+<div class="math notranslate nohighlight">
+\[
+\left\{\sigma_i, \sigma_j\right\} \equiv \sigma_i \sigma_j+\sigma_j \sigma_i=0 \text { wenn } i \neq j
+\]</div>
+<p>Die Vertauschungsrelationen für den Drehimpuls und Spin können mit Hilfe des <b>Levi-Civita-Symbols</b> in einer kompakten allgemeinen Form umschreiben, die viele spätere Berechnungen erleichtert. Wir definieren das Levi-Civita-Symbol <span class="math notranslate nohighlight">\(\varepsilon_{i j k}\)</span> als</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\varepsilon_{i j k}=\left\{\begin{aligned}
+1, &amp; \text { wenn } i j k=123,231,312 \\
+-1, &amp; \text { wenn } i j k=213,132,321 \\
+0, &amp; \text { ansonsten }
+\end{aligned}\right.
+\end{split}\]</div>
+<p>Das Levi-Civita-Symbol hat insgesamt 27 Komponenten. Wenn mindestens zwei Indizes gleich sind, ist jedoch <span class="math notranslate nohighlight">\(\varepsilon_{i j k}=0\)</span>. Für gerade Permutationen aus der Menge <span class="math notranslate nohighlight">\(\{1,2,3\}\)</span> ist <span class="math notranslate nohighlight">\(\varepsilon_{i j k}=+1\)</span> und für ungerade Permutationen ist <span class="math notranslate nohighlight">\(\varepsilon_{i j k}=-1\)</span>.</p>
+<p>Die Vertauschungsrelationen zwischen Pauli-Matrizen können mit Hilfe des Levi-Civitas Symbols in der folgenden kompakten Form geschrieben werden:</p>
+<div class="math notranslate nohighlight">
+\[
+\left[\sigma_i, \sigma_j\right]=2 i \sum_k \varepsilon_{i j k} \sigma_k
+\]</div>
+<p>oder noch kürzer unter Verwendung der Einsteinschen Summenkonvention (über doppelt auftretende Indizes innerhalb eines Produkts wird summiert):</p>
+<div class="math notranslate nohighlight">
+\[
+\left[\sigma_i, \sigma_j\right]=2 i \varepsilon_{i j k} \sigma_k \quad \text { (Summation über k implizit!) }
+\]</div>
+<p>Wir überprüfen an einem Beispiel, ob die obige Relation tatsächlich stimmt:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+{\left[\sigma_1, \sigma_2\right] } &amp; =2 i(\underbrace{\varepsilon_{121} \sigma_1}_{=0}+\underbrace{\varepsilon_{122} \sigma_2}_{=0}+\underbrace{\varepsilon_{123}}_{=1} \sigma_3) \\
+&amp; =2 i \sigma_3
+\end{aligned}
+\end{split}\]</div>
+<p>Eine weitere nützliche Beziehung erhalten wir, indem wir das Produkt der Pauli-Matrizen durch die Einführung des Levi-Civita-Symbols ausdrücken:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+\sigma_i \sigma_j &amp; =\frac{1}{2}\left(\sigma_i \sigma_j+\sigma_j \sigma_i\right)+\frac{1}{2}\left(\sigma_i \sigma_j-\sigma_j \sigma_i\right) \\
+&amp; =\frac{1}{2}\left\{\sigma_i, \sigma_j\right\}+\frac{1}{2}\left[\sigma_i, \sigma_j\right] \\
+&amp; =\frac{1}{2}\left(2 \delta_{i j} I\right)+\frac{1}{2} \cdot 2 i \sum_k \varepsilon_{i j k} \sigma_k
+\end{aligned}
+\end{split}\]</div>
+<p>Daraus folgt die Pauli-Identität:
+$<span class="math notranslate nohighlight">\(
+\sigma_i \sigma_j=\delta_{i j}+i \sum_k \varepsilon_{i j k} \sigma_k
+\)</span>$</p>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "rolandmitric/quantum_chemistry_2025",
+            ref: "main",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="spin.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Spin: Einführung</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Spin: Formalismus</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kets-bras-funktionale-operatoren-usw">Kets, Bras, Funktionale, Operatoren usw…</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#komplexer-vektorraum-der-quantenzustande">Komplexer Vektorraum der Quantenzustände</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#definition-vektorraum"><em>Definition: Vektorraum</em></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#skalarprodukt-und-quantenmechanische-messungen">Skalarprodukt und quantenmechanische Messungen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definition-skalarprodukt">Definition: Skalarprodukt</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#definition-dualraum"><em>Definition: Dualraum</em></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rieszscher-darstellungssatz-endlichdimensionale-version">Riesz’scher Darstellungssatz (endlichdimensionale Version)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#beweis">Beweis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eindeutigkeit">Eindeutigkeit</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dirac-notation">Dirac-Notation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#definition-linearer-operator">Definition: Linearer Operator</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#matrixdarstellung-eines-operators-in-einer-orthonormalbasis">Matrixdarstellung eines Operators in einer Orthonormalbasis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#das-adjungierte-hermitesche-konjugierte-eines-operators">Das adjungierte (hermitesche konjugierte) eines Operators</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hermitesche-operatoren-observablen">Hermitesche Operatoren (Observablen)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kommutatoren-der-pauli-matrizen">Kommutatoren der Pauli-Matrizen</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#damit-ergibt-sich-fur-den-kommutator-sigma-1-sigma-2">Damit ergibt sich für den Kommutator:
+$$
+[\sigma_1,\sigma_2]</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#sigma-1-sigma-2-sigma-2-sigma-1">\sigma_1\sigma_2 - \sigma_2\sigma_1</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#i-sigma-3-i-sigma-3">i\sigma_3 - (-i\sigma_3)</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Roland Mitric
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
