@@ -11,3 +11,4 @@ chapters:
   - file: first_qc_code.ipynb
   - file: failure_hartree.ipynb
   - file: spin.ipynb
+  - file: bras_kets_etc.ipynb
