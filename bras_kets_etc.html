@@ -191,9 +191,6 @@
 <li class="toctree-l1"><a class="reference internal" href="failure_hartree.html">Das Versagen der Hartree-Methode: Der Fall des Lithiumatoms</a></li>
 <li class="toctree-l1"><a class="reference internal" href="spin.html">Spin: Einführung</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Spin: Formalismus</a></li>
-
-
-
 </ul>
 
     </div>
@@ -455,7 +452,6 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Spin: Formalismus</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kets-bras-funktionale-operatoren-usw">Kets, Bras, Funktionale, Operatoren usw…</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#komplexer-vektorraum-der-quantenzustande">Komplexer Vektorraum der Quantenzustände</a></li>
 </ul>
@@ -466,22 +462,22 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#beweis">Beweis</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eindeutigkeit">Eindeutigkeit</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dirac-notation">Dirac-Notation</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lineare-operatoren-und-observablen">Lineare Operatoren und Observablen</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#definition-linearer-operator">Definition: Linearer Operator</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#matrixdarstellung-eines-operators-in-einer-orthonormalbasis">Matrixdarstellung eines Operators in einer Orthonormalbasis</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#das-adjungierte-hermitesche-konjugierte-eines-operators">Das adjungierte (hermitesche konjugierte) eines Operators</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hermitesche-operatoren-observablen">Hermitesche Operatoren (Observablen)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#matrixdarstellung-linearer-operatoren-in-endlichdimensionalen-vektorraumen">Matrixdarstellung linearer Operatoren in endlichdimensionalen Vektorräumen</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#beispiel-matrixdarstellung-im-innerem-raum-eines-elektrons">Beispiel: Matrixdarstellung im innerem Raum eines Elektrons</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#das-adjungierte-hermitesche-konjugierte-eines-operators">Das adjungierte (hermitesche konjugierte) eines Operators</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hermitesche-operatoren-observablen">Hermitesche Operatoren (Observablen)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hermitesche-operatoren-im-zweidimensionalen-vektorraum">Hermitesche Operatoren im zweidimensionalen Vektorraum</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kommutatoren-der-pauli-matrizen">Kommutatoren der Pauli-Matrizen</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#weitere-nutzliche-relationen-zwischen-pauli-matrizen">Weitere nützliche Relationen zwischen Pauli-Matrizen</a></li>
 </ul>
 </li>
 </ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#damit-ergibt-sich-fur-den-kommutator-sigma-1-sigma-2">Damit ergibt sich für den Kommutator:
-$$
-[\sigma_1,\sigma_2]</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#sigma-1-sigma-2-sigma-2-sigma-1">\sigma_1\sigma_2 - \sigma_2\sigma_1</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#i-sigma-3-i-sigma-3">i\sigma_3 - (-i\sigma_3)</a></li>
-</ul>
-
             </nav>
         </div>
     </div>
@@ -730,11 +726,12 @@ Solche Abbildungen <span class="math notranslate nohighlight">\(F : V \to \mathb
 <div style="border:1px solid #1f6feb;border-left-width:8px;background:#f1f8ff;padding:14px 16px;border-radius:8px;">
   <h4 style="margin:0 0 8px 0;">Definition: Dualraum</h4>
   <p style="margin:0 0 8px 0;">
-Der **Dualraum** eines Vektorraums $V$ über einem Körper $\mathbb{K}$ ist definiert als die Menge aller linearen Abbildungen von $V$ nach $\mathbb{K}$:
-$$
+<p>Der Dualraum eines Vektorraums <span class="math notranslate nohighlight">\(V\)</span> über einem Körper <span class="math notranslate nohighlight">\(\mathbb{K}\)</span> ist definiert als die Menge aller linearen Abbildungen von <span class="math notranslate nohighlight">\(V\)</span> nach <span class="math notranslate nohighlight">\(\mathbb{K}\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
 V^\ast := \{\, F : V \to \mathbb{K} \mid F \text{ ist linear} \,\}.
-$$
-Zusammen mit der punktweisen Addition und der üblichen Skalarmultiplikation bildet $V^\ast$ selbst wieder einen Vektorraum. Jedes lineare Funktional $F_{|\phi\rangle}$, das durch ein Skalarprodukt mit einem fixierten Vektor entsteht, ist also ein Element des Dualraums.
+\]</div>
+<p>Zusammen mit der punktweisen Addition und der üblichen Skalarmultiplikation bildet <span class="math notranslate nohighlight">\(V^\ast\)</span> selbst wieder einen Vektorraum. Jedes lineare Funktional <span class="math notranslate nohighlight">\(F_{|\phi\rangle}\)</span>, das durch ein Skalarprodukt mit einem fixierten Vektor entsteht, ist also ein Element des Dualraums.</p>
 </div><p>Wie wir gerade gesehen haben kann man jedem Vektor <span class="math notranslate nohighlight">\(|\phi\rangle \in V\)</span> ein lineares Funktional der Form</p>
 <div class="math notranslate nohighlight">
 \[
@@ -804,11 +801,12 @@ Angenommen, es gäbe zwei Vektoren <span class="math notranslate nohighlight">\(
 \langle u \mid v \rangle = F(|v\rangle) = \langle u' \mid v \rangle 
 \qquad \text{für alle } |v\rangle \in V.
 \]</div>
-<p>Dann gilt für alle <span class="math notranslate nohighlight">\(|v\rangle\)</span>:
-$<span class="math notranslate nohighlight">\(
+<p>Dann gilt für alle <span class="math notranslate nohighlight">\(|v\rangle\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
 \langle u - u' \mid v \rangle = 0.
-\)</span><span class="math notranslate nohighlight">\(
-Insbesondere folgt für \)</span>|v\rangle = |u - u’\rangle$:</p>
+\]</div>
+<p>Insbesondere folgt für <span class="math notranslate nohighlight">\(|v\rangle = |u - u'\rangle\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[
 \langle u - u' \mid u - u' \rangle = 0.
@@ -884,8 +882,11 @@ Er erlaubt, jedem Vektor <span class="math notranslate nohighlight">\(|v\rangle\
 \end{split}\]</div>
 <p>Damit zeigt die Matrixdarstellung anschaulich die Dualität zwischen Kets und Bras:<br />
 Spaltenvektoren repräsentieren Elemente des Vektorraums <span class="math notranslate nohighlight">\(V\)</span>, während Zeilenvektoren die zugehörigen Funktionale des Dualraums <span class="math notranslate nohighlight">\(V^\ast\)</span> darstellen.</p>
-<p>Nachdem wir nun Kets als Vektoren, Bras als zugehörige Funktionale und damit die Dualität zwischen <span class="math notranslate nohighlight">\(V\)</span> und <span class="math notranslate nohighlight">\(V^\ast\)</span> verstanden haben, wenden wir uns nun den <strong>linearen Operatoren</strong> zu, also den Abbildungen, die Vektoren wieder auf Vektoren abbilden und in der Quantenmechanik die Observablen repräsentieren.</p>
 </section>
+</section>
+<section id="lineare-operatoren-und-observablen">
+<h2>Lineare Operatoren und Observablen<a class="headerlink" href="#lineare-operatoren-und-observablen" title="Link to this heading">#</a></h2>
+<p>Nachdem wir nun Kets als Vektoren, Bras als zugehörige Funktionale und damit die Dualität zwischen <span class="math notranslate nohighlight">\(V\)</span> und <span class="math notranslate nohighlight">\(V^\ast\)</span> verstanden haben, wenden wir uns nun den <strong>linearen Operatoren</strong> zu, also den Abbildungen, die Vektoren wieder auf Vektoren abbilden und in der Quantenmechanik die Observablen repräsentieren.</p>
 <section id="definition-linearer-operator">
 <h3>Definition: Linearer Operator<a class="headerlink" href="#definition-linearer-operator" title="Link to this heading">#</a></h3>
 <p>Ein <strong>linearer Operator</strong> auf einem komplexen Vektorraum <span class="math notranslate nohighlight">\(V\)</span> ist eine Abbildung</p>
@@ -900,30 +901,79 @@ Spaltenvektoren repräsentieren Elemente des Vektorraums <span class="math notra
 = a\,\hat A|v\rangle + b\,\hat A|w\rangle.
 \]</div>
 </section>
-<section id="matrixdarstellung-eines-operators-in-einer-orthonormalbasis">
-<h3>Matrixdarstellung eines Operators in einer Orthonormalbasis<a class="headerlink" href="#matrixdarstellung-eines-operators-in-einer-orthonormalbasis" title="Link to this heading">#</a></h3>
-<p>Sei nun <span class="math notranslate nohighlight">\(V\)</span> zweidimensional mit der Orthonormalbasis <span class="math notranslate nohighlight">\(\{|\alpha\rangle,|\beta\rangle\}\)</span>.<br />
-Ein Operator <span class="math notranslate nohighlight">\(\hat A\)</span> ist vollständig bestimmt durch seine Wirkung auf die Basisvektoren:</p>
+<section id="matrixdarstellung-linearer-operatoren-in-endlichdimensionalen-vektorraumen">
+<h3>Matrixdarstellung linearer Operatoren in endlichdimensionalen Vektorräumen<a class="headerlink" href="#matrixdarstellung-linearer-operatoren-in-endlichdimensionalen-vektorraumen" title="Link to this heading">#</a></h3>
+<p>Sei <span class="math notranslate nohighlight">\(V\)</span> ein <span class="math notranslate nohighlight">\(n\)</span>-dimensionaler komplexer Vektorraum mit einer Basis <span class="math notranslate nohighlight">\(\{\,|i\rangle\,\}_{i=1}^n\)</span>. Ein linearer Operator <span class="math notranslate nohighlight">\(\hat A: V \to V\)</span> ist vollständig bestimmt durch seine Wirkung auf die Basisvektoren,</p>
+<div class="math notranslate nohighlight">
+\[
+\hat A |j\rangle , \qquad j = 1,\dots,n.
+\]</div>
+<p>Da <span class="math notranslate nohighlight">\(\hat A|j\rangle\)</span> wieder ein Element von <span class="math notranslate nohighlight">\(V\)</span> ist, kann es eindeutig in der gewählten Basis zerlegt werden,</p>
+<div class="math notranslate nohighlight">
+\[
+\hat A |j\rangle = \sum_{i=1}^n A_{ij} |i\rangle.
+\]</div>
+<p>Die Koeffizienten <span class="math notranslate nohighlight">\(A_{ij}\in\mathbb C\)</span> sind die Matrixelemente des Operators <span class="math notranslate nohighlight">\(\hat A\)</span> bezüglich der Basis <span class="math notranslate nohighlight">\(\{|i\rangle\}\)</span> und definieren die Matrixdarstellung des Operators</p>
+<div class="math notranslate nohighlight">
+\[
+\hat A \;\longleftrightarrow\;
+\left( A_{ij} \right)_{i,j=1}^n .
+\]</div>
+<p>Ein beliebiger Vektor <span class="math notranslate nohighlight">\(|\psi\rangle\in V\)</span> lässt sich in derselben Basis schreiben als</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+|\psi\rangle = \sum_{j=1}^n c_j |j\rangle
+\quad \leftrightarrow \quad
+\begin{bmatrix}
+c_1 \\ \vdots \\ c_n
+\end{bmatrix}.
+\end{split}\]</div>
+<p>Die Wirkung des Operators auf <span class="math notranslate nohighlight">\(|\psi\rangle\)</span> ergibt sich aus der Linearität,</p>
+<div class="math notranslate nohighlight">
+\[
+\hat A|\psi\rangle
+= \sum_{i,j=1}^n A_{ij} c_j |i\rangle,
+\]</div>
+<p>was exakt der Matrix-Vektor-Multiplikation entspricht,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\hat A|\psi\rangle
+\quad\leftrightarrow\quad
+\left( A_{ij} \right)
+\begin{bmatrix}
+c_1 \\ \vdots \\ c_n
+\end{bmatrix}.
+\end{split}\]</div>
+<p>Damit ist jedem linearen Operator auf einem endlichdimensionalen Vektorraum eindeutig eine Matrix zugeordnet.</p>
+</section>
+<section id="beispiel-matrixdarstellung-im-innerem-raum-eines-elektrons">
+<h3>Beispiel: Matrixdarstellung im innerem Raum eines Elektrons<a class="headerlink" href="#beispiel-matrixdarstellung-im-innerem-raum-eines-elektrons" title="Link to this heading">#</a></h3>
+<p>Der Raum der internen Zustände eines Elektrons ist zweidimensional.
+Ein Operator <span class="math notranslate nohighlight">\(\hat A\)</span> ist vollständig bestimmt durch seine Wirkung auf die zwei Basiszustände,</p>
 <div class="math notranslate nohighlight">
 \[
 \hat A|\alpha\rangle , \qquad \hat A|\beta\rangle.
 \]</div>
-<p>Da diese wieder Vektoren in <span class="math notranslate nohighlight">\(V\)</span> sind, können sie in der Basis <span class="math notranslate nohighlight">\(\{|\alpha\rangle,|\beta\rangle\}\)</span> zerlegt werden:</p>
+<p>Die Bilder lassen sich eindeutig in der Basis entwickeln,</p>
 <div class="math notranslate nohighlight">
 \[
-\hat A|\alpha\rangle = A_{\alpha\alpha}|\alpha\rangle + A_{\beta\alpha}|\beta\rangle,
+\hat A|\alpha\rangle
+= A_{\alpha\alpha}|\alpha\rangle
++ A_{\beta\alpha}|\beta\rangle,
 \]</div>
 <div class="math notranslate nohighlight">
 \[
-\hat A|\beta\rangle = A_{\alpha\beta}|\alpha\rangle + A_{\beta\beta}|\beta\rangle.
+\hat A|\beta\rangle
+= A_{\alpha\beta}|\alpha\rangle
++ A_{\beta\beta}|\beta\rangle.
 \]</div>
-<p>Die vier komplexen Zahlen, die bei der Zerlegung auftauchen</p>
+<p>Die vier komplexen Zahlen</p>
 <div class="math notranslate nohighlight">
 \[
-A_{\alpha\alpha},\; A_{\beta\alpha},\; A_{\alpha\beta},\; A_{\beta\beta}
+A_{\alpha\alpha},\; A_{\beta\alpha},\;
+A_{\alpha\beta},\; A_{\beta\beta}
 \]</div>
-<p>bestimmen also den Operator vollständig!</p>
-<p>In Matrixschreibweise entspricht dies der folgenden Darstellung:</p>
+<p>sind die Matrixelemente des Operators. Entsprechend ergibt sich die Matrixdarstellung</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \hat A \;\longleftrightarrow\;
@@ -932,7 +982,7 @@ A_{\alpha\alpha} &amp; A_{\alpha\beta} \\
 A_{\beta\alpha} &amp; A_{\beta\beta}
 \end{pmatrix}.
 \end{split}\]</div>
-<p>Für einen beliebigen Vektor</p>
+<p>Ein beliebiger Zustand</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 |\psi\rangle = c_\alpha|\alpha\rangle + c_\beta|\beta\rangle
@@ -941,8 +991,7 @@ A_{\beta\alpha} &amp; A_{\beta\beta}
 c_\alpha \\ c_\beta
 \end{bmatrix}
 \end{split}\]</div>
-<p>lässt sich die Wirkung des Operators auf den Vektor
-durch gewöhnliche Matrixmultiplikation beschreiben:</p>
+<p>wird durch den Operator gemäß</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \hat A|\psi\rangle
@@ -953,19 +1002,45 @@ A_{\beta\alpha} &amp; A_{\beta\beta}
 \end{pmatrix}
 \begin{bmatrix}
 c_\alpha \\ c_\beta
-\end{bmatrix}.
+\end{bmatrix}
 \end{split}\]</div>
-<p>Damit können wir jeden linearen Operator in einem endlichdimensionalen Raum direkt mit einer Matrix relativ zu einer gewählten Orthonormalbasis identifizieren!</p>
+<p>transformiert.</p>
+</section>
 </section>
 <section id="das-adjungierte-hermitesche-konjugierte-eines-operators">
-<h3>Das adjungierte (hermitesche konjugierte) eines Operators<a class="headerlink" href="#das-adjungierte-hermitesche-konjugierte-eines-operators" title="Link to this heading">#</a></h3>
+<h2>Das adjungierte (hermitesche konjugierte) eines Operators<a class="headerlink" href="#das-adjungierte-hermitesche-konjugierte-eines-operators" title="Link to this heading">#</a></h2>
 <p>Um Observablen beschreiben zu können, benötigen wir den Begriff des <strong>Adjungierten</strong> eines Operators. Für jeden Operator <span class="math notranslate nohighlight">\(\hat A\)</span> definieren wir den adjungierten Operator <span class="math notranslate nohighlight">\(\hat A^\dagger\)</span> durch die folgende Bedingung:</p>
 <div class="math notranslate nohighlight">
 \[
 \langle u|\hat A v\rangle = \langle \hat A^\dagger u | v\rangle
 \qquad\text{für alle } |u\rangle, |v\rangle \in V.
 \]</div>
-<p>Der adjungierte Operator ist also derjenige, der die Wirkung von <span class="math notranslate nohighlight">\(\hat A\)</span> „auf das Bra umwälzt“. Die Matrixdarstellung dieses Operators erhält man indem man die Matrix des Operators <span class="math notranslate nohighlight">\(\hat A\)</span>  <strong>konjugiert und transponierten</strong>:</p>
+<p>Der adjungierte Operator ist also derjenige, der die Wirkung von <span class="math notranslate nohighlight">\(\hat A\)</span> „auf das Bra umwälzt“.<br />
+Diese Gleichung ist jedoch zunächst nur eine Charakterisierung. Es ist nicht offensichtlich, dass ein solcher Operator <span class="math notranslate nohighlight">\(\hat A^\dagger\)</span> tatsächlich existiert. Dies folgt aus dem Rieszschen Darstellungssatz.</p>
+<p>Sei dazu <span class="math notranslate nohighlight">\(|u\rangle \in V\)</span> fest gewählt. Wir betrachten die folgende Abbildung</p>
+<div class="math notranslate nohighlight">
+\[
+f_u : V \to \mathbb C, \qquad
+f_u(|v\rangle) := \langle u | \hat A v \rangle.
+\]</div>
+<p>Wie man leicht zeigen kann, ist diese Abbildung linear und damit ein lineares Funktional auf <span class="math notranslate nohighlight">\(V\)</span>. Nach dem Rieszschen Darstellungssatz existiert zu jedem solchen Funktional ein eindeutig bestimmter Vektor <span class="math notranslate nohighlight">\(|w_u\rangle \in V\)</span>, so dass</p>
+<div class="math notranslate nohighlight">
+\[
+\langle u | \hat A v \rangle = \langle w_u | v \rangle
+\qquad\text{für alle } |v\rangle \in V.
+\]</div>
+<p>Die Zuordnung <span class="math notranslate nohighlight">\(|u\rangle \mapsto |w_u\rangle\)</span> ist linear in <span class="math notranslate nohighlight">\(|u\rangle\)</span> und definiert somit selbst einen linearen Operator auf <span class="math notranslate nohighlight">\(V\)</span>. Diesen Operator bezeichnen wir als <span class="math notranslate nohighlight">\(\hat A^\dagger\)</span> und schreiben</p>
+<div class="math notranslate nohighlight">
+\[
+|w_u\rangle = \hat A^\dagger |u\rangle.
+\]</div>
+<p>Damit gilt für alle <span class="math notranslate nohighlight">\(|u\rangle, |v\rangle \in V\)</span> die Relation</p>
+<div class="math notranslate nohighlight">
+\[
+\langle u|\hat A v\rangle = \langle \hat A^\dagger u | v\rangle,
+\]</div>
+<p>womit die Existenz und Eindeutigkeit des adjungierten Operators gezeigt ist.</p>
+<p>Die Matrixdarstellung dieses Operators erhält man indem man die Matrix des Operators <span class="math notranslate nohighlight">\(\hat A\)</span>  <strong>konjugiert und transponiert</strong>. In dem Fall des zweidimensionalen Vektorraumes den wir als Beispiel nehme, hätte <span class="math notranslate nohighlight">\( A^\dagger\)</span> die folgende Matrixdarstellung:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \hat A^\dagger \;\longleftrightarrow\;
@@ -981,19 +1056,25 @@ A_{\alpha\beta}^\ast &amp; A_{\beta\beta}^\ast
 \end{split}\]</div>
 </section>
 <section id="hermitesche-operatoren-observablen">
-<h3>Hermitesche Operatoren (Observablen)<a class="headerlink" href="#hermitesche-operatoren-observablen" title="Link to this heading">#</a></h3>
+<h2>Hermitesche Operatoren (Observablen)<a class="headerlink" href="#hermitesche-operatoren-observablen" title="Link to this heading">#</a></h2>
 <p>Ein Operator <span class="math notranslate nohighlight">\(\hat A\)</span> heißt <strong>hermitesch</strong> (oder selbstadjungiert),
 $<span class="math notranslate nohighlight">\(
 \hat A^\dagger = \hat A.
 \)</span>$</p>
-<p>In Matrixdarstellung bedeutet dies:</p>
+<section id="hermitesche-operatoren-im-zweidimensionalen-vektorraum">
+<h3>Hermitesche Operatoren im zweidimensionalen Vektorraum<a class="headerlink" href="#hermitesche-operatoren-im-zweidimensionalen-vektorraum" title="Link to this heading">#</a></h3>
+<p>Da wir nun die Matrixdarstellung eines Operators <span class="math notranslate nohighlight">\(\hat A\)</span> sowie seines Adjungierten <span class="math notranslate nohighlight">\(\hat A^\dagger\)</span> kennen, können wir die allgemeine Struktur hermitescher Operatoren im Raum der internen Zustände des Elektrons systematisch analysieren. Ein Operator heißt <strong>hermitesch</strong>, wenn er mit seinem Adjungierten übereinstimmt,
+$<span class="math notranslate nohighlight">\(
+\hat A = \hat A^\dagger.
+\)</span>$</p>
+<p>Ausgedrückt in der Orthonormalbasis <span class="math notranslate nohighlight">\(\{|\alpha\rangle,|\beta\rangle\}\)</span> bedeutet diese Bedingung für die Matrixelemente:</p>
 <div class="math notranslate nohighlight">
 \[
 A_{\alpha\alpha}=A_{\alpha\alpha}^\ast,\qquad
 A_{\beta\beta}=A_{\beta\beta}^\ast,\qquad
 A_{\beta\alpha}=A_{\alpha\beta}^\ast.
 \]</div>
-<p>Hermitesche Operatoren haben reelle Eigenwerte und bilden genau die Observablen in der Quantenmechanik.</p>
+<p>Daraus folgt unmittelbar, dass die Diagonalelemente reell sein müssen, während die nichtdiagonalen Elemente komplexe Konjugierte voneinander sind.</p>
 <p>Wenn wir nun der Idee von Wolfgang Pauli folgen, müssen wir zur Beschreibung der ‘’Zweideutigkeit’’ einen hermiteschen Operator einführen, der nur zwei mögliche Eigenzustände und Eigenwerte hat. Dieser Operator, den wir zunächst mit <span class="math notranslate nohighlight">\(\hat{\sigma}\)</span> bezeichnen, sollte durch die folgende Wirkung auf die Basiszustände definiert sein:</p>
 <div class="math notranslate nohighlight">
 \[\hat{\sigma}|\alpha\rangle=+1|\alpha\rangle\]</div>
@@ -1005,14 +1086,7 @@ A_{\beta\alpha}=A_{\alpha\beta}^\ast.
 1 &amp; 0\\
 0 &amp; -1
 \end{array}\right] \end{split}\]</div>
-<p>Wir wollen uns im Folgenden die allgemeine Struktur der hermiteschen Operatoren in einem komplexen 2D-Vektorraum anschauen.</p>
 <p>Aus der allgemeinen Form eines hermiteschen Operators auf einem zweidimensionalen komplexen Vektorraum folgt unmittelbar, dass ein solcher Operator vollständig durch <strong>vier reelle Parameter</strong> beschrieben wird.</p>
-<p>Ein hermitescher Operator <span class="math notranslate nohighlight">\(\hat A\)</span> besitzt per Definition eine Matrixdarstellung, die gleich ihrem adjungierten Pendant ist:</p>
-<div class="math notranslate nohighlight">
-\[
-A^\dagger = A.
-\]</div>
-<p>Für eine <span class="math notranslate nohighlight">\(2\times 2\)</span>-Matrix bedeutet dies, dass die Diagonaleinträge reell sein müssen und die Nebendiagonalen komplex konjugiert zueinander stehen. Damit ergibt sich die allgemeine Darstellung</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 A=
@@ -1021,8 +1095,7 @@ a &amp; c - i d \\
 c + i d &amp; b
 \end{pmatrix},
 \end{split}\]</div>
-<p>wobei <span class="math notranslate nohighlight">\(a,b,c,d \in \mathbb{R}\)</span> frei wählbar sind.</p>
-<p>Dies lässt sich besonders elegant darstellen, wenn man die Matrix <span class="math notranslate nohighlight">\(A\)</span> als Linearkombination geeigneter Basisoperatoren schreibt. Zunächst trennen wir Diagonal- und Off-Diagonalanteile:</p>
+<p>wobei <span class="math notranslate nohighlight">\(a,b,c,d \in \mathbb{R}\)</span> frei wählbar sind. Dies lässt sich besonders elegant darstellen, wenn man die Matrix <span class="math notranslate nohighlight">\(A\)</span> als Linearkombination geeigneter Basisoperatoren schreibt. Zunächst trennen wir Diagonal- und Off-Diagonalanteile:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 A=
@@ -1138,7 +1211,7 @@ Wie lässt sich diese Observable experimentell messen?<br />
 Und ist es überhaupt möglich, alle drei <span class="math notranslate nohighlight">\(\sigma\)</span>–Operatoren gleichzeitig zu messen, oder schließen sie sich gegenseitig aus?</p>
 <p>Die Beantwortung dieser Fragen führt direkt zur Entdeckung einer neuen Form des Drehimpulses, des <strong>Spins</strong>, einer quantenmechanischen Eigenschaft ohne klassisches Analogon.</p>
 <h1> Algebra der Pauli-Matrizen </h1>
-<p>Wir untersuchen im Folgenden einige grundlegende mathematische Eigenschaften der Pauli-Matrizen.</p>
+<p>Wir untersuchen im Folgenden einige algebraische Eigenschaften der Pauli-Matrizen.</p>
 <p>Zunächst stellen wir fest, dass alle drei Pauli-Matrizen hermitesch sind und somit selbst Observablen repräsentieren. Die möglichen Messergebnisse einer quantenmechanischen Observable entsprechen den Eigenwerten des zugehörigen hermiteschen Operators. Es liegt daher nahe zu fragen:</p>
 <p><strong>Welche Eigenwerte besitzen die Operatoren <span class="math notranslate nohighlight">\(\sigma_1\)</span>, <span class="math notranslate nohighlight">\(\sigma_2\)</span> und <span class="math notranslate nohighlight">\(\sigma_3\)</span>?</strong></p>
 <p>Eine erste wichtige Beobachtung erhält man durch direkte Multiplikation. Für alle drei Pauli-Matrizen gilt:</p>
@@ -1255,50 +1328,27 @@ i &amp; 0
 \qquad
 \sigma_2\sigma_1 = -i\sigma_3.
 \]</div>
-</section>
-</section>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="damit-ergibt-sich-fur-den-kommutator-sigma-1-sigma-2">
-<h1>Damit ergibt sich für den Kommutator:
-$$
-[\sigma_1,\sigma_2]<a class="headerlink" href="#damit-ergibt-sich-fur-den-kommutator-sigma-1-sigma-2" title="Link to this heading">#</a></h1>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="sigma-1-sigma-2-sigma-2-sigma-1">
-<h1>\sigma_1\sigma_2 - \sigma_2\sigma_1<a class="headerlink" href="#sigma-1-sigma-2-sigma-2-sigma-1" title="Link to this heading">#</a></h1>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="i-sigma-3-i-sigma-3">
-<h1>i\sigma_3 - (-i\sigma_3)<a class="headerlink" href="#i-sigma-3-i-sigma-3" title="Link to this heading">#</a></h1>
-<p>2i,\sigma_3.
-$$</p>
-<p>Wir sehen also unmittelbar:</p>
-<p><strong>Die Pauli-Matrizen kommutieren nicht miteinander.</strong><br />
-Damit können sie auch <strong>keine gemeinsamen Eigenvektoren</strong> besitzen und sind folglich <strong>nicht gleichzeitig beliebig scharf messbar</strong>.</p>
-<p>Der Kommutator von <span class="math notranslate nohighlight">\(\sigma_1\)</span> und <span class="math notranslate nohighlight">\(\sigma_2\)</span> ergibt daher</p>
+<p>Damit ergibt sich für den Kommutator:</p>
 <div class="math notranslate nohighlight">
 \[
 [\sigma_1,\sigma_2]
-= \sigma_1\sigma_2 - \sigma_2\sigma_1
-= 2i\,\sigma_3.
+=
+\sigma_1\sigma_2 - \sigma_2\sigma_1
+=
+i\sigma_3 - (-i\sigma_3)
+=
+2i\,\sigma_3.
 \]</div>
-<p>Ebenso erhält man durch direkte Rechnung</p>
+<p>Wir sehen also unmittelbar:</p>
+<p>Die Pauli-Matrizen kommutieren nicht miteinander. Damit können sie auch <strong>keine gemeinsamen Eigenvektoren</strong> besitzen und sind folglich <strong>nicht gleichzeitig beliebig scharf messbar</strong>.
+Vielmehr erfüllen die Die Pauli-Matrizen bis auf eine Konstante dieselben Vertauschungsrelationen wie die Komponenten des quantenmechanischen Drehimpulsoperators. In der Theorie der quantenmechanischen Rotation gilt nämlich</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{aligned}
-[\sigma_2,\sigma_3] &amp;= 2i\,\sigma_1, \\
-[\sigma_3,\sigma_1] &amp;= 2i\,\sigma_2.
-\end{aligned}
-\end{split}\]</div>
-<p>Damit haben wir ein bemerkenswertes Resultat gefunden:<br />
-<strong>Die Pauli-Matrizen erfüllen bis auf eine Konstante dieselben Vertauschungsrelationen wie die Komponenten des quantenmechanischen Drehimpulsoperators.</strong></p>
-<p>In der Theorie der quantenmechanischen Rotation gilt nämlich
-$<span class="math notranslate nohighlight">\(
+\[
 [L_x,\,L_y] = i\hbar\, L_z \quad \text{usw.}
-\)</span>$</p>
+\]</div>
 <p>und die Struktur ist identisch (bis auf den Faktor <span class="math notranslate nohighlight">\(2\)</span> und den Wert von <span class="math notranslate nohighlight">\(\hbar\)</span>).</p>
-<p>Dieser Vergleich enthüllt den physikalischen Gehalt unserer bisherigen Rechnung:<br />
-Die von Pauli postulierte “zweideutige” Eigenschaft der Elektronen, die er zur Erklärung des atomaren Aufbauprinzips einführte, besitzt dieselbe algebraische Struktur wie ein Drehimpuls.</p>
-<p>Diese neue Form des Drehimpulses ist jedoch <strong>nicht</strong> mit einer räumlichen Rotation klassischer Teilchen verknüpft und besitzt daher kein direktes klassisches Analogon.<br />
-Man bezeichnet sie als <strong>Spin</strong> eine intrinsische quantenmechanische Eigenschaft, die erst durch die Algebra der Pauli-Matrizen erkennbar wird.</p>
+<p>Dieser Vergleich legt den physikalischen Gehalt der Pauli-Matrizen offen:</p>
+<p>Die von Pauli ursprünglich postulierte „zweideutige“ Eigenschaft des Elektrons, die er zur Erklärung des atomaren Aufbauprinzips zunächst ad hoc einführte, folgt exakt derselben algebraischen Struktur wie ein <strong>Drehimpuls</strong>. Es handelt sich jedoch um eine neue Form des Drehimpulses, die nicht mit einer räumlichen Rotation eines klassischen Teilchens verknüpft ist und daher kein direktes klassisches Analogon besitzt. Diese intrinsische  urquantenmechanische Eigenschaft des Elektrons bezeichnet man in Anlehnung an den Drehimpuls als <strong>Spin</strong>. Der Spin wird nicht durch anschauliche Modelle, sondern allein durch die Algebra der Pauli-Matrizen eindeutig charakterisiert.</p>
 <p>Die Vertauschungsrelationen der Pauli-Matrizen lassen sich vollständig in die Sprache des quantenmechanischen Drehimpulses übertragen, indem wir die folgenden Operatoren einführen:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -1312,14 +1362,12 @@ S_z = \frac{\hbar}{2}\,\sigma_3.
 <p>Mit diesen Definitionen erhalten wir beispielsweise:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
-\begin{aligned}
-[S_x, S_y] 
-&amp;= \left[\frac{\hbar}{2}\sigma_1,\, \frac{\hbar}{2}\sigma_2\right] \\
-&amp;= \left(\frac{\hbar}{2}\right)^2 [\sigma_1, \sigma_2] \\
-&amp;= \left(\frac{\hbar}{2}\right)^2 (2i\sigma_3) \\
-&amp;= i\hbar \left(\frac{\hbar}{2}\sigma_3\right) \\
-&amp;= i\hbar\, S_z.
-\end{aligned}
+[S_x,S_y] = \left[\frac{\hbar}{2}\sigma_1,\;\frac{\hbar}{2}\sigma_2\right] \\
+= \left(\frac{\hbar}{2}\right)^2[\sigma_1,\sigma_2] \\
+= \left(\frac{\hbar}{2}\right)^2(2i\sigma_3) \\
+= i\,\frac{\hbar^2}{2}\,\sigma_3 \\
+= i\hbar\left(\frac{\hbar}{2}\sigma_3\right) \\
+= i\hbar\,S_z .
 \end{split}\]</div>
 <p>Damit haben die Operatoren <span class="math notranslate nohighlight">\(S_x\)</span>, <span class="math notranslate nohighlight">\(S_y\)</span> und <span class="math notranslate nohighlight">\(S_z\)</span> <strong>exakt dieselbe Algebra wie der mechanische Drehimpulsoperator</strong> <span class="math notranslate nohighlight">\(\hat{\mathbf{L}}\)</span>:</p>
 <div class="math notranslate nohighlight">
@@ -1329,6 +1377,9 @@ S_z = \frac{\hbar}{2}\,\sigma_3.
 [S_z, S_x] = i\hbar S_y.
 \]</div>
 <p>Wir haben also gezeigt, dass die aus den Pauli-Matrizen konstruierten Operatoren <span class="math notranslate nohighlight">\(S_x\)</span>, <span class="math notranslate nohighlight">\(S_y\)</span> und <span class="math notranslate nohighlight">\(S_z\)</span> die mathematischen Eigenschaften eines Drehimpulses erfüllen. Dies bestätigt ausdrücklich die Interpretation des Spins als eine besondere Form des Drehimpulses.</p>
+</section>
+<section id="weitere-nutzliche-relationen-zwischen-pauli-matrizen">
+<h3>Weitere nützliche Relationen zwischen Pauli-Matrizen<a class="headerlink" href="#weitere-nutzliche-relationen-zwischen-pauli-matrizen" title="Link to this heading">#</a></h3>
 <p>Nachdem wir den Kommutator der Pauli-Matrizen berechnet haben, bemerken wir auch die folgende Relation:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -1384,6 +1435,8 @@ S_z = \frac{\hbar}{2}\,\sigma_3.
 $<span class="math notranslate nohighlight">\(
 \sigma_i \sigma_j=\delta_{i j}+i \sum_k \varepsilon_{i j k} \sigma_k
 \)</span>$</p>
+</section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -1441,7 +1494,6 @@ $<span class="math notranslate nohighlight">\(
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Spin: Formalismus</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kets-bras-funktionale-operatoren-usw">Kets, Bras, Funktionale, Operatoren usw…</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#komplexer-vektorraum-der-quantenzustande">Komplexer Vektorraum der Quantenzustände</a></li>
 </ul>
@@ -1452,22 +1504,22 @@ $<span class="math notranslate nohighlight">\(
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#beweis">Beweis</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eindeutigkeit">Eindeutigkeit</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dirac-notation">Dirac-Notation</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lineare-operatoren-und-observablen">Lineare Operatoren und Observablen</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#definition-linearer-operator">Definition: Linearer Operator</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#matrixdarstellung-eines-operators-in-einer-orthonormalbasis">Matrixdarstellung eines Operators in einer Orthonormalbasis</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#das-adjungierte-hermitesche-konjugierte-eines-operators">Das adjungierte (hermitesche konjugierte) eines Operators</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hermitesche-operatoren-observablen">Hermitesche Operatoren (Observablen)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#matrixdarstellung-linearer-operatoren-in-endlichdimensionalen-vektorraumen">Matrixdarstellung linearer Operatoren in endlichdimensionalen Vektorräumen</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#beispiel-matrixdarstellung-im-innerem-raum-eines-elektrons">Beispiel: Matrixdarstellung im innerem Raum eines Elektrons</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#das-adjungierte-hermitesche-konjugierte-eines-operators">Das adjungierte (hermitesche konjugierte) eines Operators</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hermitesche-operatoren-observablen">Hermitesche Operatoren (Observablen)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hermitesche-operatoren-im-zweidimensionalen-vektorraum">Hermitesche Operatoren im zweidimensionalen Vektorraum</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kommutatoren-der-pauli-matrizen">Kommutatoren der Pauli-Matrizen</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#weitere-nutzliche-relationen-zwischen-pauli-matrizen">Weitere nützliche Relationen zwischen Pauli-Matrizen</a></li>
 </ul>
 </li>
 </ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#damit-ergibt-sich-fur-den-kommutator-sigma-1-sigma-2">Damit ergibt sich für den Kommutator:
-$$
-[\sigma_1,\sigma_2]</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#sigma-1-sigma-2-sigma-2-sigma-1">\sigma_1\sigma_2 - \sigma_2\sigma_1</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#i-sigma-3-i-sigma-3">i\sigma_3 - (-i\sigma_3)</a></li>
-</ul>
-
   </nav></div>
 
 </div></div>
