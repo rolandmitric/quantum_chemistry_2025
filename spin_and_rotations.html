@@ -64,6 +64,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'spin_and_rotations';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Spin: Formalismus" href="bras_kets_etc.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -126,8 +127,6 @@
       
       
       
-        
-      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -177,7 +176,7 @@
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="variational_principle.html">Das Variationsprinzip</a></li>
 <li class="toctree-l1"><a class="reference internal" href="convergence_variational_principle.html">Über die Konvergenz des linearen Variationsprinzips: Verschachtelungs Satz</a></li>
@@ -192,6 +191,7 @@
 <li class="toctree-l1"><a class="reference internal" href="failure_hartree.html">Das Versagen der Hartree-Methode: Der Fall des Lithiumatoms</a></li>
 <li class="toctree-l1"><a class="reference internal" href="spin.html">Spin: Einführung</a></li>
 <li class="toctree-l1"><a class="reference internal" href="bras_kets_etc.html">Spin: Formalismus</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Spin &amp; Rotationen</a></li>
 </ul>
 
     </div>
@@ -453,9 +453,8 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rotation-eines-vektors">Rotation eines Vektors</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rotation-eines-dreidimensionalen-vektors">Rotation eines dreidimensionalen Vektors</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rotation-eines-spinzustands">Rotation eines Spinzustands</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rotationsoperator-im-spinraum">Rotationsoperator im Spinraum</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eine-bemerkenswerte-eigenschaft-des-spins">Eine bemerkenswerte Eigenschaft des Spins</a></li>
 </ul>
             </nav>
@@ -470,18 +469,17 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="spin-rotationen">
 <h1>Spin &amp; Rotationen<a class="headerlink" href="#spin-rotationen" title="Link to this heading">#</a></h1>
-<p>Wir möchten nun etwas Intuition darüber gewinnen, weshalb der innere Freiheitsgrad des Elektrons „Spin“ genannt wird und weshalb diese Größe in so enger Beziehung zu Rotationen steht. Schon der Name legt nahe, dass die drei Operatoren:</p>
+<p>Wir möchten nun Intuition dafür entwickeln, weshalb der innere Freiheitsgrad des Elektrons als <strong>Spin</strong> bezeichnet wird und in welcher Beziehung diese Größe zu räumlichen Rotationen steht. Bereits die Bezeichnung legt nahe, dass die drei Operatoren</p>
 <div class="math notranslate nohighlight">
 \[
-\hat{S_x},\; \hat{S_y},\; \hat{S_z}
+\hat S_x,\; \hat S_y,\; \hat S_z
 \]</div>
-<p>eine Rolle spielen, die an kartesische Komponenten eines Drehimpulses erinnert.</p>
-<p>Für einen allgemeinen Spinzustand</p>
+<p>eine Rolle spielen, die an die kartesischen Komponenten eines Drehimpulses erinnert. Tatsächlich erfüllen sie dieselbe algebraische Struktur wie die Komponenten eines Drehimpulsoperators, wirken jedoch nicht im Ortsraum, sondern im zweidimensionalen Spinraum. Für einen allgemeinen Spinzustand</p>
 <div class="math notranslate nohighlight">
 \[
 |\psi\rangle = c_\alpha|\alpha\rangle + c_\beta|\beta\rangle
 \]</div>
-<p>liefern die Spinoperatoren drei reele Erwartungswerte:</p>
+<p>lassen sich die Erwartungswerte dieser Operatoren berechnen:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{aligned}
@@ -490,29 +488,24 @@ document.write(`
 \langle S_z\rangle &amp;= \frac{\hbar}{2}\langle\psi|\sigma_z|\psi\rangle .
 \end{aligned}
 \end{split}\]</div>
-<p>Die Notation legt nahe, dass diese drei Größen gemeinsam wie die Komponenten eines dreidimensionalen Vektors transformieren sollten. Um dies zu zeigen, untersuchen wir zunächst die Transformation eines gewöhnlichen geometrischen Vektors unter einer Rotation.</p>
-<section id="rotation-eines-vektors">
-<h2>Rotation eines Vektors<a class="headerlink" href="#rotation-eines-vektors" title="Link to this heading">#</a></h2>
-<p>Eine Rotation verändert weder Abstände noch Winkel. Mathematisch entspricht dies einem unitären Operator</p>
+<p>Jedem Spinzustand sind damit drei reelle Zahlen zugeordnet. Es liegt daher nahe, diese Erwartungswerte als die Komponenten eines dreidimensionalen Vektors zu interpretieren. Diese Interpretation ist jedoch nur dann physikalisch sinnvoll, wenn sich diese drei Größen unter einer Rotation des Zustands genau so transformieren, wie man es von den Komponenten eines Vektors im dreidimensionalen Raum erwartet. Dies werden wir im Folgenden explizit zeigen.</p>
+<section id="rotation-eines-dreidimensionalen-vektors">
+<h2>Rotation eines dreidimensionalen Vektors<a class="headerlink" href="#rotation-eines-dreidimensionalen-vektors" title="Link to this heading">#</a></h2>
+<p>Eine Rotation wird durch einen linearen Operator beschrieben, dessen Wirkung weder Abstände noch Winkel verändert. Mathematisch handelt es sich um eine lineare Isometrie des euklidischen Raums. Betrachten wir einen Vektor mit kartesischen Komponenten in einem orthonormalen Koordinatensystem,</p>
 <div class="math notranslate nohighlight">
 \[
-U:V\to V,\qquad U^\dagger U = \mathbb{1}.
+\vec v = v_x\,\vec e_x + v_y\,\vec e_y + v_z\,\vec e_z \in \mathbb{R}^3.
 \]</div>
-<p>Für einen Vektor</p>
-<div class="math notranslate nohighlight">
-\[
-\vec v = v_x\vec e_x + v_y\vec e_y + v_z\vec e_z \in\mathbb{R}^3,
-\]</div>
-<p>und eine Rotation um den Winkel <span class="math notranslate nohighlight">\( \varphi \)</span> um die <span class="math notranslate nohighlight">\(z\)</span>-Achse wissen wir:</p>
+<p>Eine Rotation um den Winkel <span class="math notranslate nohighlight">\(\varphi\)</span> um die <span class="math notranslate nohighlight">\(z\)</span>-Achse ist eindeutig durch ihre Wirkung auf die Basisvektoren festgelegt. Für diese Rotation gilt:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{aligned}
-R\vec e_x &amp;= \cos\varphi\,\vec e_x + \sin\varphi\,\vec e_y,\\
-R\vec e_y &amp;= -\sin\varphi\,\vec e_x + \cos\varphi\,\vec e_y,\\
-R\vec e_z &amp;= \vec e_z.
+R\,\vec e_x &amp;= \cos\varphi\,\vec e_x + \sin\varphi\,\vec e_y,\\
+R\,\vec e_y &amp;= -\sin\varphi\,\vec e_x + \cos\varphi\,\vec e_y,\\
+R\,\vec e_z &amp;= \vec e_z.
 \end{aligned}
 \end{split}\]</div>
-<p>Damit folgt</p>
+<p>Aus der Linearität des Rotationsoperators folgt unmittelbar, dass sich die Wirkung von <span class="math notranslate nohighlight">\(R\)</span> auf einen beliebigen Vektor aus der Wirkung auf die Basisvektoren zusammensetzt. Die Komponenten des Vektors <span class="math notranslate nohighlight">\(\vec v\)</span> werden dabei miteinander gemischt, während die Länge des Vektors sowie der Winkel zu anderen Vektoren erhalten bleiben. Für die Komponenten des rotierten Vektors <span class="math notranslate nohighlight">\(\vec v' = R\vec v\)</span> ergibt sich:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{aligned}
@@ -521,7 +514,7 @@ v_y' &amp;= \sin\varphi\, v_x + \cos\varphi\, v_y,\\
 v_z' &amp;= v_z.
 \end{aligned}
 \end{split}\]</div>
-<p>In Matrixform:</p>
+<p>Diese Transformation lässt sich kompakt in Matrixform schreiben:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{pmatrix}
@@ -537,17 +530,39 @@ v_x'\\ v_y'\\ v_z'
 v_x\\ v_y\\ v_z
 \end{pmatrix}.
 \end{split}\]</div>
-<p>Ein Tripel von Größen, das genau so transformiert, nennen wir einen Vektor.</p>
+<p>Damit können wir dem Rotationsoperator die folgende Matrixdarstellung zuordnen:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+R =
+\begin{pmatrix}
+\cos\varphi &amp; -\sin\varphi &amp; 0\\
+\sin\varphi &amp; \cos\varphi &amp; 0\\
+0 &amp; 0 &amp; 1
+\end{pmatrix}.
+\end{split}\]</div>
+<p>Es ist leicht nachzuprüfen, dass diese Rotationsmatrix die Eigenschaft</p>
+<div class="math notranslate nohighlight">
+\[
+R^\dagger R = R R^\dagger = \mathbb{1}
+\]</div>
+<p>erfüllt, wobei <span class="math notranslate nohighlight">\(R^\dagger\)</span> die adjungierte Matrix bezeichnet. Matrizen mit dieser Eigenschaft nennt man <strong>unitär</strong>; im rein reellen Fall spricht man von <strong>orthogonalen</strong> Matrizen. Räumliche Rotationen werden daher durch unitäre (bzw. orthogonale) Transformationen beschrieben.</p>
+<p>Die Transformationsgesetze der Komponenten eines Vektors unter Rotationen charakterisieren den Begriff des Vektors in der Physik vollständig. Ein Tripel von Größen, das sich unter Rotationen genau in dieser Weise transformiert, nennt man einen <strong>Vektor</strong>.</p>
 </section>
 <section id="rotation-eines-spinzustands">
 <h2>Rotation eines Spinzustands<a class="headerlink" href="#rotation-eines-spinzustands" title="Link to this heading">#</a></h2>
-<p>Wir möchten nun zeigen, dass eine geeignete unitäre Transformation im zweidimensionalen Spinraum die Erwartungswerte der Spinoperatoren genau wie einen geometrischen Vektor transformiert.</p>
-<p>Wir definieren den Rotationsoperator im Spinraum als</p>
+<p>Wir möchten nun zeigen, dass eine geeignete <strong>unitäre Transformation</strong> im zweidimensionalen Spinraum die Erwartungswerte der Spinoperatoren genau so transformiert wie die Komponenten eines geometrischen Vektors im dreidimensionalen Raum. Dazu müssen wir zunächst präzisieren, was es bedeutet, einen <strong>Spinzustand zu rotieren</strong>.</p>
+<p>In Analogie zur Rotation eines Vektors im Ortsraum definieren wir die Rotation eines Spinzustands als eine unitäre Transformation im Spinraum. Für eine Rotation um den Winkel <span class="math notranslate nohighlight">\(\varphi\)</span> um die <span class="math notranslate nohighlight">\(z\)</span>-Achse definieren wir den Rotationsoperator im Spinraum als</p>
 <div class="math notranslate nohighlight">
 \[
-R(\varphi) = e^{-i\sigma_z \varphi/2}.
+R(\varphi) = e^{-\frac{i}{\hbar}\hat S_z \varphi}
+= e^{-i\sigma_z\varphi/2}.
 \]</div>
-<p>Die transformierten Erwartungswerte lauten</p>
+<p>Ein Spinzustand transformiert unter dieser Rotation gemäß</p>
+<div class="math notranslate nohighlight">
+\[
+|\psi'\rangle = R(\varphi)\,|\psi\rangle.
+\]</div>
+<p>Wir untersuchen nun, wie sich die Erwartungswerte der Spinoperatoren unter dieser Transformation verändern. Für die transformierten Erwartungswerte gilt</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{aligned}
@@ -556,140 +571,65 @@ R(\varphi) = e^{-i\sigma_z \varphi/2}.
 \langle S_z'\rangle &amp;= \frac{\hbar}{2}\langle\psi|\, R^\dagger\sigma_z R\,|\psi\rangle.
 \end{aligned}
 \end{split}\]</div>
-<p>Wir verwenden die Identität</p>
+<p>Zur Auswertung verwenden wir die Exponentialdarstellung der Pauli-Matrix</p>
 <div class="math notranslate nohighlight">
 \[
 e^{i\sigma_z \varphi/2}
-= \cos\!\left(\frac\varphi2\right)\mathbb{1}
-+ i\sin\!\left(\frac\varphi2\right)\sigma_z,
+= \cos\!\left(\frac{\varphi}{2}\right)\mathbb{1}
++ i\sin\!\left(\frac{\varphi}{2}\right)\sigma_z.
 \]</div>
-<p>und erhalten</p>
+<p>Mit der Vertauschungsrelation der Pauli-Matrizen erhält man zunächst</p>
 <div class="math notranslate nohighlight">
 \[
-\begin{aligned}
-\sigma_x e^{i\sigma_z\varphi/2}
-&amp;= \cos\!\left(\frac\varphi2\right)\sigma_x
-+ \sin\!\left(\frac\varphi2\right)\sigma_y.
-\end{aligned}
+\sigma_x\,e^{i\sigma_z\varphi/2}
+=
+\cos\!\left(\frac{\varphi}{2}\right)\sigma_x
++ \sin\!\left(\frac{\varphi}{2}\right)\sigma_y.
 \]</div>
-<p>Daraus folgt nach Multiplikation mit <span class="math notranslate nohighlight">\(e^{-i\sigma_z\varphi/2}\)</span>:
-$<span class="math notranslate nohighlight">\(
+<p>Durch Links-Multiplikation mit <span class="math notranslate nohighlight">\(e^{-i\sigma_z\varphi/2}\)</span> folgt daraus</p>
+<div class="math notranslate nohighlight">
+\[
 R^\dagger\sigma_x R
 = \cos\varphi\,\sigma_x + \sin\varphi\,\sigma_y .
-\)</span>$</p>
-<p>Damit ist</p>
+\]</div>
+<p>Damit ergibt sich für den transformierten Erwartungswert</p>
 <div class="math notranslate nohighlight">
 \[
 \langle S_x'\rangle
 = \cos\varphi\,\langle S_x\rangle
 + \sin\varphi\,\langle S_y\rangle.
 \]</div>
-<p>Analog erhält man
-$$
-\langle S_y’\rangle
-= -\sin\varphi,\langle S_x\rangle</p>
-<ul class="simple">
-<li><p>\cos\varphi,\langle S_y\rangle,
-$<span class="math notranslate nohighlight">\(
-und
-\)</span><span class="math notranslate nohighlight">\(
+<p>Eine analoge Rechnung liefert</p>
+<div class="math notranslate nohighlight">
+\[
+\langle S_y'\rangle
+= -\sin\varphi\,\langle S_x\rangle
++ \cos\varphi\,\langle S_y\rangle,
+\]</div>
+<p>sowie</p>
+<div class="math notranslate nohighlight">
+\[
 \langle S_z'\rangle = \langle S_z\rangle.
-\)</span>$</p></li>
-</ul>
-<p>Wir sehen also: die Operatoren <span class="math notranslate nohighlight">\(S_x, S_y, S_z\)</span> bilden gemeinsam einen <strong>Vektoroperator</strong>, denn ihre Erwartungswerte transformieren bei einer Rotation im Spinraum wie ein geometrischer dreidimensionaler Vektor.</p>
-</section>
-<section id="rotationsoperator-im-spinraum">
-<h2>Rotationsoperator im Spinraum<a class="headerlink" href="#rotationsoperator-im-spinraum" title="Link to this heading">#</a></h2>
-<p>Da
-$<span class="math notranslate nohighlight">\(
-S_z = \frac{\hbar}{2}\sigma_z,
-\)</span><span class="math notranslate nohighlight">\(
-können wir auch schreiben:
-\)</span><span class="math notranslate nohighlight">\(
-R(\varphi)
-= e^{-i\sigma_z\varphi/2}
-= e^{-\frac{i}{\hbar} S_z \varphi}.
-\)</span>$</p>
+\]</div>
+<p>Wir sehen somit, dass sich die Erwartungswerte der drei Spinoperatoren unter einer Rotation exakt so transformieren wie die kartesischen Komponenten eines dreidimensionalen Vektors bei einer Rotation um die <span class="math notranslate nohighlight">\(z\)</span>-Achse. Die Operatoren <span class="math notranslate nohighlight">\(\hat S_x,\hat S_y,\hat S_z\)</span> bilden daher gemeinsam einen <strong>Vektoroperator</strong>. Dies rechtfertigt die Interpretation des Spins als eines quantenmechanischen Drehimpulses: Obwohl der Spin kein klassisches Rotationsanalogon besitzt, kodiert seine algebraische Struktur exakt die Transformationsgesetze räumlicher Vektoren unter Rotationen.</p>
 </section>
 <section id="eine-bemerkenswerte-eigenschaft-des-spins">
 <h2>Eine bemerkenswerte Eigenschaft des Spins<a class="headerlink" href="#eine-bemerkenswerte-eigenschaft-des-spins" title="Link to this heading">#</a></h2>
-<p>Aus dieser Darstellung folgt unmittelbar
-$<span class="math notranslate nohighlight">\(
-R(2\pi) = e^{-i\sigma_z \pi} = -\mathbb{1}.
-\)</span>$</p>
-<p>Ein Spin-<span class="math notranslate nohighlight">\(\tfrac12\)</span>-Zustand kehrt daher <strong>erst nach einer Drehung um <span class="math notranslate nohighlight">\(4\pi\)</span></strong> vollständig in seinen ursprünglichen Zustand zurück.</p>
-<p>Dies ist ein rein quantenmechanisches Phänomen ohne klassische Analogie.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">ipywidgets</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">widgets</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
-
-<span class="n">sigma_z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">]],</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">complex</span><span class="p">)</span>
-<span class="n">psi0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">complex</span><span class="p">)</span>
-
-<span class="k">def</span><span class="w"> </span><span class="nf">U</span><span class="p">(</span><span class="n">theta</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">sigma_z</span>
-
-<span class="k">def</span><span class="w"> </span><span class="nf">update</span><span class="p">(</span><span class="n">theta</span><span class="p">):</span>
-    <span class="n">theta</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span>
-    <span class="n">psi</span> <span class="o">=</span> <span class="n">U</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span> <span class="o">@</span> <span class="n">psi0</span>
-
-    <span class="n">overlap</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vdot</span><span class="p">(</span><span class="n">psi0</span><span class="p">,</span> <span class="n">psi</span><span class="p">)</span>
-    <span class="n">magnitude</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">overlap</span><span class="p">)</span>
-    <span class="n">phase</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">angle</span><span class="p">(</span><span class="n">overlap</span><span class="p">)</span>
-
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;θ = </span><span class="si">{</span><span class="n">theta</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2"> rad&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;ψ(θ) = </span><span class="si">{</span><span class="n">psi</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;⟨ψ(0)|ψ(θ)⟩ = </span><span class="si">{</span><span class="n">overlap</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;|⟨ψ(0)|ψ(θ)⟩| = </span><span class="si">{</span><span class="n">magnitude</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;arg = </span><span class="si">{</span><span class="n">phase</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2"> rad   (</span><span class="si">{</span><span class="n">phase</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2"> π)&quot;</span><span class="p">)</span>
-
-    <span class="c1"># Compute full curves from 0 to 4π</span>
-    <span class="n">thetas</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">400</span><span class="p">)</span>
-    <span class="n">overlaps</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">thetas</span><span class="p">:</span>
-        <span class="n">U_t</span> <span class="o">=</span> <span class="n">U</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
-        <span class="n">psi_t</span> <span class="o">=</span> <span class="n">U_t</span> <span class="o">@</span> <span class="n">psi0</span>
-        <span class="n">overlaps</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">vdot</span><span class="p">(</span><span class="n">psi0</span><span class="p">,</span> <span class="n">psi_t</span><span class="p">))</span>
-
-    <span class="n">overlaps</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">overlaps</span><span class="p">)</span>
-    <span class="n">mag</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">overlaps</span><span class="p">)</span>
-    <span class="n">ph</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unwrap</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">angle</span><span class="p">(</span><span class="n">overlaps</span><span class="p">))</span>
-
-    <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
-
-    <span class="c1"># Magnitude plot</span>
-    <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">thetas</span><span class="p">,</span> <span class="n">mag</span><span class="p">)</span>
-    <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;|⟨ψ(0)|ψ(θ)⟩|&quot;</span><span class="p">)</span>
-    <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;θ&quot;</span><span class="p">)</span>
-    <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mf">1.1</span><span class="p">)</span>
-    <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
-    <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
-
-    <span class="c1"># Phase plot</span>
-    <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">thetas</span><span class="p">,</span> <span class="n">ph</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
-    <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Phase / π&quot;</span><span class="p">)</span>
-    <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;θ&quot;</span><span class="p">)</span>
-    <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
-    <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
-
-    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-
-
-<span class="n">widgets</span><span class="o">.</span><span class="n">interact</span><span class="p">(</span>
-    <span class="n">update</span><span class="p">,</span>
-    <span class="n">theta</span><span class="o">=</span><span class="n">widgets</span><span class="o">.</span><span class="n">FloatSlider</span><span class="p">(</span>
-        <span class="nb">min</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="nb">max</span><span class="o">=</span><span class="mi">4</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="mf">0.01</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
-        <span class="n">description</span><span class="o">=</span><span class="s2">&quot;θ&quot;</span>
-    <span class="p">)</span>
-<span class="p">);</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"model_id": "91c1c1c17d764b89970fb59411f311f5", "version_major": 2, "version_minor": 0}</script></div>
-</div>
+<p>Aus der expliziten Darstellung des Rotationsoperators im Spinraum ergibt sich unmittelbar eine zunächst überraschende Eigenschaft von Spinzuständen. Betrachten wir als Spezialfall eine Rotation um den Winkel <span class="math notranslate nohighlight">\(2\pi\)</span>, so erhalten wir</p>
+<div class="math notranslate nohighlight">
+\[
+R(2\pi)
+= e^{-\,\frac{i}{\hbar}\hat S_z\,2\pi}
+= e^{-i\sigma_z\pi}
+= -\mathbb{1}.
+\]</div>
+<p>Eine Drehung des Spinzustands um <span class="math notranslate nohighlight">\(2\pi\)</span> führt also <strong>nicht</strong> auf denselben Zustandsvektor zurück, sondern multipliziert ihn mit dem Faktor <span class="math notranslate nohighlight">\(-1\)</span>. Erst nach einer weiteren Rotation um <span class="math notranslate nohighlight">\(2\pi\)</span>, also insgesamt nach einer Drehung um <span class="math notranslate nohighlight">\(4\pi\)</span>, gilt</p>
+<div class="math notranslate nohighlight">
+\[
+R(4\pi) = \mathbb{1},
+\]</div>
+<p>und der Zustand stimmt wieder exakt mit dem ursprünglichen überein.</p>
+<p>Dieses Verhalten ist charakteristisch für Spin-<span class="math notranslate nohighlight">\(\tfrac12\)</span>-Systeme und besitzt kein klassisches Gegenstück.</p>
 </section>
 </section>
 
@@ -723,6 +663,15 @@ R(2\pi) = e^{-i\sigma_z \pi} = -\mathbb{1}.
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="bras_kets_etc.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Spin: Formalismus</p>
+      </div>
+    </a>
 </div>
                 </footer>
               
@@ -739,9 +688,8 @@ R(2\pi) = e^{-i\sigma_z \pi} = -\mathbb{1}.
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rotation-eines-vektors">Rotation eines Vektors</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rotation-eines-dreidimensionalen-vektors">Rotation eines dreidimensionalen Vektors</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rotation-eines-spinzustands">Rotation eines Spinzustands</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rotationsoperator-im-spinraum">Rotationsoperator im Spinraum</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eine-bemerkenswerte-eigenschaft-des-spins">Eine bemerkenswerte Eigenschaft des Spins</a></li>
 </ul>
   </nav></div>
