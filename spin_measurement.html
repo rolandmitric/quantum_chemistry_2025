@@ -1,0 +1,1099 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Spinmessung &#8212; Quantenchemie</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=e936a729" />
+    <link rel="stylesheet" type="text/css" href="_static/wide_v2.css?v=bfe64621" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'spin_measurement';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Spin &amp; Rotationen" href="spin_and_rotations.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Quantenchemie</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="index.html">
+                    Quantenchemie — WS 2025
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="variational_principle.html">Das Variationsprinzip</a></li>
+<li class="toctree-l1"><a class="reference internal" href="convergence_variational_principle.html">Über die Konvergenz des linearen Variationsprinzips: Verschachtelungs Satz</a></li>
+<li class="toctree-l1"><a class="reference internal" href="helium_atom.html">Das Helium-Atom</a></li>
+<li class="toctree-l1"><a class="reference internal" href="kinetic_energy_hylleraas.html">Hylleraas-Methode: Kinetische Energie</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="correlation_hylleraas.html">Elektronenkorrelation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hartree_equation.html">Optimales Hartree-Produkt und Hartree-Gleichung</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="first_qc_code.html">Erstes Quantenchemieprogramm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="failure_hartree.html">Das Versagen der Hartree-Methode: Der Fall des Lithiumatoms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="spin.html">Spin: Einführung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bras_kets_etc.html">Spin: Formalismus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="spin_and_rotations.html">Spin &amp; Rotationen</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Spinmessung</a></li>
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/rolandmitric/quantum_chemistry_2025/main?urlpath=lab/tree/./spin_measurement.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Binder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Binder logo" src="_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/rolandmitric/quantum_chemistry_2025" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/rolandmitric/quantum_chemistry_2025/edit/main/./spin_measurement.ipynb" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/rolandmitric/quantum_chemistry_2025/issues/new?title=Issue%20on%20page%20%2Fspin_measurement.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/spin_measurement.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Spinmessung</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Spinmessung</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#messrichtung-und-projektionsoperator">Messrichtung und Projektionsoperator</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bestimmung-der-eigenwerte">Bestimmung der Eigenwerte</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bestimmung-der-eigenzustande">Bestimmung der Eigenzustände</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fall-i-eigenzustand-zu-hbar-2">Fall I: Eigenzustand zu <span class="math notranslate nohighlight">\(+\hbar/2\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fall-ii-eigenzustand-zu-hbar-2">Fall II: Eigenzustand zu <span class="math notranslate nohighlight">\( -\hbar/2 \)</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#damit-ergibt-sich-vec-n-rangle">Damit ergibt sich
+$$
+|\vec n-\rangle</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#spezielle-messrichtungen-und-physikalische-interpretation">Spezielle Messrichtungen und physikalische Interpretation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fall-1-messung-entlang-der-z-achse">Fall 1: Messung entlang der <span class="math notranslate nohighlight">\(z\)</span>-Achse</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fall-2-messung-entlang-der-x-achse">Fall 2: Messung entlang der <span class="math notranslate nohighlight">\(x\)</span>-Achse</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fall-3-messung-entlang-der-y-achse">Fall 3: Messung entlang der <span class="math notranslate nohighlight">\(y\)</span>-Achse</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stern-gerlach-experiment">Stern-Gerlach Experiment</a></li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="spinmessung">
+<h1>Spinmessung<a class="headerlink" href="#spinmessung" title="Link to this heading">#</a></h1>
+<p>Welche möglichen Ergebnisse erhalten wir, wenn wir den Spin eines Elektrons messen?<br />
+Um diese Frage präzise zu beantworten, müssen wir zunächst klären, was unter einer <em>Spinmessung</em> zu verstehen ist. Der Spin eines Elektrons ist ein quantenmechanischer Vektoroperator mit drei kartesischen Komponenten,</p>
+<div class="math notranslate nohighlight">
+\[
+\vec S = S_x\,\vec e_x + S_y\,\vec e_y + S_z\,\vec e_z .
+\]</div>
+<p>Wie wir bereits wissen, sind die drei Komponenten <span class="math notranslate nohighlight">\(S_x\)</span>, <span class="math notranslate nohighlight">\(S_y\)</span> und <span class="math notranslate nohighlight">\(S_z\)</span> nicht miteinander vertauschbar. Dies bedeutet, dass der Spin nicht gleichzeitig in allen drei Raumrichtungen wohldefiniert sein kann. Eine Spinmessung muss sich daher stets auf eine festgelegte Raumrichtung beziehen, also auf die Projektion des Spinoperators entlang einer bestimmten Achse.</p>
+<p>Wir wenden uns nun der zentralen Frage zu:</p>
+<p><em>Was ist das mögliche Ergebnis einer Messung der Spinprojektion in eine beliebige Richtung im Raum?</em></p>
+<section id="messrichtung-und-projektionsoperator">
+<h2>Messrichtung und Projektionsoperator<a class="headerlink" href="#messrichtung-und-projektionsoperator" title="Link to this heading">#</a></h2>
+<p>Eine Richtung im Raum kann durch einen Einheitsvektor <span class="math notranslate nohighlight">\(\vec n\)</span> definiert werden,</p>
+<div class="math notranslate nohighlight">
+\[
+\vec n = n_x\,\vec e_x + n_y\,\vec e_y + n_z\,\vec e_z .
+\]</div>
+<p>Da wir annehmen, dass</p>
+<div class="math notranslate nohighlight">
+\[
+\vec n \cdot \vec n = n_x^2 + n_y^2 + n_z^2 = 1 ,
+\]</div>
+<p>können die Komponenten des Einheitsvektors durch zwei Polarkoordinaten parametrisiert werden,</p>
+<div class="math notranslate nohighlight">
+\[
+\vec n =
+\sin\theta\cos\varphi\,\vec e_x
++ \sin\theta\sin\varphi\,\vec e_y
++ \cos\theta\,\vec e_z .
+\]</div>
+<p>Um die Projektion des Spins in Richtung <span class="math notranslate nohighlight">\(\vec n\)</span> zu messen, definieren wir den Operator</p>
+<div class="math notranslate nohighlight">
+\[
+S_{\vec n} = \vec S \cdot \vec n .
+\]</div>
+<p>Für ein Spin-<span class="math notranslate nohighlight">\(\tfrac12\)</span>-Teilchen gilt</p>
+<div class="math notranslate nohighlight">
+\[
+\vec S = \frac{\hbar}{2}\,\vec\sigma ,
+\]</div>
+<p>wobei <span class="math notranslate nohighlight">\(\vec\sigma = (\sigma_x,\sigma_y,\sigma_z)\)</span> die Pauli-Matrizen sind. Damit folgt</p>
+<div class="math notranslate nohighlight">
+\[
+S_{\vec n}
+= \frac{\hbar}{2}
+\left(
+n_x\sigma_x + n_y\sigma_y + n_z\sigma_z
+\right).
+\]</div>
+<p>In der <span class="math notranslate nohighlight">\(\sigma_z\)</span>-Basis ergibt sich damit die Matrixdarstellung</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+S_{\vec n}
+= \frac{\hbar}{2}
+\begin{pmatrix}
+n_z &amp; n_x - i n_y \\
+n_x + i n_y &amp; -n_z
+\end{pmatrix}.
+\end{split}\]</div>
+</section>
+<section id="bestimmung-der-eigenwerte">
+<h2>Bestimmung der Eigenwerte<a class="headerlink" href="#bestimmung-der-eigenwerte" title="Link to this heading">#</a></h2>
+<p>Nach den Axiomen der Quantenmechanik sind die möglichen Messergebnisse einer Observable genau deren Eigenwerte.<br />
+Wir müssen daher das Eigenwertproblem</p>
+<div class="math notranslate nohighlight">
+\[
+(\vec S\cdot\vec n)\,|\vec n,\lambda\rangle
+= \lambda\,|\vec n,\lambda\rangle
+\]</div>
+<p>lösen.</p>
+<p>Zur Bestimmung der Eigenwerte betrachten wir das Quadrat des Operators. Mit der bekannten Identität</p>
+<div class="math notranslate nohighlight">
+\[
+(\vec\sigma\cdot\vec a)(\vec\sigma\cdot\vec b)
+=
+(\vec a\cdot\vec b)\,\mathbb{1}
++ i(\vec a\times\vec b)\cdot\vec\sigma
+\]</div>
+<p>setzen wir</p>
+<div class="math notranslate nohighlight">
+\[
+\vec a=\vec n , \qquad \vec b=\vec n .
+\]</div>
+<p>Damit ergibt sich</p>
+<div class="math notranslate nohighlight">
+\[
+(\vec\sigma\cdot\vec n)^2
+=
+(\vec n\cdot\vec n)\,\mathbb{1}
++ i(\vec n\times\vec n)\cdot\vec\sigma .
+\]</div>
+<p>Da</p>
+<div class="math notranslate nohighlight">
+\[
+\vec n\cdot\vec n = 1,
+\qquad
+\vec n\times\vec n = 0,
+\]</div>
+<p>folgt</p>
+<div class="math notranslate nohighlight">
+\[
+(\vec\sigma\cdot\vec n)^2 = \mathbb{1}.
+\]</div>
+<p>Für den Spinoperator ergibt sich damit</p>
+<div class="math notranslate nohighlight">
+\[
+(\vec S\cdot\vec n)^2
+=
+\left(\frac{\hbar}{2}\right)^2 \mathbb{1}.
+\]</div>
+<p>Das charakteristische Polynom lautet somit</p>
+<div class="math notranslate nohighlight">
+\[
+p(\lambda) = \lambda^2 - \left(\frac{\hbar}{2}\right)^2 ,
+\]</div>
+<p>woraus die Eigenwerte</p>
+<div class="math notranslate nohighlight">
+\[
+\lambda = \pm \frac{\hbar}{2}
+\]</div>
+<p>folgen.</p>
+</section>
+<section id="bestimmung-der-eigenzustande">
+<h2>Bestimmung der Eigenzustände<a class="headerlink" href="#bestimmung-der-eigenzustande" title="Link to this heading">#</a></h2>
+<p>Wir bestimmen nun explizit die Eigenzustände
+$<span class="math notranslate nohighlight">\(
+|\vec n+\rangle , \qquad |\vec n-\rangle .
+\)</span>$</p>
+<section id="fall-i-eigenzustand-zu-hbar-2">
+<h3>Fall I: Eigenzustand zu <span class="math notranslate nohighlight">\(+\hbar/2\)</span><a class="headerlink" href="#fall-i-eigenzustand-zu-hbar-2" title="Link to this heading">#</a></h3>
+<p>Wir schreiben das Eigenwertproblem explizit,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+S_{\vec n}
+\begin{pmatrix}
+a \\ b
+\end{pmatrix}
+=
+\frac{\hbar}{2}
+\begin{pmatrix}
+a \\ b
+\end{pmatrix}.
+\end{split}\]</div>
+<p>Nach Kürzen des Faktors <span class="math notranslate nohighlight">\(\hbar/2\)</span> ergibt sich</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{pmatrix}
+n_z &amp; n_x - i n_y \\
+n_x + i n_y &amp; -n_z
+\end{pmatrix}
+\begin{pmatrix}
+a \\ b
+\end{pmatrix}
+=
+\begin{pmatrix}
+a \\ b
+\end{pmatrix}.
+\end{split}\]</div>
+<p>Dies führt auf das lineare Gleichungssystem</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{cases}
+(n_z - 1)a + (n_x - i n_y)b = 0, \\
+(n_x + i n_y)a - (n_z + 1)b = 0.
+\end{cases}
+\end{split}\]</div>
+<p>Die Determinante der Koeffizientenmatrix lautet</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\det
+\begin{pmatrix}
+n_z - 1 &amp; n_x - i n_y \\
+n_x + i n_y &amp; -(n_z + 1)
+\end{pmatrix}
+=
+1 - (n_x^2 + n_y^2 + n_z^2).
+\end{split}\]</div>
+<p>Da <span class="math notranslate nohighlight">\(\vec n\)</span> normiert ist, verschwindet die Determinante, und eine nichttriviale Lösung existiert.</p>
+<p>Wir bestimmen das Verhältnis <span class="math notranslate nohighlight">\(b/a\)</span> aus der ersten Gleichung,</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{b}{a}
+=
+\frac{1 - n_z}{n_x - i n_y}.
+\]</div>
+<p>Mit</p>
+<div class="math notranslate nohighlight">
+\[
+n_z = \cos\theta,
+\qquad
+n_x - i n_y = \sin\theta\,e^{-i\varphi}
+\]</div>
+<p>folgt</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{b}{a}
+=
+\frac{1-\cos\theta}{\sin\theta}\,e^{i\varphi}.
+\]</div>
+<p>Unter Verwendung der trigonometrischen Identitäten</p>
+<div class="math notranslate nohighlight">
+\[
+1-\cos\theta = 2\sin^2\frac{\theta}{2},
+\qquad
+\sin\theta = 2\sin\frac{\theta}{2}\cos\frac{\theta}{2}
+\]</div>
+<p>erhält man</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{b}{a}
+=
+\tan\frac{\theta}{2}\,e^{i\varphi}.
+\]</div>
+<p>Da der Eigenzustand nur bis auf einen Normierungsfaktor bestimmt ist, wählen wir</p>
+<div class="math notranslate nohighlight">
+\[
+a=\cos\frac{\theta}{2},
+\qquad
+b=e^{i\varphi}\sin\frac{\theta}{2}.
+\]</div>
+<p>Damit ergibt sich</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+|\vec n+\rangle
+=
+\begin{pmatrix}
+\cos\frac{\theta}{2} \\
+e^{i\varphi}\sin\frac{\theta}{2}
+\end{pmatrix}.
+\end{split}\]</div>
+</section>
+<section id="fall-ii-eigenzustand-zu-hbar-2">
+<h3>Fall II: Eigenzustand zu <span class="math notranslate nohighlight">\( -\hbar/2 \)</span><a class="headerlink" href="#fall-ii-eigenzustand-zu-hbar-2" title="Link to this heading">#</a></h3>
+<p>Analog lösen wir</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+S_{\vec n}
+\begin{pmatrix}
+a \\ b
+\end{pmatrix}
+=
+-\frac{\hbar}{2}
+\begin{pmatrix}
+a \\ b
+\end{pmatrix}.
+\end{split}\]</div>
+<p>Nach Kürzen ergibt sich das Gleichungssystem</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{cases}
+(1+n_z)a + (n_x - i n_y)b = 0, \\
+(n_x + i n_y)a + (1-n_z)b = 0.
+\end{cases}
+\end{split}\]</div>
+<p>Aus der ersten Gleichung folgt</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{b}{a}
+=
+-\frac{1+n_z}{n_x - i n_y}.
+\]</div>
+<p>Mit</p>
+<div class="math notranslate nohighlight">
+\[
+1+\cos\theta = 2\cos^2\frac{\theta}{2}
+\]</div>
+<p>erhält man</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{b}{a}
+=
+-\frac{\cos\frac{\theta}{2}}{\sin\frac{\theta}{2}}\,e^{i\varphi}.
+\]</div>
+<p>Wir wählen daher</p>
+<div class="math notranslate nohighlight">
+\[
+a=-e^{-i\varphi}\sin\frac{\theta}{2},
+\qquad
+b=\cos\frac{\theta}{2}.
+\]</div>
+</section>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="damit-ergibt-sich-vec-n-rangle">
+<h1>Damit ergibt sich
+$$
+|\vec n-\rangle<a class="headerlink" href="#damit-ergibt-sich-vec-n-rangle" title="Link to this heading">#</a></h1>
+<p>\begin{pmatrix}
+-,e^{-i\varphi}\sin\frac{\theta}{2} \
+\cos\frac{\theta}{2}
+\end{pmatrix}.
+$$</p>
+<p>Die Eigenzustände der Spinprojektion entlang der Richtung <span class="math notranslate nohighlight">\(\vec n\)</span> lauten</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+|\vec n+\rangle
+=
+\begin{pmatrix}
+\cos\frac{\theta}{2} \\
+e^{i\varphi}\sin\frac{\theta}{2}
+\end{pmatrix},
+\qquad
+|\vec n-\rangle
+=
+\begin{pmatrix}
+-\,e^{-i\varphi}\sin\frac{\theta}{2} \\
+\cos\frac{\theta}{2}
+\end{pmatrix}.
+\end{split}\]</div>
+<section id="spezielle-messrichtungen-und-physikalische-interpretation">
+<h2>Spezielle Messrichtungen und physikalische Interpretation<a class="headerlink" href="#spezielle-messrichtungen-und-physikalische-interpretation" title="Link to this heading">#</a></h2>
+<p>Zur Einordnung der allgemeinen Ergebnisse betrachten wir nun einige besonders wichtige Spezialfälle für die Messrichtung <span class="math notranslate nohighlight">\(\vec n\)</span>. Diese Fälle erlauben eine direkte Verbindung zwischen der abstrakten Operatorformulierung und konkret beobachtbaren Experimenten.</p>
+<section id="fall-1-messung-entlang-der-z-achse">
+<h3>Fall 1: Messung entlang der <span class="math notranslate nohighlight">\(z\)</span>-Achse<a class="headerlink" href="#fall-1-messung-entlang-der-z-achse" title="Link to this heading">#</a></h3>
+<p>Wir wählen</p>
+<div class="math notranslate nohighlight">
+\[
+\vec n = \vec e_z .
+\]</div>
+<p>In diesem Fall gilt</p>
+<div class="math notranslate nohighlight">
+\[
+S_{\vec n} = \vec S\cdot\vec n = S_z .
+\]</div>
+<p>Die zugehörigen Parameter sind</p>
+<div class="math notranslate nohighlight">
+\[
+\theta = 0, \qquad \varphi = 0 .
+\]</div>
+<p>Die Eigenzustände des Operators <span class="math notranslate nohighlight">\(S_z\)</span> lauten</p>
+<div class="math notranslate nohighlight">
+\[
+|z,+\rangle = |\alpha\rangle, \qquad
+|z,-\rangle = |\beta\rangle ,
+\]</div>
+<p>mit den Eigenwerten</p>
+<div class="math notranslate nohighlight">
+\[
++\frac{\hbar}{2}, \qquad -\frac{\hbar}{2}.
+\]</div>
+<p><strong>Interpretation.</strong><br />
+Die Zustände <span class="math notranslate nohighlight">\(|\alpha\rangle\)</span> und <span class="math notranslate nohighlight">\(|\beta\rangle\)</span> bilden die Standardbasis der Spin-<span class="math notranslate nohighlight">\(\tfrac12\)</span>-Theorie. Sie entsprechen Spins, die entlang der <span class="math notranslate nohighlight">\(z\)</span>-Achse vollständig ausgerichtet sind („spin up“ bzw. „spin down“). Dieser Fall dient als Referenz für alle weiteren Messrichtungen.</p>
+</section>
+<section id="fall-2-messung-entlang-der-x-achse">
+<h3>Fall 2: Messung entlang der <span class="math notranslate nohighlight">\(x\)</span>-Achse<a class="headerlink" href="#fall-2-messung-entlang-der-x-achse" title="Link to this heading">#</a></h3>
+<p>Wir wählen</p>
+<div class="math notranslate nohighlight">
+\[
+\vec n = \vec e_x ,
+\]</div>
+<p>so dass</p>
+<div class="math notranslate nohighlight">
+\[
+S_{\vec n} = S_x .
+\]</div>
+<p>Die zugehörigen Winkel sind
+$<span class="math notranslate nohighlight">\(
+\theta = \frac{\pi}{2}, \qquad \varphi = 0 .
+\)</span>$</p>
+<p>Die Eigenzustände ergeben sich zu</p>
+<div class="math notranslate nohighlight">
+\[
+|x+\rangle
+= \frac{1}{\sqrt2}\left(|z+\rangle + |z-\rangle\right),
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+|x-\rangle
+= \frac{1}{\sqrt2}\left(-|z+\rangle + |z-\rangle\right).
+\]</div>
+<p><strong>Interpretation.</strong><br />
+Die Zustände <span class="math notranslate nohighlight">\(|x+\rangle\)</span> und <span class="math notranslate nohighlight">\(|x-\rangle\)</span> sind lineare Kombinationen der <span class="math notranslate nohighlight">\(S_z\)</span>-Eigenzustände und beschreiben Spins, die entlang der <span class="math notranslate nohighlight">\(x\)</span>-Achse ausgerichtet sind. Befindet sich das System zunächst in einem Eigenzustand von <span class="math notranslate nohighlight">\(S_z\)</span>, so ist der Spin bezüglich der <span class="math notranslate nohighlight">\(x\)</span>-Achse nicht wohldefiniert. Eine Messung von <span class="math notranslate nohighlight">\(S_x\)</span> liefert daher ein intrinsisch probabilistisches Ergebnis: Mit gleicher Wahrscheinlichkeit von <span class="math notranslate nohighlight">\(50\,\%\)</span> erhält man die beiden möglichen Messwerte</p>
+<div class="math notranslate nohighlight">
+\[
++\frac{\hbar}{2}
+\quad\text{oder}\quad
+-\frac{\hbar}{2}.
+\]</div>
+</section>
+<section id="fall-3-messung-entlang-der-y-achse">
+<h3>Fall 3: Messung entlang der <span class="math notranslate nohighlight">\(y\)</span>-Achse<a class="headerlink" href="#fall-3-messung-entlang-der-y-achse" title="Link to this heading">#</a></h3>
+<p>Wir wählen
+$<span class="math notranslate nohighlight">\(
+\vec n = \vec e_y ,
+\)</span><span class="math notranslate nohighlight">\(
+so dass
+\)</span><span class="math notranslate nohighlight">\(
+S_{\vec n} = S_y .
+\)</span><span class="math notranslate nohighlight">\(
+Die zugehörigen Winkel sind
+\)</span><span class="math notranslate nohighlight">\(
+\theta = \frac{\pi}{2}, \qquad \varphi = \frac{\pi}{2} .
+\)</span>$</p>
+<p>Die Eigenzustände lauten
+$<span class="math notranslate nohighlight">\(
+|y+\rangle
+= \frac{1}{\sqrt2}\left(|z+\rangle + i|z-\rangle\right),
+\)</span><span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\(
+|y-\rangle
+= \frac{1}{\sqrt2}\left(|z+\rangle - i|z-\rangle\right).
+\)</span>$</p>
+<p><strong>Interpretation.</strong><br />
+Auch die <span class="math notranslate nohighlight">\(S_y\)</span>-Eigenzustände sind Linearkombinationen der <span class="math notranslate nohighlight">\(S_z\)</span>-Eigenzustände, enthalten jedoch komplexe Koeffizienten.</p>
+</section>
+</section>
+<section id="stern-gerlach-experiment">
+<h2>Stern-Gerlach Experiment<a class="headerlink" href="#stern-gerlach-experiment" title="Link to this heading">#</a></h2>
+<p>Die hier diskutierten Spezialfälle besitzen eine direkte experimentelle Bedeutung im Zusammenhang mit dem Stern–Gerlach-Experiment. In einem inhomogenen Magnetfeld erfährt ein Teilchen mit magnetischem Moment <span class="math notranslate nohighlight">\(\vec\mu \propto \vec S\)</span> eine Kraft, die proportional zum Gradienten der Feldkomponente entlang der Messrichtung ist. Für ein Feldgradienten entlang der Richtung <span class="math notranslate nohighlight">\(\vec n\)</span> ist diese Kraft proportional zu <span class="math notranslate nohighlight">\(S_{\vec n}\)</span>.</p>
+<p>Wir betrachten einen Elektronenstrahl, der sich in <span class="math notranslate nohighlight">\(x\)</span>-Richtung ausbreitet und ein inhomogenes Magnetfeld durchläuft. Das Magnetfeld wählen wir so, dass die <span class="math notranslate nohighlight">\(z\)</span>-Komponente  sich linear mit der Koordinate <span class="math notranslate nohighlight">\(z\)</span> verändert und ignorieren die anderen Komponenten,</p>
+<div class="math notranslate nohighlight">
+\[
+\vec B = B_z(z)\,\vec e_z,
+\qquad
+B_z(z) = B_0 + G z ,
+\]</div>
+<p>wobei <span class="math notranslate nohighlight">\(G = \partial B_z / \partial z\)</span> der konstante Feldgradient ist. Das magnetische Moment des Elektrons ist proportional zu seinem Spin,</p>
+<div class="math notranslate nohighlight">
+\[
+\vec\mu = \gamma {\vec S},
+\]</div>
+<p>Für die Wechselwirkungsenergie mit dem Magnetfeld ergibt sich daraus:</p>
+<div class="math notranslate nohighlight">
+\[
+V(z) = -\,\vec\mu\cdot\vec B = -\,\mu_z B_z(z).
+\]</div>
+<p>Einsetzen von <span class="math notranslate nohighlight">\(B_z(z)\)</span> ergibt</p>
+<div class="math notranslate nohighlight">
+\[
+V(z) = -\,\mu_z (B_0 + G z).
+\]</div>
+<p>Die auf das Elektron wirkende Kraft bekommt man aus dem Gradienten der Energie als</p>
+<div class="math notranslate nohighlight">
+\[
+\vec F = -\nabla V.
+\]</div>
+<p>Da nur eine <span class="math notranslate nohighlight">\(z\)</span>-Abhängigkeit vorliegt, bleibt</p>
+<div class="math notranslate nohighlight">
+\[
+F_z = -\frac{dV}{dz} = \mu_z\,G.
+\]</div>
+<p>Setzt man den Operator <span class="math notranslate nohighlight">\(S_z\)</span> ein, erhält man</p>
+<div class="math notranslate nohighlight">
+\[
+F_z = \gamma \frac{G}{\hbar}\,S_z.
+\]</div>
+<p>Für ein Elektron besitzt der Operator <span class="math notranslate nohighlight">\(S_z\)</span> die Eigenwerte</p>
+<div class="math notranslate nohighlight">
+\[
+S_z = \pm \frac{\hbar}{2}.
+\]</div>
+<p>Damit nimmt die Kraft <strong>nur zwei diskrete Werte</strong> an,</p>
+<div class="math notranslate nohighlight">
+\[
+F_z = \mp\,\gamma \hbar G/2
+\]</div>
+<p>Während der Durchquerung des Magnetfeldes wirkt diese konstante Kraft über eine Zeit <span class="math notranslate nohighlight">\(T\)</span>. Die dadurch erzeugte Impulsänderung beträgt</p>
+<div class="math notranslate nohighlight">
+\[
+\Delta p_z = F_z\,T.
+\]</div>
+<p>Nach dem Austritt aus dem Feld bewegt sich das Elektron frei weiter, wobei der transversale Impuls zu einer räumlichen Ablenkung führt.
+Da <span class="math notranslate nohighlight">\(F_z\)</span> nur zwei mögliche Werte besitzt, entstehen <strong>zwei räumlich getrennte Teilstrahlen</strong>.</p>
+<p>Ein Stern–Gerlach-Experiment entlang der <span class="math notranslate nohighlight">\(z\)</span>-Achse führt daher zu einer räumlichen Aufspaltung des Strahls in genau zwei Teilstrahlen, die den Eigenwerten</p>
+<div class="math notranslate nohighlight">
+\[
+\pm\frac{\hbar}{2}
+\]</div>
+<p>von <span class="math notranslate nohighlight">\(S_z\)</span> entsprechen. Dreht man die Orientierung des Magnetfeldgradienten, so misst das Experiment entsprechend die Eigenwerte von <span class="math notranslate nohighlight">\(S_{\vec n}\)</span> für die gewählte Richtung <span class="math notranslate nohighlight">\(\vec n\)</span>.</p>
+<p>Damit liefert das Stern–Gerlach-Experiment eine unmittelbare physikalische Realisierung der hier entwickelten Theorie:<br />
+Unabhängig von der Messrichtung beobachtet man stets genau zwei diskrete Messergebnisse, während die Orientierung der Messachse ausschließlich die zugehörigen Eigenzustände bestimmt.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "rolandmitric/quantum_chemistry_2025",
+            ref: "main",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="spin_and_rotations.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Spin &amp; Rotationen</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Spinmessung</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#messrichtung-und-projektionsoperator">Messrichtung und Projektionsoperator</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bestimmung-der-eigenwerte">Bestimmung der Eigenwerte</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bestimmung-der-eigenzustande">Bestimmung der Eigenzustände</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fall-i-eigenzustand-zu-hbar-2">Fall I: Eigenzustand zu <span class="math notranslate nohighlight">\(+\hbar/2\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fall-ii-eigenzustand-zu-hbar-2">Fall II: Eigenzustand zu <span class="math notranslate nohighlight">\( -\hbar/2 \)</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#damit-ergibt-sich-vec-n-rangle">Damit ergibt sich
+$$
+|\vec n-\rangle</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#spezielle-messrichtungen-und-physikalische-interpretation">Spezielle Messrichtungen und physikalische Interpretation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fall-1-messung-entlang-der-z-achse">Fall 1: Messung entlang der <span class="math notranslate nohighlight">\(z\)</span>-Achse</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fall-2-messung-entlang-der-x-achse">Fall 2: Messung entlang der <span class="math notranslate nohighlight">\(x\)</span>-Achse</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fall-3-messung-entlang-der-y-achse">Fall 3: Messung entlang der <span class="math notranslate nohighlight">\(y\)</span>-Achse</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stern-gerlach-experiment">Stern-Gerlach Experiment</a></li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Roland Mitric
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Spin from Abstract Vector Spaces to Magnetic Moment &#8212; Quantenchemie</title>
+    <title>Die physikalischen Prinzipien der Quantenmechanik legen die Eigenschaften dieser Abbildung weitgehend fest. Erstens muss sie bilinear sein. Linearität in jedem Argument ist zwingend, da Superpositionen von Zuständen eines Teilsystems bei festgehaltenem Zustand des anderen Teilsystems wiederum zulässige Zustände des Gesamtsystems ergeben müssen. Konkret fordert man [ \mu(\alpha|\phi\rangle_A+\beta|\phi’\rangle_A,|\chi\rangle_B) &#8212; Quantenchemie</title>
   
   
   
@@ -61,7 +61,7 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'Untitled';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'tensor_product';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -193,6 +193,8 @@
 <li class="toctree-l1"><a class="reference internal" href="spin.html">Spin: Einführung</a></li>
 <li class="toctree-l1"><a class="reference internal" href="bras_kets_etc.html">Spin: Formalismus</a></li>
 <li class="toctree-l1"><a class="reference internal" href="spin_and_rotations.html">Spin &amp; Rotationen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="spin_measurement.html">Spinmessung</a></li>
+
 </ul>
 
     </div>
@@ -247,7 +249,7 @@
       
       
       
-      <li><a href="https://mybinder.org/v2/gh/rolandmitric/quantum_chemistry_2025/main?urlpath=lab/tree/./Untitled.ipynb" target="_blank"
+      <li><a href="https://mybinder.org/v2/gh/rolandmitric/quantum_chemistry_2025/main?urlpath=lab/tree/./tensor_product.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch on Binder"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -313,7 +315,7 @@
       
       
       
-      <li><a href="https://github.com/rolandmitric/quantum_chemistry_2025/edit/main/./Untitled.ipynb" target="_blank"
+      <li><a href="https://github.com/rolandmitric/quantum_chemistry_2025/edit/main/./tensor_product.ipynb" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -330,7 +332,7 @@
       
       
       
-      <li><a href="https://github.com/rolandmitric/quantum_chemistry_2025/issues/new?title=Issue%20on%20page%20%2FUntitled.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/rolandmitric/quantum_chemistry_2025/issues/new?title=Issue%20on%20page%20%2Ftensor_product.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -360,7 +362,7 @@
       
       
       
-      <li><a href="_sources/Untitled.ipynb" target="_blank"
+      <li><a href="_sources/tensor_product.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -431,9 +433,7 @@ document.write(`
   </button>
 `);
 </script>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</button>
+
 </div></div>
       
     </div>
@@ -444,26 +444,13 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Spin from Abstract Vector Spaces to Magnetic Moment</h1>
+    <h1>Die physikalischen Prinzipien der Quantenmechanik legen die Eigenschaften dieser Abbildung weitgehend fest. Erstens muss sie bilinear sein. Linearität in jedem Argument ist zwingend, da Superpositionen von Zuständen eines Teilsystems bei festgehaltenem Zustand des anderen Teilsystems wiederum zulässige Zustände des Gesamtsystems ergeben müssen. Konkret fordert man
+[
+\mu(\alpha|\phi\rangle_A+\beta|\phi’\rangle_A,|\chi\rangle_B)</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
-            <div>
-                <h2> Contents </h2>
-            </div>
-            <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-abstract-two-dimensional-complex-vector-space">1. The Abstract Two-Dimensional Complex Vector Space</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rotations-and-the-group-su-2">2. Rotations and the Group SU(2)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pauli-matrices-as-generators-of-rotations">3. Pauli Matrices as Generators of Rotations</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#defining-the-spin-operator">4. Defining the Spin Operator</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#measurement-eigenstates-and-quantization">5. Measurement: Eigenstates and Quantization</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-bridge-to-physics-introducing-the-magnetic-moment">6. The Bridge to Physics: Introducing the Magnetic Moment</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sterngerlach-as-the-experimental-visualization">7. Stern–Gerlach as the Experimental Visualization</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">8. Summary</a></li>
-</ul>
-            </nav>
         </div>
     </div>
 </div>
@@ -473,130 +460,112 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="spin-from-abstract-vector-spaces-to-magnetic-moment">
-<h1>Spin from Abstract Vector Spaces to Magnetic Moment<a class="headerlink" href="#spin-from-abstract-vector-spaces-to-magnetic-moment" title="Link to this heading">#</a></h1>
-<p>In this chapter we develop the concept of spin as it emerges naturally from the structure of a two-dimensional complex vector space. Only at the end do we attach its physical meaning via the magnetic moment, which provides the experimental interface between the abstract algebra and measurable laboratory phenomena.</p>
+  <p>Betrachten wir zwei unterscheidbare Spin-<span class="math notranslate nohighlight">\(\tfrac12\)</span>-Teilchen <span class="math notranslate nohighlight">\(A\)</span> und <span class="math notranslate nohighlight">\(B\)</span>.
+Jedes Teilchen wird für sich durch einen zweidimensionalen komplexen Hilbertraum beschrieben.
+Ein allgemeiner Zustand von <span class="math notranslate nohighlight">\(A\)</span> bzw. <span class="math notranslate nohighlight">\(B\)</span> lässt sich schreiben als</p>
+<div class="math notranslate nohighlight">
+\[
+|\psi_A\rangle = c_{A1}\,|\uparrow\rangle_A + c_{A2}\,|\downarrow\rangle_A,
+\qquad
+|\psi_B\rangle = c_{B1}\,|\uparrow\rangle_B + c_{B2}\,|\downarrow\rangle_B.
+\]</div>
+<p>Die komplexen Koeffizienten bestimmen über die Bornsche Regel die Wahrscheinlichkeiten für Messergebnisse.</p>
+<p>Die zentrale Frage ist nun, wie der Zustandsraum des Gesamtsystems aus den beiden Einteilchenräumen zu konstruieren ist.
+Eine scheinbar naheliegende Möglichkeit besteht darin, die beiden Zustandsvektoren einfach zu einem größeren Vektor zusammenzufügen,</p>
+<div class="math notranslate nohighlight">
+\[
+(c_{A1},c_{A2}) \oplus (c_{B1},c_{B2})
+= (c_{A1},c_{A2},c_{B1},c_{B2}),
+\]</div>
+<p>was mathematisch dem direkten Summenraum der beiden Hilberträume entspricht.
+Physikalisch beschreibt diese Konstruktion jedoch kein zusammengesetztes System, sondern eine Alternative zwischen zwei Systemen.
+Die Komponenten des Vektors stehen für sich gegenseitig ausschließende Möglichkeiten („System <span class="math notranslate nohighlight">\(A\)</span> <em>oder</em> System <span class="math notranslate nohighlight">\(B\)</span>“), nicht für gleichzeitige Eigenschaften beider Teilchen.</p>
+<p>Der Widerspruch zeigt sich unmittelbar bei Messungen.
+Sind die beiden Teilchen unabhängig präpariert, so muss die Wahrscheinlichkeit für ein gemeinsames Messergebnis faktorisieren.
+Misst man etwa <span class="math notranslate nohighlight">\(|\uparrow\rangle_A\)</span> an Teilchen <span class="math notranslate nohighlight">\(A\)</span> und <span class="math notranslate nohighlight">\(|\downarrow\rangle_B\)</span> an Teilchen <span class="math notranslate nohighlight">\(B\)</span>, so fordert die Quantenmechanik</p>
+<div class="math notranslate nohighlight">
+\[
+P(\uparrow_A,\downarrow_B)=|c_{A1}|^2\,|c_{B2}|^2.
+\]</div>
+<p>Ein Zustandsraum, der durch direkte Summen entsteht, enthält jedoch keine Amplituden für solche gemeinsamen Ereignisse und kann daher die grundlegenden probabilistischen Anforderungen nicht erfüllen.</p>
+<p>Damit ist die zulässige Struktur praktisch festgelegt.
+Für jedes Paar von Messergebnissen <span class="math notranslate nohighlight">\((i,j)\)</span> muss es eine komplexe Amplitude geben, deren Betragsquadrat die gemeinsame Wahrscheinlichkeit liefert.
+Für zwei Spin-<span class="math notranslate nohighlight">\(\tfrac12\)</span>-Teilchen ergibt sich so ein Zustandsvektor der Form</p>
+<div class="math notranslate nohighlight">
+\[
+|\psi_{AB}\rangle \sim
+(c_{A1}c_{B1},\,c_{A1}c_{B2},\,c_{A2}c_{B1},\,c_{A2}c_{B2}),
+\]</div>
+<p>der genau die korrekte Faktorisierung unabhängiger Wahrscheinlichkeiten reproduziert.
+Diese Zuordnung ist zudem linear in jedem Argument und damit vollständig kompatibel mit dem Superpositionsprinzip.</p>
+<p>Abstrahiert man von der konkreten Spinbasis, so lassen sich die physikalischen Anforderungen präzise formulieren:
+Die Abbildung, die einem Paar von Einteilchenzuständen einen Zustand des Gesamtsystems zuordnet, muss in jedem Argument linear sein.
+Identifiziert man Zustände ausschließlich aufgrund dieser Bilinearität, so erhält man einen Vektorraum, der von formalen Produkten
+<span class="math notranslate nohighlight">\(|\phi\rangle_A\otimes|\chi\rangle_B\)</span> erzeugt wird und die Relationen</p>
+<div class="math notranslate nohighlight">
+\[
+(\alpha|\phi\rangle_A+\beta|\phi'\rangle_A)\otimes|\chi\rangle_B
+=
+\alpha|\phi\rangle_A\otimes|\chi\rangle_B
++
+\beta|\phi'\rangle_A\otimes|\chi\rangle_B
+\]</div>
+<p>sowie die entsprechenden Relationen im zweiten Faktor erfüllt.</p>
+<p>Der so konstruierte Raum ist exakt das Tensorprodukt</p>
+<div class="math notranslate nohighlight">
+\[
+\mathcal H_A\otimes\mathcal H_B.
+\]</div>
+<p>Das Tensorprodukt ist damit keine mathematische Zusatzannahme, sondern die einzig mögliche Zustandsraumstruktur, die mit der Linearität der Quantenmechanik und der Forderung konsistenter gemeinsamer Messwahrscheinlichkeiten vereinbar ist.
+Dass dieser Raum Zustände enthält, die sich nicht als Produkte von Einteilchenzuständen schreiben lassen, ist eine unmittelbare Konsequenz dieser physikalisch motivierten Konstruktion und führt zwangsläufig zum Begriff der Verschränkung.</p>
+<p>Gern. Im Folgenden ist eine <strong>streng mathematische Formalisierung</strong>, die <strong>explizit aus der physikalischen Motivation heraus</strong> entwickelt wird und <strong>nahtlos in die übliche Definition des Tensorprodukts mündet</strong>. Der Text ist bewusst so geschrieben, dass er direkt im Anschluss an deinen bisherigen Abschnitt stehen kann und den Übergang von Physik zu Mathematik sauber vollzieht.</p>
 <hr class="docutils" />
-<section id="the-abstract-two-dimensional-complex-vector-space">
-<h2>1. The Abstract Two-Dimensional Complex Vector Space<a class="headerlink" href="#the-abstract-two-dimensional-complex-vector-space" title="Link to this heading">#</a></h2>
-<p>We begin with a complex vector space <span class="math notranslate nohighlight">\(V \cong \mathbb{C}^2\)</span>.<br />
-Vectors are written as kets <span class="math notranslate nohighlight">\(|v\rangle \in V\)</span>, and linear functionals as bras <span class="math notranslate nohighlight">\(\langle w| \in V^\*\)</span>. A Hermitian inner product defines orthogonality and normalization.</p>
-<p>Linear operators <span class="math notranslate nohighlight">\(\hat{A}:V\to V\)</span> act on kets via matrix multiplication.<br />
-We postpone <em>any physical interpretation</em> until the algebra of transformations reveals its structure.</p>
-</section>
-<hr class="docutils" />
-<section id="rotations-and-the-group-su-2">
-<h2>2. Rotations and the Group SU(2)<a class="headerlink" href="#rotations-and-the-group-su-2" title="Link to this heading">#</a></h2>
-<p>Spatial rotations in three dimensions form the group SO(3). Its double cover, SU(2), has a distinguished two-dimensional representation acting on <span class="math notranslate nohighlight">\(V\)</span>. The key idea is that SU(2) acts as <strong>internal rotations</strong> on the abstract vectors <span class="math notranslate nohighlight">\(|v\rangle\)</span>.</p>
-<p>A rotation of angle <span class="math notranslate nohighlight">\(\theta\)</span> about a unit vector <span class="math notranslate nohighlight">\(\hat{\mathbf{n}}\)</span> is represented by the operator</p>
-<div class="math notranslate nohighlight">
-\[
-U(\theta,\hat{\mathbf{n}}) = \exp\!\left(-\frac{i}{2}\,\theta\, \hat{\mathbf{n}}\cdot\boldsymbol{\sigma}\right),
-\]</div>
-<p>where <span class="math notranslate nohighlight">\(\boldsymbol{\sigma}=(\sigma_x,\sigma_y,\sigma_z)\)</span> are the Pauli matrices, introduced <strong>solely</strong> as generators of SU(2).</p>
-</section>
-<hr class="docutils" />
-<section id="pauli-matrices-as-generators-of-rotations">
-<h2>3. Pauli Matrices as Generators of Rotations<a class="headerlink" href="#pauli-matrices-as-generators-of-rotations" title="Link to this heading">#</a></h2>
-<p>The Pauli matrices</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\sigma_x = \begin{pmatrix}0 &amp; 1 \\ 1 &amp; 0\end{pmatrix}, \qquad
-\sigma_y = \begin{pmatrix}0 &amp; -i \\ i &amp; 0\end{pmatrix}, \qquad
-\sigma_z = \begin{pmatrix}1 &amp; 0 \\ 0 &amp; -1\end{pmatrix},
-\end{split}\]</div>
-<p>satisfy the commutation relations</p>
-<div class="math notranslate nohighlight">
-\[
-[\sigma_i,\sigma_j] = 2i\,\varepsilon_{ijk}\sigma_k.
-\]</div>
-<p>This algebra is mathematically identical to the angular-momentum algebra</p>
-<div class="math notranslate nohighlight">
-\[
-[J_i, J_j] = i\hbar \varepsilon_{ijk} J_k.
-\]</div>
-<p>Thus, <em>before any physical assignment</em>, the structure of the operators in <span class="math notranslate nohighlight">\(V\)</span> already mirrors the structure of angular momentum.</p>
-</section>
-<hr class="docutils" />
-<section id="defining-the-spin-operator">
-<h2>4. Defining the Spin Operator<a class="headerlink" href="#defining-the-spin-operator" title="Link to this heading">#</a></h2>
-<p>The simplest identification consistent with the algebra is</p>
-<div class="math notranslate nohighlight">
-\[
-\hat{\mathbf{S}} = \frac{\hbar}{2}\boldsymbol{\sigma}.
-\]</div>
-<p>By construction, <span class="math notranslate nohighlight">\(\hat{\mathbf{S}}\)</span> transforms under SU(2) exactly like an angular momentum:</p>
-<div class="math notranslate nohighlight">
-\[
-U(\theta,\hat{\mathbf{n}})\,\hat{\mathbf{S}}\,U^\dagger(\theta,\hat{\mathbf{n}})
-= R(\theta,\hat{\mathbf{n}})\,\hat{\mathbf{S}},
-\]</div>
-<p>where <span class="math notranslate nohighlight">\(R\)</span> is the corresponding SO(3) rotation matrix.<br />
-This is the <em>defining</em> property of an angular momentum observable.</p>
-<p>At this point, spin is a purely internal degree of freedom: an irreducible representation of SU(2) realized in a 2-dimensional Hilbert space.</p>
-</section>
-<hr class="docutils" />
-<section id="measurement-eigenstates-and-quantization">
-<h2>5. Measurement: Eigenstates and Quantization<a class="headerlink" href="#measurement-eigenstates-and-quantization" title="Link to this heading">#</a></h2>
-<p>The operator <span class="math notranslate nohighlight">\(S_z = \frac{\hbar}{2}\sigma_z\)</span> has eigenvalues</p>
-<div class="math notranslate nohighlight">
-\[
-m_s = \pm \frac{\hbar}{2},
-\]</div>
-<p>with eigenvectors</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-|+\rangle = \begin{pmatrix}1 \\ 0\end{pmatrix}, \qquad
-|-\rangle = \begin{pmatrix}0 \\ 1\end{pmatrix}.
-\end{split}\]</div>
-<p>This quantization arises not from a physical picture of rotation, but from the algebraic structure of SU(2).</p>
-</section>
-<hr class="docutils" />
-<section id="the-bridge-to-physics-introducing-the-magnetic-moment">
-<h2>6. The Bridge to Physics: Introducing the Magnetic Moment<a class="headerlink" href="#the-bridge-to-physics-introducing-the-magnetic-moment" title="Link to this heading">#</a></h2>
-<p>Only now do we connect the abstract operator <span class="math notranslate nohighlight">\(\hat{\mathbf{S}}\)</span> to an experimentally measurable quantity.<br />
-A magnetic dipole couples to a magnetic field according to the Zeeman Hamiltonian</p>
-<div class="math notranslate nohighlight">
-\[
-\hat{H}_{\mathrm{Z}} = -\boldsymbol{\mu}\cdot\mathbf{B}.
-\]</div>
-<p>For an electron the magnetic moment is proportional to its spin operator:</p>
-<div class="math notranslate nohighlight">
-\[
-\boldsymbol{\mu}
-= - g \frac{e}{2m_e}\,\hat{\mathbf{S}}
-= - g \mu_B\,\frac{\boldsymbol{\sigma}}{2},
-\]</div>
-<p>where <span class="math notranslate nohighlight">\(\mu_B\)</span> is the Bohr magneton and <span class="math notranslate nohighlight">\(g \approx 2\)</span>.</p>
-<p>Thus the magnetic moment is <em>not</em> an independent object; it is the coefficient that couples the abstract spin operator to the electromagnetic field. It is through this coupling that the abstract SU(2) algebra becomes observable.</p>
-</section>
-<hr class="docutils" />
-<section id="sterngerlach-as-the-experimental-visualization">
-<h2>7. Stern–Gerlach as the Experimental Visualization<a class="headerlink" href="#sterngerlach-as-the-experimental-visualization" title="Link to this heading">#</a></h2>
-<p>In a Stern–Gerlach experiment, the Hamiltonian</p>
-<div class="math notranslate nohighlight">
-\[
-\hat{H} = -\hat{\mu}_z B_z(z)
-\]</div>
-<p>imparts opposite forces on the two eigenstates of <span class="math notranslate nohighlight">\(S_z\)</span>.<br />
-A spatial splitting emerges because the spin eigenstates couple differently to the magnetic field gradient. This directly visualizes the eigenstructure of the operator defined earlier in purely algebraic terms.</p>
-<p>At this point the pedagogical arc is complete:</p>
-<ol class="arabic simple">
-<li><p><strong>Abstract vector space</strong></p></li>
-<li><p><strong>Generators of SU(2)</strong></p></li>
-<li><p><strong>Spin operator as an internal angular momentum</strong></p></li>
-<li><p><strong>Magnetic moment as the physical coupling that makes the operator measurable</strong></p></li>
-<li><p><strong>Stern–Gerlach as the real-world confirmation</strong></p></li>
-</ol>
-</section>
-<hr class="docutils" />
-<section id="summary">
-<h2>8. Summary<a class="headerlink" href="#summary" title="Link to this heading">#</a></h2>
-<p>Spin begins as an abstract representation of SU(2) in a two-dimensional vector space.<br />
-The Pauli matrices appear as the generators of this representation, giving rise to an internal angular momentum operator <span class="math notranslate nohighlight">\(\hat{\mathbf{S}}\)</span>.<br />
-Only when we introduce the Zeeman coupling does the magnetic moment emerge as the link between this abstract structure and measurable physical behavior.</p>
-<p>This perspective keeps the mathematical development clean while providing a clear conceptual path from abstract linear algebra to concrete experimental physics.</p>
-</section>
+<p>Wir fassen die bisherigen Überlegungen nun in präzise mathematische Anforderungen. Sei dazu (V_A) der komplexe Zustandsraum des Teilchens (A) und (V_B) der des Teilchens (B). Gesucht ist ein Vektorraum (V_{AB}), der den Zustandsraum des zusammengesetzten Systems beschreibt, zusammen mit einer Abbildung
+[
+\mu : V_A \times V_B \to V_{AB},
+\qquad
+(|\psi_A\rangle,|\psi_B\rangle) \mapsto |\psi_A,\psi_B\rangle,
+]
+die einem Paar von Einteilchenzuständen einen Zustand des Gesamtsystems zuordnet.</p>
+<section class="tex2jax_ignore mathjax_ignore" id="die-physikalischen-prinzipien-der-quantenmechanik-legen-die-eigenschaften-dieser-abbildung-weitgehend-fest-erstens-muss-sie-bilinear-sein-linearitat-in-jedem-argument-ist-zwingend-da-superpositionen-von-zustanden-eines-teilsystems-bei-festgehaltenem-zustand-des-anderen-teilsystems-wiederum-zulassige-zustande-des-gesamtsystems-ergeben-mussen-konkret-fordert-man-mu-alpha-phi-rangle-a-beta-phi-rangle-a-chi-rangle-b">
+<h1>Die physikalischen Prinzipien der Quantenmechanik legen die Eigenschaften dieser Abbildung weitgehend fest. Erstens muss sie <strong>bilinear</strong> sein. Linearität in jedem Argument ist zwingend, da Superpositionen von Zuständen eines Teilsystems bei festgehaltenem Zustand des anderen Teilsystems wiederum zulässige Zustände des Gesamtsystems ergeben müssen. Konkret fordert man
+[
+\mu(\alpha|\phi\rangle_A+\beta|\phi’\rangle_A,|\chi\rangle_B)<a class="headerlink" href="#die-physikalischen-prinzipien-der-quantenmechanik-legen-die-eigenschaften-dieser-abbildung-weitgehend-fest-erstens-muss-sie-bilinear-sein-linearitat-in-jedem-argument-ist-zwingend-da-superpositionen-von-zustanden-eines-teilsystems-bei-festgehaltenem-zustand-des-anderen-teilsystems-wiederum-zulassige-zustande-des-gesamtsystems-ergeben-mussen-konkret-fordert-man-mu-alpha-phi-rangle-a-beta-phi-rangle-a-chi-rangle-b" title="Link to this heading">#</a></h1>
+<p>\alpha,\mu(|\phi\rangle_A,|\chi\rangle_B)
++
+\beta,\mu(|\phi’\rangle_A,|\chi\rangle_B),
+]
+sowie die entsprechende Linearität im zweiten Argument. Diese Forderung ist nichts anderes als die mathematische Umsetzung der Tatsache, dass Messstatistiken und Dynamik linear von den Zustandsamplituden abhängen.</p>
+<p>Zweitens darf der Zustandsraum des Gesamtsystems <strong>keine zusätzlichen Identifikationen enthalten</strong>, die nicht aus dieser Bilinearität folgen. Physikalisch würde jede weitere Identifikation bedeuten, dass unterschiedliche Präparationen desselben Paars von Einteilchenzuständen nicht unterscheidbar wären, obwohl sie unterschiedliche Messstatistiken liefern könnten. Der Zustandsraum des Gesamtsystems muss also der <em>allgemeinste</em> Raum sein, der eine bilineare Abbildung aus (V_A\times V_B) erlaubt.</p>
+<p>Diese beiden Forderungen lassen sich nun zu einer universellen Charakterisierung zusammenfassen. Gesucht ist ein Paar ((V_{AB},\mu)) mit der Eigenschaft, dass für jeden komplexen Vektorraum (W) und jede bilineare Abbildung
+[
+b : V_A \times V_B \to W
+]
+eine eindeutig bestimmte lineare Abbildung
+[
+\tilde b : V_{AB} \to W
+]
+existiert, so dass
+[
+b = \tilde b \circ \mu
+]
+gilt. In Diagrammform:
+[
+\begin{array}{ccc}
+V_A \times V_B &amp; \xrightarrow{;\mu;} &amp; V_{AB} <br />
+&amp; \searrow b &amp; \downarrow \tilde b <br />
+&amp; &amp; W
+\end{array}
+]</p>
+<p>Diese universelle Eigenschaft besagt, dass jede bilineare Abbildung aus den Einteilchenräumen eindeutig über eine lineare Abbildung aus dem Zustandsraum des Gesamtsystems faktorisierbar ist. Genau dies kodiert die physikalische Idee, dass alle zulässigen Observablen, Übergangsamplituden und Erwartungswerte des Gesamtsystems bereits vollständig durch lineare Operatoren auf (V_{AB}) beschrieben werden können.</p>
+<p>Ein Paar ((V_{AB},\mu)), das diese Eigenschaft erfüllt, ist bis auf kanonische Isomorphie eindeutig bestimmt. Man bezeichnet (V_{AB}) als das <strong>Tensorprodukt</strong> der Vektorräume (V_A) und (V_B) und schreibt
+[
+V_{AB} \equiv V_A \otimes V_B,
+\qquad
+\mu(|\phi\rangle_A,|\chi\rangle_B)=|\phi\rangle_A\otimes|\chi\rangle_B.
+]</p>
+<p>Explizit lässt sich dieser Raum konstruieren, indem man den freien Vektorraum über der Menge aller formalen Paare ((|\phi\rangle_A,|\chi\rangle_B)) bildet und anschließend genau jene Relationen faktorisiert, die die Bilinearität erzwingen. Die Äquivalenzklassen dieser formalen Produkte sind die Tensoren ( |\phi\rangle_A\otimes|\chi\rangle_B ), und endliche Linearkombinationen solcher Produkte spannen den gesamten Raum (V_A\otimes V_B) auf.</p>
+<p>Damit ist das Tensorprodukt nicht als abstrakte algebraische Konstruktion eingeführt, sondern als die mathematisch präzise Realisierung der physikalischen Forderung, unabhängige Quantensysteme so zu kombinieren, dass Superposition, Wahrscheinlichkeitsfaktorisierung und lineare Observablenstruktur erhalten bleiben. Die Existenz von Zuständen, die sich nicht als einfache Produkte schreiben lassen, ist keine zusätzliche Annahme, sondern eine unmittelbare Konsequenz dieser universellen Definition.</p>
 </section>
 
     <script type="text/x-thebe-config">
@@ -635,28 +604,6 @@ Only when we introduce the Zeeman coupling does the magnetic moment emerge as th
             </div>
             
             
-              
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
-  </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-abstract-two-dimensional-complex-vector-space">1. The Abstract Two-Dimensional Complex Vector Space</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rotations-and-the-group-su-2">2. Rotations and the Group SU(2)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pauli-matrices-as-generators-of-rotations">3. Pauli Matrices as Generators of Rotations</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#defining-the-spin-operator">4. Defining the Spin Operator</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#measurement-eigenstates-and-quantization">5. Measurement: Eigenstates and Quantization</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-bridge-to-physics-introducing-the-magnetic-moment">6. The Bridge to Physics: Introducing the Magnetic Moment</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sterngerlach-as-the-experimental-visualization">7. Stern–Gerlach as the Experimental Visualization</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">8. Summary</a></li>
-</ul>
-  </nav></div>
-
-</div></div>
               
             
           </div>
