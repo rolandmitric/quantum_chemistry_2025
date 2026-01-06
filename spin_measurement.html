@@ -898,35 +898,41 @@ Auch die <span class="math notranslate nohighlight">\(S_y\)</span>-Eigenzuständ
 </section>
 <section id="stern-gerlach-experiment">
 <h2>Stern-Gerlach Experiment<a class="headerlink" href="#stern-gerlach-experiment" title="Link to this heading">#</a></h2>
-<p>Die hier diskutierten Spezialfälle besitzen eine direkte experimentelle Bedeutung im Zusammenhang mit dem Stern–Gerlach-Experiment. In einem inhomogenen Magnetfeld erfährt ein Teilchen mit magnetischem Moment <span class="math notranslate nohighlight">\(\vec\mu \propto \vec S\)</span> eine Kraft, die proportional zum Gradienten der Feldkomponente entlang der Messrichtung ist. Für ein Feldgradienten entlang der Richtung <span class="math notranslate nohighlight">\(\vec n\)</span> ist diese Kraft proportional zu <span class="math notranslate nohighlight">\(S_{\vec n}\)</span>.</p>
-<p>Wir betrachten einen Elektronenstrahl, der sich in <span class="math notranslate nohighlight">\(x\)</span>-Richtung ausbreitet und ein inhomogenes Magnetfeld durchläuft. Das Magnetfeld wählen wir so, dass die <span class="math notranslate nohighlight">\(z\)</span>-Komponente  sich linear mit der Koordinate <span class="math notranslate nohighlight">\(z\)</span> verändert und ignorieren die anderen Komponenten,</p>
+<p>Die oben diskutierten Spezialfälle besitzen eine unmittelbare experimentelle Bedeutung im Zusammenhang mit dem Stern–Gerlach-Experiment. In diesem Experiment wird ein Atomstrahl (z. B. Silberatome) durch ein inhomogenes Magnetfeld geführt. Die Ag-Atome tragen ein magnetisches Moment <span class="math notranslate nohighlight">\(\vec\mu\)</span>, das proportional zum Spin eines einzelnen Elektrons ist,</p>
+<div class="math notranslate nohighlight">
+\[
+\vec\mu \propto \vec S .
+\]</div>
+<p>Aufgrund der Inhomogenität des Magnetfeldes wirkt auf die Atome eine Kraft, die aus dem Gradienten der magnetischen Wechselwirkungsenergie resultiert. Entscheidend ist dabei die Feldkomponente entlang der gewählten Messrichtung. Ist der Magnetfeldgradient entlang einer Richtung <span class="math notranslate nohighlight">\(\vec n\)</span> orientiert, so ist die auf das Teilchen wirkende Kraft proportional zur entsprechenden Spinprojektion <span class="math notranslate nohighlight">\(S_{\vec n}\)</span>!</p>
+<p>Wir betrachten einen Teilchenstrahl, der sich in <span class="math notranslate nohighlight">\(x\)</span>-Richtung ausbreitet und ein inhomogenes Magnetfeld durchläuft. Das Magnetfeld sei so gewählt, dass ausschließlich seine <span class="math notranslate nohighlight">\(z\)</span>-Komponente räumlich variiert und zwar linear mit der Koordinate <span class="math notranslate nohighlight">\(z\)</span>, während die übrigen Feldkomponenten vernachlässigt werden,</p>
 <div class="math notranslate nohighlight">
 \[
 \vec B = B_z(z)\,\vec e_z,
 \qquad
 B_z(z) = B_0 + G z ,
 \]</div>
-<p>wobei <span class="math notranslate nohighlight">\(G = \partial B_z / \partial z\)</span> der konstante Feldgradient ist. Das magnetische Moment des Elektrons ist proportional zu seinem Spin,</p>
+<p>wobei <span class="math notranslate nohighlight">\(G = \partial B_z/\partial z\)</span> der konstante Feldgradient ist.</p>
+<p>Das magnetische Moment der Atome ist proportional zum Spin,</p>
 <div class="math notranslate nohighlight">
 \[
-\vec\mu = \gamma {\vec S},
+\vec\mu = \gamma\,\vec S ,
 \]</div>
-<p>Für die Wechselwirkungsenergie mit dem Magnetfeld ergibt sich daraus:</p>
+<p>wobei <span class="math notranslate nohighlight">\(\gamma\)</span> die gyromagnetische Konstante bezeichnet. Die Wechselwirkungsenergie zwischen dem magnetischen Moment und dem Magnetfeld ergibt sich zu</p>
 <div class="math notranslate nohighlight">
 \[
-V(z) = -\,\vec\mu\cdot\vec B = -\,\mu_z B_z(z).
+V(z) = -\,\vec\mu\cdot\vec B = -\,\mu_z\,B_z(z).
 \]</div>
-<p>Einsetzen von <span class="math notranslate nohighlight">\(B_z(z)\)</span> ergibt</p>
+<p>Durch Einsetzen der Feldverteilung folgt schließlich</p>
 <div class="math notranslate nohighlight">
 \[
-V(z) = -\,\mu_z (B_0 + G z).
+V(z) = -\,\mu_z\,(B_0 + G z).
 \]</div>
 <p>Die auf das Elektron wirkende Kraft bekommt man aus dem Gradienten der Energie als</p>
 <div class="math notranslate nohighlight">
 \[
 \vec F = -\nabla V.
 \]</div>
-<p>Da nur eine <span class="math notranslate nohighlight">\(z\)</span>-Abhängigkeit vorliegt, bleibt</p>
+<p>Da nur eine <span class="math notranslate nohighlight">\(z\)</span>-Abhängigkeit vorliegt, hat die Kraft nur eine Komponente in z-Richtung:</p>
 <div class="math notranslate nohighlight">
 \[
 F_z = -\frac{dV}{dz} = \mu_z\,G.
@@ -951,7 +957,7 @@ F_z = \mp\,\gamma \hbar G/2
 \[
 \Delta p_z = F_z\,T.
 \]</div>
-<p>Nach dem Austritt aus dem Feld bewegt sich das Elektron frei weiter, wobei der transversale Impuls zu einer räumlichen Ablenkung führt.
+<p>Nach dem Austritt aus dem Feld bewegs sich der Atomstrahl frei weiter, wobei der Impuls in z-Richtung zu einer räumlichen Ablenkung führt.
 Da <span class="math notranslate nohighlight">\(F_z\)</span> nur zwei mögliche Werte besitzt, entstehen <strong>zwei räumlich getrennte Teilstrahlen</strong>.</p>
 <p>Ein Stern–Gerlach-Experiment entlang der <span class="math notranslate nohighlight">\(z\)</span>-Achse führt daher zu einer räumlichen Aufspaltung des Strahls in genau zwei Teilstrahlen, die den Eigenwerten</p>
 <div class="math notranslate nohighlight">
