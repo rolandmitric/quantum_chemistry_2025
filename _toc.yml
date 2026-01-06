@@ -13,3 +13,4 @@ chapters:
   - file: spin.ipynb
   - file: bras_kets_etc.ipynb
   - file: spin_and_rotations.ipynb
+  - file: spin_measurement.ipynb
