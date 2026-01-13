@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Die physikalischen Prinzipien der Quantenmechanik legen die Eigenschaften dieser Abbildung weitgehend fest. Erstens muss sie bilinear sein. Linearität in jedem Argument ist zwingend, da Superpositionen von Zuständen eines Teilsystems bei festgehaltenem Zustand des anderen Teilsystems wiederum zulässige Zustände des Gesamtsystems ergeben müssen. Konkret fordert man [ \mu(\alpha|\phi\rangle_A+\beta|\phi’\rangle_A,|\chi\rangle_B) &#8212; Quantenchemie</title>
+    <title>Zusammengesetzte Quantensysteme: Tensorprodukt &#8212; Quantenchemie</title>
   
   
   
@@ -64,6 +64,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'tensor_product';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Spinzustände eines 2-Elektronensystems" href="spin_two_electrons.html" />
+    <link rel="prev" title="Spinmessung" href="spin_measurement.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -126,8 +128,6 @@
       
       
       
-        
-      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -177,7 +177,7 @@
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="variational_principle.html">Das Variationsprinzip</a></li>
 <li class="toctree-l1"><a class="reference internal" href="convergence_variational_principle.html">Über die Konvergenz des linearen Variationsprinzips: Verschachtelungs Satz</a></li>
@@ -195,6 +195,9 @@
 <li class="toctree-l1"><a class="reference internal" href="spin_and_rotations.html">Spin &amp; Rotationen</a></li>
 <li class="toctree-l1"><a class="reference internal" href="spin_measurement.html">Spinmessung</a></li>
 
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Zusammengesetzte Quantensysteme: Tensorprodukt</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="spin_two_electrons.html">Spinzustände eines 2-Elektronensystems</a></li>
 </ul>
 
     </div>
@@ -433,7 +436,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -444,13 +449,32 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Die physikalischen Prinzipien der Quantenmechanik legen die Eigenschaften dieser Abbildung weitgehend fest. Erstens muss sie bilinear sein. Linearität in jedem Argument ist zwingend, da Superpositionen von Zuständen eines Teilsystems bei festgehaltenem Zustand des anderen Teilsystems wiederum zulässige Zustände des Gesamtsystems ergeben müssen. Konkret fordert man
-[
-\mu(\alpha|\phi\rangle_A+\beta|\phi’\rangle_A,|\chi\rangle_B)</h1>
+    <h1>Zusammengesetzte Quantensysteme: Tensorprodukt</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Zusammengesetzte Quantensysteme: Tensorprodukt</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ein-irrweg-direkte-summe-von-vektorraumen">Ein Irrweg: Direkte Summe von Vektorräumen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#losung-tensorprodukt-der-vektorraume">Lösung: Tensorprodukt der Vektorräume</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tensorprodukt-verallgemeinerung">Tensorprodukt: Verallgemeinerung</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#ist-fur-jedes-teilsystem-eine-basis-e-k-i-rangle-von-v-k-gewahlt-so-bildet-die-menge-aller-tensorprodukte-e-1-i-1-rangle-otimes-e-2-i-2-rangle-otimes-cdots-otimes-e-n-i-n-rangle-eine-basis-des-gesamtraums-die-dimension-des-zusammengesetzten-zustandsraums-ist-damit-das-produkt-der-dimensionen-der-einzelsysteme-dim-left-v-1-otimes-cdots-otimes-v-n-right">Ist für jedes Teilsystem eine Basis <span class="math notranslate nohighlight">\(\{|e^{(k)}_i\rangle\}\)</span> von <span class="math notranslate nohighlight">\(V_k\)</span> gewählt, so bildet die Menge aller Tensorprodukte
+$<span class="math notranslate nohighlight">\(
+|e^{(1)}_{i_1}\rangle \otimes |e^{(2)}_{i_2}\rangle \otimes \cdots \otimes |e^{(N)}_{i_N}\rangle
+\)</span><span class="math notranslate nohighlight">\(
+eine Basis des Gesamtraums. Die Dimension des zusammengesetzten Zustandsraums ist damit das Produkt der Dimensionen der Einzelsysteme,
+\)</span>$
+\dim!\left(V_1 \otimes \cdots \otimes V_N\right)</a></li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -460,112 +484,214 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <p>Betrachten wir zwei unterscheidbare Spin-<span class="math notranslate nohighlight">\(\tfrac12\)</span>-Teilchen <span class="math notranslate nohighlight">\(A\)</span> und <span class="math notranslate nohighlight">\(B\)</span>.
-Jedes Teilchen wird für sich durch einen zweidimensionalen komplexen Hilbertraum beschrieben.
-Ein allgemeiner Zustand von <span class="math notranslate nohighlight">\(A\)</span> bzw. <span class="math notranslate nohighlight">\(B\)</span> lässt sich schreiben als</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="zusammengesetzte-quantensysteme-tensorprodukt">
+<h1>Zusammengesetzte Quantensysteme: Tensorprodukt<a class="headerlink" href="#zusammengesetzte-quantensysteme-tensorprodukt" title="Link to this heading">#</a></h1>
+<p>Wir betrachten zunächst zwei voneinander getrennte Quantensysteme, die wir System A und System B nennen. Zur Vereinfachung nehmen wir an, dass jedes dieser Systeme aus genau einem Spin-<span class="math notranslate nohighlight">\(\tfrac12\)</span> besteht. Sind die Systeme getrennt, so wird jedes durch seinen eigenen Zustandsraum beschrieben; wir bezeichnen diese Vektorräume mit <span class="math notranslate nohighlight">\(V_A\)</span> bzw. <span class="math notranslate nohighlight">\(V_B\)</span>. Für die folgenden Diskussionen ist es zweckmäßig, die Zustände explizit als Spaltenvektoren in der Standardbasis der Eigenzustände von <span class="math notranslate nohighlight">\(\hat S_z\)</span> darzustellen, wobei
+<span class="math notranslate nohighlight">\(|\alpha\rangle \equiv \begin{pmatrix}1\\0\end{pmatrix}\)</span> und
+<span class="math notranslate nohighlight">\(|\beta\rangle \equiv \begin{pmatrix}0\\1\end{pmatrix}\)</span>.
+Der Zustand von System A ist dann vollständig durch</p>
 <div class="math notranslate nohighlight">
-\[
-|\psi_A\rangle = c_{A1}\,|\uparrow\rangle_A + c_{A2}\,|\downarrow\rangle_A,
-\qquad
-|\psi_B\rangle = c_{B1}\,|\uparrow\rangle_B + c_{B2}\,|\downarrow\rangle_B.
-\]</div>
-<p>Die komplexen Koeffizienten bestimmen über die Bornsche Regel die Wahrscheinlichkeiten für Messergebnisse.</p>
-<p>Die zentrale Frage ist nun, wie der Zustandsraum des Gesamtsystems aus den beiden Einteilchenräumen zu konstruieren ist.
-Eine scheinbar naheliegende Möglichkeit besteht darin, die beiden Zustandsvektoren einfach zu einem größeren Vektor zusammenzufügen,</p>
+\[\begin{split}
+|\psi_A\rangle = c^A_{\alpha}\,|\alpha\rangle_A + c^A_{\beta}\,|\beta\rangle_A
+= \begin{pmatrix}
+c^A_{\alpha} \\
+c^A_{\beta}
+\end{pmatrix}
+\end{split}\]</div>
+<p>gegeben, und entsprechend ist der Zustand von System B charakterisiert durch</p>
 <div class="math notranslate nohighlight">
-\[
-(c_{A1},c_{A2}) \oplus (c_{B1},c_{B2})
-= (c_{A1},c_{A2},c_{B1},c_{B2}),
-\]</div>
-<p>was mathematisch dem direkten Summenraum der beiden Hilberträume entspricht.
-Physikalisch beschreibt diese Konstruktion jedoch kein zusammengesetztes System, sondern eine Alternative zwischen zwei Systemen.
-Die Komponenten des Vektors stehen für sich gegenseitig ausschließende Möglichkeiten („System <span class="math notranslate nohighlight">\(A\)</span> <em>oder</em> System <span class="math notranslate nohighlight">\(B\)</span>“), nicht für gleichzeitige Eigenschaften beider Teilchen.</p>
-<p>Der Widerspruch zeigt sich unmittelbar bei Messungen.
-Sind die beiden Teilchen unabhängig präpariert, so muss die Wahrscheinlichkeit für ein gemeinsames Messergebnis faktorisieren.
-Misst man etwa <span class="math notranslate nohighlight">\(|\uparrow\rangle_A\)</span> an Teilchen <span class="math notranslate nohighlight">\(A\)</span> und <span class="math notranslate nohighlight">\(|\downarrow\rangle_B\)</span> an Teilchen <span class="math notranslate nohighlight">\(B\)</span>, so fordert die Quantenmechanik</p>
+\[\begin{split}
+|\psi_B\rangle = c^B_{\alpha}\,|\alpha\rangle_B + c^B_{\beta}\,|\beta\rangle_B
+= \begin{pmatrix}
+c^B_{\alpha} \\
+c^B_{\beta}
+\end{pmatrix}.
+\end{split}\]</div>
+<p>Die Amplituden <span class="math notranslate nohighlight">\(c^A_{\alpha}, c^A_{\beta}\)</span> sowie <span class="math notranslate nohighlight">\(c^B_{\alpha}, c^B_{\beta}\)</span> kodieren die Wahrscheinlichkeiten für Messergebnisse an den jeweiligen Spins. Beispielsweise ist <span class="math notranslate nohighlight">\(|c^A_{\alpha}|^2\)</span> die Wahrscheinlichkeit dafür, bei einer Messung der <span class="math notranslate nohighlight">\(z\)</span>-Komponente von Spin A (z.,B. im Stern–Gerlach-Experiment) den Wert <span class="math notranslate nohighlight">\(+\hbar/2\)</span> zu erhalten.</p>
+<p>Was ändert sich, wenn wir diese beiden isolierten Spins als ein zusammengesetztes Quantensystem betrachten? Die Grundprinzipien der Quantenmechanik verlangen dann, dass Zustände des Gesamtsystems ebenfalls durch Vektoren in einem (größeren) Zustandsraum beschrieben werden. Wie konstruiert man diesen Raum? Er muss mit <span class="math notranslate nohighlight">\(V_A\)</span> und <span class="math notranslate nohighlight">\(V_B\)</span> so verknüpft sein, dass Messvorhersagen für die einzelnen Spins weiterhin aus den entsprechenden Amplituden folgen. Daher müssen wir festlegen, wie der Zustandsraum des Gesamtsystems <span class="math notranslate nohighlight">\(A{+}B\)</span> aus <span class="math notranslate nohighlight">\(V_A\)</span> und <span class="math notranslate nohighlight">\(V_B\)</span> so aufgebaut wird, dass die physikalischen Prinzipien der Quantenmechanik korrekt widerspiegelt werden.</p>
+<section id="ein-irrweg-direkte-summe-von-vektorraumen">
+<h2>Ein Irrweg: Direkte Summe von Vektorräumen<a class="headerlink" href="#ein-irrweg-direkte-summe-von-vektorraumen" title="Link to this heading">#</a></h2>
+<p>Ein möglicher Ansatz zur Konstruktion des Zustandsraums des zusammengesetzten Systems bestünde darin, die beiden Zustandsvektoren einfach zu einem größeren Vektor „aufeinanderzustapeln“, etwa in der Form</p>
 <div class="math notranslate nohighlight">
-\[
-P(\uparrow_A,\downarrow_B)=|c_{A1}|^2\,|c_{B2}|^2.
-\]</div>
-<p>Ein Zustandsraum, der durch direkte Summen entsteht, enthält jedoch keine Amplituden für solche gemeinsamen Ereignisse und kann daher die grundlegenden probabilistischen Anforderungen nicht erfüllen.</p>
-<p>Damit ist die zulässige Struktur praktisch festgelegt.
-Für jedes Paar von Messergebnissen <span class="math notranslate nohighlight">\((i,j)\)</span> muss es eine komplexe Amplitude geben, deren Betragsquadrat die gemeinsame Wahrscheinlichkeit liefert.
-Für zwei Spin-<span class="math notranslate nohighlight">\(\tfrac12\)</span>-Teilchen ergibt sich so ein Zustandsvektor der Form</p>
-<div class="math notranslate nohighlight">
-\[
-|\psi_{AB}\rangle \sim
-(c_{A1}c_{B1},\,c_{A1}c_{B2},\,c_{A2}c_{B1},\,c_{A2}c_{B2}),
-\]</div>
-<p>der genau die korrekte Faktorisierung unabhängiger Wahrscheinlichkeiten reproduziert.
-Diese Zuordnung ist zudem linear in jedem Argument und damit vollständig kompatibel mit dem Superpositionsprinzip.</p>
-<p>Abstrahiert man von der konkreten Spinbasis, so lassen sich die physikalischen Anforderungen präzise formulieren:
-Die Abbildung, die einem Paar von Einteilchenzuständen einen Zustand des Gesamtsystems zuordnet, muss in jedem Argument linear sein.
-Identifiziert man Zustände ausschließlich aufgrund dieser Bilinearität, so erhält man einen Vektorraum, der von formalen Produkten
-<span class="math notranslate nohighlight">\(|\phi\rangle_A\otimes|\chi\rangle_B\)</span> erzeugt wird und die Relationen</p>
-<div class="math notranslate nohighlight">
-\[
-(\alpha|\phi\rangle_A+\beta|\phi'\rangle_A)\otimes|\chi\rangle_B
+\[\begin{split}
+\begin{pmatrix}
+|\psi_A\rangle \\
+|\psi_B\rangle
+\end{pmatrix}
 =
-\alpha|\phi\rangle_A\otimes|\chi\rangle_B
-+
-\beta|\phi'\rangle_A\otimes|\chi\rangle_B
-\]</div>
-<p>sowie die entsprechenden Relationen im zweiten Faktor erfüllt.</p>
-<p>Der so konstruierte Raum ist exakt das Tensorprodukt</p>
+\begin{pmatrix}
+c^A_{\alpha} \\
+c^A_{\beta} \\
+c^B_{\alpha} \\
+c^B_{\beta}
+\end{pmatrix}.
+\end{split}\]</div>
+<p>Mathematisch entspricht dies der Bildung der <strong>direkten Summe</strong> der beiden Vektorräume, also <span class="math notranslate nohighlight">\(V_A \oplus V_B\)</span>. Obwohl dies formal möglich ist, führt es nicht zu einem physikalisch sinnvollen Zustandsraum für das Gesamtsystem. Dies lässt sich bereits am Superpositionsprinzip erkennen.</p>
+<p>Angenommen, Spin A befinde sich in einer echten quantenmechanischen Überlagerung zweier (beliebiger) Zustände,</p>
 <div class="math notranslate nohighlight">
 \[
-\mathcal H_A\otimes\mathcal H_B.
+|\psi_A\rangle = c\,|\psi\rangle_A + d\,|\phi\rangle_A,
 \]</div>
-<p>Das Tensorprodukt ist damit keine mathematische Zusatzannahme, sondern die einzig mögliche Zustandsraumstruktur, die mit der Linearität der Quantenmechanik und der Forderung konsistenter gemeinsamer Messwahrscheinlichkeiten vereinbar ist.
-Dass dieser Raum Zustände enthält, die sich nicht als Produkte von Einteilchenzuständen schreiben lassen, ist eine unmittelbare Konsequenz dieser physikalisch motivierten Konstruktion und führt zwangsläufig zum Begriff der Verschränkung.</p>
-<p>Gern. Im Folgenden ist eine <strong>streng mathematische Formalisierung</strong>, die <strong>explizit aus der physikalischen Motivation heraus</strong> entwickelt wird und <strong>nahtlos in die übliche Definition des Tensorprodukts mündet</strong>. Der Text ist bewusst so geschrieben, dass er direkt im Anschluss an deinen bisherigen Abschnitt stehen kann und den Übergang von Physik zu Mathematik sauber vollzieht.</p>
-<hr class="docutils" />
-<p>Wir fassen die bisherigen Überlegungen nun in präzise mathematische Anforderungen. Sei dazu (V_A) der komplexe Zustandsraum des Teilchens (A) und (V_B) der des Teilchens (B). Gesucht ist ein Vektorraum (V_{AB}), der den Zustandsraum des zusammengesetzten Systems beschreibt, zusammen mit einer Abbildung
-[
-\mu : V_A \times V_B \to V_{AB},
-\qquad
-(|\psi_A\rangle,|\psi_B\rangle) \mapsto |\psi_A,\psi_B\rangle,
-]
-die einem Paar von Einteilchenzuständen einen Zustand des Gesamtsystems zuordnet.</p>
-<section class="tex2jax_ignore mathjax_ignore" id="die-physikalischen-prinzipien-der-quantenmechanik-legen-die-eigenschaften-dieser-abbildung-weitgehend-fest-erstens-muss-sie-bilinear-sein-linearitat-in-jedem-argument-ist-zwingend-da-superpositionen-von-zustanden-eines-teilsystems-bei-festgehaltenem-zustand-des-anderen-teilsystems-wiederum-zulassige-zustande-des-gesamtsystems-ergeben-mussen-konkret-fordert-man-mu-alpha-phi-rangle-a-beta-phi-rangle-a-chi-rangle-b">
-<h1>Die physikalischen Prinzipien der Quantenmechanik legen die Eigenschaften dieser Abbildung weitgehend fest. Erstens muss sie <strong>bilinear</strong> sein. Linearität in jedem Argument ist zwingend, da Superpositionen von Zuständen eines Teilsystems bei festgehaltenem Zustand des anderen Teilsystems wiederum zulässige Zustände des Gesamtsystems ergeben müssen. Konkret fordert man
-[
-\mu(\alpha|\phi\rangle_A+\beta|\phi’\rangle_A,|\chi\rangle_B)<a class="headerlink" href="#die-physikalischen-prinzipien-der-quantenmechanik-legen-die-eigenschaften-dieser-abbildung-weitgehend-fest-erstens-muss-sie-bilinear-sein-linearitat-in-jedem-argument-ist-zwingend-da-superpositionen-von-zustanden-eines-teilsystems-bei-festgehaltenem-zustand-des-anderen-teilsystems-wiederum-zulassige-zustande-des-gesamtsystems-ergeben-mussen-konkret-fordert-man-mu-alpha-phi-rangle-a-beta-phi-rangle-a-chi-rangle-b" title="Link to this heading">#</a></h1>
-<p>\alpha,\mu(|\phi\rangle_A,|\chi\rangle_B)
+<p>während Spin B sich in einem festen Zustand <span class="math notranslate nohighlight">\(|\chi\rangle_B\)</span> befindet. In einem physikalisch korrekten Zustandsraum des Gesamtsystems müsste diese Überlagerung dazu führen, dass auch der Gesamtzustand eine Überlagerung zweier unterschiedlicher <strong>Gesamtzustände</strong> ist. In der hier verwendeten Spaltenvektor-Notation würde man daher erwarten, dass der Gesamtzustand als Linearkombination zweier <em>vollständiger</em> Zustandsvektoren des zusammengesetzten Systems geschrieben werden kann, etwa in der Form</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+c\,
+\begin{pmatrix}
+|\psi\rangle_A \\
+|\chi\rangle_B
+\end{pmatrix}
 +
-\beta,\mu(|\phi’\rangle_A,|\chi\rangle_B),
-]
-sowie die entsprechende Linearität im zweiten Argument. Diese Forderung ist nichts anderes als die mathematische Umsetzung der Tatsache, dass Messstatistiken und Dynamik linear von den Zustandsamplituden abhängen.</p>
-<p>Zweitens darf der Zustandsraum des Gesamtsystems <strong>keine zusätzlichen Identifikationen enthalten</strong>, die nicht aus dieser Bilinearität folgen. Physikalisch würde jede weitere Identifikation bedeuten, dass unterschiedliche Präparationen desselben Paars von Einteilchenzuständen nicht unterscheidbar wären, obwohl sie unterschiedliche Messstatistiken liefern könnten. Der Zustandsraum des Gesamtsystems muss also der <em>allgemeinste</em> Raum sein, der eine bilineare Abbildung aus (V_A\times V_B) erlaubt.</p>
-<p>Diese beiden Forderungen lassen sich nun zu einer universellen Charakterisierung zusammenfassen. Gesucht ist ein Paar ((V_{AB},\mu)) mit der Eigenschaft, dass für jeden komplexen Vektorraum (W) und jede bilineare Abbildung
-[
-b : V_A \times V_B \to W
-]
-eine eindeutig bestimmte lineare Abbildung
-[
-\tilde b : V_{AB} \to W
-]
-existiert, so dass
-[
-b = \tilde b \circ \mu
-]
-gilt. In Diagrammform:
-[
-\begin{array}{ccc}
-V_A \times V_B &amp; \xrightarrow{;\mu;} &amp; V_{AB} <br />
-&amp; \searrow b &amp; \downarrow \tilde b <br />
-&amp; &amp; W
-\end{array}
-]</p>
-<p>Diese universelle Eigenschaft besagt, dass jede bilineare Abbildung aus den Einteilchenräumen eindeutig über eine lineare Abbildung aus dem Zustandsraum des Gesamtsystems faktorisierbar ist. Genau dies kodiert die physikalische Idee, dass alle zulässigen Observablen, Übergangsamplituden und Erwartungswerte des Gesamtsystems bereits vollständig durch lineare Operatoren auf (V_{AB}) beschrieben werden können.</p>
-<p>Ein Paar ((V_{AB},\mu)), das diese Eigenschaft erfüllt, ist bis auf kanonische Isomorphie eindeutig bestimmt. Man bezeichnet (V_{AB}) als das <strong>Tensorprodukt</strong> der Vektorräume (V_A) und (V_B) und schreibt
-[
-V_{AB} \equiv V_A \otimes V_B,
-\qquad
-\mu(|\phi\rangle_A,|\chi\rangle_B)=|\phi\rangle_A\otimes|\chi\rangle_B.
-]</p>
-<p>Explizit lässt sich dieser Raum konstruieren, indem man den freien Vektorraum über der Menge aller formalen Paare ((|\phi\rangle_A,|\chi\rangle_B)) bildet und anschließend genau jene Relationen faktorisiert, die die Bilinearität erzwingen. Die Äquivalenzklassen dieser formalen Produkte sind die Tensoren ( |\phi\rangle_A\otimes|\chi\rangle_B ), und endliche Linearkombinationen solcher Produkte spannen den gesamten Raum (V_A\otimes V_B) auf.</p>
-<p>Damit ist das Tensorprodukt nicht als abstrakte algebraische Konstruktion eingeführt, sondern als die mathematisch präzise Realisierung der physikalischen Forderung, unabhängige Quantensysteme so zu kombinieren, dass Superposition, Wahrscheinlichkeitsfaktorisierung und lineare Observablenstruktur erhalten bleiben. Die Existenz von Zuständen, die sich nicht als einfache Produkte schreiben lassen, ist keine zusätzliche Annahme, sondern eine unmittelbare Konsequenz dieser universellen Definition.</p>
+d\,
+\begin{pmatrix}
+|\phi\rangle_A \\
+|\chi\rangle_B
+\end{pmatrix}.
+\end{split}\]</div>
+<p>Gerade diese Struktur kann jedoch innerhalb der direkten Summe nicht konsistent realisiert werden: Das bloße „Stapeln“ der Zustände erzwingt stattdessen die Form</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{pmatrix}
+c\,|\psi\rangle_A + d\,|\phi\rangle_A \\
+|\chi\rangle_B
+\end{pmatrix},
+\end{split}\]</div>
+<p>die sich nicht als Überlagerung zweier unterschiedlicher Zustände des Gesamtsystems interpretieren lässt. Die Superposition bleibt auf System A beschränkt und hebt sich nicht zu einer Superposition von Gesamtzuständen an.</p>
+</section>
+<section id="losung-tensorprodukt-der-vektorraume">
+<h2>Lösung: Tensorprodukt der Vektorräume<a class="headerlink" href="#losung-tensorprodukt-der-vektorraume" title="Link to this heading">#</a></h2>
+<p>Ein Ausweg ergibt sich aus einer einfachen, aber grundlegenden physikalischen Überlegung. Wir fragen nach der Wahrscheinlichkeit, bei einer gleichzeitigen Messung der <span class="math notranslate nohighlight">\(z\)</span>-Komponente <strong>beider</strong> Spins jeweils den positiven Eigenwert zu erhalten. Da die beiden Spins als unabhängig angenommen werden, muss diese gemeinsame Wahrscheinlichkeit gleich dem Produkt der Einzelwahrscheinlichkeiten sein und ist somit gegeben durch</p>
+<div class="math notranslate nohighlight">
+\[
+|c^A_{\alpha}\,c^B_{\alpha}|^2.
+\]</div>
+<p>Völlig analog lassen sich die Wahrscheinlichkeiten für alle übrigen möglichen Kombinationen der Messergebnisse bestimmen, etwa „Spin A positiv, Spin B negativ“ oder „beide negativ“. Diese Ereignisse schließen sich gegenseitig aus und schöpfen alle möglichen Messergebnisse einer gemeinsamen Spinmessung aus.</p>
+<p>Diese einfache Forderung hat eine unmittelbare Konsequenz für die mathematische Struktur des Zustandsraums: Der Zustand des zusammengesetzten Systems muss so beschaffen sein, dass seine Komponenten genau diese gemeinsamen Wahrscheinlichkeiten reproduzieren. Dies motiviert, den Zustand des Gesamtsystems durch einen Vektor zu beschreiben, dessen Komponenten aus den <strong>Produkten</strong> der Amplituden der Einzelsysteme bestehen, nämlich</p>
+<div class="math notranslate nohighlight">
+\[
+c^A_{\alpha}c^B_{\alpha},\quad
+c^A_{\alpha}c^B_{\beta},\quad
+c^A_{\beta}c^B_{\alpha},\quad
+c^A_{\beta}c^B_{\beta}.
+\]</div>
+<p>Der Gesamtzustand des Systems A+B ist daher natürlich mit dem folgenden Spaltenvektor zu assoziieren:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+|\Psi_{AB}\rangle
+=
+\begin{pmatrix}
+c^A_{\alpha}c^B_{\alpha} \\
+c^A_{\alpha}c^B_{\beta} \\
+c^A_{\beta}c^B_{\alpha} \\
+c^A_{\beta}c^B_{\beta}
+\end{pmatrix}.
+\end{split}\]</div>
+<p>In dieser Darstellung ist unmittelbar, dass die Betragsquadrate der einzelnen Komponenten genau die Wahrscheinlichkeiten für die jeweils zugehörigen kombinierten Messergebnisse liefern. Gleichzeitig ist der Gesamtzustand normiert, sofern die Einzelzustände normiert sind. Damit erfüllt diese Konstruktion sowohl die probabilistische Interpretation der Quantenmechanik als auch das Superpositionsprinzip und liefert einen konsistenten Zustandsraum für das zusammengesetzte Quantensystem.</p>
+</section>
+<section id="tensorprodukt-verallgemeinerung">
+<h2>Tensorprodukt: Verallgemeinerung<a class="headerlink" href="#tensorprodukt-verallgemeinerung" title="Link to this heading">#</a></h2>
+<p>Diese Konstruktion erlaubt nun eine präzise formale Fassung der bisher rein physikalisch motivierten Überlegungen. Sie führt zur Definition des sogenannten <strong>Tensorprodukts</strong> zweier Vektorräume. Darunter versteht man einen neuen Vektorraum <span class="math notranslate nohighlight">\(V_A \otimes V_B\)</span> zusammen mit einer <strong>bilinearen Abbildung</strong></p>
+<div class="math notranslate nohighlight">
+\[
+\otimes \;:\; V_A \times V_B \;\longrightarrow\; V_A \otimes V_B,
+\]</div>
+<p>die jedem geordneten Paar von Vektoren <span class="math notranslate nohighlight">\(|\psi\rangle_A \in V_A\)</span> und <span class="math notranslate nohighlight">\(|\chi\rangle_B \in V_B\)</span> einen Vektor <span class="math notranslate nohighlight">\(|\psi\rangle_A \otimes |\chi\rangle_B \in V_A \otimes V_B\)</span> zuordnet. Bilinearität bedeutet dabei, dass die Abbildung in jedem Argument linear ist, also gilt</p>
+<div class="math notranslate nohighlight">
+\[
+(c\,|\psi\rangle_A + d\,|\phi\rangle_A)\otimes|\chi\rangle_B
+=
+c\,|\psi\rangle_A \otimes |\chi\rangle_B
++
+d\,|\phi\rangle_A \otimes |\chi\rangle_B,
+\]</div>
+<p>sowie</p>
+<div class="math notranslate nohighlight">
+\[
+|\psi\rangle_A \otimes (c\,|\chi\rangle_B + d\,|\eta\rangle_B)
+=
+c\,|\psi\rangle_A \otimes |\chi\rangle_B
++
+d\,|\psi\rangle_A \otimes |\eta\rangle_B.
+\]</div>
+<p>Genau diese Eigenschaft stellt sicher, dass Superpositionen der Einzelsysteme sich als Superpositionen von Zuständen des Gesamtsystems widerspiegeln.</p>
+<p>Im vorliegenden Beispiel zweier Spin-<span class="math notranslate nohighlight">\(\tfrac12\)</span>-Systeme ist der Tensorproduktraum vierdimensional. Eine natürliche Basis von <span class="math notranslate nohighlight">\(V_A \otimes V_B\)</span> wird durch die Tensorprodukte der Basiszustände der Einzelsysteme gegeben, also durch</p>
+<div class="math notranslate nohighlight">
+\[
+|\alpha\rangle_A \otimes |\alpha\rangle_B,\quad
+|\alpha\rangle_A \otimes |\beta\rangle_B,\quad
+|\beta\rangle_A \otimes |\alpha\rangle_B,\quad
+|\beta\rangle_A \otimes |\beta\rangle_B.
+\]</div>
+<p>In dieser Basis entspricht der zuvor hergeleitete Spaltenvektor mit Komponenten
+<span class="math notranslate nohighlight">\(c^A_{\alpha}c^B_{\alpha}\)</span>,
+<span class="math notranslate nohighlight">\(c^A_{\alpha}c^B_{\beta}\)</span>,
+<span class="math notranslate nohighlight">\(c^A_{\beta}c^B_{\alpha}\)</span> und
+<span class="math notranslate nohighlight">\(c^A_{\beta}c^B_{\beta}\)</span>
+genau dem Tensorproduktzustand
+<span class="math notranslate nohighlight">\(|\psi_A\rangle \otimes |\psi_B\rangle\)</span>.
+Damit wird deutlich, dass das Tensorprodukt nicht nur eine mathematische Konstruktion ist, sondern die einzig mögliche lineare Struktur darstellt, die die probabilistische Interpretation und das Superpositionsprinzip der Quantenmechanik für zusammengesetzte Systeme konsistent realisiert.</p>
+<p>Diese Definition lässt sich ohne Weiteres auf eine beliebige Anzahl beliebiger Quantensysteme verallgemeinern. Seien dazu <span class="math notranslate nohighlight">\(V_1, V_2, \dots, V_N\)</span> die Zustandsräume von <span class="math notranslate nohighlight">\(N\)</span> einzelnen Quantensystemen. Dann ist der Zustandsraum des Gesamtsystems durch den Tensorproduktraum</p>
+<div class="math notranslate nohighlight">
+\[
+V_1 \otimes V_2 \otimes \cdots \otimes V_N
+\]</div>
+<p>gegeben, zusammen mit einer multilinearen Abbildung</p>
+<div class="math notranslate nohighlight">
+\[
+\otimes \;:\; V_1 \times V_2 \times \cdots \times V_N
+\;\longrightarrow\;
+V_1 \otimes V_2 \otimes \cdots \otimes V_N,
+\]</div>
+<p>die jedem Tupel von Zustandsvektoren</p>
+<p><span class="math notranslate nohighlight">\(\bigl(|\psi_1\rangle,|\psi_2\rangle,\dots,|\psi_N\rangle\bigr)\)</span></p>
+<p>einen zusammengesetzten Zustand</p>
+<p><span class="math notranslate nohighlight">\(|\psi_1\rangle \otimes |\psi_2\rangle \otimes \cdots \otimes |\psi_N\rangle\)</span></p>
+<p>zuordnet. Multilinearität bedeutet dabei, dass die Abbildung in <em>jedem</em> Argument linear ist, sodass Superpositionen in einzelnen Teilsystemen stets zu Superpositionen von Zuständen des Gesamtsystems führen.</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="ist-fur-jedes-teilsystem-eine-basis-e-k-i-rangle-von-v-k-gewahlt-so-bildet-die-menge-aller-tensorprodukte-e-1-i-1-rangle-otimes-e-2-i-2-rangle-otimes-cdots-otimes-e-n-i-n-rangle-eine-basis-des-gesamtraums-die-dimension-des-zusammengesetzten-zustandsraums-ist-damit-das-produkt-der-dimensionen-der-einzelsysteme-dim-left-v-1-otimes-cdots-otimes-v-n-right">
+<h1>Ist für jedes Teilsystem eine Basis <span class="math notranslate nohighlight">\(\{|e^{(k)}_i\rangle\}\)</span> von <span class="math notranslate nohighlight">\(V_k\)</span> gewählt, so bildet die Menge aller Tensorprodukte
+$<span class="math notranslate nohighlight">\(
+|e^{(1)}_{i_1}\rangle \otimes |e^{(2)}_{i_2}\rangle \otimes \cdots \otimes |e^{(N)}_{i_N}\rangle
+\)</span><span class="math notranslate nohighlight">\(
+eine Basis des Gesamtraums. Die Dimension des zusammengesetzten Zustandsraums ist damit das Produkt der Dimensionen der Einzelsysteme,
+\)</span>$
+\dim!\left(V_1 \otimes \cdots \otimes V_N\right)<a class="headerlink" href="#ist-fur-jedes-teilsystem-eine-basis-e-k-i-rangle-von-v-k-gewahlt-so-bildet-die-menge-aller-tensorprodukte-e-1-i-1-rangle-otimes-e-2-i-2-rangle-otimes-cdots-otimes-e-n-i-n-rangle-eine-basis-des-gesamtraums-die-dimension-des-zusammengesetzten-zustandsraums-ist-damit-das-produkt-der-dimensionen-der-einzelsysteme-dim-left-v-1-otimes-cdots-otimes-v-n-right" title="Link to this heading">#</a></h1>
+<p>\prod_{k=1}^N \dim(V_k).
+$$</p>
+<p>Die Konstruktion des Tensorproduktraums erlaubt  auch eine systematische Definition von Operatoren für zusammengesetzte Quantensysteme. Sei dazu <span class="math notranslate nohighlight">\(\hat A\)</span> ein linearer Operator auf <span class="math notranslate nohighlight">\(V_A\)</span> und <span class="math notranslate nohighlight">\(\hat B\)</span> ein linearer Operator auf <span class="math notranslate nohighlight">\(V_B\)</span>. Dann definiert man einen zugehörigen Operator auf dem Tensorproduktraum <span class="math notranslate nohighlight">\(V_A \otimes V_B\)</span> zunächst auf Produktzuständen durch</p>
+<div class="math notranslate nohighlight">
+\[
+(\hat A \otimes \hat B)\,\bigl(|\psi\rangle_A \otimes |\chi\rangle_B\bigr)
+=
+(\hat A|\psi\rangle_A)\otimes(\hat B|\chi\rangle_B),
+\]</div>
+<p>und erweitert diese Vorschrift anschließend durch Linearität auf den gesamten Tensorproduktraum. Diese Definition ist wohldefiniert, da jedes Element von <span class="math notranslate nohighlight">\(V_A \otimes V_B\)</span> als Linearkombination von Produktzuständen geschrieben werden kann.</p>
+<p>Von besonderer Bedeutung sind Operatoren, die nur auf eines der Teilsysteme wirken. Ein Operator <span class="math notranslate nohighlight">\(\hat A\)</span> auf <span class="math notranslate nohighlight">\(V_A\)</span> wird in natürlicher Weise zu einem Operator auf dem Gesamtraum fortgesetzt, indem man</p>
+<div class="math notranslate nohighlight">
+\[
+\hat A \;\longrightarrow\; \hat A \otimes \mathbb{I}_B
+\]</div>
+<p>definiert, wobei <span class="math notranslate nohighlight">\(\mathbb{I}_B\)</span> der Identitätsoperator auf <span class="math notranslate nohighlight">\(V_B\)</span> ist. Entsprechend wirkt ein Operator, der ausschließlich System B betrifft, als</p>
+<div class="math notranslate nohighlight">
+\[
+\mathbb{I}_A \otimes \hat B.
+\]</div>
+<p>Diese Konstruktion stellt sicher, dass Messungen an einem Teilsystem unabhängig vom Zustand des jeweils anderen Teilsystems beschrieben werden können. Insbesondere gilt für Erwartungswerte in Produktzuständen</p>
+<div class="math notranslate nohighlight">
+\[
+\langle \psi_A \otimes \psi_B | \hat A \otimes \mathbb{I}_B | \psi_A \otimes \psi_B \rangle
+=
+\langle \psi_A | \hat A | \psi_A \rangle,
+\]</div>
+<p>und analog für Operatoren auf System B.</p>
+<p>Für <span class="math notranslate nohighlight">\(N\)</span> Teilsysteme mit Zustandsräumen <span class="math notranslate nohighlight">\(V_1,\dots,V_N\)</span> verallgemeinert sich diese Konstruktion unmittelbar. Ein Operator <span class="math notranslate nohighlight">\(\hat A^{(k)}\)</span>, der nur auf dem <span class="math notranslate nohighlight">\(k\)</span>-ten Teilsystem wirkt, wird als</p>
+<div class="math notranslate nohighlight">
+\[
+\mathbb{I}_1 \otimes \cdots \otimes \mathbb{I}_{k-1}
+\otimes \hat A^{(k)}
+\otimes \mathbb{I}_{k+1} \otimes \cdots \otimes \mathbb{I}_N
+\]</div>
+<p>auf dem Gesamtraum dargestellt. Produkte solcher Operatoren beschreiben Messungen oder Dynamiken, die mehrere Teilsysteme gleichzeitig betreffen. Damit ist auch die Operatorstruktur der Quantenmechanik konsistent auf zusammengesetzte Systeme übertragen.</p>
 </section>
 
     <script type="text/x-thebe-config">
@@ -598,12 +724,58 @@ V_{AB} \equiv V_A \otimes V_B,
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="spin_measurement.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Spinmessung</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="spin_two_electrons.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Spinzustände eines 2-Elektronensystems</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Zusammengesetzte Quantensysteme: Tensorprodukt</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ein-irrweg-direkte-summe-von-vektorraumen">Ein Irrweg: Direkte Summe von Vektorräumen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#losung-tensorprodukt-der-vektorraume">Lösung: Tensorprodukt der Vektorräume</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tensorprodukt-verallgemeinerung">Tensorprodukt: Verallgemeinerung</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#ist-fur-jedes-teilsystem-eine-basis-e-k-i-rangle-von-v-k-gewahlt-so-bildet-die-menge-aller-tensorprodukte-e-1-i-1-rangle-otimes-e-2-i-2-rangle-otimes-cdots-otimes-e-n-i-n-rangle-eine-basis-des-gesamtraums-die-dimension-des-zusammengesetzten-zustandsraums-ist-damit-das-produkt-der-dimensionen-der-einzelsysteme-dim-left-v-1-otimes-cdots-otimes-v-n-right">Ist für jedes Teilsystem eine Basis <span class="math notranslate nohighlight">\(\{|e^{(k)}_i\rangle\}\)</span> von <span class="math notranslate nohighlight">\(V_k\)</span> gewählt, so bildet die Menge aller Tensorprodukte
+$<span class="math notranslate nohighlight">\(
+|e^{(1)}_{i_1}\rangle \otimes |e^{(2)}_{i_2}\rangle \otimes \cdots \otimes |e^{(N)}_{i_N}\rangle
+\)</span><span class="math notranslate nohighlight">\(
+eine Basis des Gesamtraums. Die Dimension des zusammengesetzten Zustandsraums ist damit das Produkt der Dimensionen der Einzelsysteme,
+\)</span>$
+\dim!\left(V_1 \otimes \cdots \otimes V_N\right)</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
               
             
           </div>
