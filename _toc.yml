@@ -14,3 +14,5 @@ chapters:
   - file: bras_kets_etc.ipynb
   - file: spin_and_rotations.ipynb
   - file: spin_measurement.ipynb
+  - file: tensor_product.ipynb
+  - file: spin_two_electrons.ipynb
