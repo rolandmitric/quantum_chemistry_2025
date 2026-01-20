@@ -16,3 +16,4 @@ chapters:
   - file: spin_measurement.ipynb
   - file: tensor_product.ipynb
   - file: spin_two_electrons.ipynb
+  - file: pauli_principle.ipynb
