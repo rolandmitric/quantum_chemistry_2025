@@ -196,7 +196,6 @@
 <li class="toctree-l1"><a class="reference internal" href="spin_measurement.html">Spinmessung</a></li>
 
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Zusammengesetzte Quantensysteme: Tensorprodukt</a></li>
-
 <li class="toctree-l1"><a class="reference internal" href="spin_two_electrons.html">Spinzustände eines 2-Elektronensystems</a></li>
 </ul>
 
@@ -459,21 +458,10 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Zusammengesetzte Quantensysteme: Tensorprodukt</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ein-irrweg-direkte-summe-von-vektorraumen">Ein Irrweg: Direkte Summe von Vektorräumen</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#losung-tensorprodukt-der-vektorraume">Lösung: Tensorprodukt der Vektorräume</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tensorprodukt-verallgemeinerung">Tensorprodukt: Verallgemeinerung</a></li>
 </ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#ist-fur-jedes-teilsystem-eine-basis-e-k-i-rangle-von-v-k-gewahlt-so-bildet-die-menge-aller-tensorprodukte-e-1-i-1-rangle-otimes-e-2-i-2-rangle-otimes-cdots-otimes-e-n-i-n-rangle-eine-basis-des-gesamtraums-die-dimension-des-zusammengesetzten-zustandsraums-ist-damit-das-produkt-der-dimensionen-der-einzelsysteme-dim-left-v-1-otimes-cdots-otimes-v-n-right">Ist für jedes Teilsystem eine Basis <span class="math notranslate nohighlight">\(\{|e^{(k)}_i\rangle\}\)</span> von <span class="math notranslate nohighlight">\(V_k\)</span> gewählt, so bildet die Menge aller Tensorprodukte
-$<span class="math notranslate nohighlight">\(
-|e^{(1)}_{i_1}\rangle \otimes |e^{(2)}_{i_2}\rangle \otimes \cdots \otimes |e^{(N)}_{i_N}\rangle
-\)</span><span class="math notranslate nohighlight">\(
-eine Basis des Gesamtraums. Die Dimension des zusammengesetzten Zustandsraums ist damit das Produkt der Dimensionen der Einzelsysteme,
-\)</span>$
-\dim!\left(V_1 \otimes \cdots \otimes V_N\right)</a></li>
-</ul>
-
             </nav>
         </div>
     </div>
@@ -646,18 +634,18 @@ V_1 \otimes V_2 \otimes \cdots \otimes V_N,
 <p>einen zusammengesetzten Zustand</p>
 <p><span class="math notranslate nohighlight">\(|\psi_1\rangle \otimes |\psi_2\rangle \otimes \cdots \otimes |\psi_N\rangle\)</span></p>
 <p>zuordnet. Multilinearität bedeutet dabei, dass die Abbildung in <em>jedem</em> Argument linear ist, sodass Superpositionen in einzelnen Teilsystemen stets zu Superpositionen von Zuständen des Gesamtsystems führen.</p>
-</section>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="ist-fur-jedes-teilsystem-eine-basis-e-k-i-rangle-von-v-k-gewahlt-so-bildet-die-menge-aller-tensorprodukte-e-1-i-1-rangle-otimes-e-2-i-2-rangle-otimes-cdots-otimes-e-n-i-n-rangle-eine-basis-des-gesamtraums-die-dimension-des-zusammengesetzten-zustandsraums-ist-damit-das-produkt-der-dimensionen-der-einzelsysteme-dim-left-v-1-otimes-cdots-otimes-v-n-right">
-<h1>Ist für jedes Teilsystem eine Basis <span class="math notranslate nohighlight">\(\{|e^{(k)}_i\rangle\}\)</span> von <span class="math notranslate nohighlight">\(V_k\)</span> gewählt, so bildet die Menge aller Tensorprodukte
-$<span class="math notranslate nohighlight">\(
+<p>Ist für jedes Teilsystem eine Basis <span class="math notranslate nohighlight">\(\{|e^{(k)}_i\rangle\}\)</span> von <span class="math notranslate nohighlight">\(V_k\)</span> gewählt, so bildet die Menge aller Tensorprodukte</p>
+<div class="math notranslate nohighlight">
+\[
 |e^{(1)}_{i_1}\rangle \otimes |e^{(2)}_{i_2}\rangle \otimes \cdots \otimes |e^{(N)}_{i_N}\rangle
-\)</span><span class="math notranslate nohighlight">\(
-eine Basis des Gesamtraums. Die Dimension des zusammengesetzten Zustandsraums ist damit das Produkt der Dimensionen der Einzelsysteme,
-\)</span>$
-\dim!\left(V_1 \otimes \cdots \otimes V_N\right)<a class="headerlink" href="#ist-fur-jedes-teilsystem-eine-basis-e-k-i-rangle-von-v-k-gewahlt-so-bildet-die-menge-aller-tensorprodukte-e-1-i-1-rangle-otimes-e-2-i-2-rangle-otimes-cdots-otimes-e-n-i-n-rangle-eine-basis-des-gesamtraums-die-dimension-des-zusammengesetzten-zustandsraums-ist-damit-das-produkt-der-dimensionen-der-einzelsysteme-dim-left-v-1-otimes-cdots-otimes-v-n-right" title="Link to this heading">#</a></h1>
-<p>\prod_{k=1}^N \dim(V_k).
-$$</p>
+\]</div>
+<p>eine Basis des Gesamtraums. Die Dimension des zusammengesetzten Zustandsraums ist damit das Produkt der Dimensionen der Einzelsysteme,</p>
+<div class="math notranslate nohighlight">
+\[
+\dim\!\left(V_1 \otimes \cdots \otimes V_N\right)
+=
+\prod_{k=1}^N \dim(V_k).
+\]</div>
 <p>Die Konstruktion des Tensorproduktraums erlaubt  auch eine systematische Definition von Operatoren für zusammengesetzte Quantensysteme. Sei dazu <span class="math notranslate nohighlight">\(\hat A\)</span> ein linearer Operator auf <span class="math notranslate nohighlight">\(V_A\)</span> und <span class="math notranslate nohighlight">\(\hat B\)</span> ein linearer Operator auf <span class="math notranslate nohighlight">\(V_B\)</span>. Dann definiert man einen zugehörigen Operator auf dem Tensorproduktraum <span class="math notranslate nohighlight">\(V_A \otimes V_B\)</span> zunächst auf Produktzuständen durch</p>
 <div class="math notranslate nohighlight">
 \[
@@ -692,6 +680,7 @@ $$</p>
 \otimes \mathbb{I}_{k+1} \otimes \cdots \otimes \mathbb{I}_N
 \]</div>
 <p>auf dem Gesamtraum dargestellt. Produkte solcher Operatoren beschreiben Messungen oder Dynamiken, die mehrere Teilsysteme gleichzeitig betreffen. Damit ist auch die Operatorstruktur der Quantenmechanik konsistent auf zusammengesetzte Systeme übertragen.</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -758,21 +747,10 @@ $$</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Zusammengesetzte Quantensysteme: Tensorprodukt</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ein-irrweg-direkte-summe-von-vektorraumen">Ein Irrweg: Direkte Summe von Vektorräumen</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#losung-tensorprodukt-der-vektorraume">Lösung: Tensorprodukt der Vektorräume</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tensorprodukt-verallgemeinerung">Tensorprodukt: Verallgemeinerung</a></li>
 </ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#ist-fur-jedes-teilsystem-eine-basis-e-k-i-rangle-von-v-k-gewahlt-so-bildet-die-menge-aller-tensorprodukte-e-1-i-1-rangle-otimes-e-2-i-2-rangle-otimes-cdots-otimes-e-n-i-n-rangle-eine-basis-des-gesamtraums-die-dimension-des-zusammengesetzten-zustandsraums-ist-damit-das-produkt-der-dimensionen-der-einzelsysteme-dim-left-v-1-otimes-cdots-otimes-v-n-right">Ist für jedes Teilsystem eine Basis <span class="math notranslate nohighlight">\(\{|e^{(k)}_i\rangle\}\)</span> von <span class="math notranslate nohighlight">\(V_k\)</span> gewählt, so bildet die Menge aller Tensorprodukte
-$<span class="math notranslate nohighlight">\(
-|e^{(1)}_{i_1}\rangle \otimes |e^{(2)}_{i_2}\rangle \otimes \cdots \otimes |e^{(N)}_{i_N}\rangle
-\)</span><span class="math notranslate nohighlight">\(
-eine Basis des Gesamtraums. Die Dimension des zusammengesetzten Zustandsraums ist damit das Produkt der Dimensionen der Einzelsysteme,
-\)</span>$
-\dim!\left(V_1 \otimes \cdots \otimes V_N\right)</a></li>
-</ul>
-
   </nav></div>
 
 </div></div>
