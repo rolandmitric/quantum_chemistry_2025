@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Quantenchemie — WS 2025 &#8212; Quantenchemie</title>
+    <title>Das Pauli-Prinzip &#8212; Quantenchemie</title>
   
   
   
@@ -61,10 +61,10 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'index';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'pauli_principle';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Introduction" href="introduction.html" />
+    <link rel="prev" title="Spinzustände eines 2-Elektronensystems" href="spin_two_electrons.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -127,8 +127,6 @@
       
       
       
-        
-      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -147,7 +145,7 @@
     
   
 
-<a class="navbar-brand logo" href="#">
+<a class="navbar-brand logo" href="index.html">
   
   
   
@@ -172,13 +170,13 @@
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
-            <li class="toctree-l1 current active">
-                <a class="reference internal" href="#">
+            <li class="toctree-l1">
+                <a class="reference internal" href="index.html">
                     Quantenchemie — WS 2025
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="variational_principle.html">Das Variationsprinzip</a></li>
 <li class="toctree-l1"><a class="reference internal" href="convergence_variational_principle.html">Über die Konvergenz des linearen Variationsprinzips: Verschachtelungs Satz</a></li>
@@ -198,7 +196,7 @@
 
 <li class="toctree-l1"><a class="reference internal" href="tensor_product.html">Zusammengesetzte Quantensysteme: Tensorprodukt</a></li>
 <li class="toctree-l1"><a class="reference internal" href="spin_two_electrons.html">Spinzustände eines 2-Elektronensystems</a></li>
-<li class="toctree-l1"><a class="reference internal" href="pauli_principle.html">Das Pauli-Prinzip</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Das Pauli-Prinzip</a></li>
 </ul>
 
     </div>
@@ -245,6 +243,55 @@
 
 
 
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/rolandmitric/quantum_chemistry_2025/main?urlpath=lab/tree/./pauli_principle.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Binder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Binder logo" src="_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
 <div class="dropdown dropdown-source-buttons">
   <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
     <i class="fab fa-github"></i>
@@ -270,7 +317,7 @@
       
       
       
-      <li><a href="https://github.com/rolandmitric/quantum_chemistry_2025/edit/main/./index.md" target="_blank"
+      <li><a href="https://github.com/rolandmitric/quantum_chemistry_2025/edit/main/./pauli_principle.ipynb" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -287,7 +334,7 @@
       
       
       
-      <li><a href="https://github.com/rolandmitric/quantum_chemistry_2025/issues/new?title=Issue%20on%20page%20%2Findex.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/rolandmitric/quantum_chemistry_2025/issues/new?title=Issue%20on%20page%20%2Fpauli_principle.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -317,7 +364,7 @@
       
       
       
-      <li><a href="_sources/index.md" target="_blank"
+      <li><a href="_sources/pauli_principle.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -327,7 +374,7 @@
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.md</span>
+<span class="btn__text-container">.ipynb</span>
 </a>
 </li>
       
@@ -401,7 +448,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Quantenchemie — WS 2025</h1>
+    <h1>Das Pauli-Prinzip</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -411,7 +458,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prof-dr-roland-mitric">Prof. Dr. Roland Mitric</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#raum-und-spin-zustande">Raum- und Spin-Zustände</a></li>
 </ul>
             </nav>
         </div>
@@ -423,17 +470,185 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="quantenchemie-ws-2025">
-<h1>Quantenchemie — WS 2025<a class="headerlink" href="#quantenchemie-ws-2025" title="Link to this heading">#</a></h1>
-<section id="prof-dr-roland-mitric">
-<h2>Prof. Dr. Roland Mitric<a class="headerlink" href="#prof-dr-roland-mitric" title="Link to this heading">#</a></h2>
-<p><strong>Lehrstuhl für Theoretische Chemie</strong></p>
-<p><strong>Universität Würzburg</strong></p>
-<p>📧 <a class="reference external" href="mailto:roland&#46;mitric&#37;&#52;&#48;uni-wuerzburg&#46;de">roland<span>&#46;</span>mitric<span>&#64;</span>uni-wuerzburg<span>&#46;</span>de</a></p>
-</section>
-<hr class="docutils" />
-<div class="toctree-wrapper compound">
+  <section class="tex2jax_ignore mathjax_ignore" id="das-pauli-prinzip">
+<h1>Das Pauli-Prinzip<a class="headerlink" href="#das-pauli-prinzip" title="Link to this heading">#</a></h1>
+<section id="raum-und-spin-zustande">
+<h2>Raum- und Spin-Zustände<a class="headerlink" href="#raum-und-spin-zustande" title="Link to this heading">#</a></h2>
+<p>Wir haben nun gelernt, wie man Spinzustände für ein Zweielektronensystem bildet. Diese müssen wir nun durch räumliche Zustände (Wellenfunktionen) erweitern, damit wir molekulare Systeme beschreiben können. Dazu führen wir den Begriff eines Spin-Orbitals ein.</p>
+<p>Betrachten wir zunächst ein einzelnes Elektron, das sich in irgendeinem gegebenen Potential bewegt. Dies könnte z.B. ein Elektron im H-Atom oder im H<span class="math notranslate nohighlight">\(_2\)</span>-Molekül sein. Die räumlichen Zustände bilden einen Vektorraum, mit einer Basis, die z.B. aus den Eigenfunktionen des Hamiltonoperators gebildet werden kann.</p>
+<p>Wie kombiniert man nun solche räumlichen Zustände mit den Spinzuständen?</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{array}{c|c}
+\text{Raum-Basis} &amp; \text{Spin-Basis} \\
+\hline\hline
+|\psi_1\rangle &amp; |\alpha\rangle \\
+|\psi_2\rangle &amp; |\beta\rangle \\
+|\psi_3\rangle &amp;  \\
+\vdots &amp;
+\end{array}
+\end{split}\]</div>
+<p>Da die Raum- und Spin-Zustände in zwei unterschiedlichen Vektorräumen leben, können wir sie zu einem neuen Vektorraum kombinieren, indem wir das Tensorprodukt bilden. Als Basis dieses Tensorproduktraums erhalten wir die sogenannten <strong>Spinorbitale</strong></p>
+<div class="math notranslate nohighlight">
+\[
+|\psi_{i,\sigma}\rangle \equiv |\psi_i\rangle \otimes |\sigma\rangle ,
+\]</div>
+<p>wobei <span class="math notranslate nohighlight">\(|\sigma\rangle\)</span> entweder dem <span class="math notranslate nohighlight">\(|\alpha\rangle\)</span>- oder dem <span class="math notranslate nohighlight">\(|\beta\rangle\)</span>-Spinzustand entspricht. Enthält der Hamiltonoperator keinen Spin – wie im nichtrelativistischen Grenzfall – so sind Spinorbitale, die sich nur im Spin unterscheiden, entartet.</p>
+<p>Betrachten wir nun ein Zweielektronensystem. Der allgemeine elektronische Hamiltonoperator hat die bekannte Form</p>
+<div class="math notranslate nohighlight">
+\[
+\hat{H}_{\mathrm{el}}
+=
+-\underbrace{\frac{1}{2}\nabla_1^2-\frac{1}{2}\nabla_2^2}_{T_e}
+-\underbrace{V_{ne}(1)-V_{ne}(2)}_{V_{ne}}
++\underbrace{\frac{1}{r_{12}}}_{V_{ee}}
++\underbrace{V_{nn}}_{V_{nn}} .
+\]</div>
+<p>Die Bestimmung der räumlichen Zustände eines Zweielektronensystems ist wegen der Präsenz des <span class="math notranslate nohighlight">\(1/r_{12}\)</span>-Terms im Hamiltonoperator generell ein kompliziertes, nicht analytisch lösbares Problem. Um dieses Problem zu vereinfachen, betrachten wir zunächst den Fall zweier <strong>nichtwechselwirkender</strong> Elektronen. In diesem Fall können wir den <span class="math notranslate nohighlight">\(1/r_{12}\)</span>-Term vernachlässigen, was zu einem separablen Hamiltonoperator führt:</p>
+<div class="math notranslate nohighlight">
+\[
+\hat{H}_{\mathrm{el}}
+=
+\left[-\frac{1}{2}\nabla_1^2 - V_{ne}(1)\right]
++
+\left[-\frac{1}{2}\nabla_2^2 - V_{ne}(2)\right].
+\]</div>
+<p>Die beiden Operatoren in den Klammern hängen jeweils nur von den Koordinaten eines Elektrons ab.Für nichtwechselwirkende Elektronen lässt sich, wie bereits bekannt, der exakte räumliche Zustand nun als Tensorprodukt zweier Einelektron-Zustände schreiben:</p>
+<div class="math notranslate nohighlight">
+\[
+|\psi(1,2)\rangle
+=
+|\psi_i(1)\rangle \otimes |\psi_j(2)\rangle .
+\]</div>
+<p>Dabei sind <span class="math notranslate nohighlight">\(|\psi_i\rangle\)</span> und <span class="math notranslate nohighlight">\(|\psi_j\rangle\)</span> Eigenfunktionen des Einelektronoperators</p>
+<p><span class="math notranslate nohighlight">\(\hat{h}\)</span>:
+$<span class="math notranslate nohighlight">\(
+\begin{aligned}
+\hat{h}(1)|\psi_i(1)\rangle &amp;= \varepsilon_i |\psi_i(1)\rangle, \\
+\hat{h}(2)|\psi_j(2)\rangle &amp;= \varepsilon_j |\psi_j(2)\rangle .
+\end{aligned}
+\)</span>$</p>
+<p>Der Zustand <span class="math notranslate nohighlight">\(|\psi(1,2)\rangle\)</span> ist damit ein Eigenzustand von
+$<span class="math notranslate nohighlight">\(
+\hat{H}_{\mathrm{el}} = \hat{h}(1) + \hat{h}(2)
+\)</span><span class="math notranslate nohighlight">\(
+mit der Energie \)</span>\varepsilon_i + \varepsilon_j$.</p>
+<p>Betrachten wir nun den energetisch niedrigsten <strong>räumlichen</strong> Zustand des Zweielektronensystems. Dieser entsteht, wenn beide Elektronen das niedrigste Orbital besetzen (z. B. das 1s-Orbital im He-Atom):</p>
+<div class="math notranslate nohighlight">
+\[
+|\psi_{\mathrm{raum}}(1,2)\rangle
+=
+|\psi_0(1)\rangle \otimes |\psi_0(2)\rangle .
+\]</div>
+<p>Da der nichtrelativistische Hamiltonoperator keinen Spin enthält, kann dieser räumliche Zustand formal mit einem beliebigen Zweielektron-Spinzustand kombiniert werden. Der Spinraum eines Elektrons ist zweidimensional und wird von den Zuständen <span class="math notranslate nohighlight">\(|\alpha\rangle\)</span> und <span class="math notranslate nohighlight">\(|\beta\rangle\)</span> aufgespannt. Der Spinraum des Zweielektronensystems ist daher das Tensorprodukt der beiden Einelektron-Spinräume und ist, wie wir gesehen werden vierdimensional mit den Basiszuständen:</p>
+<div class="math notranslate nohighlight">
+\[
+|\alpha(1)\rangle \otimes |\alpha(2)\rangle,\quad
+|\alpha(1)\rangle \otimes |\beta(2)\rangle,\quad
+|\beta(1)\rangle \otimes |\alpha(2)\rangle,\quad
+|\beta(1)\rangle \otimes |\beta(2)\rangle .
+\]</div>
+<p>Diese lassen sich zu Eigenzuständen von <span class="math notranslate nohighlight">\(S^2\)</span> und <span class="math notranslate nohighlight">\(S_z\)</span> kombinieren. Man erhält einen Singulett- und drei Triplett-Zustände:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+|\chi_S\rangle
+&amp;=
+\frac{1}{\sqrt{2}}
+\left(
+|\alpha(1)\rangle \otimes |\beta(2)\rangle
+-
+|\beta(1)\rangle \otimes |\alpha(2)\rangle
+\right), \\
+|\chi_{T,+1}\rangle
+&amp;=
+|\alpha(1)\rangle \otimes |\alpha(2)\rangle, \\
+|\chi_{T,0}\rangle
+&amp;=
+\frac{1}{\sqrt{2}}
+\left(
+|\alpha(1)\rangle \otimes |\beta(2)\rangle
++
+|\beta(1)\rangle \otimes |\alpha(2)\rangle
+\right), \\
+|\chi_{T,-1}\rangle
+&amp;=
+|\beta(1)\rangle \otimes |\beta(2)\rangle .
+\end{aligned}
+\end{split}\]</div>
+<p>Formal ergeben sich damit vier Gesamtzustände gleicher Energie:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+|\Psi_S(1,2)\rangle
+&amp;=
+|\psi_0(1)\rangle \otimes |\psi_0(2)\rangle \otimes |\chi_S\rangle, \\
+|\Psi_{T,M}(1,2)\rangle
+&amp;=
+|\psi_0(1)\rangle \otimes |\psi_0(2)\rangle \otimes |\chi_{T,M}\rangle,
+\qquad M = +1,0,-1 .
+\end{aligned}
+\end{split}\]</div>
+<p>Wären alle diese Zustände physikalisch erlaubt, so wäre der Grundzustand eines Zweielektronensystems wie des He-Atoms oder des <span class="math notranslate nohighlight">\(\mathrm{H}_2\)</span>-Moleküls vierfach entartet. Experimentell wird diese Vierfachentartung jedoch <strong>nicht</strong> beobachtet: Der Grundzustand ist eindeutig nicht entartet. Offensichtlich werden die Triplett-Zustände nicht realisiert.</p>
+<p>Der fundamentale Unterschied zeigt sich in der Vertauschung der Elektronen. Für den Singulett-Zustand gilt</p>
+<div class="math notranslate nohighlight">
+\[
+P_{12}|\psi_{\mathrm{Singulett}}(1,2)\rangle
+=
+-|\psi_{\mathrm{Singulett}}(1,2)\rangle ,
+\]</div>
+<p>der Gesamtzustand ist antisymmetrisch. Die Triplett-Zustände sind dagegen symmetrisch:</p>
+<div class="math notranslate nohighlight">
+\[
+P_{12}|\psi_{\mathrm{Triplett}}(1,2)\rangle
+=
++|\psi_{\mathrm{Triplett}}(1,2)\rangle .
+\]</div>
+<div style="border: 2px solid #b00020; background-color: #fdecea; padding: 12px; border-radius: 6px;">
+<p><strong>Pauli-Prinzip</strong></p>
+<p>Der Zustand eines Systems aus <span class="math notranslate nohighlight">\(N\)</span> Elektronen muss antisymmetrisch bezüglich der Vertauschung beliebiger Elektronen sein.</p>
 </div>
+<p>Eine unmittelbare Konsequenz ist, dass zwei Elektronen mit gleichem Spin niemals dasselbe räumliche Orbital besetzen können. Der antisymmetrisierte Zustand verschwindet in diesem Fall identisch.</p>
+<p>Woher kommt dieses Prinzip? Die Antwort liegt in der <strong>Ununterscheidbarkeit von Quantenteilchen</strong>. Messwahrscheinlichkeiten dürfen nicht davon abhängen, wie identische Teilchen nummeriert werden.</p>
+<p>Betrachten wir dazu zwei nichtwechselwirkende Elektronen in einem eindimensionalen Kastenpotential:</p>
+<div class="math notranslate nohighlight">
+\[
+\Psi_1(1,2)
+=
+\sqrt{\frac{2}{L}}
+\sin\!\frac{\pi x_1}{L}
+\sin\!\frac{2\pi x_2}{L},
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\Psi_2(1,2)
+=
+\sqrt{\frac{2}{L}}
+\sin\!\frac{2\pi x_1}{L}
+\sin\!\frac{\pi x_2}{L}.
+\]</div>
+<p>Die Wahrscheinlichkeit, das „Elektron 1“ bei <span class="math notranslate nohighlight">\(x_1 = L/4\)</span> und das „Elektron 2“ bei <span class="math notranslate nohighlight">\(x_2 = L/2\)</span> zu finden, ist für diese beiden Zustände unterschiedlich. Dieses Ergebnis hängt jedoch nur von der gewählten Bezeichnung der Elektronen ab und ist daher physikalisch unzulässig.</p>
+<p>Die Wellenfunktion muss daher die Eigenschaft besitzen</p>
+<div class="math notranslate nohighlight">
+\[
+|\psi(1,2)|^2 = |\psi(2,1)|^2 ,
+\]</div>
+<p>was impliziert</p>
+<div class="math notranslate nohighlight">
+\[
+\psi(2,1) = \pm \psi(1,2).
+\]</div>
+<p>Die Ununterscheidbarkeit identischer Teilchen erzwingt somit Zustände, die entweder symmetrisch oder antisymmetrisch bezüglich der Vertauschung sind.</p>
+<p>Warum aber müssen Elektronen antisymmetrische Zustände besitzen? Erst die relativistische Quantenfeldtheorie liefert die Antwort:
+$<span class="math notranslate nohighlight">\(
+\begin{aligned}
+\text{halbzahliger Spin} &amp;\Rightarrow \psi(2,1) = -\psi(1,2), \\
+\text{ganzzahliger Spin} &amp;\Rightarrow \psi(2,1) = \phantom{-}\psi(1,2).
+\end{aligned}
+\)</span>$</p>
+<p>Teilchen mit halbzahligem Spin heißen <strong>Fermionen</strong>, solche mit ganzzahligem Spin <strong>Bosonen</strong>.</p>
+<p><strong>Elektronen besitzen Spin <span class="math notranslate nohighlight">\(\tfrac{1}{2}\)</span>, sind Fermionen und erfordern daher eine antisymmetrische Beschreibung ihrer Gesamtzustände.</strong></p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -466,14 +681,14 @@ document.write(`
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
-    <a class="right-next"
-       href="introduction.html"
-       title="next page">
+    <a class="left-prev"
+       href="spin_two_electrons.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Introduction</p>
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Spinzustände eines 2-Elektronensystems</p>
       </div>
-      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>
@@ -491,7 +706,7 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prof-dr-roland-mitric">Prof. Dr. Roland Mitric</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#raum-und-spin-zustande">Raum- und Spin-Zustände</a></li>
 </ul>
   </nav></div>
 
