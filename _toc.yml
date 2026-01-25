@@ -17,3 +17,4 @@ chapters:
   - file: tensor_product.ipynb
   - file: spin_two_electrons.ipynb
   - file: pauli_principle.ipynb
+  - file: hartree_fock.ipynb
