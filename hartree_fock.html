@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="_static/custom.css?v=e936a729" />
@@ -436,7 +436,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -452,6 +454,15 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#slater-determinante-fur-ein-n-elektronensystem">Slater-Determinante für ein <span class="math notranslate nohighlight">\(N\)</span>-Elektronensystem</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#full-ci-wellenfunktion-eines-n-elektronensystems">Full-CI-Wellenfunktion eines <span class="math notranslate nohighlight">\(N\)</span>-Elektronensystems</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -508,14 +519,17 @@ Jeder Term wird dabei mit dem Faktor <span class="math notranslate nohighlight">
 \end{array}\right) \Rightarrow \sigma\left(P_{12}\right)=1
 \end{aligned}
 \end{split}\]</div>
-<h1> Slater-Determinante für ein $N$-Elektronensystem </h1>
+<section id="slater-determinante-fur-ein-n-elektronensystem">
+<h2>Slater-Determinante für ein <span class="math notranslate nohighlight">\(N\)</span>-Elektronensystem<a class="headerlink" href="#slater-determinante-fur-ein-n-elektronensystem" title="Link to this heading">#</a></h2>
 <p>Die obigen Betrachtungen kann man nun direkt auf <span class="math notranslate nohighlight">\(N\)</span> Elektronen verallgemainern. Damit bekommen wir die Definition einer N-Elektron-Determinante, die man als Slater-Determinante bezeichnet:</p>
 <div class="math notranslate nohighlight">
 \[
 \left|\psi_{S D}(1,2, \ldots N)\right\rangle=\frac{1}{\sqrt{N !}} \cdot \sum_{P \in S_n}(-1)^{\sigma(P)} \chi_{P(1)}(1) \chi_{P(2)}(2) \cdots \chi_{P(N)}(N)
 \]</div>
 <p>Die Summe erstreckt sich dabei über alle Permutationen der Indizes aus der Menge <span class="math notranslate nohighlight">\(\{1,2, \ldots, N\}\)</span>. Da es insgesamt <span class="math notranslate nohighlight">\(N!\)</span> solche Permutationen gibt, enthält die Summe <span class="math notranslate nohighlight">\(N!\)</span> Terme. Unter der Annahme, dass die Einelektron-Basiszustände normiert sind, bekommen wir <span class="math notranslate nohighlight">\(\left(1 / \sqrt{N!}\right)\)</span> als Normierungsfaktor.</p>
-<h1> Full-CI-Wellenfunktion eines $N$-Elektronensystems </h1>
+</section>
+<section id="full-ci-wellenfunktion-eines-n-elektronensystems">
+<h2>Full-CI-Wellenfunktion eines <span class="math notranslate nohighlight">\(N\)</span>-Elektronensystems<a class="headerlink" href="#full-ci-wellenfunktion-eines-n-elektronensystems" title="Link to this heading">#</a></h2>
 <p>Analog zum Fall von zwei Elektronen lässt sich die <u> exakte </u> Wellenfunktion eines N-Elektronensystems als Linearkombination aller möglichen Slater-Determinanten entwickeln, die man ausgehend von einer Einelektronbasis konstruieren kann:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -557,10 +571,13 @@ E_{H F}=\left\langle\psi_{H F}(1,2, \ldots N)|\hat{H}| \psi_{H F}(1,2, \ldots N)
  \hat{h}(i)=-\frac{1}{2} \nabla_i^2+V_{n e}(i)
 \]</div>
 <p>Die HF - Energie kann man also wie folgt ausdrücken:</p>
-<p>\begin{aligned}
-E_{H F} &amp; =\left\langle\psi_{H F}(1,2, \ldots N)\left|\sum_i \hat{h}(i)+\sum_i \sum_{j&gt;i} \frac{1}{r_{i j}}\right| \psi_{H F}(1,2, \ldots N)\right\rangle \
-&amp; =\underbrace{\sum_{i=1}^N\left\langle\psi_{H F}(1,2, \ldots, N)|h(i)| \psi_{H F}(1,2, \ldots N)\right\rangle}<em>{\text {1el. Terme }}+\underbrace{\sum_i\sum</em>{j&gt;i} \left\langle\psi_{H F}(1,2, \ldots, N)\left|\frac{1}{r_{i j}}\right| \psi_{HF}(1,2, \ldots N)\right\rangle}_{\text {2el. Terme}}
-\end{aligned}</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+E_{H F} &amp; =\left\langle\psi_{H F}(1,2, \ldots N)\left|\sum_i \hat{h}(i)+\sum_i \sum_{j&gt;i} \frac{1}{r_{i j}}\right| \psi_{H F}(1,2, \ldots N)\right\rangle \\
+&amp; =\underbrace{\sum_{i=1}^N\left\langle\psi_{H F}(1,2, \ldots, N)|h(i)| \psi_{H F}(1,2, \ldots N)\right\rangle}_{\text {1el. Terme }}+\underbrace{\sum_i\sum_{j&gt;i} \left\langle\psi_{H F}(1,2, \ldots, N)\left|\frac{1}{r_{i j}}\right| \psi_{HF}(1,2, \ldots N)\right\rangle}_{\text {2el. Terme}}
+\end{aligned}
+\end{split}\]</div>
 <p>Die Einelektron- und Zweielektron-Terme berechnen wir im folgenden einzeln:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -612,15 +629,16 @@ E_{H F}=N\left\langle\psi_{H F}(1,2, \cdots N)|h(1)| \psi_{H F}(1,2, \cdots N)\r
 &amp;
 \end{aligned}
 \end{split}\]</div>
-<p>Wegen der Annahme, dass die Spinorbitale orthonormiert sind, bleiben in der oberen Doppelsumne nur solche Terme übrig, bei denen für die Permutationen <span class="math notranslate nohighlight">\(P\)</span> und <span class="math notranslate nohighlight">\(P'\)</span> folgende Relationen erfüllt sind:
-$<span class="math notranslate nohighlight">\(
+<p>Wegen der Annahme, dass die Spinorbitale orthonormiert sind, bleiben in der oberen Doppelsumne nur solche Terme übrig, bei denen für die Permutationen <span class="math notranslate nohighlight">\(P\)</span> und <span class="math notranslate nohighlight">\(P'\)</span> folgende Relationen erfüllt sind:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
 \begin{aligned}
 P^{\prime}(2) &amp; =P(2) \\
 P^{\prime}(3) &amp; =P(3) \\
 \vdots &amp; \\
 P^{\prime}(N) &amp; =P(N)
 \end{aligned}
-\)</span>$</p>
+\end{split}\]</div>
 <p>Die Werte von <span class="math notranslate nohighlight">\(P\)</span> und <span class="math notranslate nohighlight">\(P'\)</span> müssen also für alle Indizes von <span class="math notranslate nohighlight">\(2\)</span> bis <span class="math notranslate nohighlight">\(N\)</span> gleich sein.
 Daraus folgt aber automatisch, dass auch <span class="math notranslate nohighlight">\( P^{\prime}(1)=P(1)\)</span>. Daraus folgt, dass die Permutationen <span class="math notranslate nohighlight">\(P\)</span> und <span class="math notranslate nohighlight">\(P'\)</span> gleich sein müssen.</p>
 <p>Die Summen über <span class="math notranslate nohighlight">\(P\)</span> und <span class="math notranslate nohighlight">\(P^{\prime}\)</span> reduzieren sich auf die Terme, bei denen <span class="math notranslate nohighlight">\(P^{\prime}=P\)</span>. Das gibt uns für den 1el-Beitrag zur Energie:</p>
@@ -814,17 +832,19 @@ Wir sehen, dass bei der Orbitaltransformation der HF-Determinante Konfiguratione
 \[
 \left|\tilde{\psi}_{H F}\right\rangle=\left|\psi_{H F}\right\rangle+\sum_o \sum_v \tau_{o v}\left|\psi_o^v\right\rangle
 \]</div>
-<p>Wie verändert sich eine Slater-Determinante infolge einer Orbitalrotation?
-$<span class="math notranslate nohighlight">\(
+<p>Wie verändert sich eine Slater-Determinante infolge einer Orbitalrotation?</p>
+<div class="math notranslate nohighlight">
+\[
 \begin{aligned}
 &amp; \left|\tilde{\chi}_1 \tilde{\chi}_2, \ldots \tilde{\chi}_N\right\rangle=\left|\chi_1+\sum_k \tau_{1 k} \chi_k, \chi_2+\sum_k \tau_{2 k} \chi_k, \ldots, \chi_N+\sum_k \tau_{N k} \chi_k\right\rangle
 \end{aligned}
-\)</span><span class="math notranslate nohighlight">\(
-Wegen der Linearität der Determinante:
-\)</span><span class="math notranslate nohighlight">\(
+\]</div>
+<p>Wegen der Linearität der Determinante:</p>
+<div class="math notranslate nohighlight">
+\[
 \left|\tilde{\chi}_1 \tilde{\chi}_2, \ldots \tilde{\chi}_N\right\rangle=\left|\chi_1 \chi_2 \cdots \chi_N\right\rangle+\sum_k\left[\tau_{1 k}\left|\chi_k \chi_2 \ldots \chi_N\right\rangle+\tau_{2 k}\left|\chi_1 \chi_k \cdots \chi_N\right\rangle+\cdots \tau_{N k}\left|\chi_1 \chi_2 \ldots \chi_k\right\rangle\right]
-\)</span><span class="math notranslate nohighlight">\(
-Die Summe über \)</span>k<span class="math notranslate nohighlight">\( geht nur über die Orbitalindezes, die in der ursprünglichen Determinante unbesetzt waren. Solche Orbitale bezeichnet man als virtuell. Die Determinanten in der Summe unterscheiden sich von der ursprünglichen Determinante genau in einem Orbital. Dabei wird genau ein Elektron aus einem besetzten Orbital mit dem Index \)</span>o<span class="math notranslate nohighlight">\( in ein virtuelles Orbital mit dem Index \)</span>v$ angeregt.</p>
+\]</div>
+<p>Die Summe über <span class="math notranslate nohighlight">\(k\)</span> geht nur über die Orbitalindezes, die in der ursprünglichen Determinante unbesetzt waren. Solche Orbitale bezeichnet man als virtuell. Die Determinanten in der Summe unterscheiden sich von der ursprünglichen Determinante genau in einem Orbital. Dabei wird genau ein Elektron aus einem besetzten Orbital mit dem Index <span class="math notranslate nohighlight">\(o\)</span> in ein virtuelles Orbital mit dem Index <span class="math notranslate nohighlight">\(v\)</span> angeregt.</p>
 <p>Die Änderung der Slaterdeterminante können wir also als:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -942,6 +962,7 @@ F|i\rangle=\varepsilon_i|i\rangle
 <p>Dieses Verfahren wird als “self-consistent field” (SCF)-Verfahren bezeichnet. Die Idee des SCF-Verfahrens besteht darin, mit einer anfänglichen Näherung für die Orbitale zu beginnen, die sogar schlecht sein kann. Beispielsweise könnten die anfänglichen Orbitale konstruiert werden, indem nur der Ein-Elektron-Operator ohne die effektive Elektron-Elektron-Wechselwirkung diagonalisiert wird. Solche anfänglichen Orbitale werden dann verwendet, um in der nächsten Iteration einen neuen Fock-Operator zu konstruieren. Der neue Fock-Operator wird wieder diagonalisiert, was zu verbesserten Orbitalen führt. Dieses Verfahren wird dann iterativ wiederholt, bis die Orbitale, die verwendet werden, um den Fock-Operator zu konstruieren, innerhalb einer vorgegebenen numerischen Genauigkeit dieselben werden wie die Orbitale, die durch seine anschließende Diagonalisierung erhalten werden.</p>
 <p>Die Lösung der HF-Gleichungen erfolgt somit meistens mit Hilfe des Computers…</p>
 </section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -988,6 +1009,22 @@ F|i\rangle=\varepsilon_i|i\rangle
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#slater-determinante-fur-ein-n-elektronensystem">Slater-Determinante für ein <span class="math notranslate nohighlight">\(N\)</span>-Elektronensystem</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#full-ci-wellenfunktion-eines-n-elektronensystems">Full-CI-Wellenfunktion eines <span class="math notranslate nohighlight">\(N\)</span>-Elektronensystems</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
