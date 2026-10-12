@@ -1,0 +1,789 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Born-Oppenheimer- (BO) Näherung &#8212; Quantenchemie</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=e936a729" />
+    <link rel="stylesheet" type="text/css" href="_static/wide_v2.css?v=bfe64621" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=b8b12719"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'born_oppenheimer';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Quantenchemie</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="index.html">
+                    Quantenchemie — WS 2026
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="variational_principle.html">Das Variationsprinzip</a></li>
+<li class="toctree-l1"><a class="reference internal" href="convergence_variational_principle.html">Über die Konvergenz des linearen Variationsprinzips: Verschachtelungs Satz</a></li>
+<li class="toctree-l1"><a class="reference internal" href="helium_atom.html">Das Helium-Atom</a></li>
+<li class="toctree-l1"><a class="reference internal" href="kinetic_energy_hylleraas.html">Hylleraas-Methode: Kinetische Energie</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="correlation_hylleraas.html">Elektronenkorrelation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hartree_equation.html">Optimales Hartree-Produkt und Hartree-Gleichung</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="first_qc_code.html">Erstes Quantenchemieprogramm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="failure_hartree.html">Das Versagen der Hartree-Methode: Der Fall des Lithiumatoms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="spin.html">Spin: Einführung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bras_kets_etc.html">Spin: Formalismus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="spin_and_rotations.html">Spin &amp; Rotationen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="spin_measurement.html">Spinmessung</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="tensor_product.html">Zusammengesetzte Quantensysteme: Tensorprodukt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="spin_two_electrons.html">Spinzustände eines 2-Elektronensystems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pauli_principle.html">Das Pauli-Prinzip</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hartree_fock.html">Die Hartree-Fock-Methode</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/rolandmitric/quantum_chemistry_2025/main?urlpath=lab/tree/./born_oppenheimer.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Binder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Binder logo" src="_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/rolandmitric/quantum_chemistry_2025" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/rolandmitric/quantum_chemistry_2025/edit/main/./born_oppenheimer.ipynb" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/rolandmitric/quantum_chemistry_2025/issues/new?title=Issue%20on%20page%20%2Fborn_oppenheimer.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/born_oppenheimer.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Born-Oppenheimer- (BO) Näherung</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Born-Oppenheimer- (BO) Näherung</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#der-molekulare-hamilton-operator">Der molekulare Hamilton-Operator</a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="born-oppenheimer-bo-naherung">
+<h1>Born-Oppenheimer- (BO) Näherung<a class="headerlink" href="#born-oppenheimer-bo-naherung" title="Link to this heading">#</a></h1>
+<center ><b> J. Robert Oppenheimer (1904-1967) und Max Born (1888-1970)</b></center>
+<figure >
+<img src="http://localhost:8801/notebooks/img/oppenheimer.png" style="width:25%" align = "left">
+<figcaption>
+    <p > </p>  </figcaption>
+</figure>
+<figure>
+<img src="http://localhost:8801/notebooks/img/Max_Born.jpeg" style="width:25%" align = "right" >
+    <figcaption><p></p> </figcaption>
+</figure>
+<center>
+<img src="http://localhost:8801/notebooks/img/BO_ann_der_phys.png" style="width:75%" align = "center">
+</center></section>
+<section class="tex2jax_ignore mathjax_ignore" id="der-molekulare-hamilton-operator">
+<h1>Der molekulare Hamilton-Operator<a class="headerlink" href="#der-molekulare-hamilton-operator" title="Link to this heading">#</a></h1>
+<p>Als ersten Schritt in der Behandlung molekularer Systeme konstruieren wir den (nichtrelativistischen) molekularen Hamilton-Operator. Dieser besteht schematisch aus folgenden Beiträgen:</p>
+<div class="math notranslate nohighlight">
+\[\require{color}
+\fcolorbox{red}{#f2d5d3}{$ \hat{H}=\hat{T}_{n}+\hat{T}_{e}+\hat{V}_{ne}+\hat{V}_{ee}+\hat{V}_{nn}$} \]</div>
+<p>Die einzelnen Terme stehen für:</p>
+<ul class="simple">
+<li><p>Kinetische Energie der Atomkerne:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[ T_{n}=\sum_{I=1}^{M}\frac{|\mathbf{p}_{I}|^{2}}{2M_{I}}\rightarrow\hat{T}_{n}=\sum_{I=1}^{M}\frac{-\hbar^{2}}{2M_{I}}\nabla_{I}^{2}\]</div>
+<ul class="simple">
+<li><p>Kinetische Energie der Elektronen:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[ T_{e}=\sum_{i=1}^{m}\frac{|\mathbf{p}_{i}|^{2}}{2m_{e}}\rightarrow\hat{T} _{e}=\sum_{i=1}^{m}\frac{-\hbar^{2}}{2m_{e}}\nabla_{i}^{2} \]</div>
+<ul class="simple">
+<li><p>Elektrostatische Elektron-Kern-Wechselwirkung (anziehend):</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[ \hat{V}_{ne}=\frac{-e^{2}}{4\pi\epsilon_{0}}\sum_{I=1}^{M}\sum_{i=1}^{m}\frac{Z_{I}}{|\mathbf{R}_{I}-\mathbf{r}_{i}|} \]</div>
+<ul class="simple">
+<li><p>Elektrostatische Elektron-Elektron-Wechselwirkung (abstoßend):</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\hat{V}_{ee}=\frac{e^{2}}{4\pi\epsilon_{0}}\sum_{i=1}^{m}\sum_{j&gt;i}^{m}\frac{1}{|\mathbf{r}_{i}-\mathbf{r}_{j}|}\]</div>
+<ul class="simple">
+<li><p>Elektrostatische Kern-Kern-Wechselwirkung (abstoßend):</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\hat{V}_{nn}=\frac{e^{2}}{4\pi\epsilon_{0}}\sum_{I=1}^{M}\sum_{J&gt;I}^{M}\frac{Z_I Z_J}{|\mathbf{R}_{I}-\mathbf{R}_{J}|} \]</div>
+<p>Mit Hilfe dieser Operatoren konstruieren wir die nichtrelativistische molekulare Schrödingergleichung:</p>
+<div class="math notranslate nohighlight">
+\[\left[-\sum_{I=1}^{M}\frac{\hbar^{2}}{2M_{I}}\nabla_{I}^{2}-\sum_{i=1}^{m}\frac{\hbar^{2}}{2m_{e}}\nabla_{i}^{2}+\frac{e^{2}}{4\pi\epsilon_{0}}\left(\sum_{I=1}^{M}\sum_{i=1}^{m}\frac{-Z_{N}}{r_{iI}}+\sum_{i=1}^{m}\sum_{j&gt;i}^{m}\frac{1}{r_{ij}}+\sum_{I=1}^{M}\sum_{J&gt;I}^{M}\frac{Z_{I}Z_{J}}{R_{IJ}}\right)\right]\Psi(\mathbf{r},\mathbf{R})	=	E\,\Psi(\mathbf{r},\mathbf{R})\]</div>
+<p>Dabei haben wir die folgenden Abkürzungen definiert:</p>
+<div class="math notranslate nohighlight">
+\[ r_{iI}=|\mathbf{R}_{I}-\mathbf{r}_{i}| \]</div>
+<div class="math notranslate nohighlight">
+\[r_{ij}=|\mathbf{r}_{i}-\mathbf{r}_{j}|\]</div>
+<div class="math notranslate nohighlight">
+\[ r_{IJ}=|\mathbf{R}_{I}-\mathbf{R}_{J}| \]</div>
+<p>Die exakte <b>molekulare Wellenfunktion</b> <span class="math notranslate nohighlight">\(\Psi(\mathbf{r},\mathbf{R})\)</span> ist im Allgemeinen eine komplizierte Funktion, die von <span class="math notranslate nohighlight">\(3(M+m)\)</span> Variablen abhängt. <span class="math notranslate nohighlight">\(\mathbf{r}\)</span> und <span class="math notranslate nohighlight">\(\mathbf{R}\)</span> symbolisieren dabei die Gesamtheit der Ortsvektoren von Elektronen und Kernen.</p>
+<p>Die Idee der Born-Oppenheimer-Näherung:</p>
+<ul class="simple">
+<li><p>Aus der Sicht der Elektronen sind die Kerne näherungsweise stationär (unbeweglich).</p></li>
+<li><p>Aus der Sicht der Kerne bewegen sich die Elektronen so schnell, dass sie vollkommen ‘’verschmiert’’ sind</p></li>
+<li><p>Die Elektronen erzeugen ein gemitteltes effektives Potential in dem sich die Kerne bewegen.</p></li>
+</ul>
+<p>Wir wollen im folgenden diese Vorstellungen, die intuitiv klar sind, mathematisch formulieren.</p>
+<p>Den exakten Hamilton-Operator des Moleküls können wir wie folgt zerlegen:</p>
+<div class="math notranslate nohighlight">
+\[ \hat{H}=\hat{T}_{n}+\hat{H}_{el}. \]</div>
+<p>Dabei haben wir den <strong>elektronischen Hamilton-Operator</strong> definiert als:</p>
+<div class="math notranslate nohighlight">
+\[ \hat{H}_{el}=\hat{T}_{e}+\hat{V}_{ne}+\hat{V}_{ee}+\hat{V}_{nn}. \]</div>
+<p>Dieser Operator beschreibt physikalisch die Bewegung der Elektronen im <strong>fixierten</strong> elektrostatischen Feld der Kerne. Er enthält die Koordinaten der Kerne als multiplikative Faktoren, beinhaltet aber keine Ableitung nach den Kern-Koordinaten. Dies sollten wir uns gut merken.</p>
+<p>Nun können wir im Prinzip die <strong>elektronische Schrödingergleichung</strong> lösen:</p>
+<div class="math notranslate nohighlight">
+\[\require{color}
+\fcolorbox{red}{#f2d5d3}{$\hat{H}_{el}\psi_{el}^{(i)}(\mathbf{r};\mathbf{R})=E_{el}^{(i)}(\mathbf{R})\psi_{el}^{(i)}(\mathbf{r};\mathbf{R})\quad i=1,2,\cdots $}\]</div>
+<p>Damit bekommen wir für <strong>jede</strong> Kernkonfiguration <span class="math notranslate nohighlight">\(\mathbf{R}\)</span> einen Satz von elektronischen Zuständen. Die elektronische Energie <span class="math notranslate nohighlight">\(E_{el}^{(i)}(\mathbf{R})\)</span> ist dabei abhängig von den Kernkoordinaten. Da wir für jede Kernkonfiguration einen anderen Satz von elektronischen Wellenfunktionen generieren, sind diese auch (parametrisch) abhängig von den Kernkoordinaten (daher die Bezeichnung <span class="math notranslate nohighlight">\(\psi^{(i)}_{el} (\mathbf{r};\mathbf{R})\)</span> mit Semikolon statt Komma).</p>
+<p>Die elektronischen Wellenfunktionen bilden für jede Kernkonfiguration einen orthonormierten Satz von Funktionen:</p>
+<div class="math notranslate nohighlight">
+\[\require{colors}
+\fcolorbox{red}{#f2d5d3}{$ \int d\mathbf{r}\,\psi_{el}^{(i)*}(\mathbf{r};\mathbf{R})\,\psi_{el}^{(j)}(\mathbf{r};\mathbf{R})=\delta_{ij}.$} \]</div>
+<p>Man bemerke, dass dabei nur über elektronische Koordinaten integriert wird!</p>
+<p>Da die elektronischen Wellenfunktionen eine vollständige orthonormierte Basis darstellen, kann die unbekannte exakte Wellenfunktion <span class="math notranslate nohighlight">\(\Psi (\mathbf{r},\mathbf{R})\)</span> <strong>exakt</strong> in dieser Basis zerlegt werden:</p>
+<div class="math notranslate nohighlight">
+\[\Psi(\mathbf{r},\mathbf{R})=\sum_{i}\chi_{i}(\mathbf{R})\,\psi_{el}^{(i)}(\mathbf{r};\mathbf{R}). \]</div>
+<p>Die Entwicklungskoeffizienten <span class="math notranslate nohighlight">\(\chi_i(\mathbf{R})\)</span> hängen nur von den Kern-Koordinaten ab. Man bezeichnet sie deswegen als <strong>Kern-Wellenfunktionen</strong>.</p>
+<p>Da der elektronische Hamiltonoperator <span class="math notranslate nohighlight">\(\hat H_{el}\)</span> generell unendlich viele Eigenfunktionen besitzt, enthält die Entwicklung im Allgemeinen unendlich viele Terme.</p>
+<div class="alert alert-block alert-warning">
+Die Born-Oppenheimer-Näherung besteht nun darin, die unendliche Entwicklung durch <b> einen einzigen Term </b> der Form
+<div class="math notranslate nohighlight">
+\[\Psi(\mathbf{r},\mathbf{R})=\sum_{i}\chi_{i}(\mathbf{R})\psi_{el}^{(i)}(\mathbf{r};\mathbf{R})\rightarrow\Psi_{BO}(\mathbf{r},\mathbf{R})=\chi(\mathbf{R})\psi_{el}(\mathbf{r};\mathbf{R})  \]</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>zu ersetzen.
+</pre></div>
+</div>
+</div>
+<p>Die molekulare Wellenfunktion wird also als Produkt einer elektronischen und einer Kern-Wellenfunktion dargestellt. Die elektronische Wellenfunktion bekommt man als Lösung der elektronischen Schrödingergleichung. Aber wo kommt die Kern-Wellenfunktion her?</p>
+<p>Wir betrachten nun die Born-Oppenheimer-Wellenfunktion als einen Ansatz und bestimmen <span class="math notranslate nohighlight">\(\chi(\mathbf{R})\)</span> variationell. Unter der Annahme, dass der Ansatz normiert ist, kann man die Energie wie folgt bestimmen:</p>
+<div class="math notranslate nohighlight">
+\[ E[\chi]=\int d\mathbf{R}\int d\mathbf{r}\left[\chi(\mathbf{R})\psi_{el}(\mathbf{r};\mathbf{R})\right]^{*}\hat{H}\left[\chi(\mathbf{R})\psi_{el}(\mathbf{r};\mathbf{R})\right] \]</div>
+<p>Um unsere Intuition mathematisch umzusetzen, die uns sagt, dass sich die Kerne in einem <strong>effektiven Potential</strong> bewegen, das von den Elektronen erzeugt wird, versuchen wir, die Energie in der folgenden Form auszudrücken, in der die elektronischen Koordinaten herausintegriert sind:</p>
+<div class="math notranslate nohighlight">
+\[ E[\chi]=\int d\mathbf{R}\,\chi^{*}(\mathbf{R})\hat{H}_{nuc}\chi(\mathbf{R}). \]</div>
+<p><span class="math notranslate nohighlight">\(H_{nuc}\)</span> ist der effektive Kern-Hamiltonoperator, dessen genaue Form wir nun bestimmen müssen!</p>
+<p>Wenn wir den Energieausdruck ausschreiben, bekommen wir:</p>
+<div class="math notranslate nohighlight">
+\[E[\chi]=\int d\mathbf{R}\int d\mathbf{r}\,\left[\chi(\mathbf{R})\psi_{el}(\mathbf{r};\mathbf{R})\right]^{*}\left(\hat{T}_{n}+\hat{H}_{el}\right)\left[\chi(\mathbf{R})\psi_{el}(\mathbf{r};\mathbf{R})\right]\]</div>
+<div class="math notranslate nohighlight">
+\[E[\chi]=\int d\mathbf{R}\int d\mathbf{r}\,\left[\chi(\mathbf{R})\psi_{el}(\mathbf{r};\mathbf{R})\right]^{*}\hat{T}_{n}\left[\chi(\mathbf{R})\psi_{el}(\mathbf{r};\mathbf{R})\right]+\int d\mathbf{R}\int d\mathbf{r}\,\left[\chi(\mathbf{R})\psi_{el}(\mathbf{r};\mathbf{R})\right]^{*}\hat{H}_{el}\left[\chi(\mathbf{R})\psi_{el}(\mathbf{r};\mathbf{R})\right]\]</div>
+<p>Nun können wir ausnutzen, dass die elektronische Wellenfunktion eine Eigenfunktion des elektronischen Hamiltonoperators ist:</p>
+<div class="math notranslate nohighlight">
+\[\hat{H}_{el}\left[\chi(\mathbf{R})\psi_{el}(\mathbf{r};\mathbf{R})\right]=\chi(\mathbf{R})\hat{H}_{el}\psi_{el}(\mathbf{r};\mathbf{R})=\chi(\mathbf{R})E_{el}(\mathbf{R})\psi_{el}(\mathbf{r};\mathbf{R})\]</div>
+<p>Dies, zusammen mit der Normierung der elektronischen Wellenfunktion</p>
+<div class="math notranslate nohighlight">
+\[\int d\mathbf{r}\,\psi_{el}^{*}(\mathbf{r};\mathbf{R})\psi_{el}(\mathbf{r};\mathbf{R})=1\]</div>
+<p>bringt schon die zweite Hälfte des Energieausdrucks auf die gewünschte Form, in der keine elektronischen Koordinaten mehr vorkommen:</p>
+<div class="math notranslate nohighlight">
+\[\require{color}E[\chi]=\int d\mathbf{R}\int d\mathbf{r}\,\left[\chi(\mathbf{R})\psi_{el}(\mathbf{r};\mathbf{R})\right]^{*}\hat{T}_{n}\left[\chi(R)\psi_{el}(\mathbf{r};\mathbf{R})\right]+\fcolorbox{blue}{red!50}{$\int d\mathbf{R}\,\chi^{*}(\mathbf{R})E_{el}(\mathbf{R})\chi(\mathbf{R})$}\]</div>
+<p>Als nächstes widmen wir uns dem ersten, komplizierteren Term.</p>
+<p>Die Anwendung des Operators der kinetischen Energie der Kerne auf das Born-Oppenheimer-Produkt führt zu:</p>
+<div class="math notranslate nohighlight">
+\[\hat{T}_{n}\left[\chi(\mathbf{R})\psi_{el}(\mathbf{r};\mathbf{R})\right]=\sum_{I}\left(-\frac{\hbar^{2}}{2M_{I}}\right)\nabla_{I}^{2}\left[\chi(\mathbf{R})\psi_{el}(\mathbf{r};\mathbf{R})\right]\]</div>
+<p>Die Wirkung des Nabla-Operators können wir explizit durch zweifaches Ableiten ausrechnen:</p>
+<div class="math notranslate nohighlight">
+\[\nabla_{I}^{2}\left[\chi(\mathbf{R})\psi_{el}(\mathbf{r};\mathbf{R})\right]=\left(\nabla_{I}^{2}\chi\right)\psi_{el}+2\nabla_{I}\chi\cdot\nabla_{I}\psi_{el}+\chi\left(\nabla_{I}^{2}\psi_{el}\right)\]</div>
+<p>und bekommen damit:</p>
+<div class="math notranslate nohighlight">
+\[\hat{T}_{n}\left[\chi(\mathbf{R})\psi_{el}(\mathbf{r};\mathbf{R})\right]=\sum_{I}\left(-\frac{\hbar^{2}}{2M_{I}}\right)\left[\left(\nabla_{I}^{2}\chi\right)\psi_{el}+2\nabla_{I}\chi\cdot\nabla_{I}\psi_{el}+\chi\left(\nabla_{I}^{2}\psi_{el}\right)\right]\]</div>
+<p>Einsetzen in den ersten Term des Energieausdrucks liefert:</p>
+<div class="math notranslate nohighlight">
+\[\int d\mathbf{R}\int d\mathbf{r}\,\left[\chi(\mathbf{R})\psi_{el}(\mathbf{r};\mathbf{R})\right]^{*}\hat{T}_{n}\left[\chi(\mathbf{R})\psi_{el}(\mathbf{r};\mathbf{R})\right]=\int d\mathbf{R}\chi^{*}(\mathbf{R})\left[\sum_{I}\left(-\frac{\hbar^{2}}{2M_{I}}\right)\left(\nabla_{I}^{2}\chi\right)\int d\mathbf{r}\,\psi_{el}^{*}\psi_{el}-\sum_{I}\left(\frac{\hbar^{2}}{M_{I}}\right)\nabla_{I}\chi\cdot\int d\mathbf{r}\,\psi_{el}^{*}\nabla_{I}\psi_{el}+\chi\sum_{I}\left(-\frac{\hbar^{2}}{2M_{I}}\right)\int d\mathbf{r}\,\psi_{el}^{*}\left(\nabla_{I}^{2}\psi_{el}\right)\right]\]</div>
+<p>Dies können wir vereinfachen, indem wir die folgenden zwei Größen definieren:</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{A}_{I}(\mathbf{R})\equiv i\hbar\int d\mathbf{r}\,\psi_{el}^{*}\nabla_{I}\psi_{el}\]</div>
+<div class="math notranslate nohighlight">
+\[D_{I}(\mathbf{R})\equiv\int d\mathbf{r}\,\psi_{el}^{*}\nabla_{I}^{2}\psi_{el}\]</div>
+<p>Die erste Größe <span class="math notranslate nohighlight">\(\mathbf{A}_{I}\)</span> ist ein Vektor und wird in der Literatur als “Berry’s connection” bezeichnet. Die zweite Größe ist ein Skalar. Mit diesen zwei Definitionen kann man den kinetischen Term wie folgt umformen:</p>
+<div class="math notranslate nohighlight">
+\[\int d\mathbf{R}\int d\mathbf{r}\,\left[\chi(\mathbf{R})\psi_{el}(\mathbf{r};\mathbf{R})\right]^{*}\hat{T}_{n}\left[\chi(\mathbf{R})\psi_{el}(\mathbf{r};\mathbf{R})\right]=\int d\mathbf{R}\chi^{*}(\mathbf{R})\left[\sum_{I}\left(-\frac{\hbar^{2}}{2M_{I}}\right)\left(\nabla_{I}^{2}\chi\right)-\sum_{I}\left(\frac{-i\hbar}{M_{I}}\right)\nabla_{I}\chi\cdot\mathbf{A}_{I}(\mathbf{R})+\sum_{I}\left(-\frac{\hbar^{2}}{2M_{I}}\right)D_{I}(\mathbf{R})\chi\right] \]</div>
+<p>und bekommen damit:</p>
+<div class="math notranslate nohighlight">
+\[\int d\mathbf{R}\int d\mathbf{r}\,\left[\chi(\mathbf{R})\psi_{el}(\mathbf{r};\mathbf{R})\right]^{*}\hat{T}_{n}\left[\chi(\mathbf{R})\psi_{el}(\mathbf{r};\mathbf{R})\right]=\int d\mathbf{R}\,\chi^{*}(\mathbf{R})\left[\sum_{I}\left(\frac{\mathbf{P}_{I}^{2}\chi}{2M_{I}}\right)-\sum_{I}\left(\frac{\mathbf{P}_{i}\chi}{M_{I}}\right)\cdot\mathbf{A}_{I}(\mathbf{R})+\sum_{I}\left(-\frac{\hbar^{2}}{2M_{I}}\right)D_{I}(\mathbf{R})\chi\right]\]</div>
+<p>Um dies weiter zu vereinfachen, betrachten wir das folgende Integral:</p>
+<div class="math notranslate nohighlight">
+\[ \int d\mathbf{r}\,\nabla_{I}\cdot\left(\psi_{el}^{*}\nabla_{I}\psi_{el}\right) \]</div>
+<p>Wir erinnern uns an die Definition des Gradienten einer skalaren Funktion (<span class="math notranslate nohighlight">\(\varphi\)</span>) und der Divergenz einer Vektorfunktion (<span class="math notranslate nohighlight">\(\mathbf{f}\)</span>):</p>
+<div class="math notranslate nohighlight">
+\[\nabla\varphi=\frac{\partial\varphi}{\partial x}\mathbf{e}_{x}+\frac{\partial\varphi}{\partial y}\mathbf{e}_{y}+\frac{\partial\varphi}{\partial z}\mathbf{e}_{z} \]</div>
+<div class="math notranslate nohighlight">
+\[ \nabla\cdot\mathbf{f}=\frac{\partial f_{x}}{\partial x}+\frac{\partial f_{y}}{\partial y}+\frac{\partial f_{z}}{\partial z}\]</div>
+<p>Hier bezeichnen <span class="math notranslate nohighlight">\(\mathbf{e}_{x}\)</span>, <span class="math notranslate nohighlight">\(\mathbf{e}_{y}\)</span> und <span class="math notranslate nohighlight">\(\mathbf{e}_{z}\)</span> Einheitsvektoren in die <span class="math notranslate nohighlight">\(x\)</span>-, <span class="math notranslate nohighlight">\(y\)</span>- und <span class="math notranslate nohighlight">\(z\)</span>-Richtung.</p>
+<p>Die Anwendung dieser Ausdrücke liefert nun:</p>
+<div class="math notranslate nohighlight">
+\[\nabla_{I}\psi_{el}=\frac{\partial\psi_{el}}{\partial x_{I}}\mathbf{e}_{x,I}+\frac{\partial\psi_{el}}{\partial y_{I}}\mathbf{e}_{y,I}+\frac{\partial\psi_{el}}{\partial z_{I}}\mathbf{e}_{z,I}\]</div>
+<div class="math notranslate nohighlight">
+\[\psi_{el}^{*}\nabla_{I}\psi_{el}=\psi_{el}^{*}\frac{\partial\psi_{el}}{\partial x_{I}}\mathbf{e}_{x,I}+\psi_{el}^{*}\frac{\partial\psi_{el}}{\partial y_{I}}\mathbf{e}_{y,I}+\psi_{el}^{*}\frac{\partial\psi_{el}}{\partial z_{I}}\mathbf{e}_{z,I}\]</div>
+<p>Daraus folgt,</p>
+<div class="math notranslate nohighlight">
+\[ \nabla_{I}\cdot\left(\psi_{el}^{*}\nabla_{I}\psi_{el}\right)=\frac{\partial}{\partial x_{I}}\left[\psi_{el}^{*}\frac{\partial\psi_{el}}{\partial x_{I}}\right]+\frac{\partial}{\partial y_{I}}\left[\psi_{el}^{*}\frac{\partial\psi_{el}}{\partial y_{I}}\right]+\frac{\partial}{\partial z_{I}}\left[\psi_{el}^{*}\frac{\partial\psi_{el}}{\partial z_{I}}\right]\]</div>
+<p>Dies kann man kürzer als</p>
+<p>\begin{eqnarray}
+\nabla_{I}\cdot\left(\psi_{el}^{<em>}\nabla_{I}\psi_{el}\right)&amp;=&amp;\psi_{el}^{</em>}\nabla_{I}^{2}\psi_{el}+\nabla_{I}\psi_{el}^{<em>}\cdot\nabla_{I}\psi_{el}\
+&amp;=&amp;\psi_{el}^{</em>}\nabla_{I}^{2}\psi_{el}+|\nabla_{I}\psi_{el}|^{2}
+\end{eqnarray}</p>
+<p>schreiben.</p>
+<p>Durch Integration über die elektronischen Koordinaten erhalten wir:</p>
+<div class="math notranslate nohighlight">
+\[\int d\mathbf{r}\,\nabla_{I}\cdot\left(\psi_{el}^{*}\nabla_{I}\psi_{el}\right)=\int d\mathbf{r}\,\psi_{el}^{*}\nabla_{I}^{2}\psi_{el}+\int d\mathbf{r}\,|\nabla_{I}\psi_{el}|^{2}\]</div>
+<p>Nun können wir in diesen Ausdruck unsere Definitionen von <span class="math notranslate nohighlight">\(D_I\)</span> und <span class="math notranslate nohighlight">\(\mathbf{A}_{I}\)</span> einführen:</p>
+<p>\begin{eqnarray}
+D_{I}(\mathbf{R})&amp;=&amp;\int d\mathbf{r},\psi_{el}^{<em>}\nabla_{I}^{2}\psi_{el}\
+&amp;=&amp;\nabla_{I}\cdot\int d\mathbf{r},\psi_{el}^{</em>}\nabla_{I}\psi_{el}-\int d\mathbf{r},|\nabla_{I}\psi_{el}|^{2}\
+&amp;=&amp;\frac{1}{i\hbar}\nabla_{I}\cdot\mathbf{A}<em>{I}-\int d\mathbf{r},|\nabla</em>{I}\psi_{el}|^{2}
+\end{eqnarray}</p>
+<p>Der kinetische Term des Erwartungswertes lässt sich damit in die folgende Form überführen:</p>
+<div class="math notranslate nohighlight">
+\[\int d\mathbf{R}\int d\mathbf{r}\,\left[\chi(\mathbf{R})\psi_{el}(\mathbf{r};\mathbf{R})\right]^{*}\hat{T}_{n}\left[\chi(\mathbf{R})\psi_{el}(\mathbf{r};\mathbf{R})\right]=\int d\mathbf{R}\chi^{*}(\mathbf{R})\left[\sum_{I}\left(\frac{\mathbf{P}_{I}^{2}\chi}{2M_{I}}\right)-\sum_{I}\left(\frac{\mathbf{P}_{i}\chi}{M_{I}}\right)\cdot\mathbf{A}_{I}(\mathbf{R})+\sum_{I}\left(-\frac{\hbar^{2}}{2M_{I}}\right)\left(\frac{1}{i\hbar}\nabla_{I}\cdot\mathbf{A}_{I}-\int d\mathbf{r}\,|\nabla_{I}\psi_{el}|^{2}\right)\chi\right]\]</div>
+<div class="math notranslate nohighlight">
+\[\int d\mathbf{R}\int d\mathbf{r}\,\left[\chi(\mathbf{R})\psi_{el}(\mathbf{r};\mathbf{R})\right]^{*}\hat{T}_{n}\left[\chi(\mathbf{R})\psi_{el}(\mathbf{r};\mathbf{R})\right]=\int d\mathbf{R}\chi^{*}(\mathbf{R})\left[\sum_{I}\left(\frac{\mathbf{P}_{I}^{2}\chi}{2M_{I}}\right)-\sum_{I}\left(\frac{\mathbf{P}_{i}\chi}{M_{I}}\right)\cdot\mathbf{A}_{I}(\mathbf{R})+\sum_{I}\left(-\frac{\mathbf{P}_{I}\cdot\mathbf{A}_{I}}{2M_{I}}\right)\chi+\sum_{I}\frac{\hbar^{2}}{2M_{I}}\int d\mathbf{r}\,|\nabla_{I}\psi_{el}|^{2}\chi\right]\]</div>
+<p>Die ersten drei Terme lassen sich zu einem quadratischen Ausdruck erweitern.</p>
+<div class="math notranslate nohighlight">
+\[\int d\mathbf{R}\int d\mathbf{r}\,\left[\chi(R)\psi_{el}(\mathbf{r};\mathbf{R})\right]^{*}\hat{T}_{n}\left[\chi(\mathbf{R})\psi_{el}(\mathbf{r};\mathbf{R})\right]=\int d\mathbf{R}\,\chi^{*}(\mathbf{R})\left[\sum_{I}\frac{(\mathbf{P}_{I}-\mathbf{A}_{I})^{2}}{2M_{I}}+\sum_{I}\frac{\hbar^{2}}{2M_{I}}\left(\int d\mathbf{r}\,|\nabla_{I}\psi_{el}|^{2}\right)-\sum_{I}\frac{|\mathbf{A}_{I}|^{2}}{2M_{I}}\right]\chi\]</div>
+<p>Damit ist die Energie des BO-Ansatzes:</p>
+<div class="math notranslate nohighlight">
+\[ E[\chi ]=\int d\mathbf{R}\chi^{*}(\mathbf{R})\left[\sum_{I}\frac{(\mathbf{P}_{I}-\mathbf{A}_{I})^{2}}{2M_{I}}+E_{el}(\mathbf{R})+\sum_{I}\frac{\hbar^{2}}{2M_{I}}\left(\int d\mathbf{r}\,|\nabla_{I}\psi_{el}|^{2}\right)-\sum_{I}\frac{|\mathbf{A}_{I}|^{2}}{2M_{I}}\right]\chi \]</div>
+<p>Wir sehen, dass darin die elektronischen Koordinaten nicht mehr vorkommen. Wir haben sie “wegintegriert” und haben einen <strong>effektiven</strong> Hamilton-Operator für die Kernbewegung bekommen:</p>
+<div class="math notranslate nohighlight">
+\[
+\hat{H}_{nuc}=\sum_{I}\frac{(\mathbf{P}_{I}-\mathbf{A}_{I})^{2}}{2M_{I}}+E_{el}(\mathbf{R})+\sum_{I}\frac{\hbar^{2}}{2M_{I}}\left(\int d\mathbf{r}\,|\nabla_{I}\psi_{el}|^{2}\right)-\sum_{I}\frac{|\mathbf{A}_{I}|^{2}}{2M_{I}}
+\]</div>
+<p>mit dem man das Energiefunktional wie folgt schreiben kann:</p>
+<div class="math notranslate nohighlight">
+\[
+E[\chi]=\int d\mathbf{R}\chi^{*}(\mathbf{R})\hat{H}_{nuc}\chi(\mathbf{R})
+\]</div>
+<p>Wie müssen die Kern-Wellenfunktion nun so wählen, dass der Erwartungswert des effektiven Kern-Hamiltonoperators minimal wird. Aus dem Variationsprinzip folgt, dass der minimale Wert erreicht wird, wenn die Kern-Wellenfunktion <span class="math notranslate nohighlight">\(\chi \)</span> eine <strong>Eigenfunktion</strong> des effektiven Kern-Hamiltonoperators ist:</p>
+<div class="math notranslate nohighlight">
+\[ \hat{H}_{nuc}\chi(\mathbf{R})=E\chi(\mathbf{R}) \]</div>
+<div class="math notranslate nohighlight">
+\[\sum_{I}\frac{(\mathbf{P}_{I}-\mathbf{A}_{I})^{2}}{2M_{I}}\chi+E_{el}(\mathbf{R})\chi+\sum_{I}\frac{\hbar^{2}}{2M_{I}}\left(\int d\mathbf{r}|\nabla_{I}\psi_{el}|^{2}\right)\chi-\sum_{I}\frac{|\mathbf{A}_{I}|^{2}}{2M_{I}}\chi=E\chi \]</div>
+<p>Diese Schrödinger-Gleichung bezeichnet man als “Kern-Schrödingergleichung”. Die entsprechenden Eigenwerte stellen die gequantelten Energien des Moleküls dar!</p>
+<p>Diese Schrödingergleichung ist immer noch sehr kompliziert, so dass man üblicherweise noch weitere Näherungen einführt. Wenn die elektronische Wellenfunktion reell ist, kann man zeigen, dass die “Berry’s connection” verschwindet.</p>
+<div class="math notranslate nohighlight">
+\[ \psi_{el}\;\mathrm{reell}\rightarrow\mathbf{A}_{I}=0 \]</div>
+<p>Wir erwarten intuitiv, dass sich die elektronische Wellenfunktion ‘’langsam’’ mit den Kernkoordinaten verändert. In diesem Fall kann man auch <span class="math notranslate nohighlight">\(|\nabla_{I}\psi_{el}|^{2} \)</span> vernachlässigen. Der effektive Kern-Hamiltonoperator vereinfacht sich damit weiter zu:</p>
+<div class="math notranslate nohighlight">
+\[ \hat{H}_{nuc}=\sum_{I}\frac{\mathbf{P}_{I}{}^{2}}{2M_{I}}+E_{el}(\mathbf{R})=\hat{T}_{n}+E_{el}(\mathbf{R}) \]</div>
+<p>Dieser Operator besteht nun nur aus der kinetischen Energie der Kerne, die sich in einem effektiven Potential <span class="math notranslate nohighlight">\(E_{el}\)</span> bewegen, das durch die Elektronen erzeugt wird.</p>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "rolandmitric/quantum_chemistry_2025",
+            ref: "main",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Born-Oppenheimer- (BO) Näherung</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#der-molekulare-hamilton-operator">Der molekulare Hamilton-Operator</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Roland Mitric
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
