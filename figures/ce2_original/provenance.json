@@ -1,0 +1,73 @@
+{
+  "source": {
+    "doi": "10.1021/jacs.5c07348",
+    "citation": "Jiaye Jin, Nikita Kavka, Tatsuya Chiba, Max Grellmann, Shiying Wang, Marcel Jorewitz, Kit H. Bowen, Roland Mitric, and Knut R. Asmis. Cerium Dimer Anion and the Contribution of 4f Electrons to Lanthanide Metal-Metal Bonds. Journal of the American Chemical Society 2025, 147 (42), 37977-37984. DOI: 10.1021/jacs.5c07348.",
+    "title": "Cerium Dimer Anion and the Contribution of 4f Electrons to Lanthanide Metal-Metal Bonds",
+    "copyright": "2025 The Authors. Published by American Chemical Society",
+    "license": "CC BY 4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "published_PDF": "https://www.osti.gov/pages/servlets/purl/3000379",
+    "requested_local_file": "/Users/rolandmitric/Downloads/ja5c07348.pdf",
+    "local_file_access": "macOS blocks content access; same verified published article used",
+    "PDF_SHA256": "1cd177d119a29c41f8249721c2cc5254de32c379034de4af21429c260e3f6752"
+  },
+  "images": [
+    {
+      "figure": 2,
+      "PDF_page": 2,
+      "source_xref": 297,
+      "file": "original_figures/jacs_figure_2.png",
+      "native_dimensions": [
+        851,
+        707
+      ],
+      "SHA256": "00445a79bf3e78d1c41c1ac18e9827efb999e92d59b0f7abd7da6dbb6ffd8fb3",
+      "scientific_changes": "None. Full embedded original image, without crop, redraw, selection, interpolation or omission."
+    },
+    {
+      "figure": 3,
+      "PDF_page": 3,
+      "source_xref": 331,
+      "file": "original_figures/jacs_figure_3.png",
+      "native_dimensions": [
+        2100,
+        1148
+      ],
+      "SHA256": "12fd2d1b736e7ab123f9117f497e523b0d0d6e7505f3f97640c39492b6044319",
+      "scientific_changes": "None. Full embedded original image, without crop, redraw, selection, interpolation or omission."
+    },
+    {
+      "figure": 4,
+      "PDF_page": 4,
+      "source_xref": 359,
+      "file": "original_figures/jacs_figure_4.png",
+      "native_dimensions": [
+        2100,
+        804
+      ],
+      "SHA256": "326d931cb3a4bc66a537f1e5cc9d018cb5f539f942d0b87b5654f21b8ef3813b",
+      "scientific_changes": "None. Full embedded original image, without crop, redraw, selection, interpolation or omission."
+    }
+  ],
+  "composition_changes": [
+    "Scientific figure images are intact original source objects.",
+    "New placement and display sizes.",
+    "Four German section headings and source/license credit added.",
+    "Full reference with all nine authors, article title, journal, year, volume, issue, pages and DOI appears directly in the figure."
+  ],
+  "original_scientific_content": {
+    "Figure4": "Every PES curve, electronic-state label, orbital image, natural occupation and legend retained.",
+    "Figure2": "Entire measured/simulated spectrum, stick spectrum and low-energy inset retained. Published -0.24eV simulation shift preserved.",
+    "Figure3": "All four experimental transients, fit curves, quantum simulations, original legend and frequency labels, time axis, and SO-coupled energy curves retained."
+  },
+  "online_book": "Use with caption.txt or embed.txt to retain source DOI, title, copyright notice, CC BY 4.0 link and layout-change declaration.",
+  "verification": {
+    "SVG_embedded_images": "All three match original extracted source images pixel-for-pixel in RGBA and retain native pixel dimensions.",
+    "original_figures_used": [
+      "jacs_figure_4.png",
+      "jacs_figure_2.png",
+      "jacs_figure_3.png"
+    ],
+    "source_and_license_links_verified": true
+  }
+}

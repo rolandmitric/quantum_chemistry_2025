@@ -1,4 +1,4 @@
-# Quantenchemie — WS 2025
+# Quantenchemie — WS 2026
 ### Prof. Dr. Roland Mitric
 **Lehrstuhl für Theoretische Chemie**
 
