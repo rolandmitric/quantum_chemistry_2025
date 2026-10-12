@@ -1,0 +1,22 @@
+{
+  "source": "Published Figure 2 raster, ce2-fig2-original.png, from Jin et al., JACS 2025, DOI 10.1021/jacs.5c07348",
+  "data_status": "Digitized curve centers from a published figure; not raw instrument measurements or original simulation output.",
+  "shape_pixels": [
+    851,
+    707
+  ],
+  "x_calibration": {
+    "pixel_57_eV": 0.0,
+    "pixel_834_eV": 1.2,
+    "eV_per_pixel": 0.0015444015444015444
+  },
+  "intensity_calibration": "Both traces use I=(620-y_pixel)/556, with no independent normalization, fitting, smoothing, energy shifts or missing-value interpolation.",
+  "simulation_shift": "The source figure already includes the published -0.24 eV SO-CASSCF energy shift. No additional shift applied.",
+  "mask": "Inset and legend excluded: x<390,y<375. Black x-axis excluded: y>=615. Red sticks removed by 3-pixel horizontal binary opening.",
+  "missing_values": "Unresolved or occluded curve centers are blank. The experimental baseline at low energy merges with the black x-axis and is not assigned an inferred value.",
+  "nominal_pixel_resolution_eV": 0.0015444015444015444,
+  "estimated_line_center_uncertainty_pixels": 2.5,
+  "estimated_energy_uncertainty_eV": 0.003861003861003861,
+  "estimated_intensity_uncertainty": 0.0044964028776978415,
+  "limitations": "Uncertainty is an estimated raster-reading precision, not an experimental error bar. Neighboring pixel samples are correlated. Thick-curve upper/lower overlap and raster antialiasing may increase local uncertainty; full source figure retained for QA."
+}

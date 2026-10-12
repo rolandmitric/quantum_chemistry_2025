@@ -1,0 +1,102 @@
+{
+  "purpose": "German-language introductory quantum chemistry teaching figure; published original figures, no surrogate model curves.",
+  "sources": [
+    {
+      "id": "H2_1927",
+      "authors": "W. Heitler and F. London",
+      "title": "Wechselwirkung neutraler Atome und homöopolare Bindung nach der Quantenmechanik",
+      "journal": "Zeitschrift für Physik 44, 455-472 (1927)",
+      "doi": "10.1007/BF01397394",
+      "download": "https://link.springer.com/content/pdf/10.1007/BF01397394.pdf",
+      "figure": "Figure 1, printed page 462, PDF page 8",
+      "representation": "Original scan, faithfully cropped; no digitization, fitting or numerical reconstruction.",
+      "axes": {
+        "x": "R/a0 (dimensionless); historical a0=0.532 Angstrom",
+        "y": "energy in original Volt, numerically eV",
+        "energy_zero": "two separated neutral H atoms"
+      },
+      "series": {
+        "E_alpha": "binding branch",
+        "E_beta": "repulsive branch",
+        "E_11": "Coulomb contribution"
+      },
+      "limitation": "Original approximate exchange integral and approximate printed graph; does not represent a modern quantitatively exact H2 potential."
+    },
+    {
+      "id": "Ce2_2025",
+      "authors": "Jiaye Jin, Nikita Kavka, Tatsuya Chiba, Max Grellmann, Shiying Wang, Marcel Jorewitz, Kit H. Bowen, Roland Mitric, Knut R. Asmis",
+      "title": "Cerium Dimer Anion and the Contribution of 4f Electrons to Lanthanide Metal-Metal Bonds",
+      "journal": "Journal of the American Chemical Society 147, 37977-37984 (2025)",
+      "doi": "10.1021/jacs.5c07348",
+      "download": "https://www.osti.gov/pages/servlets/purl/3000379",
+      "published_online": "2025-09-25",
+      "license": "CC BY 4.0",
+      "source_pdf_sha256": "1cd177d119a29c41f8249721c2cc5254de32c379034de4af21429c260e3f6752",
+      "panels": {
+        "PES": {
+          "source": "Figure 4A, PDF page 4",
+          "method": "SA-CASSCF/XMS-CASPT2",
+          "representation": "Original cropped raster figure, including source axes/labels; independent energy reference from H2."
+        },
+        "orbitals": {
+          "source": "Selected paired natural orbitals from Figure 4B/C, PDF page 4",
+          "representation": "Original cropped images with occupations retained; red/blue encodes phase, not charge.",
+          "ground_family": "4f phi_g / phi_u occupations 0.89 / 0.89",
+          "excited_family": "4f pi_u / pi_g occupations 0.52 / 0.48",
+          "interpretation": "Whole-state change in occupations includes other orbitals; a modest 4f bonding contribution is possible. Effective bond orders ca.2.5 vs2.6, not an additional complete bond."
+        },
+        "spectrum": {
+          "source": "Figure 2, PDF page 2",
+          "method": "SO-CASSCF Franck-Condon simulation, 50K",
+          "experimental_photon_energy_eV": 1.17,
+          "lorentzian_width_eV": 0.055,
+          "published_simulation_shift_eV": -0.24,
+          "representation": "Published main black experimental and thick red simulated traces. If CSV supplied, digitized from source image; not original raw data. Published simulation shift is retained and not applied twice.",
+          "figure_representation": "Original published Figure 2 image, rather than an interpolated reconstruction; the supplementary digitized CSV leaves occluded samples missing and is not the displayed spectrum."
+        }
+      },
+      "benchmark": {
+        "experimental_EA_eV": 0.24,
+        "XMS_CASPT2_EA_eV": 0.25,
+        "note": "CASPT2 benchmark is a distinct calculation from the SO-CASSCF simulated spectrum."
+      }
+    },
+    {
+      "id": "Ce2_SI",
+      "doi": "10.1021/jacs.5c07348.s001",
+      "download": "https://ndownloader.figshare.com/files/58276165",
+      "license": "CC BY 4.0",
+      "used": "Tables S6/S7 checked for state assignments and calculated spectroscopic constants; no raw numerical spectrum or potential-curve samples supplied."
+    }
+  ],
+  "changes": "New layout and German teaching annotations; original figure excerpts used without alteration of the scientific content.",
+  "source_panel_crop_rectangles_PDF_points": {
+    "Ce2_Fig4A": [
+      51,
+      59,
+      259,
+      255
+    ],
+    "Ce2_Fig4B_phi_pair": [
+      269,
+      75,
+      385,
+      128
+    ],
+    "Ce2_Fig4C_pi_pair": [
+      397,
+      126.8,
+      503,
+      170
+    ]
+  },
+  "historic_graph_crop_pixels": {
+    "image": "publisher PDF page8 rendered600dpi",
+    "rectangle": [
+      540,
+      2955,
+      1860,
+      4200
+    ]
+  }
+}

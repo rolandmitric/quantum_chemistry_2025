@@ -1,0 +1,36 @@
+{
+  "source": {
+    "doi": "10.1021/jacs.5c07348",
+    "title": "Cerium Dimer Anion and the Contribution of 4f Electrons to Lanthanide Metal-Metal Bonds",
+    "authors": "Jiaye Jin, Nikita Kavka, Tatsuya Chiba, Max Grellmann, Shiying Wang, Marcel Jorewitz, Kit H. Bowen, Roland Mitric, Knut R. Asmis",
+    "journal": "JACS 147,37977-37984(2025)",
+    "url": "https://doi.org/10.1021/jacs.5c07348",
+    "copyright": "2025 The Authors. Published by American Chemical Society",
+    "license": "CC BY 4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "license_verified_at": "https://pubs.acs.org/doi/abs/10.1021/jacs.5c07348"
+  },
+  "source_file_access": {
+    "requested_pdf": "/Users/rolandmitric/Downloads/ja5c07348.pdf",
+    "status": "macOS blocks content access even after escalation",
+    "used_pdf": "Published version of same DOI downloaded from https://www.osti.gov/pages/servlets/purl/3000379"
+  },
+  "changes": [
+    "Selected two representative curves from original Figure4A; not labelled ground states.",
+    "Digitized published raster curves; no fitted model potentials or extrapolation.",
+    "Displayed the main-band spectrum range0.50-1.15eV.",
+    "Retained source common normalization and published -0.24eV simulation shift.",
+    "Display-sampled visible experimental curve centers with open circles; occluded values remain absent.",
+    "Removed other state curves, electronic term labels, sticks and inset for clarity.",
+    "New composition, colors, German labels and source/license credit."
+  ],
+  "scientific_scope": {
+    "PES_method": "SA-CASSCF/XMS-CASPT2",
+    "PES_reference": "Original shared relative energy reference in Figure4A retained. Blue selected solid doublet, red selected solid singlet; neither called the full ground-state potential.",
+    "spectrum_method": "SO-CASSCF/Franck-Condon,50K,0.055eV Lorentzian",
+    "spectrum_shift_eV": -0.24,
+    "relationship": "Spectrum includes transitions involving multiple states; not produced solely from the two selected plotted PES curves.",
+    "data_status": "Figure digitizations; not original numerical PES or raw instrumental samples. Digital reading uncertainty and unresolved values in data metadata."
+  },
+  "online_book_use": "Use image together with caption.txt or embed.txt to retain source, copyright, license links and modification notice."
+}

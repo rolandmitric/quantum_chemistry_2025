@@ -1,0 +1,24 @@
+{
+  "citation": "J. Am. Chem. Soc. 2025, 147, 37977\u201337984, DOI 10.1021/jacs.5c07348, Figure 4A",
+  "source_file": "/private/tmp/ce2-h2-figure/ce2-fig4-original.png",
+  "source_pixel_dimensions": [
+    2100,
+    804
+  ],
+  "source_method": "SA-CASSCF/XMS-CASPT2; solid curves are singlets and doublets, dotted curves triplets and quartets",
+  "calibration": {
+    "r_tick_2_4_A_x": 185.0,
+    "r_tick_2_9_A_x": 821.0,
+    "E_zero_eV_y": 662.0,
+    "E_0_4_eV_y": 13.5
+  },
+  "selected_curves": {
+    "anion_selected_doublet": "Visibly continuous thick dark-blue solid branch with minimum near 2.64 \u00c5 and 0.038 eV. Selected representative doublet branch; NOT labelled ground state. Dotted lower quartet branches excluded.",
+    "neutral_selected_lowest_singlet": "Lowest red solid branch, minimum near 2.54 \u00c5 and 0.235 eV. Close unresolved red singlet curves not distinguished at term-symbol level."
+  },
+  "energy_reference": "Original shared relative-energy reference in Figure 4A retained. No independent shifting to each minimum.",
+  "processing": "Threshold source RGB colors; take median pixels of upper dark-blue solid stroke (the separated dotted quartet strokes are below it). Red branch takes center of lowest visible red stroke. Each output sample corresponds to one source pixel column. No extrapolation beyond displayed branches.",
+  "precision": "Approximate image digitization only, not the original numerical PES data. One pixel represents 0.00079 \u00c5 horizontally and 0.00062 eV vertically; stroke thickness and almost-degenerate states limit meaningful precision.",
+  "interpolation": "None in saved CSV. A renderer may connect adjacent source-column samples with straight line segments; no extrapolation is warranted.",
+  "warning": "Caption must say selected/representative calculated curves, not two ground-state curves. Other source states were intentionally omitted for pedagogical clarity."
+}
