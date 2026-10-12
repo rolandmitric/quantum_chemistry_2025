@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="./" >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
@@ -16,39 +16,43 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-
-  
-  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+  <link href="_static/styles/theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
     <link rel="stylesheet" type="text/css" href="_static/custom.css?v=e936a729" />
     <link rel="stylesheet" type="text/css" href="_static/wide_v2.css?v=bfe64621" />
   
+  <!-- So that users can add custom icons -->
+  <script defer src="_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
-  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb" />
 
-    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="_static/doctools.js?v=9a2dae69"></script>
-    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js?v=2b91c5f0"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=4825356b"></script>
     <script src="_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="_static/copybutton.js?v=f281be69"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
@@ -57,43 +61,39 @@
     <script src="_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'dipole_magnetfeld';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  
+    
+    <script src="_static/searchtools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="searchindex.js"></script>
+  
   </head>
-  
-  
-  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
-
+  <body data-default-mode="">
   
   
   <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
   
   <div id="pst-scroll-pixel-helper"></div>
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
-
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-primary-sidebar-checkbox"/>
-  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-secondary-sidebar-checkbox"/>
-  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
   
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="search.html"
       method="get">
@@ -101,7 +101,6 @@
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -109,15 +108,59 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
 </div>
 
   
-    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
     </header>
   
 
@@ -128,7 +171,8 @@
       
         
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -158,15 +202,11 @@
 </a></div>
         <div class="sidebar-primary-item">
 
- <script>
- document.write(`
-   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script></div>
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
@@ -207,9 +247,14 @@
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
-  
-  <div id="rtd-footer-container"></div>
 
 
       </div>
@@ -405,7 +450,7 @@
 
 
 <button onclick="toggleFullScreen()"
-  class="btn btn-sm btn-fullscreen-button"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
   title="Fullscreen mode"
   data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
@@ -419,25 +464,17 @@
 
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
-    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
-    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
-  </button>
-`);
-</script>
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-  </button>
-`);
-</script>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
 </button>
 </div></div>
@@ -459,13 +496,13 @@ document.write(`
                 <h2> Contents </h2>
             </div>
             <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Magnet-Dipol im homogenen Feld</a><ul class="visible nav section-nav flex-column">
+                <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Magnet-Dipol im homogenen Feld</a><ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lorentz-kraft-auf-ein-linienelement">Lorentz Kraft auf ein Linienelement</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#potentielle-energie">Potentielle Energie</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#warum-spin-nur-an-magnetfelder-koppelt-eine-symmetriebetrachtung">Warum Spin nur an Magnetfelder koppelt: eine Symmetriebetrachtung</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#warum-spin-nur-an-magnetfelder-koppelt-eine-symmetriebetrachtung">Warum Spin nur an Magnetfelder koppelt: eine Symmetriebetrachtung</a><ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#die-pauli-matrizen-als-axiale-vektoren">1. Die Pauli-Matrizen als axiale Vektoren</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transformationseigenschaften-von-e-und-b-feldern">2. Transformationseigenschaften von E- und B-Feldern</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bedingungen-an-die-kopplung-paritatsinvarianz-des-hamiltonoperators">3. Bedingungen an die Kopplung: Paritätsinvarianz des Hamiltonoperators</a><ul class="nav section-nav flex-column">
@@ -490,7 +527,7 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="magnet-dipol-im-homogenen-feld">
-<h1>Magnet-Dipol im homogenen Feld<a class="headerlink" href="#magnet-dipol-im-homogenen-feld" title="Link to this heading">#</a></h1>
+<h1>Magnet-Dipol im homogenen Feld<a class="headerlink" href="#magnet-dipol-im-homogenen-feld" title="Permalink to this heading">#</a></h1>
 <p>Wir betrachten eine kreisförmige Schleife mit Radius <span class="math notranslate nohighlight">\(R\)</span>, in der ein konstanter Strom <span class="math notranslate nohighlight">\(I\)</span> fließt.  Die Ebene der Schleife werde um die <span class="math notranslate nohighlight">\(x\)</span>-Achse um einen Winkel <span class="math notranslate nohighlight">\(\theta\)</span> gekippt. Das externe Magnetfeld sei homogen und zeige in <span class="math notranslate nohighlight">\(z\)</span>-Richtung:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -523,7 +560,7 @@ document.write(`
         + \cos\varphi\sin\theta\,\mathbf e_z\Big]\mathrm d\varphi.
 \]</div>
 <section id="lorentz-kraft-auf-ein-linienelement">
-<h2>Lorentz Kraft auf ein Linienelement<a class="headerlink" href="#lorentz-kraft-auf-ein-linienelement" title="Link to this heading">#</a></h2>
+<h2>Lorentz Kraft auf ein Linienelement<a class="headerlink" href="#lorentz-kraft-auf-ein-linienelement" title="Permalink to this heading">#</a></h2>
 <p>Auf ein Linienelement wirkt die Lorentzkraft</p>
 <div class="math notranslate nohighlight">
 \[
@@ -586,7 +623,7 @@ document.write(`
 \]</div>
 </section>
 <section id="potentielle-energie">
-<h2>Potentielle Energie<a class="headerlink" href="#potentielle-energie" title="Link to this heading">#</a></h2>
+<h2>Potentielle Energie<a class="headerlink" href="#potentielle-energie" title="Permalink to this heading">#</a></h2>
 <p>Die potentielle Energie des Dipol–Feld-Systems ändert sich um</p>
 <div class="math notranslate nohighlight">
 \[
@@ -631,19 +668,19 @@ U = -\boldsymbol\mu\cdot\mathbf B,
     <span class="n">pts</span> <span class="o">=</span> <span class="n">loop_points</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span>
 
     <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
-    <span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">111</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="s1">&#39;3d&#39;</span><span class="p">)</span>
+    <span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">111</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="s1">'3d'</span><span class="p">)</span>
 
-    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">pts</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">pts</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span> <span class="n">pts</span><span class="p">[:,</span><span class="mi">2</span><span class="p">],</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">pts</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">pts</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span> <span class="n">pts</span><span class="p">[:,</span><span class="mi">2</span><span class="p">],</span> <span class="s1">'b'</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
 
     <span class="n">n</span> <span class="o">=</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span><span class="o">*</span><span class="n">ey</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span><span class="o">*</span><span class="n">ez</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">quiver</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span> <span class="n">n</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">n</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">n</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">quiver</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span> <span class="n">n</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">n</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">n</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">'r'</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
 
     <span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="o">-</span><span class="mf">1.2</span><span class="p">,</span> <span class="mf">1.2</span><span class="p">)</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="o">-</span><span class="mf">1.2</span><span class="p">,</span> <span class="mf">1.2</span><span class="p">)</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">set_zlim</span><span class="p">(</span><span class="o">-</span><span class="mf">1.2</span><span class="p">,</span> <span class="mf">1.2</span><span class="p">)</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">)</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;y&quot;</span><span class="p">)</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">set_zlabel</span><span class="p">(</span><span class="s2">&quot;z&quot;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">"x"</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">"y"</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_zlabel</span><span class="p">(</span><span class="s2">"z"</span><span class="p">)</span>
 
     <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 
@@ -660,7 +697,7 @@ U = -\boldsymbol\mu\cdot\mathbf B,
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="warum-spin-nur-an-magnetfelder-koppelt-eine-symmetriebetrachtung">
-<h1>Warum Spin nur an Magnetfelder koppelt: eine Symmetriebetrachtung<a class="headerlink" href="#warum-spin-nur-an-magnetfelder-koppelt-eine-symmetriebetrachtung" title="Link to this heading">#</a></h1>
+<h1>Warum Spin nur an Magnetfelder koppelt: eine Symmetriebetrachtung<a class="headerlink" href="#warum-spin-nur-an-magnetfelder-koppelt-eine-symmetriebetrachtung" title="Permalink to this heading">#</a></h1>
 <p>In einem Zweizustandssystem lässt sich jeder hermitesche Operator als
 $<span class="math notranslate nohighlight">\(
 O = a_i \sigma_i
@@ -681,7 +718,7 @@ wobei \)</span>\mathbf{K}<span class="math notranslate nohighlight">\( ein äuß
 Die Antwort ergibt sich elegant aus <strong>Parität</strong>.</p>
 <hr class="docutils" />
 <section id="die-pauli-matrizen-als-axiale-vektoren">
-<h2>1. Die Pauli-Matrizen als axiale Vektoren<a class="headerlink" href="#die-pauli-matrizen-als-axiale-vektoren" title="Link to this heading">#</a></h2>
+<h2>1. Die Pauli-Matrizen als axiale Vektoren<a class="headerlink" href="#die-pauli-matrizen-als-axiale-vektoren" title="Permalink to this heading">#</a></h2>
 <p>Spin ist eine Darstellung der Drehgruppe. Die Operatoren <span class="math notranslate nohighlight">\(\sigma_i\)</span> transformieren wie Drehimpulse und sind daher <strong>axiale Vektoren</strong> (Pseudovektoren). Unter einer Paritätstransformation <span class="math notranslate nohighlight">\(P\)</span> gilt:
 $<span class="math notranslate nohighlight">\(
 P\,\boldsymbol{\sigma}\,P^{-1}=+\boldsymbol{\sigma}.
@@ -695,7 +732,7 @@ P\,\mathbf{L}\,P^{-1} = \mathbf{L}.
 </section>
 <hr class="docutils" />
 <section id="transformationseigenschaften-von-e-und-b-feldern">
-<h2>2. Transformationseigenschaften von E- und B-Feldern<a class="headerlink" href="#transformationseigenschaften-von-e-und-b-feldern" title="Link to this heading">#</a></h2>
+<h2>2. Transformationseigenschaften von E- und B-Feldern<a class="headerlink" href="#transformationseigenschaften-von-e-und-b-feldern" title="Permalink to this heading">#</a></h2>
 <p>Aus der Struktur der Maxwellgleichungen folgt:</p>
 <ul class="simple">
 <li><p>Das elektrische Feld <span class="math notranslate nohighlight">\(\mathbf{E}\)</span> ist ein <strong>polarer Vektor</strong>:
@@ -711,7 +748,7 @@ P\,\mathbf{B}\,P^{-1} = +\mathbf{B}.
 </section>
 <hr class="docutils" />
 <section id="bedingungen-an-die-kopplung-paritatsinvarianz-des-hamiltonoperators">
-<h2>3. Bedingungen an die Kopplung: Paritätsinvarianz des Hamiltonoperators<a class="headerlink" href="#bedingungen-an-die-kopplung-paritatsinvarianz-des-hamiltonoperators" title="Link to this heading">#</a></h2>
+<h2>3. Bedingungen an die Kopplung: Paritätsinvarianz des Hamiltonoperators<a class="headerlink" href="#bedingungen-an-die-kopplung-paritatsinvarianz-des-hamiltonoperators" title="Permalink to this heading">#</a></h2>
 <p>Der Hamiltonoperator eines physikalischen Systems muss unter Parität ein Skalar sein:
 $<span class="math notranslate nohighlight">\(
 P\,H_{\text{int}}\,P^{-1} = H_{\text{int}}.
@@ -722,7 +759,7 @@ H_{\text{int}} = -\mathbf{K}\cdot \boldsymbol{\sigma}.
 \)</span>$</p>
 <p>Prüfen wir die beiden Kandidaten für <span class="math notranslate nohighlight">\(\mathbf{K}\)</span>:</p>
 <section id="a-kopplung-an-ein-elektrisches-feld">
-<h3>(a) Kopplung an ein elektrisches Feld<a class="headerlink" href="#a-kopplung-an-ein-elektrisches-feld" title="Link to this heading">#</a></h3>
+<h3>(a) Kopplung an ein elektrisches Feld<a class="headerlink" href="#a-kopplung-an-ein-elektrisches-feld" title="Permalink to this heading">#</a></h3>
 <div class="math notranslate nohighlight">
 \[
 P(\mathbf{E}\cdot \boldsymbol{\sigma})P^{-1}
@@ -741,7 +778,7 @@ nicht erlaubt.</p>
 </section>
 <hr class="docutils" />
 <section id="b-kopplung-an-ein-magnetisches-feld">
-<h3>(b) Kopplung an ein magnetisches Feld<a class="headerlink" href="#b-kopplung-an-ein-magnetisches-feld" title="Link to this heading">#</a></h3>
+<h3>(b) Kopplung an ein magnetisches Feld<a class="headerlink" href="#b-kopplung-an-ein-magnetisches-feld" title="Permalink to this heading">#</a></h3>
 <div class="math notranslate nohighlight">
 \[
 P(\mathbf{B}\cdot \boldsymbol{\sigma})P^{-1}
@@ -760,7 +797,7 @@ H_{\text{int}} = -\gamma\,\mathbf{B}\cdot\boldsymbol{\sigma}.
 </section>
 <hr class="docutils" />
 <section id="fazit-nur-magnetfelder-besitzen-die-richtige-symmetrie">
-<h2>4. Fazit: Nur Magnetfelder besitzen die richtige Symmetrie<a class="headerlink" href="#fazit-nur-magnetfelder-besitzen-die-richtige-symmetrie" title="Link to this heading">#</a></h2>
+<h2>4. Fazit: Nur Magnetfelder besitzen die richtige Symmetrie<a class="headerlink" href="#fazit-nur-magnetfelder-besitzen-die-richtige-symmetrie" title="Permalink to this heading">#</a></h2>
 <p>Die Kernidee lässt sich in einem Satz zusammenfassen:</p>
 <p><strong>Da Spin ein axialer Vektor ist und das elektrische Feld ein polarer, kann ein Spin-<span class="math notranslate nohighlight">\(1/2\)</span> nur mit einem Feld gleicher Transformationseigenschaft koppeln – dem Magnetfeld.</strong></p>
 <p>Oder kurz:
@@ -777,7 +814,7 @@ ist ein Skalar und damit ein gültiger Term im Hamiltonoperator eines zweidimens
 </section>
 <hr class="docutils" />
 <section id="didaktische-schlussbemerkung">
-<h2>5. Didaktische Schlussbemerkung<a class="headerlink" href="#didaktische-schlussbemerkung" title="Link to this heading">#</a></h2>
+<h2>5. Didaktische Schlussbemerkung<a class="headerlink" href="#didaktische-schlussbemerkung" title="Permalink to this heading">#</a></h2>
 <p>Dieser Zugang benötigt keine mikroskopischen Modellannahmen und zeigt unmittelbar, warum ein zweidimensionaler interner Freiheitsgrad, der sich wie ein Drehimpuls verhält, nur durch eine <strong>magnetische Dipolkopplung</strong> mit externen Feldern wechselwirken kann. Damit erhält man die Standardform
 $<span class="math notranslate nohighlight">\(
 H_{\text{Zeeman}} = -\boldsymbol{\mu}\cdot\mathbf{B}.
@@ -822,21 +859,23 @@ H_{\text{Zeeman}} = -\boldsymbol{\mu}\cdot\mathbf{B}.
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
     <i class="fa-solid fa-list"></i> Contents
   </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Magnet-Dipol im homogenen Feld</a><ul class="visible nav section-nav flex-column">
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Magnet-Dipol im homogenen Feld</a><ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lorentz-kraft-auf-ein-linienelement">Lorentz Kraft auf ein Linienelement</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#potentielle-energie">Potentielle Energie</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#warum-spin-nur-an-magnetfelder-koppelt-eine-symmetriebetrachtung">Warum Spin nur an Magnetfelder koppelt: eine Symmetriebetrachtung</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#warum-spin-nur-an-magnetfelder-koppelt-eine-symmetriebetrachtung">Warum Spin nur an Magnetfelder koppelt: eine Symmetriebetrachtung</a><ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#die-pauli-matrizen-als-axiale-vektoren">1. Die Pauli-Matrizen als axiale Vektoren</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transformationseigenschaften-von-e-und-b-feldern">2. Transformationseigenschaften von E- und B-Feldern</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bedingungen-an-die-kopplung-paritatsinvarianz-des-hamiltonoperators">3. Bedingungen an die Kopplung: Paritätsinvarianz des Hamiltonoperators</a><ul class="nav section-nav flex-column">
@@ -897,8 +936,8 @@ By Roland Mitric
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <script defer src="_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb"></script>
 
   <footer class="bd-footer">
   </footer>
