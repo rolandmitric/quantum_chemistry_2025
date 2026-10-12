@@ -1,0 +1,4 @@
+jupyter-book==1.0.4.post1
+# Sphinx 7.2-7.4 duplicates sphinx-thebe's inline JavaScript declarations.
+sphinx==7.1.2
+ghp-import==2.1.0

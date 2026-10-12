@@ -1,4 +1,11 @@
 ipykernel
 numpy
 matplotlib
-
+scipy
+sympy
+# Thebe 0.8 uses the ipywidgets 7 frontend protocol.
+ipywidgets>=7.6,<8
+ipympl>=0.9.5,<0.10
+# Match Binder's notebook interfaces to the same widget frontend.
+jupyterlab>=3.6,<4
+notebook>=6.5,<7
