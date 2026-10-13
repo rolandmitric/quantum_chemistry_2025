@@ -1,0 +1,51 @@
+Tool: built-in image_gen
+Edit source: quantum_chemistry_methods_zoo_v2.png
+Output: quantum_chemistry_methods_zoo_v3.png
+
+FINAL EDIT PROMPT
+
+Edit the supplied clean six-animal quantum-chemistry cartoon into an equally clean classification by variational character. Keep its simple hand-drawn style, plain ivory background, large dark lettering, tiny friendly colored-pencil animals, and generous whitespace. The user specifically wants the two bottom sentences beginning "Schematisch, keine..." DELETED. They must disappear completely; do not reintroduce a caveat paragraph elsewhere. Also remove the old bottom strip "Variationsprinzip: z. B. HF und CI", since the new grouping conveys this.
+
+Replace the old two-axis accuracy chart with THREE clean horizontal bands of equal height, stacked vertically. The vertical placement of bands is categorical, NOT an accuracy ranking. REMOVE the entire vertical "Typische Genauigkeit" axis. Keep just ONE qualitative horizontal cost arrow at the very bottom, labelled "Typischer Rechenaufwand →" with the small word "qualitativ" immediately under its label. No ticks, numbers, scaling powers, or explanatory footer.
+
+Title, exact: "Der Methodenzoo der Quantenchemie".
+Small subtitle, exact: "Variationsprinzip und Rechenaufwand".
+
+LAYOUT:
+Each band has a compact explanatory label area on the left occupying about one quarter of the width, and method animals + large labels in the remaining three quarters. Use only extremely pale blue, peach and green washes to gently distinguish the three rows; no thick boxes, no landscape, no wooden signs, no books. Separate rows with plenty of whitespace. EXACTLY the six animals/methods already present, with none added. Their labels are more prominent than the drawings.
+
+TOP BAND — very pale blue:
+Large heading "Variational".
+Under it, clearly and legibly: "E ≥ E₀".
+Small definition directly below: "E₀: exakte Grundzustandsenergie".
+Across the row, in order of qualitative increasing effort:
+- Small horse near the left of the method area, label "Hartree–Fock", smaller "HF".
+- Small beaver in the middle, label "CI", smaller "z. B. CISD".
+- Small giraffe at the far right, label "FCI", smaller two-line caption "Exakt im gewählten" / "Basissatz".
+All three belong to the variational upper-bound category. Keep the FCI basis qualification accurately spelled and readable.
+
+MIDDLE BAND — very pale peach:
+Large heading "Nichtvariational".
+Under it, the short explanation on two lines: "Keine garantierte" / "obere Energieschranke".
+Small fox in the lower-cost half of the method area, large label "MP2".
+Small elephant farther to the right, large label "CCSD(T)".
+These are conventional perturbative/projected methods; do not put an E ≥ E₀ inequality on this row.
+
+BOTTOM BAND — very pale green:
+Large heading "Dichtefunktionaltheorie".
+Use two short readable description lines beneath the heading, wrapping neatly if necessary:
+"Minimierung eines Näherungsfunktionals"
+"Keine garantierte obere Schranke für E₀"
+A small chameleon with LARGE label "DFT" in the left-to-middle of the method area. Give its pale method region a broad horizontal extent to suggest a range of costs for different functionals, but do not add more method names or arrows. This row is deliberately its own category: approximate DFT often minimizes an energy functional yet does not guarantee a wavefunction variational upper bound to the exact energy. Do NOT label DFT simply "nichtvariational".
+
+The bottom horizontal cost arrow runs left to right beneath the method area, clearly independent of the row ordering. Keep everything large enough to read in a lecture slide, especially the left-hand headings and FCI qualification. Plenty of blank background, minimal shading, compact doodles. No crowded text, tiny footnotes, scenery, added warnings, decorative phrases, captions below the cost axis, or new animals. Retain correct German spelling, mathematical subscripts, and the literal method label CCSD(T).
+
+SCIENTIFIC REFERENCES
+
+Psi4 CI (variational determination of CI coefficients): https://psicode.org/psi4manual/master/detci.html
+Q-Chem manual (nonvariational coupled-cluster energies): https://manual.q-chem.com/4.1/
+PySCF MP2: https://pyscf.org/user/mp.html
+Kieron Burke, The ABC of DFT: https://dft.uci.edu/teaching/lausanne/ABCDFT.pdf
+
+Scope: ground-state energies of a common electronic Hamiltonian. The DFT row distinguishes minimization of an approximate functional from a guaranteed Rayleigh-Ritz upper bound to the exact energy. The positions along the cost arrow are qualitative, not benchmark data.
+

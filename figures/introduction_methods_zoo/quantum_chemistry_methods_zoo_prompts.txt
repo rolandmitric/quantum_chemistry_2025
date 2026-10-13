@@ -1,0 +1,50 @@
+Tool: built-in image_gen
+Output: quantum_chemistry_methods_zoo.png
+
+INITIAL GENERATION PROMPT
+
+Use case: scientific-educational.
+Create a NEW hand-drawn cartoon illustration for a German university quantum chemistry textbook: a charming "zoo" of quantum chemical methods, giving a QUALITATIVE view of typical accuracy versus computational effort while introducing the variational principle. Finished landscape 3:2 educational artwork, high resolution, generous readable lettering. Match an elegant science sketchbook style: warm ivory paper, irregular dark graphite/ink contours, colored-pencil shading, restrained watercolor washes, endearing cartoon animals, simple hand-lettered signs. No glossy 3D, no photorealism, no polished vector graphics, no numerical data invented.
+
+Top title, exact: "Der Methodenzoo der Quantenchemie".
+Small subtitle, exact: "Elektronische Struktur bei festen Kernen".
+
+LAYOUT:
+The left three quarters are a large QUALITATIVE zoo-map plot with hand-drawn axes. The vertical arrow points upward and is labelled "Typische Genauigkeit"; the horizontal arrow points right and is labelled "Rechenaufwand". No ticks, no numbers, no rigid grid, no fitted curve. A small label inside the plot says "schematisch". Faint, soft-edged pastel habitat regions overlap to indicate ranges, NOT precise benchmark positions. The broad trend runs from inexpensive approximate methods at lower left to very costly FCI at upper right. Space animals and labels carefully. Their placements convey a rough teaching overview, never a guaranteed method ranking. DFT and MP2 must visibly overlap in height.
+The right quarter is a separate column OUTSIDE these axes, with three small loosely outlined teaching cards stacked vertically: strong correlation, local correlation, and the variational principle. This is not an accuracy ranking of those cards. A legible two-line caution runs along the bottom below everything.
+
+MAIN ZOO HABITATS, exactly these seven:
+1. Lower left: a small quick rabbit beside the sign "Semiempirik / xTB".
+2. Nearby somewhat to the right: a sturdy friendly horse beside "Hartree–Fock", with smaller "HF". It is a low-cost reference method, not a high-accuracy champion.
+3. Middle left: a colorful chameleon in a broad pastel habitat, labelled "DFT"; smaller sign "GGA · Hybrid · Doppelhybrid". The habitat spans a substantial range of accuracy and cost and visibly overlaps MP2. It must not look like DFT always beats or always loses to MP2.
+4. Middle: a little clever fox labelled "MP2", at a similar height to part of the DFT habitat.
+5. Middle-right: a beaver arranging a few small building blocks, sign "CI", smaller "z. B. CISD". Its habitat overlaps the middle methods; do not put CISD above CCSD(T). A faint dashed path can connect this habitat to FCI, representing expansion of the configuration space.
+6. Further right and generally higher: a friendly elephant beside the sign "CCSD / CCSD(T)". Leave ample room for clear parentheses and method spelling.
+7. Far upper-right of the MAIN PLOT, highest and farthest in computational effort: a giraffe beside the sign "FCI". Its essential small caption, exact: "Exakt im gewählten Basissatz". Wrap this into short readable lines. Never write merely "exakt" or suggest a complete-basis or full-physics exact solution. Do not use a crown or universal best-method slogan.
+
+RIGHT-SIDE CARDS, outside the plotted comparison:
+TOP CARD: a small friendly octopus handling several colored configuration cards. Heading "Starke Korrelation". Three readable method lines: "CASSCF", "CASPT2 / NEVPT2", "DMRG". This is the multireference/active-space family, with no arrow suggesting universally higher accuracy than coupled cluster. No energy upper-bound formula here.
+MIDDLE CARD: a smaller elephant with a few local puzzle pieces. Heading "Lokale Korrelation". Method label "DLPNO-CCSD(T)". Small caption "Aufwand durch Lokalität senken". Do not claim this is identical to canonical CCSD(T) or more accurate than it.
+BOTTOM CARD: a simple open-book / wooden-sign motif, heading "Variationsprinzip". A short mathematical expression "E[Ψ] ≥ E₀", clearly contained WITHIN this card only. Under it, exact label "z. B. HF, CI, CASSCF". The inequality must not span or govern the whole zoo: ordinary MP2, coupled-cluster, perturbative multireference corrections and approximate DFT do not have this general upper-bound guarantee. No connecting line from this card to the entire plot. Tiny secondary text "Ansatzraum einschränken" if there is space; prioritize legibility.
+
+BOTTOM CAUTION, exact wording, in two readable lines:
+"Keine allgemeingültige Rangfolge: Genauigkeit und Aufwand hängen von"
+"System, Eigenschaft, Basissatz und Implementierung ab."
+
+Art direction: the animal choices make the "zoo" memorable, but method names are the main labels. Use tiny wooden signs, a few tufts of grass and pastel habitat washes, not fences full of clutter. Keep academic clarity, correct German spelling and umlauts, readable abbreviations, ample margins and whitespace. No zoo visitors, no logos, no watermark, no extra formulas, no scaling exponents, no numeric accuracy claims, no exhaustive-method claims, no extra methods not specified. Avoid collisions between animal bodies, signs, axes, and the right cards.
+
+FINAL CLEANUP PROMPT
+
+Edit this existing hand-drawn German quantum-chemistry method zoo with ONLY two tiny cleanup changes:
+1. Remove the small decorative wooden sign at the LEFT inside the plot that says "Viel Elektronen – viele Wege der Chemie!" and its short support. Fill that space naturally with the existing watercolor grass/tree background. This is not a method label.
+2. Remove ONLY the handwritten decorative prose on the large grey rock near the lower-right of the main plot ("Verschiedene Methoden – gemeinsames Ziel: Verständnis"). Keep the rock itself and its natural graphite/watercolor texture, with no lettering on it.
+Preserve EVERYTHING else exactly: title, subtitle, every animal, all seven method labels, FCI basis-set qualification, every shaded habitat, axes, "schematisch", all three right-side cards, every formula and all method acronyms, footer caution, layout, colors, paper texture, and detailed hand-drawn style. Do not add or revise any other text, move any element, crop the composition, or change the scientific content.
+
+SCIENTIFIC REFERENCES
+
+Psi4 CI documentation: https://psicode.org/psi4manual/master/detci.html
+ORCA 6.1 coupled-cluster and CI documentation: https://www.faccts.de/docs/orca/6.1/manual/contents/modelchemistries/mdci.html
+PySCF MCSCF documentation: https://pyscf.org/user/mcscf.html
+
+Scientific scope: qualitative teaching schematic, not measured benchmark data or a universal ordering. FCI is exact for the electronic Hamiltonian in the chosen finite basis. The variational bound is associated with the explicitly listed variational wavefunction methods, not all methods shown. Methods for strong correlation and local approximations are shown separately from the qualitative main cost/accuracy comparison.
+

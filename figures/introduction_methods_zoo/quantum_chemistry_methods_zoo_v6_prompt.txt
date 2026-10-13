@@ -1,0 +1,10 @@
+Tool: built-in image_gen
+Edit source: quantum_chemistry_methods_zoo_v5.png
+Output: quantum_chemistry_methods_zoo_v6.png
+
+FINAL EDIT PROMPT
+
+Edit this existing hand-drawn quantum chemistry diagram with ONE precise change only: remove the two-line text near the upper left inside the plot that reads "Einreferenzfälle nahe dem Gleichgewicht" and "bei vergleichbarer Basis". Fill that small text area seamlessly with the surrounding plain ivory background. Leave it blank; do not replace it with anything.
+
+Preserve ALL other pixels/content as closely as possible: the title, both axes and their labels, all six animals and their positions, every method name, every V/NV/rho badge, all soft pastel regions, the N⁴/N⁵/N⁶/N⁷ scaling annotations, FCI's finite-basis caption and combinatorial label, DFT's GGA/Hybrid and functional-dependence labels, and both bottom legend/definition lines. Do not change spelling, typography, colors, layout, size, crop, mathematical notation or scientific content anywhere else. Add no new text, subtitle, caveat or decoration. This is only deletion of those two specified lines.
+

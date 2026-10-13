@@ -1,0 +1,22 @@
+Tool: built-in image_gen
+Edit source: quantum_chemistry_methods_zoo_v3.png
+Output: quantum_chemistry_methods_zoo_v4.png
+
+FINAL EDIT PROMPT
+
+Make a precise, minimal edit to this existing hand-drawn quantum-chemistry cartoon.
+
+DELETE these elements completely:
+1. The subtitle immediately beneath the main title: "Variationsprinzip und Rechenaufwand".
+2. The entire bottom horizontal arrow that previously indicated computational effort.
+3. Its full label "Typischer Rechenaufwand →" and the word "qualitativ".
+
+Fill the removed areas seamlessly with the same plain ivory paper background. Do not replace them with any other subtitle, axis, label, sentence, scale, warning or symbol.
+
+The remaining image is purely a classification of method families. Preserve the main title "Der Methodenzoo der Quantenchemie", the three horizontal pastel category bands, all six cartoon animals, their method labels and scientific explanations EXACTLY:
+- Variational: E ≥ E₀; E₀: exakte Grundzustandsenergie; Hartree–Fock / HF; CI / z. B. CISD; FCI / Exakt im gewählten Basissatz.
+- Nichtvariational: Keine garantierte obere Energieschranke; MP2; CCSD(T).
+- Dichtefunktionaltheorie: Minimierung eines Näherungsfunktionals; Keine garantierte obere Schranke für E₀; DFT.
+
+Do not reorder methods, alter mathematical signs, revise wording, add extra animals, draw new arrows, or change the colors, hand-drawn style or typography. Preserve the clean spacing and generous whitespace. Keep the landscape format and all content fully inside the image. You may rebalance only the empty top and bottom margins slightly to keep the figure visually centered after the deletions. No visual representation of computational demand or accuracy should remain.
+

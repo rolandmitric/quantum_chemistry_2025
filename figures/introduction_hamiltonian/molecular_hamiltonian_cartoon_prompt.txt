@@ -1,0 +1,52 @@
+Tool: built-in image_gen
+Output: molecular_hamiltonian_cartoon.png
+
+FINAL GENERATION PROMPT
+
+Use case: scientific-educational.
+Create a NEW finished hand-drawn cartoon illustration for a German university quantum chemistry textbook. Subject: the FULL molecular Hamiltonian and its five terms, including nuclear kinetic energy. Landscape 3:2 composition, high resolution, clear enough to use on a lecture slide. Warm ivory paper, slightly irregular dark graphite/ink outlines, delicate colored-pencil texture and sparse watercolor washes, friendly tiny expressive faces on particle spheres, restrained teal, blue, coral and ochre accents. Sophisticated and scientifically accurate, like an engaging science sketchbook. No photorealism, no polished vector style, no glossy 3D.
+
+Top title, exact German: "Der molekulare Hamiltonoperator".
+Below, small exact subtitle: "Nichtrelativistisches Coulomb-Modell · atomare Einheiten".
+Then a prominent clean hand-lettered mathematical decomposition across the page, typeset accurately:
+Ĥ = T̂_e + T̂_K + V̂_eK + V̂_ee + V̂_KK
+Use clear true subscripts and operator hats. There are five contributions, all added here; the negative sign of the electron–nucleus term appears INSIDE its definition below.
+
+Underneath arrange FIVE roomy illustrated vignettes: TWO broad kinetic-energy panels across the upper row, THREE interaction panels across the lower row. Balanced spacing, gentle watercolor heading highlights, no heavy boxes, no connecting arrows between panels. Every vignette has its correct term formula, a charming explanatory particle sketch, and its short German heading. Keep mathematical formulas large and unobscured. All lettering is carefully handwritten, not dense or decorative.
+
+UPPER LEFT:
+Heading, on two lines if needed: "Kinetische Energie der Elektronen".
+Formula, in accurate mathematical notation:
+T̂_e = −½ ∑_i ∇_i²
+Sketch one small BLUE electron sphere marked with a visible minus charge and label i, with a few short movement strokes suggesting motion. Motion only; do not show an orbit, an interparticle force, or label its energy negative.
+
+UPPER RIGHT:
+Heading: "Kinetische Energie der Kerne".
+Formula:
+T̂_K = −∑_A (1 / (2M_A)) ∇_A²
+Use a proper stacked fraction with M_A in the denominator. Sketch a larger CORAL nucleus marked +Z_A and labelled A, with short movement strokes. Clearly show the nucleus also moving. Do not depict it clamped or fixed, and do not imply negative kinetic energy.
+
+LOWER LEFT:
+Heading: "Elektron–Kern-Anziehung".
+Formula:
+V̂_eK = −∑_{i,A} Z_A / r_{iA}
+Use a proper fraction. Sketch a small blue electron with minus charge on the left and a larger coral nucleus +Z_A on the right. Above/beside the particles draw two clear force arrows pointing TOWARD EACH OTHER: left electron arrow points right; right nucleus arrow points left. Beneath the pair a thin neutral dashed measurement line with end ticks, labelled r_{iA}, marks their separation. The measurement line must be distinct from the attraction arrows. Pleasant interested cartoon faces may look toward each other.
+
+LOWER MIDDLE:
+Heading: "Elektron–Elektron-Abstoßung".
+Formula:
+V̂_ee = ∑_{i<j} 1 / r_{ij}
+Preserve the restriction i<j exactly. Sketch two small BLUE electron spheres, both visibly negatively charged, labelled i and j. Force arrows point AWAY FROM EACH OTHER: the left arrow points outward left, the right arrow outward right. Beneath them a neutral dashed measurement line with end ticks, labelled r_{ij}. Do not show inward arrows.
+
+LOWER RIGHT:
+Heading: "Kern–Kern-Abstoßung".
+Formula:
+V̂_KK = ∑_{A<B} (Z_A Z_B) / R_{AB}
+Preserve the restriction A<B and the uppercase R_AB exactly. Sketch two larger CORAL nucleus spheres, one marked +Z_A, one +Z_B, labelled A and B. Force arrows point AWAY FROM EACH OTHER: left particle outward left, right particle outward right. Beneath them a neutral dashed measurement line with end ticks, labelled R_{AB}. Do not show inward arrows.
+
+A small readable footer spanning the bottom, exact content:
+"i, j: Elektronen · A, B: Kerne · Z_A: Kernladungszahl · M_A: Kernmasse in Elektronenmassen"
+Use actual mathematical subscripts in this footer as well.
+
+Scientific and visual constraints: exactly these FIVE terms, with exactly the formulas specified. Uppercase nuclear indices and lowercase electronic indices must remain distinct. Both kinetic operators carry minus signs and squared Laplacians; only electron–nucleus Coulomb energy has a negative sign; the two repulsive Coulomb terms are positive. Do not replace kinetic terms with classical p² expressions. No orbital tracks, no extra Hamiltonian terms, no radiation, no decorative lab equipment, no speech bubbles, no watermark, no extra prose. Preserve generous whitespace, legibility, correct German umlauts, and the charming hand-drawn aesthetic. Cartoon faces are secondary to clear charges, directions and scientific notation.
+

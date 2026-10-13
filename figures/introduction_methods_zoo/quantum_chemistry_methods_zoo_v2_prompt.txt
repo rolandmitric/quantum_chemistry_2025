@@ -1,0 +1,36 @@
+Tool: built-in image_gen
+Edit source: quantum_chemistry_methods_zoo.png
+Output: quantum_chemistry_methods_zoo_v2.png
+
+FINAL EDIT PROMPT
+
+Redesign the provided quantum-chemistry zoo illustration into a MUCH CLEANER, SPARSE textbook cartoon. The user says the original is too crowded to focus on the content. Prioritize strong hierarchy, large legible method names and generous empty space. This is a substantial layout simplification, not just removal of a few props.
+
+Keep the hand-drawn graphite/ink + light colored-pencil charm, but replace ALL scenery with a plain very pale ivory background. Remove every tree, bush, tuft of grass, stone, mountain, landscape path, fence, wooden sign, parchment banner, decorative border and watercolor sky. Remove the three large sidebar panels entirely. No books, puzzle pieces or configuration cards. Use no large decorative textures. Animal doodles should be SMALL and simple, each taking less visual weight than its method name.
+
+Landscape 3:2, high resolution. At least HALF of the canvas should remain empty background.
+Title across the top, exact: "Der Methodenzoo der Quantenchemie".
+A small subtitle, exact: "Eine Auswahl".
+A single spacious qualitative comparison chart fills most of the canvas beneath the title. Vertical arrow at left: "Typische Genauigkeit". Horizontal arrow at bottom: "Rechenaufwand". No tick marks, numbers, grid lines or trend curve. No arrows connecting all methods into a guaranteed hierarchy.
+
+Show EXACTLY SIX simple small animal doodles, well separated, with LARGE DARK METHOD LABELS immediately beside them. No speech bubbles and no label boards:
+1. A small horse near lower left. Large label "Hartree–Fock", smaller "HF".
+2. A small chameleon near middle left. Large label "DFT". No functional subclasses.
+3. A small fox near the middle. Large label "MP2".
+4. A small beaver near middle-right. Large label "CI", smaller "z. B. CISD". No blocks.
+5. A small elephant further right and somewhat higher. Large label "CCSD(T)".
+6. A small giraffe at upper-right, farthest in computational effort. Large label "FCI". Essential readable two-line caption: "Exakt im gewählten" / "Basissatz".
+
+Place HF at the relatively inexpensive lower-left end, CI in the middle-right below CCSD(T), and FCI in the upper-right. Place DFT and MP2 at SIMILAR vertical heights, with their pale softly shaded accuracy regions slightly OVERLAPPING, so neither is declared universally superior. All the regions should be very faint, compact and translucent, not a multicolored landscape. Allow broad overlaps; this is not quantitative benchmark data. Keep enough open space between every animal/label grouping. Animals are a friendly mnemonic, not the main subject. Avoid large complex animal shading. Method labels should be the first thing the viewer reads after the title.
+
+Below the chart, one slim pale-blue underline or wash and one readable line, exact:
+"Variationsprinzip: z. B. HF und CI"
+No formula, no book, no arrows to the entire zoo.
+
+At the very bottom, a quiet but comfortably readable two-line qualifier:
+"Schematisch, keine allgemeingültige Rangfolge."
+"Genauigkeit und Aufwand hängen von System, Eigenschaft, Basissatz und Implementierung ab."
+Do not shrink this into illegible fine print.
+
+Preserve scientific accuracy: FCI exact only within the chosen basis, variational connection only to named HF and CI, no universal cost/accuracy ordering. Do not add semiempirical methods, multireference lists, DLPNO annotations, more animals, extra claims or decorative slogans. The goal is a clean, immediately understandable, hand-drawn teaching figure, with SIX visually distinct method names and plenty of breathing room.
+

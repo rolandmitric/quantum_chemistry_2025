@@ -1,0 +1,50 @@
+Tool: built-in image_gen
+Edit source: quantum_chemistry_methods_zoo_v2.png
+Output: quantum_chemistry_methods_zoo_v5.png
+
+FINAL EDIT PROMPT
+
+Rework the supplied sparse quantum-chemistry cartoon into a CLEAR COMPARISON of computational effort and typical accuracy, which is the user's main interest. Retain the beautiful minimalist hand-drawn style, ivory background, large method labels and SIX small animal doodles. No scenery, signs, wooden textures, books or decorative objects. Lots of whitespace. Landscape 3:2, high resolution.
+
+Keep ONLY the main title: "Der Methodenzoo der Quantenchemie". Remove "Eine Auswahl" and add NO subtitle under the title. Delete all the old bottom sentences beginning "Schematisch, keine..." and "Genauigkeit und Aufwand hängen...". Delete the old "Variationsprinzip: z. B. HF und CI" strip.
+
+The MAIN graphic is a single qualitative two-axis comparison:
+- Horizontal arrow increasing to the right: "Rechenaufwand".
+- Vertical arrow increasing upward: "Typische Genauigkeit".
+- No numeric accuracy ticks, no percentages, no fabricated benchmark data, no diagonal trend line.
+- A small unobtrusive two-line scope label in unused upper-left plot space: "Einreferenzfälle nahe dem Gleichgewicht" / "bei vergleichbarer Basis". This is a local plot label, not a subtitle or bottom warning paragraph.
+- Computational demand must be represented by the method positions LEFT TO RIGHT, while typical accuracy is represented BOTTOM TO TOP. Variational character must NOT determine position.
+
+SIX METHOD GROUPS, ordered across the chart and carefully separated:
+1. Hartree–Fock, small horse in the bottom-left, inexpensive and low typical accuracy. Large label "Hartree–Fock", smaller "HF", plus the formal canonical effort annotation "∼ N⁴".
+2. DFT, small chameleon in the LEFT part of the plot at similar horizontal cost to HF / somewhat to its right, but distinctly above HF. Large label "DFT", smaller "(GGA / Hybrid)". Give it a tall broad green translucent region across intermediate accuracy values. Caption within its region: "funktionalabhängig". Do NOT assign DFT a single scaling exponent. Its broad accuracy region overlaps MP2 and the lower part of the CISD range; do not impose DFT always better or worse than MP2. No double hybrids in this restricted label.
+3. MP2, small fox near the middle, clearly right of HF/DFT. Large label "MP2" and effort annotation "∼ N⁵". Intermediate accuracy.
+4. CI (CISD), small beaver clearly RIGHT OF MP2. Large label "CI (CISD)", effort annotation "∼ N⁶". Intermediate-to-higher accuracy, center slightly above MP2, with visibly OVERLAPPING vertical ranges. Do not make CISD a guaranteed accuracy improvement over MP2.
+5. CCSD(T), small elephant to the RIGHT of CISD and ABOVE it. Large label "CCSD(T)" and effort annotation "∼ N⁷". High typical accuracy for the stated single-reference scope.
+6. FCI, small giraffe far UPPER RIGHT: greatest effort and the finite-basis accuracy limit. Large label "FCI". Readable qualification "Exakt im gewählten Basissatz" on two lines. Effort annotation "kombinatorisch". Do not imply exactness beyond the finite basis.
+
+Use soft compact semi-transparent pastel regions around methods, rather than precise point markers. The ranges for DFT, MP2 and CISD should overlap in vertical extent. No animals or labels overlap. Position CISD somewhat ABOVE MP2, not far below it as in the old image; the overlap still signals no strict accuracy ordering. Spread the six groups across the available width rather than putting methods into horizontal categories.
+
+VARIATIONAL CHARACTER AS SECONDARY SYMBOLS:
+A small BLUE circular badge marked "V" beside HF, CI (CISD), and FCI.
+A small ORANGE circular badge marked "NV" beside MP2 and CCSD(T).
+A small GREEN circular badge marked "ρ" beside DFT.
+Do not color or mark any method incorrectly. Symbols must be clearly separate from method names and cost formulas.
+
+Below the axis, ONE compact readable legend line:
+"V: variational     NV: nichtvariational     ρ: Dichtefunktionaltheorie"
+Beneath it, ONE compact mathematical definition:
+"Formale Skalierung kanonischer Verfahren; N = Zahl der Basisfunktionen"
+These two lines explain the symbols and exponents, not a universal accuracy guarantee. No other footer text, disclaimer paragraph, density-functional explanation, inequality or subtitle.
+
+Scientific scope: the scaling annotations are formal asymptotic costs of conventional canonical algorithms, not measured timings, and the accuracy placements are qualitative for typical single-reference cases close to equilibrium. CI's N⁶ refers specifically to CISD, not to all CI expansions. This scientific scope should guide the drawing, not be printed as a long paragraph. DFT remains separate from wavefunction variational classification through its ρ badge. Preserve exact spelling, subscripts/superscripts, parentheses, and all readability. Make the viewer immediately see the effort–accuracy trade-off first, and variational character second.
+
+SCIENTIFIC REFERENCES
+
+Psi4 MP2 canonical N^5 scaling: https://psicode.org/psi4manual/1.10.x/dfmp2.html
+ORCA manual (canonical CISD/CCSD N^6 and triples N^7): https://www.kofo.mpg.de/970274/orca_manual_5_0_4.pdf
+Q-Chem DFT comparison: https://manual.q-chem.com/4.4/sect-DFT.html
+Psi4 CI/CC accuracy and variational CI: https://psicode.org/psi4manual/master/detci.html
+
+Scope: qualitative accuracy/effort comparison, with formal canonical asymptotic scaling annotations. The accuracy regions are not measured data. They refer to representative single-reference systems near equilibrium with comparable bases. DFT is restricted to GGA/hybrid families and has no single cost exponent or universal accuracy ranking relative to MP2 or CISD. The CI scaling is specifically CISD, not general CI. V/NV describe the wavefunction upper-bound distinction; DFT uses its own rho marker.
+
