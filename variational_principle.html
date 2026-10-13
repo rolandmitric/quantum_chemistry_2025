@@ -586,15 +586,15 @@
 </div>
 </details>
 </div>
-<p>Wir haben in der <strong>Physikalischen Chemie I</strong> gesehen, dass sich die Schrödingergleichung nur für wenige ideale Systeme exakt lösen lässt. Dies waren z. B. das <em>Teilchen im Kasten</em>, der <em>harmonische Oszillator</em>, der <em>starre Rotor</em> und das <em>Wasserstoffatom</em>.</p>
+<p>Wir haben in der <strong>Physikalischen Chemie I</strong> gesehen, dass sich die Schrödingergleichung nur für wenige ideale Systeme exakt analytisch lösen lässt. Dies waren z. B. das <em>Teilchen im Kasten</em>, der <em>harmonische Oszillator</em>, der <em>starre Rotor</em> und das <em>Wasserstoffatom</em>.</p>
 <p>Diese analytisch lösbaren Beispiele haben uns gelehrt, wie sich Energiequantisierung, Wellenfunktionen und Erwartungswerte aus der Grundgleichung der Quantenmechanik ergeben. Doch solche exakt analytisch lösbaren Fälle sind eher seltene Ausnahmen!</p>
-<p>Der weitaus größte Teil aller physikalisch und chemisch interessanten Systeme entzieht sich einer exakten analytischen Behandlung. Bereits das einfachste Molekül (<span class="math notranslate nohighlight">\(\mathrm{H_2}\)</span>) mit mehr als einem Elektron führt auf eine elektronische Schrödingergleichung, die sich nicht mehr exakt lösen lässt.</p>
+<p>Der weitaus größte Teil aller physikalisch und chemisch interessanten Systeme entzieht sich einer exakten analytischen Behandlung. Bereits für das Wasserstoffmolekül <span class="math notranslate nohighlight">\(\mathrm{H_2}\)</span> lässt sich die elektronische Schrödingergleichung nicht mehr in geschlossener analytischer Form lösen.</p>
 <p>Damit stellt sich die zentrale Frage: <strong>Wie kann man dennoch zuverlässige Näherungen für Energien und Wellenfunktionen molekularer Systeme gewinnen?</strong></p>
-<p>Genau mit dieser Frage befasst sich die <em>Quantenchemie</em>. Ihr Ziel ist es, systematische und möglichst effiziente Näherungsverfahren zu entwickeln, die die Lösung der molekularen Schrödingergleichung ermöglichen. Das <strong>Variationsprinzip</strong>, das wir in diesem Kapitel kennenlernen werden, bildet einen der grundlegendsten theoretischen Pfeiler der Quantenchemie. Es liefert den konzeptionellen und mathematischen Rahmen, in dem sich Näherungen entwickeln und systematisch verbessern lassen.</p>
+<p>Das <strong>Variationsprinzip</strong>, das wir in diesem Kapitel kennenlernen werden, bildet einen der grundlegendsten theoretischen Pfeiler der Quantenchemie. Es liefert den konzeptionellen und mathematischen Rahmen, in dem sich Näherungen entwickeln und systematisch verbessern lassen.</p>
 <section id="idee-des-variationsverfahrens">
 <h2>Idee des Variationsverfahrens<a class="headerlink" href="#idee-des-variationsverfahrens" title="Permalink to this heading">#</a></h2>
 <p>Das Variationsprinzip beruht auf einem einfachen, aber äußerst mächtigen Gedanken:</p>
-<p>Man konstruiert eine analytische Form für die angenäherte Wellenfunktion, die von einigen Parametern abhängt. Diese Parameter werden dann so variiert, dass der Energieerwartungswert den man mit Hilfe der genäherten Wellenfunktion berechnet, minimal wird.</p>
+<p>Man konstruiert einen parametrisierten Ansatz für die angenäherte Wellenfunktion, der von einigen Parametern abhängt. Diese Parameter werden dann so variiert, dass der Energieerwartungswert den man mit Hilfe der genäherten Wellenfunktion berechnet, minimal wird.</p>
 <p>Betrachten wir nun ein System mit dem Hamiltonoperator <span class="math notranslate nohighlight">\(\hat{H}\)</span>. Wir nehmen an, dass das System einen Grundzustand mit der Energie <span class="math notranslate nohighlight">\(E_0\)</span> besitzt. Die entsprechende (unbekannte) normierte exakte Wellenfunktion bezeichnen wir als <span class="math notranslate nohighlight">\(\psi_0\)</span>. Die exakte Wellenfunktion ist eine Eigenfunktion des Hamiltonoperators:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -603,18 +603,19 @@
 <p>Äquivalent dazu ist der Erwartungswert der Energie im Grundzustand ebenfalls gleich <span class="math notranslate nohighlight">\(E_0\)</span>. Es gilt also:</p>
 <div class="math notranslate nohighlight">
 \[
-E_{0} = \int dV\, \psi_{0}^{*}\,\hat{H}\,\psi_{0}
+E_{0} = \int d\tau\, \psi_{0}^{*}\,\hat{H}\,\psi_{0}
 \]</div>
-<p>mit der <strong>Normierungsbedingung</strong></p>
+<p>Dabei steht <span class="math notranslate nohighlight">\(\int d\tau\)</span> für die Integration über alle relevanten Koordinaten und gegebenenfalls die Summation über Spinvariablen.</p>
+<p>Es gilt die <strong>Normierungsbedingung</strong></p>
 <div class="math notranslate nohighlight">
 \[
-\int dV\, \psi_{0}^{*}\psi_{0} = 1 \, .
+\int d\tau\, \psi_{0}^{*}\psi_{0} = 1 \, .
 \]</div>
 <p>Betrachten wir nun eine <strong>beliebige normierte Testwellenfunktion</strong> <span class="math notranslate nohighlight">\(\psi_{\text{test}}\)</span>, die die Randbedingungen des Problems erfüllt. Das bedeutet, dass <span class="math notranslate nohighlight">\(\psi_{\text{test}}\)</span> im gleichen Funktionenraum liegt und dieselben physikalischen Einschränkungen wie die exakte (uns unbekannte) Wellenfunktion <span class="math notranslate nohighlight">\(\psi_0\)</span> erfüllt.</p>
 <p>Mit Hilfe dieser Testfunktion können wir nun auch den entsprechenden <strong>Energieerwartungswert</strong></p>
 <div class="math notranslate nohighlight">
 \[
-E_{\text{test}} = \int dV\, \psi_{\text{test}}^{*}\,\hat{H}\,\psi_{\text{test}}
+E_{\text{test}} = \int d\tau\, \psi_{\text{test}}^{*}\,\hat{H}\,\psi_{\text{test}}
 \]</div>
 <p>berechnen.</p>
 <p>Das Variationsprinzip besagt nun, dass dieser Erwartungswert stets <strong>größer oder gleich der exakten Grundzustandsenergie</strong> ist.</p>
@@ -628,13 +629,14 @@ E_{\text{test}} = \int dV\, \psi_{\text{test}}^{*}\,\hat{H}\,\psi_{\text{test}}
 </section>
 <section id="beweis-des-variationsprinzips">
 <h2>Beweis des Variationsprinzips<a class="headerlink" href="#beweis-des-variationsprinzips" title="Permalink to this heading">#</a></h2>
+<p>Für den folgenden Beweis nehmen wir ein rein diskretes Spektrum mit einer <strong>vollständigen orthonormierten Eigenbasis</strong> an. Das Variationsprinzip gilt auch bei kontinuierlichen Spektralanteilen; diese werden in einer allgemeinen Entwicklung durch zusätzliche Integrale berücksichtigt.</p>
 <p>Seien <span class="math notranslate nohighlight">\(\psi _n\)</span> die <strong>exakten</strong> Eigenfunktionen des Hamiltonoperators:</p>
 <div class="math notranslate nohighlight">
 \[\hat{H}\psi_{n}=E_{n}\psi_{n}\quad n=0,1,2\cdots.  \]</div>
 <p>Die Eigenwerte können immer nach der Größe angeordnet werden. Also nehmen wir an, dass die Eigenwerte wie folgt sortiert sind:</p>
 <div class="math notranslate nohighlight">
 \[ E_{0}\le E_{1}\le E_{2}\le\cdots\le E_{i}\le\cdots. \]</div>
-<p>Die mathematischen Eigenschaften der hermiteschen Operatoren garantieren, dass die exakten Eigenfunktionen eine <strong>vollständige orthonormierte</strong> Basis bilden.</p>
+<p>Nach unserer Annahme bilden diese Eigenfunktionen eine <strong>vollständige orthonormierte</strong> Basis.</p>
 <p>Dies bedeutet, dass eine beliebige Test-Wellenfunktion, die die gleichen Randbedingungen erfüllt, exakt in der Basis zerlegt werden kann.</p>
 <p>Für eine beliebige Test-Wellenfunktion exisitiert also eine <strong>exakte</strong> Basis-Zerlegung in der Form:</p>
 <div class="math notranslate nohighlight">
@@ -648,7 +650,7 @@ E_{\text{test}} = \int dV\, \psi_{\text{test}}^{*}\,\hat{H}\,\psi_{\text{test}}
 \[ \int d\tau \psi_{i}^{*}\psi_{j}=\delta_{ij} \]</div>
 <p>Damit vereinfacht sich die Normierungsbedingung auf:</p>
 <div class="math notranslate nohighlight">
-\[ \sum_{i}|c_{i}^{2}|=1. \]</div>
+\[ \sum_{i}|c_{i}|^{2}=1. \]</div>
 <p>Für den Energie-Erwartungswert der Test-Wellenfunktion bekommen wir:</p>
 <div class="math notranslate nohighlight">
 \[ E[\psi_{test}]=\int d\tau \psi_{test}^{*}\hat{H}\psi_{test}=\sum_{i}\sum_{j}c_{i}^{*}c_{j}\int d\tau \psi_{i}^{*}\hat{H}\psi_{j}.  \]</div>
@@ -660,24 +662,24 @@ E_{\text{test}} = \int dV\, \psi_{\text{test}}^{*}\,\hat{H}\,\psi_{\text{test}}
 \[ E[\psi_{test}]=\sum_{i}\sum_{j}c_{i}^{*}c_{j}E_{j}\int d\tau \psi_{i}^{*}\psi_{j} \]</div>
 <p>Nun kommt wieder die Orthonormierung ins Spiel und wir erhalten:</p>
 <div class="math notranslate nohighlight">
-\[ E[\psi_{test}]=\sum_{i}|c_{i}^{2}|E_{i}. \]</div>
+\[ E[\psi_{test}]=\sum_{i}|c_{i}|^{2}E_{i}. \]</div>
 <p>Da wir die Eigenwerte der Größe nach sortiert haben gilt ferner die folgende Ungleichheit:</p>
 <div class="math notranslate nohighlight">
-\[ E[\psi_{test}]=|c_{0}^{2}|E_{0}+|c_{1}^{2}|E_{1}+|c_{2}^{2}|E_{2}+\cdots\ge|c_{0}^{2}|E_{0}+|c_{1}^{2}|E_{0}+|c_{2}^{2}|E_{0}+\cdots \]</div>
+\[ E[\psi_{test}]=|c_{0}|^{2}E_{0}+|c_{1}|^{2}E_{1}+|c_{2}|^{2}E_{2}+\cdots\ge|c_{0}|^{2}E_{0}+|c_{1}|^{2}E_{0}+|c_{2}|^{2}E_{0}+\cdots \]</div>
 <div class="math notranslate nohighlight">
-\[ E[\psi_{test}]\ge E_{0}\left(|c_{0}^{2}|+|c_{1}^{2}|+|c_{2}^{2}|+\cdots\right). \]</div>
+\[ E[\psi_{test}]\ge E_{0}\left(|c_{0}|^{2}+|c_{1}|^{2}+|c_{2}|^{2}+\cdots\right). \]</div>
 <p>Da aber die Wellenfunktion normiert ist gilt auch,</p>
 <div class="math notranslate nohighlight">
-\[ \sum_{i}|c_{i}^{2}|=1 \]</div>
+\[ \sum_{i}|c_{i}|^{2}=1 \]</div>
 <p>Damit haben wir gezeigt, dass die Energie der Test-Wellenfunktion immer größer oder gleich als die exakte Grundzustandsenergie ist. Für jede <strong>beliebige</strong> Test-Wellenfunktion gilt also die folgende Relation:</p>
 <div class="math notranslate nohighlight">
 \[ \require{color}\fcolorbox{red}{#f2d5d3}{$E[\psi_{test}]\ge E_{0}$} \]</div>
 </section>
 <section id="parametrisierung-des-variationsansatzes">
 <h2>Parametrisierung des Variationsansatzes<a class="headerlink" href="#parametrisierung-des-variationsansatzes" title="Permalink to this heading">#</a></h2>
-<p>Die Bedeutung des Variationsprinzips liegt darin, dass uns <strong>jede beliebige normierte Wellenfunktion</strong> bereits eine obere Schranke für die exakte Grundzustandsenergie liefert. Damit verwandelt man die Lösung der Schrödingergleichung in ein <strong>Optimierungsproblem</strong>, bei dem die bestmögliche Näherung durch Minimierung des Energieerwartungswerts gefunden werden kann.</p>
-<p>Darüber hinaus bietet uns das Variationsprinzip die Möglichkeit, sowohl die Energie als auch die Wellenfunktion <strong>systematisch</strong> zu verbessern – etwa durch Erweiterung des Variationsraums. Auf diese Weise lässt sich die exakte Lösung schrittweise immer genauer annähern.</p>
-<p>Das Variationsprinzip ist daher vielleicht die <strong>wichtigste Näherungsmethode</strong> der Quantenchemie: eine große Zahl moderner quantenchemischer Verfahren beruht unmittelbar auf diesem fundamentalen Konzept.</p>
+<p>Die Bedeutung des Variationsprinzips liegt darin, dass uns <strong>jede beliebige normierte Wellenfunktion</strong> bereits eine obere Schranke für die exakte Grundzustandsenergie liefert. Damit verwandelt man die Lösung der Schrödingergleichung in ein <strong>Optimierungsproblem</strong>, bei dem die energetisch bestmögliche Näherung innerhalb der gewählten Familie von Testwellenfunktionen durch Minimierung des Energieerwartungswerts gefunden werden kann.</p>
+<p>Bei einer <strong>systematischen Erweiterung</strong> des Variationsraums, die alle bisherigen Testwellenfunktionen einschließt, kann die vollständig minimierte Energie nur sinken oder unverändert bleiben. Sie bleibt dabei eine obere Schranke für die exakte Grundzustandsenergie. Konvergenz zur exakten Grundzustandsenergie setzt voraus, dass die gewählten Variationsräume den Grundzustand beliebig genau annähern können. Eine bessere Energie garantiert jedoch nicht automatisch eine Verbesserung aller Eigenschaften der Wellenfunktion.</p>
+<p>Das Variationsprinzip ist eine <strong>exakte Aussage</strong> und bildet die Grundlage vieler Näherungsverfahren der Quantenchemie. Die Näherung entsteht durch die Einschränkung der zugelassenen Testwellenfunktionen.</p>
 <section id="wie-funktionieren-variationelle-methoden-der-quantenchemie">
 <h3>Wie funktionieren variationelle Methoden der Quantenchemie?<a class="headerlink" href="#wie-funktionieren-variationelle-methoden-der-quantenchemie" title="Permalink to this heading">#</a></h3>
 <p>Man konstruiert einen <strong>physikalisch motivierten Ansatz</strong> für die Wellenfunktion, der einige <strong>freie Variationsparameter</strong> enthält:</p>
@@ -690,7 +692,7 @@ E_{\text{test}} = \int dV\, \psi_{\text{test}}^{*}\,\hat{H}\,\psi_{\text{test}}
 <div class="math notranslate nohighlight">
 \[
 E[\psi_{\text{test}}] = 
-\int d\tau \psi_{\text{test}}  \hat{H}  \psi_{\text{test}} 
+\int d\tau \psi_{\text{test}}^{*}  \hat{H}  \psi_{\text{test}} 
 \]</div>
 <p><strong>mit Bezug auf die Variationsparameter</strong> <span class="math notranslate nohighlight">\(\beta_{1}, \beta_{2}, \ldots, \beta_{n}\)</span> <strong>minimiert</strong> unter der <strong>Nebenbedingung</strong>, dass der variationelle Ansatz normiert ist:</p>
 <div class="math notranslate nohighlight">
