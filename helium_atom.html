@@ -500,10 +500,11 @@
                 <ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#der-atomare-hamiltonoperator">Der atomare Hamiltonoperator</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#separationsansatz-hartree-produkt">Separationsansatz (Hartree-Produkt)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#energieerwartungswert-des-hartree-produktansatzes">Energieerwartungswert des Hartree-Produktansatzes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#energie-des-heliumatoms-ohne-elektronelektron-abstoszung">Energie des Heliumatoms ohne Elektron–Elektron-Abstoßung</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#erste-verbesserung-energieerwartungswert-des-hartree-produktansatzes">Erste Verbesserung: Energieerwartungswert des Hartree-Produktansatzes</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wie-grosz-ist-die-elektronelektron-wechselwirkung-eine-erste-abschatzung">Wie groß ist die Elektron–Elektron-Wechselwirkung? Eine erste Abschätzung.</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#symbolische-berechnung-des-erwartungswertes">Symbolische Berechnung des Erwartungswertes</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optimierung-der-effektiven-kernladung">Optimierung der effektiven Kernladung</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zweite-verbesserung-des-ansatzes-optimierung-der-effektiven-kernladung">Zweite Verbesserung des Ansatzes: Optimierung der effektiven Kernladung</a></li>
 </ul>
             </nav>
         </div>
@@ -517,7 +518,8 @@
                   
   <section class="tex2jax_ignore mathjax_ignore" id="das-helium-atom">
 <h1>Das Helium-Atom<a class="headerlink" href="#das-helium-atom" title="Permalink to this heading">#</a></h1>
-<p>Nachdem wir das Variationsprinzip als Werkzeug zur näherungsweisen Lösung komplexer quantenmechanischer Probleme eingeführt haben, wenden wir uns nun dem ersten System zu, das bereits die für quantenchemische Fragestellungen typische Komplexität aufweist: dem Heliumatom. Obwohl es lediglich zwei Elektronen enthält, erweist es sich als deutlich schwieriger zu behandeln als das Wasserstoffatom. Dieses Beispiel soll vor allem dazu dienen, zentrale Konzepte und Ideen der Quantenchemie zu motivieren – an einem noch überschaubaren System, bei dem ein Teil der Rechnungen „von Hand“ nachvollzogen werden kann. Viele der hier am Heliumatom entwickelten Ansätze werden wir anschließend auf größere Mehrelektronen-Atome und molekulare Systeme übertragen und verallgemeinern.</p>
+<p>Nachdem wir das Variationsprinzip als Werkzeug zur näherungsweisen Lösung quantenmechanischer Probleme kennengelernt haben, wenden wir uns nun dem Heliumatom zu. Obwohl es nur zwei Elektronen besitzt, ist es aufgrund der gegenseitigen Elektronenabstoßung deutlich schwieriger zu behandeln als das Wasserstoffatom. Bereits an diesem einfachen Beispiel begegnen uns zentrale Herausforderungen der Quantenchemie.</p>
+<p>Das Heliumatom eignet sich besonders gut, um grundlegende Konzepte und Näherungsverfahren zu entwickeln, da sich viele Rechenschritte noch „von Hand“ nachvollziehen lassen. Die dabei gewonnenen Einsichten und Ansätze werden wir anschließend auf größere Mehrelektronenatome und molekulare Systeme übertragen und verallgemeinern.</p>
 <section id="der-atomare-hamiltonoperator">
 <h2>Der atomare Hamiltonoperator<a class="headerlink" href="#der-atomare-hamiltonoperator" title="Permalink to this heading">#</a></h2>
 <p>Das Heliumatom besteht aus einem Kern mit Ladungszahl <span class="math notranslate nohighlight">\(Z = 2\)</span> und zwei Elektronen.<br />
@@ -547,59 +549,70 @@ h = -\tfrac12 \nabla^2 - \frac{Z}{r}.
 \]</div>
 <div style="background-color:#e6f0ff; border:2px solid #3366cc; border-radius:8px; padding:10px; margin-top:1em;">
 <b>Verallgemeinerung: Ungekoppelter Hamiltonoperator für ein $N$-Elektronen-Atom</b><br><br>
-Lässt man auch bei einem allgemeinen $N$-Elektronen-Atom die Elektron–Elektron-Wechselwirkung fort, so ergibt sich der ungekoppelte Hamiltonoperator zu
-$$
+Lässt man auch bei einem allgemeinen N-Elektronen-Atom die Elektron–Elektron-Wechselwirkung fort, so ergibt sich der ungekoppelte Hamiltonoperator zu
+<div class="math notranslate nohighlight">
+\[
 H_0 = \sum_{i=1}^{N} \left(-\tfrac12 \nabla_i^2 - \frac{Z}{r_i}\right)
     = \sum_{i=1}^{N} h(i),
-$$
-wobei jeder Summand $h(i)$ den Ein-Elektron-Hamiltonian für das $i$-te Elektron beschreibt:
-$$
+\]</div>
+<p>wobei jeder Summand <span class="math notranslate nohighlight">\(h(i)\)</span> den Ein-Elektron-Hamiltonian für das <span class="math notranslate nohighlight">\(i\)</span>-te Elektron beschreibt:</p>
+<div class="math notranslate nohighlight">
+\[
 h(i) = -\tfrac12 \nabla_i^2 - \frac{Z}{r_i}.
-$$
+\]</div>
 </div></section>
 <section id="separationsansatz-hartree-produkt">
 <h2>Separationsansatz (Hartree-Produkt)<a class="headerlink" href="#separationsansatz-hartree-produkt" title="Permalink to this heading">#</a></h2>
-<p>Um den Grundzustand des Heliumatoms zu beschreiben, wählen wir als Ausgangspunkt den <strong>Produktansatz</strong> den man in der Literatur auch als <strong>Hartree-Produkt</strong> bezeichnet:</p>
+<p>Um den Grundzustand des Heliumatoms näherungsweise zu beschreiben, wählen wir für die <strong>räumliche Wellenfunktion</strong> einen <strong>Produktansatz</strong>, den man auch als <strong>Hartree-Produkt</strong> bezeichnet:</p>
 <div class="math notranslate nohighlight">
 \[
-\Psi(\mathbf r_1,\mathbf r_2) = \phi(\mathbf r_1)\,\phi(\mathbf r_2),
+\Psi(\mathbf r_1,\mathbf r_2) = \phi(\mathbf r_1)\,\phi(\mathbf r_2).
 \]</div>
-<p>wobei <span class="math notranslate nohighlight">\(\phi\)</span> ein 1s-ähnliches Atomorbital mit Zentrum am Kern ist.</p>
-<p><strong>Bemerkung:</strong> Man könnte, wie in der Vorlesung diskutiert, auch eine Summe der Form</p>
+<p>Dabei ist <span class="math notranslate nohighlight">\(\phi\)</span> ein normiertes, 1s-ähnliches Atomorbital mit Zentrum am Kern. Beide Elektronen werden somit durch dasselbe räumliche Orbital beschrieben. Ist <span class="math notranslate nohighlight">\(\phi\)</span> normiert, so ist auch das Hartree-Produkt normiert. Wir ignorieren momentan die Tatsache, dass Elektronen auch einen Spin besitzen. Das Ergebniss das wir erhalten bleibt in diesem Fall auch dann korrekt, wenn wir den Spin später berücksichtigen.</p>
+<p><strong>Bemerkung:</strong> Warum verwenden wir ein Produkt und nicht einfach eine Summe der Form</p>
 <div class="math notranslate nohighlight">
 \[
-\Psi(\mathbf r_1,\mathbf r_2) = \phi(\mathbf r_1) + \phi(\mathbf r_2)
+\Psi(\mathbf r_1,\mathbf r_2) = \phi(\mathbf r_1) + \phi(\mathbf r_2)?
 \]</div>
-<p>betrachten. Wir haben jedoch gesehen, dass eine derartige Wellenfunktion kein Zweielektronensystem beschreiben kann, da sie weder die Randbedingung</p>
+<p>Da das Orbital im Unendlichen verschwindet, gilt für diese Summe</p>
 <div class="math notranslate nohighlight">
 \[
-\lim_{r_2 \to \infty} \Psi(\mathbf r_1,\mathbf r_2) = 0 \quad \forall\, \mathbf r_1
+\lim_{r_2 \to \infty} \Psi(\mathbf r_1,\mathbf r_2)
+= \phi(\mathbf r_1).
 \]</div>
-<p>erfüllt noch normierbar ist. Damit ist dies keine physikalisch sinnvolle Wellenfunktion. Wir arbeiten also mit dem Produktansatz weiter.</p>
-<p>Setzt man nun den Produktansatz in die zeitunabhängige Schrödingergleichung mit dem vereinfachten Hamiltonoperator</p>
+<p>Die Wellenfunktion verschwindet also im Allgemeinen nicht, wenn sich eines der Elektronen beliebig weit vom Kern entfernt. Außerdem ist sie über den gesamten Zweielektronenraum nicht normierbar. Diese einfache Summe zweier Einteilchenorbitale ist daher kein geeigneter Ansatz. Summen von Hartree-Produkten können dagegen durchaus sinnvolle Zweielektronenwellenfunktionen ergeben.</p>
+<p>Um den Produktansatz zu motivieren, betrachten wir zunächst ein vereinfachtes Modell, in dem wir die gegenseitige Abstoßung der Elektronen vernachlässigen. In atomaren Einheiten lautet der Hamiltonoperator dann</p>
 <div class="math notranslate nohighlight">
 \[
-H_0 = h(1) + h(2), \qquad h = -\tfrac12 \nabla^2 - \frac{Z}{r},
+H_0 = h(1) + h(2), \qquad
+h = -\frac12 \nabla^2 - \frac{Z}{r},
 \]</div>
-<p>ein, so erhält man</p>
+<p>wobei für Helium <span class="math notranslate nohighlight">\(Z=2\)</span> gilt. Jeder Einteilchenoperator wirkt nur auf die Koordinaten des zugehörigen Elektrons. Deshalb erhalten wir</p>
 <div class="math notranslate nohighlight">
-\[
-H_0\,\Psi(\mathbf r_1,\mathbf r_2)
-= [\,h(1) + h(2)\,]\,\phi(\mathbf r_1)\phi(\mathbf r_2)
-= [\,h(1)\phi(\mathbf r_1)\,]\phi(\mathbf r_2) + \phi(\mathbf r_1)[\,h(2)\phi(\mathbf r_2)\,].
-\]</div>
-<p>Da beide Terme identisch sind, genügt es, das Ein-Elektron-Problem zu betrachten.<br />
-Erfüllt das Orbital <span class="math notranslate nohighlight">\(\phi\)</span> die Einteilchen-Gleichung</p>
+\[\begin{split}
+\begin{aligned}
+H_0\,\Psi
+&amp;= [h(1)+h(2)]\,\phi(\mathbf r_1)\phi(\mathbf r_2) \\
+&amp;= [h(1)\phi(\mathbf r_1)]\,\phi(\mathbf r_2)
+ + \phi(\mathbf r_1)\,[h(2)\phi(\mathbf r_2)].
+\end{aligned}
+\end{split}\]</div>
+<p>Wählen wir <span class="math notranslate nohighlight">\(\phi\)</span> als Eigenfunktion des Einteilchenoperators,</p>
 <div class="math notranslate nohighlight">
 \[
 h\,\phi = \varepsilon\,\phi,
 \]</div>
-<p>so folgt unmittelbar</p>
+<p>so ergibt jeder der beiden Terme den Beitrag <span class="math notranslate nohighlight">\(\varepsilon\Psi\)</span>. Damit folgt unmittelbar</p>
 <div class="math notranslate nohighlight">
 \[
 H_0\,\Psi = 2\varepsilon\,\Psi.
 \]</div>
-<p>Damit ist <span class="math notranslate nohighlight">\(\varepsilon\)</span> die Eigenenergie eines Elektrons im wasserstoffähnlichen Potential eines Kerns der Ladungszahl <span class="math notranslate nohighlight">\(Z\)</span>. Wir sehen also, dass der Produktansatz eine günstige Eigenschaft besitzt: Er stellt die <strong>exakte</strong> Wellenfunktion für ein <strong>nicht wechselwirkendes</strong> System aus zwei Elektronen dar.</p>
+<p>Die Gesamtenergie ist also die Summe der beiden Einteilchenenergien.</p>
+<p>Wählen wir für <span class="math notranslate nohighlight">\(\phi\)</span> das exakte wasserstoffähnliche 1s-Orbital zur Kernladungszahl <span class="math notranslate nohighlight">\(Z\)</span>, so ist das Hartree-Produkt die <strong>exakte räumliche Grundzustandswellenfunktion des vereinfachten Hamiltonoperators <span class="math notranslate nohighlight">\(H_0\)</span></strong>. Dies liefert eine natürliche Motivation für den Produktansatz.</p>
+<p>Beim tatsächlichen Heliumatom kommt die Elektronenabstoßung <span class="math notranslate nohighlight">\(1/r_{12}\)</span> hinzu. Für dieses wechselwirkende System ist das Hartree-Produkt im Allgemeinen keine exakte Lösung mehr, kann aber als Ansatz im Variationsverfahren verwendet werden.</p>
+</section>
+<section id="energie-des-heliumatoms-ohne-elektronelektron-abstoszung">
+<h2>Energie des Heliumatoms ohne Elektron–Elektron-Abstoßung<a class="headerlink" href="#energie-des-heliumatoms-ohne-elektronelektron-abstoszung" title="Permalink to this heading">#</a></h2>
 <p>Für den 1s-Grundzustand gilt</p>
 <div class="math notranslate nohighlight">
 \[
@@ -620,13 +633,13 @@ E_\text{exakt} \approx -2.9037\ \text{Hartree},
 \[
 E_\text{exp} \approx -2.9034\ \text{Hartree}.
 \]</div>
-<p>Die Differenz von rund <strong>1.1 Hartree</strong> zeigt deutlich, dass die einfache Näherung ohne Elektron–Elektron-Abstoßung das System <strong>zu stark bindet</strong>.<br />
-Sie verdeutlicht damit den erheblichen Beitrag der Elektron–Elektron-Wechselwirkung zur realen Bindungsenergie des Heliumatoms. Wir lernen daraus, dass die Elektron-Elektron Wechselwirkung definitiv keine Vernachlässigbare Größe ist und die orbitalbasierte Produktansätze, die für nichtwechselwirkende Elektronen exakt sind, keine gute Näherungen für die exakte Wellenfunktion eines wechselwirkenden Systems sind !</p>
+<p>Die Differenz von rund <strong>1.1 Hartree</strong> zeigt deutlich, dass die einfache Näherung ohne Elektron–Elektron-Abstoßung das System <strong>zu stark bindet</strong>.</p>
+<p>Sie verdeutlicht damit den erheblichen Beitrag der Elektron–Elektron-Wechselwirkung zur realen Bindungsenergie des Heliumatoms! Wir lernen daraus, dass die Elektron-Elektron Wechselwirkung definitiv keine vernachlässigbare Größe ist und die <strong>orbitalbasierte Produktansätze</strong>, die für nichtwechselwirkende Elektronen exakt sind, keine gute Näherungen für die exakte Wellenfunktion eines realen wechselwirkenden Systems sind!</p>
 </section>
-<section id="energieerwartungswert-des-hartree-produktansatzes">
-<h2>Energieerwartungswert des Hartree-Produktansatzes<a class="headerlink" href="#energieerwartungswert-des-hartree-produktansatzes" title="Permalink to this heading">#</a></h2>
-<p>Wir berechnen als Nächstes den <strong>Erwartungswert des vollen Hamiltonoperators</strong> für das Heliumatom unter Verwendung des Hartree-Produktansatzes.<br />
-Für eine gegebene (nicht notwendigerweise exakte) Wellenfunktion <span class="math notranslate nohighlight">\(\Psi\)</span> ist der Energieerwartungswert definiert als</p>
+<section id="erste-verbesserung-energieerwartungswert-des-hartree-produktansatzes">
+<h2>Erste Verbesserung: Energieerwartungswert des Hartree-Produktansatzes<a class="headerlink" href="#erste-verbesserung-energieerwartungswert-des-hartree-produktansatzes" title="Permalink to this heading">#</a></h2>
+<p>Wir berechnen als Nächstes den <strong>Erwartungswert des vollen Hamiltonoperators</strong> für das Heliumatom unter Verwendung des Hartree-Produktansatzes. Das heißt, wir berechnen die Energie mit Hilfe einer genäherten Wellenfunktion, verwenden dafür aber nun den vollständigen Hamiltonoperator inklusive der Elektron–Elektron-Wechselwirkung.</p>
+<p>Für eine gegebene (nicht notwendigerweise exakte) Wellenfunktion <span class="math notranslate nohighlight">\(\Psi\)</span> ist der Energieerwartungswert definiert als</p>
 <div class="math notranslate nohighlight">
 \[
 E[\Psi] = \frac{\langle \Psi | H | \Psi \rangle}{\langle \Psi | \Psi \rangle}.
@@ -691,6 +704,14 @@ Wir berechnen dazu den Erwartungswert des Terms <span class="math notranslate no
 \qquad
 \phi(\mathbf r) = N\,e^{-Z r}.
 \]</div>
+<p>Für das normierte Orbital gilt</p>
+<div class="math notranslate nohighlight">
+\[
+1=\int |\phi(\mathbf r)|^2\,\mathrm d^3r
+=4\pi N^2\int_0^\infty r^2e^{-2Zr}\,\mathrm dr
+=\frac{\pi N^2}{Z^3},
+\qquad N=\sqrt{\frac{Z^3}{\pi}}.
+\]</div>
 <p>Das Coulomb-Integral lautet definitionsgemäß</p>
 <div class="math notranslate nohighlight">
 \[
@@ -701,39 +722,214 @@ J =
 \Psi(\mathbf r_1,\mathbf r_2)\,
 \mathrm d^3 r_1\,\mathrm d^3 r_2.
 \]</div>
+<p><img alt="Koordinaten des Heliumatoms: kartesische Achsen am Kern, die Ortsvektoren der beiden Elektronen, ihr Abstand und der eingeschlossene Winkel." src="_images/helium_coordinates_cartoon_v2.png" /></p>
+<p><em>Die Ortsvektoren <span class="math notranslate nohighlight">\(\mathbf r_1\)</span> und <span class="math notranslate nohighlight">\(\mathbf r_2\)</span> haben ihren Ursprung am Kern. <span class="math notranslate nohighlight">\(r_{12}\)</span> bezeichnet den Elektronenabstand und <span class="math notranslate nohighlight">\(\theta_{12}\)</span> den Winkel zwischen den Ortsvektoren.</em></p>
 <p>Da es sich um ein Produkt zweier s-Orbitale handelt, ist es vorteilhaft, statt der sechs kartesischen Koordinaten <span class="math notranslate nohighlight">\((\mathbf r_1,\mathbf r_2)\)</span> auf <strong>Abstandskoordinaten</strong> zu wechseln:<br />
-<span class="math notranslate nohighlight">\(r_1 = |\mathbf r_1|\)</span>, <span class="math notranslate nohighlight">\(r_2 = |\mathbf r_2|\)</span> und <span class="math notranslate nohighlight">\(r_{12} = |\mathbf r_1 - \mathbf r_2|\)</span>.<br />
-Zwischen diesen gilt der <strong>Kosinussatz</strong></p>
+<span class="math notranslate nohighlight">\(r_1 = |\mathbf r_1|\)</span>, <span class="math notranslate nohighlight">\(r_2 = |\mathbf r_2|\)</span> und <span class="math notranslate nohighlight">\(r_{12} = |\mathbf r_1 - \mathbf r_2|\)</span>.</p>
+<p>Dazu führen wir zunächst Kugelkoordinaten mit dem Ursprung am Kern ein. Für das erste Elektron gilt</p>
 <div class="math notranslate nohighlight">
 \[
-r_{12}^2 = r_1^2 + r_2^2 - 2r_1r_2\cos\theta_{12},
+x_1 = r_1\sin\vartheta_1\cos\varphi_1,\qquad
+y_1 = r_1\sin\vartheta_1\sin\varphi_1,\qquad
+z_1 = r_1\cos\vartheta_1.
+\]</div>
+<p>Die <strong>Jacobi-Determinante</strong> dieser Transformation liefert den Faktor</p>
+<div class="math notranslate nohighlight">
+\[
+\left|
+\frac{\partial(x_1,y_1,z_1)}
+{\partial(r_1,\vartheta_1,\varphi_1)}
+\right|
+= r_1^2\sin\vartheta_1,
+\]</div>
+<p>sodass das Volumenelement lautet</p>
+<div class="math notranslate nohighlight">
+\[
+\mathrm d^3r_1
+= r_1^2\sin\vartheta_1\,
+\mathrm dr_1\,\mathrm d\vartheta_1\,\mathrm d\varphi_1
+= r_1^2\,\mathrm dr_1\,\mathrm d\Omega_1.
+\]</div>
+<p>Für eine festgehaltene Position des ersten Elektrons wählen wir die Polarachse für das zweite Elektron entlang von <span class="math notranslate nohighlight">\(\mathbf r_1\)</span>. Der Ursprung bleibt dabei am Kern. Diese Drehung der Achsen ändert das Volumenelement nicht. Der Polarwinkel ist nun der Winkel <span class="math notranslate nohighlight">\(\theta_{12}\)</span> zwischen den beiden Ortsvektoren; <span class="math notranslate nohighlight">\(\varphi_{12}\)</span> bezeichnet den Azimutwinkel um die gewählte Polarachse. Damit gilt</p>
+<div class="math notranslate nohighlight">
+\[
+\mathrm d^3r_2
+= r_2^2\sin\theta_{12}\,
+\mathrm dr_2\,\mathrm d\theta_{12}\,\mathrm d\varphi_{12}
+\]</div>
+<p>und für beide Elektronen zusammen</p>
+<div class="math notranslate nohighlight">
+\[
+\mathrm d^3r_1\,\mathrm d^3r_2
+= r_1^2r_2^2\sin\theta_{12}\,
+\mathrm dr_1\,\mathrm dr_2\,
+\mathrm d\Omega_1\,\mathrm d\theta_{12}\,\mathrm d\varphi_{12}.
+\]</div>
+<p>Zwischen den drei Abständen gilt der <strong>Kosinussatz</strong></p>
+<div class="math notranslate nohighlight">
+\[
+r_{12}^2 = r_1^2 + r_2^2 - 2r_1r_2\cos\theta_{12}.
+\]</div>
+<p>Der Integrand hängt somit nur von <span class="math notranslate nohighlight">\(r_1\)</span>, <span class="math notranslate nohighlight">\(r_2\)</span> und <span class="math notranslate nohighlight">\(\theta_{12}\)</span> ab. Die Orientierung von <span class="math notranslate nohighlight">\(\mathbf r_1\)</span> und der Azimutwinkel <span class="math notranslate nohighlight">\(\varphi_{12}\)</span> können unabhängig integriert werden:</p>
+<div class="math notranslate nohighlight">
+\[
+\int \mathrm d\Omega_1
+= \int_0^{2\pi}\!\mathrm d\varphi_1
+  \int_0^\pi\!\sin\vartheta_1\,\mathrm d\vartheta_1
+= 4\pi,
+\qquad
+\int_0^{2\pi}\!\mathrm d\varphi_{12}=2\pi.
+\]</div>
+<p>Nach diesen Winkelintegrationen verbleibt daher das Maß</p>
+<div class="math notranslate nohighlight">
+\[
+8\pi^2r_1^2r_2^2\sin\theta_{12}\,
+\mathrm dr_1\,\mathrm dr_2\,\mathrm d\theta_{12}.
+\]</div>
+<p>Nun ersetzen wir <span class="math notranslate nohighlight">\(\theta_{12}\)</span> durch den Elektronenabstand <span class="math notranslate nohighlight">\(r_{12}\)</span>. Bei festgehaltenen Radien folgt durch Differenzieren des Kosinussatzes</p>
+<div class="math notranslate nohighlight">
+\[
+2r_{12}\,\mathrm dr_{12}
+=2r_1r_2\sin\theta_{12}\,\mathrm d\theta_{12},
+\qquad
+\sin\theta_{12}\,\mathrm d\theta_{12}
+=\frac{r_{12}}{r_1r_2}\,\mathrm dr_{12}.
+\]</div>
+<p>Die zugehörige Jacobi-Determinante für den Variablenwechsel ist im Inneren des Integrationsbereichs</p>
+<div class="math notranslate nohighlight">
+\[
+\left|
+\frac{\partial(r_1,r_2,\theta_{12})}
+{\partial(r_1,r_2,r_{12})}
+\right|
+=\frac{r_{12}}{r_1r_2\sin\theta_{12}}.
+\]</div>
+<p>Für die Integrationsgrenzen erhalten wir</p>
+<div class="math notranslate nohighlight">
+\[
+\theta_{12}=0 \;\Rightarrow\; r_{12}=|r_1-r_2|,
+\qquad
+\theta_{12}=\pi \;\Rightarrow\; r_{12}=r_1+r_2,
 \]</div>
 <p>woraus sich die <strong>Dreiecksgrenzen</strong></p>
 <div class="math notranslate nohighlight">
 \[
-|r_1 - r_2| \le r_{12} \le r_1 + r_2
+|r_1-r_2|\le r_{12}\le r_1+r_2
 \]</div>
-<p>ergeben. Nach der Winkelintegration reduziert sich das Maß auf das Volumenelement</p>
+<p>ergeben. Nach der Winkelintegration und dem Variablenwechsel reduziert sich das Maß somit auf das Volumenelement</p>
 <div class="math notranslate nohighlight">
 \[
-\mathrm d^3r_1\,\mathrm d^3r_2 = 8\pi^2\, r_1\,r_2\,r_{12}\,\mathrm dr_1\,\mathrm dr_2\,\mathrm dr_{12}.
+\mathrm d^3r_1\,\mathrm d^3r_2
+\;\longrightarrow\;
+8\pi^2\,r_1r_2r_{12}\,
+\mathrm dr_1\,\mathrm dr_2\,\mathrm dr_{12}.
 \]</div>
+<p>Der Pfeil erinnert daran, dass die drei Winkel für die räumliche Orientierung bereits integriert wurden.</p>
 <p>Damit lautet das zu berechnende Integral:</p>
 <div class="math notranslate nohighlight">
 \[
 J =
-8\pi^2 N^4 \int_0^\infty \!\!\int_0^\infty \!\!\int_{|r_1-r_2|}^{r_1+r_2}
-r_1 r_2 r_{12}\, \frac{e^{-2Z(r_1+r_2)}}{r_{12}}\,
-\mathrm d r_{12}\, \mathrm d r_2\, \mathrm d r_1.
+8\pi^2N^4
+\int_0^\infty\!\mathrm dr_1
+\int_0^\infty\!\mathrm dr_2
+\int_{|r_1-r_2|}^{r_1+r_2}\!\mathrm dr_{12}\,
+r_1r_2r_{12}\,\frac{e^{-2Z(r_1+r_2)}}{r_{12}}.
+\]</div>
+<p>Der Faktor <span class="math notranslate nohighlight">\(r_{12}\)</span> aus dem Volumenelement kürzt den Nenner des Coulomb-Terms. Die innere Integration ist deshalb besonders einfach:</p>
+<div class="math notranslate nohighlight">
+\[
+\int_{|r_1-r_2|}^{r_1+r_2}\!\mathrm dr_{12}
+=r_1+r_2-|r_1-r_2|.
+\]</div>
+<p>Damit erhalten wir</p>
+<div class="math notranslate nohighlight">
+\[
+J =
+8\pi^2N^4
+\int_0^\infty\!\mathrm dr_1
+\int_0^\infty\!\mathrm dr_2\,
+r_1r_2e^{-2Z(r_1+r_2)}
+\bigl(r_1+r_2-|r_1-r_2|\bigr).
+\]</div>
+<p>Da der Integrand beim Vertauschen von <span class="math notranslate nohighlight">\(r_1\)</span> und <span class="math notranslate nohighlight">\(r_2\)</span> unverändert bleibt, können wir uns auf den Bereich <span class="math notranslate nohighlight">\(r_1\ge r_2\)</span> beschränken und das Ergebnis verdoppeln. In diesem Bereich gilt</p>
+<div class="math notranslate nohighlight">
+\[
+r_1+r_2-|r_1-r_2|=2r_2.
+\]</div>
+<p>Wir integrieren zuerst über <span class="math notranslate nohighlight">\(r_1\)</span> von <span class="math notranslate nohighlight">\(r_2\)</span> bis <span class="math notranslate nohighlight">\(\infty\)</span> und anschließend über <span class="math notranslate nohighlight">\(r_2\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+J =
+32\pi^2N^4
+\int_0^\infty\!r_2^2e^{-2Zr_2}\,\mathrm dr_2
+\int_{r_2}^\infty\!r_1e^{-2Zr_1}\,\mathrm dr_1.
+\]</div>
+<p>Mit</p>
+<div class="math notranslate nohighlight">
+\[
+\int_{r_2}^\infty\!r_1e^{-2Zr_1}\,\mathrm dr_1
+=e^{-2Zr_2}
+\left(\frac{r_2}{2Z}+\frac{1}{4Z^2}\right)
+\]</div>
+<p>folgt</p>
+<div class="math notranslate nohighlight">
+\[
+J =
+32\pi^2N^4
+\left[
+\frac{1}{2Z}\int_0^\infty\!r^3e^{-4Zr}\,\mathrm dr
++\frac{1}{4Z^2}\int_0^\infty\!r^2e^{-4Zr}\,\mathrm dr
+\right].
+\]</div>
+<p>Die verbleibenden Integrale lassen sich mit</p>
+<div class="math notranslate nohighlight">
+\[
+\int_0^\infty r^n e^{-ar}\,\mathrm dr
+=\frac{n!}{a^{n+1}},
+\qquad a&gt;0,\quad n=0,1,2,\ldots
+\]</div>
+<p>auswerten. Mit <span class="math notranslate nohighlight">\(N^4=Z^6/\pi^2\)</span> ergibt sich schließlich</p>
+<div class="math notranslate nohighlight">
+\[
+J =
+32\pi^2N^4
+\left[
+\frac{3!}{2Z(4Z)^4}
++\frac{2!}{4Z^2(4Z)^3}
+\right]
+=\frac{5\pi^2N^4}{8Z^5}
+=\frac{5Z}{8}.
 \]</div>
 <p>Zum Vergleich benötigen wir zusätzlich das Normintegral</p>
 <div class="math notranslate nohighlight">
 \[
-\langle \Psi|\Psi\rangle =
-8\pi^2 N^4 \int_0^\infty \!\!\int_0^\infty \!\!\int_{|r_1-r_2|}^{r_1+r_2}
-r_1 r_2 r_{12}\, e^{-2Z(r_1+r_2)}\,
-\mathrm d r_{12}\, \mathrm d r_2\, \mathrm d r_1.
+\langle\Psi|\Psi\rangle =
+8\pi^2N^4
+\int_0^\infty\!\mathrm dr_1
+\int_0^\infty\!\mathrm dr_2
+\int_{|r_1-r_2|}^{r_1+r_2}\!\mathrm dr_{12}\,
+r_1r_2r_{12}\,e^{-2Z(r_1+r_2)}.
 \]</div>
+<p>Hier liefert die Integration über den Elektronenabstand</p>
+<div class="math notranslate nohighlight">
+\[
+\int_{|r_1-r_2|}^{r_1+r_2}\!r_{12}\,\mathrm dr_{12}
+=\frac12\left[(r_1+r_2)^2-(r_1-r_2)^2\right]
+=2r_1r_2.
+\]</div>
+<p>Damit zerfällt das Normintegral in zwei gleiche Radialintegrale:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+\langle\Psi|\Psi\rangle
+&amp;=16\pi^2N^4
+\left[\int_0^\infty r^2e^{-2Zr}\,\mathrm dr\right]^2\\
+&amp;=16\pi^2N^4
+\left[\frac{2!}{(2Z)^3}\right]^2
+=\frac{\pi^2N^4}{Z^6}=1.
+\end{aligned}
+\end{split}\]</div>
+<p>Im folgenden Code verwenden wir die unnormierte Produktfunktion <span class="math notranslate nohighlight">\(e^{-Z(r_1+r_2)}\)</span>. Deshalb teilen wir das berechnete Coulomb-Matrixelement durch das Normintegral. Die Normierungskonstante kürzt sich dabei heraus.</p>
 <p>Beide Integrale können symbolisch mit <strong>SymPy</strong> ausgewertet werden.<br />
 Der folgende Code führt diese Berechnung exakt aus:</p>
 </section>
@@ -873,8 +1069,8 @@ E \approx -4 + 1{.}25 = -2{.}75\ \text{Hartree},
 <p>was bereits eine vernünftige Näherung des exakten Grundzustandswerts<br />
 <span class="math notranslate nohighlight">\(E_\text{exakt} = -2{.}9037\)</span> Hartree darstellt. Damit wird deutlich, dass die Elektron–Elektron-Wechselwirkung einen Beitrag von etwa <strong>1 Hartree</strong>, also rund einem Drittel der gesamten Bindungsenergie des Heliumatoms, liefert.</p>
 </section>
-<section id="optimierung-der-effektiven-kernladung">
-<h2>Optimierung der effektiven Kernladung<a class="headerlink" href="#optimierung-der-effektiven-kernladung" title="Permalink to this heading">#</a></h2>
+<section id="zweite-verbesserung-des-ansatzes-optimierung-der-effektiven-kernladung">
+<h2>Zweite Verbesserung des Ansatzes: Optimierung der effektiven Kernladung<a class="headerlink" href="#zweite-verbesserung-des-ansatzes-optimierung-der-effektiven-kernladung" title="Permalink to this heading">#</a></h2>
 <p>Wie wir gerade gesehen haben, lässt sich die Energie als eine Funktion der Kernladung <span class="math notranslate nohighlight">\(Z\)</span> wie folgt ausdrücken:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -909,7 +1105,47 @@ E^{\star} = -2.8477\ \text{Hartree},
 <p>eine deutliche Verbesserung gegenüber dem unoptimierten Wert <span class="math notranslate nohighlight">\(E(Z) = -2.75\ \text{Hartree}\)</span>.<br />
 Vergleicht man diesen Wert mit der exakten Grundzustandsenergie <span class="math notranslate nohighlight">\(E_\text{exakt} = -2.9037\ \text{Hartree}\)</span>,<br />
 so beträgt der verbleibende Fehler nur etwa <strong>0.056 Hartree</strong>, also weniger als <strong>2 %</strong>.
-Nun kann man sich die Frage Stellen ob man die Genauigkeit des Produktansatzes noch weiter treiben kann?</p>
+Die folgende Abbildung zeigt die Energie als Funktion der effektiven Kernladung <span class="math notranslate nohighlight">\(\zeta\)</span> bei festem <span class="math notranslate nohighlight">\(Z=2\)</span>. Die gestrichelte Linie markiert die exakte Grundzustandsenergie.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s2">"font.family"</span><span class="p">:</span> <span class="s2">"DejaVu Serif"</span><span class="p">,</span> <span class="s2">"font.size"</span><span class="p">:</span> <span class="mi">12</span><span class="p">,</span>
+                     <span class="s2">"mathtext.fontset"</span><span class="p">:</span> <span class="s2">"dejavuserif"</span><span class="p">,</span> <span class="s2">"figure.dpi"</span><span class="p">:</span> <span class="mi">150</span><span class="p">})</span>
+<span class="n">Z_He</span> <span class="o">=</span> <span class="mi">2</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">E</span><span class="p">(</span><span class="n">zeta</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">zeta</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">2</span><span class="o">*</span><span class="n">Z_He</span><span class="o">*</span><span class="n">zeta</span> <span class="o">+</span> <span class="mi">5</span><span class="o">*</span><span class="n">zeta</span><span class="o">/</span><span class="mi">8</span>
+
+<span class="n">zeta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">1.1</span><span class="p">,</span> <span class="mf">2.3</span><span class="p">,</span> <span class="mi">300</span><span class="p">)</span>
+<span class="n">zeta_opt</span> <span class="o">=</span> <span class="n">Z_He</span> <span class="o">-</span> <span class="mi">5</span><span class="o">/</span><span class="mi">16</span>
+<span class="n">E_exakt</span> <span class="o">=</span> <span class="o">-</span><span class="mf">2.9037</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mf">7.5</span><span class="p">,</span> <span class="mf">4.8</span><span class="p">),</span> <span class="n">layout</span><span class="o">=</span><span class="s2">"constrained"</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">zeta</span><span class="p">,</span> <span class="n">E</span><span class="p">(</span><span class="n">zeta</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s2">"#356D96"</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">2.5</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">zeta_opt</span><span class="p">,</span> <span class="n">E</span><span class="p">(</span><span class="n">zeta_opt</span><span class="p">),</span> <span class="s2">"o"</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">"#C45E2B"</span><span class="p">,</span> <span class="n">ms</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span>
+        <span class="n">label</span><span class="o">=</span><span class="sa">fr</span><span class="s2">"Minimum: $\zeta^\star=</span><span class="si">{</span><span class="n">zeta_opt</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">$, $E=</span><span class="si">{</span><span class="n">E</span><span class="p">(</span><span class="n">zeta_opt</span><span class="p">)</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">\,E_\mathrm</span><span class="se">{{</span><span class="s2">h</span><span class="se">}}</span><span class="s2">$"</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">Z_He</span><span class="p">,</span> <span class="n">E</span><span class="p">(</span><span class="n">Z_He</span><span class="p">),</span> <span class="s2">"o"</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">"#356D96"</span><span class="p">,</span> <span class="n">mfc</span><span class="o">=</span><span class="s2">"white"</span><span class="p">,</span> <span class="n">ms</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">mew</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+        <span class="n">label</span><span class="o">=</span><span class="sa">fr</span><span class="s2">"Unoptimiert: $\zeta=</span><span class="si">{</span><span class="n">Z_He</span><span class="si">}</span><span class="s2">$, $E=</span><span class="si">{</span><span class="n">E</span><span class="p">(</span><span class="n">Z_He</span><span class="p">)</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">\,E_\mathrm</span><span class="se">{{</span><span class="s2">h</span><span class="se">}}</span><span class="s2">$"</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">E_exakt</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">"#555555"</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s2">"--"</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">1.5</span><span class="p">,</span>
+           <span class="n">label</span><span class="o">=</span><span class="sa">fr</span><span class="s2">"Exakter Grundzustand: $E\approx</span><span class="si">{</span><span class="n">E_exakt</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">\,E_\mathrm</span><span class="se">{{</span><span class="s2">h</span><span class="se">}}</span><span class="s2">$"</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">xlabel</span><span class="o">=</span><span class="sa">r</span><span class="s2">"Effektive Kernladung $\zeta$"</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="sa">r</span><span class="s2">"Energie $E$ (Hartree)"</span><span class="p">,</span>
+       <span class="n">title</span><span class="o">=</span><span class="s2">"Helium: Variation der effektiven Kernladung"</span><span class="p">,</span>
+       <span class="n">xlim</span><span class="o">=</span><span class="p">(</span><span class="n">zeta</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">zeta</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]),</span> <span class="n">ylim</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mf">2.94</span><span class="p">,</span> <span class="o">-</span><span class="mf">2.35</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">spines</span><span class="p">[[</span><span class="s2">"top"</span><span class="p">,</span> <span class="s2">"right"</span><span class="p">]]</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s2">"y"</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">"#E4E8EA"</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">0.8</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_axisbelow</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s2">"upper center"</span><span class="p">,</span> <span class="n">frameon</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">11</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/0f7c5c3a6b054d5568a221b99fbde134126731ac9a785b990e02e484a2e942f5.png" src="_images/0f7c5c3a6b054d5568a221b99fbde134126731ac9a785b990e02e484a2e942f5.png" />
+</div>
+</div>
+<p>Nun kann man sich die Frage Stellen ob man die Genauigkeit des Produktansatzes noch weiter treiben kann?</p>
 </section>
 </section>
 
@@ -981,10 +1217,11 @@ Nun kann man sich die Frage Stellen ob man die Genauigkeit des Produktansatzes n
     <ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#der-atomare-hamiltonoperator">Der atomare Hamiltonoperator</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#separationsansatz-hartree-produkt">Separationsansatz (Hartree-Produkt)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#energieerwartungswert-des-hartree-produktansatzes">Energieerwartungswert des Hartree-Produktansatzes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#energie-des-heliumatoms-ohne-elektronelektron-abstoszung">Energie des Heliumatoms ohne Elektron–Elektron-Abstoßung</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#erste-verbesserung-energieerwartungswert-des-hartree-produktansatzes">Erste Verbesserung: Energieerwartungswert des Hartree-Produktansatzes</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wie-grosz-ist-die-elektronelektron-wechselwirkung-eine-erste-abschatzung">Wie groß ist die Elektron–Elektron-Wechselwirkung? Eine erste Abschätzung.</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#symbolische-berechnung-des-erwartungswertes">Symbolische Berechnung des Erwartungswertes</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optimierung-der-effektiven-kernladung">Optimierung der effektiven Kernladung</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zweite-verbesserung-des-ansatzes-optimierung-der-effektiven-kernladung">Zweite Verbesserung des Ansatzes: Optimierung der effektiven Kernladung</a></li>
 </ul>
   </nav></div>
 
