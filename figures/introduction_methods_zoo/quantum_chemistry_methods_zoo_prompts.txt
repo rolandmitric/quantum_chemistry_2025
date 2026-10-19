@@ -1,4 +1,3 @@
-Tool: built-in image_gen
 Output: quantum_chemistry_methods_zoo.png
 
 INITIAL GENERATION PROMPT

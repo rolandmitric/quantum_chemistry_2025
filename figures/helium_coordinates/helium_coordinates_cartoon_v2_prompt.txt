@@ -1,0 +1,9 @@
+Input: helium_coordinates_cartoon.png
+Output: helium_coordinates_cartoon_v2.png
+
+EDIT PROMPT
+
+Edit this existing hand-drawn helium coordinate illustration by adding ONE small Cartesian coordinate system whose origin is the CENTRE OF THE CORAL NUCLEUS.
+Draw three thin dark-gray graphite axis arrows in a conventional 3D perspective projection: x points horizontally RIGHT; z points vertically UP; y points diagonally DOWN-LEFT. All three axes meet at the exact same origin at the center of the nucleus. Draw the axes behind the opaque nucleus so its face and "+2" remain fully visible. Their visible portions emerge from the appropriate edges of the sphere, aligned through its center. Make them long enough to be unambiguous but short and secondary to the teal position vectors: approximately 280 pixels from origin to x tip, 260 pixels from origin to z tip, and 225 pixels from origin to y tip in this 1536x1024 image. Put small clear handwritten labels "x", "y", and "z" beside the respective arrow tips. The y tip and label must fit within the page and avoid the word Kern.
+Preserve every existing element exactly: all particle positions and sizes, all faces and charges, title, Kern label, both teal position vectors r1 and r2, their labels, dashed r12 line and its label, the ochre theta12 angle arc and label, warm ivory background, colored-pencil texture and watercolor style. The coordinate axes must be visibly lighter and thinner than the existing position vectors. Add no extra angle arcs, no grid, no formulas, no polar-axis extension, no second coordinate system, no other text. Keep the nucleus as the shared origin, not electron 1.
+

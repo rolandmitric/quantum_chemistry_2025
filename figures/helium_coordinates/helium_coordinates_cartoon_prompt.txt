@@ -1,0 +1,37 @@
+Final output: helium_coordinates_cartoon.png
+Style references inspected: figures/introduction_hamiltonian/molecular_hamiltonian_cartoon.png; figures/introduction_energy_states/energy_states_cartoon_v2.png
+Final selection: one triangle showing r1, r2, r12 and theta12; no polar-axis extension.
+
+INITIAL GENERATION PROMPT
+Use case: scientific-educational.
+Create one NEW finished hand-drawn cartoon diagram for a German university quantum chemistry textbook, illustrating the coordinates of the two electrons in a helium atom. Landscape 3:2, high resolution. Match this established illustration style: warm ivory paper with very subtle paper grain, slightly irregular dark graphite/ink outlines, delicate colored-pencil hatching and sparse watercolor washes, small friendly expressive faces on particle spheres, restrained blue, teal, coral and ochre accents, elegant readable hand-lettered German and mathematical notation. Like a sophisticated science sketchbook, not polished vector art or glossy 3D. Keep it markedly uncluttered: one large geometrical triangle, ample white space, no inset panels.
+
+Top title, exact: "Koordinaten im Heliumatom", on a restrained pale ochre watercolor brush stroke.
+
+COMPOSITION AND GEOMETRY:
+Draw a larger coral nucleus low on the left, center roughly at (25% width, 75% height). It has a small friendly face and a clear charge "+2", with the short label "Kern" immediately below.
+Draw electron 1 as a small blue sphere with a tiny friendly face and a clear minus charge, centered above and slightly right of the nucleus, around (40% width, 29% height). Label it with clean mathematical notation "e₁⁻" placed to its upper left.
+Draw electron 2 as a similar small blue sphere, centered far to the right and slightly above the nucleus, around (80% width, 64% height). Label it "e₂⁻" to its right.
+The three particle centers define a scalene triangle floating on the page. No floor, no orbital tracks, no circular orbit.
+
+Draw TWO clean solid position-vector arrows that both start at the nucleus and point outward to their respective electron:
+- a teal arrow from the nucleus toward electron 1, labelled bold mathematical r with true subscript 1, vector r₁;
+- a teal arrow from the nucleus toward electron 2, labelled bold mathematical r with true subscript 2, vector r₂.
+Keep labels large and near the middles of their own edges, offset to avoid the lines. Arrowheads must point toward the electrons, not toward the nucleus. The common origin at the nucleus must be visually unmistakable.
+
+Draw a thinner dark-gray DASHED segment directly connecting the two electron centers, labelled italic scalar "r₁₂" near its middle, offset above the segment. This is a distance measurement and must have NO arrowheads. Do not label any other edge r₁₂.
+
+At the nucleus, inside the triangle, draw one small ochre circular angle arc centered on the nucleus and extending exactly between the two outgoing position-vector rays. Label that interior angle "θ₁₂", in readable mathematical notation just beyond the arc, away from the nucleus face and vector labels. This angle is at the NUCLEUS, never at either electron.
+
+Extend the nucleus-to-electron-1 ray a short distance beyond electron 1 using a very light thin dashed gray line, clearly collinear with vector r₁. Label this extension "Polarachse" in small handwritten letters to the upper right. It denotes the polar-axis DIRECTION through the nucleus and electron 1, not an origin at electron 1. Give the dashed extension enough space below the title and keep all text separated.
+
+CONTENT LIMITS:
+Only the title, "Kern", "+2", e₁⁻, e₂⁻, vector r₁, vector r₂, scalar r₁₂, θ₁₂, and "Polarachse". No formula, no subtitle, no footer, no legend, no speech bubbles, no explanatory prose. Only three particles, two position-vector arrows, one dashed interelectron distance, one angle arc, one subtle polar-axis extension. Cartoon faces are charming but secondary to exact geometric relationships. No force arrows, motion lines, physical bonds, orbitals, extra coordinate axes or extra angle marks. Preserve generous whitespace and very clear subscripts.
+
+FIRST EDIT PROMPT
+Edit this illustration with ONE geometrical correction only. Preserve absolutely everything else: title, paper, particles, faces, all three particle positions, vector arrows r1/r2, r12 dashed line, theta12 arc, labels, colors and composition.
+The thin dashed gray "Polarachse" line ABOVE electron 1 currently bends too far toward the right. Make this dashed extension EXACTLY COLLINEAR with the straight line through the CENTRE OF THE NUCLEUS and the CENTRE OF ELECTRON 1. It must be the perfect straight continuation of the teal r1 position-vector ray with no kink or bend at electron 1. On this 1536x1024 image, approximate particle centers are nucleus (340,790), electron1 (668,334): the extension should emerge from the electron's upper-right boundary near (691,302) and end around (793,160). Do not extend to (865,160), because that is the wrong direction. Think ruler-straight continuous ray nucleus → electron1 → polar axis. Reposition the word "Polarachse" to the right of the corrected dashed line without changing the text or style. Remove the old misaligned dashed extension completely. Do not move either electron or the nucleus. Do not alter the other dashed line r12. Keep a warm ivory opaque background.
+
+FINAL EDIT PROMPT
+Edit this hand-drawn helium coordinate illustration. Make only this small removal: erase the gray dashed line extending ABOVE electron 1 and erase the word "Polarachse". Fill that area with the same warm ivory paper texture. Keep the electron–electron dashed line labelled r12 entirely unchanged. Preserve everything else exactly: all particle positions and sizes, faces, nucleus+2 and Kern, both teal position vectors r1 and r2, the ochre theta12 angle arc at the nucleus, all remaining labels, title, paper and composition. The result should be one clean triangle showing only r1, r2, r12 and theta12 with no extra axis extension or axis label.
+

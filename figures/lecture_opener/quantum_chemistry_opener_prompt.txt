@@ -1,4 +1,3 @@
-Generated using the built-in image_gen tool.
 
 Use case: illustration-story.
 Asset type: a single charming cartoon figure to open a German university lecture on quantum chemistry, ready for a widescreen presentation (16:9 landscape).
