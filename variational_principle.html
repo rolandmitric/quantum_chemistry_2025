@@ -34,7 +34,7 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css?v=8cd3d715" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
@@ -221,6 +221,7 @@
 <li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Das Variationsprinzip</a></li>
 <li class="toctree-l1"><a class="reference internal" href="convergence_variational_principle.html">Über die Konvergenz des linearen Variationsprinzips: Verschachtelungs Satz</a></li>
+<li class="toctree-l1"><a class="reference internal" href="renner_teller_example.html">Beispiel aus der aktuellen Forschung: Das NCN-Molekül und der Renner-Teller-Effekt</a></li>
 <li class="toctree-l1"><a class="reference internal" href="helium_atom.html">Das Helium-Atom</a></li>
 <li class="toctree-l1"><a class="reference internal" href="kinetic_energy_hylleraas.html">Hylleraas-Methode: Kinetische Energie</a></li>
 
@@ -594,7 +595,7 @@
 <section id="idee-des-variationsverfahrens">
 <h2>Idee des Variationsverfahrens<a class="headerlink" href="#idee-des-variationsverfahrens" title="Permalink to this heading">#</a></h2>
 <p>Das Variationsprinzip beruht auf einem einfachen, aber äußerst mächtigen Gedanken:</p>
-<p>Man konstruiert einen parametrisierten Ansatz für die angenäherte Wellenfunktion, der von einigen Parametern abhängt. Diese Parameter werden dann so variiert, dass der Energieerwartungswert den man mit Hilfe der genäherten Wellenfunktion berechnet, minimal wird.</p>
+<p><strong>Man konstruiert einen parametrisierten Ansatz für die angenäherte Wellenfunktion, der von einigen Parametern abhängt. Diese Parameter werden dann so variiert, dass der Energieerwartungswert den man mit Hilfe der genäherten Wellenfunktion berechnet, minimal wird.</strong></p>
 <p>Betrachten wir nun ein System mit dem Hamiltonoperator <span class="math notranslate nohighlight">\(\hat{H}\)</span>. Wir nehmen an, dass das System einen Grundzustand mit der Energie <span class="math notranslate nohighlight">\(E_0\)</span> besitzt. Die entsprechende (unbekannte) normierte exakte Wellenfunktion bezeichnen wir als <span class="math notranslate nohighlight">\(\psi_0\)</span>. Die exakte Wellenfunktion ist eine Eigenfunktion des Hamiltonoperators:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -605,13 +606,14 @@
 \[
 E_{0} = \int d\tau\, \psi_{0}^{*}\,\hat{H}\,\psi_{0}
 \]</div>
-<p>Dabei steht <span class="math notranslate nohighlight">\(\int d\tau\)</span> für die Integration über alle relevanten Koordinaten und gegebenenfalls die Summation über Spinvariablen.</p>
-<p>Es gilt die <strong>Normierungsbedingung</strong></p>
+<p>Dabei steht <span class="math notranslate nohighlight">\(\int d\tau\)</span> für die Integration über alle relevanten Koordinaten.</p>
+<p>Die <strong>Normierungsbedingung</strong> lautet entsprechend:</p>
 <div class="math notranslate nohighlight">
 \[
 \int d\tau\, \psi_{0}^{*}\psi_{0} = 1 \, .
 \]</div>
-<p>Betrachten wir nun eine <strong>beliebige normierte Testwellenfunktion</strong> <span class="math notranslate nohighlight">\(\psi_{\text{test}}\)</span>, die die Randbedingungen des Problems erfüllt. Das bedeutet, dass <span class="math notranslate nohighlight">\(\psi_{\text{test}}\)</span> im gleichen Funktionenraum liegt und dieselben physikalischen Einschränkungen wie die exakte (uns unbekannte) Wellenfunktion <span class="math notranslate nohighlight">\(\psi_0\)</span> erfüllt.</p>
+<p>Als Variationsansatz wählen wir eine normierte Testwellenfunktion <span class="math notranslate nohighlight">\(\psi_{\mathrm{test}}\)</span>. Sie muss die Randbedingungen des betrachteten Problems erfüllen und generell so beschaffen sein, dass ihr Energieerwartungswert wohldefiniert ist.
+Innerhalb dieser Anforderungen ist die Testwellenfunktion frei wählbar. Die notwendigen Anforderungen ergeben sich aus dem betrachteten Problem und sind damit bereits ohne Kenntnis der exakten Lösung bekannt.</p>
 <p>Mit Hilfe dieser Testfunktion können wir nun auch den entsprechenden <strong>Energieerwartungswert</strong></p>
 <div class="math notranslate nohighlight">
 \[
@@ -621,15 +623,17 @@ E_{\text{test}} = \int d\tau\, \psi_{\text{test}}^{*}\,\hat{H}\,\psi_{\text{test
 <p>Das Variationsprinzip besagt nun, dass dieser Erwartungswert stets <strong>größer oder gleich der exakten Grundzustandsenergie</strong> ist.</p>
 <p>Für jede beliebige Test-Wellenfunktion gilt also die folgende Beziehung (Variationssatz):</p>
 <div class="math notranslate nohighlight">
-\[ \require{color}
-\fcolorbox{red}{#f2d5d3}{$  E[\psi_{test}]=\int d\tau \psi_{test}^{*}\hat{H}\psi_{test}\ge E_{0}  $}\]</div>
+\[ E[\psi_{test}]=\int d\tau \psi_{test}^{*}\hat{H}\psi_{test}\ge E_{0}  
+\]</div>
 <p>mit der Normierungsbedingung:</p>
 <div class="math notranslate nohighlight">
-\[\fcolorbox{red}{#f2d5d3}{$\int d\tau  \psi_{test}^{*}\psi_{test} = 1$}\]</div>
+\[
+\int d\tau  \psi_{test}^{*}\psi_{test} = 1
+\]</div>
 </section>
 <section id="beweis-des-variationsprinzips">
 <h2>Beweis des Variationsprinzips<a class="headerlink" href="#beweis-des-variationsprinzips" title="Permalink to this heading">#</a></h2>
-<p>Für den folgenden Beweis nehmen wir ein rein diskretes Spektrum mit einer <strong>vollständigen orthonormierten Eigenbasis</strong> an. Das Variationsprinzip gilt auch bei kontinuierlichen Spektralanteilen; diese werden in einer allgemeinen Entwicklung durch zusätzliche Integrale berücksichtigt.</p>
+<p>Für den folgenden Beweis nehmen wir ein rein diskretes Spektrum mit einer <strong>vollständigen orthonormierten Eigenbasis</strong> an.</p>
 <p>Seien <span class="math notranslate nohighlight">\(\psi _n\)</span> die <strong>exakten</strong> Eigenfunktionen des Hamiltonoperators:</p>
 <div class="math notranslate nohighlight">
 \[\hat{H}\psi_{n}=E_{n}\psi_{n}\quad n=0,1,2\cdots.  \]</div>
@@ -641,6 +645,17 @@ E_{\text{test}} = \int d\tau\, \psi_{\text{test}}^{*}\,\hat{H}\,\psi_{\text{test
 <p>Für eine beliebige Test-Wellenfunktion exisitiert also eine <strong>exakte</strong> Basis-Zerlegung in der Form:</p>
 <div class="math notranslate nohighlight">
 \[ \psi_{test}=\sum_{i}c_{i}\psi_{i} \]</div>
+<details class="admonition note" style="border: 1px solid #8baebb; border-left: 4px solid #477d91; border-radius: 4px; padding: 0.8em 1em; margin: 1em 0;">
+<summary style="cursor: pointer;"><strong>Zusatzwissen: Was bedeutet die „exakte“ Basisentwicklung?</strong></summary>
+<p>Die Basisfunktionen <span class="math notranslate nohighlight">\(\psi_i\)</span> sind die <strong>Bausteine</strong>, aus denen wir die Testwellenfunktion zusammensetzen. Mit passenden Koeffizienten <span class="math notranslate nohighlight">\(c_i\)</span> lässt sie sich in einer vollständigen Basis beliebig genau darstellen. Dabei geht der über alle Koordinaten integrierte quadratische Fehler gegen null:</p>
+<div class="math notranslate nohighlight">
+\[
+\int d\tau\,\left|\psi_{\mathrm{test}}-\sum_{i=0}^{N}c_i\psi_i\right|^2
+\xrightarrow{N\to\infty}0.
+\]</div>
+<p>Das Gleichheitszeichen bezieht sich auf diesen Grenzwert. Eine <strong>endliche Summe</strong> ist im Allgemeinen eine Näherung.</p>
+<p><strong>„Exakt“ ist hier die Darstellung der gewählten Testfunktion.</strong> Das bedeutet nicht, dass die Testfunktion selbst die exakte Grundzustandswellenfunktion ist.</p>
+</details>
 <p>wobei <span class="math notranslate nohighlight">\(c_i\)</span> (unbekannte) Entwicklungskoeffizienten. Aus der Forderung, dass die Test-Wellenfunktion normiert sein muss, folgt:</p>
 <div class="math notranslate nohighlight">
 \[ \int d\tau \psi_{test}^{*}\psi_{test}=1\rightarrow\sum_{i}\sum_{j}c_{i}^{*}c_{j}\left[\int d \tau \psi_{i}^{*}\psi_{j}\right]=1 \]</div>
@@ -659,27 +674,36 @@ E_{\text{test}} = \int d\tau\, \psi_{\text{test}}^{*}\,\hat{H}\,\psi_{\text{test
 \[ \hat{H}\psi_{j}=E_{j}\psi_{j} \]</div>
 <p>Den Erwartungswert können wir damit in der folgenden Form schreiben:</p>
 <div class="math notranslate nohighlight">
-\[ E[\psi_{test}]=\sum_{i}\sum_{j}c_{i}^{*}c_{j}E_{j}\int d\tau \psi_{i}^{*}\psi_{j} \]</div>
+\[ E[\psi_{test}]=\sum_{i}\sum_{j}c_{i}^{*}c_{j}E_{j}\int d\tau \psi_{i}^{*}\psi_{j} 
+\]</div>
 <p>Nun kommt wieder die Orthonormierung ins Spiel und wir erhalten:</p>
 <div class="math notranslate nohighlight">
-\[ E[\psi_{test}]=\sum_{i}|c_{i}|^{2}E_{i}. \]</div>
+\[ 
+E[\psi_{test}]=\sum_{i}|c_{i}|^{2}E_{i}. 
+\]</div>
 <p>Da wir die Eigenwerte der Größe nach sortiert haben gilt ferner die folgende Ungleichheit:</p>
 <div class="math notranslate nohighlight">
-\[ E[\psi_{test}]=|c_{0}|^{2}E_{0}+|c_{1}|^{2}E_{1}+|c_{2}|^{2}E_{2}+\cdots\ge|c_{0}|^{2}E_{0}+|c_{1}|^{2}E_{0}+|c_{2}|^{2}E_{0}+\cdots \]</div>
+\[ E[\psi_{test}]=|c_{0}|^{2}E_{0}+|c_{1}|^{2}E_{1}+|c_{2}|^{2}E_{2}+\cdots\ge|c_{0}|^{2}E_{0}+|c_{1}|^{2}E_{0}+|c_{2}|^{2}E_{0}+\cdots 
+\]</div>
 <div class="math notranslate nohighlight">
-\[ E[\psi_{test}]\ge E_{0}\left(|c_{0}|^{2}+|c_{1}|^{2}+|c_{2}|^{2}+\cdots\right). \]</div>
+\[ 
+E[\psi_{test}]\ge E_{0}\left(|c_{0}|^{2}+|c_{1}|^{2}+|c_{2}|^{2}+\cdots\right). 
+\]</div>
 <p>Da aber die Wellenfunktion normiert ist gilt auch,</p>
 <div class="math notranslate nohighlight">
-\[ \sum_{i}|c_{i}|^{2}=1 \]</div>
+\[ 
+\sum_{i}|c_{i}|^{2}=1 
+\]</div>
 <p>Damit haben wir gezeigt, dass die Energie der Test-Wellenfunktion immer größer oder gleich als die exakte Grundzustandsenergie ist. Für jede <strong>beliebige</strong> Test-Wellenfunktion gilt also die folgende Relation:</p>
 <div class="math notranslate nohighlight">
-\[ \require{color}\fcolorbox{red}{#f2d5d3}{$E[\psi_{test}]\ge E_{0}$} \]</div>
+\[ 
+E[\psi_{test}]\ge E_{0} 
+\]</div>
 </section>
 <section id="parametrisierung-des-variationsansatzes">
 <h2>Parametrisierung des Variationsansatzes<a class="headerlink" href="#parametrisierung-des-variationsansatzes" title="Permalink to this heading">#</a></h2>
-<p>Die Bedeutung des Variationsprinzips liegt darin, dass uns <strong>jede beliebige normierte Wellenfunktion</strong> bereits eine obere Schranke für die exakte Grundzustandsenergie liefert. Damit verwandelt man die Lösung der Schrödingergleichung in ein <strong>Optimierungsproblem</strong>, bei dem die energetisch bestmögliche Näherung innerhalb der gewählten Familie von Testwellenfunktionen durch Minimierung des Energieerwartungswerts gefunden werden kann.</p>
-<p>Bei einer <strong>systematischen Erweiterung</strong> des Variationsraums, die alle bisherigen Testwellenfunktionen einschließt, kann die vollständig minimierte Energie nur sinken oder unverändert bleiben. Sie bleibt dabei eine obere Schranke für die exakte Grundzustandsenergie. Konvergenz zur exakten Grundzustandsenergie setzt voraus, dass die gewählten Variationsräume den Grundzustand beliebig genau annähern können. Eine bessere Energie garantiert jedoch nicht automatisch eine Verbesserung aller Eigenschaften der Wellenfunktion.</p>
-<p>Das Variationsprinzip ist eine <strong>exakte Aussage</strong> und bildet die Grundlage vieler Näherungsverfahren der Quantenchemie. Die Näherung entsteht durch die Einschränkung der zugelassenen Testwellenfunktionen.</p>
+<p>Um das Variationsprinzip praktisch anzuwenden, wählen wir eine <strong>parametrisierte Familie von Testwellenfunktionen</strong> und suchen darin die Funktion mit der niedrigsten Energie. Die Näherung entsteht durch diese Einschränkung der zugelassenen Funktionen; das Variationsprinzip selbst ist <strong>exakt</strong>.</p>
+<p>Wird diese Familie erweitert, ohne bisherige Testwellenfunktionen auszuschließen, kann die vollständig minimierte Energie nur sinken oder unverändert bleiben und bleibt eine obere Schranke für die exakte Grundzustandsenergie.</p>
 <section id="wie-funktionieren-variationelle-methoden-der-quantenchemie">
 <h3>Wie funktionieren variationelle Methoden der Quantenchemie?<a class="headerlink" href="#wie-funktionieren-variationelle-methoden-der-quantenchemie" title="Permalink to this heading">#</a></h3>
 <p>Man konstruiert einen <strong>physikalisch motivierten Ansatz</strong> für die Wellenfunktion, der einige <strong>freie Variationsparameter</strong> enthält:</p>
@@ -687,19 +711,20 @@ E_{\text{test}} = \int d\tau\, \psi_{\text{test}}^{*}\,\hat{H}\,\psi_{\text{test
 \[
 \psi(\mathbf{x}) \;\longrightarrow\; \psi_{\text{test}}(\mathbf{x}; \beta_{1}, \beta_{2}, \ldots, \beta_{n})
 \]</div>
-<p>Dadurch beschränkt man den unendlichdimensionalen Raum aller denkbaren Wellenfunktionen auf eine <strong>parametrisierte Familie</strong> von Funktionen.</p>
-<p>Die “beste” Wellenfunktion innerhalb dieses Variationsraums erhält man, indem man den <strong>Energieerwartungswert</strong></p>
+<p>Die Variationsparameter bestimmen die <strong>Form der Testwellenfunktion</strong>. Sie können beispielsweise ihre räumliche Breite oder die Lage ihres Maximums usw. festlegen. Statt nach einer ganzen Funktion suchen wir damit nach geeigneten Werten einiger Parameter was die Komplexität des Problems erheblich reduziert.</p>
+<p>Die Testwellenfunktion muss <strong>für jede zugelassene Parameterwahl normiert</strong> sein:</p>
 <div class="math notranslate nohighlight">
 \[
-E[\psi_{\text{test}}] = 
-\int d\tau \psi_{\text{test}}^{*}  \hat{H}  \psi_{\text{test}} 
+\int d\tau\,\psi_{\text{test}}^*\psi_{\text{test}} = 1.
 \]</div>
-<p><strong>mit Bezug auf die Variationsparameter</strong> <span class="math notranslate nohighlight">\(\beta_{1}, \beta_{2}, \ldots, \beta_{n}\)</span> <strong>minimiert</strong> unter der <strong>Nebenbedingung</strong>, dass der variationelle Ansatz normiert ist:</p>
+<p>Ein dafür eingeführter Normierungsfaktor hängt also im Allgemeinen selbst von den Variationsparametern ab.</p>
+<p>Durch Einsetzen des parametrisierten Ansatzes wird der <strong>Energieerwartungswert zu einer Funktion der Variationsparameter</strong>:</p>
 <div class="math notranslate nohighlight">
 \[
-\int d\tau \psi_{\text{test}}^*   \psi_{\text{test}}  = 1
+E[\psi_{\text{test}}] \;\longrightarrow\; E(\beta_1,\ldots,\beta_n)
+= \int d\tau\,\psi_{\text{test}}^{*}\hat{H}\psi_{\text{test}}.
 \]</div>
-<p>Auf diese Weise wird das Variationsprinzip zu einem <strong>Optimierungsproblem</strong>: je besser der gewählte Ansatz den physikalischen Eigenschaften des Systems umfasst, desto näher liegt die minimale Energie an der exakten Grundzustandsenergie.</p>
+<p>Diese Funktion minimieren wir bezüglich <span class="math notranslate nohighlight">\(\beta_1,\ldots,\beta_n\)</span>. So finden wir die <strong>energetisch beste Näherung innerhalb des gewählten Ansatzes</strong>. Welche Genauigkeit damit erreichbar ist, hängt davon ab, welche Formen der Wellenfunktion dieser Ansatz zulässt.</p>
 </section>
 </section>
 <section id="beispiel-teilchen-im-v-x-alpha-x-4-potential">
@@ -983,10 +1008,9 @@ Ein solches allgemeines Potential könnte beispielsweise wie in der folgenden Ab
 <img alt="_images/4e3b9c69829406bab1debf815820cf3d0637df7ce347d07ac1f1be073566fdb4.png" src="_images/4e3b9c69829406bab1debf815820cf3d0637df7ce347d07ac1f1be073566fdb4.png" />
 </div>
 </div>
-<p>Wir wissen, dass sich ein Quantenteilchen in einem Zustand niedriger Energie bevorzugt in der Nähe eines <strong>Potentialminimums</strong> aufhält und in <strong>klassisch verbotenen Bereichen</strong> exponentiell abklingt.<br />
-Wie lässt sich nun ein <strong>Variationsansatz</strong> konstruieren, der flexibel genug ist, um dieses Verhalten realistisch zu beschreiben?</p>
-<p>Eine Möglichkeit, einen solchen Ansatz zu definieren, besteht darin, den relevanten Raum mit <strong>Basisfunktionen fester Form</strong> zu überdecken und den Beitrag jeder Basisfunktion durch einen <strong>linearen Koeffizienten</strong> zu gewichten.<br />
-Diese Koeffizienten dienen gewissermaßen als <strong>Stellschrauben</strong>, die dem Ansatz die nötigeFlexibilität verleihen, um das Verhalten des Systems möglichst genau zu beschreiben.</p>
+<p>In einem solchen Potential kann sich die Aufenthaltswahrscheinlichkeit eines gebundenen Zustands über mehrere <strong>Potentialmulden</strong> verteilen. Wie lässt sich ein <strong>Variationsansatz</strong> konstruieren, der solche räumlichen Strukturen beschreiben kann?</p>
+<p>Eine einzelne Gaußfunktion kann kompliziertere räumliche Strukturen nur eingeschränkt beschreiben. Durch die Überlagerung mehrerer <strong>fest gewählter Basisfunktionen</strong> erhalten wir einen flexibleren Ansatz, dessen Form wir über die <strong>Entwicklungskoeffizienten</strong> verändern können. Diese Koeffizienten dienen gewissermaßen als <strong>Stellschrauben</strong>, mit denen wir den Beitrag jeder Basisfunktion einstellen.</p>
+<p>Die folgenden Regler zeigen zunächst nur, wie die Koeffizienten die <strong>Form der Linearkombination</strong> verändern. Die dargestellte Funktion wird dabei weder normiert noch energetisch optimiert. <strong>Normierung und Energieminimierung</strong> folgen im nächsten Schritt.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
@@ -1069,82 +1093,130 @@ Diese Koeffizienten dienen gewissermaßen als <strong>Stellschrauben</strong>, d
 \fcolorbox{red}{#f2d5d3}{$\displaystyle \psi_{\text{test}} = \sum_{i=1}^{N} c_i \, \varphi_i $}
 \]</div>
 <p>Die variablen Parameter sind die <strong>Entwicklungskoeffizienten</strong> <span class="math notranslate nohighlight">\(c_i\)</span>, während die <span class="math notranslate nohighlight">\(\varphi_i\)</span> feste, von uns gewählte Basisfunktionen darstellen.<br />
-<span class="math notranslate nohighlight">\(N\)</span> bezeichnet die Anzahl der verwendeten Basisfunktionen. Im Grenzfall, dass die gewählte Menge <span class="math notranslate nohighlight">\(\{\varphi_i\}\)</span> eine <strong>vollständige Basis</strong> bildet, konvergiert der durch das Variationsverfahren berechnete Energieeigenwert bei <span class="math notranslate nohighlight">\(N \rightarrow \infty\)</span> gegen den <strong>exakten</strong> Wert. Der große Vorteil dieses <strong>linearen Variationsverfahrens</strong> besteht darin, dass die Optimierung der variationalen Parameter auf die Lösung <strong>linearer Gleichungssysteme</strong> zurückgeführt wird. Diese können mit den Methoden der <strong>numerischen linearen Algebra</strong> auf modernen Rechnern äußerst effizient gelöst werden. Aus diesem Grund bildet das lineare Variationsverfahren eine der <strong>zentralen  Grundlagen</strong> der Quantenchemie.</p>
+<span class="math notranslate nohighlight">\(N\)</span> bezeichnet die Anzahl der verwendeten Basisfunktionen. Im Grenzfall, dass die gewählte Menge <span class="math notranslate nohighlight">\(\{\varphi_i\}\)</span> eine <strong>vollständige Basis</strong> bildet, konvergiert der durch das Variationsverfahren berechnete Energieeigenwert bei <span class="math notranslate nohighlight">\(N \rightarrow \infty\)</span> gegen den <strong>exakten</strong> Wert. Der große Vorteil dieses <strong>linearen Variationsverfahrens</strong> besteht darin, dass die Bestimmung der Energien und der optimalen Entwicklungskoeffizienten auf ein <strong>verallgemeinertes Eigenwertproblem</strong> zurückgeführt wird. Dieses kann mit den Methoden der <strong>numerischen linearen Algebra</strong> effizient gelöst werden. Aus diesem Grund bildet das lineare Variationsverfahren eine der <strong>zentralen  Grundlagen</strong> der Quantenchemie.</p>
 <section id="berechnung-der-optimalen-entwicklungskoeffizienten-c-i">
 <h3>Berechnung der optimalen Entwicklungskoeffizienten <span class="math notranslate nohighlight">\(c_i\)</span><a class="headerlink" href="#berechnung-der-optimalen-entwicklungskoeffizienten-c-i" title="Permalink to this heading">#</a></h3>
-<p>Mit diesem linearen Ansatz können wir ähnlich wie bei dem Beweis des Variationssatzes den Erwartungswert der Energie berechnen.</p>
+<p>Für einen normierten linearen Ansatz können wir ähnlich wie beim Beweis des Variationssatzes den Erwartungswert der Energie berechnen.</p>
 <div class="math notranslate nohighlight">
-\[ E[\psi_{test}]=\int dV\psi_{test}^{*}\hat{H}\psi_{test}=\sum_{i}\sum_{j}c_{i}^{*}c_{j}\int dV\varphi_{i}^{*}\hat{H}\varphi_{j} \]</div>
+\[ E[\psi_{\text{test}}]=\int d\tau\,\psi_{\text{test}}^{*}\hat{H}\psi_{\text{test}}=\sum_{i}\sum_{j}c_{i}^{*}c_{j}\int d\tau\,\varphi_{i}^{*}\hat{H}\varphi_{j} \]</div>
 <p>Da die <span class="math notranslate nohighlight">\(\varphi _i\)</span> aber in diesem Fall im Allgemeinen keine exakten Eigenfunktionen des Hamiltonoperators sind, lässt sich das Integral auf der rechten Seite nicht weiter vereinfachen. Wir führen die folgende Bezeichnung ein:</p>
 <div class="math notranslate nohighlight">
-\[ H_{ij}=\int dV\varphi_{i}^{*}\hat{H}\varphi_{j}. \]</div>
+\[ H_{ij}=\int d\tau\,\varphi_{i}^{*}\hat{H}\varphi_{j}. \]</div>
 <p><span class="math notranslate nohighlight">\(H_{ij}\)</span> sind die Matrixelemente des Hamilton-Operators in der gewählten Basis.</p>
 <p>Damit der Ansatz normiert ist, müssen die Variationsparameter <span class="math notranslate nohighlight">\(c_i\)</span> die folgende Beziehung erfüllen:</p>
 <div class="math notranslate nohighlight">
-\[ \int dV\psi_{test}^{*}\psi_{test}=1\rightarrow\sum_{i}\sum_{j}c_{i}^{*}c_{j}\left[\int dV\varphi_{i}^{*}\varphi_{j}\right]=1.  \]</div>
+\[ \int d\tau\,\psi_{\text{test}}^{*}\psi_{\text{test}}=1\rightarrow\sum_{i}\sum_{j}c_{i}^{*}c_{j}\left[\int d\tau\,\varphi_{i}^{*}\varphi_{j}\right]=1.  \]</div>
 <p>Wir definieren die Überlappungmatrix <span class="math notranslate nohighlight">\(\mathbf S\)</span> mit den Matrixelementen:</p>
 <div class="math notranslate nohighlight">
-\[ S_{ij}=\int dV\varphi_{i}^{*}\varphi_{j},\]</div>
+\[ S_{ij}=\int d\tau\,\varphi_{i}^{*}\varphi_{j},\]</div>
 <p>so dass man die Normierungsbedingung auch als:</p>
 <div class="math notranslate nohighlight">
 \[ \sum_{i}\sum_{j}c_{i}^{*}c_{j}S_{ij}=1 \]</div>
 <p>ausdrücken kann.</p>
 <p>Der Erwartungswert der Energie lautet damit:</p>
 <div class="math notranslate nohighlight">
-\[E[\psi_{test}]=\sum_{i}\sum_{j}c_{i}^{*}c_{j}H_{ij}\]</div>
+\[E[\psi_{\text{test}}]=\sum_{i}\sum_{j}c_{i}^{*}c_{j}H_{ij}\]</div>
 <p>mit der Nebenbedingung:</p>
 <div class="math notranslate nohighlight">
 \[ \sum_{i}\sum_{j}c_{i}^{*}c_{j}S_{ij}=1 \]</div>
-<p>In dem allgemeinen Fall, wenn die <span class="math notranslate nohighlight">\(c\)</span>’s komplex sind, enthält die Normierungsbedingung zwei unabhängige Bedingungen, da der Realteil und der Imaginärteil beide unabhängig voneinander verschwinden müssen. Äquivalent dazu muss auch</p>
+<p>Auch bei <strong>komplexen Entwicklungskoeffizienten</strong> ist die Normierung nur <strong>eine reelle Nebenbedingung</strong>, denn</p>
 <div class="math notranslate nohighlight">
-\[ \sum_{i}\sum_{j}c_{i}c_{j}^{*}S_{ij}^{*}=1 \]</div>
-<p>gelten, was man leicht sieht, wenn man die Normierungsbedingung komplex konjugiert.</p>
-<p>Um die optimalen Werte für die <span class="math notranslate nohighlight">\(c_i\)</span> zu bestimmen, muss der Erwartungswert minimiert werden. Da wir eine zusätzliche Nebenbedingung haben, verwenden wir für die Minimierung die Methode der Lagrange-Multiplikatoren, die aus der Mathematik bekannt ist.</p>
-<p>Wir definieren dazu die Lagrange-Funktion:</p>
+\[
+\sum_i\sum_j c_i^*c_jS_{ij}
+=\int d\tau\,|\psi_{\text{test}}|^2
+\]</div>
+<p>ist reell. Die komplex konjugierte Normierungsbedingung ist daher dieselbe Gleichung und enthält keine zusätzliche Information.</p>
+<p>Zur Minimierung der Energie unter dieser Nebenbedingung verwenden wir <strong>einen reellen Lagrange-Multiplikator</strong> <span class="math notranslate nohighlight">\(\lambda\)</span> und definieren die Lagrange-Funktion:</p>
 <div class="math notranslate nohighlight">
-\[\mathcal{L}(c_{1},\cdots,c_{N},\lambda)=E[\psi_{test}]-\lambda\left(\sum_{i}\sum_{j}c_{i}^{*}c_{j}S_{ij}-1\right)-\lambda^{*}\left(\sum_{i}\sum_{j}c_{i}c_{j}^{*}S_{ij}^{*}-1\right),\]</div>
+\[
+\mathcal L
+=\sum_i\sum_j c_i^*c_jH_{ij}
+-\lambda\left(\sum_i\sum_j c_i^*c_jS_{ij}-1\right),
+\qquad \lambda\in\mathbb R.
+\]</div>
+<p>Da die Koeffizienten im Allgemeinen komplex sind, schreiben wir</p>
 <div class="math notranslate nohighlight">
-\[\mathcal{L}(c_{1},\cdots,c_{N},\lambda)=\sum_{i}\sum_{j}c_{i}^{*}c_{j}H_{ij}-\lambda\left(\sum_{i}\sum_{j}c_{i}^{*}c_{j}S_{ij}-1\right) - \lambda^{*}\left(\sum_{i}\sum_{j}c_{i}c_{j}^{*}S_{ij}^{*}-1\right)\]</div>
-<p>Diese Funktion hängt von den <span class="math notranslate nohighlight">\(c_i\)</span>’s und den Lagrange-Multiplikatoren <span class="math notranslate nohighlight">\(\lambda\)</span> und <span class="math notranslate nohighlight">\(\lambda^*\)</span> ab. Da die <span class="math notranslate nohighlight">\(c_i\)</span>’s im Allgemeinen komplex sind,</p>
+\[
+c_i=a_i+ib_i,\qquad c_i^*=a_i-ib_i.
+\]</div>
+<p>Der Realteil <span class="math notranslate nohighlight">\(a_i\)</span> und der Imaginärteil <span class="math notranslate nohighlight">\(b_i\)</span> können unabhängig voneinander variiert werden. Die Stationaritätsbedingungen lauten deshalb:</p>
 <div class="math notranslate nohighlight">
-\[c_{i}=a_{i}+ib_{i} \quad c_{i}^{*}=a_{i}-ib_{i} \]</div>
-<p>können der Realteil <span class="math notranslate nohighlight">\(a_i\)</span> und der Imaginärteil <span class="math notranslate nohighlight">\(b_i\)</span> unabgängig voneinander variiert werden.</p>
-<p>Die Lagrange-Funktion <span class="math notranslate nohighlight">\(\mathcal{L}\)</span> hat einen stationären Punkt, wenn:</p>
+\[
+\frac{\partial\mathcal L}{\partial a_i}=0,\qquad
+\frac{\partial\mathcal L}{\partial b_i}=0
+\quad\text{für }i=1,\ldots,N,
+\qquad
+\frac{\partial\mathcal L}{\partial\lambda}=0.
+\]</div>
+<p>Die letzte Bedingung stellt die Normierung sicher. Für die Ableitungen nach <span class="math notranslate nohighlight">\(a_i\)</span> und <span class="math notranslate nohighlight">\(b_i\)</span> liefert die Kettenregel:</p>
 <div class="math notranslate nohighlight">
-\[ \frac{\partial\mathcal{L}}{\partial a_{i}}=0 \quad \forall i = 1, \cdots N \]</div>
+\[
+\frac{\partial\mathcal L}{\partial a_i}
+=\frac{\partial\mathcal L}{\partial c_i}\frac{\partial c_i}{\partial a_i}
++\frac{\partial\mathcal L}{\partial c_i^*}\frac{\partial c_i^*}{\partial a_i}
+=\frac{\partial\mathcal L}{\partial c_i}
++\frac{\partial\mathcal L}{\partial c_i^*},
+\]</div>
 <div class="math notranslate nohighlight">
-\[ \frac{\partial\mathcal{L}}{\partial b_{i}}=0 \quad \forall i = 1, \cdots N \]</div>
+\[
+\frac{\partial\mathcal L}{\partial b_i}
+=\frac{\partial\mathcal L}{\partial c_i}\frac{\partial c_i}{\partial b_i}
++\frac{\partial\mathcal L}{\partial c_i^*}\frac{\partial c_i^*}{\partial b_i}
+=i\frac{\partial\mathcal L}{\partial c_i}
+-i\frac{\partial\mathcal L}{\partial c_i^*}.
+\]</div>
+<p>Damit beide Ableitungen verschwinden, müssen sowohl die Summe als auch die Differenz der Ableitungen nach <span class="math notranslate nohighlight">\(c_i\)</span> und <span class="math notranslate nohighlight">\(c_i^*\)</span> null sein. Die Stationaritätsbedingungen sind somit äquivalent zu</p>
 <div class="math notranslate nohighlight">
-\[ \frac{\partial\mathcal{L}}{\partial \lambda}=0 \]</div>
-<p>und</p>
+\[
+\frac{\partial\mathcal L}{\partial c_i}=0,
+\qquad
+\frac{\partial\mathcal L}{\partial c_i^*}=0.
+\]</div>
+<p>Für die Rechnung dürfen wir <span class="math notranslate nohighlight">\(c_i\)</span> und <span class="math notranslate nohighlight">\(c_i^*\)</span> also <strong>formal wie unabhängige Variablen behandeln</strong>. Dies ist lediglich eine bequemere Schreibweise für die Variation der unabhängigen reellen Größen <span class="math notranslate nohighlight">\(a_i\)</span> und <span class="math notranslate nohighlight">\(b_i\)</span>.</p>
+<p>Wir berechnen nun die beiden Ableitungen explizit. Für <span class="math notranslate nohighlight">\(k=1,\ldots,N\)</span> ergibt sich:</p>
 <div class="math notranslate nohighlight">
-\[ \frac{\partial\mathcal{L}}{\partial \lambda^*}=0 \]</div>
-<p>Die Ableitungen der Lagrange-Funktion nach dem Realteil <span class="math notranslate nohighlight">\(a_i\)</span> und dem Imaginärteil <span class="math notranslate nohighlight">\(b_i\)</span> kann man mit Hilfe der Kettenregel wie folgt umformen:</p>
+\[
+\frac{\partial\mathcal L}{\partial c_k^*}
+=\sum_j\left(H_{kj}-\lambda S_{kj}\right)c_j=0,
+\]</div>
 <div class="math notranslate nohighlight">
-\[\frac{\partial\mathcal{L}}{\partial a_{i}}=\frac{\partial\mathcal{L}}{\partial c_{i}}\frac{\partial c_{i}}{\partial a_{i}}+\frac{\partial\mathcal{L}}{\partial c_{i}^{*}}\frac{\partial c_{i}^{*}}{\partial a_{i}}=\frac{\partial\mathcal{L}}{\partial c_{i}}+\frac{\partial\mathcal{L}}{\partial c_{i}^{*}}\]</div>
+\[
+\frac{\partial\mathcal L}{\partial c_k}
+=\sum_i c_i^*\left(H_{ik}-\lambda S_{ik}\right)=0.
+\]</div>
+<p>Wegen der Hermitezität gilt <span class="math notranslate nohighlight">\(H_{jk}^*=H_{kj}\)</span> und <span class="math notranslate nohighlight">\(S_{jk}^*=S_{kj}\)</span>. Da <span class="math notranslate nohighlight">\(\lambda\)</span> reell ist, ist die zweite Gleichung die komplex konjugierte der ersten und liefert keine zusätzliche Information.</p>
+<p>Die <strong>physikalische Bedeutung des Lagrange-Multiplikators</strong> wird deutlich, wenn wir die erste Gleichung mit <span class="math notranslate nohighlight">\(c_k^*\)</span> multiplizieren und über <span class="math notranslate nohighlight">\(k\)</span> summieren:</p>
 <div class="math notranslate nohighlight">
-\[\frac{\partial\mathcal{L}}{\partial b_{i}}=\frac{\partial\mathcal{L}}{\partial c_{i}}\frac{\partial c_{i}}{\partial b_{i}}+\frac{\partial\mathcal{L}}{\partial c_{i}^{*}}\frac{\partial c_{i}^{*}}{\partial b_{i}}=i\frac{\partial\mathcal{L}}{\partial c_{i}}-i\frac{\partial\mathcal{L}}{\partial c_{i}^{*}}\]</div>
-<p>Aus der Stationaritätsbedingung folgt dann:</p>
+\[
+\sum_k\sum_j c_k^*c_jH_{kj}
+=\lambda\sum_k\sum_j c_k^*c_jS_{kj}.
+\]</div>
+<p>Links steht der Energieerwartungswert, rechts ist die Summe aufgrund der Normierung gleich eins. Für eine stationäre Lösung gilt daher</p>
 <div class="math notranslate nohighlight">
-\[\frac{\partial\mathcal{L}}{\partial a_{i}}=0\rightarrow\frac{\partial\mathcal{L}}{\partial c_{i}}+\frac{\partial\mathcal{L}}{\partial c_{i}^{*}}=0\]</div>
+\[
+\lambda=E[\psi_{\text{test}}]\equiv E.
+\]</div>
+<p>Der Lagrange-Multiplikator ist also gerade die <strong>Energie der zugehörigen normierten Testwellenfunktion</strong>. Damit lauten die Gleichungen für die Koeffizienten:</p>
 <div class="math notranslate nohighlight">
-\[\frac{\partial\mathcal{L}}{\partial b_{i}}=0\rightarrow\frac{\partial\mathcal{L}}{\partial c_{i}}-\frac{\partial\mathcal{L}}{\partial c_{i}^{*}}=0\]</div>
-<p>Wir berechnen im Folgenden die beiden Ableitungen explizit. Für jeden beliebigen Wert des Indexes <span class="math notranslate nohighlight">\(k\)</span> gilt:</p>
+\[
+\sum_j\left(H_{kj}-E S_{kj}\right)c_j=0,
+\qquad k=1,\ldots,N.
+\]</div>
+<p>Mit dem Koeffizientenvektor <span class="math notranslate nohighlight">\(\mathbf c=(c_1,\ldots,c_N)^{\mathsf T}\)</span> können wir sie als <strong>verallgemeinertes Eigenwertproblem</strong> schreiben:</p>
 <div class="math notranslate nohighlight">
-\[\frac{\partial\mathcal{L}}{\partial c_{k}^{*}}=0\rightarrow\sum_{j}c_{j}\left(H_{kj}-(\lambda+\lambda^{*})S_{kj}\right)=0\quad\forall k=1,\cdots,N \]</div>
+\[
+\require{color}
+\fcolorbox{red}{#f2d5d3}{$\displaystyle \mathbf H\mathbf c=E\,\mathbf S\mathbf c $}
+\]</div>
+<p>Gesucht werden gleichzeitig die <strong>Energien <span class="math notranslate nohighlight">\(E\)</span></strong> und die zugehörigen <strong>Koeffizientenvektoren <span class="math notranslate nohighlight">\(\mathbf c\)</span></strong>. Für eine orthonormierte Basis ist <span class="math notranslate nohighlight">\(\mathbf S\)</span> die Einheitsmatrix, und wir erhalten das gewöhnliche Eigenwertproblem.</p>
+<p>Eine nichttriviale Lösung <span class="math notranslate nohighlight">\(\mathbf c\ne\mathbf 0\)</span> existiert genau dann, wenn</p>
 <div class="math notranslate nohighlight">
-\[ \frac{\partial\mathcal{L}}{\partial c_{k}}=0\rightarrow\sum_{i}c_{i}^{*}\left(H_{ik}-(\lambda+\lambda^{*})S_{ik}\right)=0\quad\forall k=1,\cdots,N \]</div>
-<p>Für die Matrixelemente gilt wegen der Hermitezität <span class="math notranslate nohighlight">\( H_{jk}^{*}=H_{kj} \)</span> und <span class="math notranslate nohighlight">\(  S_{jk}^{*}=S_{kj} \)</span>, so dass sich die zweite Bedingung einfach durch komplexe Konjugierung aus der ersten ergibt.</p>
-<p>Da <span class="math notranslate nohighlight">\(\lambda +\lambda^*\)</span> reell ist, führen wir die folgende Abkürzung ein:</p>
-<div class="math notranslate nohighlight">
-\[ \epsilon=\lambda+\lambda^{*} \]</div>
-<p>Damit erhalten wir für die optimalen Variationsparameter <span class="math notranslate nohighlight">\(c\)</span> folgendes System von <strong>homogenen linearen Gleichungen</strong>:</p>
-<div class="math notranslate nohighlight">
-\[\require{color}\fcolorbox{red}{#f2d5d3}{$\sum_{j}\left(H_{kj}-\epsilon S_{kj}\right)c_{j}=0\quad k=1,\cdots,N$}\]</div>
-<p>Aus der linearen Algebra wissen wir, dass ein homogenes System nur dann eine nichttriviale Lösung besitzt, wenn:</p>
-<div class="math notranslate nohighlight">
-\[ \require{color}\fcolorbox{red}{#f2d5d3}{$\det\left(\mathbf{H-\epsilon\mathbf{S}}\right)=0 $}\]</div>
-<p>Die Lösung dieser Polynom-Gleichung liefert uns die variationelle Abschätzung für die Energie der niedrigsten <span class="math notranslate nohighlight">\(N\)</span> Zustände.</p>
+\[
+\det\left(\mathbf H-E\mathbf S\right)=0.
+\]</div>
+<p>Diese Determinantenbedingung bestimmt die zulässigen Energiewerte. In numerischen Rechnungen löst man üblicherweise direkt das <strong>verallgemeinerte Eigenwertproblem</strong>.</p>
+<p>Bei <span class="math notranslate nohighlight">\(N\)</span> linear unabhängigen Basisfunktionen erhalten wir <span class="math notranslate nohighlight">\(N\)</span> reelle Eigenwerte. Der <strong>kleinste Eigenwert</strong> liefert das Minimum des Energieerwartungswerts innerhalb des gewählten Variationsraums und damit eine <strong>obere Schranke für die exakte Grundzustandsenergie</strong>. Lösungen mit höheren Eigenwerten sind weitere stationäre Lösungen; sie sind keine Minima derselben Optimierungsaufgabe.</p>
+<p>Weitere Eigenwerte können Näherungen für die Energien diskreter angeregter Zustände liefern. Die Zahl <span class="math notranslate nohighlight">\(N\)</span> ist jedoch <strong>nicht mit der Zahl gebundener Zustände gleichzusetzen</strong>: Ein Potential kann weniger als <span class="math notranslate nohighlight">\(N\)</span> gebundene Zustände besitzen, und ein Teil der berechneten Eigenwerte kann dann das Kontinuum näherungsweise beschreiben. Wie genau die einzelnen Energien sind, hängt davon ab, wie gut die gewählte Basis die jeweiligen Zustände beschreiben kann.</p>
 </section>
 </section>
 <section id="id1">
