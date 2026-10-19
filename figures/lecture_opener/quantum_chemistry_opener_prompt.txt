@@ -1,0 +1,13 @@
+Generated using the built-in image_gen tool.
+
+Use case: illustration-story.
+Asset type: a single charming cartoon figure to open a German university lecture on quantum chemistry, ready for a widescreen presentation (16:9 landscape).
+Create one airy hand-drawn scene, with confident slightly irregular dark ink outlines, delicate pencil shading and soft muted watercolor washes on warm ivory paper. Intelligent, warm editorial humor for university students, expressive but not childish. The image should be immediately understandable at lecture-hall distance.
+
+Main scene: two friendly anthropomorphic atom spheres, one muted teal and one warm coral, joined as a little diatomic molecule by a short softly translucent connection. The atom characters have tiny hands, feet and simple expressive faces. One atom leans back playfully as though testing what keeps them together; the other looks curious and slightly puzzled. They are the large main focal point. One spacious speech bubble belongs to the molecule, with exact German text: "Was hält uns zusammen?"
+
+Nearby, noticeably smaller, an approachable curious quantum chemist with rolled-up sleeves, round glasses and a piece of chalk smiles toward the atoms. A modest green chalkboard contains only one large beautifully legible handwritten mathematical equation: "Ĥψ = Eψ" (put a proper hat over the H). Beneath that equation, write the exact short German phrase "Finden wir es heraus." No further writing on the board. The scientist's posture should invite the students to investigate along with them.
+
+A light, elegant hand-lettered heading at the top reads exactly "Quantenchemie". Make the composition feel like one coherent humorous vignette, not an infographic. Clear visual hierarchy: curious molecule, its question, then the scientist and simple equation. Lots of uncluttered negative space, generous margins, very sparse background, a faint grounding shadow and paper texture. Teal, coral, chalkboard green and warm gray accents; keep saturation restrained. High resolution, crisp readable lettering, polished hand-drawn finish.
+
+Only these three text elements plus the equation. No panels, no technical labels, no graphs, no legends, no captions, no electron orbit rings, no decorative particles, no additional objects or characters, no watermarks. Scientific precision is secondary to charm and an engaging opening question.

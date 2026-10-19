@@ -4,6 +4,7 @@ chapters:
   - file: introduction
   - file: variational_principle
   - file: convergence_variational_principle
+  - file: renner_teller_example
   - file: helium_atom
   - file: kinetic_energy_hylleraas.ipynb
   - file: correlation_hylleraas.ipynb
