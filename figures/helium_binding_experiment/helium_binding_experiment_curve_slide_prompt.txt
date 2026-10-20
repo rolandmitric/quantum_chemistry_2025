@@ -1,0 +1,57 @@
+Use case: compositing
+Asset: one German scientific lecture slide, widescreen 16:9.
+Input image: the supplied existing helium binding energy slide is the edit target and style reference.
+
+Modify this slide to show clearly WHAT is varied, WHAT is measured, and HOW the measured current curve looks schematically. Preserve the existing warm ivory background, navy serif lettering, restrained blue/coral pencil illustration, exact title, subtitle, scientific reaction, bottom historical and modern energy values, and source citation. No people or historical artwork.
+
+Rebalance the two panels: the left 50 percent contains the existing original measurement-principle diagram, adapted to fit, and the right 46 percent contains a large, very legible current-versus-voltage graph. Replace the previous right-hand energy-level diagram entirely with this graph. Maintain generous spacing and clear projection-size typography. Target 2560 by 1440 pixels, landscape 16:9.
+
+Keep title: "Die Bindungsenergie des Heliumatoms"
+Keep subtitle: "James Franck und Paul Knipping, 1919"
+
+LEFT PANEL:
+Heading "Was wird gemessen?"
+Preserve the original conceptual apparatus: hot filament emits blue electrons left to right; two mesh planes accelerate the electrons (minus on left, plus on right); helium collision region; coral positive ions move down to a separate ion collector connected to an ammeter. This measures positive-ion current, not the transmitted incident electron current. No mass analyzer.
+Readable labels: "Glühkathode", "Heliumgas", "Ionensammler".
+Above the accelerating grids: "U variieren".
+Above the incident electron beam: E_kin ≈ eU.
+Beside the ammeter: "I_ion messen", with ion as a proper subscript.
+Small diagram label: "Messprinzip".
+Below the apparatus retain the large balanced reaction:
+e⁻ + He → He²⁺ + 3e⁻
+Under it add the compact explanation:
+"Beide Elektronen in einem Stoß"
+
+RIGHT PANEL:
+Heading "Schematischer Kurvenverlauf"
+Create a NEW original teaching graph, not traced, digitized, or copied from the paper. This is an idealized illustration, not historical measurement data.
+Vertical axis: "Ionenstrom I_ion (relativ)", correctly subscripted, with no numerical y-axis ticks.
+Horizontal axis: "Beschleunigungsspannung U / V".
+Visible horizontal range is 60 to 100 V, evenly spaced ticks at 60, 70, 80, 90, 100. It is a zoom around the direct double-ionization threshold, not a plot starting at zero voltage.
+Draw ONE solid blue continuous current curve. At 60 V the current is already clearly NONZERO, well above the horizontal axis, since single ionization is already possible. The current rises gradually with voltage. Near 79.5 V it has a modest but visible upward slope change: after that point it rises a little more steeply. The current value stays continuous. NO vertical jump, NO spike, NO maximum, NO dip, NO dramatic doubling of slope. The kink is a small extra feature on an existing substantial current.
+Beyond the threshold, show a thin gray dashed extension of the pre-threshold trend, below the solid blue curve, labeled "Fortgesetzter Trend". The dashed line begins at the kink and continues rightward.
+Draw a thin coral dashed VERTICAL guide from the kink to the x-axis, at approximately 79.5 V, slightly to the left of the 80 V tick. Place a readable annotation in open space above the plot with a fine pointer to the kink:
+"Zusätzlicher Knick"
+"U_S ≈ 79,5 V (1919)"
+Use S as a proper subscript.
+Place a concise label near the solid curve after the threshold:
+"Direkte Doppelionisation"
+Under the graph, small but clearly legible:
+"Schematische Kurve – keine Messdaten"
+No data-point markers, error bars, fitted measured values, invented experimental current magnitudes, or copied historical graph shapes.
+
+BOTTOM RESULTS:
+Keep the two results, large, with proper math subscripts and good spacing:
+"1919: E_ion,gesamt = (79,5 ± 0,3) eV"
+"Heute: E₀ ≈ −79,005 eV ≈ −2,9034 E_h"
+Preserve the distinction between positive removal energy and negative bound-state energy.
+Keep the footer:
+"Quellen: Franck & Knipping, Phys. Z. 20, 481–488 (1919); NIST, Atomic Data for Helium."
+
+Scientific constraints: Three outgoing electrons in the collision equation (incoming electron plus two liberated bound electrons). The plotted current is total collected positive-ion current. Direct double ionization of neutral helium opens near 79.5 V in the historical experiment, while single ionization already causes nonzero current throughout the displayed 60–100 V range. Do not claim that all ionization starts at 79.5 V. The schematic represents the small upward kink in clean helium; no contaminated-gas downward kink. Every diagram is independently composed; do not reproduce historical scans or artwork. No copyright guarantees or production notes on the slide.
+
+Final targeted revision of the resulting slide:
+Keep the whole slide visually unchanged except for two precise corrections inside the right graph. First, remove the gray dashed sloping line and remove its entire "Fortgesetzter Trend" label and small pointer. Restore the clean ivory background in those locations. Keep just the single solid blue current curve and the coral vertical threshold guide. Second, shift the blue curve's small kink and its vertical coral dashed guide slightly to the LEFT of the 80 V tick, to approximately 79.5 V. Leave the 80 V axis tick exactly where it is. Keep the solid current curve continuous, with a small but discernible increase in slope at that kink. The pre-threshold current is already nonzero. Retain the kink annotation "Zusätzlicher Knick" and "U_S ≈ 79,5 V (1919)", with its pointer directed to the kink. No new labels or curve elements. Preserve all apparatus, title, subtitle, reaction, explanations, source credit, values, typefaces, color palette, image size, and layout exactly.
+
+Final graph-legibility correction:
+Edit only the graph interior in the supplied slide. Keep every other pixel and text unchanged as closely as possible. The current line is too close to a straight line, so make its small slope increase unambiguously visible without introducing a jump. Draw one continuous blue piecewise-linear curve with a noticeable but restrained corner at 79.5 V. Use these approximate image coordinates for the 1672-by-941 reference: at 60 V the blue curve is at (984,540); the kink at 79.5 V is at (1298,460); at 100 V the blue curve is at (1620,315). Connect these with two straight solid blue segments meeting exactly at the kink. The post-threshold slope is about 1.7 times the previous slope, a visible pedagogical slope change on substantial pre-existing current, not an onset from zero. Move the coral vertical dashed guide to x=1298 and stop it exactly at the kink y=460; it reaches the x-axis below. Keep axis ticks 60,70,80,90,100 unchanged. Redirect the black annotation pointer to the actual corner. Remove any tiny stray gray dashed segment near the kink. No gray extrapolation or other curves. Restore "Direkte Doppelionisation" in clear navy text in the open upper-right graph space, with a fine black pointer to the blue post-threshold branch. Preserve the existing annotation "Zusätzlicher Knick", "U_S ≈ 79,5 V (1919)" and the visible statement "Schematische Kurve – keine Messdaten". Preserve the apparatus, reaction, title, subtitle, results, citation, ivory background, style and dimensions.

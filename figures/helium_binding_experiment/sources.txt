@@ -1,0 +1,43 @@
+Die Bindungsenergie des Heliumatoms
+
+Scientific sources
+
+J. Franck and P. Knipping, "Die Ionisierungsspannungen des Heliums",
+Physikalische Zeitschrift 20, 481–488 (1919).
+The apparatus is described in the paper; the double-ionization measurement
+is discussed on pp. 486–488. The reported mean threshold is 79.5 ± 0.3 V.
+https://archive.org/details/physikalische-zeitschrift-vol-20/page/n585/mode/2up
+
+NIST, Atomic Data for Helium.
+First ionization energy: 24.587387 eV.
+Second ionization energy: 54.417760 eV.
+Their sum is 79.005147 eV, rounded on the slide to 79.005 eV.
+The ground-state energy relative to a bare helium nucleus and two free
+electrons has the opposite sign, approximately −2.9034 Hartree.
+https://physics.nist.gov/PhysRefData/Handbook/Tables/heliumtable1.htm
+
+The slide independently illustrates the measurement principle and an energy
+level diagram. It contains no historical scans, reproduced published figures,
+portraits, or reconstructed numerical current–voltage data.
+
+Superseded curve slide (not included in the lecture notes)
+
+The curve variant is retained as a teaching draft. Its straight segments and
+emphasized kink overstate the weak feature in the historical measurements.
+For the lecture notes, use helium_binding_experiment_slide.png, which shows
+the measurement principle and energy levels without an invented curve.
+
+helium_binding_experiment_curve_slide.png additionally contains an original
+schematic of total collected positive-ion current versus accelerating voltage,
+zoomed to 60–100 V. The continuous curve and visible change of slope are a
+qualitative teaching illustration, not measured points, a numerical model,
+digitized historical data, or a reproduction of the paper's graph. The
+vertical scale is relative and has no numerical current values.
+
+The interpretation follows pp. 487–488: clean helium shows a weak additional
+kink near the reported direct double-ionization threshold of 79.5 V, on an
+already substantial ionization current. The paper separately notes that
+contamination can produce a downward kink; the slide illustrates the clean
+gas case. "Direct double ionization" denotes removal of both bound electrons
+from neutral helium in one collision, not sequential ionization through He+.
+https://archive.org/details/physikalische-zeitschrift-vol-20/page/n584/mode/2up

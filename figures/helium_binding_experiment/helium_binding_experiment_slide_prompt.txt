@@ -1,0 +1,50 @@
+Use case: scientific-educational
+Asset: one German university lecture slide, widescreen 16:9, intended for projection.
+
+Create a new, independently designed educational illustration from the scientific facts below. Do not use, trace, reconstruct, or imitate any historical figure, photograph, publication page, or existing slide. No people, portraits, logos, borrowed artwork, historic facsimiles, or decorative mascots.
+
+Visual style: warm very pale ivory paper, refined graphite lines, restrained blue/teal and coral colored-pencil shading, small ochre accents. Scientific lecture aesthetic with clean readable mathematical typography. Spacious, flat unified composition. High contrast and large lettering. No boxes, cards, excessive ornament or dense paragraphs. Target 2560 x 1440 pixels, exact 16:9 landscape.
+
+Title at top, large and centered:
+"Die Bindungsenergie des Heliumatoms"
+Smaller subtitle:
+"James Franck und Paul Knipping, 1919"
+
+The left 58 percent of the main canvas presents the measurement principle. Heading: "Elektronenstoßexperiment"
+Create an original, simplified conceptual diagram, NOT a historical apparatus reconstruction:
+- A heated filament on the far left inside a low-pressure helium chamber emits blue electrons.
+- A pair of simple mesh electrode planes provides an accelerating voltage U before the collision region.
+- A horizontal blue arrow shows the incoming electron beam entering the central gas region.
+- The central region contains a few neutral helium atoms indicated by small neutral circles labeled "He". Avoid planetary electron trajectories.
+- A separate lower collecting electrode draws positive ions from the collision region downward, shown by coral arrows. This lower collector connects to a simple current meter labeled "Ionenstrom". This must clearly measure collected positive-ion current, not the outgoing incident electron beam. Draw no charge-state-resolving mass spectrometer or magnetic analyzer.
+- The chamber is a simple original horizontal schematic, not a detailed glass historical tube. No copied cylindrical apparatus geometry.
+Clear labels beside the relevant parts:
+"Glühkathode"
+"Beschleunigung U"
+"Heliumgas"
+"Ionensammler"
+Above the beam: "E_kin ≈ eU"
+Small unobtrusive label beneath the apparatus: "Messprinzip"
+Under the diagram, large correctly typeset reaction:
+e⁻ + He → He²⁺ + 3e⁻
+Then one compact explanation:
+"Zusätzlicher Knick im Ionenstrom"
+"bei der Entfernung beider Elektronen"
+Do not invent or draw a current-voltage graph or fake measured data points.
+
+The right 38 percent of the main canvas shows a simple large energy-level diagram. Heading: "Gesamte Bindungsenergie"
+Vertical axis labeled "E".
+Upper horizontal level at E=0 labeled "He²⁺ + 2e⁻" and "0".
+Lower horizontal level labeled "He (Grundzustand)".
+An upward double-ended energy difference arrow connects the lower and upper levels, labeled "≈ 79 eV".
+The positive removal energy is the distance between levels, while the bound-state energy is negative. Leave ample space around all labels. Do not imply that 79.5 eV was a modern precise value.
+
+Across the lower canvas above the citations, two clean readable result lines, spaced clearly:
+"1919: E_ion,gesamt = (79,5 ± 0,3) eV"
+"Heute: E₀ ≈ −79,005 eV ≈ −2,9034 E_h"
+Use appropriate proper mathematical subscripts for ion,gesamt, 0, and h. Set the historical result in dark blue and modern value in dark graphite. No oversized colored rectangles.
+
+At the bottom, one small but legible neutral source line:
+"Quellen: Franck & Knipping, Phys. Z. 20, 481–488 (1919); NIST, Atomic Data for Helium."
+
+Scientific invariants: the incident electron plus two liberated bound electrons make THREE final electrons in the collision reaction. The energy-reference state contains a bare helium nucleus plus TWO free electrons. There is already ion current from single ionization below the double-ionization threshold; use "zusätzlicher Knick", never a claim of first onset of all ion current at 79.5 V. The measured historical threshold is 79.5 ± 0.3 eV. The modern approximate total binding energy is 79.005 eV and the corresponding ground energy is negative. All design is newly composed; cite the facts, do not reproduce sources' graphical expression. No copyright guarantees or production notes on the slide.
