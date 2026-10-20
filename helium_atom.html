@@ -500,7 +500,10 @@
                 <ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#der-atomare-hamiltonoperator">Der atomare Hamiltonoperator</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#separationsansatz-hartree-produkt">Separationsansatz (Hartree-Produkt)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#energie-des-heliumatoms-ohne-elektronelektron-abstoszung">Energie des Heliumatoms ohne Elektron–Elektron-Abstoßung</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#energie-des-heliumatoms-ohne-elektronelektron-abstoszung">Energie des Heliumatoms ohne Elektron–Elektron-Abstoßung</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#experimenteller-zugang-zur-gesamtbindungsenergie">Experimenteller Zugang zur Gesamtbindungsenergie</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#erste-verbesserung-energieerwartungswert-des-hartree-produktansatzes">Erste Verbesserung: Energieerwartungswert des Hartree-Produktansatzes</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wie-grosz-ist-die-elektronelektron-wechselwirkung-eine-erste-abschatzung">Wie groß ist die Elektron–Elektron-Wechselwirkung? Eine erste Abschätzung.</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#symbolische-berechnung-des-erwartungswertes">Symbolische Berechnung des Erwartungswertes</a></li>
@@ -626,18 +629,32 @@ H_0\,\Psi = 2\varepsilon\,\Psi.
 \[
 E = 2\,E_{1s}(Z) = 2\!\left(-\frac{Z^2}{2}\right) = -Z^2.
 \]</div>
-<p>Für das Helium atom (<span class="math notranslate nohighlight">\(Z = 2\)</span>) folgt daher für die Energie <span class="math notranslate nohighlight">\(E = -4\)</span> Hartree. Der <strong>exakte nichtrelativistische Wert</strong> aus hochpräzisen numerischen Rechnungen beträgt</p>
+<p>Für das Heliumatom (<span class="math notranslate nohighlight">\(Z = 2\)</span>) folgt daher für die Energie <span class="math notranslate nohighlight">\(E = -4\)</span> Hartree. Der <strong>exakte nichtrelativistische Wert bei festgehaltenem Kern</strong> aus hochpräzisen numerischen Rechnungen beträgt</p>
 <div class="math notranslate nohighlight">
 \[
 E_\text{exakt} \approx -2.9037\ \text{Hartree},
 \]</div>
-<p>und das <strong>experimentell bestimmte Ionisationspotential</strong> des Heliumgrundzustands entspricht einer Gesamtenergie von etwa</p>
+<p>und aus der <strong>Summe der beiden experimentell bestimmten Ionisationsenergien</strong> ergibt sich für den Heliumgrundzustand eine Gesamtenergie von etwa</p>
 <div class="math notranslate nohighlight">
 \[
 E_\text{exp} \approx -2.9034\ \text{Hartree}.
 \]</div>
 <p>Die Differenz von rund <strong>1.1 Hartree</strong> zeigt deutlich, dass die einfache Näherung ohne Elektron–Elektron-Abstoßung das System <strong>zu stark bindet</strong>.</p>
 <p>Sie verdeutlicht damit den erheblichen Beitrag der Elektron–Elektron-Wechselwirkung zur realen Bindungsenergie des Heliumatoms! Wir lernen daraus, dass die Elektron-Elektron Wechselwirkung definitiv keine vernachlässigbare Größe ist und die <strong>orbitalbasierte Produktansätze</strong>, die für nichtwechselwirkende Elektronen exakt sind, keine gute Näherungen für die exakte Wellenfunktion eines realen wechselwirkenden Systems sind!</p>
+<section id="experimenteller-zugang-zur-gesamtbindungsenergie">
+<h3>Experimenteller Zugang zur Gesamtbindungsenergie<a class="headerlink" href="#experimenteller-zugang-zur-gesamtbindungsenergie" title="Permalink to this heading">#</a></h3>
+<p>Wie lässt sich diese Bindungsenergie experimentell bestimmen? Einen frühen Zugang untersuchten <strong>James Franck und Paul Knipping im Jahr 1919</strong>: Sie beschleunigten Elektronen durch eine veränderliche Spannung <span class="math notranslate nohighlight">\(U\)</span> und ließen sie mit Heliumatomen zusammenstoßen. Die kinetische Energie der einfallenden Elektronen beträgt näherungsweise <span class="math notranslate nohighlight">\(E_{\mathrm{kin}}=eU\)</span>. Gemessen wurde der <strong>Kollektorstrom als Funktion der Beschleunigungsspannung</strong>.</p>
+<p><img alt="Schematisches Elektronenstoßexperiment zur Bindungsenergie des Heliumatoms: Eine Glühkathode liefert Elektronen, die beschleunigt werden und Helium ionisieren; ein Kollektor erfasst den Ionenstrom. Rechts zeigt ein Energieniveaudiagramm den Abstand zwischen dem Heliumgrundzustand und dem vollständig ionisierten Zustand." src="_images/helium_binding_experiment_slide.png" /></p>
+<p><em>Eigenständige Illustration des Messprinzips und des Energiebezugs. Die Apparatur ist schematisch dargestellt. Der historische Messwert von 1919 und der heutige Wert der Grundzustandsenergie sind getrennt angegeben.</em></p>
+<p>Bereits unterhalb der Schwelle zur Entfernung beider Elektronen entsteht durch <strong>einfache Ionisation</strong> ein Strom. Franck und Knipping beobachteten eine <strong>schwache zusätzliche Änderung des Stromverlaufs</strong>, die sie der direkten Doppelionisation zuordneten: In einem Stoß werden beide gebundenen Elektronen entfernt. Sie bestimmten dafür eine Schwellenenergie von <span class="math notranslate nohighlight">\((79{,}5\pm0{,}3)\,\mathrm{eV}\)</span>. Die historischen Kurven zeigen daher keinen großen, scharfen Beginn des gesamten Stroms bei dieser Energie.</p>
+<p>Für den heutigen Vergleich verwenden wir die erste und die zweite Ionisationsenergie, <span class="math notranslate nohighlight">\(I_1\approx24{,}5874\,\mathrm{eV}\)</span> und <span class="math notranslate nohighlight">\(I_2\approx54{,}4178\,\mathrm{eV}\)</span>. Wählen wir den vollständig getrennten Zustand <span class="math notranslate nohighlight">\(\mathrm{He}^{2+}+2e^-\)</span> als Energienullpunkt, so gilt</p>
+<div class="math notranslate nohighlight">
+\[
+E_{\mathrm{exp}}=-(I_1+I_2)\approx-79{,}005\,\mathrm{eV}\approx-2{,}9034\,E_{\mathrm h}.
+\]</div>
+<p>Die positive Gesamtbindungsenergie ist also der Energieaufwand zur vollständigen Ionisation; die Energie des gebundenen Grundzustands hat das entgegengesetzte Vorzeichen.</p>
+<p><em>Quellen:</em> J. Franck und P. Knipping, <a class="reference external" href="https://archive.org/details/physikalische-zeitschrift-vol-20/page/n578/mode/2up">„Die Ionisierungsspannungen des Heliums“, Physikalische Zeitschrift <strong>20</strong>, 481–488 (1919)</a>, insbesondere S. 487–488; <a class="reference external" href="https://physics.nist.gov/PhysRefData/Handbook/Tables/heliumtable1.htm">NIST: Atomic Data for Helium</a>.</p>
+</section>
 </section>
 <section id="erste-verbesserung-energieerwartungswert-des-hartree-produktansatzes">
 <h2>Erste Verbesserung: Energieerwartungswert des Hartree-Produktansatzes<a class="headerlink" href="#erste-verbesserung-energieerwartungswert-des-hartree-produktansatzes" title="Permalink to this heading">#</a></h2>
@@ -1220,7 +1237,10 @@ Die folgende Abbildung zeigt die Energie als Funktion der effektiven Kernladung 
     <ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#der-atomare-hamiltonoperator">Der atomare Hamiltonoperator</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#separationsansatz-hartree-produkt">Separationsansatz (Hartree-Produkt)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#energie-des-heliumatoms-ohne-elektronelektron-abstoszung">Energie des Heliumatoms ohne Elektron–Elektron-Abstoßung</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#energie-des-heliumatoms-ohne-elektronelektron-abstoszung">Energie des Heliumatoms ohne Elektron–Elektron-Abstoßung</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#experimenteller-zugang-zur-gesamtbindungsenergie">Experimenteller Zugang zur Gesamtbindungsenergie</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#erste-verbesserung-energieerwartungswert-des-hartree-produktansatzes">Erste Verbesserung: Energieerwartungswert des Hartree-Produktansatzes</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wie-grosz-ist-die-elektronelektron-wechselwirkung-eine-erste-abschatzung">Wie groß ist die Elektron–Elektron-Wechselwirkung? Eine erste Abschätzung.</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#symbolische-berechnung-des-erwartungswertes">Symbolische Berechnung des Erwartungswertes</a></li>
