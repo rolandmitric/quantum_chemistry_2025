@@ -1,0 +1,61 @@
+Use case: scientific-educational
+Asset type: German quantum chemistry textbook cartoon, a large landscape illustrated reference sheet.
+
+Create a beautifully hand-drawn, scientifically precise overview of selected normalized hydrogenic orbitals. Match this established book style: warm ivory watercolor paper, visible colored-pencil grain, graphite outlines, soft blue/teal and coral watercolor shading, restrained ochre brushstroke headings, friendly organic handwritten German headings, crisp beautifully typeset mathematical expressions. Charming classroom-cartoon character, spacious composition, no glossy rendering, no rigid computer dashboard boxes. All shapes and equations must remain readily readable. Aim for a high-resolution landscape canvas around 3200 x 2400 pixels.
+
+TITLE: "Wasserstoffähnliche Orbitale"
+Subtitle: "Ausgewählte reelle Orbitale · atomare Einheiten"
+Under the title, a compact general formula strip:
+φ_nlm(r,θ,ϕ) = R_nl(r) Y_lm(θ,ϕ)       E_n = −Z²/(2n²)
+Small definition: "r = √(x² + y² + z²) · Z = Kernladungszahl"
+The general separation uses spherical harmonics; the displayed real p and d orbitals are real combinations. Do not imply the individual real x/y orbitals have a definite magnetic quantum number.
+
+COMPOSITION: three generous horizontal illustrated rows. Row 1 contains two s orbitals and a small legend; row 2 contains three p orbitals; row 3 contains five d orbitals. Each drawing has its orbital name above and its expression below. Use soft hand-drawn separators, not heavy boxes. Prioritize diagrams and mathematical legibility over decoration.
+
+ROW 1 heading: "s-Orbitale · kugelsymmetrisch"
+Two large diagrams, each with the following exact typeset formula below:
+1s: φ_1s = Z^(3/2)/√π · e^(−Zr)
+2s: φ_2s = Z^(3/2)/(4√(2π)) · (2 − Zr)e^(−Zr/2)
+1s is one spherical blue positive-phase cloud with a clean small "+" sign, no radial node.
+2s must be a sphere CUT OPEN to show a BLUE inner spherical region and a CORAL outer spherical shell. The boundary between them is one spherical radial node. A thin leader points to this internal boundary, labeled "Knoten: r = 2/Z". Small "+" inside the blue region and "−" on the coral shell. The 2s orbital must not look like two separate side-by-side spheres or a p dumbbell. Label it "Schnittbild".
+Use the right-hand portion of this row for a clear small legend with blue and coral swatches: "Blau: φ > 0", "Koralle: φ < 0", then "Farben = Vorzeichen, nicht Ladung". Include "Formen schematisch, nicht maßstäblich". Draw no electron orbits or planet-like rings.
+
+ROW 2 heading: "2p-Orbitale · drei Orientierungen"
+One shared, clearly visible analytic prefactor directly under the heading:
+P(r) = Z^(5/2)/(4√(2π)) · e^(−Zr/2)
+Three evenly spaced drawings with labels and exact individual formulas:
+2p_x: φ_2p_x = P(r)x
+2p_y: φ_2p_y = P(r)y
+2p_z: φ_2p_z = P(r)z
+Each is a symmetric two-lobed dumbbell, BLUE on the positive coordinate side and CORAL on the negative side. Put a small "+" and "−" in the respective lobes. The two lobes meet at the common central origin. Each drawing has a thin readable local coordinate triad: x points right, z points up, y points diagonally down-left. Rotate the dumbbell along its correctly labeled axis: x horizontal, y diagonal, z vertical. Avoid letting axes or letters intersect formulas. No rings around p orbitals. Small row note: "Eine Knotenebene durch den Kern".
+
+ROW 3 heading: "3d-Orbitale · fünf Formen"
+One shared, clearly visible analytic prefactor directly under the heading:
+D(r) = Z^(7/2)/(81√(2π)) · e^(−Zr/3)
+Five evenly spaced drawings with exact labels and formulas:
+3d_xy: φ = 2D(r)xy
+3d_xz: φ = 2D(r)xz
+3d_yz: φ = 2D(r)yz
+3d_x²−y²: φ = D(r)(x² − y²)
+3d_z²: φ = D(r)(3z² − r²)/√3
+For clarity use face-on local 2D coordinate axes for the first four d drawings:
+- d_xy: x right, y up; four lobes BETWEEN axes, BLUE upper-right/lower-left, CORAL upper-left/lower-right.
+- d_xz: x right, z up; four lobes BETWEEN axes with the same checkerboard sign pattern.
+- d_yz: y right, z up; four lobes BETWEEN axes with the same checkerboard sign pattern.
+- d_x²−y²: x right, y up; four lobes ON axes, both horizontal x lobes BLUE, both vertical y lobes CORAL.
+- d_z²: vertical z axis, two BLUE axial lobes above and below, one CORAL equatorial TORUS centered around the origin, a single continuous donut. Both axial lobes have the SAME sign. This torus is part of the orbital, not an electron path.
+All d lobes must converge at the center of their respective diagram; do not draw floating petals. A few restrained plus/minus signs reinforce phase without crowding. Keep subscripts and exponents unambiguous. These are schematic angular shapes, not claimed calibrated probability isosurfaces.
+
+FOOTER: a small ochre wash banner with the exact bridge to the surrounding helium lesson:
+"Helium ohne Elektronenabstoßung: Z = 2 → beide Elektronen im 1s-Orbital"
+"h(1) + h(2) · räumlicher Grundzustand: Ψ(r₁,r₂) = φ₁s(r₁)φ₁s(r₂)"
+
+Scientific constraints: all prefactors exactly as specified; each square root must cover 2π, not just 2; the 2s coefficient is 4√(2π); the d coefficient is 81√(2π); exponent denominators 2 for 2s/2p and 3 for 3d. Distinguish wavefunction phase from electric charge. Do not draw electrons as particles inside the orbital lobes. No extra text, logos, watermarks, credits, extra formulas, or decorative orbital trajectories. Preserve generous spacing and the friendly pencil-and-watercolor aesthetic.
+
+FINAL LOCAL CORRECTION
+
+Edit only the middle 2p_y dumbbell in the middle row of this supplied German educational orbital poster. Its drawn positive y-axis points diagonally DOWN-LEFT. Therefore the lower-left lobe MUST be BLUE with a '+' sign, and the upper-right lobe MUST be CORAL with a '−' sign, consistent with phi_2py = P(r)y where P(r)>0. Swap just these two lobes' blue/coral colors and their signs. Retain each lobe's shape, pencil texture and shading. Preserve absolutely everything else, including every formula, every label, axis direction, layout, all s and d diagrams, other two p diagrams, footer, professor character, paper texture, headings, typography and image dimensions. Do not change the formulas or axes. This is one strictly localized correction to the 2p_y lobe colors and signs.
+
+FINAL REMOVAL EDIT
+
+Make a precise removal edit to this supplied German hydrogenic orbital educational poster. REMOVE the entire color legend area to the RIGHT of the 2s orbital: remove the blue and coral swatches, 'Blau: φ > 0', 'Koralle: φ < 0', 'Farben = Vorzeichen, nicht Ladung', and 'Formen schematisch, nicht maßstäblich'. Also remove the thin pale blue vertical separator to the left of this legend. REMOVE the entire cartoon professor/man in the UPPER RIGHT, including his head, hair, glasses, hand, pointer stick, clothing, feet, and shadow. Seamlessly fill all removed elements with the existing warm ivory watercolor paper texture. Keep this region uncluttered and empty; do not add any replacement text, decoration, diagram, person, or object. Preserve EVERYTHING ELSE exactly as in the original: full canvas size and composition; title and subtitle; all ten orbital drawings, positions, size, colors and plus/minus signs; 2s Schnittbild and Knoten r=2/Z annotation; every mathematical formula, exponent and subscript; all axes; each s/p/d section heading; horizontal ochre separators; the p-row node note; and both footer bands. Especially preserve corrected 2p_y blue '+' lobe down-left along positive y and coral '−' lobe up-right. Do not rearrange or resize any orbital or change any mathematical expression. Only erase the listed upper-right legend and professor elements.
