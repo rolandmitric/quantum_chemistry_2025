@@ -1,0 +1,837 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Die Methode der Lagrange-Multiplikatoren &#8212; Quantenchemie</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=e936a729" />
+    <link rel="stylesheet" type="text/css" href="_static/wide_v2.css?v=bfe64621" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=b8b12719"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'lagrange_multipliers';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Über die Konvergenz des linearen Variationsprinzips: Verschachtelungs Satz" href="convergence_variational_principle.html" />
+    <link rel="prev" title="Das Variationsprinzip" href="variational_principle.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Quantenchemie</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="index.html">
+                    Quantenchemie — WS 2026
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="variational_principle.html">Das Variationsprinzip</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Die Methode der Lagrange-Multiplikatoren</a></li>
+<li class="toctree-l1"><a class="reference internal" href="convergence_variational_principle.html">Über die Konvergenz des linearen Variationsprinzips: Verschachtelungs Satz</a></li>
+<li class="toctree-l1"><a class="reference internal" href="renner_teller_example.html">Beispiel aus der aktuellen Forschung: Das NCN-Molekül und der Renner-Teller-Effekt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="helium_atom.html">Das Helium-Atom</a></li>
+<li class="toctree-l1"><a class="reference internal" href="kinetic_energy_hylleraas.html">Hylleraas-Methode: Kinetische Energie</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="correlation_hylleraas.html">Elektronenkorrelation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hartree_equation.html">Optimales Hartree-Produkt und Hartree-Gleichung</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="first_qc_code.html">Erstes Quantenchemieprogramm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="failure_hartree.html">Das Versagen der Hartree-Methode: Der Fall des Lithiumatoms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="spin.html">Spin: Einführung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bras_kets_etc.html">Spin: Formalismus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="spin_and_rotations.html">Spin &amp; Rotationen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="spin_measurement.html">Spinmessung</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="tensor_product.html">Zusammengesetzte Quantensysteme: Tensorprodukt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="spin_two_electrons.html">Spinzustände eines 2-Elektronensystems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pauli_principle.html">Das Pauli-Prinzip</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hartree_fock.html">Die Hartree-Fock-Methode</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/rolandmitric/quantum_chemistry_2025/main?urlpath=lab/tree/./lagrange_multipliers.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Binder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Binder logo" src="_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/rolandmitric/quantum_chemistry_2025" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/rolandmitric/quantum_chemistry_2025/edit/main/./lagrange_multipliers.ipynb" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/rolandmitric/quantum_chemistry_2025/issues/new?title=Issue%20on%20page%20%2Flagrange_multipliers.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/lagrange_multipliers.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Die Methode der Lagrange-Multiplikatoren</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#extrempunkte-einer-funktion-mehrerer-variablen">Extrempunkte einer Funktion mehrerer Variablen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wie-andert-sich-die-funktion-in-der-umgebung-eines-punktes">Wie ändert sich die Funktion in der Umgebung eines Punktes?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eine-nebenbedingung-schrankt-die-erlaubten-richtungen-ein">Eine Nebenbedingung schränkt die erlaubten Richtungen ein</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#der-entscheidende-schritt-eine-abhangige-verschiebung-eliminieren">Der entscheidende Schritt: eine abhängige Verschiebung eliminieren</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#geometrische-bedeutung-und-lagrange-funktion">Geometrische Bedeutung und Lagrange-Funktion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#beispiel-ein-minimum-auf-dem-einheitskreis">Beispiel: ein Minimum auf dem Einheitskreis</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#anwendung-energie-minimieren-und-die-normierung-erhalten">Anwendung: Energie minimieren und die Normierung erhalten</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="die-methode-der-lagrange-multiplikatoren">
+<h1>Die Methode der Lagrange-Multiplikatoren<a class="headerlink" href="#die-methode-der-lagrange-multiplikatoren" title="Link to this heading">#</a></h1>
+<p>Wir betrachten zunächst eine Funktion mehrerer Variablen und möchten z. B. deren Minimum unter einer Nebenbedingung finden. Um diese Frage zu beantworten erinnern wir uns zunächst an das Vorgehen ohne Nebenbedingung.</p>
+<section id="extrempunkte-einer-funktion-mehrerer-variablen">
+<h2>Extrempunkte einer Funktion mehrerer Variablen<a class="headerlink" href="#extrempunkte-einer-funktion-mehrerer-variablen" title="Link to this heading">#</a></h2>
+<p>Wir wählen zunächst einen beliebigen Punkt und fragen: Wie ändert sich der Funktionswert, wenn wir uns von diesem Punkt aus ein kleines Stück in eine beliebige Richtung bewegen? Um diese Frage zu beantworten schauen wir uns das lokale Verhalten der Funktion an.</p>
+<div class="cell tag_remove-input docutils container">
+</div>
+</section>
+<section id="wie-andert-sich-die-funktion-in-der-umgebung-eines-punktes">
+<h2>Wie ändert sich die Funktion in der Umgebung eines Punktes?<a class="headerlink" href="#wie-andert-sich-die-funktion-in-der-umgebung-eines-punktes" title="Link to this heading">#</a></h2>
+<p>Wir betrachten eine glatte Funktion <span class="math notranslate nohighlight">\(f(x_1,\ldots,x_n)\)</span> und einen Punkt <span class="math notranslate nohighlight">\(\mathbf x\)</span> im Inneren ihres Definitionsbereichs. Eine (kleine) Verschiebung sei <span class="math notranslate nohighlight">\(d\mathbf x=(dx_1,\ldots,dx_n)^{\mathsf T}\)</span>. Der <strong>lineare Anteil der Funktionsänderung</strong> definiert das <strong>totale Differential</strong>:</p>
+<div class="math notranslate nohighlight">
+\[
+\boxed{df=\sum_{i=1}^n\frac{\partial f}{\partial x_i}\,dx_i
+=\nabla f\cdot d\mathbf x.}
+\]</div>
+<p>Alle partiellen Ableitungen werden am Ausgangspunkt <span class="math notranslate nohighlight">\(\mathbf x\)</span> ausgewertet. Für zwei Variablen lautet diese Beziehung beispielsweise einfach</p>
+<div class="math notranslate nohighlight">
+\[
+df=\frac{\partial f}{\partial x}\,dx+\frac{\partial f}{\partial y}\,dy.
+\]</div>
+<p>Das totale Differential beschreibt also, wie sich die Funktion in erster Ordnung ändert, wenn wir uns vom Punkt <span class="math notranslate nohighlight">\(\mathbf x\)</span> aus in eine beliebige Richtung bewegen.</p>
+<p><strong>Was muss an einem Minimum geschehen?</strong> Gäbe es eine Richtung mit einer von null verschiedenen Steigung, dann wäre eine der beiden entgegengesetzten Bewegungsrichtungen eine Abstiegsrichtung. An einem inneren Minimum muss deshalb</p>
+<div class="math notranslate nohighlight">
+\[
+df=0\qquad\text{für jede Verschiebungsrichtung }d\mathbf x
+\]</div>
+<p>gelten. Ohne Nebenbedingung können wir die <span class="math notranslate nohighlight">\(dx_i\)</span> unabhängig voneinander wählen. Insbesondere können wir nur <span class="math notranslate nohighlight">\(x_1\)</span>, nur <span class="math notranslate nohighlight">\(x_2\)</span> usw. verändern. Daher muss jeder Koeffizient im totalen Differential verschwinden:</p>
+<div class="math notranslate nohighlight">
+\[
+\boxed{\frac{\partial f}{\partial x_1}=\cdots=
+\frac{\partial f}{\partial x_n}=0,
+\qquad\text{also}\qquad\nabla f=0.}
+\]</div>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<img alt="_images/b882ddc1c4a4d64380a08b652e3b0cb17bf9fd1da620f429b53e14cc753a444e.png" src="_images/b882ddc1c4a4d64380a08b652e3b0cb17bf9fd1da620f429b53e14cc753a444e.png" />
+</div>
+</div>
+<p><em>Skizze 1: Höhenlinien von <span class="math notranslate nohighlight">\(f(x,y)=x^2+y^2\)</span>. Am links dargestellten nichtstationären Punkt gibt es Richtungen mit positiver und negativer Steigung. Am Ursprung verschwindet die Änderung erster Ordnung in jeder Richtung.</em></p>
+<p>Dass <span class="math notranslate nohighlight">\(df=0\)</span> gilt, bedeutet <strong>nicht</strong>, dass sich der Funktionswert bei einem endlichen Schritt überhaupt nicht ändert. Für das dargestellte Minimum ist</p>
+<div class="math notranslate nohighlight">
+\[
+df\big|_{(0,0)}=0,
+\qquad
+f(dx,dy)-f(0,0)=dx^2+dy^2&gt;0
+\]</div>
+<p>für jede von null verschiedene Verschiebung.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Das Verschwinden der ersten Ableitungen ist eine <strong>notwendige</strong>, aber keine hinreichende Bedingung für ein Minimum. Auch an einem Maximum oder Sattelpunkt kann <span class="math notranslate nohighlight">\(df=0\)</span> gelten. Beispielsweise hat <span class="math notranslate nohighlight">\(f(x,y)=x^2-y^2\)</span> am Ursprung einen Sattelpunkt.</p>
+</div>
+</section>
+<section id="eine-nebenbedingung-schrankt-die-erlaubten-richtungen-ein">
+<h2>Eine Nebenbedingung schränkt die erlaubten Richtungen ein<a class="headerlink" href="#eine-nebenbedingung-schrankt-die-erlaubten-richtungen-ein" title="Link to this heading">#</a></h2>
+<p>Nun soll zusätzlich eine Nebenbedingung in der folgenden Form gelten:</p>
+<div class="math notranslate nohighlight">
+\[
+g(x_1,\ldots,x_n)=0
+\]</div>
+<p>Wir nehmen an, dass auch <span class="math notranslate nohighlight">\(g\)</span> glatt ist und <span class="math notranslate nohighlight">\(\nabla g\ne0\)</span> am betrachteten Punkt gilt. Die Nebenbedingung beschreibt dort eine glatte Kurve beziehungsweise Fläche. Wir dürfen uns nur entlang dieser bewegen. Für eine solche Bewegung bleibt <span class="math notranslate nohighlight">\(g\)</span> konstant; daher gilt</p>
+<div class="math notranslate nohighlight">
+\[
+\boxed{dg=\sum_{i=1}^n\frac{\partial g}{\partial x_i}\,dx_i
+=\nabla g\cdot d\mathbf x=0.}
+\]</div>
+<p>Die erlaubten infinitesimalen Verschiebungen liegen also <strong>tangential zur Nebenbedingung</strong> und senkrecht zu <span class="math notranslate nohighlight">\(\nabla g\)</span>. Die Größen <span class="math notranslate nohighlight">\(dx_i\)</span> können jetzt nicht mehr alle unabhängig gewählt werden.</p>
+<p>Auf dem Einheitskreis <span class="math notranslate nohighlight">\(g(x,y)=x^2+y^2-1=0\)</span> folgt beispielsweise</p>
+<div class="math notranslate nohighlight">
+\[
+dg=2x\,dx+2y\,dy=0.
+\]</div>
+<p>An einem Punkt mit <span class="math notranslate nohighlight">\(y\ne0\)</span> ist damit <span class="math notranslate nohighlight">\(dy=-(x/y)\,dx\)</span>: Die Änderung von <span class="math notranslate nohighlight">\(y\)</span> ist durch die gewählte Änderung von <span class="math notranslate nohighlight">\(x\)</span> festgelegt.</p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<img alt="_images/a44f71143fb903847d2be96cf8219a3afc502d60ab478db1bb6f1a1cf28eda49.png" src="_images/a44f71143fb903847d2be96cf8219a3afc502d60ab478db1bb6f1a1cf28eda49.png" />
+</div>
+</div>
+<p><em>Skizze 2: Auf dem Kreis ist die Tangentenrichtung erlaubt; eine Bewegung in Normalenrichtung verletzt die Nebenbedingung bereits in erster Ordnung. Der Gradient <span class="math notranslate nohighlight">\(\nabla g\)</span> steht senkrecht auf der Tangente.</em></p>
+<p>In der Skizze ist <span class="math notranslate nohighlight">\(\mathbf r=(x,y)^{\mathsf T}\)</span>. Der offene Punkt <span class="math notranslate nohighlight">\(\mathbf r+\Delta\mathbf r\)</span> markiert das Ende eines endlichen Tangentenschritts außerhalb des Kreises.</p>
+<p>Hier beschreibt <span class="math notranslate nohighlight">\(dg=0\)</span> die Nebenbedingung <strong>in erster Ordnung</strong>. Ein endlicher gerader Schritt entlang der Tangente liegt im Allgemeinen nicht mehr auf der gekrümmten Kurve. Eine exakt zulässige Bewegung folgt der Kurve selbst.</p>
+<p>Am gesuchten Minimum verlangen wir nun nur noch</p>
+<div class="math notranslate nohighlight">
+\[
+df=0\qquad\text{für alle }d\mathbf x\text{ mit }dg=0.
+\]</div>
+<p>Deshalb dürfen wir aus <span class="math notranslate nohighlight">\(df=0\)</span> jetzt <strong>nicht</strong> unmittelbar schließen, dass alle partiellen Ableitungen von <span class="math notranslate nohighlight">\(f\)</span> verschwinden.</p>
+</section>
+<section id="der-entscheidende-schritt-eine-abhangige-verschiebung-eliminieren">
+<h2>Der entscheidende Schritt: eine abhängige Verschiebung eliminieren<a class="headerlink" href="#der-entscheidende-schritt-eine-abhangige-verschiebung-eliminieren" title="Link to this heading">#</a></h2>
+<p>Wir schreiben kurz <span class="math notranslate nohighlight">\(f_i=\partial f/\partial x_i\)</span> und <span class="math notranslate nohighlight">\(g_i=\partial g/\partial x_i\)</span>. Am gesuchten Punkt seien <span class="math notranslate nohighlight">\(df=0\)</span> für alle erlaubten Verschiebungen und <span class="math notranslate nohighlight">\(\nabla g\ne0\)</span>. Dann ist mindestens eine Ableitung von <span class="math notranslate nohighlight">\(g\)</span> ungleich null. Wir nummerieren die Variablen so, dass <span class="math notranslate nohighlight">\(g_n\ne0\)</span>.</p>
+<p>Aus der Nebenbedingung folgt</p>
+<div class="math notranslate nohighlight">
+\[
+dx_n=-\frac{1}{g_n}\sum_{i=1}^{n-1}g_i\,dx_i.
+\]</div>
+<p>Die ersten <span class="math notranslate nohighlight">\(n-1\)</span> Verschiebungen sind lokal frei wählbar; <span class="math notranslate nohighlight">\(dx_n\)</span> hängt von ihnen ab.</p>
+<p><strong>Wir addieren nun eine Größe, die für jede erlaubte Verschiebung null ist.</strong> Für eine zunächst frei wählbare Zahl <span class="math notranslate nohighlight">\(\lambda\)</span> gilt</p>
+<div class="math notranslate nohighlight">
+\[
+0=df-\lambda\,dg
+=\sum_{i=1}^{n-1}(f_i-\lambda g_i)\,dx_i
++(f_n-\lambda g_n)\,dx_n.
+\]</div>
+<p>Wir wählen diese eine Zahl so, dass der Koeffizient der <strong>abhängigen</strong> Verschiebung <span class="math notranslate nohighlight">\(dx_n\)</span> verschwindet:</p>
+<div class="math notranslate nohighlight">
+\[
+\lambda=\frac{f_n}{g_n}
+\qquad\Longrightarrow\qquad
+f_n-\lambda g_n=0.
+\]</div>
+<p>Übrig bleibt</p>
+<div class="math notranslate nohighlight">
+\[
+\sum_{i=1}^{n-1}(f_i-\lambda g_i)\,dx_i=0.
+\]</div>
+<p>Diese Gleichung muss für alle <strong>unabhängigen</strong> Verschiebungen <span class="math notranslate nohighlight">\(dx_1,\ldots,dx_{n-1}\)</span> gelten. Also verschwinden deren Koeffizienten ebenfalls. Zusammen mit der bereits durch unsere Wahl von <span class="math notranslate nohighlight">\(\lambda\)</span> erfüllten letzten Gleichung erhalten wir</p>
+<div class="math notranslate nohighlight">
+\[
+\boxed{\frac{\partial f}{\partial x_i}
+-\lambda\frac{\partial g}{\partial x_i}=0
+\quad(i=1,\ldots,n),
+\qquad g(\mathbf x)=0.}
+\]</div>
+<p>Die Hilfsgröße <span class="math notranslate nohighlight">\(\lambda\)</span> heißt <strong>Lagrange-Multiplikator</strong>. Für eine Nebenbedingung benötigen wir genau einen Multiplikator. Das Minuszeichen ist eine Konvention; mit <span class="math notranslate nohighlight">\(df+\lambda\,dg\)</span> ändert sich lediglich das Vorzeichen von <span class="math notranslate nohighlight">\(\lambda\)</span>.</p>
+</section>
+<section id="geometrische-bedeutung-und-lagrange-funktion">
+<h2>Geometrische Bedeutung und Lagrange-Funktion<a class="headerlink" href="#geometrische-bedeutung-und-lagrange-funktion" title="Link to this heading">#</a></h2>
+<p>In Vektorschreibweise lauten die Bedingungen</p>
+<div class="math notranslate nohighlight">
+\[
+\boxed{\nabla f=\lambda\nabla g,\qquad g=0.}
+\]</div>
+<p>Am eingeschränkten Extremum hat <span class="math notranslate nohighlight">\(\nabla f\)</span> keine Komponente entlang der erlaubten Tangentenrichtungen. Er liegt in der Normalenrichtung der Nebenbedingung: Die beiden Gradienten sind parallel oder antiparallel; auch <span class="math notranslate nohighlight">\(\nabla f=0\)</span> ist möglich. Der Gradient von <span class="math notranslate nohighlight">\(f\)</span> muss unter einer Nebenbedingung also nicht selbst verschwinden.</p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<img alt="_images/38e108ee68aaecc7dfb83e404fb9c9f66555f32a1dac2ee66d471e5d702ebba1.png" src="_images/38e108ee68aaecc7dfb83e404fb9c9f66555f32a1dac2ee66d471e5d702ebba1.png" />
+</div>
+</div>
+<p><em>Skizze 3: <span class="math notranslate nohighlight">\(f(x,y)=x+2y\)</span> auf dem Einheitskreis. Links kann sich <span class="math notranslate nohighlight">\(f\)</span> entlang des Kreises noch in erster Ordnung ändern. Am Minimum rechts berührt eine Höhenlinie von <span class="math notranslate nohighlight">\(f\)</span> den Kreis; <span class="math notranslate nohighlight">\(\nabla f\)</span> und <span class="math notranslate nohighlight">\(\nabla g\)</span> sind entgegengesetzt gerichtet.</em></p>
+<p>Wir können die hergeleiteten Gleichungen kompakt in einer Funktion zusammenfassen:</p>
+<div class="math notranslate nohighlight">
+\[
+\mathcal L(\mathbf x,\lambda)=f(\mathbf x)-\lambda g(\mathbf x).
+\]</div>
+<p>Ihr vollständiges Differential ist</p>
+<div class="math notranslate nohighlight">
+\[
+d\mathcal L=\sum_{i=1}^n(f_i-\lambda g_i)\,dx_i-g\,d\lambda.
+\]</div>
+<p>In diesem <strong>erweiterten Variablenraum</strong> behandeln wir <span class="math notranslate nohighlight">\(x_1,\ldots,x_n\)</span> und <span class="math notranslate nohighlight">\(\lambda\)</span> als unabhängige Variablen. Die Stationaritätsbedingungen lauten</p>
+<div class="math notranslate nohighlight">
+\[
+\boxed{\frac{\partial\mathcal L}{\partial x_i}=0
+\quad(i=1,\ldots,n),
+\qquad
+\frac{\partial\mathcal L}{\partial\lambda}=-g=0.}
+\]</div>
+<p>Damit haben wir <span class="math notranslate nohighlight">\(n+1\)</span> Gleichungen für <span class="math notranslate nohighlight">\(n+1\)</span> Unbekannte. Wir suchen einen <strong>stationären Punkt</strong> von <span class="math notranslate nohighlight">\(\mathcal L\)</span>; <span class="math notranslate nohighlight">\(\mathcal L\)</span> muss dort kein Minimum besitzen. Ob die gefundene Lösung ein Minimum von <span class="math notranslate nohighlight">\(f\)</span> unter der Nebenbedingung ist, prüfen wir anschließend.</p>
+</section>
+<section id="beispiel-ein-minimum-auf-dem-einheitskreis">
+<h2>Beispiel: ein Minimum auf dem Einheitskreis<a class="headerlink" href="#beispiel-ein-minimum-auf-dem-einheitskreis" title="Link to this heading">#</a></h2>
+<p>Für das Beispiel aus Skizze 3 ist</p>
+<div class="math notranslate nohighlight">
+\[
+\mathcal L(x,y,\lambda)=x+2y-\lambda(x^2+y^2-1).
+\]</div>
+<p>Die drei Gleichungen sind</p>
+<div class="math notranslate nohighlight">
+\[
+1-2\lambda x=0,\qquad
+2-2\lambda y=0,\qquad
+x^2+y^2=1.
+\]</div>
+<p>Es folgt <span class="math notranslate nohighlight">\(y=2x\)</span> und damit <span class="math notranslate nohighlight">\(5x^2=1\)</span>. Wir erhalten zwei Kandidaten:</p>
+<div class="math notranslate nohighlight">
+\[
+(x,y)=\pm\frac{1}{\sqrt5}(1,2),
+\qquad f=\pm\sqrt5.
+\]</div>
+<p>Die Funktion nimmt auf dem geschlossenen, beschränkten Kreis ein Minimum und ein Maximum an. Da <span class="math notranslate nohighlight">\(\nabla g\ne0\)</span> auf dem gesamten Kreis gilt und die beiden Kandidaten alle stationären Punkte erfassen, ist</p>
+<div class="math notranslate nohighlight">
+\[
+\boxed{(x_{\min},y_{\min})=
+\left(-\frac1{\sqrt5},-\frac2{\sqrt5}\right),
+\qquad f_{\min}=-\sqrt5.}
+\]</div>
+<p>Am Minimum ist <span class="math notranslate nohighlight">\(\lambda=-\sqrt5/2\)</span> und <span class="math notranslate nohighlight">\(\nabla f=(1,2)^{\mathsf T}\ne0\)</span>. Entscheidend ist, dass die Steigung <strong>entlang des Kreises</strong> verschwindet.</p>
+</section>
+<section id="anwendung-energie-minimieren-und-die-normierung-erhalten">
+<h2>Anwendung: Energie minimieren und die Normierung erhalten<a class="headerlink" href="#anwendung-energie-minimieren-und-die-normierung-erhalten" title="Link to this heading">#</a></h2>
+<p>Wir betrachten einen reellen linearen Wellenfunktionsansatz</p>
+<div class="math notranslate nohighlight">
+\[
+\Psi=\sum_i c_i\phi_i,
+\qquad
+H_{ij}=\langle\phi_i|\hat H|\phi_j\rangle,
+\qquad
+S_{ij}=\langle\phi_i|\phi_j\rangle.
+\]</div>
+<p>Die Energie einer normierten Wellenfunktion wird durch <span class="math notranslate nohighlight">\(f(\mathbf c)=\mathbf c^{\mathsf T}H\mathbf c\)</span> beschrieben; die Nebenbedingung ist</p>
+<div class="math notranslate nohighlight">
+\[
+g(\mathbf c)=\mathbf c^{\mathsf T}S\mathbf c-1=0.
+\]</div>
+<p>Mit der Lagrange-Funktion</p>
+<div class="math notranslate nohighlight">
+\[
+\mathcal L=\mathbf c^{\mathsf T}H\mathbf c
+-\lambda(\mathbf c^{\mathsf T}S\mathbf c-1)
+\]</div>
+<p>folgt für reelle symmetrische Matrizen <span class="math notranslate nohighlight">\(H\)</span> und <span class="math notranslate nohighlight">\(S\)</span></p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial\mathcal L}{\partial\mathbf c}
+=2H\mathbf c-2\lambda S\mathbf c=0.
+\]</div>
+<p>Multiplikation mit <span class="math notranslate nohighlight">\(\mathbf c^{\mathsf T}\)</span> und Verwendung der Normierung zeigen, dass <span class="math notranslate nohighlight">\(\lambda\)</span> gerade die Energie <span class="math notranslate nohighlight">\(E\)</span> ist. Damit erhalten wir die <strong>Säkulargleichungen</strong>:</p>
+<div class="math notranslate nohighlight">
+\[
+\boxed{H\mathbf c=ES\mathbf c.}
+\]</div>
+<p>Für eine linear unabhängige Basis ist <span class="math notranslate nohighlight">\(S\)</span> positiv definit. Der kleinste Eigenwert liefert das Minimum der Energie im gewählten Ansatzraum. Die Normierung ist damit ein konkretes Beispiel für genau die Nebenbedingung, die wir oben allgemein behandelt haben.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "rolandmitric/quantum_chemistry_2025",
+            ref: "main",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="variational_principle.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Das Variationsprinzip</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="convergence_variational_principle.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Über die Konvergenz des linearen Variationsprinzips: Verschachtelungs Satz</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#extrempunkte-einer-funktion-mehrerer-variablen">Extrempunkte einer Funktion mehrerer Variablen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wie-andert-sich-die-funktion-in-der-umgebung-eines-punktes">Wie ändert sich die Funktion in der Umgebung eines Punktes?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eine-nebenbedingung-schrankt-die-erlaubten-richtungen-ein">Eine Nebenbedingung schränkt die erlaubten Richtungen ein</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#der-entscheidende-schritt-eine-abhangige-verschiebung-eliminieren">Der entscheidende Schritt: eine abhängige Verschiebung eliminieren</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#geometrische-bedeutung-und-lagrange-funktion">Geometrische Bedeutung und Lagrange-Funktion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#beispiel-ein-minimum-auf-dem-einheitskreis">Beispiel: ein Minimum auf dem Einheitskreis</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#anwendung-energie-minimieren-und-die-normierung-erhalten">Anwendung: Energie minimieren und die Normierung erhalten</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Roland Mitric
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="./" >
 
   <head>
     <meta charset="utf-8" />
@@ -16,43 +16,40 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
-  <!--
-    this give us a css class that will be invisible only if js is disabled
-  -->
-  <noscript>
-    <style>
-      .pst-js-only { display: none !important; }
-
-    </style>
-  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css?v=8cd3d715" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
     <link rel="stylesheet" type="text/css" href="_static/custom.css?v=e936a729" />
     <link rel="stylesheet" type="text/css" href="_static/wide_v2.css?v=bfe64621" />
   
-  <!-- So that users can add custom icons -->
-  <script defer src="_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb" />
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js?v=2b91c5f0"></script>
-    <script src="_static/doctools.js?v=888ff710"></script>
-    <script src="_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="_static/copybutton.js?v=f281be69"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
@@ -61,10 +58,11 @@
     <script src="_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'renner_teller_example';</script>
-    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -72,30 +70,34 @@
     <link rel="prev" title="Über die Konvergenz des linearen Variationsprinzips: Verschachtelungs Satz" href="convergence_variational_principle.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="" />
-  
-    
-    <script src="_static/searchtools.js"></script>
-    <script src="_static/language_data.js"></script>
-    <script src="searchindex.js"></script>
-  
   </head>
-  <body data-default-mode="">
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
   
   
   <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
-
   
   <div id="pst-scroll-pixel-helper"></div>
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
   
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
   
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
   
-  
-  <dialog id="pst-search-dialog">
-    
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
 <form class="bd-search d-flex align-items-center"
       action="search.html"
       method="get">
@@ -103,6 +105,7 @@
   <input type="search"
          class="form-control"
          name="q"
+         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -110,59 +113,15 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form>
-  </dialog>
+</form></div>
+  </div>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
 </div>
 
   
-    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
-<div class="bd-header__inner bd-page-width">
-  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
-    <span class="fa-solid fa-bars"></span>
-  </button>
-  
-  
-  <div class="col-lg-9 navbar-header-items">
-    
-    
-    <div class="navbar-header-items__end">
-      
-        <div class="navbar-item navbar-persistent--container">
-          
-
-<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
- <i class="fa-solid fa-magnifying-glass"></i>
- <span class="search-button__default-text">Search</span>
- <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-</button>
-        </div>
-      
-      
-    </div>
-    
-  </div>
-  
-  
-    <div class="navbar-persistent--mobile">
-
-<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
- <i class="fa-solid fa-magnifying-glass"></i>
- <span class="search-button__default-text">Search</span>
- <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-</button>
-    </div>
-  
-
-  
-    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
-      <span class="fa-solid fa-outdent"></span>
-    </button>
-  
-</div>
-
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
     </header>
   
 
@@ -171,8 +130,7 @@
       
       
       
-      <dialog id="pst-primary-sidebar-modal"></dialog>
-      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+      <div class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -202,11 +160,15 @@
 </a></div>
         <div class="sidebar-primary-item">
 
-<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
- <i class="fa-solid fa-magnifying-glass"></i>
- <span class="search-button__default-text">Search</span>
- <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-</button></div>
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
@@ -220,6 +182,7 @@
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="variational_principle.html">Das Variationsprinzip</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lagrange_multipliers.html">Die Methode der Lagrange-Multiplikatoren</a></li>
 <li class="toctree-l1"><a class="reference internal" href="convergence_variational_principle.html">Über die Konvergenz des linearen Variationsprinzips: Verschachtelungs Satz</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Beispiel aus der aktuellen Forschung: Das NCN-Molekül und der Renner-Teller-Effekt</a></li>
 <li class="toctree-l1"><a class="reference internal" href="helium_atom.html">Das Helium-Atom</a></li>
@@ -248,14 +211,9 @@
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
-      <div class="sidebar-primary-item">
-<div id="ethical-ad-placement"
-      class="flat"
-      data-ea-publisher="readthedocs"
-      data-ea-type="readthedocs-sidebar"
-      data-ea-manual="true">
-</div></div>
   </div>
+  
+  <div id="rtd-footer-container"></div>
 
 
       </div>
@@ -451,7 +409,7 @@
 
 
 <button onclick="toggleFullScreen()"
-  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  class="btn btn-sm btn-fullscreen-button"
   title="Fullscreen mode"
   data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
@@ -465,17 +423,25 @@
 
 
 
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button>
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
 
 
-<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-</button>
-<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
 </button>
 </div></div>
@@ -497,7 +463,7 @@
                 <h2> Contents </h2>
             </div>
             <nav aria-label="Page">
-                <ul class="pst-show_toc_level nav section-nav flex-column">
+                <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#elektronische-energie-des-ncn-als-funktion-der-biegekoordinate">Elektronische Energie des NCN als Funktion der Biegekoordinate</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#die-kationischen-potentiale-nahe-ihren-minima">Die kationischen Potentiale nahe ihren Minima</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#neutrales-ncn-quadratischer-oder-quartischer-ansatz">Neutrales NCN: quadratischer oder quartischer Ansatz?</a></li>
@@ -516,7 +482,7 @@
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="beispiel-aus-der-aktuellen-forschung-das-ncn-molekul-und-der-renner-teller-effekt">
-<h1>Beispiel aus der aktuellen Forschung: Das NCN-Molekül und der Renner-Teller-Effekt<a class="headerlink" href="#beispiel-aus-der-aktuellen-forschung-das-ncn-molekul-und-der-renner-teller-effekt" title="Permalink to this heading">#</a></h1>
+<h1>Beispiel aus der aktuellen Forschung: Das NCN-Molekül und der Renner-Teller-Effekt<a class="headerlink" href="#beispiel-aus-der-aktuellen-forschung-das-ncn-molekul-und-der-renner-teller-effekt" title="Link to this heading">#</a></h1>
 <p>Der <strong>Renner–Teller-Effekt</strong> ist eng mit dem bekannteren <strong>Jahn–Teller-Effekt</strong> verwandt, den man bereits aus den einführenden Chemievorlesungen kennt. Er beschreibt die Kopplung zwischen elektronischer Bewegung und Biegeschwingungen in <strong>linearen</strong> Molekülen. Elektronische Zustände, die bei linearer Geometrie aufgrund der räumlichen Symmetrie entartet sind, können beim Biegen des Moleküls energetisch aufspalten. Dadurch entstehen unterschiedliche Potentialflächen, die dem Schwingungsspektrum eine ungewöhnliche Struktur verleihen.</p>
 <p>Das dreiatomige <strong>NCN-Radikal (Cyanonitren)</strong> ist ein wichtiges Zwischenprodukt bei der Bildung von <strong>Stickstoffmonoxid (NO)</strong> in Verbrennungsprozessen, insbesondere beim sogenannten <em>Prompt-NO</em>-Mechanismus. Seine Energien und Spektren sind deshalb auch für das Verständnis dieser Reaktionswege von Bedeutung und werden auch aktuell experimentell und theoretisch untersucht. An den folgenden Potentialkurven von NCN und seinem Kation NCN<span class="math notranslate nohighlight">\(^+\)</span> untersuchen wir, wie die Energie von der Biegung des Moleküls abhängt.</p>
 <div class="cell docutils container">
@@ -536,89 +502,89 @@
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Die mit Matplotlib ausgelieferte Schrift funktioniert auch auf Binder.</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span>
-    <span class="s2">"font.family"</span><span class="p">:</span> <span class="s2">"DejaVu Serif"</span><span class="p">,</span>
-    <span class="s2">"mathtext.fontset"</span><span class="p">:</span> <span class="s2">"dejavuserif"</span><span class="p">,</span>
-    <span class="s2">"font.size"</span><span class="p">:</span> <span class="mi">12</span><span class="p">,</span>
-    <span class="s2">"axes.titlesize"</span><span class="p">:</span> <span class="mi">15</span><span class="p">,</span>
-    <span class="s2">"axes.labelsize"</span><span class="p">:</span> <span class="mi">13</span><span class="p">,</span>
-    <span class="s2">"axes.titlepad"</span><span class="p">:</span> <span class="mi">12</span><span class="p">,</span>
-    <span class="s2">"axes.linewidth"</span><span class="p">:</span> <span class="mf">0.9</span><span class="p">,</span>
-    <span class="s2">"axes.spines.top"</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
-    <span class="s2">"axes.spines.right"</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
-    <span class="s2">"xtick.labelsize"</span><span class="p">:</span> <span class="mi">11</span><span class="p">,</span>
-    <span class="s2">"ytick.labelsize"</span><span class="p">:</span> <span class="mi">11</span><span class="p">,</span>
-    <span class="s2">"legend.fontsize"</span><span class="p">:</span> <span class="mi">11</span><span class="p">,</span>
-    <span class="s2">"legend.frameon"</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
-    <span class="s2">"lines.linewidth"</span><span class="p">:</span> <span class="mf">2.5</span><span class="p">,</span>
-    <span class="s2">"figure.dpi"</span><span class="p">:</span> <span class="mi">150</span><span class="p">,</span>
-    <span class="s2">"savefig.dpi"</span><span class="p">:</span> <span class="mi">300</span><span class="p">,</span>
-    <span class="s2">"figure.facecolor"</span><span class="p">:</span> <span class="s2">"white"</span><span class="p">,</span>
-    <span class="s2">"axes.facecolor"</span><span class="p">:</span> <span class="s2">"white"</span><span class="p">,</span>
-    <span class="s2">"text.color"</span><span class="p">:</span> <span class="s2">"#263238"</span><span class="p">,</span>
-    <span class="s2">"axes.labelcolor"</span><span class="p">:</span> <span class="s2">"#263238"</span><span class="p">,</span>
+    <span class="s2">&quot;font.family&quot;</span><span class="p">:</span> <span class="s2">&quot;DejaVu Serif&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;mathtext.fontset&quot;</span><span class="p">:</span> <span class="s2">&quot;dejavuserif&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;font.size&quot;</span><span class="p">:</span> <span class="mi">12</span><span class="p">,</span>
+    <span class="s2">&quot;axes.titlesize&quot;</span><span class="p">:</span> <span class="mi">15</span><span class="p">,</span>
+    <span class="s2">&quot;axes.labelsize&quot;</span><span class="p">:</span> <span class="mi">13</span><span class="p">,</span>
+    <span class="s2">&quot;axes.titlepad&quot;</span><span class="p">:</span> <span class="mi">12</span><span class="p">,</span>
+    <span class="s2">&quot;axes.linewidth&quot;</span><span class="p">:</span> <span class="mf">0.9</span><span class="p">,</span>
+    <span class="s2">&quot;axes.spines.top&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="s2">&quot;axes.spines.right&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="s2">&quot;xtick.labelsize&quot;</span><span class="p">:</span> <span class="mi">11</span><span class="p">,</span>
+    <span class="s2">&quot;ytick.labelsize&quot;</span><span class="p">:</span> <span class="mi">11</span><span class="p">,</span>
+    <span class="s2">&quot;legend.fontsize&quot;</span><span class="p">:</span> <span class="mi">11</span><span class="p">,</span>
+    <span class="s2">&quot;legend.frameon&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="s2">&quot;lines.linewidth&quot;</span><span class="p">:</span> <span class="mf">2.5</span><span class="p">,</span>
+    <span class="s2">&quot;figure.dpi&quot;</span><span class="p">:</span> <span class="mi">150</span><span class="p">,</span>
+    <span class="s2">&quot;savefig.dpi&quot;</span><span class="p">:</span> <span class="mi">300</span><span class="p">,</span>
+    <span class="s2">&quot;figure.facecolor&quot;</span><span class="p">:</span> <span class="s2">&quot;white&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;axes.facecolor&quot;</span><span class="p">:</span> <span class="s2">&quot;white&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;text.color&quot;</span><span class="p">:</span> <span class="s2">&quot;#263238&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;axes.labelcolor&quot;</span><span class="p">:</span> <span class="s2">&quot;#263238&quot;</span><span class="p">,</span>
 <span class="p">})</span>
 
 <span class="n">styles</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">"neutral"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"label"</span><span class="p">:</span> <span class="s2">"NCN"</span><span class="p">,</span> <span class="s2">"color"</span><span class="p">:</span> <span class="s2">"#567A46"</span><span class="p">,</span> <span class="s2">"linestyle"</span><span class="p">:</span> <span class="s2">"-"</span><span class="p">},</span>
-    <span class="s2">"cation_0"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"label"</span><span class="p">:</span> <span class="s2">"Kurve 0"</span><span class="p">,</span> <span class="s2">"color"</span><span class="p">:</span> <span class="s2">"#C45E2B"</span><span class="p">,</span> <span class="s2">"linestyle"</span><span class="p">:</span> <span class="s2">"-"</span><span class="p">},</span>
-    <span class="s2">"cation_1"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"label"</span><span class="p">:</span> <span class="s2">"Kurve 1"</span><span class="p">,</span> <span class="s2">"color"</span><span class="p">:</span> <span class="s2">"#356D96"</span><span class="p">,</span> <span class="s2">"linestyle"</span><span class="p">:</span> <span class="s2">"--"</span><span class="p">},</span>
+    <span class="s2">&quot;neutral&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;NCN&quot;</span><span class="p">,</span> <span class="s2">&quot;color&quot;</span><span class="p">:</span> <span class="s2">&quot;#567A46&quot;</span><span class="p">,</span> <span class="s2">&quot;linestyle&quot;</span><span class="p">:</span> <span class="s2">&quot;-&quot;</span><span class="p">},</span>
+    <span class="s2">&quot;cation_0&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;Kurve 0&quot;</span><span class="p">,</span> <span class="s2">&quot;color&quot;</span><span class="p">:</span> <span class="s2">&quot;#C45E2B&quot;</span><span class="p">,</span> <span class="s2">&quot;linestyle&quot;</span><span class="p">:</span> <span class="s2">&quot;-&quot;</span><span class="p">},</span>
+    <span class="s2">&quot;cation_1&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;Kurve 1&quot;</span><span class="p">,</span> <span class="s2">&quot;color&quot;</span><span class="p">:</span> <span class="s2">&quot;#356D96&quot;</span><span class="p">,</span> <span class="s2">&quot;linestyle&quot;</span><span class="p">:</span> <span class="s2">&quot;--&quot;</span><span class="p">},</span>
 <span class="p">}</span>
 
 
 <span class="k">def</span><span class="w"> </span><span class="nf">format_axes</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">energy_label</span><span class="p">):</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">"Biegekoordinate $q$ (a.u.)"</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;Biegekoordinate $q$ (a.u.)&quot;</span><span class="p">)</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="n">energy_label</span><span class="p">)</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">set_axisbelow</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s2">"y"</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">"#E4E8EA"</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.8</span><span class="p">)</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">"#B8C0C5"</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">":"</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">"#B8C0C5"</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s2">&quot;y&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#E4E8EA&quot;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.8</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#B8C0C5&quot;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;:&quot;</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#B8C0C5&quot;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">yaxis</span><span class="o">.</span><span class="n">set_major_locator</span><span class="p">(</span><span class="n">MaxNLocator</span><span class="p">(</span><span class="n">nbins</span><span class="o">=</span><span class="mi">6</span><span class="p">))</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">direction</span><span class="o">=</span><span class="s2">"out"</span><span class="p">,</span> <span class="n">length</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">direction</span><span class="o">=</span><span class="s2">&quot;out&quot;</span><span class="p">,</span> <span class="n">length</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_dir</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">"examples"</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_dir</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">&quot;examples&quot;</span><span class="p">)</span>
 <span class="n">files</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">"neutral"</span><span class="p">:</span> <span class="s2">"V_bend_neutral_NCN.dat"</span><span class="p">,</span>
-    <span class="s2">"cation_0"</span><span class="p">:</span> <span class="s2">"V_bend_cation_0_NCN.dat"</span><span class="p">,</span>
-    <span class="s2">"cation_1"</span><span class="p">:</span> <span class="s2">"V_bend_cation_1_NCN.dat"</span><span class="p">,</span>
+    <span class="s2">&quot;neutral&quot;</span><span class="p">:</span> <span class="s2">&quot;V_bend_neutral_NCN.dat&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;cation_0&quot;</span><span class="p">:</span> <span class="s2">&quot;V_bend_cation_0_NCN.dat&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;cation_1&quot;</span><span class="p">:</span> <span class="s2">&quot;V_bend_cation_1_NCN.dat&quot;</span><span class="p">,</span>
 <span class="p">}</span>
 
 <span class="n">potentials</span> <span class="o">=</span> <span class="p">{}</span>
 <span class="k">for</span> <span class="n">state</span><span class="p">,</span> <span class="n">filename</span> <span class="ow">in</span> <span class="n">files</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
     <span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="n">data_dir</span> <span class="o">/</span> <span class="n">filename</span><span class="p">,</span> <span class="n">ndmin</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
     <span class="n">q</span><span class="p">,</span> <span class="n">energy</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">T</span>
-    <span class="n">potentials</span><span class="p">[</span><span class="n">state</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"q"</span><span class="p">:</span> <span class="n">q</span><span class="p">,</span> <span class="s2">"energy"</span><span class="p">:</span> <span class="n">energy</span><span class="p">}</span>
+    <span class="n">potentials</span><span class="p">[</span><span class="n">state</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;q&quot;</span><span class="p">:</span> <span class="n">q</span><span class="p">,</span> <span class="s2">&quot;energy&quot;</span><span class="p">:</span> <span class="n">energy</span><span class="p">}</span>
 </pre></div>
 </div>
 </div>
 </div>
 <section id="elektronische-energie-des-ncn-als-funktion-der-biegekoordinate">
-<h2>Elektronische Energie des NCN als Funktion der Biegekoordinate<a class="headerlink" href="#elektronische-energie-des-ncn-als-funktion-der-biegekoordinate" title="Permalink to this heading">#</a></h2>
+<h2>Elektronische Energie des NCN als Funktion der Biegekoordinate<a class="headerlink" href="#elektronische-energie-des-ncn-als-funktion-der-biegekoordinate" title="Link to this heading">#</a></h2>
 <p>Die Linien verbinden die eingelesenen Datenpunkte. Die beiden kationischen Kurven werden mit ihren <strong>ursprünglichen relativen Energieoffsets</strong> gemeinsam dargestellt. Aus den getrennten Diagrammen für NCN und NCN<span class="math notranslate nohighlight">\(^+\)</span> lässt sich keine Ionisierungsenergie ablesen.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mf">10.8</span><span class="p">,</span> <span class="mf">4.6</span><span class="p">),</span> <span class="n">sharex</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-                         <span class="n">layout</span><span class="o">=</span><span class="s2">"constrained"</span><span class="p">)</span>
+                         <span class="n">layout</span><span class="o">=</span><span class="s2">&quot;constrained&quot;</span><span class="p">)</span>
 
 <span class="k">for</span> <span class="n">ax</span><span class="p">,</span> <span class="n">states</span><span class="p">,</span> <span class="n">title</span> <span class="ow">in</span> <span class="p">[</span>
-    <span class="p">(</span><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="p">(</span><span class="s2">"neutral"</span><span class="p">,),</span> <span class="s2">"Neutrales NCN"</span><span class="p">),</span>
-    <span class="p">(</span><span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="p">(</span><span class="s2">"cation_0"</span><span class="p">,</span> <span class="s2">"cation_1"</span><span class="p">),</span> <span class="sa">r</span><span class="s2">"Kation NCN$^+$"</span><span class="p">),</span>
+    <span class="p">(</span><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="p">(</span><span class="s2">&quot;neutral&quot;</span><span class="p">,),</span> <span class="s2">&quot;Neutrales NCN&quot;</span><span class="p">),</span>
+    <span class="p">(</span><span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="p">(</span><span class="s2">&quot;cation_0&quot;</span><span class="p">,</span> <span class="s2">&quot;cation_1&quot;</span><span class="p">),</span> <span class="sa">r</span><span class="s2">&quot;Kation NCN$^+$&quot;</span><span class="p">),</span>
 <span class="p">]:</span>
     <span class="k">for</span> <span class="n">state</span> <span class="ow">in</span> <span class="n">states</span><span class="p">:</span>
         <span class="n">curve</span> <span class="o">=</span> <span class="n">potentials</span><span class="p">[</span><span class="n">state</span><span class="p">]</span>
-        <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">curve</span><span class="p">[</span><span class="s2">"q"</span><span class="p">],</span> <span class="n">curve</span><span class="p">[</span><span class="s2">"energy"</span><span class="p">],</span> <span class="o">**</span><span class="n">styles</span><span class="p">[</span><span class="n">state</span><span class="p">])</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">curve</span><span class="p">[</span><span class="s2">&quot;q&quot;</span><span class="p">],</span> <span class="n">curve</span><span class="p">[</span><span class="s2">&quot;energy&quot;</span><span class="p">],</span> <span class="o">**</span><span class="n">styles</span><span class="p">[</span><span class="n">state</span><span class="p">])</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">title</span><span class="p">)</span>
-    <span class="n">format_axes</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="sa">r</span><span class="s2">"Potentielle Energie $V$ ($E_\mathrm</span><span class="si">{h}</span><span class="s2">$)"</span><span class="p">)</span>
+    <span class="n">format_axes</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="sa">r</span><span class="s2">&quot;Potentielle Energie $V$ ($E_\mathrm</span><span class="si">{h}</span><span class="s2">$)&quot;</span><span class="p">)</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">margins</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="mf">0.06</span><span class="p">)</span>
 
-<span class="n">q</span> <span class="o">=</span> <span class="n">potentials</span><span class="p">[</span><span class="s2">"neutral"</span><span class="p">][</span><span class="s2">"q"</span><span class="p">]</span>
+<span class="n">q</span> <span class="o">=</span> <span class="n">potentials</span><span class="p">[</span><span class="s2">&quot;neutral&quot;</span><span class="p">][</span><span class="s2">&quot;q&quot;</span><span class="p">]</span>
 <span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="n">q</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">q</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
 <span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mi">300</span><span class="p">,</span> <span class="mi">301</span><span class="p">,</span> <span class="mi">100</span><span class="p">))</span>
-<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s2">"upper center"</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s2">&quot;upper center&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -629,29 +595,29 @@
 </div>
 </section>
 <section id="die-kationischen-potentiale-nahe-ihren-minima">
-<h2>Die kationischen Potentiale nahe ihren Minima<a class="headerlink" href="#die-kationischen-potentiale-nahe-ihren-minima" title="Permalink to this heading">#</a></h2>
+<h2>Die kationischen Potentiale nahe ihren Minima<a class="headerlink" href="#die-kationischen-potentiale-nahe-ihren-minima" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Der Ausschnitt kann durch Ändern von q_zoom angepasst werden.</span>
 <span class="n">q_zoom</span> <span class="o">=</span> <span class="mf">85.0</span>  <span class="c1"># atomare Einheiten</span>
-<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mf">8.2</span><span class="p">,</span> <span class="mf">4.8</span><span class="p">),</span> <span class="n">layout</span><span class="o">=</span><span class="s2">"constrained"</span><span class="p">)</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mf">8.2</span><span class="p">,</span> <span class="mf">4.8</span><span class="p">),</span> <span class="n">layout</span><span class="o">=</span><span class="s2">&quot;constrained&quot;</span><span class="p">)</span>
 <span class="n">zoom_energies</span> <span class="o">=</span> <span class="p">[]</span>
 
-<span class="k">for</span> <span class="n">state</span> <span class="ow">in</span> <span class="p">(</span><span class="s2">"cation_0"</span><span class="p">,</span> <span class="s2">"cation_1"</span><span class="p">):</span>
+<span class="k">for</span> <span class="n">state</span> <span class="ow">in</span> <span class="p">(</span><span class="s2">&quot;cation_0&quot;</span><span class="p">,</span> <span class="s2">&quot;cation_1&quot;</span><span class="p">):</span>
     <span class="n">curve</span> <span class="o">=</span> <span class="n">potentials</span><span class="p">[</span><span class="n">state</span><span class="p">]</span>
-    <span class="n">mask</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">curve</span><span class="p">[</span><span class="s2">"q"</span><span class="p">])</span> <span class="o">&lt;=</span> <span class="n">q_zoom</span>
-    <span class="n">energy_mEh</span> <span class="o">=</span> <span class="mf">1000.0</span> <span class="o">*</span> <span class="n">curve</span><span class="p">[</span><span class="s2">"energy"</span><span class="p">][</span><span class="n">mask</span><span class="p">]</span>
+    <span class="n">mask</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">curve</span><span class="p">[</span><span class="s2">&quot;q&quot;</span><span class="p">])</span> <span class="o">&lt;=</span> <span class="n">q_zoom</span>
+    <span class="n">energy_mEh</span> <span class="o">=</span> <span class="mf">1000.0</span> <span class="o">*</span> <span class="n">curve</span><span class="p">[</span><span class="s2">&quot;energy&quot;</span><span class="p">][</span><span class="n">mask</span><span class="p">]</span>
     <span class="n">zoom_energies</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">energy_mEh</span><span class="p">)</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">curve</span><span class="p">[</span><span class="s2">"q"</span><span class="p">][</span><span class="n">mask</span><span class="p">],</span> <span class="n">energy_mEh</span><span class="p">,</span> <span class="o">**</span><span class="n">styles</span><span class="p">[</span><span class="n">state</span><span class="p">])</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">curve</span><span class="p">[</span><span class="s2">&quot;q&quot;</span><span class="p">][</span><span class="n">mask</span><span class="p">],</span> <span class="n">energy_mEh</span><span class="p">,</span> <span class="o">**</span><span class="n">styles</span><span class="p">[</span><span class="n">state</span><span class="p">])</span>
 
 <span class="n">visible_energy</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">(</span><span class="n">zoom_energies</span><span class="p">)</span>
 <span class="n">padding</span> <span class="o">=</span> <span class="mf">0.08</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">ptp</span><span class="p">(</span><span class="n">visible_energy</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="o">-</span><span class="n">q_zoom</span><span class="p">,</span> <span class="n">q_zoom</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="n">visible_energy</span><span class="o">.</span><span class="n">min</span><span class="p">()</span> <span class="o">-</span> <span class="n">padding</span><span class="p">,</span> <span class="n">visible_energy</span><span class="o">.</span><span class="n">max</span><span class="p">()</span> <span class="o">+</span> <span class="n">padding</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mi">80</span><span class="p">,</span> <span class="mi">81</span><span class="p">,</span> <span class="mi">20</span><span class="p">))</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">r</span><span class="s2">"NCN$^+$: Biegepotentiale nahe den Minima"</span><span class="p">)</span>
-<span class="n">format_axes</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="sa">r</span><span class="s2">"Potentielle Energie $V$ ($\mathrm</span><span class="si">{m}</span><span class="s2">E_\mathrm</span><span class="si">{h}</span><span class="s2">$)"</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s2">"upper center"</span><span class="p">,</span> <span class="n">ncols</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;NCN$^+$: Biegepotentiale nahe den Minima&quot;</span><span class="p">)</span>
+<span class="n">format_axes</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="sa">r</span><span class="s2">&quot;Potentielle Energie $V$ ($\mathrm</span><span class="si">{m}</span><span class="s2">E_\mathrm</span><span class="si">{h}</span><span class="s2">$)&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s2">&quot;upper center&quot;</span><span class="p">,</span> <span class="n">ncols</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -662,7 +628,7 @@
 </div>
 </section>
 <section id="neutrales-ncn-quadratischer-oder-quartischer-ansatz">
-<h2>Neutrales NCN: quadratischer oder quartischer Ansatz?<a class="headerlink" href="#neutrales-ncn-quadratischer-oder-quartischer-ansatz" title="Permalink to this heading">#</a></h2>
+<h2>Neutrales NCN: quadratischer oder quartischer Ansatz?<a class="headerlink" href="#neutrales-ncn-quadratischer-oder-quartischer-ansatz" title="Link to this heading">#</a></h2>
 <p>Wir vergleichen nahe dem Minimum zwei <strong>reine Potenzansätze</strong>:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -671,7 +637,7 @@ V_2(q)=a\,q^2,\qquad V_4(q)=b\,q^4.
 <p>Beide Modelle besitzen genau <strong>einen Fitparameter</strong>. Wir bestimmen ihn durch Minimierung der Summe der quadrierten Abweichungen zu denselben, gleich gewichteten Datenpunkten im Bereich <span class="math notranslate nohighlight">\(|q|\leq85\)</span> a.u. Der Bereich lässt sich im folgenden Code über <code class="docutils literal notranslate"><span class="pre">q_fit_max</span></code> verändern.</p>
 </section>
 <section id="ein-quartisches-modell-fur-die-zweite-kationische-potentialkurve">
-<h2>Ein quartisches Modell für die zweite kationische Potentialkurve<a class="headerlink" href="#ein-quartisches-modell-fur-die-zweite-kationische-potentialkurve" title="Permalink to this heading">#</a></h2>
+<h2>Ein quartisches Modell für die zweite kationische Potentialkurve<a class="headerlink" href="#ein-quartisches-modell-fur-die-zweite-kationische-potentialkurve" title="Link to this heading">#</a></h2>
 <p>Die zweite kationische Potentialkurve (<code class="docutils literal notranslate"><span class="pre">cation_1</span></code>) lässt sich im Bereich <span class="math notranslate nohighlight">\(|q|\leq85\)</span> a.u. gut durch einen <strong>quartischen Ansatz</strong> beschreiben:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -683,8 +649,8 @@ V_2(q)=a\,q^2,\qquad V_4(q)=b\,q^4.
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">scipy.optimize</span><span class="w"> </span><span class="kn">import</span> <span class="n">curve_fit</span>
 
 <span class="c1"># Zweite kationische Kurve auswählen und Energie bei q = 0 abziehen.</span>
-<span class="n">q</span> <span class="o">=</span> <span class="n">potentials</span><span class="p">[</span><span class="s2">"cation_1"</span><span class="p">][</span><span class="s2">"q"</span><span class="p">]</span>
-<span class="n">V</span> <span class="o">=</span> <span class="n">potentials</span><span class="p">[</span><span class="s2">"cation_1"</span><span class="p">][</span><span class="s2">"energy"</span><span class="p">]</span>
+<span class="n">q</span> <span class="o">=</span> <span class="n">potentials</span><span class="p">[</span><span class="s2">&quot;cation_1&quot;</span><span class="p">][</span><span class="s2">&quot;q&quot;</span><span class="p">]</span>
+<span class="n">V</span> <span class="o">=</span> <span class="n">potentials</span><span class="p">[</span><span class="s2">&quot;cation_1&quot;</span><span class="p">][</span><span class="s2">&quot;energy&quot;</span><span class="p">]</span>
 <span class="n">V_ref</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">interp</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">q</span><span class="p">,</span> <span class="n">V</span><span class="p">)</span>
 <span class="n">mask</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">q</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mi">85</span>
 <span class="n">q</span> <span class="o">=</span> <span class="n">q</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span>
@@ -696,7 +662,7 @@ V_2(q)=a\,q^2,\qquad V_4(q)=b\,q^4.
 
 <span class="n">parameters</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">curve_fit</span><span class="p">(</span><span class="n">quartic</span><span class="p">,</span> <span class="n">q</span><span class="p">,</span> <span class="n">V</span><span class="p">)</span>
 <span class="n">b</span> <span class="o">=</span> <span class="n">parameters</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"b = </span><span class="si">{</span><span class="n">b</span><span class="si">:</span><span class="s2">.3e</span><span class="si">}</span><span class="s2"> (a.u.)"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;b = </span><span class="si">{</span><span class="n">b</span><span class="si">:</span><span class="s2">.3e</span><span class="si">}</span><span class="s2"> (a.u.)&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -708,17 +674,17 @@ V_2(q)=a\,q^2,\qquad V_4(q)=b\,q^4.
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mf">8.2</span><span class="p">,</span> <span class="mf">4.8</span><span class="p">),</span> <span class="n">layout</span><span class="o">=</span><span class="s2">"constrained"</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">q</span><span class="p">,</span> <span class="mi">1000</span> <span class="o">*</span> <span class="n">V</span><span class="p">,</span> <span class="s2">"o"</span><span class="p">,</span> 
-        <span class="n">markerfacecolor</span><span class="o">=</span><span class="s2">"none"</span><span class="p">,</span> 
-        <span class="n">markeredgecolor</span><span class="o">=</span><span class="s2">"red"</span><span class="p">,</span>
-        <span class="n">label</span><span class="o">=</span><span class="s2">"Potentialdaten"</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">q</span><span class="p">,</span> <span class="mi">1000</span> <span class="o">*</span> <span class="n">quartic</span><span class="p">(</span><span class="n">q</span><span class="p">,</span> <span class="n">b</span><span class="p">),</span> <span class="s2">"-"</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span> <span class="s2">"blue"</span><span class="p">,</span>
-        <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s2">"Quartischer Fit: $bq^4$"</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mf">8.2</span><span class="p">,</span> <span class="mf">4.8</span><span class="p">),</span> <span class="n">layout</span><span class="o">=</span><span class="s2">&quot;constrained&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">q</span><span class="p">,</span> <span class="mi">1000</span> <span class="o">*</span> <span class="n">V</span><span class="p">,</span> <span class="s2">&quot;o&quot;</span><span class="p">,</span> 
+        <span class="n">markerfacecolor</span><span class="o">=</span><span class="s2">&quot;none&quot;</span><span class="p">,</span> 
+        <span class="n">markeredgecolor</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">,</span>
+        <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Potentialdaten&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">q</span><span class="p">,</span> <span class="mi">1000</span> <span class="o">*</span> <span class="n">quartic</span><span class="p">(</span><span class="n">q</span><span class="p">,</span> <span class="n">b</span><span class="p">),</span> <span class="s2">&quot;-&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span> <span class="s2">&quot;blue&quot;</span><span class="p">,</span>
+        <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;Quartischer Fit: $bq^4$&quot;</span><span class="p">)</span>
 
-<span class="n">format_axes</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="sa">r</span><span class="s2">"Relative Energie $V-V_\mathrm</span><span class="si">{ref}</span><span class="s2">$ ($\mathrm</span><span class="si">{m}</span><span class="s2">E_\mathrm</span><span class="si">{h}</span><span class="s2">$)"</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">r</span><span class="s2">"NCN$^+$: Quartischer Fit der zweiten Potentialkurve"</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s2">"upper center"</span><span class="p">)</span>
+<span class="n">format_axes</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="sa">r</span><span class="s2">&quot;Relative Energie $V-V_\mathrm</span><span class="si">{ref}</span><span class="s2">$ ($\mathrm</span><span class="si">{m}</span><span class="s2">E_\mathrm</span><span class="si">{h}</span><span class="s2">$)&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;NCN$^+$: Quartischer Fit der zweiten Potentialkurve&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s2">&quot;upper center&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -729,7 +695,7 @@ V_2(q)=a\,q^2,\qquad V_4(q)=b\,q^4.
 </div>
 </section>
 <section id="schwingungszustande-mit-dem-ritzgalerkin-verfahren">
-<h2>Schwingungszustände mit dem Ritz–Galerkin-Verfahren<a class="headerlink" href="#schwingungszustande-mit-dem-ritzgalerkin-verfahren" title="Permalink to this heading">#</a></h2>
+<h2>Schwingungszustände mit dem Ritz–Galerkin-Verfahren<a class="headerlink" href="#schwingungszustande-mit-dem-ritzgalerkin-verfahren" title="Link to this heading">#</a></h2>
 <p>Für die massengewichtete Biegekoordinate verwenden wir in atomaren Einheiten</p>
 <div class="math notranslate nohighlight">
 \[
@@ -803,9 +769,9 @@ H_{ij}=T_{ij}+bI_{i+j+4}.
 <span class="n">E_N</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">E_N</span><span class="p">)</span>
 <span class="n">energies</span> <span class="o">=</span> <span class="n">E_N</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"N = </span><span class="si">{</span><span class="n">Nmax</span><span class="si">}</span><span class="s2">: Energien in mHartree"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;N = </span><span class="si">{</span><span class="n">Nmax</span><span class="si">}</span><span class="s2">: Energien in mHartree&quot;</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">energy</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">energies</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"E_</span><span class="si">{</span><span class="n">k</span><span class="si">}</span><span class="s2"> = </span><span class="si">{</span><span class="mi">1000</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">energy</span><span class="si">:</span><span class="s2">.6f</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;E_</span><span class="si">{</span><span class="n">k</span><span class="si">}</span><span class="s2"> = </span><span class="si">{</span><span class="mi">1000</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">energy</span><span class="si">:</span><span class="s2">.6f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -822,19 +788,19 @@ E_4 = 5.369598
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mf">8.2</span><span class="p">,</span> <span class="mf">4.8</span><span class="p">),</span> <span class="n">layout</span><span class="o">=</span><span class="s2">"constrained"</span><span class="p">)</span>
-<span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"#356D96"</span><span class="p">,</span> <span class="s2">"#C45E2B"</span><span class="p">,</span> <span class="s2">"#567A46"</span><span class="p">,</span> <span class="s2">"#8B5F8F"</span><span class="p">,</span> <span class="s2">"#947229"</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mf">8.2</span><span class="p">,</span> <span class="mf">4.8</span><span class="p">),</span> <span class="n">layout</span><span class="o">=</span><span class="s2">&quot;constrained&quot;</span><span class="p">)</span>
+<span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;#356D96&quot;</span><span class="p">,</span> <span class="s2">&quot;#C45E2B&quot;</span><span class="p">,</span> <span class="s2">&quot;#567A46&quot;</span><span class="p">,</span> <span class="s2">&quot;#8B5F8F&quot;</span><span class="p">,</span> <span class="s2">&quot;#947229&quot;</span><span class="p">]</span>
 <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sizes</span><span class="p">,</span> <span class="mi">1000</span> <span class="o">*</span> <span class="n">E_N</span><span class="p">[:,</span> <span class="n">k</span><span class="p">],</span> <span class="s2">"o-"</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">colors</span><span class="p">[</span><span class="n">k</span><span class="p">],</span>
-            <span class="n">markerfacecolor</span><span class="o">=</span><span class="s2">"none"</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">fr</span><span class="s2">"$E_</span><span class="si">{</span><span class="n">k</span><span class="si">}</span><span class="s2">$"</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sizes</span><span class="p">,</span> <span class="mi">1000</span> <span class="o">*</span> <span class="n">E_N</span><span class="p">[:,</span> <span class="n">k</span><span class="p">],</span> <span class="s2">&quot;o-&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">colors</span><span class="p">[</span><span class="n">k</span><span class="p">],</span>
+            <span class="n">markerfacecolor</span><span class="o">=</span><span class="s2">&quot;none&quot;</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">fr</span><span class="s2">&quot;$E_</span><span class="si">{</span><span class="n">k</span><span class="si">}</span><span class="s2">$&quot;</span><span class="p">)</span>
 
-<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">"Anzahl der Basisfunktionen $N$"</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">"Energie relativ zu $V_\mathrm</span><span class="si">{ref}</span><span class="s2">$ ($\mathrm</span><span class="si">{m}</span><span class="s2">E_\mathrm</span><span class="si">{h}</span><span class="s2">$)"</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;Anzahl der Basisfunktionen $N$&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;Energie relativ zu $V_\mathrm</span><span class="si">{ref}</span><span class="s2">$ ($\mathrm</span><span class="si">{m}</span><span class="s2">E_\mathrm</span><span class="si">{h}</span><span class="s2">$)&quot;</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">(</span><span class="n">sizes</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">1.15</span> <span class="o">*</span> <span class="mi">1000</span> <span class="o">*</span> <span class="n">E_N</span><span class="o">.</span><span class="n">max</span><span class="p">())</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">"Konvergenz der fünf niedrigsten Schwingungsenergien"</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s2">"y"</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">"#E4E8EA"</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.8</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">ncols</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="s2">"upper center"</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Konvergenz der fünf niedrigsten Schwingungsenergien&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s2">&quot;y&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#E4E8EA&quot;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.8</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">ncols</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="s2">&quot;upper center&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -851,20 +817,20 @@ E_4 = 5.369598
                   <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">Nmax</span><span class="p">)])</span>
 <span class="n">psi</span> <span class="o">=</span> <span class="n">basis</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">coefficients</span><span class="p">[:,</span> <span class="p">:</span><span class="mi">5</span><span class="p">]</span>
 
-<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mf">8.2</span><span class="p">,</span> <span class="mf">5.6</span><span class="p">),</span> <span class="n">layout</span><span class="o">=</span><span class="s2">"constrained"</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">q_grid</span><span class="p">,</span> <span class="mi">1000</span> <span class="o">*</span> <span class="n">quartic</span><span class="p">(</span><span class="n">q_grid</span><span class="p">,</span> <span class="n">b</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s2">"#33434D"</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s2">"Potential $bq^4$"</span><span class="p">)</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mf">8.2</span><span class="p">,</span> <span class="mf">5.6</span><span class="p">),</span> <span class="n">layout</span><span class="o">=</span><span class="s2">&quot;constrained&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">q_grid</span><span class="p">,</span> <span class="mi">1000</span> <span class="o">*</span> <span class="n">quartic</span><span class="p">(</span><span class="n">q_grid</span><span class="p">,</span> <span class="n">b</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#33434D&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;Potential $bq^4$&quot;</span><span class="p">)</span>
 <span class="n">scale</span> <span class="o">=</span> <span class="mf">0.3</span> <span class="o">*</span> <span class="p">(</span><span class="n">energies</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">energies</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">psi</span><span class="p">))</span>
 <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">energy</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">energies</span><span class="p">):</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mi">1000</span> <span class="o">*</span> <span class="n">energy</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">"#B8C0C5"</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">"--"</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.8</span><span class="p">)</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">q_grid</span><span class="p">,</span> <span class="mi">1000</span> <span class="o">*</span> <span class="p">(</span><span class="n">energy</span> <span class="o">+</span> <span class="n">scale</span> <span class="o">*</span> <span class="n">psi</span><span class="p">[:,</span> <span class="n">k</span><span class="p">]),</span> <span class="n">color</span><span class="o">=</span><span class="s2">"#356D96"</span><span class="p">,</span>
-            <span class="n">label</span><span class="o">=</span><span class="s2">"Wellenfunktionen (verschoben)"</span> <span class="k">if</span> <span class="n">k</span> <span class="o">==</span> <span class="mi">0</span> <span class="k">else</span> <span class="kc">None</span><span class="p">)</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">96</span><span class="p">,</span> <span class="mi">1000</span> <span class="o">*</span> <span class="n">energy</span> <span class="o">+</span> <span class="mf">0.15</span><span class="p">,</span> <span class="sa">f</span><span class="s2">"k = </span><span class="si">{</span><span class="n">k</span><span class="si">}</span><span class="s2">"</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s2">"right"</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mi">1000</span> <span class="o">*</span> <span class="n">energy</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#B8C0C5&quot;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.8</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">q_grid</span><span class="p">,</span> <span class="mi">1000</span> <span class="o">*</span> <span class="p">(</span><span class="n">energy</span> <span class="o">+</span> <span class="n">scale</span> <span class="o">*</span> <span class="n">psi</span><span class="p">[:,</span> <span class="n">k</span><span class="p">]),</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#356D96&quot;</span><span class="p">,</span>
+            <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Wellenfunktionen (verschoben)&quot;</span> <span class="k">if</span> <span class="n">k</span> <span class="o">==</span> <span class="mi">0</span> <span class="k">else</span> <span class="kc">None</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">96</span><span class="p">,</span> <span class="mi">1000</span> <span class="o">*</span> <span class="n">energy</span> <span class="o">+</span> <span class="mf">0.15</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;k = </span><span class="si">{</span><span class="n">k</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s2">&quot;right&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
 
-<span class="n">format_axes</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="sa">r</span><span class="s2">"Energie relativ zu $V_\mathrm</span><span class="si">{ref}</span><span class="s2">$ ($\mathrm</span><span class="si">{m}</span><span class="s2">E_\mathrm</span><span class="si">{h}</span><span class="s2">$)"</span><span class="p">)</span>
+<span class="n">format_axes</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="sa">r</span><span class="s2">&quot;Energie relativ zu $V_\mathrm</span><span class="si">{ref}</span><span class="s2">$ ($\mathrm</span><span class="si">{m}</span><span class="s2">E_\mathrm</span><span class="si">{h}</span><span class="s2">$)&quot;</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="o">-</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="o">-</span><span class="mf">0.2</span><span class="p">,</span> <span class="mf">1.2</span> <span class="o">*</span> <span class="mi">1000</span> <span class="o">*</span> <span class="n">energies</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Variationelle Schwingungszustände: N = </span><span class="si">{</span><span class="n">Nmax</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s2">"upper center"</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Variationelle Schwingungszustände: N = </span><span class="si">{</span><span class="n">Nmax</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s2">&quot;upper center&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -875,7 +841,7 @@ E_4 = 5.369598
 </div>
 </section>
 <section id="harmonischer-und-quartischer-oszillator-im-vergleich">
-<h2>Harmonischer und quartischer Oszillator im Vergleich<a class="headerlink" href="#harmonischer-und-quartischer-oszillator-im-vergleich" title="Permalink to this heading">#</a></h2>
+<h2>Harmonischer und quartischer Oszillator im Vergleich<a class="headerlink" href="#harmonischer-und-quartischer-oszillator-im-vergleich" title="Link to this heading">#</a></h2>
 <p>Beim <strong>harmonischen Oszillator</strong> sind die Energieniveaus gleichmäßig angeordnet:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -892,18 +858,18 @@ E_n\propto\left(n+\frac12\right)^{4/3},
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">energies</span><span class="p">))</span>
 <span class="n">quartic_levels</span> <span class="o">=</span> <span class="p">(</span><span class="n">energies</span> <span class="o">-</span> <span class="n">energies</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">/</span> <span class="p">(</span><span class="n">energies</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">energies</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 
-<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mf">7.2</span><span class="p">,</span> <span class="mf">5.2</span><span class="p">),</span> <span class="n">layout</span><span class="o">=</span><span class="s2">"constrained"</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">x</span><span class="p">,</span> <span class="n">levels</span><span class="p">,</span> <span class="n">color</span> <span class="ow">in</span> <span class="p">[(</span><span class="mi">0</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="s2">"#356D96"</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">quartic_levels</span><span class="p">,</span> <span class="s2">"#C45E2B"</span><span class="p">)]:</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mf">7.2</span><span class="p">,</span> <span class="mf">5.2</span><span class="p">),</span> <span class="n">layout</span><span class="o">=</span><span class="s2">&quot;constrained&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">x</span><span class="p">,</span> <span class="n">levels</span><span class="p">,</span> <span class="n">color</span> <span class="ow">in</span> <span class="p">[(</span><span class="mi">0</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="s2">&quot;#356D96&quot;</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">quartic_levels</span><span class="p">,</span> <span class="s2">&quot;#C45E2B&quot;</span><span class="p">)]:</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">hlines</span><span class="p">(</span><span class="n">levels</span><span class="p">,</span> <span class="n">x</span> <span class="o">-</span> <span class="mf">0.25</span><span class="p">,</span> <span class="n">x</span> <span class="o">+</span> <span class="mf">0.25</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">2.5</span><span class="p">)</span>
     <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">level</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">levels</span><span class="p">):</span>
-        <span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="mf">0.29</span><span class="p">,</span> <span class="n">level</span><span class="p">,</span> <span class="sa">f</span><span class="s2">"n = </span><span class="si">{</span><span class="n">k</span><span class="si">}</span><span class="s2">"</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s2">"center"</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="mf">0.29</span><span class="p">,</span> <span class="n">level</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;n = </span><span class="si">{</span><span class="n">k</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s2">&quot;center&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
 
-<span class="n">ax</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="s2">"Harmonisch"</span><span class="p">,</span> <span class="sa">f</span><span class="s2">"Quartisch (Ritz, N = </span><span class="si">{</span><span class="n">Nmax</span><span class="si">}</span><span class="s2">)"</span><span class="p">])</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;Harmonisch&quot;</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;Quartisch (Ritz, N = </span><span class="si">{</span><span class="n">Nmax</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">])</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">1.6</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="o">-</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">quartic_levels</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="mf">0.5</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">"Skalierte Anregungsenergie $(E_n-E_0)/(E_1-E_0)$"</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">"Vergleich der Schwingungsspektren"</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s2">"y"</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">"#E4E8EA"</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.8</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;Skalierte Anregungsenergie $(E_n-E_0)/(E_1-E_0)$&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Vergleich der Schwingungsspektren&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s2">&quot;y&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#E4E8EA&quot;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.8</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_axisbelow</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
@@ -971,17 +937,15 @@ E_n\propto\left(n+\frac12\right)^{4/3},
             
             
               
-                <dialog id="pst-secondary-sidebar-modal"></dialog>
-                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
-  <div class="sidebar-secondary-item"><div
-    id="pst-page-navigation-heading-2"
-    class="page-toc tocsection onthispage">
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
     <i class="fa-solid fa-list"></i> Contents
   </div>
-  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
-    <ul class="pst-show_toc_level nav section-nav flex-column">
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#elektronische-energie-des-ncn-als-funktion-der-biegekoordinate">Elektronische Energie des NCN als Funktion der Biegekoordinate</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#die-kationischen-potentiale-nahe-ihren-minima">Die kationischen Potentiale nahe ihren Minima</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#neutrales-ncn-quadratischer-oder-quartischer-ansatz">Neutrales NCN: quadratischer oder quartischer Ansatz?</a></li>
@@ -1036,8 +1000,8 @@ By Roland Mitric
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb"></script>
-<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb"></script>
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>
