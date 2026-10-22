@@ -3,6 +3,7 @@ root: index
 chapters:
   - file: introduction
   - file: variational_principle
+  - file: lagrange_multipliers
   - file: convergence_variational_principle
   - file: renner_teller_example
   - file: helium_atom
