@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="./" >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
@@ -16,20 +16,22 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-
-  
-  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+  <link href="_static/styles/theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
@@ -39,17 +41,18 @@
     <link rel="stylesheet" type="text/css" href="_static/custom.css?v=e936a729" />
     <link rel="stylesheet" type="text/css" href="_static/wide_v2.css?v=bfe64621" />
   
+  <!-- So that users can add custom icons -->
+  <script defer src="_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
-  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb" />
 
-    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="_static/doctools.js?v=9a2dae69"></script>
-    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js?v=2b91c5f0"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=4825356b"></script>
     <script src="_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="_static/copybutton.js?v=f281be69"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
@@ -58,46 +61,41 @@
     <script src="_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'correlation_hylleraas';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Optimales Hartree-Produkt und Hartree-Gleichung" href="hartree_equation.html" />
-    <link rel="prev" title="Hylleraas-Methode: Kinetische Energie" href="kinetic_energy_hylleraas.html" />
+    <link rel="prev" title="Das Helium-Atom" href="helium_atom.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  
+    
+    <script src="_static/searchtools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="searchindex.js"></script>
+  
   </head>
-  
-  
-  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
-
+  <body data-default-mode="">
   
   
   <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
   
   <div id="pst-scroll-pixel-helper"></div>
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
-
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-primary-sidebar-checkbox"/>
-  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-secondary-sidebar-checkbox"/>
-  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
   
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="search.html"
       method="get">
@@ -105,7 +103,6 @@
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -113,15 +110,59 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
 </div>
 
   
-    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
     </header>
   
 
@@ -130,7 +171,8 @@
       
       
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -160,15 +202,11 @@
 </a></div>
         <div class="sidebar-primary-item">
 
- <script>
- document.write(`
-   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script></div>
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
@@ -186,8 +224,6 @@
 <li class="toctree-l1"><a class="reference internal" href="convergence_variational_principle.html">Über die Konvergenz des linearen Variationsprinzips: Verschachtelungs Satz</a></li>
 <li class="toctree-l1"><a class="reference internal" href="renner_teller_example.html">Beispiel aus der aktuellen Forschung: Das NCN-Molekül und der Renner-Teller-Effekt</a></li>
 <li class="toctree-l1"><a class="reference internal" href="helium_atom.html">Das Helium-Atom</a></li>
-<li class="toctree-l1"><a class="reference internal" href="kinetic_energy_hylleraas.html">Hylleraas-Methode: Kinetische Energie</a></li>
-
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Elektronenkorrelation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="hartree_equation.html">Optimales Hartree-Produkt und Hartree-Gleichung</a></li>
 
@@ -211,9 +247,14 @@
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
-  
-  <div id="rtd-footer-container"></div>
 
 
       </div>
@@ -409,7 +450,7 @@
 
 
 <button onclick="toggleFullScreen()"
-  class="btn btn-sm btn-fullscreen-button"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
   title="Fullscreen mode"
   data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
@@ -423,25 +464,17 @@
 
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
-    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
-    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
-  </button>
-`);
-</script>
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-  </button>
-`);
-</script>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
 </button>
 </div></div>
@@ -463,11 +496,25 @@ document.write(`
                 <h2> Contents </h2>
             </div>
             <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hylleraasmethode-fur-helium">Hylleraas‐Methode für Helium</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variationsansatz-von-hylleraas">Variationsansatz von Hylleraas</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#energieerwartungswerte-fur-den-hylleraas-ansatz">Energieerwartungswerte für den Hylleraas-Ansatz</a></li>
+                <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hylleraasmethode-fur-helium">Hylleraas‐Methode für Helium</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gemeinsame-wahrscheinlichkeitsdichte-und-statistische-unabhangigkeit">Gemeinsame Wahrscheinlichkeitsdichte und statistische Unabhängigkeit</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#was-andert-sich-bei-korrelierten-elektronen">Was ändert sich bei korrelierten Elektronen?</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variationsansatz-von-hylleraas">Variationsansatz von Hylleraas</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#skizze-wie-hangt-die-relative-lage-der-elektronen-zusammen">Skizze: Wie hängt die relative Lage der Elektronen zusammen?</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#energieerwartungswerte-fur-den-hylleraas-ansatz">Energieerwartungswerte für den Hylleraas-Ansatz</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mathematische-erganzung-transformation-des-volumenelements">Mathematische Ergänzung: Transformation des Volumenelements</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transformation-des-volumenelements">Transformation des Volumenelements</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hylleraas-methode-kinetische-energie">Hylleraas-Methode: Kinetische Energie</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sympy-programm-zur-symbolischen-transformation-des-gradienten">SymPy-Programm zur symbolischen Transformation des Gradienten</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#berechnung-der-energie-mit-einer-hylleraas-funktion">Berechnung der Energie mit einer Hylleraas-Funktion</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hylleraas-ansatz-mit-zwei-basisfunktionen">Hylleraas-Ansatz mit zwei Basisfunktionen</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ergebnis-und-physikalische-bedeutung">Ergebnis und physikalische Bedeutung</a></li>
@@ -485,20 +532,74 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="elektronenkorrelation">
-<h1>Elektronenkorrelation<a class="headerlink" href="#elektronenkorrelation" title="Link to this heading">#</a></h1>
+<h1>Elektronenkorrelation<a class="headerlink" href="#elektronenkorrelation" title="Permalink to this heading">#</a></h1>
 <section id="hylleraasmethode-fur-helium">
-<h2>Hylleraas‐Methode für Helium<a class="headerlink" href="#hylleraasmethode-fur-helium" title="Link to this heading">#</a></h2>
+<h2>Hylleraas‐Methode für Helium<a class="headerlink" href="#hylleraasmethode-fur-helium" title="Permalink to this heading">#</a></h2>
 <p>Das Heliumatom als das einfachste Mehr‐Elektronen‐System eignet sich gut, um den Einfluss der Elektronenkorrelation auf die Gesamtenergie zu untersuchen. Im Hartree‐Produktansatz, den wir vorher als einfachste Beschreibung der Zweielektronen-Wellenfunktion eingeführt haben,</p>
 <div class="math notranslate nohighlight">
 \[
 \Psi_0(\mathbf{r}_1,\mathbf{r}_2)=\psi(\mathbf{r}_1)\psi(\mathbf{r}_2)
 \]</div>
-<p>sind die Elektronenkoordinaten voneinander entkoppelt. Die Elektronen sind also unabhängig voneinander und nicht korreliert! Die gegenseitige Abstoßung wird damit nur im Mittel beschrieben. Eine explizite Korrelation der Elektronenbewegungen fehlt, und die Energie liegt deshalb über dem exakten Wert. Hylleraas zeigte 1929, dass sich eine erhebliche Verbesserung erreichen lässt, wenn man den <strong>Abstand</strong></p>
+<p>sind die Elektronenkoordinaten voneinander entkoppelt. Man sagt auch, dass die Elektronen in diesem Ansatz <strong>nicht korreliert</strong> sind</p>
+<section id="gemeinsame-wahrscheinlichkeitsdichte-und-statistische-unabhangigkeit">
+<h3>Gemeinsame Wahrscheinlichkeitsdichte und statistische Unabhängigkeit<a class="headerlink" href="#gemeinsame-wahrscheinlichkeitsdichte-und-statistische-unabhangigkeit" title="Permalink to this heading">#</a></h3>
+<p>Wir betrachten die räumliche Wahrscheinlichkeitsdichte des Helium-Grundzustands. Für eine normierte räumliche Wellenfunktion ist</p>
+<div class="math notranslate nohighlight">
+\[
+p(\mathbf{r}_1,\mathbf{r}_2)=|\Psi(\mathbf{r}_1,\mathbf{r}_2)|^2
+\]</div>
+<p>die <strong>gemeinsame Wahrscheinlichkeitsdichte</strong> der beiden Elektronenorte. Die Wahrscheinlichkeit, Elektron 1 im kleinen Volumenelement <span class="math notranslate nohighlight">\(d^3r_1\)</span> um <span class="math notranslate nohighlight">\(\mathbf{r}_1\)</span> und zugleich Elektron 2 im Volumenelement <span class="math notranslate nohighlight">\(d^3r_2\)</span> um <span class="math notranslate nohighlight">\(\mathbf{r}_2\)</span> zu finden, ist</p>
+<div class="math notranslate nohighlight">
+\[
+dP=p(\mathbf{r}_1,\mathbf{r}_2)\,d^3r_1\,d^3r_2.
+\]</div>
+<p>Interessiert uns nur der Ort eines Elektrons, integrieren wir über alle möglichen Orte des anderen. So erhalten wir die <strong>Margarinaldichten</strong></p>
+<div class="math notranslate nohighlight">
+\[
+p_1(\mathbf{r}_1)=\int p(\mathbf{r}_1,\mathbf{r}_2)\,d^3r_2,
+\qquad
+p_2(\mathbf{r}_2)=\int p(\mathbf{r}_1,\mathbf{r}_2)\,d^3r_1.
+\]</div>
+<p>Beide Marginaldichten sind jeweils auf 1 normiert. Ist auch das Orbital <span class="math notranslate nohighlight">\(\psi\)</span> auf 1 normiert, folgt für das Hartree-Produkt unmittelbar</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+p_0(\mathbf{r}_1,\mathbf{r}_2)
+&amp;=\left|\psi(\mathbf{r}_1)\psi(\mathbf{r}_2)\right|^2\\
+&amp;=|\psi(\mathbf{r}_1)|^2\,|\psi(\mathbf{r}_2)|^2\\
+&amp;=p_1(\mathbf{r}_1)\,p_2(\mathbf{r}_2).
+\end{aligned}
+\end{split}\]</div>
+<p>Die gemeinsame Dichte <strong>faktorisiert</strong> also in das Produkt der beiden Marginaldichten. Genau dies ist die Bedingung für die <strong>statistische Unabhängigkeit</strong> der Elektronenorte.</p>
+</section>
+<section id="was-andert-sich-bei-korrelierten-elektronen">
+<h3>Was ändert sich bei korrelierten Elektronen?<a class="headerlink" href="#was-andert-sich-bei-korrelierten-elektronen" title="Permalink to this heading">#</a></h3>
+<p>Besonders anschaulich wird die Bedeutung durch die <strong>bedingte Wahrscheinlichkeitsdichte</strong>. Wenn wir die Ortslage des Elektrons 1 bei <span class="math notranslate nohighlight">\(\mathbf{r}_1\)</span> fixieren, können wir die Wahrscheinlichkeitsverteilung des Elektrons 2 unter dieser Bedingung betrachten. Für <span class="math notranslate nohighlight">\(p_1(\mathbf{r}_1)&gt;0\)</span> gilt</p>
+<div class="math notranslate nohighlight">
+\[
+p(\mathbf{r}_2\mid\mathbf{r}_1)
+=\frac{p(\mathbf{r}_1,\mathbf{r}_2)}{p_1(\mathbf{r}_1)}.
+\]</div>
+<p>Im Hartree-Produkt kürzt sich der erste Faktor heraus:</p>
+<div class="math notranslate nohighlight">
+\[
+p_0(\mathbf{r}_2\mid\mathbf{r}_1)
+=\frac{p_1(\mathbf{r}_1)p_2(\mathbf{r}_2)}{p_1(\mathbf{r}_1)}
+=p_2(\mathbf{r}_2).
+\]</div>
+<p>Die Kenntnis des Ortes von Elektron 1 ändert somit <strong>nichts</strong> an der Verteilung von Elektron 2. Bei einem <span class="math notranslate nohighlight">\(1s\)</span>-Orbital bleibt diese Verteilung kugelsymmetrisch um den Kern, unabhängig davon, wo sich das Elektron 1 befindet.</p>
+<p><strong>Elektronenkorrelation bedeutet dagegen, dass die Kenntnis eines Elektronenortes die Wahrscheinlichkeitsverteilung des anderen verändert.</strong> Dann lässt sich die gemeinsame Dichte nicht als Produkt ihrer Marginaldichten schreiben, und <span class="math notranslate nohighlight">\(p(\mathbf{r}_2\mid\mathbf{r}_1)\)</span> hängt von <span class="math notranslate nohighlight">\(\mathbf{r}_1\)</span> ab. Aufgrund der Coulomb-Abstoßung sind Konfigurationen mit kleinem Elektronenabstand weniger günstig.</p>
+<p>Bei vorgegebenen Kernabständen <span class="math notranslate nohighlight">\(r_1\)</span> und <span class="math notranslate nohighlight">\(r_2\)</span> werden Anordnungen mit größerem gegenseitigem Abstand <span class="math notranslate nohighlight">\(r_{12}\)</span> bevorzugt! Da auch im Hartree-Produkt die mittlere Abstoßungsenergie <span class="math notranslate nohighlight">\(\langle 1/r_{12}\rangle\)</span> ungleich null ist, <strong>statistische Unabhängigkeit bedeutet daher nicht, dass die Wechselwirkung fehlt.</strong> Es fehlt vielmehr die Anpassung der bedingten Verteilung an den jeweiligen Ort des anderen Elektrons. Diese räumliche Coulomb-Korrelation kann die Energie gegenüber dem Produktansatz weiter senken.</p>
+</section>
+</section>
+<section id="variationsansatz-von-hylleraas">
+<h2>Variationsansatz von Hylleraas<a class="headerlink" href="#variationsansatz-von-hylleraas" title="Permalink to this heading">#</a></h2>
+<p>Hylleraas zeigte 1929, dass sich eine erhebliche Verbesserung erreichen lässt, wenn man den <strong>Abstand</strong></p>
 <div class="math notranslate nohighlight">
 \[
 r_{12} = |\mathbf{r}_1 - \mathbf{r}_2|
 \]</div>
-<p>als zusätzliche Variable in den variationellen Ansatz einführt. Zu diesem Zweck  definieren nun die sogenannten <strong>Hylleraas‐Koordinaten</strong></p>
+<p>als zusätzliche Variable in den variationellen Ansatz einführt. Zu diesem Zweck definieren wir nun die sogenannten <strong>Hylleraas‐Koordinaten</strong></p>
 <div class="math notranslate nohighlight">
 \[
 s = r_1 + r_2, \qquad
@@ -506,18 +607,111 @@ t = r_1 - r_2, \qquad
 u = r_{12}
 \]</div>
 <p>die eine natürliche Grundlage für eine explizit korrelierte Beschreibung bilden.</p>
-</section>
-<section id="variationsansatz-von-hylleraas">
-<h2>Variationsansatz von Hylleraas<a class="headerlink" href="#variationsansatz-von-hylleraas" title="Link to this heading">#</a></h2>
 <p>Die Hylleraas‐Wellenfunktion wird  als Produkt eines exponentiellen Faktor mit einer polynomiellen Korrektur gewählt. Wenn man im einfachsten Fall nur den linearen Term in <span class="math notranslate nohighlight">\(u = r_{12}\)</span> behält, erhält man den folgenden variationellen Ansatz:</p>
 <div class="math notranslate nohighlight">
 \[
 \Psi(s,t,u)=e^{-\zeta s}\,(1+\gamma u).
 \]</div>
 <p>Den variationellen Parameter <span class="math notranslate nohighlight">\(\zeta\)</span> kann man als eine effektive (abgeschirmte) Kernladung aufpassen und <span class="math notranslate nohighlight">\(\gamma\)</span> ist ein Korrelationsparameter. Für <span class="math notranslate nohighlight">\(\gamma=0\)</span> reduziert sich der Ausdruck auf das unkorrelierte Hartree‐Produkt, während <span class="math notranslate nohighlight">\(\gamma\neq 0\)</span> eine explizite Abhängigkeit von <span class="math notranslate nohighlight">\(r_{12}=u\)</span> einführt.</p>
+<section id="skizze-wie-hangt-die-relative-lage-der-elektronen-zusammen">
+<h3>Skizze: Wie hängt die relative Lage der Elektronen zusammen?<a class="headerlink" href="#skizze-wie-hangt-die-relative-lage-der-elektronen-zusammen" title="Permalink to this heading">#</a></h3>
+<p>Für eine anschauliche Momentaufnahme wählen wir <strong>gleiche, feste Kernabstände</strong> <span class="math notranslate nohighlight">\(r_1=r_2=R\)</span> und betrachten nur den Winkel <span class="math notranslate nohighlight">\(\theta_{12}\)</span> zwischen den beiden Ortsvektoren. Der Kreis links markiert diesen Abstand, keine Elektronenbahn. Mit <span class="math notranslate nohighlight">\(\mu=\cos\theta_{12}\)</span> gilt</p>
+<div class="math notranslate nohighlight">
+\[
+r_{12}=R\sqrt{2(1-\mu)}.
+\]</div>
+<p>Rechts ist die bedingte Dichte <span class="math notranslate nohighlight">\(q(\mu)\)</span> <strong>bezüglich <span class="math notranslate nohighlight">\(d\mu\)</span></strong> dargestellt, normiert durch <span class="math notranslate nohighlight">\(\int_{-1}^{1}q(\mu)\,d\mu=1\)</span>. Das Hartree-Produkt liefert <span class="math notranslate nohighlight">\(q_0(\mu)=1/2\)</span>: Alle Raumrichtungen sind gleichberechtigt. Beim einfachen Hylleraas-Ansatz ist dagegen</p>
+<div class="math notranslate nohighlight">
+\[
+q_\gamma(\mu)\propto\left[1+\gamma R\sqrt{2(1-\mu)}\right]^2.
+\]</div>
+<p>Wir wählen zur Illustration <span class="math notranslate nohighlight">\(R=a_0\)</span> und <span class="math notranslate nohighlight">\(\gamma=0.5\,a_0^{-1}\)</span>; diese Parameter sind hier nicht durch Energieminimierung bestimmt. Der Exponentialfaktor ist bei festen <span class="math notranslate nohighlight">\(r_1,r_2\)</span> konstant und fällt bei der Normierung weg.</p>
+<div class="cell tag_hide-input docutils container">
+<details class="admonition hide above-input">
+<summary aria-label="Toggle hidden content">
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">plot_electron_correlation</span><span class="p">():</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib.patches</span><span class="w"> </span><span class="kn">import</span> <span class="n">Arc</span><span class="p">,</span> <span class="n">Circle</span>
+
+    <span class="n">radius</span> <span class="o">=</span> <span class="mf">1.0</span>  <span class="c1"># in Bohrschen Radien a_0</span>
+    <span class="n">gamma</span> <span class="o">=</span> <span class="mf">0.5</span>   <span class="c1"># in a_0^{-1}; illustrativer Korrelationsparameter</span>
+    <span class="n">mu</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1001</span><span class="p">)</span>
+    <span class="n">distance</span> <span class="o">=</span> <span class="n">radius</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">mu</span><span class="p">))</span>
+    <span class="c1"># Integral von (1 + gamma * r_12)**2 über -1 &lt;= mu &lt;= 1.</span>
+    <span class="n">norm</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="mi">16</span> <span class="o">/</span> <span class="mi">3</span><span class="p">)</span> <span class="o">*</span> <span class="n">gamma</span> <span class="o">*</span> <span class="n">radius</span> <span class="o">+</span> <span class="mi">4</span> <span class="o">*</span> <span class="p">(</span><span class="n">gamma</span> <span class="o">*</span> <span class="n">radius</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>
+    <span class="n">q_hartree</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">full_like</span><span class="p">(</span><span class="n">mu</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)</span>
+    <span class="n">q_hylleraas</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">gamma</span> <span class="o">*</span> <span class="n">distance</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="n">norm</span>
+
+    <span class="n">style</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"font.family"</span><span class="p">:</span> <span class="s2">"DejaVu Serif"</span><span class="p">,</span> <span class="s2">"font.size"</span><span class="p">:</span> <span class="mi">11</span><span class="p">,</span>
+             <span class="s2">"mathtext.fontset"</span><span class="p">:</span> <span class="s2">"dejavuserif"</span><span class="p">,</span> <span class="s2">"figure.dpi"</span><span class="p">:</span> <span class="mi">150</span><span class="p">}</span>
+    <span class="k">with</span> <span class="n">plt</span><span class="o">.</span><span class="n">rc_context</span><span class="p">(</span><span class="n">style</span><span class="p">):</span>
+        <span class="n">fig</span><span class="p">,</span> <span class="p">(</span><span class="n">geometry</span><span class="p">,</span> <span class="n">density</span><span class="p">)</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span>
+            <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mf">4.2</span><span class="p">),</span> <span class="n">layout</span><span class="o">=</span><span class="s2">"constrained"</span><span class="p">,</span>
+            <span class="n">gridspec_kw</span><span class="o">=</span><span class="p">{</span><span class="s2">"width_ratios"</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mf">1.45</span><span class="p">]})</span>
+
+        <span class="n">theta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">deg2rad</span><span class="p">(</span><span class="mi">125</span><span class="p">)</span>
+        <span class="n">electron_1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">radius</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">])</span>
+        <span class="n">electron_2</span> <span class="o">=</span> <span class="n">radius</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)])</span>
+        <span class="n">geometry</span><span class="o">.</span><span class="n">add_patch</span><span class="p">(</span><span class="n">Circle</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">radius</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+                                  <span class="n">edgecolor</span><span class="o">=</span><span class="s2">"gray"</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">":"</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">1.2</span><span class="p">))</span>
+        <span class="n">geometry</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="n">electron_1</span><span class="p">[</span><span class="mi">0</span><span class="p">]],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">electron_1</span><span class="p">[</span><span class="mi">1</span><span class="p">]],</span> <span class="n">color</span><span class="o">=</span><span class="s2">"black"</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">1.2</span><span class="p">)</span>
+        <span class="n">geometry</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="n">electron_2</span><span class="p">[</span><span class="mi">0</span><span class="p">]],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">electron_2</span><span class="p">[</span><span class="mi">1</span><span class="p">]],</span> <span class="n">color</span><span class="o">=</span><span class="s2">"black"</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">1.2</span><span class="p">)</span>
+        <span class="n">geometry</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">electron_1</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">electron_2</span><span class="p">[</span><span class="mi">0</span><span class="p">]],</span>
+                      <span class="p">[</span><span class="n">electron_1</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">electron_2</span><span class="p">[</span><span class="mi">1</span><span class="p">]],</span> <span class="n">color</span><span class="o">=</span><span class="s2">"gray"</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s2">"--"</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">1.2</span><span class="p">)</span>
+        <span class="n">geometry</span><span class="o">.</span><span class="n">add_patch</span><span class="p">(</span><span class="n">Arc</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="mf">0.6</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">,</span> <span class="n">theta1</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">theta2</span><span class="o">=</span><span class="mi">125</span><span class="p">,</span>
+                              <span class="n">edgecolor</span><span class="o">=</span><span class="s2">"black"</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
+        <span class="n">geometry</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">"o"</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">"black"</span><span class="p">,</span> <span class="n">ms</span><span class="o">=</span><span class="mi">9</span><span class="p">)</span>
+        <span class="n">geometry</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="o">*</span><span class="n">electron_1</span><span class="p">,</span> <span class="s2">"o"</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">"red"</span><span class="p">,</span> <span class="n">ms</span><span class="o">=</span><span class="mi">9</span><span class="p">)</span>
+        <span class="n">geometry</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="o">*</span><span class="n">electron_2</span><span class="p">,</span> <span class="s2">"o"</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">"blue"</span><span class="p">,</span> <span class="n">ms</span><span class="o">=</span><span class="mi">9</span><span class="p">)</span>
+        <span class="n">geometry</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.22</span><span class="p">,</span> <span class="s2">"Kern"</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s2">"center"</span><span class="p">)</span>
+        <span class="n">geometry</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.24</span><span class="p">,</span> <span class="s2">"Elektron 1"</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s2">"center"</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">"red"</span><span class="p">)</span>
+        <span class="n">geometry</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">electron_2</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">electron_2</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="mf">0.17</span><span class="p">,</span>
+                      <span class="s2">"Elektron 2"</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s2">"center"</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">"blue"</span><span class="p">)</span>
+        <span class="n">geometry</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">0.53</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.16</span><span class="p">,</span> <span class="sa">r</span><span class="s2">"$R$"</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s2">"center"</span><span class="p">)</span>
+        <span class="n">geometry</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="o">-</span><span class="mf">0.44</span><span class="p">,</span> <span class="mf">0.30</span><span class="p">,</span> <span class="sa">r</span><span class="s2">"$R$"</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s2">"center"</span><span class="p">)</span>
+        <span class="n">geometry</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">0.12</span><span class="p">,</span> <span class="mf">0.16</span><span class="p">,</span> <span class="sa">r</span><span class="s2">"$\theta_</span><span class="si">{12}</span><span class="s2">$"</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s2">"center"</span><span class="p">)</span>
+        <span class="n">geometry</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">0.36</span><span class="p">,</span> <span class="mf">0.57</span><span class="p">,</span> <span class="sa">r</span><span class="s2">"$r_</span><span class="si">{12}</span><span class="s2">$"</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s2">"center"</span><span class="p">)</span>
+        <span class="n">geometry</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.23</span><span class="p">,</span> <span class="sa">r</span><span class="s2">"Feste Kernabstände: $r_1=r_2=R$"</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s2">"center"</span><span class="p">)</span>
+        <span class="n">geometry</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">xlim</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mf">1.35</span><span class="p">,</span> <span class="mf">1.42</span><span class="p">),</span> <span class="n">ylim</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mf">1.4</span><span class="p">,</span> <span class="mf">1.35</span><span class="p">),</span> <span class="n">aspect</span><span class="o">=</span><span class="s2">"equal"</span><span class="p">)</span>
+        <span class="n">geometry</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">"Relative Lage der Elektronen"</span><span class="p">,</span> <span class="n">pad</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+        <span class="n">geometry</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">"off"</span><span class="p">)</span>
+
+        <span class="n">density</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">mu</span><span class="p">,</span> <span class="n">q_hartree</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">"blue"</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s2">"--"</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+                     <span class="n">label</span><span class="o">=</span><span class="s2">"Hartree-Produkt"</span><span class="p">)</span>
+        <span class="n">density</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">mu</span><span class="p">,</span> <span class="n">q_hylleraas</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">"red"</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+                     <span class="n">label</span><span class="o">=</span><span class="s2">"Hylleraas-Ansatz"</span><span class="p">)</span>
+        <span class="n">density</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">xlim</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">ylim</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">),</span>
+                    <span class="n">xlabel</span><span class="o">=</span><span class="sa">r</span><span class="s2">"$\mu=\cos\theta_</span><span class="si">{12}</span><span class="s2">$"</span><span class="p">,</span>
+                    <span class="n">ylabel</span><span class="o">=</span><span class="sa">r</span><span class="s2">"Bedingte Dichte $q(\mu)$"</span><span class="p">,</span>
+                    <span class="n">title</span><span class="o">=</span><span class="s2">"Winkelverteilung bei festen Kernabständen"</span><span class="p">)</span>
+        <span class="n">density</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">([</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+                          <span class="p">[</span><span class="s2">"−1</span><span class="se">\n</span><span class="s2">gegenüber"</span><span class="p">,</span> <span class="s2">"0</span><span class="se">\n</span><span class="s2">senkrecht"</span><span class="p">,</span> <span class="s2">"1</span><span class="se">\n</span><span class="s2">gleiche Richtung"</span><span class="p">])</span>
+        <span class="n">density</span><span class="o">.</span><span class="n">spines</span><span class="p">[[</span><span class="s2">"top"</span><span class="p">,</span> <span class="s2">"right"</span><span class="p">]]</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+        <span class="n">density</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s2">"y"</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">"lightgray"</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">0.8</span><span class="p">)</span>
+        <span class="n">density</span><span class="o">.</span><span class="n">set_axisbelow</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">density</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s2">"lower left"</span><span class="p">,</span> <span class="n">frameon</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+
+<span class="n">plot_electron_correlation</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<img alt="_images/6a4e0e77d923d1bc12d0a3e5169c9ed3240ed919cde2af3e0ed44f25dd3b8c2f.png" src="_images/6a4e0e77d923d1bc12d0a3e5169c9ed3240ed919cde2af3e0ed44f25dd3b8c2f.png" />
+</div>
+</div>
+<p><strong>Lesart der Skizze:</strong> Bei <span class="math notranslate nohighlight">\(\mu=-1\)</span> liegen die Elektronen auf gegenüberliegenden Seiten des Kerns (<span class="math notranslate nohighlight">\(r_{12}=2R\)</span>), bei <span class="math notranslate nohighlight">\(\mu=1\)</span> in derselben Richtung und wegen der gleichen Kernabstände am selben Ort (<span class="math notranslate nohighlight">\(r_{12}=0\)</span>). Die rote Kurve gewichtet größere Abstände stärker als die blaue Hartree-Kurve. Bei einem anderen vorgegebenen Ort von Elektron 1 dreht sich auch die bevorzugte Richtung für Elektron 2 mit: Die beiden Orte sind korreliert. Dargestellt ist nur die Winkelverteilung bei festen Kernabständen, nicht die vollständige räumliche Elektronendichte.</p>
+</section>
 </section>
 <section id="energieerwartungswerte-fur-den-hylleraas-ansatz">
-<h2>Energieerwartungswerte für den Hylleraas-Ansatz<a class="headerlink" href="#energieerwartungswerte-fur-den-hylleraas-ansatz" title="Link to this heading">#</a></h2>
+<h2>Energieerwartungswerte für den Hylleraas-Ansatz<a class="headerlink" href="#energieerwartungswerte-fur-den-hylleraas-ansatz" title="Permalink to this heading">#</a></h2>
 <p>Wir berechnen nun zunächst den Erwartungswert der Energie für den Hylleraas-Ansatz und zerlegen den in drei Beiträge nach:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -542,47 +736,50 @@ E =
 \langle V_{ee} \rangle = \int \Psi^2\,\frac{1}{r_{12}}\,d\tau.
 \]</div>
 <p>Im Folgenden berechnen wir die Integrale analytisch und überprüfen unsere Ergebnisse durch symbolische Integration mit SymPy.</p>
-<div style="border:1px solid #1f6feb;border-left-width:8px;background:#f1f8ff;padding:14px 16px;border-radius:8px;">
-  <h4 style="margin:0 0 8px 0;">Mathematische Ergänzung: Transformation des Volumenelements</h4>
-  <p style="margin:0 0 8px 0;">
-    Gegeben sei eine (glatte) Transformation zwischen den karthesischen und allgemeinen (krummlinigen) Koordinaten: 
-<div class="math notranslate nohighlight">
-\[\mathbf{r} = \mathbf{r}(q_1,q_2,q_3)\]</div>
-<p>Bei einer solchen Transformation wirk lokalein kleines Koordinatenwürfelchen <span class="math notranslate nohighlight">\((dq_1\,dq_2\,dq_3)\)</span> linear auf ein Parallelepiped im <span class="math notranslate nohighlight">\(\mathbf{r}\)</span>-Raum deformiert.</p>
-</p>
-<p style="margin:0 0 8px 0;">
-Die entsprechenden Basisvektoren, die das Parallelepiped aufspannen sind gegeben durch:
-<div class="math notranslate nohighlight">
-\[\mathbf{e}_i = \frac{\partial \mathbf{r}}{\partial q_i}.\]</div>
-<p>Das Volumen dieses Parallelepipeds lässt sich nun wie folgt ausdrücken:</p>
+<section id="mathematische-erganzung-transformation-des-volumenelements">
+<h3>Mathematische Ergänzung: Transformation des Volumenelements<a class="headerlink" href="#mathematische-erganzung-transformation-des-volumenelements" title="Permalink to this heading">#</a></h3>
+<p>Gegeben sei eine glatte Transformation zwischen den kartesischen und allgemeinen krummlinigen Koordinaten:</p>
 <div class="math notranslate nohighlight">
 \[
-    dV = \bigl|\mathbf{e}_1 \cdot (\mathbf{e}_2 \times \mathbf{e}_3)\bigr|\,
-    dq_1\,dq_2\,dq_3
-    = 
-    \left|\det\!\left(\frac{\partial(x_1,x_2,x_3)}{\partial(q_1,q_2,q_3)}\right)\right|
-    dq_1\,dq_2\,dq_3.
+\mathbf{r} = \mathbf{r}(q_1,q_2,q_3).
 \]</div>
-</p>
-  <p style="margin:0 0 8px 0;">
-In orthogonalen krummlinigen Koordinaten mit  
-<div class="math notranslate nohighlight">
-\[h_i = \left\lVert \frac{\partial \mathbf{r}}{\partial q_i} \right\rVert\]</div>
-<p>reduziert sich dies auf das einfachere Rezept für die Transformation:</p>
+<p>Bei einer solchen Transformation wird ein kleines Koordinatenwürfelchen mit den Kantenlängen <span class="math notranslate nohighlight">\(dq_1\)</span>, <span class="math notranslate nohighlight">\(dq_2\)</span> und <span class="math notranslate nohighlight">\(dq_3\)</span> lokal auf ein Parallelepiped im <span class="math notranslate nohighlight">\(\mathbf{r}\)</span>-Raum abgebildet.</p>
+<p>Die entsprechenden Basisvektoren, die das Parallelepiped aufspannen, sind gegeben durch</p>
 <div class="math notranslate nohighlight">
 \[
-dV = h_1\,h_2\,h_3\,dq_1\,dq_2\,dq_3,
+\mathbf{e}_i = \frac{\partial \mathbf{r}}{\partial q_i}.
 \]</div>
-<p>Zum Beispiel in sphärischen Polarkoordinaten gilt: <span class="math notranslate nohighlight">\(h_r = 1,\; h_\theta = r,\; h_\phi = r\sin\theta\)</span>.</p>
-</p>
-<p style="margin:0;">
-<strong>Kochrezept:</strong> Schreibe \(\mathbf{r}(q_1,q_2,q_3)\), bilde die Jacobi-Matrix 
-    \(\partial x_j/\partial q_i\) (oder die Basisvektoren \(\mathbf{e}_i\)),
-    und multipliziere \(dq_1dq_2dq_3\) mit \(|\det J|\).
-  </p>
-</div></section>
+<p>Das Volumen dieses Parallelepipeds lässt sich somit als Spatprodukt beziehungsweise mithilfe der Jacobi-Determinante ausdrücken:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+dV
+&amp;= \bigl|\mathbf{e}_1 \cdot (\mathbf{e}_2 \times \mathbf{e}_3)\bigr|\,
+   dq_1\,dq_2\,dq_3 \\
+&amp;= \left|\det\!\left(\frac{\partial(x_1,x_2,x_3)}{\partial(q_1,q_2,q_3)}\right)\right|\,
+   dq_1\,dq_2\,dq_3.
+\end{aligned}
+\end{split}\]</div>
+<p>In <strong>orthogonalen krummlinigen Koordinaten</strong> mit den Skalenfaktoren</p>
+<div class="math notranslate nohighlight">
+\[
+h_i = \left\lVert \frac{\partial \mathbf{r}}{\partial q_i} \right\rVert
+\]</div>
+<p>reduziert sich dies auf</p>
+<div class="math notranslate nohighlight">
+\[
+dV = h_1\,h_2\,h_3\,dq_1\,dq_2\,dq_3.
+\]</div>
+<p>Zum Beispiel gilt in sphärischen Polarkoordinaten:</p>
+<div class="math notranslate nohighlight">
+\[
+h_r = 1, \qquad h_\theta = r, \qquad h_\phi = r\sin\theta.
+\]</div>
+<p><strong>Rezept:</strong> Schreibe <span class="math notranslate nohighlight">\(\mathbf{r}(q_1,q_2,q_3)\)</span>, bilde die Jacobi-Matrix <span class="math notranslate nohighlight">\(J\)</span> mit den Elementen <span class="math notranslate nohighlight">\(J_{ji}=\partial x_j/\partial q_i\)</span> (oder die Basisvektoren <span class="math notranslate nohighlight">\(\mathbf{e}_i\)</span>) und multipliziere <span class="math notranslate nohighlight">\(dq_1\,dq_2\,dq_3\)</span> mit <span class="math notranslate nohighlight">\(|\det J|\)</span>.</p>
+</section>
+</section>
 <section id="transformation-des-volumenelements">
-<h2>Transformation des Volumenelements<a class="headerlink" href="#transformation-des-volumenelements" title="Link to this heading">#</a></h2>
+<h2>Transformation des Volumenelements<a class="headerlink" href="#transformation-des-volumenelements" title="Permalink to this heading">#</a></h2>
 <p>Für die Integration über die Koordinaten zweier Elektronen wird zunächst das volle sechsdimensionale Volumenelement betrachtet, das sich aus den Kugelkoordinaten des ersten Elektrons <span class="math notranslate nohighlight">\((r_1, \theta_1, \phi_1)\)</span> und den Kugelkoordinaten des relativen Ortsvektors <span class="math notranslate nohighlight">\(\mathbf{r}_{12} = \mathbf{r}_2 - \mathbf{r}_1\)</span> mit <span class="math notranslate nohighlight">\((r_{12}, \theta_{12}, \phi_{12})\)</span> zusammensetzt. Das zugehörige Volumenelement (Integratiosmaß) lautet</p>
 <div class="math notranslate nohighlight">
 \[
@@ -633,14 +830,8 @@ dV = 8\pi^2 r_1 r_{12} r_2 dr_1 dr_{12} dr_2.
 |r_1 - r_2| \le r_{12} \le r_1 + r_2.
 \]</div>
 <p>Die Hylleraas-Koordinaten dienen dazu, die Abhängigkeit der Zweielektronenwellenfunktion von den drei Abständen in eine besonders symmetrische Form zu bringen.
-Sie werden definiert als</p>
-<div class="math notranslate nohighlight">
-\[
-s = r_1 + r_2, \qquad
-t = r_1 - r_2, \qquad
-u = r_{12}.
-\]</div>
-<p>Diese Transformation von <span class="math notranslate nohighlight">\((r_1, r_2, r_{12})\)</span> nach <span class="math notranslate nohighlight">\((s, t, u)\)</span> ist linear in <span class="math notranslate nohighlight">\(r_1\)</span> und <span class="math notranslate nohighlight">\(r_2\)</span>, sodass die inverse Transformatin leicht berechnet werden kann:</p>
+Wir verwenden die bereits eingeführten Koordinaten <span class="math notranslate nohighlight">\(s=r_1+r_2\)</span>, <span class="math notranslate nohighlight">\(t=r_1-r_2\)</span> und <span class="math notranslate nohighlight">\(u=r_{12}\)</span>.</p>
+<p>Diese Transformation von <span class="math notranslate nohighlight">\((r_1, r_2, r_{12})\)</span> nach <span class="math notranslate nohighlight">\((s, t, u)\)</span> ist linear in <span class="math notranslate nohighlight">\(r_1\)</span> und <span class="math notranslate nohighlight">\(r_2\)</span>, sodass die inverse Transformation leicht berechnet werden kann:</p>
 <div class="math notranslate nohighlight">
 \[
 r_1 = \frac{s + t}{2}, \qquad
@@ -657,15 +848,15 @@ Zunächst ergibt sich die Jacobi-Determinante der Koordinatentransformation</p>
 \[(r_1, r_2, r_{12}) \mapsto (s, t, u)\]</div>
 <p>als</p>
 <div class="math notranslate nohighlight">
-\[
+\[\begin{split}
 \left|\frac{\partial(r_1, r_2, r_{12})}{\partial(s, t, u)}\right|
 = \left|\begin{matrix}
-\frac{\partial r_1}{\partial s} &amp; \frac{\partial r_1}{\partial t} &amp; 0 \
-\frac{\partial r_2}{\partial s} &amp; \frac{\partial r_2}{\partial t} &amp; 0 \
+\frac{\partial r_1}{\partial s} &amp; \frac{\partial r_1}{\partial t} &amp; 0 \\
+\frac{\partial r_2}{\partial s} &amp; \frac{\partial r_2}{\partial t} &amp; 0 \\
 0 &amp; 0 &amp; 1
 \end{matrix}\right|
 = \frac{1}{2}.
-\]</div>
+\end{split}\]</div>
 <p>Damit gilt</p>
 <div class="math notranslate nohighlight">
 \[
@@ -679,7 +870,7 @@ dV = 4\pi^2 r_1 r_2 r_{12} ds dt du.
 <p>Setzt man <span class="math notranslate nohighlight">\(r_1 = (s + t)/2\)</span> und <span class="math notranslate nohighlight">\(r_2 = (s - t)/2\)</span> ein, erhält man schließlich das Volumenelement in Hylleraas-Koordinaten:</p>
 <div class="math notranslate nohighlight">
 \[
-dV = \pi^2  u (s^2 - t^2) ds, dt, du.
+dV = \pi^2  u (s^2 - t^2) ds\,dt\,du.
 \]</div>
 <p>Die Integrationsgrenzen werden wie folgt transformiert:</p>
 <div class="math notranslate nohighlight">
@@ -690,8 +881,213 @@ dV = \pi^2  u (s^2 - t^2) ds, dt, du.
 \]</div>
 <p>In diesen Koordinaten wird die Integration über die Winkel vollständig eliminiert, und das verbleibende dreidimensionale Integral über <span class="math notranslate nohighlight">\(s\)</span>, <span class="math notranslate nohighlight">\(t\)</span> und <span class="math notranslate nohighlight">\(u\)</span> ist besonders gut an die Struktur von Hylleraas-Funktionen angepasst, die typischerweise als Polynome in <span class="math notranslate nohighlight">\((s, t, u)\)</span> multipliziert mit exponentiellen Faktoren konstruiert sind.</p>
 </section>
+<section id="hylleraas-methode-kinetische-energie">
+<h2>Hylleraas-Methode: Kinetische Energie<a class="headerlink" href="#hylleraas-methode-kinetische-energie" title="Permalink to this heading">#</a></h2>
+<p>Der Operator für die kinetische Energie zweier Elektronen lautet</p>
+<div class="math notranslate nohighlight">
+\[
+\hat T = -\frac{1}{2}\big(\nabla_1^2 + \nabla_2^2\big).
+\]</div>
+<p>Wir wollen nun den Erwartungswert der kinetischen Energie für den Hylleraas-Ansatz berechnen. Unter der Annahme, dass die Wellenfunktion im Unendlichen hinreichend schnell verschwindet, kann der Beitrag von <span class="math notranslate nohighlight">\(\hat T\)</span> nach partieller Integration durch die ersten Ableitungen geschrieben werden:</p>
+<div class="math notranslate nohighlight">
+\[
+\langle T\rangle
+=\frac{1}{2}\int |\nabla\Psi|^2\,d^3r_1\,d^3r_2.
+\]</div>
+<p>Dabei bezeichnet <span class="math notranslate nohighlight">\(\nabla\)</span> den Gradienten bezüglich aller sechs kartesischen Elektronenkoordinaten. Wie im Energieausdruck oben steht <span class="math notranslate nohighlight">\(\langle T\rangle\)</span> hier für das unnormierte Matrixelement; für eine nicht normierte Testfunktion erhält man den normierten Erwartungswert durch Division durch <span class="math notranslate nohighlight">\(\langle\Psi|\Psi\rangle\)</span>. Im Folgenden betrachten wir reelle Testfunktionen.</p>
+<p>Dieser Ausdruck soll nun in die Hylleraas-Koordinaten transformiert werden.</p>
+<p>Wir betrachten dazu zwei Elektronen mit den kartesischen Koordinaten <span class="math notranslate nohighlight">\((x_1,y_1,z_1)\)</span> und <span class="math notranslate nohighlight">\((x_2,y_2,z_2)\)</span>. Die radialen Abstände sind definiert als</p>
+<div class="math notranslate nohighlight">
+\[
+r_1 = \sqrt{x_1^2+y_1^2+z_1^2}, \qquad
+r_2 = \sqrt{x_2^2+y_2^2+z_2^2}, \qquad
+r_{12} = \sqrt{(x_2-x_1)^2+(y_2-y_1)^2+(z_2-z_1)^2}.
+\]</div>
+<p>Da der Hylleraas-Ansatz <span class="math notranslate nohighlight">\(\Psi\)</span> nur von den bereits eingeführten Koordinaten <span class="math notranslate nohighlight">\(s,t,u\)</span> abhängt, gilt für jede kartesische Ableitung die Kettenregel. So erhalten wir zum Beispiel:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial \Psi}{\partial x_1}
+=\frac{\partial \Psi}{\partial s}\frac{\partial s}{\partial x_1}
++\frac{\partial \Psi}{\partial t}\frac{\partial t}{\partial x_1}
++\frac{\partial \Psi}{\partial u}\frac{\partial u}{\partial x_1}.
+\]</div>
+<p>Die analogen Beziehungen gelten auch für die Ableitungen nach <span class="math notranslate nohighlight">\(y_1,z_1,x_2,y_2,z_2\)</span>. Zunächst berechnen wir die Ableitungen der Koordinaten <span class="math notranslate nohighlight">\(r_1,r_2,r_{12}\)</span> nach den kartesischen Komponenten:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial r_1}{\partial x_1} = \frac{x_1}{r_1}, \qquad
+\frac{\partial r_1}{\partial y_1} = \frac{y_1}{r_1}, \qquad
+\frac{\partial r_1}{\partial z_1} = \frac{z_1}{r_1},
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial r_2}{\partial x_2} = \frac{x_2}{r_2}, \qquad
+\frac{\partial r_2}{\partial y_2} = \frac{y_2}{r_2}, \qquad
+\frac{\partial r_2}{\partial z_2} = \frac{z_2}{r_2},
+\]</div>
+<p>und</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial r_{12}}{\partial x_1} = -\frac{x_2-x_1}{r_{12}}, \qquad
+\frac{\partial r_{12}}{\partial x_2} =  \frac{x_2-x_1}{r_{12}},
+\]</div>
+<p>mit analogen Ausdrücken für <span class="math notranslate nohighlight">\(y\)</span> und <span class="math notranslate nohighlight">\(z\)</span>.</p>
+<p>Da <span class="math notranslate nohighlight">\(s=r_1+r_2\)</span>, <span class="math notranslate nohighlight">\(t=r_1-r_2\)</span>, <span class="math notranslate nohighlight">\(u=r_{12}\)</span>, ergibt sich:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial s}{\partial x_1} = \frac{x_1}{r_1}, \qquad
+\frac{\partial t}{\partial x_1} = \frac{x_1}{r_1}, \qquad
+\frac{\partial u}{\partial x_1} = -\frac{x_2-x_1}{r_{12}},
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial s}{\partial x_2} = \frac{x_2}{r_2}, \qquad
+\frac{\partial t}{\partial x_2} = -\frac{x_2}{r_2}, \qquad
+\frac{\partial u}{\partial x_2} = \frac{x_2-x_1}{r_{12}}.
+\]</div>
+<p>Damit können wir alle ersten Ableitungen der Wellenfunktion nach den kartesischen Variablen ausdrücken:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial \Psi}{\partial x_1}
+= \left(\frac{x_1}{r_1}\right)(\Psi_s+\Psi_t)
+-\frac{x_2-x_1}{r_{12}}\Psi_u,
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial \Psi}{\partial x_2}
+= \left(\frac{x_2}{r_2}\right)(\Psi_s-\Psi_t)
++\frac{x_2-x_1}{r_{12}}\Psi_u,
+\]</div>
+<p>und analog für <span class="math notranslate nohighlight">\(y\)</span> und <span class="math notranslate nohighlight">\(z\)</span>. Die Norm des gesamten Gradienten, die wir für die Berechnung der kinetischen Energie benötigen, lautet:</p>
+<div class="math notranslate nohighlight">
+\[
+|\nabla\Psi|^2 =
+\left(\frac{\partial \Psi}{\partial x_1}\right)^2
++\left(\frac{\partial \Psi}{\partial y_1}\right)^2
++\left(\frac{\partial \Psi}{\partial z_1}\right)^2
++\left(\frac{\partial \Psi}{\partial x_2}\right)^2
++\left(\frac{\partial \Psi}{\partial y_2}\right)^2
++\left(\frac{\partial \Psi}{\partial z_2}\right)^2.
+\]</div>
+<p>Da die Formeln für <span class="math notranslate nohighlight">\(x,y,z\)</span> identisch sind, kann man alle Komponenten durch Produkte wie</p>
+<div class="math notranslate nohighlight">
+\[
+x_1x_2+y_1y_2+z_1z_2 = r_1r_2\cos\theta
+\]</div>
+<p>zusammenfassen, wobei <span class="math notranslate nohighlight">\(\theta\)</span> der Winkel zwischen den beiden Ortsvektoren ist und</p>
+<div class="math notranslate nohighlight">
+\[
+\cos\theta=\frac{r_1^2+r_2^2-u^2}{2r_1r_2}.
+\]</div>
+<p>Nach Einsetzen der oben angegebenen inversen Transformation erhält man schließlich</p>
+<div class="math notranslate nohighlight">
+\[
+|\nabla\Psi|^2
+= 2(\Psi_s^2+\Psi_t^2+\Psi_u^2)
++\frac{4}{u}\frac{s(u^2-t^2)}{s^2-t^2}\Psi_s\Psi_u
++\frac{4}{u}\frac{t(s^2-u^2)}{s^2-t^2}\Psi_t\Psi_u.
+\]</div>
+<p>Damit können wir nun den Beitrag der kinetischen Energie berechnen. Wir verwenden dazu das oben hergeleitete Volumenelement in Hylleraas-Koordinaten und die durch die Dreiecksungleichungen bestimmten Integrationsgrenzen.</p>
+<p>Damit ergibt sich der Erwartungswert der kinetischen Energie als</p>
+<div class="math notranslate nohighlight">
+\[
+\langle T\rangle
+= \frac{\pi^2}{2}
+\int_{0}^{\infty}\!ds
+\int_{0}^{s}\!du
+\int_{-u}^{u}\!dt\;
+u\,(s^2-t^2)
+\Biggl[
+2(\Psi_s^2+\Psi_t^2+\Psi_u^2)
++\frac{4}{u}\frac{s(u^2-t^2)}{s^2-t^2}\Psi_s\Psi_u
++\frac{4}{u}\frac{t(s^2-u^2)}{s^2-t^2}\Psi_t\Psi_u
+\Biggr].
+\]</div>
+<p>Dieser Ausdruck erlaubt die direkte Berechnung der kinetischen Energie für beliebige reelle Hylleraas-Basisfunktionen <span class="math notranslate nohighlight">\(\Psi(s,t,u)\)</span> nur durch erste Ableitungen nach <span class="math notranslate nohighlight">\(s,t,u\)</span>.</p>
+<section id="sympy-programm-zur-symbolischen-transformation-des-gradienten">
+<h3>SymPy-Programm zur symbolischen Transformation des Gradienten<a class="headerlink" href="#sympy-programm-zur-symbolischen-transformation-des-gradienten" title="Permalink to this heading">#</a></h3>
+<p>Wir überprüfen den hergeleiteten Ausdruck mit der Jacobi-Matrix der Transformation. Dabei steht <span class="math notranslate nohighlight">\(D_s\)</span> für <span class="math notranslate nohighlight">\(\Psi_s\)</span>, entsprechend <span class="math notranslate nohighlight">\(D_t\)</span> für <span class="math notranslate nohighlight">\(\Psi_t\)</span> und <span class="math notranslate nohighlight">\(D_u\)</span> für <span class="math notranslate nohighlight">\(\Psi_u\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">sympy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sp</span>
+
+<span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">z1</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">'x1 y1 z1'</span><span class="p">,</span> <span class="n">real</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+<span class="n">x2</span><span class="p">,</span> <span class="n">y2</span><span class="p">,</span> <span class="n">z2</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">'x2 y2 z2'</span><span class="p">,</span> <span class="n">real</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+<span class="n">r1_vec</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">([</span><span class="n">x1</span><span class="p">,</span><span class="n">y1</span><span class="p">,</span><span class="n">z1</span><span class="p">])</span>
+<span class="n">r2_vec</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">([</span><span class="n">x2</span><span class="p">,</span><span class="n">y2</span><span class="p">,</span><span class="n">z2</span><span class="p">])</span>
+<span class="n">r12_vec</span> <span class="o">=</span> <span class="n">r2_vec</span> <span class="o">-</span> <span class="n">r1_vec</span>
+
+<span class="n">r1</span> <span class="o">=</span> <span class="n">r1_vec</span><span class="o">.</span><span class="n">norm</span><span class="p">()</span>
+<span class="n">r2</span> <span class="o">=</span> <span class="n">r2_vec</span><span class="o">.</span><span class="n">norm</span><span class="p">()</span>
+<span class="n">r12</span> <span class="o">=</span> <span class="n">r12_vec</span><span class="o">.</span><span class="n">norm</span><span class="p">()</span>
+
+<span class="n">s</span> <span class="o">=</span> <span class="n">r1</span> <span class="o">+</span> <span class="n">r2</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">r1</span> <span class="o">-</span> <span class="n">r2</span>
+<span class="n">u</span> <span class="o">=</span> <span class="n">r12</span>
+
+<span class="n">var_new</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">([</span><span class="n">s</span><span class="p">,</span><span class="n">t</span><span class="p">,</span><span class="n">u</span><span class="p">])</span>
+<span class="n">var_old</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">([</span><span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">z1</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="n">y2</span><span class="p">,</span> <span class="n">z2</span><span class="p">])</span>
+<span class="n">J</span> <span class="o">=</span> <span class="n">var_new</span><span class="o">.</span><span class="n">jacobian</span><span class="p">(</span><span class="n">var_old</span><span class="p">)</span>
+
+<span class="n">D_s</span><span class="p">,</span><span class="n">D_t</span><span class="p">,</span><span class="n">D_u</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">'D_s D_t D_u'</span><span class="p">,</span><span class="n">real</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+<span class="n">D_stu</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">([</span><span class="n">D_s</span><span class="p">,</span><span class="n">D_t</span><span class="p">,</span><span class="n">D_u</span><span class="p">])</span>
+
+
+<span class="n">K</span>  <span class="o">=</span> <span class="n">J</span> <span class="nd">@J</span><span class="o">.</span><span class="n">T</span>
+<span class="n">D2</span> <span class="o">=</span> <span class="p">(</span><span class="n">D_stu</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">K</span> <span class="nd">@D_stu</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">simplify</span><span class="p">()</span>
+
+
+<span class="n">R1</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">'r1'</span><span class="p">,</span> <span class="n">real</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+<span class="n">R2</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">'r2'</span><span class="p">,</span> <span class="n">real</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+<span class="n">R12</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">'r12'</span><span class="p">,</span> <span class="n">real</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+<span class="n">subsdict</span> <span class="o">=</span> <span class="p">{</span><span class="n">r1</span><span class="p">:</span><span class="n">R1</span><span class="p">,</span>
+            <span class="n">r2</span><span class="p">:</span><span class="n">R2</span><span class="p">,</span>
+            <span class="n">r12</span><span class="p">:</span><span class="n">R12</span><span class="p">,</span>
+            <span class="n">r1</span><span class="o">**</span><span class="mi">2</span><span class="p">:</span><span class="n">R1</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span>
+            <span class="n">r2</span><span class="o">**</span><span class="mi">2</span><span class="p">:</span><span class="n">R2</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span>
+            <span class="n">r12</span><span class="o">**</span><span class="mi">2</span><span class="p">:</span><span class="n">R12</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span>
+            <span class="n">r1_vec</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">r2_vec</span><span class="p">):(</span><span class="n">R1</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="n">R2</span><span class="o">**</span><span class="mi">2</span><span class="o">-</span><span class="n">R12</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span>
+           <span class="p">}</span>
+<span class="n">D2</span> <span class="o">=</span><span class="n">D2</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">subsdict</span><span class="p">)</span>
+<span class="n">D2</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">collect</span><span class="p">(</span><span class="n">D2</span><span class="o">.</span><span class="n">expand</span><span class="p">(),(</span><span class="n">D_s</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">D_u</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">D_t</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">D_s</span><span class="o">*</span><span class="n">D_t</span><span class="p">,</span> <span class="n">D_s</span><span class="o">*</span><span class="n">D_u</span><span class="p">,</span><span class="n">D_t</span><span class="o">*</span><span class="n">D_u</span><span class="p">))</span>
+<span class="n">D2</span> <span class="o">=</span> <span class="n">D2</span><span class="o">.</span><span class="n">simplify</span><span class="p">()</span>
+<span class="n">D2</span> <span class="o">=</span><span class="n">D2</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">subsdict</span><span class="p">)</span>
+
+<span class="n">s</span><span class="p">,</span><span class="n">t</span><span class="p">,</span><span class="n">u</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">'s t u'</span><span class="p">,</span> <span class="n">real</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+<span class="n">subsdict</span> <span class="o">=</span> <span class="p">{</span><span class="n">R1</span><span class="p">:</span> <span class="p">(</span><span class="n">s</span><span class="o">+</span><span class="n">t</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">R2</span><span class="p">:(</span><span class="n">s</span><span class="o">-</span><span class="n">t</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">R12</span><span class="p">:</span><span class="n">u</span><span class="p">}</span>
+<span class="n">D2</span> <span class="o">=</span> <span class="n">D2</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">subsdict</span><span class="p">)</span><span class="o">.</span><span class="n">simplify</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">D2</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">collect</span><span class="p">(</span><span class="n">D2</span><span class="p">,(</span><span class="n">D_s</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">D_u</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">D_t</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">D_s</span><span class="o">*</span><span class="n">D_t</span><span class="p">,</span> <span class="n">D_s</span><span class="o">*</span><span class="n">D_u</span><span class="p">,</span><span class="n">D_t</span><span class="o">*</span><span class="n">D_u</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">D2</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">factor_terms</span><span class="p">(</span><span class="n">D2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">D2</span><span class="o">.</span><span class="n">cancel</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \frac{2 D_{s}^{2} s^{2} u - 2 D_{s}^{2} t^{2} u - 4 D_{s} D_{u} s t^{2} + 4 D_{s} D_{u} s u^{2} + 2 D_{t}^{2} s^{2} u - 2 D_{t}^{2} t^{2} u + 4 D_{t} D_{u} s^{2} t - 4 D_{t} D_{u} t u^{2} + 2 D_{u}^{2} s^{2} u - 2 D_{u}^{2} t^{2} u}{s^{2} u - t^{2} u}\]</div>
+</div>
+</div>
+</section>
+</section>
 <section id="berechnung-der-energie-mit-einer-hylleraas-funktion">
-<h2>Berechnung der Energie mit einer Hylleraas-Funktion<a class="headerlink" href="#berechnung-der-energie-mit-einer-hylleraas-funktion" title="Link to this heading">#</a></h2>
+<h2>Berechnung der Energie mit einer Hylleraas-Funktion<a class="headerlink" href="#berechnung-der-energie-mit-einer-hylleraas-funktion" title="Permalink to this heading">#</a></h2>
 <p>Als Test wird zunächst die einfachste Hylleraas-Basis verwendet, nämlich nur eine einzige Funktion:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -708,7 +1104,7 @@ dV = \pi^2  u (s^2 - t^2) ds, dt, du.
 \[
 -\frac{2}{r_1}-\frac{2}{r_2}=-\frac{4}{s+t}-\frac{4}{s-t}.
 \]</div>
-<p>Der Anteil der kinetischen Terme wird durch den in Hylleraas-Koordinaten hergeleiteten Differentialoperator berechned. Wir schreiben dazu eine SymPy-Funktion, die die Berechnungen symbolisch durchführt.</p>
+<p>Der Anteil der kinetischen Terme wird mithilfe des soeben in Hylleraas-Koordinaten hergeleiteten Gradientenprodukts berechnet. Wir schreiben dazu eine SymPy-Funktion, die die Berechnungen symbolisch durchführt. Für die hier verwendeten, in <span class="math notranslate nohighlight">\(t\)</span> geraden Basisfunktionen erhält man den Beitrag des zweiten Elektrons aus dem ersten durch <span class="math notranslate nohighlight">\(t\mapsto -t\)</span>.</p>
 <p>Das Potential wird als multiplikativer Operator</p>
 <div class="math notranslate nohighlight">
 \[
@@ -720,8 +1116,8 @@ V(s,t,u)=\frac{1}{u}-\frac{4}{s+t}-\frac{4}{s-t}
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">sympy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sp</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">sympy</span><span class="w"> </span><span class="kn">import</span> <span class="n">oo</span>
 
-<span class="n">s</span><span class="p">,</span><span class="n">t</span><span class="p">,</span><span class="n">u</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;s t u&#39;</span><span class="p">,</span> <span class="n">real</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
-<span class="n">zeta</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;zeta&#39;</span><span class="p">,</span> <span class="n">real</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">positive</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+<span class="n">s</span><span class="p">,</span><span class="n">t</span><span class="p">,</span><span class="n">u</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">'s t u'</span><span class="p">,</span> <span class="n">real</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+<span class="n">zeta</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">'zeta'</span><span class="p">,</span> <span class="n">real</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">positive</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -810,8 +1206,8 @@ E(\zeta)=\zeta^{2}-\tfrac{27}{8}\zeta.
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/5ba057d92c972c8dcaa537873a034a74b760dca512f4c268a8af4c0e203185a0.png" src="_images/5ba057d92c972c8dcaa537873a034a74b760dca512f4c268a8af4c0e203185a0.png" />
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;sympy.plotting.plot.Plot at 0x1092bf190&gt;
+<img alt="_images/862e3f49e1911f474efa02cc455c01cad234973d4ed3bd099ccbd91b775ac0c3.png" src="_images/862e3f49e1911f474efa02cc455c01cad234973d4ed3bd099ccbd91b775ac0c3.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;sympy.plotting.backends.matplotlibbackend.matplotlib.MatplotlibBackend at 0x111039550&gt;
 </pre></div>
 </div>
 </div>
@@ -820,7 +1216,7 @@ E(\zeta)=\zeta^{2}-\tfrac{27}{8}\zeta.
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dE</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">energy</span><span class="p">,</span><span class="n">zeta</span><span class="p">)</span>
 <span class="n">zeta_opt</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">dE</span><span class="p">,</span><span class="n">zeta</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Optimal value zeta = </span><span class="si">{</span><span class="nb">float</span><span class="p">(</span><span class="n">zeta_opt</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Optimal value zeta = </span><span class="si">{</span><span class="nb">float</span><span class="p">(</span><span class="n">zeta_opt</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -833,7 +1229,7 @@ E(\zeta)=\zeta^{2}-\tfrac{27}{8}\zeta.
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">E_min</span> <span class="o">=</span> <span class="n">energy</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">zeta</span><span class="p">,</span> <span class="n">zeta_opt</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;E_min = </span><span class="si">{</span><span class="nb">float</span><span class="p">(</span><span class="n">energy</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">zeta</span><span class="p">,</span><span class="w"> </span><span class="n">zeta_opt</span><span class="p">))</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"E_min = </span><span class="si">{</span><span class="nb">float</span><span class="p">(</span><span class="n">energy</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">zeta</span><span class="p">,</span><span class="w"> </span><span class="n">zeta_opt</span><span class="p">))</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -857,7 +1253,7 @@ E_{\min}=-2.8477.
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">E_exp</span> <span class="o">=</span> <span class="o">-</span><span class="mf">2.90338583</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Relative error:&quot;</span> <span class="p">,</span><span class="nb">abs</span><span class="p">(</span><span class="mf">100.</span><span class="o">*</span><span class="p">(</span><span class="n">E_min</span><span class="o">-</span><span class="n">E_exp</span><span class="p">)</span><span class="o">/</span><span class="n">E_exp</span><span class="p">),</span> <span class="s2">&quot;%&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Relative error:"</span> <span class="p">,</span><span class="nb">abs</span><span class="p">(</span><span class="mf">100.</span><span class="o">*</span><span class="p">(</span><span class="n">E_min</span><span class="o">-</span><span class="n">E_exp</span><span class="p">)</span><span class="o">/</span><span class="n">E_exp</span><span class="p">),</span> <span class="s2">"%"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -869,7 +1265,7 @@ E_{\min}=-2.8477.
 </div>
 </section>
 <section id="hylleraas-ansatz-mit-zwei-basisfunktionen">
-<h2>Hylleraas-Ansatz mit zwei Basisfunktionen<a class="headerlink" href="#hylleraas-ansatz-mit-zwei-basisfunktionen" title="Link to this heading">#</a></h2>
+<h2>Hylleraas-Ansatz mit zwei Basisfunktionen<a class="headerlink" href="#hylleraas-ansatz-mit-zwei-basisfunktionen" title="Permalink to this heading">#</a></h2>
 <p>Um den Einfluss der Elektronenkorrelation zu erfassen, erweitern wir nun den Basisraum. Neben der einfachen Hartree-Funktion</p>
 <div class="math notranslate nohighlight">
 \[
@@ -951,7 +1347,7 @@ Aus der Bedingung</p>
 <p>Diese Gleichung liefert die gesuchten Energiewerte <span class="math notranslate nohighlight">\(E\)</span> des Systems, wobei die niedrigste Wurzel der Grundzustandsenergie entspricht. Die Determinante bekommen wir in form einer analytischen Funktion mit als:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">E</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;E&#39;</span><span class="p">,</span> <span class="n">real</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">E</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">'E'</span><span class="p">,</span> <span class="n">real</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
 <span class="n">detHS</span> <span class="o">=</span> <span class="p">(</span><span class="n">H</span><span class="o">-</span><span class="n">E</span><span class="o">*</span><span class="n">S</span><span class="p">)</span><span class="o">.</span><span class="n">det</span><span class="p">()</span>
 <span class="n">detHS</span><span class="o">.</span><span class="n">simplify</span><span class="p">()</span>
 </pre></div>
@@ -959,7 +1355,7 @@ Aus der Bedingung</p>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_latex math notranslate nohighlight">
-\[\displaystyle \frac{\pi^{4} \cdot \left(311 E^{2} - 810 E \zeta^{2} + 1952 E \zeta + 399 \zeta^{4} - 2304 \zeta^{3} + 2846 \zeta^{2}\right)}{256 \zeta^{14}}\]</div>
+\[\displaystyle \frac{\pi^{4} \left(311 E^{2} - 810 E \zeta^{2} + 1952 E \zeta + 399 \zeta^{4} - 2304 \zeta^{3} + 2846 \zeta^{2}\right)}{256 \zeta^{14}}\]</div>
 </div>
 </div>
 <div class="cell docutils container">
@@ -979,7 +1375,7 @@ Aus der Bedingung</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">zeta_opt</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">E0</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">zeta</span><span class="p">))[</span><span class="mi">0</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Optimal value for zeta: </span><span class="si">{</span><span class="nb">float</span><span class="p">(</span><span class="n">zeta_opt</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Optimal value for zeta: </span><span class="si">{</span><span class="nb">float</span><span class="p">(</span><span class="n">zeta_opt</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -992,8 +1388,8 @@ Aus der Bedingung</p>
 <p>Daraus ergibt sich als variationelle Näherung für die Grundzustandsenergie:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">E_min</span> <span class="o">=</span> <span class="n">E0</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">zeta</span><span class="p">,</span><span class="nb">float</span><span class="p">(</span><span class="n">zeta_min</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;E_min = </span><span class="si">{</span><span class="n">E_min</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">E_min</span> <span class="o">=</span> <span class="n">E0</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">zeta</span><span class="p">,</span><span class="nb">float</span><span class="p">(</span><span class="n">zeta_opt</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"E_min = </span><span class="si">{</span><span class="n">E_min</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1006,7 +1402,7 @@ Aus der Bedingung</p>
 <p>Der Fehler im Vergleich zum Experiment sinkt durch das Hinzufügen der zweiten Basisfunktion:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Relative error:&quot;</span> <span class="p">,</span><span class="nb">abs</span><span class="p">(</span><span class="mf">100.</span><span class="o">*</span><span class="p">(</span><span class="n">E_min</span><span class="o">-</span><span class="n">E_exp</span><span class="p">)</span><span class="o">/</span><span class="n">E_exp</span><span class="p">),</span> <span class="s2">&quot;%&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">"Relative error:"</span> <span class="p">,</span><span class="nb">abs</span><span class="p">(</span><span class="mf">100.</span><span class="o">*</span><span class="p">(</span><span class="n">E_min</span><span class="o">-</span><span class="n">E_exp</span><span class="p">)</span><span class="o">/</span><span class="n">E_exp</span><span class="p">),</span> <span class="s2">"%"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1018,7 +1414,7 @@ Aus der Bedingung</p>
 </div>
 </section>
 <section id="ergebnis-und-physikalische-bedeutung">
-<h2>Ergebnis und physikalische Bedeutung<a class="headerlink" href="#ergebnis-und-physikalische-bedeutung" title="Link to this heading">#</a></h2>
+<h2>Ergebnis und physikalische Bedeutung<a class="headerlink" href="#ergebnis-und-physikalische-bedeutung" title="Permalink to this heading">#</a></h2>
 <p>Bereits der einfachste Ansatz <span class="math notranslate nohighlight">\(\Psi = e^{-\zeta s}(1+\gamma u)\)</span> erfasst den Großteil der Elektronenkorrelationsenergie.<br />
 Während der unkorrelierte Hartree‐Wert etwa</p>
 <div class="math notranslate nohighlight">
@@ -1035,7 +1431,7 @@ E_\text{Hylleraas} \approx -2.90\,\text{a.u.},
 Dies bildet den konzeptionellen Ausgangspunkt moderner <strong><span class="math notranslate nohighlight">\(r_{12}\)</span>‐ und F12‐Methoden</strong>, die bis heute in der quantenchemischen Behandlung elektronischer Korrelation eine zentrale Rolle spielen. Wir geben uns damit aber nicht zufrieden!</p>
 </section>
 <section id="weitere-vergroszerung-der-hylleraas-basis">
-<h2>Weitere Vergrößerung der Hylleraas-Basis<a class="headerlink" href="#weitere-vergroszerung-der-hylleraas-basis" title="Link to this heading">#</a></h2>
+<h2>Weitere Vergrößerung der Hylleraas-Basis<a class="headerlink" href="#weitere-vergroszerung-der-hylleraas-basis" title="Permalink to this heading">#</a></h2>
 <p>Um die Beschreibung der Elektronenkorrelation weiter zu verbessern, wird die Basis nun  erweitert. Neben der reinen Exponentialfunktion</p>
 <div class="math notranslate nohighlight">
 \[
@@ -1086,7 +1482,7 @@ $<span class="math notranslate nohighlight">\(
 </div>
 </section>
 <section id="numerische-losung">
-<h2>Numerische Lösung<a class="headerlink" href="#numerische-losung" title="Link to this heading">#</a></h2>
+<h2>Numerische Lösung<a class="headerlink" href="#numerische-losung" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
@@ -1094,8 +1490,8 @@ $<span class="math notranslate nohighlight">\(
 <span class="kn">from</span><span class="w"> </span><span class="nn">scipy.linalg</span><span class="w"> </span><span class="kn">import</span> <span class="n">eigh</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">scipy.optimize</span><span class="w"> </span><span class="kn">import</span> <span class="n">minimize_scalar</span>
 
-<span class="n">H_fun</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">lambdify</span><span class="p">(</span><span class="n">zeta</span><span class="p">,</span> <span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">(</span><span class="n">H</span><span class="p">),</span> <span class="s1">&#39;numpy&#39;</span><span class="p">)</span>   
-<span class="n">S_fun</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">lambdify</span><span class="p">(</span><span class="n">zeta</span><span class="p">,</span> <span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">(</span><span class="n">S</span><span class="p">),</span> <span class="s1">&#39;numpy&#39;</span><span class="p">)</span>  
+<span class="n">H_fun</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">lambdify</span><span class="p">(</span><span class="n">zeta</span><span class="p">,</span> <span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">(</span><span class="n">H</span><span class="p">),</span> <span class="s1">'numpy'</span><span class="p">)</span>   
+<span class="n">S_fun</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">lambdify</span><span class="p">(</span><span class="n">zeta</span><span class="p">,</span> <span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">(</span><span class="n">S</span><span class="p">),</span> <span class="s1">'numpy'</span><span class="p">)</span>  
 
 <span class="k">def</span><span class="w"> </span><span class="nf">ground_energy</span><span class="p">(</span><span class="n">z</span><span class="p">):</span>
     <span class="n">H</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">H_fun</span><span class="p">(</span><span class="n">z</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
@@ -1103,11 +1499,11 @@ $<span class="math notranslate nohighlight">\(
     <span class="n">w</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">eigh</span><span class="p">(</span><span class="n">H</span><span class="p">,</span> <span class="n">S</span><span class="p">)</span>          
     <span class="k">return</span> <span class="n">w</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>                 
 <span class="c1"># ζ-Optimierung (Grenzen ggf. anpassen)</span>
-<span class="n">res</span> <span class="o">=</span> <span class="n">minimize_scalar</span><span class="p">(</span><span class="n">ground_energy</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;brent&#39;</span><span class="p">,</span> <span class="n">bracket</span><span class="o">=</span><span class="p">(</span><span class="mf">0.3</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">,</span> <span class="mf">6.0</span><span class="p">))</span>
+<span class="n">res</span> <span class="o">=</span> <span class="n">minimize_scalar</span><span class="p">(</span><span class="n">ground_energy</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">'brent'</span><span class="p">,</span> <span class="n">bracket</span><span class="o">=</span><span class="p">(</span><span class="mf">0.3</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">,</span> <span class="mf">6.0</span><span class="p">))</span>
 <span class="n">zeta_opt</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">x</span>
 <span class="n">E0_opt</span>   <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">fun</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;zeta_min = </span><span class="si">{</span><span class="n">zeta_opt</span><span class="si">:</span><span class="s2">.6f</span><span class="si">}</span><span class="s2">,  E_0 = </span><span class="si">{</span><span class="n">E0_opt</span><span class="si">:</span><span class="s2">.12f</span><span class="si">}</span><span class="s2"> Hartree&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"zeta_min = </span><span class="si">{</span><span class="n">zeta_opt</span><span class="si">:</span><span class="s2">.6f</span><span class="si">}</span><span class="s2">,  E_0 = </span><span class="si">{</span><span class="n">E0_opt</span><span class="si">:</span><span class="s2">.12f</span><span class="si">}</span><span class="s2"> Hartree"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1122,16 +1518,16 @@ $<span class="math notranslate nohighlight">\(
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">E_exp</span> <span class="o">=</span> <span class="o">-</span><span class="mf">2.90372438</span>
 <span class="n">Delta_E</span> <span class="o">=</span> <span class="n">E0_opt</span> <span class="o">-</span> <span class="n">E_exp</span>
 <span class="n">rel_error</span> <span class="o">=</span> <span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">Delta_E</span><span class="p">)</span><span class="o">/</span><span class="nb">abs</span><span class="p">(</span><span class="n">E_exp</span><span class="p">))</span><span class="o">*</span><span class="mf">100.</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Experimental Energy = </span><span class="si">{</span><span class="n">E_exp</span><span class="si">}</span><span class="s2"> Hartree&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;10-term Hylleraas expansion = </span><span class="si">{</span><span class="n">E0_opt</span><span class="si">}</span><span class="s2"> Hartree&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Relative error = </span><span class="si">{</span><span class="n">rel_error</span><span class="si">}</span><span class="s2"> Percent&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Experimental Energy = </span><span class="si">{</span><span class="n">E_exp</span><span class="si">}</span><span class="s2"> Hartree"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"10-term Hylleraas expansion = </span><span class="si">{</span><span class="n">E0_opt</span><span class="si">}</span><span class="s2"> Hartree"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Relative error = </span><span class="si">{</span><span class="n">rel_error</span><span class="si">}</span><span class="s2"> Percent"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Experimental Energy = -2.90372438 Hartree
-10-term Hylleraas expansion = -2.9036027285370585 Hartree
-Relative error = 0.004189497590725461 Percent
+10-term Hylleraas expansion = -2.903602728537056 Hartree
+Relative error = 0.004189497590817224 Percent
 </pre></div>
 </div>
 </div>
@@ -1170,12 +1566,12 @@ Relative error = 0.004189497590725461 Percent
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="kinetic_energy_hylleraas.html"
+       href="helium_atom.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Hylleraas-Methode: Kinetische Energie</p>
+        <p class="prev-next-title">Das Helium-Atom</p>
       </div>
     </a>
     <a class="right-next"
@@ -1194,19 +1590,35 @@ Relative error = 0.004189497590725461 Percent
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
     <i class="fa-solid fa-list"></i> Contents
   </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hylleraasmethode-fur-helium">Hylleraas‐Methode für Helium</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variationsansatz-von-hylleraas">Variationsansatz von Hylleraas</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#energieerwartungswerte-fur-den-hylleraas-ansatz">Energieerwartungswerte für den Hylleraas-Ansatz</a></li>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hylleraasmethode-fur-helium">Hylleraas‐Methode für Helium</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gemeinsame-wahrscheinlichkeitsdichte-und-statistische-unabhangigkeit">Gemeinsame Wahrscheinlichkeitsdichte und statistische Unabhängigkeit</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#was-andert-sich-bei-korrelierten-elektronen">Was ändert sich bei korrelierten Elektronen?</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variationsansatz-von-hylleraas">Variationsansatz von Hylleraas</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#skizze-wie-hangt-die-relative-lage-der-elektronen-zusammen">Skizze: Wie hängt die relative Lage der Elektronen zusammen?</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#energieerwartungswerte-fur-den-hylleraas-ansatz">Energieerwartungswerte für den Hylleraas-Ansatz</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mathematische-erganzung-transformation-des-volumenelements">Mathematische Ergänzung: Transformation des Volumenelements</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transformation-des-volumenelements">Transformation des Volumenelements</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hylleraas-methode-kinetische-energie">Hylleraas-Methode: Kinetische Energie</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sympy-programm-zur-symbolischen-transformation-des-gradienten">SymPy-Programm zur symbolischen Transformation des Gradienten</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#berechnung-der-energie-mit-einer-hylleraas-funktion">Berechnung der Energie mit einer Hylleraas-Funktion</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hylleraas-ansatz-mit-zwei-basisfunktionen">Hylleraas-Ansatz mit zwei Basisfunktionen</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ergebnis-und-physikalische-bedeutung">Ergebnis und physikalische Bedeutung</a></li>
@@ -1260,8 +1672,8 @@ By Roland Mitric
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <script defer src="_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb"></script>
 
   <footer class="bd-footer">
   </footer>

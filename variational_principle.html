@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="./" >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
@@ -16,20 +16,22 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-
-  
-  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+  <link href="_static/styles/theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
@@ -39,17 +41,18 @@
     <link rel="stylesheet" type="text/css" href="_static/custom.css?v=e936a729" />
     <link rel="stylesheet" type="text/css" href="_static/wide_v2.css?v=bfe64621" />
   
+  <!-- So that users can add custom icons -->
+  <script defer src="_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
-  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb" />
 
-    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="_static/doctools.js?v=9a2dae69"></script>
-    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js?v=2b91c5f0"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=4825356b"></script>
     <script src="_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="_static/copybutton.js?v=f281be69"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
@@ -58,11 +61,10 @@
     <script src="_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'variational_principle';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -70,34 +72,30 @@
     <link rel="prev" title="Introduction" href="introduction.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  
+    
+    <script src="_static/searchtools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="searchindex.js"></script>
+  
   </head>
-  
-  
-  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
-
+  <body data-default-mode="">
   
   
   <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
   
   <div id="pst-scroll-pixel-helper"></div>
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
-
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-primary-sidebar-checkbox"/>
-  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-secondary-sidebar-checkbox"/>
-  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
   
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="search.html"
       method="get">
@@ -105,7 +103,6 @@
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -113,15 +110,59 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
 </div>
 
   
-    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
     </header>
   
 
@@ -130,7 +171,8 @@
       
       
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -160,15 +202,11 @@
 </a></div>
         <div class="sidebar-primary-item">
 
- <script>
- document.write(`
-   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script></div>
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
@@ -186,8 +224,6 @@
 <li class="toctree-l1"><a class="reference internal" href="convergence_variational_principle.html">Über die Konvergenz des linearen Variationsprinzips: Verschachtelungs Satz</a></li>
 <li class="toctree-l1"><a class="reference internal" href="renner_teller_example.html">Beispiel aus der aktuellen Forschung: Das NCN-Molekül und der Renner-Teller-Effekt</a></li>
 <li class="toctree-l1"><a class="reference internal" href="helium_atom.html">Das Helium-Atom</a></li>
-<li class="toctree-l1"><a class="reference internal" href="kinetic_energy_hylleraas.html">Hylleraas-Methode: Kinetische Energie</a></li>
-
 <li class="toctree-l1"><a class="reference internal" href="correlation_hylleraas.html">Elektronenkorrelation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="hartree_equation.html">Optimales Hartree-Produkt und Hartree-Gleichung</a></li>
 
@@ -211,9 +247,14 @@
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
-  
-  <div id="rtd-footer-container"></div>
 
 
       </div>
@@ -409,7 +450,7 @@
 
 
 <button onclick="toggleFullScreen()"
-  class="btn btn-sm btn-fullscreen-button"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
   title="Fullscreen mode"
   data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
@@ -423,25 +464,17 @@
 
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
-    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
-    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
-  </button>
-`);
-</script>
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-  </button>
-`);
-</script>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
 </button>
 </div></div>
@@ -463,7 +496,7 @@ document.write(`
                 <h2> Contents </h2>
             </div>
             <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+                <ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#idee-des-variationsverfahrens">Idee des Variationsverfahrens</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#beweis-des-variationsprinzips">Beweis des Variationsprinzips</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parametrisierung-des-variationsansatzes">Parametrisierung des Variationsansatzes</a><ul class="nav section-nav flex-column">
@@ -497,7 +530,7 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="das-variationsprinzip">
-<h1>Das Variationsprinzip<a class="headerlink" href="#das-variationsprinzip" title="Link to this heading">#</a></h1>
+<h1>Das Variationsprinzip<a class="headerlink" href="#das-variationsprinzip" title="Permalink to this heading">#</a></h1>
 <div class="cell tag_hide-input tag_thebe-init docutils container">
 <details class="admonition hide above-input">
 <summary aria-label="Toggle hidden content">
@@ -509,24 +542,24 @@ document.write(`
 <span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib</span>
 
 <span class="c1"># Select one backend for the entire notebook.</span>
-<span class="n">static_build</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;SPHINX_BUILD&quot;</span><span class="p">,</span> <span class="s2">&quot;0&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;1&quot;</span>
-<span class="n">get_ipython</span><span class="p">()</span><span class="o">.</span><span class="n">run_line_magic</span><span class="p">(</span><span class="s2">&quot;matplotlib&quot;</span><span class="p">,</span> <span class="s2">&quot;inline&quot;</span> <span class="k">if</span> <span class="n">static_build</span> <span class="k">else</span> <span class="s2">&quot;widget&quot;</span><span class="p">)</span>
+<span class="n">static_build</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"SPHINX_BUILD"</span><span class="p">,</span> <span class="s2">"0"</span><span class="p">)</span> <span class="o">==</span> <span class="s2">"1"</span>
+<span class="n">get_ipython</span><span class="p">()</span><span class="o">.</span><span class="n">run_line_magic</span><span class="p">(</span><span class="s2">"matplotlib"</span><span class="p">,</span> <span class="s2">"inline"</span> <span class="k">if</span> <span class="n">static_build</span> <span class="k">else</span> <span class="s2">"widget"</span><span class="p">)</span>
 
 <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 
 <span class="c1"># rcParams</span>
-<span class="n">matplotlib</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;axes.linewidth&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mf">2.0</span>
-<span class="n">matplotlib</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;axes.grid&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
-<span class="n">matplotlib</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;axes.labelsize&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">18</span>
-<span class="n">matplotlib</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;figure.figsize&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
-<span class="n">matplotlib</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;animation.embed_limit&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1000</span>
-<span class="n">matplotlib</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;text.usetex&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">matplotlib</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">'axes.linewidth'</span><span class="p">]</span> <span class="o">=</span> <span class="mf">2.0</span>
+<span class="n">matplotlib</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">'axes.grid'</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">matplotlib</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">'axes.labelsize'</span><span class="p">]</span> <span class="o">=</span> <span class="mi">18</span>
+<span class="n">matplotlib</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">'figure.figsize'</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+<span class="n">matplotlib</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">'animation.embed_limit'</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1000</span>
+<span class="n">matplotlib</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">'text.usetex'</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
 <span class="c1"># If you want Times, use serif family:</span>
-<span class="n">matplotlib</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s2">&quot;font.family&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;serif&quot;</span>
-<span class="n">matplotlib</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s2">&quot;font.serif&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Times New Roman&quot;</span><span class="p">,</span> <span class="s2">&quot;Times&quot;</span><span class="p">,</span> <span class="s2">&quot;DejaVu Serif&quot;</span><span class="p">]</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;xtick.labelsize&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">16</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;ytick.labelsize&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">16</span>
+<span class="n">matplotlib</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s2">"font.family"</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"serif"</span>
+<span class="n">matplotlib</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s2">"font.serif"</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"Times New Roman"</span><span class="p">,</span> <span class="s2">"Times"</span><span class="p">,</span> <span class="s2">"DejaVu Serif"</span><span class="p">]</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">'xtick.labelsize'</span><span class="p">]</span> <span class="o">=</span> <span class="mi">16</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">'ytick.labelsize'</span><span class="p">]</span> <span class="o">=</span> <span class="mi">16</span>
 
 <span class="kn">from</span><span class="w"> </span><span class="nn">ipywidgets</span><span class="w"> </span><span class="kn">import</span> <span class="n">interact</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">ipywidgets</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">widgets</span>
@@ -544,7 +577,7 @@ document.write(`
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">scipy</span><span class="w"> </span><span class="kn">import</span> <span class="n">constants</span>
 
-<span class="n">tocm</span> <span class="o">=</span> <span class="n">constants</span><span class="o">.</span><span class="n">physical_constants</span><span class="p">[</span><span class="s2">&quot;hartree-inverse meter relationship&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">/</span> <span class="mf">100.0</span>
+<span class="n">tocm</span> <span class="o">=</span> <span class="n">constants</span><span class="o">.</span><span class="n">physical_constants</span><span class="p">[</span><span class="s2">"hartree-inverse meter relationship"</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">/</span> <span class="mf">100.0</span>
 <span class="n">elmass</span> <span class="o">=</span> <span class="n">constants</span><span class="o">.</span><span class="n">m_e</span> <span class="o">/</span> <span class="n">constants</span><span class="o">.</span><span class="n">m_u</span>
 <span class="n">auofmass</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">/</span> <span class="n">elmass</span>
 <span class="n">mH</span> <span class="o">=</span> <span class="mf">1.00784</span> <span class="o">*</span> <span class="n">auofmass</span>
@@ -559,7 +592,7 @@ document.write(`
 <p>Damit stellt sich die zentrale Frage: <strong>Wie kann man dennoch zuverlässige Näherungen für Energien und Wellenfunktionen molekularer Systeme gewinnen?</strong></p>
 <p>Das <strong>Variationsprinzip</strong>, das wir in diesem Kapitel kennenlernen werden, bildet einen der grundlegendsten theoretischen Pfeiler der Quantenchemie. Es liefert den konzeptionellen und mathematischen Rahmen, in dem sich Näherungen entwickeln und systematisch verbessern lassen.</p>
 <section id="idee-des-variationsverfahrens">
-<h2>Idee des Variationsverfahrens<a class="headerlink" href="#idee-des-variationsverfahrens" title="Link to this heading">#</a></h2>
+<h2>Idee des Variationsverfahrens<a class="headerlink" href="#idee-des-variationsverfahrens" title="Permalink to this heading">#</a></h2>
 <p>Das Variationsprinzip beruht auf einem einfachen, aber äußerst mächtigen Gedanken:</p>
 <p><strong>Man konstruiert einen parametrisierten Ansatz für die angenäherte Wellenfunktion, der von einigen Parametern abhängt. Diese Parameter werden dann so variiert, dass der Energieerwartungswert den man mit Hilfe der genäherten Wellenfunktion berechnet, minimal wird.</strong></p>
 <p>Betrachten wir nun ein System mit dem Hamiltonoperator <span class="math notranslate nohighlight">\(\hat{H}\)</span>. Wir nehmen an, dass das System einen Grundzustand mit der Energie <span class="math notranslate nohighlight">\(E_0\)</span> besitzt. Die entsprechende (unbekannte) normierte exakte Wellenfunktion bezeichnen wir als <span class="math notranslate nohighlight">\(\psi_0\)</span>. Die exakte Wellenfunktion ist eine Eigenfunktion des Hamiltonoperators:</p>
@@ -598,7 +631,7 @@ E_{\text{test}} = \int d\tau\, \psi_{\text{test}}^{*}\,\hat{H}\,\psi_{\text{test
 \]</div>
 </section>
 <section id="beweis-des-variationsprinzips">
-<h2>Beweis des Variationsprinzips<a class="headerlink" href="#beweis-des-variationsprinzips" title="Link to this heading">#</a></h2>
+<h2>Beweis des Variationsprinzips<a class="headerlink" href="#beweis-des-variationsprinzips" title="Permalink to this heading">#</a></h2>
 <p>Für den folgenden Beweis nehmen wir ein rein diskretes Spektrum mit einer <strong>vollständigen orthonormierten Eigenbasis</strong> an.</p>
 <p>Seien <span class="math notranslate nohighlight">\(\psi _n\)</span> die <strong>exakten</strong> Eigenfunktionen des Hamiltonoperators:</p>
 <div class="math notranslate nohighlight">
@@ -667,11 +700,11 @@ E[\psi_{test}]\ge E_{0}
 \]</div>
 </section>
 <section id="parametrisierung-des-variationsansatzes">
-<h2>Parametrisierung des Variationsansatzes<a class="headerlink" href="#parametrisierung-des-variationsansatzes" title="Link to this heading">#</a></h2>
+<h2>Parametrisierung des Variationsansatzes<a class="headerlink" href="#parametrisierung-des-variationsansatzes" title="Permalink to this heading">#</a></h2>
 <p>Um das Variationsprinzip praktisch anzuwenden, wählen wir eine <strong>parametrisierte Familie von Testwellenfunktionen</strong> und suchen darin die Funktion mit der niedrigsten Energie. Die Näherung entsteht durch diese Einschränkung der zugelassenen Funktionen; das Variationsprinzip selbst ist <strong>exakt</strong>.</p>
 <p>Wird diese Familie erweitert, ohne bisherige Testwellenfunktionen auszuschließen, kann die vollständig minimierte Energie nur sinken oder unverändert bleiben und bleibt eine obere Schranke für die exakte Grundzustandsenergie.</p>
 <section id="wie-funktionieren-variationelle-methoden-der-quantenchemie">
-<h3>Wie funktionieren variationelle Methoden der Quantenchemie?<a class="headerlink" href="#wie-funktionieren-variationelle-methoden-der-quantenchemie" title="Link to this heading">#</a></h3>
+<h3>Wie funktionieren variationelle Methoden der Quantenchemie?<a class="headerlink" href="#wie-funktionieren-variationelle-methoden-der-quantenchemie" title="Permalink to this heading">#</a></h3>
 <p>Man konstruiert einen <strong>physikalisch motivierten Ansatz</strong> für die Wellenfunktion, der einige <strong>freie Variationsparameter</strong> enthält:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -694,7 +727,7 @@ E[\psi_{\text{test}}] \;\longrightarrow\; E(\beta_1,\ldots,\beta_n)
 </section>
 </section>
 <section id="beispiel-teilchen-im-v-x-alpha-x-4-potential">
-<h2>Beispiel: Teilchen im <span class="math notranslate nohighlight">\(V(x) = \alpha x^4\)</span> Potential<a class="headerlink" href="#beispiel-teilchen-im-v-x-alpha-x-4-potential" title="Link to this heading">#</a></h2>
+<h2>Beispiel: Teilchen im <span class="math notranslate nohighlight">\(V(x) = \alpha x^4\)</span> Potential<a class="headerlink" href="#beispiel-teilchen-im-v-x-alpha-x-4-potential" title="Permalink to this heading">#</a></h2>
 <p>Das Variationsverfahren soll im Folgenden an einem einfachen Beispiel veranschaulicht werden. Wir betrachten ein Teilchen in einem <strong>anharmonischen Potential</strong> der Form</p>
 <div class="math notranslate nohighlight">
 \[
@@ -707,7 +740,7 @@ V(x) = \alpha x^{4}, \quad \alpha &gt; 0 .
 \]</div>
 <p>und kann <strong>nicht analytisch exakt gelöst</strong> werden. Dieses System eignet sich daher  gut, um einige Merkmale des Variationsverfahrens zu demonstrieren.</p>
 <section id="wahl-des-variationellen-ansatzes">
-<h3>Wahl des variationellen Ansatzes<a class="headerlink" href="#wahl-des-variationellen-ansatzes" title="Link to this heading">#</a></h3>
+<h3>Wahl des variationellen Ansatzes<a class="headerlink" href="#wahl-des-variationellen-ansatzes" title="Permalink to this heading">#</a></h3>
 <p>Die Wahl der Testwellenfunktion ist in der Regel <strong>physikalisch motiviert</strong>.<br />
 Aufgrund der <strong>geraden Symmetrie</strong> des Potentials erwarten wir, dass der Grundzustand durch eine <strong>gerade Funktion</strong> beschrieben wird, die zudem im Unendlichen verschwindet, um die <strong>Normierbarkeit</strong> zu garantieren.</p>
 <p>Das Problem erinnert an den <strong>harmonischen Oszillator</strong>, dessen Lösung wir bereits kennen.<br />
@@ -741,7 +774,7 @@ N^{2} \int_{-\infty}^{\infty} e^{-2\beta x^{2}}\,dx = 1 .
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sympy</span><span class="w"> </span><span class="kn">import</span> <span class="n">symbols</span><span class="p">,</span> <span class="n">exp</span><span class="p">,</span> <span class="n">integrate</span><span class="p">,</span> <span class="n">oo</span><span class="p">,</span> <span class="n">sqrt</span><span class="p">,</span> <span class="n">pi</span>
 
-<span class="n">x</span><span class="p">,</span> <span class="n">beta</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x beta&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">positive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">x</span><span class="p">,</span> <span class="n">beta</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">'x beta'</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">positive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">psi</span> <span class="o">=</span> <span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">beta</span> <span class="o">*</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
 <span class="n">norm</span> <span class="o">=</span> <span class="n">integrate</span><span class="p">(</span><span class="n">psi</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="o">-</span><span class="n">oo</span><span class="p">,</span> <span class="n">oo</span><span class="p">))</span>
 <span class="n">N</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="n">sqrt</span><span class="p">(</span><span class="n">norm</span><span class="o">.</span><span class="n">simplify</span><span class="p">())</span>
@@ -761,25 +794,25 @@ N^{2} \int_{-\infty}^{\infty} e^{-2\beta x^{2}}\,dx = 1 .
 <span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">ipywidgets</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">w</span>
 
-<span class="n">x</span><span class="p">,</span> <span class="n">alpha</span><span class="p">,</span> <span class="n">beta</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x alpha beta&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">positive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">x</span><span class="p">,</span> <span class="n">alpha</span><span class="p">,</span> <span class="n">beta</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">'x alpha beta'</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">positive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">V</span>   <span class="o">=</span> <span class="n">alpha</span> <span class="o">*</span> <span class="n">x</span><span class="o">**</span><span class="mi">4</span>
 <span class="n">psi</span> <span class="o">=</span> <span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">beta</span> <span class="o">*</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
 
-<span class="n">V_fn</span>   <span class="o">=</span> <span class="n">lambdify</span><span class="p">((</span><span class="n">alpha</span><span class="p">,</span> <span class="n">x</span><span class="p">),</span> <span class="n">V</span><span class="p">,</span>   <span class="s1">&#39;numpy&#39;</span><span class="p">)</span>
-<span class="n">psi_fn</span> <span class="o">=</span> <span class="n">lambdify</span><span class="p">((</span><span class="n">beta</span><span class="p">,</span>  <span class="n">x</span><span class="p">),</span> <span class="n">psi</span><span class="p">,</span> <span class="s1">&#39;numpy&#39;</span><span class="p">)</span>
+<span class="n">V_fn</span>   <span class="o">=</span> <span class="n">lambdify</span><span class="p">((</span><span class="n">alpha</span><span class="p">,</span> <span class="n">x</span><span class="p">),</span> <span class="n">V</span><span class="p">,</span>   <span class="s1">'numpy'</span><span class="p">)</span>
+<span class="n">psi_fn</span> <span class="o">=</span> <span class="n">lambdify</span><span class="p">((</span><span class="n">beta</span><span class="p">,</span>  <span class="n">x</span><span class="p">),</span> <span class="n">psi</span><span class="p">,</span> <span class="s1">'numpy'</span><span class="p">)</span>
 
 <span class="n">xg</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mf">1.5</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">,</span> <span class="mi">600</span><span class="p">)</span>
 <span class="n">Vg</span> <span class="o">=</span> <span class="n">V_fn</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">xg</span><span class="p">)</span>
 
 <span class="n">beta_fig</span><span class="p">,</span> <span class="n">beta_ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
-<span class="p">(</span><span class="n">beta_V_line</span><span class="p">,)</span>  <span class="o">=</span> <span class="n">beta_ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xg</span><span class="p">,</span> <span class="n">Vg</span><span class="p">,</span>  <span class="n">lw</span><span class="o">=</span><span class="mf">2.0</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;$V(x)=\alpha x^4$&#39;</span><span class="p">)</span>
+<span class="p">(</span><span class="n">beta_V_line</span><span class="p">,)</span>  <span class="o">=</span> <span class="n">beta_ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xg</span><span class="p">,</span> <span class="n">Vg</span><span class="p">,</span>  <span class="n">lw</span><span class="o">=</span><span class="mf">2.0</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">'$V(x)=\alpha x^4$'</span><span class="p">)</span>
 <span class="p">(</span><span class="n">beta_psi_line</span><span class="p">,)</span>  <span class="o">=</span> <span class="n">beta_ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xg</span><span class="p">,</span> 
                       <span class="n">psi_fn</span><span class="p">(</span><span class="mf">5.0</span><span class="p">,</span> <span class="n">xg</span><span class="p">),</span> 
                       <span class="n">lw</span><span class="o">=</span><span class="mf">2.0</span><span class="p">,</span> 
-                      <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;$\psi(x)$&#39;</span><span class="p">,</span> 
-                      <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
-<span class="n">beta_ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$x$&#39;</span><span class="p">)</span>
-<span class="n">beta_ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$V(x),\,\psi(x)$&#39;</span><span class="p">)</span>
+                      <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">'$\psi(x)$'</span><span class="p">,</span> 
+                      <span class="n">linestyle</span><span class="o">=</span><span class="s1">'--'</span><span class="p">)</span>
+<span class="n">beta_ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">'$x$'</span><span class="p">)</span>
+<span class="n">beta_ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">'$V(x),\,\psi(x)$'</span><span class="p">)</span>
 <span class="n">beta_ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
 <span class="n">beta_ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">1.5</span><span class="p">)</span>
 <span class="n">beta_ax</span><span class="o">.</span><span class="n">legend</span><span class="p">();</span>
@@ -787,7 +820,7 @@ N^{2} \int_{-\infty}^{\infty} e^{-2\beta x^{2}}\,dx = 1 .
 
 <span class="k">def</span><span class="w"> </span><span class="nf">update_beta</span><span class="p">(</span><span class="n">change</span><span class="p">,</span> <span class="n">line</span><span class="o">=</span><span class="n">beta_psi_line</span><span class="p">,</span> <span class="n">psi_function</span><span class="o">=</span><span class="n">psi_fn</span><span class="p">,</span>
                 <span class="n">grid</span><span class="o">=</span><span class="n">xg</span><span class="p">,</span> <span class="n">figure</span><span class="o">=</span><span class="n">beta_fig</span><span class="p">):</span>
-    <span class="n">line</span><span class="o">.</span><span class="n">set_ydata</span><span class="p">(</span><span class="n">psi_function</span><span class="p">(</span><span class="n">change</span><span class="p">[</span><span class="s1">&#39;new&#39;</span><span class="p">],</span> <span class="n">grid</span><span class="p">))</span>
+    <span class="n">line</span><span class="o">.</span><span class="n">set_ydata</span><span class="p">(</span><span class="n">psi_function</span><span class="p">(</span><span class="n">change</span><span class="p">[</span><span class="s1">'new'</span><span class="p">],</span> <span class="n">grid</span><span class="p">))</span>
     <span class="n">figure</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">draw_idle</span><span class="p">()</span>
 
 <span class="k">if</span> <span class="ow">not</span> <span class="n">static_build</span><span class="p">:</span>
@@ -796,9 +829,9 @@ N^{2} \int_{-\infty}^{\infty} e^{-2\beta x^{2}}\,dx = 1 .
                                   <span class="nb">min</span><span class="o">=-</span><span class="mi">2</span><span class="p">,</span>
                                   <span class="nb">max</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
                                   <span class="n">step</span><span class="o">=</span><span class="mf">0.01</span><span class="p">,</span>
-                                  <span class="n">description</span><span class="o">=</span><span class="s1">&#39;β&#39;</span><span class="p">,</span>
+                                  <span class="n">description</span><span class="o">=</span><span class="s1">'β'</span><span class="p">,</span>
                                   <span class="n">continuous_update</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-    <span class="n">beta_slider</span><span class="o">.</span><span class="n">observe</span><span class="p">(</span><span class="n">update_beta</span><span class="p">,</span> <span class="n">names</span><span class="o">=</span><span class="s1">&#39;value&#39;</span><span class="p">)</span>
+    <span class="n">beta_slider</span><span class="o">.</span><span class="n">observe</span><span class="p">(</span><span class="n">update_beta</span><span class="p">,</span> <span class="n">names</span><span class="o">=</span><span class="s1">'value'</span><span class="p">)</span>
     <span class="n">display</span><span class="p">(</span><span class="n">beta_slider</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -810,7 +843,7 @@ N^{2} \int_{-\infty}^{\infty} e^{-2\beta x^{2}}\,dx = 1 .
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sympy</span><span class="w"> </span><span class="kn">import</span> <span class="n">symbols</span><span class="p">,</span> <span class="n">exp</span><span class="p">,</span> <span class="n">diff</span><span class="p">,</span> <span class="n">simplify</span><span class="p">,</span> <span class="n">integrate</span><span class="p">,</span> <span class="n">oo</span>
-<span class="n">x</span><span class="p">,</span> <span class="n">alpha</span><span class="p">,</span> <span class="n">beta</span><span class="p">,</span> <span class="n">hbar</span><span class="p">,</span> <span class="n">m</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x alpha beta hbar m&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">positive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">x</span><span class="p">,</span> <span class="n">alpha</span><span class="p">,</span> <span class="n">beta</span><span class="p">,</span> <span class="n">hbar</span><span class="p">,</span> <span class="n">m</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">'x alpha beta hbar m'</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">positive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
 <span class="n">V</span> <span class="o">=</span> <span class="n">alpha</span> <span class="o">*</span> <span class="n">x</span><span class="o">**</span><span class="mi">4</span>
 <span class="n">psi</span> <span class="o">=</span> <span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">beta</span> <span class="o">*</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
@@ -862,20 +895,20 @@ E(\beta) = \frac{3\alpha}{16\beta^{2}} + \frac{\beta \hbar^{2}}{2m} .
 <p>Um den besten Wert von <span class="math notranslate nohighlight">\(\beta\)</span> zu bestimmen, muss diese Funktion nun <strong>minimiert</strong> werden!</p>
 </section>
 <section id="energieerwartungswert-als-funktion-des-variationsparameters">
-<h3>Energieerwartungswert als Funktion des Variationsparameters<a class="headerlink" href="#energieerwartungswert-als-funktion-des-variationsparameters" title="Link to this heading">#</a></h3>
+<h3>Energieerwartungswert als Funktion des Variationsparameters<a class="headerlink" href="#energieerwartungswert-als-funktion-des-variationsparameters" title="Permalink to this heading">#</a></h3>
 <p>Zur Veranschaulichung wird nun der Energieerwartungswert <span class="math notranslate nohighlight">\(E(\beta)\)</span> als Funktion des Variationsparameters <span class="math notranslate nohighlight">\(\beta\)</span> dargestellt.<br />
 Für kleine Werte von <span class="math notranslate nohighlight">\(\beta\)</span> dominiert der potentielle Anteil <span class="math notranslate nohighlight">\(\alpha x^{4}\)</span>, während für große <span class="math notranslate nohighlight">\(\beta\)</span> der kinetische Term <span class="math notranslate nohighlight">\(\hbar^{2}/(2m)\)</span> überwiegt.<br />
 Zwischen diesen beiden Grenzfällen besitzt <span class="math notranslate nohighlight">\(E(\beta)\)</span> ein Minimum, das den optimalen Wert <span class="math notranslate nohighlight">\(\beta_{\text{opt}}\)</span> und damit die beste Näherung für den Grundzustand liefert.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">E_psi_lam</span> <span class="o">=</span> <span class="n">lambdify</span><span class="p">((</span><span class="n">beta</span><span class="p">,</span> <span class="n">alpha</span><span class="p">,</span> <span class="n">hbar</span><span class="p">,</span> <span class="n">m</span><span class="p">),</span> <span class="n">E_psi</span><span class="p">,</span> <span class="s1">&#39;numpy&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">E_psi_lam</span> <span class="o">=</span> <span class="n">lambdify</span><span class="p">((</span><span class="n">beta</span><span class="p">,</span> <span class="n">alpha</span><span class="p">,</span> <span class="n">hbar</span><span class="p">,</span> <span class="n">m</span><span class="p">),</span> <span class="n">E_psi</span><span class="p">,</span> <span class="s1">'numpy'</span><span class="p">)</span>
 <span class="n">beta_range</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
 <span class="n">E_test</span> <span class="o">=</span> <span class="n">E_psi_lam</span><span class="p">(</span><span class="n">beta_range</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">beta_range</span><span class="p">,</span> <span class="n">E_test</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$\beta$&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$E(\beta)$&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">beta_range</span><span class="p">,</span> <span class="n">E_test</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">"blue"</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">'$\beta$'</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">'$E(\beta)$'</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
@@ -943,7 +976,7 @@ Die Grundidee besteht darin, den Variationsraum schrittweise zu <strong>erweiter
 </section>
 </section>
 <section id="die-ritzgalerkin-methode">
-<h2>Die Ritz–Galerkin-Methode<a class="headerlink" href="#die-ritzgalerkin-methode" title="Link to this heading">#</a></h2>
+<h2>Die Ritz–Galerkin-Methode<a class="headerlink" href="#die-ritzgalerkin-methode" title="Permalink to this heading">#</a></h2>
 <p>Betrachten wir zur Motivation ein Teilchen in einem beliebigen <strong>eindimensionalen Potential</strong>, das keine besondere Symmetrie aufweist und mehrere <strong>Potentialmulden unterschiedlicher Tiefe</strong> besitzen kann.<br />
 Ein solches allgemeines Potential könnte beispielsweise wie in der folgenden Abbildung aussehen.</p>
 <div class="cell docutils container">
@@ -961,9 +994,9 @@ Ein solches allgemeines Potential könnte beispielsweise wie in der folgenden Ab
 <span class="n">V_plot</span> <span class="o">=</span> <span class="n">Vgauss</span><span class="p">(</span><span class="n">x_plot</span><span class="p">)</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>         <span class="c1"># create a fresh figure</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_plot</span><span class="p">,</span> <span class="n">V_plot</span><span class="p">,</span> <span class="s1">&#39;r-&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">3.0</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;V(x)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_plot</span><span class="p">,</span> <span class="n">V_plot</span><span class="p">,</span> <span class="s1">'r-'</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">3.0</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">'x'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">'V(x)'</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
@@ -1018,10 +1051,10 @@ Ein solches allgemeines Potential könnte beispielsweise wie in der folgenden Ab
 <span class="n">potential</span> <span class="o">=</span> <span class="n">Vgauss</span><span class="p">(</span><span class="n">x_plot</span><span class="p">,</span> <span class="n">potential_centers</span><span class="p">,</span> <span class="n">potential_widths</span><span class="p">,</span> <span class="n">potential_contributions</span><span class="p">)</span>
 <span class="n">psival</span> <span class="o">=</span> <span class="n">psi_ritz</span><span class="p">(</span><span class="n">x_plot</span><span class="p">,</span> <span class="n">initial_coefficients</span><span class="p">,</span> <span class="n">gaussian_centers</span><span class="p">,</span> <span class="n">gaussian_widths</span><span class="p">)</span>
 
-<span class="p">(</span><span class="n">line</span><span class="p">,)</span>  <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_plot</span><span class="p">,</span> <span class="n">potential</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;V(x)&#39;</span><span class="p">)</span>
-<span class="p">(</span><span class="n">line1</span><span class="p">,)</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_plot</span><span class="p">,</span> <span class="n">psival</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;r&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;$\psi_{\rm Ritz}(x)$&#39;</span><span class="p">)</span>
+<span class="p">(</span><span class="n">line</span><span class="p">,)</span>  <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_plot</span><span class="p">,</span> <span class="n">potential</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'V(x)'</span><span class="p">)</span>
+<span class="p">(</span><span class="n">line1</span><span class="p">,)</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_plot</span><span class="p">,</span> <span class="n">psival</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">"r"</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">'$\psi_{\rm Ritz}(x)$'</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">);</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;V(x), ψ(x)&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">"x"</span><span class="p">);</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">"V(x), ψ(x)"</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
 
 <span class="n">ax_contributions</span> <span class="o">=</span> <span class="p">[]</span>
@@ -1030,7 +1063,7 @@ Ein solches allgemeines Potential könnte beispielsweise wie in der folgenden Ab
 
 <span class="n">sliders_coefficients</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_basis_functions</span><span class="p">):</span>
-    <span class="n">sliders_coefficients</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Slider</span><span class="p">(</span><span class="n">ax_contributions</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="sa">f</span><span class="s1">&#39;c_</span><span class="si">{</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="o">-</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="n">valinit</span><span class="o">=</span><span class="n">initial_coefficients</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span>
+    <span class="n">sliders_coefficients</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Slider</span><span class="p">(</span><span class="n">ax_contributions</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="sa">f</span><span class="s1">'c_</span><span class="si">{</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s1">'</span><span class="p">,</span> <span class="o">-</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="n">valinit</span><span class="o">=</span><span class="n">initial_coefficients</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span>
 
 <span class="k">def</span><span class="w"> </span><span class="nf">update_coefficients</span><span class="p">(</span><span class="n">val</span><span class="p">,</span> <span class="n">sliders</span><span class="o">=</span><span class="nb">tuple</span><span class="p">(</span><span class="n">sliders_coefficients</span><span class="p">),</span>
                         <span class="n">wavefunction</span><span class="o">=</span><span class="n">psi_ritz</span><span class="p">,</span> <span class="n">grid</span><span class="o">=</span><span class="n">x_plot</span><span class="p">,</span>
@@ -1061,7 +1094,7 @@ Ein solches allgemeines Potential könnte beispielsweise wie in der folgenden Ab
 <p>Die variablen Parameter sind die <strong>Entwicklungskoeffizienten</strong> <span class="math notranslate nohighlight">\(c_i\)</span>, während die <span class="math notranslate nohighlight">\(\varphi_i\)</span> feste, von uns gewählte Basisfunktionen darstellen.<br />
 <span class="math notranslate nohighlight">\(N\)</span> bezeichnet die Anzahl der verwendeten Basisfunktionen. Im Grenzfall, dass die gewählte Menge <span class="math notranslate nohighlight">\(\{\varphi_i\}\)</span> eine <strong>vollständige Basis</strong> bildet, konvergiert der durch das Variationsverfahren berechnete Energieeigenwert bei <span class="math notranslate nohighlight">\(N \rightarrow \infty\)</span> gegen den <strong>exakten</strong> Wert. Der große Vorteil dieses <strong>linearen Variationsverfahrens</strong> besteht darin, dass die Bestimmung der Energien und der optimalen Entwicklungskoeffizienten auf ein <strong>verallgemeinertes Eigenwertproblem</strong> zurückgeführt wird. Dieses kann mit den Methoden der <strong>numerischen linearen Algebra</strong> effizient gelöst werden. Aus diesem Grund bildet das lineare Variationsverfahren eine der <strong>zentralen  Grundlagen</strong> der Quantenchemie.</p>
 <section id="berechnung-der-optimalen-entwicklungskoeffizienten-c-i">
-<h3>Berechnung der optimalen Entwicklungskoeffizienten <span class="math notranslate nohighlight">\(c_i\)</span><a class="headerlink" href="#berechnung-der-optimalen-entwicklungskoeffizienten-c-i" title="Link to this heading">#</a></h3>
+<h3>Berechnung der optimalen Entwicklungskoeffizienten <span class="math notranslate nohighlight">\(c_i\)</span><a class="headerlink" href="#berechnung-der-optimalen-entwicklungskoeffizienten-c-i" title="Permalink to this heading">#</a></h3>
 <p>Für einen normierten linearen Ansatz können wir ähnlich wie beim Beweis des Variationssatzes den Erwartungswert der Energie berechnen.</p>
 <div class="math notranslate nohighlight">
 \[ E[\psi_{\text{test}}]=\int d\tau\,\psi_{\text{test}}^{*}\hat{H}\psi_{\text{test}}=\sum_{i}\sum_{j}c_{i}^{*}c_{j}\int d\tau\,\varphi_{i}^{*}\hat{H}\varphi_{j} \]</div>
@@ -1186,9 +1219,9 @@ c_i=a_i+ib_i,\qquad c_i^*=a_i-ib_i.
 </section>
 </section>
 <section id="id1">
-<h2>Beispiel: Teilchen im <span class="math notranslate nohighlight">\(V(x) = \alpha x^4\)</span> Potential<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<h2>Beispiel: Teilchen im <span class="math notranslate nohighlight">\(V(x) = \alpha x^4\)</span> Potential<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
 <section id="systematische-verbesserung-durch-lineare-variation">
-<h3>Systematische Verbesserung durch lineare Variation<a class="headerlink" href="#systematische-verbesserung-durch-lineare-variation" title="Link to this heading">#</a></h3>
+<h3>Systematische Verbesserung durch lineare Variation<a class="headerlink" href="#systematische-verbesserung-durch-lineare-variation" title="Permalink to this heading">#</a></h3>
 <p>Wir haben am Beispiel des Teilchens im quartischen Potential eine Näherung für den Grundzustand durch Optimierung des Gaußfunktions-Ansatzes gefunden:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -1234,20 +1267,20 @@ S_{ij} = \langle \varphi_i | \varphi_j \rangle,
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Nbasis</span> <span class="o">=</span> <span class="mi">5</span>
 <span class="n">xrange</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">400</span><span class="p">)</span>
-<span class="n">V_lam</span> <span class="o">=</span> <span class="n">lambdify</span><span class="p">((</span><span class="n">alpha</span><span class="p">,</span> <span class="n">x</span><span class="p">),</span> <span class="n">V</span><span class="p">,</span> <span class="s1">&#39;numpy&#39;</span><span class="p">)</span>
+<span class="n">V_lam</span> <span class="o">=</span> <span class="n">lambdify</span><span class="p">((</span><span class="n">alpha</span><span class="p">,</span> <span class="n">x</span><span class="p">),</span> <span class="n">V</span><span class="p">,</span> <span class="s1">'numpy'</span><span class="p">)</span>
 <span class="n">vrange</span> <span class="o">=</span> <span class="n">V_lam</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">xrange</span><span class="p">)</span>
 <span class="n">basis</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="o">**</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">i</span><span class="p">)</span><span class="o">*</span><span class="n">psi_opt</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">Nbasis</span><span class="p">)]</span>
 <span class="n">basis_lam</span> <span class="o">=</span> <span class="p">[</span><span class="n">lambdify</span><span class="p">([</span><span class="n">alpha</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">hbar</span><span class="p">,</span> <span class="n">x</span><span class="p">],</span> <span class="n">b</span><span class="p">)</span> <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">basis</span><span class="p">]</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xrange</span><span class="p">,</span> <span class="n">vrange</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">3.0</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xrange</span><span class="p">,</span> <span class="n">vrange</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">"blue"</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">3.0</span><span class="p">)</span>
 <span class="n">xrange</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">400</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">Nbasis</span><span class="p">):</span>
     <span class="n">yrange</span> <span class="o">=</span> <span class="n">basis_lam</span><span class="p">[</span><span class="n">i</span><span class="p">](</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">xrange</span><span class="p">)</span>
     <span class="n">yrange</span> <span class="o">/=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">yrange</span><span class="p">))</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xrange</span><span class="p">,</span> <span class="mf">0.3</span><span class="o">*</span><span class="n">yrange</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">vrange</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">2.0</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$x$&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$V(x),\psi(x)$&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">18</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xrange</span><span class="p">,</span> <span class="mf">0.3</span><span class="o">*</span><span class="n">yrange</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">vrange</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s2">"red"</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">2.0</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">'$x$'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">'$V(x),\psi(x)$'</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">18</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -1258,14 +1291,14 @@ S_{ij} = \langle \varphi_i | \varphi_j \rangle,
 </div>
 </section>
 <section id="berechnung-der-uberlappmatrix-mathbf-s">
-<h3>Berechnung der Überlappmatrix <span class="math notranslate nohighlight">\(\mathbf S\)</span><a class="headerlink" href="#berechnung-der-uberlappmatrix-mathbf-s" title="Link to this heading">#</a></h3>
+<h3>Berechnung der Überlappmatrix <span class="math notranslate nohighlight">\(\mathbf S\)</span><a class="headerlink" href="#berechnung-der-uberlappmatrix-mathbf-s" title="Permalink to this heading">#</a></h3>
 <p>Die Elemente der Überlappmatrix können wie folgt berechnet werden:</p>
 <div class="math notranslate nohighlight">
 \[    S_{ij}=\int_{-\infty}^{+\infty}dx\varphi_{i}(x)\varphi_{j}(x)=\int_{-\infty}^{+\infty}dxx^{2(i+j)}\exp(-2\beta_{opt}x^{2}) \]</div>
 <p>Das entsprechende Integral kann mit Sympy analytisch berechnet werden. Analog dazu können wir auch die Matrixelemente des Hamilton-Operators berechnen:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">i</span><span class="p">,</span><span class="n">j</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;i j&#39;</span><span class="p">,</span> <span class="n">integer</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">i</span><span class="p">,</span><span class="n">j</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">'i j'</span><span class="p">,</span> <span class="n">integer</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
 <span class="n">psi1</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">i</span><span class="p">)</span><span class="o">*</span><span class="n">psi_opt</span>
 <span class="n">psi2</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">j</span><span class="p">)</span><span class="o">*</span><span class="n">psi_opt</span>
 <span class="n">Sij</span><span class="p">(</span><span class="n">psi1</span><span class="p">,</span><span class="n">psi2</span><span class="p">)</span>
@@ -1279,7 +1312,7 @@ S_{ij} = \langle \varphi_i | \varphi_j \rangle,
 </div>
 </section>
 <section id="berechnung-der-hamiltonianmatrix-mathbf-h">
-<h3>Berechnung der Hamiltonianmatrix <span class="math notranslate nohighlight">\(\mathbf H\)</span><a class="headerlink" href="#berechnung-der-hamiltonianmatrix-mathbf-h" title="Link to this heading">#</a></h3>
+<h3>Berechnung der Hamiltonianmatrix <span class="math notranslate nohighlight">\(\mathbf H\)</span><a class="headerlink" href="#berechnung-der-hamiltonianmatrix-mathbf-h" title="Permalink to this heading">#</a></h3>
 <p>Die Elemente der Hamiltonianmatrix können analog berechnet werden als</p>
 <div class="math notranslate nohighlight">
 \[
@@ -1301,7 +1334,7 @@ Damit lässt sich die Matrix <span class="math notranslate nohighlight">\(\mathb
 <p>verwenden. Die Hamiltonianmatrixelemente haben damit die folgende analytische Form:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">i</span><span class="p">,</span><span class="n">j</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;i j&#39;</span><span class="p">,</span> <span class="n">integer</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">i</span><span class="p">,</span><span class="n">j</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">'i j'</span><span class="p">,</span> <span class="n">integer</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
 <span class="n">psi1</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">i</span><span class="p">)</span><span class="o">*</span><span class="n">psi_opt</span>
 <span class="n">psi2</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">j</span><span class="p">)</span><span class="o">*</span><span class="n">psi_opt</span>
 <span class="n">Hij</span><span class="p">(</span><span class="n">psi1</span><span class="p">,</span><span class="n">psi2</span><span class="p">,</span><span class="n">V</span><span class="p">)</span>
@@ -1348,11 +1381,11 @@ Damit lässt sich die Matrix <span class="math notranslate nohighlight">\(\mathb
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sympy</span><span class="w"> </span><span class="kn">import</span> <span class="n">symbols</span><span class="p">,</span> <span class="n">lambdify</span>
 
-<span class="n">alpha</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">hbar</span><span class="p">,</span> <span class="n">x_sym</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;alpha m hbar x&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">alpha</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">hbar</span><span class="p">,</span> <span class="n">x_sym</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">'alpha m hbar x'</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
 <span class="k">def</span><span class="w"> </span><span class="nf">get_psi_gs</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
     <span class="n">basis_syms</span> <span class="o">=</span> <span class="p">[</span><span class="n">x_sym</span><span class="o">**</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">i</span><span class="p">)</span> <span class="o">*</span> <span class="n">psi_opt</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">)]</span>
-    <span class="n">basis_funcs</span> <span class="o">=</span> <span class="p">[</span><span class="n">lambdify</span><span class="p">((</span><span class="n">alpha</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">hbar</span><span class="p">,</span> <span class="n">x_sym</span><span class="p">),</span> <span class="n">expr</span><span class="p">,</span> <span class="n">modules</span><span class="o">=</span><span class="s1">&#39;numpy&#39;</span><span class="p">)</span>
+    <span class="n">basis_funcs</span> <span class="o">=</span> <span class="p">[</span><span class="n">lambdify</span><span class="p">((</span><span class="n">alpha</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">hbar</span><span class="p">,</span> <span class="n">x_sym</span><span class="p">),</span> <span class="n">expr</span><span class="p">,</span> <span class="n">modules</span><span class="o">=</span><span class="s1">'numpy'</span><span class="p">)</span>
                <span class="k">for</span> <span class="n">expr</span> <span class="ow">in</span> <span class="n">basis_syms</span><span class="p">]</span>
     <span class="n">coeffs</span> <span class="o">=</span> <span class="n">wfs</span><span class="p">[</span><span class="n">N</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
     <span class="n">x_grid</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
@@ -1371,12 +1404,12 @@ Damit lässt sich die Matrix <span class="math notranslate nohighlight">\(\mathb
 <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">N</span><span class="p">):</span>
     <span class="n">x</span><span class="p">,</span><span class="n">y</span> <span class="o">=</span> <span class="n">get_psi_gs</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
-        <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">y</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;N = </span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">lw</span> <span class="o">=</span> <span class="mf">3.0</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">y</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;N = </span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="n">lw</span> <span class="o">=</span> <span class="mf">1.0</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">y</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span> <span class="sa">f</span><span class="s2">"N = </span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s2">"</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s2">"black"</span><span class="p">,</span> <span class="n">lw</span> <span class="o">=</span> <span class="mf">3.0</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">y</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span> <span class="sa">f</span><span class="s2">"N = </span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s2">"</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s2">"red"</span><span class="p">,</span> <span class="n">lw</span> <span class="o">=</span> <span class="mf">1.0</span><span class="p">)</span>
 
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Variationelle Grundzustandswellenfunktion&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;x [a.u.]&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;$\psi(x)$&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">"Variationelle Grundzustandswellenfunktion"</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">"x [a.u.]"</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">"$\psi(x)$"</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
@@ -1394,11 +1427,11 @@ Die folgende Abbildung zeigt die Konvergenz des niedrigsten Eigenwerts <span cla
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>         <span class="c1"># create a fresh figure</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span><span class="n">energies</span><span class="p">,</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">markersize</span> <span class="o">=</span> <span class="mi">8</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span><span class="n">energies</span><span class="p">,</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">lw</span> <span class="o">=</span> <span class="mf">2.0</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$N_</span><span class="si">{basis}</span><span class="s1">$&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$E_0$&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Energy convergence&quot;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">18</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span><span class="n">energies</span><span class="p">,</span><span class="s1">'o'</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">'red'</span><span class="p">,</span> <span class="n">markersize</span> <span class="o">=</span> <span class="mi">8</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span><span class="n">energies</span><span class="p">,</span><span class="s1">'--'</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">'red'</span><span class="p">,</span> <span class="n">lw</span> <span class="o">=</span> <span class="mf">2.0</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">'$N_</span><span class="si">{basis}</span><span class="s1">$'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">'$E_0$'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">"Energy convergence"</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">18</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
@@ -1411,10 +1444,10 @@ Die folgende Abbildung zeigt die Konvergenz des niedrigsten Eigenwerts <span cla
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot; N_basis      E0      :&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;---------------------------&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">" N_basis      E0      :"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"---------------------------"</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">N</span><span class="p">,</span> <span class="n">E</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">energies</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">),</span> <span class="n">energies</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;   </span><span class="si">{</span><span class="n">N</span><span class="si">:</span><span class="s2">2d</span><span class="si">}</span><span class="s2">     </span><span class="si">{</span><span class="n">E</span><span class="si">:</span><span class="s2"> .6f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"   </span><span class="si">{</span><span class="n">N</span><span class="si">:</span><span class="s2">2d</span><span class="si">}</span><span class="s2">     </span><span class="si">{</span><span class="n">E</span><span class="si">:</span><span class="s2"> .6f</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1493,15 +1526,17 @@ Die folgende Abbildung zeigt die Konvergenz des niedrigsten Eigenwerts <span cla
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
     <i class="fa-solid fa-list"></i> Contents
   </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#idee-des-variationsverfahrens">Idee des Variationsverfahrens</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#beweis-des-variationsprinzips">Beweis des Variationsprinzips</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parametrisierung-des-variationsansatzes">Parametrisierung des Variationsansatzes</a><ul class="nav section-nav flex-column">
@@ -1571,8 +1606,8 @@ By Roland Mitric
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <script defer src="_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb"></script>
 
   <footer class="bd-footer">
   </footer>
