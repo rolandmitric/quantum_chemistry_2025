@@ -7,7 +7,6 @@ chapters:
   - file: convergence_variational_principle
   - file: renner_teller_example
   - file: helium_atom
-  - file: kinetic_energy_hylleraas.ipynb
   - file: correlation_hylleraas.ipynb
   - file: hartree_equation.ipynb
   - file: first_qc_code.ipynb

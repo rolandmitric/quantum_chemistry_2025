@@ -7,6 +7,7 @@ exclude_patterns:
   - .DS_Store
   - "**.ipynb_checkpoints"
   - AGENTS.md
+  - kinetic_energy_hylleraas.ipynb
 
 execute:
   execute_notebooks: "off"
