@@ -1,0 +1,90 @@
+<div id="lagrange-circle-v1">
+  <h3>A linear objective on a unit circle</h3>
+  <div class="viz-row"><label class="form-label" for="lc-angle">Position on circle</label><output id="lc-angle-value" class="tabular-nums">225°</output></div>
+  <input id="lc-angle" class="form-range" type="range" min="0" max="360" step="1" value="225" aria-label="Position on the unit circle, in degrees">
+  <div id="lc-drawing"></div>
+  <div class="lc-legend text-small">
+    <span><i class="lc-circle"></i>Constraint circle</span>
+    <span><i class="lc-contour"></i>Objective contour</span>
+    <span><i class="lc-tangent"></i>Allowed tangent</span>
+    <span><i class="lc-f"></i>∇f direction</span>
+    <span><i class="lc-g"></i>∇g direction</span>
+  </div>
+  <div id="lc-value" class="text-small tabular-nums" aria-live="polite"></div>
+</div>
+<style>
+#lagrange-circle-v1 .lc-legend{display:flex;flex-wrap:wrap;gap:8px 16px;margin:8px 0}
+#lagrange-circle-v1 .lc-legend span{display:inline-flex;align-items:center;gap:6px}
+#lagrange-circle-v1 .lc-legend i{display:inline-block;width:20px;height:0;border-top:2px solid var(--foreground)}
+#lagrange-circle-v1 .lc-legend .lc-contour{border-color:var(--viz-series-1);opacity:.65}
+#lagrange-circle-v1 .lc-legend .lc-tangent{border-top:2px dashed var(--muted-foreground)}
+#lagrange-circle-v1 .lc-legend .lc-f{border-color:var(--viz-series-1);border-top-width:4px}
+#lagrange-circle-v1 .lc-legend .lc-g{border-color:var(--viz-series-2);border-top-width:4px}
+#lagrange-circle-v1 .lc-svg{display:block;width:100%;overflow:visible}
+#lagrange-circle-v1 .lc-svg text{fill:var(--foreground)}
+</style>
+<script>
+(() => {
+  const root = document.getElementById('lagrange-circle-v1');
+  const slider = root.querySelector('#lc-angle');
+  const value = root.querySelector('#lc-angle-value');
+  const detail = root.querySelector('#lc-value');
+  const holder = root.querySelector('#lc-drawing');
+  const ns = 'http://www.w3.org/2000/svg';
+  function el(tag, attrs, parent, content) {
+    const node = document.createElementNS(ns, tag);
+    for (const [key, val] of Object.entries(attrs)) node.setAttribute(key, val);
+    if (content !== undefined) node.textContent = content;
+    parent.appendChild(node); return node;
+  }
+  function draw() {
+    const degrees = Number(slider.value), theta = degrees * Math.PI / 180;
+    const px = Math.cos(theta), py = Math.sin(theta), f = px + py;
+    const slope = Math.cos(theta) - Math.sin(theta);
+    const width = Math.max(280, holder.getBoundingClientRect().width);
+    const side = Math.min(width - 50, 340), height = side + 45;
+    const cx = width / 2, cy = height / 2, scale = side / 3.3;
+    const X = x => cx + scale * x, Y = y => cy - scale * y;
+    holder.replaceChildren();
+    const svg = el('svg', {class:'lc-svg', viewBox:`0 0 ${width} ${height}`, role:'img', 'aria-labelledby':'lc-title lc-desc'}, holder);
+    el('title', {id:'lc-title'}, svg, 'Contour, constraint, and gradient directions');
+    el('desc', {id:'lc-desc'}, svg, 'The objective is x plus y, restricted to the unit circle. Move the position slider to see the objective contour become tangent to the circle at extrema. The gradient arrows show directions only.');
+    const defs = el('defs', {}, svg);
+    const clip = el('clipPath', {id:'lc-clip'}, defs);
+    el('rect', {x:cx-side/2,y:cy-side/2,width:side,height:side}, clip);
+    for (const [id,color] of [['lc-af','var(--viz-series-1)'],['lc-ag','var(--viz-series-2)']]) {
+      const marker = el('marker',{id, viewBox:'0 0 10 10',refX:8,refY:5,markerWidth:5,markerHeight:5,orient:'auto-start-reverse'},defs);
+      el('path',{d:'M 0 0 L 10 5 L 0 10 Z',fill:color},marker);
+    }
+    const plot = el('g', {'clip-path':'url(#lc-clip)'}, svg);
+    function line(x1,y1,x2,y2,attrs) { return el('line',{x1:X(x1),y1:Y(y1),x2:X(x2),y2:Y(y2),...attrs},plot); }
+    line(-1.65,0,1.65,0,{stroke:'var(--border)','stroke-width':1});
+    line(0,-1.65,0,1.65,{stroke:'var(--border)','stroke-width':1});
+    el('circle',{cx,cy,r:scale,fill:'none',stroke:'var(--foreground)','stroke-width':1.5},plot);
+    line(-4,f+4,4,f-4,{stroke:'var(--viz-series-1)','stroke-width':1.5,opacity:.65});
+    line(px+4*py,py-4*px,px-4*py,py+4*px,{stroke:'var(--muted-foreground)','stroke-width':1.5,'stroke-dasharray':'5 5'});
+    line(px,py,px+.44/Math.sqrt(2),py+.44/Math.sqrt(2),{stroke:'var(--viz-series-1)','stroke-width':3,'marker-end':'url(#lc-af)'});
+    line(px,py,px*1.44,py*1.44,{stroke:'var(--viz-series-2)','stroke-width':3,'marker-end':'url(#lc-ag)'});
+    el('circle',{cx:X(px),cy:Y(py),r:5,fill:'var(--foreground)'},plot);
+    el('text',{x:X(1.65)+8,y:Y(0)+4},svg,'x');
+    el('text',{x:X(0)+8,y:Y(1.65)-5},svg,'y');
+    value.textContent = `${degrees}°`;
+    const nearZero = Math.abs(slope)<1e-10;
+    detail.textContent = `Objective: ${f.toFixed(3)} · Slope along circle: ${nearZero?'0.000':slope.toFixed(3)}${nearZero?(f<0?' · Minimum':' · Maximum'):''}`;
+  }
+  function restore(state) {
+    const degrees = state?.modelContent?.angleDegrees;
+    if (Number.isFinite(degrees) && degrees>=0 && degrees<=360) slider.value = String(degrees);
+    draw();
+  }
+  slider.addEventListener('input', draw);
+  slider.addEventListener('change', () => {
+    if (window.openai?.setWidgetState) window.openai.setWidgetState({modelContent:{angleDegrees:Number(slider.value)},privateContent:null}).catch(()=>{});
+  });
+  window.addEventListener('openai:set_globals', e => {
+    if (e.detail?.globals?.widgetState) restore(e.detail.globals.widgetState);
+  });
+  new ResizeObserver(draw).observe(holder);
+  restore(window.openai?.widgetState);
+})();
+</script>
