@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>&lt;no title&gt; &#8212; Quantenchemie</title>
+    <title>Live solution of the \(V(x) = \alpha x^4\) problem &#8212; Quantenchemie</title>
   
   
   
@@ -154,10 +154,6 @@
     </div>
   
 
-  
-    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
-      <span class="fa-solid fa-outdent"></span>
-    </button>
   
 </div>
 
@@ -474,9 +470,7 @@
 <button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
 </button>
-<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</button>
+
 </div></div>
       
     </div>
@@ -487,19 +481,11 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1><no title></h1>
+    <h1>Live solution of the V(x) = \alpha x^4 problem</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
-            <div>
-                <h2> Contents </h2>
-            </div>
-            <nav aria-label="Page">
-                <ul class="simple pst-show_toc_level nav section-nav flex-column">
-</ul>
-
-            </nav>
         </div>
     </div>
 </div>
@@ -509,7 +495,9 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <div class="cell docutils container">
+  <section id="live-solution-of-the-v-x-alpha-x-4-problem">
+<h1>Live solution of the <span class="math notranslate nohighlight">\(V(x) = \alpha x^4\)</span> problem<a class="headerlink" href="#live-solution-of-the-v-x-alpha-x-4-problem" title="Permalink to this heading">#</a></h1>
+<div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">sympy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sp</span>
 </pre></div>
@@ -518,123 +506,140 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">beta</span><span class="p">,</span> <span class="n">alpha</span><span class="p">,</span> <span class="n">hbar</span><span class="p">,</span> <span class="n">m</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">'beta alpha hbar m'</span><span class="p">,</span> <span class="n">real</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">positive</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">'x'</span><span class="p">,</span> <span class="n">real</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">'x'</span><span class="p">,</span> <span class="n">real</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+<span class="n">alpha</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">'alpha'</span><span class="p">,</span> <span class="n">real</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">positive</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+<span class="n">beta</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">'beta'</span><span class="p">,</span> <span class="n">real</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">positive</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+<span class="n">V</span> <span class="o">=</span> <span class="n">alpha</span> <span class="o">*</span> <span class="n">x</span><span class="o">**</span><span class="mi">4</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">psi</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">beta</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
-<span class="n">Norm</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="n">psi</span> <span class="o">*</span> <span class="n">psi</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="o">-</span><span class="n">sp</span><span class="o">.</span><span class="n">oo</span><span class="p">,</span> <span class="n">sp</span><span class="o">.</span><span class="n">oo</span><span class="p">))</span>
-<span class="n">psi</span> <span class="o">=</span> <span class="n">psi</span> <span class="o">/</span> <span class="n">sp</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">Norm</span><span class="p">)</span>
-<span class="n">psi</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hbar</span><span class="p">,</span> <span class="n">m</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">'hbar m'</span><span class="p">,</span> <span class="n">real</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">positive</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+<span class="n">m</span><span class="p">,</span><span class="n">n</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">'m n'</span><span class="p">,</span> <span class="n">integer</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">positive</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+<span class="n">psi_i</span> <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="n">m</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">beta</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">psi_j</span> <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="n">n</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">beta</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">N_max</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">basis</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="o">**</span><span class="n">i</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N_max</span><span class="p">)]</span>
+<span class="n">sp</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="o">*</span><span class="n">basis</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span><span class="n">backend</span><span class="o">=</span><span class="s1">'matplotlib'</span><span class="p">,</span> <span class="n">legend</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/136955521f18b32173e5094063ee7441226d77da9f5ff8c1223c8aff82e07bfe.png" src="../_images/136955521f18b32173e5094063ee7441226d77da9f5ff8c1223c8aff82e07bfe.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;sympy.plotting.backends.matplotlibbackend.matplotlib.MatplotlibBackend at 0x126d43890&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">S_ij</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="n">psi_i</span> <span class="o">*</span> <span class="n">psi_j</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="o">-</span><span class="n">sp</span><span class="o">.</span><span class="n">oo</span><span class="p">,</span> <span class="n">sp</span><span class="o">.</span><span class="n">oo</span><span class="p">))</span>
+<span class="n">S_ij</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">simplify</span><span class="p">(</span><span class="n">S_ij</span><span class="p">)</span>
+<span class="n">S_ij</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_latex math notranslate nohighlight">
-\[\displaystyle \frac{\sqrt[4]{2} \sqrt[4]{\beta} e^{- \beta x^{2}}}{\sqrt[4]{\pi}}\]</div>
+\[\displaystyle \frac{2^{- \frac{m}{2} - \frac{n}{2} + \frac{1}{2}} \beta^{- \frac{m}{2} - \frac{n}{2} - \frac{1}{2}} \left(\left(-1\right)^{m + n} + 1\right) \Gamma\left(\frac{m}{2} + \frac{n}{2} + \frac{1}{2}\right)}{4}\]</div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sp</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">psi</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">x</span><span class="p">,)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">H_ij</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="n">psi_i</span> <span class="o">*</span> <span class="p">(</span><span class="o">-</span><span class="n">hbar</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">m</span><span class="p">)</span> <span class="o">*</span> <span class="n">sp</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">psi_j</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="n">V</span> <span class="o">*</span> <span class="n">psi_j</span><span class="p">),</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="o">-</span><span class="n">sp</span><span class="o">.</span><span class="n">oo</span><span class="p">,</span> <span class="n">sp</span><span class="o">.</span><span class="n">oo</span><span class="p">))</span>
+<span class="n">H_ij</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">simplify</span><span class="p">(</span><span class="n">H_ij</span><span class="o">.</span><span class="n">doit</span><span class="p">())</span>
+<span class="n">H_ij</span><span class="o">.</span><span class="n">doit</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_latex math notranslate nohighlight">
-\[\displaystyle - \frac{8 \sqrt[4]{2} \beta^{\frac{13}{4}} x \left(4 \beta^{2} x^{4} - 20 \beta x^{2} + 15\right) e^{- \beta x^{2}}}{\sqrt[4]{\pi}}\]</div>
+\[\begin{split}\displaystyle \begin{cases} \frac{2^{- \frac{m}{2} - \frac{n}{2} + \frac{1}{2}} \beta^{- \frac{m}{2} - \frac{n}{2} - \frac{5}{2}} \left(\left(-1\right)^{m + n} + 1\right) \left(\alpha m \Gamma\left(\frac{m}{2} + \frac{n}{2} + \frac{5}{2}\right) - 4 \beta^{3} \hbar^{2} n^{2} \Gamma\left(\frac{m}{2} + \frac{n}{2} - \frac{1}{2}\right) + 4 \beta^{3} \hbar^{2} n \Gamma\left(\frac{m}{2} + \frac{n}{2} - \frac{1}{2}\right) + 8 \beta^{3} \hbar^{2} n \Gamma\left(\frac{m}{2} + \frac{n}{2} + \frac{1}{2}\right) + 4 \beta^{3} \hbar^{2} \Gamma\left(\frac{m}{2} + \frac{n}{2} + \frac{1}{2}\right) - 4 \beta^{3} \hbar^{2} \Gamma\left(\frac{m}{2} + \frac{n}{2} + \frac{3}{2}\right)\right)}{16 m} &amp; \text{for}\: m + n &gt; 1 \\\begin{cases} \frac{\left(-1\right)^{m + n - 2} \alpha \left(2 \beta\right)^{- \frac{m}{2} - \frac{n}{2} - \frac{3}{2}} \Gamma\left(\frac{m}{2} + \frac{n}{2} + \frac{5}{2}\right)}{4 \beta} - \frac{\left(-1\right)^{m + n - 2} \beta \hbar^{2} \left(2 \beta\right)^{- \frac{m}{2} - \frac{n}{2} - \frac{1}{2}} \Gamma\left(\frac{m}{2} + \frac{n}{2} + \frac{3}{2}\right)}{2 m} + \frac{\left(-1\right)^{m + n - 2} \hbar^{2} n \left(2 \beta\right)^{- \frac{m}{2} - \frac{n}{2} + \frac{1}{2}} \Gamma\left(\frac{m}{2} + \frac{n}{2} + \frac{1}{2}\right)}{2 m} + \frac{\left(-1\right)^{m + n - 2} \hbar^{2} \left(2 \beta\right)^{- \frac{m}{2} - \frac{n}{2} + \frac{1}{2}} \Gamma\left(\frac{m}{2} + \frac{n}{2} + \frac{1}{2}\right)}{4 m} - \frac{\left(-1\right)^{m + n - 2} \hbar^{2} n^{2} \left(2 \beta\right)^{- \frac{m}{2} - \frac{n}{2} + \frac{3}{2}} \Gamma\left(\frac{m}{2} + \frac{n}{2} - \frac{1}{2}\right)}{8 \beta m} + \frac{\left(-1\right)^{m + n - 2} \hbar^{2} n \left(2 \beta\right)^{- \frac{m}{2} - \frac{n}{2} + \frac{3}{2}} \Gamma\left(\frac{m}{2} + \frac{n}{2} - \frac{1}{2}\right)}{8 \beta m} + \frac{\alpha \left(2 \beta\right)^{- \frac{m}{2} - \frac{n}{2} - \frac{3}{2}} \Gamma\left(\frac{m}{2} + \frac{n}{2} + \frac{5}{2}\right)}{4 \beta} - \frac{\beta \hbar^{2} \left(2 \beta\right)^{- \frac{m}{2} - \frac{n}{2} - \frac{1}{2}} \Gamma\left(\frac{m}{2} + \frac{n}{2} + \frac{3}{2}\right)}{2 m} + \frac{\hbar^{2} n \left(2 \beta\right)^{- \frac{m}{2} - \frac{n}{2} + \frac{1}{2}} \Gamma\left(\frac{m}{2} + \frac{n}{2} + \frac{1}{2}\right)}{2 m} + \frac{\hbar^{2} \left(2 \beta\right)^{- \frac{m}{2} - \frac{n}{2} + \frac{1}{2}} \Gamma\left(\frac{m}{2} + \frac{n}{2} + \frac{1}{2}\right)}{4 m} - \frac{\hbar^{2} n^{2} \left(2 \beta\right)^{- \frac{m}{2} - \frac{n}{2} + \frac{3}{2}} \Gamma\left(\frac{m}{2} + \frac{n}{2} - \frac{1}{2}\right)}{8 \beta m} + \frac{\hbar^{2} n \left(2 \beta\right)^{- \frac{m}{2} - \frac{n}{2} + \frac{3}{2}} \Gamma\left(\frac{m}{2} + \frac{n}{2} - \frac{1}{2}\right)}{8 \beta m} &amp; \text{for}\: \frac{m}{2} + \frac{n}{2} &gt; \frac{1}{2} \\\int\limits_{-\infty}^{\infty} \frac{x^{m + n - 2} \left(\alpha m x^{6} + \frac{\hbar^{2} \left(2 \beta x^{2} \left(- 2 \beta x^{2} + 2 n + 1\right) - n \left(n - 1\right)\right)}{2}\right) e^{- 2 \beta x^{2}}}{m}\, dx &amp; \text{otherwise} \end{cases} &amp; \text{otherwise} \end{cases}\end{split}\]</div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">tpsi</span><span class="p">(</span><span class="n">psi</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">hbar</span><span class="p">,</span> <span class="n">m</span><span class="p">):</span>
-    <span class="k">return</span> <span class="o">-</span><span class="n">hbar</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">m</span><span class="p">)</span> <span class="o">*</span> <span class="n">sp</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">psi</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
-<span class="k">def</span><span class="w"> </span><span class="nf">vpsi</span><span class="p">(</span><span class="n">psi</span><span class="p">,</span> <span class="n">V</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">V</span> <span class="o">*</span> <span class="n">psi</span>
-<span class="k">def</span><span class="w"> </span><span class="nf">hpsi</span><span class="p">(</span><span class="n">psi</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">hbar</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">V</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">tpsi</span><span class="p">(</span><span class="n">psi</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">hbar</span><span class="p">,</span> <span class="n">m</span><span class="p">)</span> <span class="o">+</span> <span class="n">vpsi</span><span class="p">(</span><span class="n">psi</span><span class="p">,</span> <span class="n">V</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">get_HS</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
+    <span class="n">H</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">N</span><span class="p">)</span>
+    <span class="n">S</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">N</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
+        <span class="n">psi_i</span> <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="n">i</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">beta</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
+            <span class="n">psi_j</span> <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="n">j</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">beta</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+            <span class="n">H</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="n">psi_i</span> <span class="o">*</span> <span class="p">(</span><span class="o">-</span><span class="n">hbar</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">m</span><span class="p">)</span> <span class="o">*</span> <span class="n">sp</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">psi_j</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="n">V</span> <span class="o">*</span> <span class="n">psi_j</span><span class="p">),</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="o">-</span><span class="n">sp</span><span class="o">.</span><span class="n">oo</span><span class="p">,</span> <span class="n">sp</span><span class="o">.</span><span class="n">oo</span><span class="p">))</span><span class="o">.</span><span class="n">simplify</span><span class="p">()</span>
+            <span class="n">S</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="n">psi_i</span> <span class="o">*</span> <span class="n">psi_j</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="o">-</span><span class="n">sp</span><span class="o">.</span><span class="n">oo</span><span class="p">,</span> <span class="n">sp</span><span class="o">.</span><span class="n">oo</span><span class="p">))</span><span class="o">.</span><span class="n">simplify</span><span class="p">()</span>
+    <span class="n">H</span> <span class="o">=</span> <span class="n">H</span><span class="o">.</span><span class="n">subs</span><span class="p">({</span><span class="n">m</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="n">hbar</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="n">beta</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="n">alpha</span><span class="p">:</span> <span class="mi">1</span><span class="p">})</span>
+    <span class="n">S</span> <span class="o">=</span> <span class="n">S</span><span class="o">.</span><span class="n">subs</span><span class="p">({</span><span class="n">m</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="n">hbar</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="n">beta</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="n">alpha</span><span class="p">:</span> <span class="mi">1</span><span class="p">})</span>
+    <span class="n">H</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">H</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">)</span>
+    <span class="n">S</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">S</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">)</span>
+    <span class="n">e</span><span class="p">,</span><span class="n">v</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">eig</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">S</span><span class="p">)</span> <span class="o">@</span> <span class="n">H</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">e</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">V</span> <span class="o">=</span> <span class="n">alpha</span> <span class="o">*</span> <span class="n">x</span><span class="o">**</span><span class="mi">4</span>
-<span class="n">Hpsi</span> <span class="o">=</span> <span class="n">hpsi</span><span class="p">(</span><span class="n">psi</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">hbar</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">V</span><span class="p">)</span>
-<span class="n">Hpsi</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">N_max</span> <span class="o">=</span> <span class="mi">13</span>
+<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">N_max</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+    <span class="n">e</span> <span class="o">=</span> <span class="n">get_HS</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"N = </span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s2">, Eigenvalues: </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_latex math notranslate nohighlight">
-\[\displaystyle \frac{\sqrt[4]{2} \alpha \sqrt[4]{\beta} x^{4} e^{- \beta x^{2}}}{\sqrt[4]{\pi}} - \frac{\sqrt[4]{2} \beta^{\frac{5}{4}} \hbar^{2} \left(2 \beta x^{2} - 1\right) e^{- \beta x^{2}}}{\sqrt[4]{\pi} m}\]</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>N = 1, Eigenvalues: [0.6875]
+N = 2, Eigenvalues: [0.6875 2.4375]
+N = 3, Eigenvalues: [0.68015974 2.4375     4.94484026]
+N = 4, Eigenvalues: [0.68015974 2.42124162 4.94484026 8.20375838]
+N = 5, Eigenvalues: [ 0.66853027  2.42124162  4.72445729  8.20375838 12.41951245]
+N = 6, Eigenvalues: [ 0.66853027  2.39945406  4.72445729  7.37294119 12.41951245 17.79010476]
+N = 7, Eigenvalues: [ 0.66807985  2.39945406  4.7157134   7.37294119 10.40840925 17.79010476
+ 24.45779749]
+N = 8, Eigenvalues: [ 0.66807985  2.39383671  4.7157134   7.36664813 10.40840925 13.97605605
+ 24.45779749 32.51345911]
+N = 9, Eigenvalues: [ 0.66803082  2.39383671  4.69907762  7.36664813 10.27408701 13.97605605
+ 18.27867144 32.51345911 42.01763311]
+N = 10, Eigenvalues: [ 0.66803082  2.39375846  4.69907762  7.34618456 10.27408701 13.42301547
+ 18.27867144 23.50984802 42.01763311 53.01469349]
+N = 11, Eigenvalues: [ 0.66799033  2.39375846  4.69691074  7.34618456 10.26866169 13.42301547
+ 16.89208473 23.50984802 29.80959083 53.01469349 65.53976168]
+N = 12, Eigenvalues: [ 0.66799033  2.3936854   4.69691074  7.33659228 10.26866169 13.41215929
+ 16.89208473 20.84416628 29.80959083 37.26640412 65.53976168 79.62199263]
+N = 13, Eigenvalues: [ 0.6679865   2.3936854   4.69691063  7.33659228 10.24970423 13.41215929
+ 16.74253581 20.84416628 25.48041812 37.26640412 45.9386551  79.62199263
+ 95.2862896 ]
+</pre></div>
+</div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">E</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="n">psi</span> <span class="o">*</span> <span class="n">Hpsi</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="o">-</span><span class="n">sp</span><span class="o">.</span><span class="n">oo</span><span class="p">,</span> <span class="n">sp</span><span class="o">.</span><span class="n">oo</span><span class="p">))</span>
-<span class="n">E</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="n">H</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">H</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">)</span>
+<span class="n">S</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">S</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">)</span>
+<span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">eig</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">S</span><span class="p">)</span> <span class="o">@</span> <span class="n">H</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_latex math notranslate nohighlight">
-\[\displaystyle \frac{3 \alpha}{16 \beta^{2}} + \frac{\beta \hbar^{2}}{2 m}\]</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="mi">5</span>
-<span class="n">psi</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="o">**</span><span class="n">i</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">beta</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)]</span>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>EigResult(eigenvalues=array([0.68015974, 4.94484026, 2.4375    ]), eigenvectors=array([[-0.99275929,  0.25586965,  0.        ],
+       [ 0.        ,  0.        ,  1.        ],
+       [-0.12012071, -0.96671129,  0.        ]]))
 </pre></div>
 </div>
 </div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">T_ij</span><span class="p">(</span><span class="n">psi_i</span><span class="p">,</span> <span class="n">psi_j</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">hbar</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">m</span><span class="p">)</span> <span class="o">*</span> <span class="n">sp</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">psi_i</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span> <span class="o">*</span> <span class="n">sp</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">psi_j</span><span class="p">,</span> <span class="n">x</span><span class="p">),</span> 
-                                            <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="o">-</span><span class="n">sp</span><span class="o">.</span><span class="n">oo</span><span class="p">,</span> <span class="n">sp</span><span class="o">.</span><span class="n">oo</span><span class="p">))</span>
-
-<span class="k">def</span><span class="w"> </span><span class="nf">V_ij</span><span class="p">(</span><span class="n">psi_i</span><span class="p">,</span> <span class="n">psi_j</span><span class="p">,</span> <span class="n">V</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">sp</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="n">psi_i</span> <span class="o">*</span> <span class="n">V</span> <span class="o">*</span> <span class="n">psi_j</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="o">-</span><span class="n">sp</span><span class="o">.</span><span class="n">oo</span><span class="p">,</span> <span class="n">sp</span><span class="o">.</span><span class="n">oo</span><span class="p">))</span>
-
-<span class="k">def</span><span class="w"> </span><span class="nf">H_ij</span><span class="p">(</span><span class="n">psi_i</span><span class="p">,</span> <span class="n">psi_j</span><span class="p">,</span> <span class="n">V</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">T_ij</span><span class="p">(</span><span class="n">psi_i</span><span class="p">,</span> <span class="n">psi_j</span><span class="p">)</span> <span class="o">+</span> <span class="n">V_ij</span><span class="p">(</span><span class="n">psi_i</span><span class="p">,</span> <span class="n">psi_j</span><span class="p">,</span> <span class="n">V</span><span class="p">)</span>
-
-<span class="k">def</span><span class="w"> </span><span class="nf">S_ij</span><span class="p">(</span><span class="n">psi_i</span><span class="p">,</span> <span class="n">psi_j</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">sp</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="n">psi_i</span> <span class="o">*</span> <span class="n">psi_j</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="o">-</span><span class="n">sp</span><span class="o">.</span><span class="n">oo</span><span class="p">,</span> <span class="n">sp</span><span class="o">.</span><span class="n">oo</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">H</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
-<span class="n">S</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-        <span class="n">H</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">H_ij</span><span class="p">(</span><span class="n">psi</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">psi</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">V</span><span class="p">)</span>   
-        <span class="n">S</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">S_ij</span><span class="p">(</span><span class="n">psi</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">psi</span><span class="p">[</span><span class="n">j</span><span class="p">])</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">beta_opt</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">E</span><span class="p">,</span> <span class="n">beta</span><span class="p">),</span> <span class="n">beta</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
-<span class="n">H</span> <span class="o">=</span> <span class="n">H</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">beta</span><span class="p">,</span> <span class="n">beta_opt</span><span class="p">)</span>
-<span class="n">S</span> <span class="o">=</span> <span class="n">S</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">beta</span><span class="p">,</span> <span class="n">beta_opt</span><span class="p">)</span>
-<span class="n">H</span> <span class="o">=</span> <span class="n">H</span><span class="o">.</span><span class="n">subs</span><span class="p">({</span><span class="n">m</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="n">hbar</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="n">alpha</span><span class="p">:</span> <span class="mi">1</span><span class="p">})</span>
-<span class="n">S</span> <span class="o">=</span> <span class="n">S</span><span class="o">.</span><span class="n">subs</span><span class="p">({</span><span class="n">m</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="n">hbar</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="n">alpha</span><span class="p">:</span> <span class="mi">1</span><span class="p">})</span>
-</pre></div>
-</div>
-</div>
-</div>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -672,23 +677,6 @@
             </div>
             
             
-              
-                <dialog id="pst-secondary-sidebar-modal"></dialog>
-                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-
-  <div class="sidebar-secondary-item"><div
-    id="pst-page-navigation-heading-2"
-    class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
-  </div>
-  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
-    <ul class="simple pst-show_toc_level nav section-nav flex-column">
-</ul>
-
-  </nav></div>
-
-</div></div>
               
             
           </div>
