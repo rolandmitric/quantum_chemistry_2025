@@ -1,0 +1,45 @@
+Output: molekuelorbitale_cartoon.png
+
+ILLUSTRATION BRIEF
+
+Use case: scientific-educational.
+Create a NEW finished hand-drawn cartoon illustration for the opening of a German university quantum chemistry chapter. Landscape 3:2 composition, high resolution, generous whitespace, suitable for a full-width textbook illustration and lecture slide.
+
+Style: warm ivory textured paper, slightly irregular graphite and dark ink outlines, colored-pencil shading and delicate watercolor washes. Restrained teal/blue, coral/orange and ochre. Friendly, elegant science sketchbook style, like a carefully drawn educational cartoon; not photorealistic, not polished vector art, not glossy 3D. A small smiling blue electron mascot marked e⁻ may stand at the lower-left margin, looking curiously at the molecular sketch. It is a visual guide, outside the scientific diagrams, never placed on a trajectory or at a particular atom.
+
+Main title at top, exact German text: "Vom Molekül zum Molekülorbital"
+A pale ochre watercolor stroke behind the title, like a textbook sketchbook heading.
+
+A clear visual journey across three spacious zones, joined by two quiet graphite arrows that signify mathematical modelling:
+
+LEFT ZONE heading: "Benzol: atomare p-Orbitale".
+Draw a scientifically clear tilted hexagonal benzene carbon skeleton, exactly SIX carbon centres and SIX perimeter bonds. No atom at its centre, no chords, no extra vertices. Hydrogens omitted. On EACH of the six carbon centres place one dumbbell-shaped p orbital perpendicular to the common ring plane: one teal upper lobe, one coral lower lobe, with the nucleus/node in the ring plane. All six upper lobes have the same teal phase and all six lower lobes the same coral phase. The six p orbitals are distinct enough to count, with a slight tasteful overlap suggesting possible combination. Use an oblique view so that front and rear orbitals remain legible. No charge signs on the lobes. The graphite ring framework stays visible.
+
+CENTRE ZONE heading on two lines: "Effektives" / "Einelektronenmodell".
+Draw a light, unboxed sketchbook calculation card with the clear large equation:
+H = α I + β A
+Use ordinary italic mathematical symbols, no bra-ket notation.
+Immediately below the equation draw a small clean SIX-node SIX-edge hexagon labelled exactly "Molekülgraph". This is an undirected graph: no arrowheads on its edges, no diagonals, no central vertex. The card is a mathematical simplification, not a physical machine.
+Keep ample whitespace around the equation and graph.
+
+RIGHT ZONE heading: "Ein delokalisiertes π-Orbital".
+Show the SAME tilted six-carbon hexagonal framework, but now with a single coherent molecular wavefunction formed from all six p contributions: a soft connected, gently six-lobed teal cloud above the entire ring and an opposite-phase coral cloud below it, separated by the ring's nodal plane. This depicts the lowest π molecular orbital schematically, with the same phase above all six sites. Its support covers all six carbons. The lower cloud must be visible and distinct, not hidden behind the upper one. No sharp particle, no localized electron and no trajectory in this orbital.
+
+LOWER MARGIN, a small secondary graphite-and-color motif below the centre/right zones, with the heading "Kanten und Kreise zählen".
+Show TWO separate small flat benzene hexagon graph sketches side by side. Both have exactly SIX vertices and the same SIX faint-gray background perimeter edges.
+In the first highlight exactly THREE pairwise vertex-disjoint alternating perimeter edges in teal (a perfect matching). All other edges stay faint gray.
+In the second highlight ALL SIX perimeter edges in ochre/orange (one complete cycle).
+Place a short caption under the pair: "Ein Vorgeschmack auf den Satz von Sachs".
+These are mathematical subgraphs, not resonance states. No numbers, coefficient calculations or chemical double bonds in these miniatures.
+
+Small footer, exact text: "Farben der Orbitale: Vorzeichen der Wellenfunktion"
+Use clear careful German hand lettering, proper umlauts and π. No additional prose.
+Scientific constraints: exactly six carbons in every benzene representation. Perpendicular p orbitals. Orbital colors mean phase, not electric charge. No orbital occupations, spin arrows, Pauli principle, HOMO/LUMO labels, electron trajectories, Bohr orbits, energy ladder, bra-kets, watermarks, logos, author signatures or tool attribution. No laboratory clutter. Preserve an inviting light cartoon tone and generous separation of diagrams.
+
+SCIENTIFIC CORRECTION
+
+Edit this existing textbook cartoon with ONE precise scientific correction ONLY.
+In the RIGHT-HAND panel headed "Ein delokalisiertes π-Orbital", the carbon skeleton currently has only FIVE visible carbon centres. Replace that pentagonal carbon framework with a scientifically correct planar BENZENE HEXAGON containing EXACTLY SIX clearly visible gray carbon spheres and EXACTLY SIX perimeter bonds. The corrected framework must have the SAME SIX-CENTRE oblique hexagonal geometry as the LEFT-HAND benzene drawing, translated into the right panel: six vertices with two distinct front centres, two distinct rear centres, and the leftmost/rightmost centres. Make all six spheres unambiguously visible. In particular replace the single front-bottom carbon centre with TWO distinct front centres linked by a front bond, while preserving the leftmost, rightmost and two rear centres. No centre atom, no chord, no extra bond, no hidden sixth atom.
+Adapt ONLY the immediately surrounding teal upper and coral lower orbital cloud as necessary to fit the six-site framework. The upper teal wavefunction remains one connected gently six-lobed cloud spanning all six sites, and the lower coral wavefunction remains a connected cloud below the ring plane. Keep the graphite six-edge skeleton visible between the lobes. The ring must be recognizably hexagonal, not pentagonal.
+Preserve every other element exactly: left panel with its six atomic p orbitals, all headings and every word, central equation H = αI + βA, central six-node graph, both bottom Sachs hexagons and their highlighted edges, electron mascot, paper texture, colors, typography, layout, dimensions and framing. No new labels, no bra-kets, no occupations, no watermark. This is solely the correction from five to six carbon centres in the right molecular orbital panel.
+

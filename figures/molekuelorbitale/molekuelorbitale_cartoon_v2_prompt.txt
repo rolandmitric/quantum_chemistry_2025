@@ -1,0 +1,40 @@
+Input: molekuelorbitale_cartoon.png
+Output: molekuelorbitale_cartoon_v2.png
+
+EDIT PROMPT
+
+Edit the supplied illustration. Change ONLY the lower decorative area, below the three main scientific panels. Preserve the upper approximately two thirds of the image and the lower-left blue electron mascot exactly.
+
+REMOVE completely:
+1. The heading "Kanten und Kreise zählen", including its pale blue highlight.
+2. Both small hexagon pictures immediately below that heading.
+3. The caption "Ein Vorgeschmack auf den Satz von Sachs".
+4. The lower-right legend "Farben der Orbitale: Vorzeichen der Wellenfunktion", including its highlight.
+Restore the warm ivory paper texture naturally wherever these elements are removed.
+
+REPLACE this lower area, to the RIGHT of the preserved electron mascot, with a spacious horizontal collection of FOUR small, unlabelled Sachs-graph sketches in the existing hand-drawn graphite, colored-pencil and watercolor style. Arrange the four separate sketches across the bottom band with generous gaps. There must be NO heading, captions, labels, numerals, equations, words, arrows or legend anywhere around these new sketches.
+
+Draw mathematically valid Sachs graphs, showing only their own vertices and edges (NO faint parent graph or extra background edges):
+- First sketch: TWO separate single edges, each linking exactly two small gray vertex dots. These two teal edges share no vertices.
+- Second sketch: THREE separate single edges, lying in the positions of alternating sides of an imaginary regular hexagon. Exactly six gray vertex dots, and just three teal lines. Leave the three gaps between these edges entirely blank; do not complete the hexagon.
+- Third sketch: ONE complete simple SIX-cycle: six gray vertex dots connected by exactly six ochre-orange perimeter edges, no centre point, no diagonals.
+- Fourth sketch: ONE simple SIX-cycle in ochre-orange, with TWO separate teal single edges beside it. The two teal edges are separate from one another and separate from the cycle; no shared vertices. Ten vertices total in this last sketch: six in the ring and four on the two isolated edges.
+No isolated dots. No components other than isolated edges and simple cycles. Group each sketch spatially without boxes or brackets.
+
+PRESERVE all of the following exactly, with no rewriting or scientific changes: title "Vom Molekül zum Molekülorbital"; left-hand benzene with six carbon centres and six teal/coral p-orbital pairs; central heading, equation H = αI + βA and six-node "Molekülgraph"; right-hand delocalized orbital with the correctly drawn SIX-carbon hexagonal framework and its six perimeter bonds; the transition arrows; the blue electron mascot at lower left; all upper labels and their positions; colors, paper texture, dimensions and crop. No bra-kets, no occupation arrows, no watermarks, no signatures. The finished lower row should feel like quiet illustrative graph doodles, completely uncommented.
+
+GRAPH CORRECTION
+
+Make ONE tiny correction in the SECOND of the four small graph sketches along the bottom, the teal sketch near horizontal centre. Preserve ALL other content exactly.
+
+That second teal sketch currently consists of two separate edges at its top and an invalid connected three-edge chain along its bottom. Change ONLY that bottom chain into ONE isolated HORIZONTAL EDGE:
+- Keep the two central bottom gray dots (approximately x=712,y=920 and x=777,y=920 in the 1536x1024 image) and the horizontal teal line connecting them.
+- REMOVE the extra outer lower-left gray dot (approximately x=672,y=879) and the diagonal teal line connecting it to the central bottom-left dot.
+- REMOVE the extra outer lower-right gray dot (approximately x=816,y=879) and the diagonal teal line connecting it to the central bottom-right dot.
+Fill the two removed dots and diagonal lines seamlessly with the surrounding ivory paper.
+Leave the two separate teal edges at the top of this same sketch untouched.
+
+The resulting second sketch must consist of EXACTLY THREE disconnected single edges and SIX gray endpoint dots. Every vertex has degree one. No gray outlines or ghost edges where things were removed.
+
+Preserve the other three bottom graph sketches, the electron mascot, the complete upper illustration with correct six-carbon benzene structures, all existing upper text, equation, colors, paper texture, layout, size and crop exactly. Do not add any text, captions, headings or legends. No other changes.
+

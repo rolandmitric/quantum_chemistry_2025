@@ -6,8 +6,10 @@ chapters:
   - file: lagrange_multipliers
   - file: convergence_variational_principle
   - file: renner_teller_example
+  - file: normalmoden_quasiteilchen
   - file: helium_atom
   - file: correlation_hylleraas.ipynb
+  - file: molekuelorbitale.ipynb
   - file: hartree_equation.ipynb
   - file: first_qc_code.ipynb
   - file: failure_hartree.ipynb
