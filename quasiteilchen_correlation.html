@@ -1,0 +1,1008 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Quasiteilchen und Korrelation &#8212; Quantenchemie</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=e936a729" />
+    <link rel="stylesheet" type="text/css" href="_static/wide_v2.css?v=bfe64621" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb" />
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js?v=2b91c5f0"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=b8b12719"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'quasiteilchen_correlation';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Das Helium-Atom" href="helium_atom.html" />
+    <link rel="prev" title="Beispiel aus der aktuellen Forschung: Das NCN-Molekül und der Renner-Teller-Effekt" href="renner_teller_example.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  
+    
+    <script src="_static/searchtools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Quantenchemie</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="index.html">
+                    Quantenchemie — WS 2026
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="variational_principle.html">Das Variationsprinzip</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lagrange_multipliers.html">Die Methode der Lagrange-Multiplikatoren</a></li>
+<li class="toctree-l1"><a class="reference internal" href="convergence_variational_principle.html">Über die Konvergenz des linearen Variationsprinzips: Verschachtelungs Satz</a></li>
+<li class="toctree-l1"><a class="reference internal" href="renner_teller_example.html">Beispiel aus der aktuellen Forschung: Das NCN-Molekül und der Renner-Teller-Effekt</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Quasiteilchen und Korrelation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="helium_atom.html">Das Helium-Atom</a></li>
+<li class="toctree-l1"><a class="reference internal" href="correlation_hylleraas.html">Elektronenkorrelation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="molekuelorbitale.html">Ausblick: Molekülorbitale</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hartree_equation.html">Optimales Hartree-Produkt und Hartree-Gleichung</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="first_qc_code.html">Erstes Quantenchemieprogramm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="failure_hartree.html">Das Versagen der Hartree-Methode: Der Fall des Lithiumatoms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="spin.html">Spin: Einführung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bras_kets_etc.html">Spin: Formalismus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="spin_and_rotations.html">Spin &amp; Rotationen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="spin_measurement.html">Spinmessung</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="tensor_product.html">Zusammengesetzte Quantensysteme: Tensorprodukt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="spin_two_electrons.html">Spinzustände eines 2-Elektronensystems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pauli_principle.html">Das Pauli-Prinzip</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hartree_fock.html">Die Hartree-Fock-Methode</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/rolandmitric/quantum_chemistry_2025/main?urlpath=lab/tree/./quasiteilchen_correlation.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Binder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Binder logo" src="_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/rolandmitric/quantum_chemistry_2025" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/rolandmitric/quantum_chemistry_2025/edit/main/./quasiteilchen_correlation.ipynb" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/rolandmitric/quantum_chemistry_2025/issues/new?title=Issue%20on%20page%20%2Fquasiteilchen_correlation.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/quasiteilchen_correlation.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Quasiteilchen und Korrelation</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#was-bedeutet-die-separation-eines-quantensystems">Was bedeutet die Separation eines Quantensystems?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zwei-gekoppelte-harmonische-oszillatoren">Zwei gekoppelte harmonische Oszillatoren</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#einfuhrung-der-normalkoordinaten">Einführung der Normalkoordinaten</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#transformation-der-kinetischen-energie">Transformation der kinetischen Energie</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eigenfunktionen-energien-und-bewegungsmuster">Eigenfunktionen, Energien und Bewegungsmuster</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vom-schwingungsquant-zum-quasiteilchen">Vom Schwingungsquant zum Quasiteilchen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#korrelation-und-statistische-unabhangigkeit">Korrelation und statistische Unabhängigkeit</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#korrelation-im-grundzustand">Korrelation im Grundzustand</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#veranschaulichung-der-gemeinsamen-ortsdichte">Veranschaulichung der gemeinsamen Ortsdichte</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aufgaben-zur-vertiefung">Aufgaben zur Vertiefung</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ergebnisse-und-losungshinweise">Ergebnisse und Lösungshinweise</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="quasiteilchen-und-korrelation">
+<h1>Quasiteilchen und Korrelation<a class="headerlink" href="#quasiteilchen-und-korrelation" title="Permalink to this heading">#</a></h1>
+<p>In einem System aus mehreren Teilchen hängt die Kraft auf ein Teilchen im Allgemeinen auch von den Positionen der anderen Teilchen ab. In der
+klassischen Beschreibung führt dies zu gekoppelten Bewegungsgleichungen.
+Im quantenmechanischen Fall führt die Kopplung ebenfalls dazu, dass die (stationäre) Schrödinger-Gleichung nicht mehr in unabhängige Gleichungen für jedes Teilchen zerfällt. In manchen Fällen lassen sich jedoch neue, kollektive Freiheitsgrade finden, die das Problem wieder entkoppeln. Dies ist eine fundamentale Idee, die die gesamte moderne Quantentheorie der Materie durchzieht und zur Beschreibung von <strong>Quasiteilchen</strong> führt.</p>
+<p>Wir untersuchen diese Frage zunächst an zwei gekoppelten harmonischen Oszillatoren. Ihre Normalschwingungen führen uns zum Begriff des <strong>Quasiteilchens</strong>. Die elementaren Anregungen in diesem System gehören zu kollektiven Bewegungen beider Oszillatoren. Anschließend definieren wir die <strong>Korrelation</strong> und zeigen am Grundzustand desselben Systems, wie die Auslenkungen der ursprünglichen Oszillatoren statistisch voneinander abhängen.</p>
+<p>Wir setzen die Lösung des harmonischen Oszillators voraus und verwenden atomare Einheiten, insbesondere <span class="math notranslate nohighlight">\(\hbar=1\)</span>.</p>
+<section id="was-bedeutet-die-separation-eines-quantensystems">
+<h2>Was bedeutet die Separation eines Quantensystems?<a class="headerlink" href="#was-bedeutet-die-separation-eines-quantensystems" title="Permalink to this heading">#</a></h2>
+<p>Betrachten wir einen Hamiltonoperator, der sich in zwei voneinander unabhängige Beiträge zerlegen lässt:</p>
+<div class="math notranslate nohighlight">
+\[
+\hat H=\hat H_A(q_A)+\hat H_B(q_B).
+\]</div>
+<p>Jeder Operator wirkt nur auf seine eigenen Koordinaten. Wenn</p>
+<div class="math notranslate nohighlight">
+\[
+\hat H_A\phi_a=\epsilon_a\phi_a,
+\qquad
+\hat H_B\chi_b=\eta_b\chi_b,
+\]</div>
+<p>folgt durch Einsetzen unmittelbar</p>
+<div class="math notranslate nohighlight">
+\[
+\hat H\,[\phi_a(q_A)\chi_b(q_B)]
+=(\epsilon_a+\eta_b)\phi_a(q_A)\chi_b(q_B).
+\]</div>
+<p>Die <strong>Eigenfunktionen können als Produkte gewählt werden</strong>, und die zugehörigen Energien addieren sich. Wir nehmen dabei an, dass auch der zugängliche Koordinatenbereich und die Randbedingungen diese Zerlegung erlauben.</p>
+<p>Eine beliebige Überlagerung solcher Produkte ist dann ebenfalls ein möglicher Zustand des Systems, der aber im Allgemeinen nicht mehr als Produkt darstellbar ist.  Die Separation ist zunächst eine Aussage über den <strong>Hamiltonoperator</strong> und die Möglichkeit, seine Eigenzustände aus einfacheren Teilproblemen zu konstruieren.</p>
+</section>
+<section id="zwei-gekoppelte-harmonische-oszillatoren">
+<h2>Zwei gekoppelte harmonische Oszillatoren<a class="headerlink" href="#zwei-gekoppelte-harmonische-oszillatoren" title="Permalink to this heading">#</a></h2>
+<p>Wir betrachten zwei eindimensionale Auslenkungen <span class="math notranslate nohighlight">\(x\)</span> und <span class="math notranslate nohighlight">\(y\)</span> mit gleicher Masse <span class="math notranslate nohighlight">\(m\)</span> und gleicher ungekoppelter Kreisfrequenz <span class="math notranslate nohighlight">\(\omega_0\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+\hat H=
+-\frac{1}{2m}
+\left(\frac{\partial^2}{\partial x^2}
++\frac{\partial^2}{\partial y^2}\right)
++\frac12m\omega_0^2(x^2+y^2)+\lambda xy.
+\]</div>
+<p>Der Term <span class="math notranslate nohighlight">\(\lambda xy\)</span> ist bilinear in <span class="math notranslate nohighlight">\(x\)</span> und <span class="math notranslate nohighlight">\(y\)</span>. Die Kopplungskonstante <span class="math notranslate nohighlight">\(\lambda\)</span> hat dieselbe Dimension wie eine Federkonstante. Die zugehörigen klassischen Kräfte lauten</p>
+<div class="math notranslate nohighlight">
+\[
+F_x=-m\omega_0^2x-\lambda y,
+\qquad
+F_y=-m\omega_0^2y-\lambda x.
+\]</div>
+<p>Damit beeinflusst die Auslenkung des einen Oszillators direkt die Kraft auf den anderen. In den Koordinaten <span class="math notranslate nohighlight">\(x,y\)</span> ist der Hamiltonoperator für <span class="math notranslate nohighlight">\(\lambda\ne0\)</span> keine Summe zweier unabhängiger Einteilchenoperatoren! Das Problem sieht auf den ersten Blick kompliziert aus, aber es lässt sich durch eine geeignete Koordinatentransformation erheblich vereinfachen.</p>
+<section id="einfuhrung-der-normalkoordinaten">
+<h3>Einführung der Normalkoordinaten<a class="headerlink" href="#einfuhrung-der-normalkoordinaten" title="Permalink to this heading">#</a></h3>
+<p>Statt mit den Koordinaten der einzelnen Oszillatoren zu arbeiten, können wir auch mit geeigneten Linearkombinationen arbeiten, die die kollektive Bewegung der Oszillatoren beschreiben. Wir definieren deshalb</p>
+<div class="math notranslate nohighlight">
+\[
+Q_+=\frac{x+y}{\sqrt2},
+\qquad
+Q_-=\frac{x-y}{\sqrt2}.
+\]</div>
+<p>Die Umkehrung lautet</p>
+<div class="math notranslate nohighlight">
+\[
+x=\frac{Q_++Q_-}{\sqrt2},
+\qquad
+y=\frac{Q_+-Q_-}{\sqrt2}.
+\]</div>
+<p>Der Faktor <span class="math notranslate nohighlight">\(1/\sqrt2\)</span> macht die Transformation <strong>orthogonal</strong>. Insbesondere bleiben das quadratische Längenmaß und das Flächenelement bei dieser Transformation erhalten:</p>
+<div class="math notranslate nohighlight">
+\[
+x^2+y^2=Q_+^2+Q_-^2,
+\qquad dx\,dy=dQ_+\,dQ_-.
+\]</div>
+<p>Für den Kopplungsterm erhalten wir in den kollektiven Koordinaten</p>
+<div class="math notranslate nohighlight">
+\[
+xy=\frac12(Q_+^2-Q_-^2).
+\]</div>
+<p>Damit wird die potentielle Energie zu</p>
+<div class="math notranslate nohighlight">
+\[
+V=\frac12(m\omega_0^2+\lambda)Q_+^2
++\frac12(m\omega_0^2-\lambda)Q_-^2.
+\]</div>
+<p>Es tritt kein Produkt <span class="math notranslate nohighlight">\(Q_+Q_-\)</span> mehr auf! Für die Separation des <strong>gesamten</strong> Hamiltonoperators müssen wir jedoch auch die kinetische Energie transformieren.</p>
+</section>
+<section id="transformation-der-kinetischen-energie">
+<h3>Transformation der kinetischen Energie<a class="headerlink" href="#transformation-der-kinetischen-energie" title="Permalink to this heading">#</a></h3>
+<p>f
+Die Anwendung der Kettenregel liefert für die Ableitungen nach den ursprünglichen Koordinaten die folgenden Ausdrücke:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial}{\partial x}
+=\frac1{\sqrt2}\left(\frac{\partial}{\partial Q_+}
++\frac{\partial}{\partial Q_-}\right),
+\qquad
+\frac{\partial}{\partial y}
+=\frac1{\sqrt2}\left(\frac{\partial}{\partial Q_+}
+-\frac{\partial}{\partial Q_-}\right).
+\]</div>
+<p>Beim Quadrieren entstehen in beiden Ausdrücken gemischte Ableitungen, aber mit entgegengesetztem Vorzeichen. In der Summe heben sie sich auf, so dass der Laplace-Operator in den neuen Koordinaten weiterhin die gleiche diagonale Form behält:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial^2}{\partial x^2}
++\frac{\partial^2}{\partial y^2}
+=\frac{\partial^2}{\partial Q_+^2}
++\frac{\partial^2}{\partial Q_-^2}.
+\]</div>
+<p>Wir erhalten somit zwei unabhängige harmonische Oszillatoren:</p>
+<div class="math notranslate nohighlight">
+\[
+\boxed{
+\hat H=\hat H_++\hat H_-,
+\qquad
+\hat H_\pm=-\frac{1}{2m}\frac{\partial^2}{\partial Q_\pm^2}
++\frac12m\Omega_\pm^2Q_\pm^2,
+}
+\]</div>
+<p>mit den <strong>Normalfrequenzen</strong></p>
+<div class="math notranslate nohighlight">
+\[
+\boxed{\Omega_\pm=\sqrt{\omega_0^2\pm\frac{\lambda}{m}}.}
+\]</div>
+<p>Die Stabilitätsbedingung <span class="math notranslate nohighlight">\(|\lambda|&lt;m\omega_0^2\)</span> stellt sicher, dass beide Frequenzen reell und positiv sind.</p>
+<p>Wir sehen also, dass die Transformation zu den Normalkoordinaten die beiden Oszillatoren entkoppelt und das System in zwei unabhängige harmonische Oszillatoren zerlegt!</p>
+</section>
+<section id="eigenfunktionen-energien-und-bewegungsmuster">
+<h3>Eigenfunktionen, Energien und Bewegungsmuster<a class="headerlink" href="#eigenfunktionen-energien-und-bewegungsmuster" title="Permalink to this heading">#</a></h3>
+<p>Aus den bekannten Oszillatorlösungen folgt</p>
+<div class="math notranslate nohighlight">
+\[
+\Psi_{n_+,n_-}(x,y)
+=\phi_{n_+}^{(\Omega_+)}(Q_+)
+\phi_{n_-}^{(\Omega_-)}(Q_-),
+\qquad n_+,n_-=0,1,2,\ldots,
+\]</div>
+<p>und</p>
+<div class="math notranslate nohighlight">
+\[
+\boxed{
+E_{n_+,n_-}
+=\Omega_+\left(n_++\frac12\right)
++\Omega_-\left(n_-+\frac12\right).
+}
+\]</div>
+<p>Die beiden <strong>Normalmoden</strong> beschreiben anschauliche Bewegungsmuster. Bei einer reinen <span class="math notranslate nohighlight">\(Q_+\)</span>-Bewegung ist <span class="math notranslate nohighlight">\(Q_-=0\)</span>, also <span class="math notranslate nohighlight">\(x=y\)</span>: Beide Oszillatoren bewegen sich gleichsinnig. Bei einer reinen <span class="math notranslate nohighlight">\(Q_-\)</span>-Bewegung ist <span class="math notranslate nohighlight">\(Q_+=0\)</span>, also <span class="math notranslate nohighlight">\(x=-y\)</span>: Sie bewegen sich gegensinnig.</p>
+<p>Für <span class="math notranslate nohighlight">\(\lambda&gt;0\)</span> ist die gleichsinnige Mode steifer, <span class="math notranslate nohighlight">\(\Omega_+&gt;\Omega_-\)</span>. Bei negativem <span class="math notranslate nohighlight">\(\lambda\)</span> kehrt sich die Reihenfolge um.</p>
+<div style="background-color:#e6f0ff; border:2px solid #3366cc; border-radius:8px; padding:10px; margin-top:1em;">
+<b>Die unabhängigen Freiheitsgrade sind kollektive Bewegungen.</b><br>
+Jede Normalmode enthält die Auslenkungen beider ursprünglicher Oszillatoren. Die Entkopplung der Moden bedeutet daher nicht, dass die ursprünglichen Teilchen unabhängig voneinander sind.
+</div>
+</section>
+</section>
+<section id="vom-schwingungsquant-zum-quasiteilchen">
+<h2>Vom Schwingungsquant zum Quasiteilchen<a class="headerlink" href="#vom-schwingungsquant-zum-quasiteilchen" title="Permalink to this heading">#</a></h2>
+<p>Erhöhen wir <span class="math notranslate nohighlight">\(n_+\)</span> um eins, steigt die Energie um <span class="math notranslate nohighlight">\(\Omega_+\)</span>. Entsprechend kostet ein zusätzliches Quant der anderen Mode die Energie <span class="math notranslate nohighlight">\(\Omega_-\)</span>. Ein solches Quant gehört zu einem <strong>kollektiven Bewegungsmuster</strong>, nicht zu einem einzelnen der ursprünglichen Oszillatoren.</p>
+<p>Wir können die Energie deshalb auch in der Form</p>
+<div class="math notranslate nohighlight">
+\[
+E_{n_+,n_-}=E_0+n_+\Omega_++n_-\Omega_-,
+\qquad E_0=\frac{\Omega_++\Omega_-}{2}
+\]</div>
+<p>lesen: Über dem Grundzustand befinden sich <span class="math notranslate nohighlight">\(n_+\)</span> Anregungsquanten der <span class="math notranslate nohighlight">\(Q_+\)</span>-Mode und <span class="math notranslate nohighlight">\(n_-\)</span> Anregungsquanten der <span class="math notranslate nohighlight">\(Q_-\)</span>-Mode. Die Zahlen <span class="math notranslate nohighlight">\(n_\pm\)</span> sind ihre <strong>Besetzungszahlen</strong>. Jedes zusätzliche Quant trägt eine feste Energie bei, unabhängig davon, wie viele Quanten bereits vorhanden sind.</p>
+<p>Dies ist ein einfaches Beispiel für das <strong>Quasiteilchenbild</strong>. Wir beschreiben die Anregungsquanten der kollektiven Moden wie unabhängige Teilchen, die dem System hinzugefügt werden. Ein solches Quasiteilchen ist kein zusätzliches materielles Teilchen, sondern eine (kollektive) Anregung des Systems aus beiden Oszillatoren. Für den hier betrachteten harmonischen Hamiltonoperator ist diese Beschreibung exakt.</p>
+<p>Die Unabhängigkeit der Normalmoden bedeutet jedoch nicht, dass die ursprünglichen Auslenkungen <span class="math notranslate nohighlight">\(x\)</span> und <span class="math notranslate nohighlight">\(y\)</span> statistisch unabhängig sind. Um diesen Unterschied präzise zu beschreiben, führen wir nun den Begriff der Korrelation ein.</p>
+</section>
+<section id="korrelation-und-statistische-unabhangigkeit">
+<span id="id1"></span><h2>Korrelation und statistische Unabhängigkeit<a class="headerlink" href="#korrelation-und-statistische-unabhangigkeit" title="Permalink to this heading">#</a></h2>
+<p>Für einen normierten Zustand <span class="math notranslate nohighlight">\(\Psi(x,y)\)</span> ist</p>
+<div class="math notranslate nohighlight">
+\[
+p(x,y)=|\Psi(x,y)|^2
+\]</div>
+<p>die <strong>gemeinsame Wahrscheinlichkeitsdichte</strong> der beiden Auslenkungen. Die Dichte für nur eine Auslenkung erhalten wir, indem wir über die andere integrieren:</p>
+<div class="math notranslate nohighlight">
+\[
+p_x(x)=\int_{-\infty}^{\infty}p(x,y)\,dy,
+\qquad
+p_y(y)=\int_{-\infty}^{\infty}p(x,y)\,dx.
+\]</div>
+<p>Diese Funktionen heißen <strong>Marginaldichten</strong>. Die beiden Auslenkungen sind <strong>statistisch unabhängig</strong>, wenn</p>
+<div class="math notranslate nohighlight">
+\[
+\boxed{p(x,y)=p_x(x)\,p_y(y).}
+\]</div>
+<p>Andernfalls sprechen wir hier von <strong>statistischer Korrelation</strong>: Die Kenntnis der einen Auslenkung verändert die Wahrscheinlichkeitsverteilung der anderen. Dies zeigt die bedingte Dichte</p>
+<div class="math notranslate nohighlight">
+\[
+p(y\mid x)=\frac{p(x,y)}{p_x(x)},\qquad p_x(x)&gt;0,
+\]</div>
+<p>die bei Unabhängigkeit gleich <span class="math notranslate nohighlight">\(p_y(y)\)</span> ist und somit nicht von <span class="math notranslate nohighlight">\(x\)</span> abhängt.</p>
+<p>Ein Maß für die gemeinsamen linearen Schwankungen ist die <strong>Kovarianz</strong>. Mit <span class="math notranslate nohighlight">\(\langle f\rangle=\iint f(x,y)p(x,y)\,dx\,dy\)</span> definieren wir</p>
+<div class="math notranslate nohighlight">
+\[
+C_{xy}=\langle(x-\langle x\rangle)(y-\langle y\rangle)\rangle
+=\langle xy\rangle-\langle x\rangle\langle y\rangle.
+\]</div>
+<p>Die Varianzen sind <span class="math notranslate nohighlight">\(\sigma_x^2=\langle x^2\rangle-\langle x\rangle^2\)</span> und entsprechend <span class="math notranslate nohighlight">\(\sigma_y^2\)</span>. Für endliche, von null verschiedene Varianzen lautet der dimensionslose <strong>Korrelationskoeffizient</strong></p>
+<div class="math notranslate nohighlight">
+\[
+\boxed{\rho_{xy}=\frac{C_{xy}}{\sigma_x\sigma_y},
+\qquad -1\le\rho_{xy}\le1.}
+\]</div>
+<p>Ein positives Vorzeichen beschreibt bevorzugt gleichsinnige, ein negatives bevorzugt gegensinnige Abweichungen von den Mittelwerten. Statistische Unabhängigkeit führt zu <span class="math notranslate nohighlight">\(C_{xy}=\rho_{xy}=0\)</span>. Die Umkehrung gilt im Allgemeinen nicht: Ein verschwindender Korrelationskoeffizient schließt andere Formen statistischer Abhängigkeit nicht aus. Für die gemeinsame Gaußverteilung des folgenden Oszillatorgrundzustands ist <span class="math notranslate nohighlight">\(\rho_{xy}=0\)</span> dagegen gleichbedeutend mit Unabhängigkeit.</p>
+<section id="korrelation-im-grundzustand">
+<h3>Korrelation im Grundzustand<a class="headerlink" href="#korrelation-im-grundzustand" title="Permalink to this heading">#</a></h3>
+<p>Der normierte Grundzustand ist in den Normalkoordinaten ein Produkt zweier Gaußfunktionen:</p>
+<div class="math notranslate nohighlight">
+\[
+\Psi_0(Q_+,Q_-)
+=\left(\frac{m^2\Omega_+\Omega_-}{\pi^2}\right)^{1/4}
+\exp\left[-\frac{m}{2}
+\left(\Omega_+Q_+^2+\Omega_-Q_-^2\right)\right].
+\]</div>
+<p>In den ursprünglichen Koordinaten lautet derselbe Zustand</p>
+<div class="math notranslate nohighlight">
+\[
+\Psi_0(x,y)=N\exp\left[
+-\frac{m}{4}\left\{
+(\Omega_++\Omega_-)(x^2+y^2)
++2(\Omega_+-\Omega_-)xy
+\right\}\right],
+\]</div>
+<p>wobei <span class="math notranslate nohighlight">\(N\)</span> der oben angegebene Normierungsfaktor ist. Für <span class="math notranslate nohighlight">\(\lambda\ne0\)</span> bleibt im Exponenten ein <span class="math notranslate nohighlight">\(xy\)</span>-Term übrig. Deshalb lässt sich die Wellenfunktion nicht als <span class="math notranslate nohighlight">\(f(x)g(y)\)</span> schreiben. Auch die gemeinsame Ortsdichte <span class="math notranslate nohighlight">\(p(x,y)=|\Psi_0(x,y)|^2\)</span> faktorisiert hier nicht in ihre Marginaldichten. Die Auslenkungen sind demnach gemäß der obigen Definition <strong>statistisch korreliert</strong>!</p>
+<p>Diese Korrelation lässt sich berechnen. Die Grundzustandsdichte ist unter der gemeinsamen Umkehrung beider Auslenkungen, <span class="math notranslate nohighlight">\((x,y)\mapsto(-x,-y)\)</span>, invariant. Da die einzelnen Auslenkungen dabei ihr Vorzeichen wechseln, verschwinden ihre Mittelwerte: <span class="math notranslate nohighlight">\(\langle x\rangle=\langle y\rangle=0\)</span>. Mit</p>
+<div class="math notranslate nohighlight">
+\[
+\langle Q_\pm^2\rangle=\frac{1}{2m\Omega_\pm},
+\qquad \langle Q_+Q_-\rangle=0
+\]</div>
+<p>erhalten wir</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+\langle xy\rangle
+&amp;=\frac12\left(\langle Q_+^2\rangle-\langle Q_-^2\rangle\right)
+=\frac{1}{4m}\left(\frac1{\Omega_+}-\frac1{\Omega_-}\right),\\
+\langle x^2\rangle=\langle y^2\rangle
+&amp;=\frac{1}{4m}\left(\frac1{\Omega_+}+\frac1{\Omega_-}\right).
+\end{aligned}
+\end{split}\]</div>
+<p>Mit den verschwindenden Mittelwerten vereinfacht sich der oben definierte Korrelationskoeffizient zu</p>
+<div class="math notranslate nohighlight">
+\[
+\boxed{\rho_{xy}
+=\frac{\langle xy\rangle}{\sqrt{\langle x^2\rangle\langle y^2\rangle}}
+=\frac{\Omega_--\Omega_+}{\Omega_-+\Omega_+}.}
+\]</div>
+<p>Für positive Kopplung ist <span class="math notranslate nohighlight">\(\rho_{xy}&lt;0\)</span>: Positive Auslenkungen des einen Oszillators gehen bevorzugt mit negativen Auslenkungen des anderen einher. Für <span class="math notranslate nohighlight">\(\lambda=0\)</span> erhalten wir zwei unabhängige Gaußverteilungen und <span class="math notranslate nohighlight">\(\rho_{xy}=0\)</span>.</p>
+</section>
+<section id="veranschaulichung-der-gemeinsamen-ortsdichte">
+<h3>Veranschaulichung der gemeinsamen Ortsdichte<a class="headerlink" href="#veranschaulichung-der-gemeinsamen-ortsdichte" title="Permalink to this heading">#</a></h3>
+<p>Für die folgende Abbildung wählen wir <span class="math notranslate nohighlight">\(m=1\)</span> und <span class="math notranslate nohighlight">\(\omega_0=1\)</span> in atomaren Einheiten. Die charakteristische Oszillatorlänge ist damit</p>
+<div class="math notranslate nohighlight">
+\[
+\ell_0=\frac{1}{\sqrt{m\omega_0}}=1.
+\]</div>
+<p>Wir vergleichen die Kopplungen <span class="math notranslate nohighlight">\(\lambda=0\)</span> und <span class="math notranslate nohighlight">\(\lambda=0.8\)</span> a.u. Die dimensionslose relative Kopplungsstärke</p>
+<div class="math notranslate nohighlight">
+\[
+\kappa=\frac{\lambda}{m\omega_0^2}
+\]</div>
+<p>hat für diese Parameter dieselben Zahlenwerte. Die Achsen zeigen direkt <span class="math notranslate nohighlight">\(x\)</span> und <span class="math notranslate nohighlight">\(y\)</span> in atomaren Einheiten; dargestellt ist die gemeinsame Dichte <span class="math notranslate nohighlight">\(p(x,y)=|\Psi_0(x,y)|^2\)</span> bezüglich <span class="math notranslate nohighlight">\(dx\,dy\)</span>, deren Einheit <span class="math notranslate nohighlight">\(a_0^{-2}\)</span> ist. Beide Bilder verwenden dieselbe Farbskala. Für <span class="math notranslate nohighlight">\(\kappa=0.8\)</span> gilt <span class="math notranslate nohighlight">\(\Omega_+/\Omega_-=3\)</span> und damit <span class="math notranslate nohighlight">\(\rho_{xy}=-1/2\)</span>. Die Verteilung ist entlang der weicheren, gegensinnigen Mode ausgedehnt. In den Koordinaten <span class="math notranslate nohighlight">\(Q_+,Q_-\)</span> ist dieselbe Verteilung weiterhin ein Produkt.</p>
+<div class="cell tag_hide-input docutils container">
+<details class="admonition hide above-input">
+<summary aria-label="Toggle hidden content">
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="k">def</span><span class="w"> </span><span class="nf">plot_normal_mode_density</span><span class="p">():</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+
+    <span class="c1"># Alle Größen in Hartree-atomaren Einheiten.</span>
+    <span class="n">mass</span><span class="p">,</span> <span class="n">omega_0</span> <span class="o">=</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span>
+    <span class="n">coordinate</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mf">3.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">,</span> <span class="mi">401</span><span class="p">)</span>
+    <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">coordinate</span><span class="p">,</span> <span class="n">coordinate</span><span class="p">)</span>
+    <span class="n">Q_plus</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="p">)</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">Q_minus</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">y</span><span class="p">)</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">levels</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">25</span><span class="p">)</span>
+    <span class="n">style</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"font.family"</span><span class="p">:</span> <span class="s2">"DejaVu Serif"</span><span class="p">,</span> <span class="s2">"font.size"</span><span class="p">:</span> <span class="mi">12</span><span class="p">,</span>
+             <span class="s2">"mathtext.fontset"</span><span class="p">:</span> <span class="s2">"dejavuserif"</span><span class="p">,</span> <span class="s2">"figure.dpi"</span><span class="p">:</span> <span class="mi">150</span><span class="p">}</span>
+
+    <span class="k">with</span> <span class="n">plt</span><span class="o">.</span><span class="n">rc_context</span><span class="p">(</span><span class="n">style</span><span class="p">):</span>
+        <span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mf">9.2</span><span class="p">,</span> <span class="mf">4.1</span><span class="p">),</span>
+                                 <span class="n">layout</span><span class="o">=</span><span class="s2">"constrained"</span><span class="p">,</span> <span class="n">sharex</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">sharey</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">ax</span><span class="p">,</span> <span class="n">coupling</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">axes</span><span class="p">,</span> <span class="p">[</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">]):</span>
+            <span class="n">omega_plus</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">omega_0</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">coupling</span> <span class="o">/</span> <span class="n">mass</span><span class="p">)</span>
+            <span class="n">omega_minus</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">omega_0</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="n">coupling</span> <span class="o">/</span> <span class="n">mass</span><span class="p">)</span>
+            <span class="n">density</span> <span class="o">=</span> <span class="n">mass</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">omega_plus</span> <span class="o">*</span> <span class="n">omega_minus</span><span class="p">)</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span>
+                <span class="o">-</span><span class="n">mass</span> <span class="o">*</span> <span class="p">(</span><span class="n">omega_plus</span> <span class="o">*</span> <span class="n">Q_plus</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">omega_minus</span> <span class="o">*</span> <span class="n">Q_minus</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span>
+            <span class="n">rho</span> <span class="o">=</span> <span class="p">(</span><span class="n">omega_minus</span> <span class="o">-</span> <span class="n">omega_plus</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">omega_minus</span> <span class="o">+</span> <span class="n">omega_plus</span><span class="p">)</span>
+            <span class="n">filled</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">contourf</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">density</span><span class="p">,</span> <span class="n">levels</span><span class="o">=</span><span class="n">levels</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">"Blues"</span><span class="p">)</span>
+            <span class="n">ax</span><span class="o">.</span><span class="n">contour</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">density</span><span class="p">,</span> <span class="n">levels</span><span class="o">=</span><span class="p">[</span><span class="mf">0.04</span><span class="p">,</span> <span class="mf">0.12</span><span class="p">,</span> <span class="mf">0.20</span><span class="p">],</span>
+                       <span class="n">colors</span><span class="o">=</span><span class="s2">"#3366aa"</span><span class="p">,</span> <span class="n">linewidths</span><span class="o">=</span><span class="mf">0.8</span><span class="p">)</span>
+            <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="o">-</span><span class="mf">2.5</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mf">2.5</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s2">"#b65447"</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s2">"--"</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+            <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="o">-</span><span class="mf">2.5</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">],</span> <span class="p">[</span><span class="mf">2.5</span><span class="p">,</span> <span class="o">-</span><span class="mf">2.5</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s2">"#5d5d5d"</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s2">":"</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+            <span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">2.15</span><span class="p">,</span> <span class="mf">2.65</span><span class="p">,</span> <span class="sa">r</span><span class="s2">"$Q_+$"</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">"#a34437"</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s2">"center"</span><span class="p">)</span>
+            <span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">2.15</span><span class="p">,</span> <span class="o">-</span><span class="mf">2.7</span><span class="p">,</span> <span class="sa">r</span><span class="s2">"$Q_-$"</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">"#4d4d4d"</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s2">"center"</span><span class="p">)</span>
+            <span class="n">ax</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">xlim</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">ylim</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">aspect</span><span class="o">=</span><span class="s2">"equal"</span><span class="p">,</span>
+                   <span class="n">xlabel</span><span class="o">=</span><span class="sa">r</span><span class="s2">"$x$ (a.u.)"</span><span class="p">,</span>
+                   <span class="n">title</span><span class="o">=</span><span class="sa">rf</span><span class="s2">"$\lambda=</span><span class="si">{</span><span class="n">coupling</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2">$ a.u., $\rho_</span><span class="se">{{</span><span class="s2">xy</span><span class="se">}}</span><span class="s2">=</span><span class="si">{</span><span class="n">rho</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2">$"</span><span class="p">)</span>
+            <span class="n">ax</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">([</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+            <span class="n">ax</span><span class="o">.</span><span class="n">set_yticks</span><span class="p">([</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+        <span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">"$y$ (a.u.)"</span><span class="p">)</span>
+        <span class="n">colorbar</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">filled</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">,</span> <span class="n">shrink</span><span class="o">=</span><span class="mf">0.85</span><span class="p">,</span> <span class="n">pad</span><span class="o">=</span><span class="mf">0.035</span><span class="p">,</span>
+                               <span class="n">ticks</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">])</span>
+        <span class="n">colorbar</span><span class="o">.</span><span class="n">set_label</span><span class="p">(</span><span class="sa">r</span><span class="s2">"$p(x,y)$ ($a_0^{-2}$)"</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+
+<span class="n">plot_normal_mode_density</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<img alt="_images/0089795a07e4367c58ec4ef63ec3d2a1d1b6b4844625ea99c466cb54d1c147b9.png" src="_images/0089795a07e4367c58ec4ef63ec3d2a1d1b6b4844625ea99c466cb54d1c147b9.png" />
+</div>
+</div>
+<p>Die Normalmoden liefern somit eine exakte Beschreibung durch unabhängige Anregungsquanten, während die ursprünglichen Auslenkungen im Grundzustand für <span class="math notranslate nohighlight">\(\lambda\ne0\)</span> korreliert sind. Im folgenden <a class="reference internal" href="helium_atom.html"><span class="std std-doc">Kapitel über das Heliumatom</span></a> untersuchen wir, wie weit uns eine geeignete Koordinatenwahl bei zwei wechselwirkenden Elektronen führt und wo Näherungen nötig werden.</p>
+</section>
+</section>
+<section id="aufgaben-zur-vertiefung">
+<h2>Aufgaben zur Vertiefung<a class="headerlink" href="#aufgaben-zur-vertiefung" title="Permalink to this heading">#</a></h2>
+<p><strong>1. Kopplung und Korrelation.</strong> Berechnen Sie für <span class="math notranslate nohighlight">\(m=1\)</span>, <span class="math notranslate nohighlight">\(\omega_0=1\)</span> und <span class="math notranslate nohighlight">\(\lambda=0.6\)</span> (jeweils in atomaren Einheiten) die beiden Normalfrequenzen, die Grundzustandsenergie und den Korrelationskoeffizienten <span class="math notranslate nohighlight">\(\rho_{xy}\)</span>. Welche Mode ist weicher? Wie ändern sich die Ergebnisse beim Vorzeichenwechsel von <span class="math notranslate nohighlight">\(\lambda\)</span>?</p>
+<p><strong>2. Zwei gleiche Massen.</strong> Führen Sie für dieselben beiden Oszillatoren die Schwerpunktkoordinate <span class="math notranslate nohighlight">\(R=(x+y)/2\)</span> und die Relativkoordinate <span class="math notranslate nohighlight">\(r=x-y\)</span> ein. Schreiben Sie die kinetische Energie als</p>
+<div class="math notranslate nohighlight">
+\[
+\hat T=-\frac{1}{2M}\frac{\partial^2}{\partial R^2}
+-\frac{1}{2\mu}\frac{\partial^2}{\partial r^2}
+\]</div>
+<p>und leiten Sie für <span class="math notranslate nohighlight">\(m_1=m_2=m\)</span> die Werte der Gesamtmasse <span class="math notranslate nohighlight">\(M\)</span> und der reduzierten Masse <span class="math notranslate nohighlight">\(\mu\)</span> her. Zeigen Sie, dass diese Koordinaten mit den Normalkoordinaten durch <span class="math notranslate nohighlight">\(Q_+=\sqrt2 R\)</span> und <span class="math notranslate nohighlight">\(Q_-=r/\sqrt2\)</span> zusammenhängen. Erklären Sie, warum in der einen Darstellung zwei gleiche Massen <span class="math notranslate nohighlight">\(m\)</span>, in der anderen die Massen <span class="math notranslate nohighlight">\(M\)</span> und <span class="math notranslate nohighlight">\(\mu\)</span> auftreten.</p>
+<section id="ergebnisse-und-losungshinweise">
+<h3>Ergebnisse und Lösungshinweise<a class="headerlink" href="#ergebnisse-und-losungshinweise" title="Permalink to this heading">#</a></h3>
+<p><strong>Zu 1.</strong> Die Normalfrequenzen sind <span class="math notranslate nohighlight">\(\Omega_+=\sqrt{1.6}\approx1.2649\)</span> und <span class="math notranslate nohighlight">\(\Omega_-=\sqrt{0.4}\approx0.6325\)</span> in atomaren Einheiten. Daraus folgen die Grundzustandsenergie <span class="math notranslate nohighlight">\(E_0=3/\sqrt{10}\approx0.9487\)</span> Hartree und der dimensionslose Korrelationskoeffizient <span class="math notranslate nohighlight">\(\rho_{xy}=-1/3\)</span>. Die gegensinnige Mode ist weicher. Beim Vorzeichenwechsel tauschen die Frequenzen ihre Rollen, die Grundzustandsenergie bleibt gleich und <span class="math notranslate nohighlight">\(\rho_{xy}\)</span> wechselt das Vorzeichen.</p>
+<p><strong>Zu 2.</strong> <span class="math notranslate nohighlight">\(M=2m\)</span> und <span class="math notranslate nohighlight">\(\mu=m/2\)</span>. Aus den Skalierungen folgt <span class="math notranslate nohighlight">\(\partial_R^2=2\partial_{Q_+}^2\)</span> und <span class="math notranslate nohighlight">\(\partial_r^2=\tfrac12\partial_{Q_-}^2\)</span>. Damit wird die kinetische Energie in beiden Darstellungen identisch. Die unterschiedlichen Massenfaktoren spiegeln die unterschiedliche Skalierung der Koordinaten wider.</p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "rolandmitric/quantum_chemistry_2025",
+            ref: "main",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="renner_teller_example.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Beispiel aus der aktuellen Forschung: Das NCN-Molekül und der Renner-Teller-Effekt</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="helium_atom.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Das Helium-Atom</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#was-bedeutet-die-separation-eines-quantensystems">Was bedeutet die Separation eines Quantensystems?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zwei-gekoppelte-harmonische-oszillatoren">Zwei gekoppelte harmonische Oszillatoren</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#einfuhrung-der-normalkoordinaten">Einführung der Normalkoordinaten</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#transformation-der-kinetischen-energie">Transformation der kinetischen Energie</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eigenfunktionen-energien-und-bewegungsmuster">Eigenfunktionen, Energien und Bewegungsmuster</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vom-schwingungsquant-zum-quasiteilchen">Vom Schwingungsquant zum Quasiteilchen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#korrelation-und-statistische-unabhangigkeit">Korrelation und statistische Unabhängigkeit</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#korrelation-im-grundzustand">Korrelation im Grundzustand</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#veranschaulichung-der-gemeinsamen-ortsdichte">Veranschaulichung der gemeinsamen Ortsdichte</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aufgaben-zur-vertiefung">Aufgaben zur Vertiefung</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ergebnisse-und-losungshinweise">Ergebnisse und Lösungshinweise</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Roland Mitric
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

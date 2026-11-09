@@ -1,0 +1,1482 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Ausblick: Molekülorbitale &#8212; Quantenchemie</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=e936a729" />
+    <link rel="stylesheet" type="text/css" href="_static/wide_v2.css?v=bfe64621" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb" />
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js?v=2b91c5f0"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=b8b12719"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'molekuelorbitale';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Optimales Hartree-Produkt und Hartree-Gleichung" href="hartree_equation.html" />
+    <link rel="prev" title="Elektronenkorrelation" href="correlation_hylleraas.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  
+    
+    <script src="_static/searchtools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Quantenchemie</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="index.html">
+                    Quantenchemie — WS 2026
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="variational_principle.html">Das Variationsprinzip</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lagrange_multipliers.html">Die Methode der Lagrange-Multiplikatoren</a></li>
+<li class="toctree-l1"><a class="reference internal" href="convergence_variational_principle.html">Über die Konvergenz des linearen Variationsprinzips: Verschachtelungs Satz</a></li>
+<li class="toctree-l1"><a class="reference internal" href="renner_teller_example.html">Beispiel aus der aktuellen Forschung: Das NCN-Molekül und der Renner-Teller-Effekt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quasiteilchen_correlation.html">Quasiteilchen und Korrelation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="helium_atom.html">Das Helium-Atom</a></li>
+<li class="toctree-l1"><a class="reference internal" href="correlation_hylleraas.html">Elektronenkorrelation</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Ausblick: Molekülorbitale</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hartree_equation.html">Optimales Hartree-Produkt und Hartree-Gleichung</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="first_qc_code.html">Erstes Quantenchemieprogramm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="failure_hartree.html">Das Versagen der Hartree-Methode: Der Fall des Lithiumatoms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="spin.html">Spin: Einführung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bras_kets_etc.html">Spin: Formalismus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="spin_and_rotations.html">Spin &amp; Rotationen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="spin_measurement.html">Spinmessung</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="tensor_product.html">Zusammengesetzte Quantensysteme: Tensorprodukt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="spin_two_electrons.html">Spinzustände eines 2-Elektronensystems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pauli_principle.html">Das Pauli-Prinzip</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hartree_fock.html">Die Hartree-Fock-Methode</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/rolandmitric/quantum_chemistry_2025/main?urlpath=lab/tree/./molekuelorbitale.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Binder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Binder logo" src="_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/rolandmitric/quantum_chemistry_2025" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/rolandmitric/quantum_chemistry_2025/edit/main/./molekuelorbitale.ipynb" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/rolandmitric/quantum_chemistry_2025/issues/new?title=Issue%20on%20page%20%2Fmolekuelorbitale.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/molekuelorbitale.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Ausblick: Molekülorbitale</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vom-vielteilchenproblem-zum-effektiven-hamiltonoperator">1. Vom Vielteilchenproblem zum effektiven Hamiltonoperator</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#die-huckel-naherung">2. Die Hückel-Näherung</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#benzol-sechs-zentren-sechs-molekulorbitale">3. Benzol: sechs Zentren, sechs Molekülorbitale</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eine-kleine-matrixrechnung">Eine kleine Matrixrechnung</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wie-sehen-die-orbitale-aus">Wie sehen die Orbitale aus?</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vom-kohlenwasserstoff-zum-graphen">4. Vom Kohlenwasserstoff zum Graphen</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#das-huckel-polynom">Das Hückel-Polynom</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#der-satz-von-sachs-ein-beweis-in-bildern">5. Der Satz von Sachs: ein Beweis in Bildern</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#von-matrixeintragen-zu-wegen">5.1 Von Matrixeinträgen zu Wegen</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#benzol-drei-beitrage-zum-konstanten-term">5.2 Benzol: drei Beiträge zum konstanten Term</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#was-verrat-der-graph-uber-die-orbitale">6. Was verrät der Graph über die Orbitale?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#verzweigung-erzeugt-nichtbindende-orbitale">6.1 Verzweigung erzeugt nichtbindende Orbitale</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#viererring-und-benzol-aufhebung-oder-verstarkung">6.2 Viererring und Benzol: Aufhebung oder Verstärkung?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gleiche-summenformel-andere-verknupfung-anthracen-und-phenanthren">6.3 Gleiche Summenformel, andere Verknüpfung: Anthracen und Phenanthren</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ungerade-ringe-andern-die-symmetrie-naphthalin-und-azulen">6.4 Ungerade Ringe ändern die Symmetrie: Naphthalin und Azulen</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#weitere-einblicke-orbitalform-und-geometrie">7. Weitere Einblicke: Orbitalform und Geometrie</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wo-wirkt-eine-lokale-chemische-anderung">7.1 Wo wirkt eine lokale chemische Änderung?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#konjugation-durch-verdrehen-steuern-biphenyl">7.2 Konjugation durch Verdrehen steuern: Biphenyl</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ein-vorgeschmack-auf-das-weitere">8. Ein Vorgeschmack auf das Weitere</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kleine-aufgaben-zum-weiterdenken">Kleine Aufgaben zum Weiterdenken</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="ausblick-molekulorbitale">
+<h1>Ausblick: Molekülorbitale<a class="headerlink" href="#ausblick-molekulorbitale" title="Permalink to this heading">#</a></h1>
+<p><img alt="Cartoonskizze: sechs atomare p-Orbitale des Benzols, das effektive Einelektronenmodell und ein delokalisiertes π-Orbital; darunter Beispiele für Sachs-Teilgraphen." src="_images/molekuelorbitale_cartoon_v2.png" /></p>
+<p><em>Vom atomaren p-Orbital zum Molekülorbital: schematische Darstellung des niedrigsten π-Orbitals von Benzol. Die Orbitalfarben kennzeichnen die Vorzeichen der Wellenfunktion. Die kleinen Graphen geben einen Vorgeschmack auf den Satz von Sachs.</em></p>
+<p>Beim Heliumatom haben wir gesehen, wie viel Aufwand schon die korrelierte Bewegung zweier Elektronen verlangt. Wie können wir dann überhaupt größere Moleküle behandeln? In vielen Verfahren versuchen wir, das Vielteilchenproblem näherungsweise auf <strong>effektive Einelektronenprobleme</strong> zurückzuführen. Ihre Lösungen heißen <strong>Molekülorbitale</strong>.</p>
+<p>Hier verfolgen wir diese Idee mit einem besonders einfachen Modell: der <strong>Hückel-Näherung</strong> für konjugierte Kohlenwasserstoffe.</p>
+<p>Wir betrachten zunächst die möglichen Zustände <strong>eines Elektrons</strong> im effektiven Modell. Wie mehrere Elektronen diese Orbitale besetzen und welche Gesamtenergie daraus folgt, wird später mit Spin und Pauli-Prinzip geklärt. Das Einelektronenspektrum selbst können wir bereits jetzt berechnen und chemisch interpretieren.</p>
+<section id="vom-vielteilchenproblem-zum-effektiven-hamiltonoperator">
+<h2>1. Vom Vielteilchenproblem zum effektiven Hamiltonoperator<a class="headerlink" href="#vom-vielteilchenproblem-zum-effektiven-hamiltonoperator" title="Permalink to this heading">#</a></h2>
+<p>Für eine festgehaltene Kerngeometrie suchen wir näherungsweise Lösungen von</p>
+<div class="math notranslate nohighlight">
+\[
+\hat h_{\mathrm{eff}}\,\psi_a=\varepsilon_a\psi_a,
+\qquad
+\hat h_{\mathrm{eff}}=\hat T+\hat V_{\mathrm{eff}}.
+\]</div>
+<p>Der effektive Operator soll die Wirkung der Kerne und der übrigen Elektronen in vereinfachter Form enthalten. Dies ist im Allgemeinen <strong>keine exakte Zerlegung</strong> des wechselwirkenden Vielteilchenproblems. In späteren Verfahren wird das effektive Feld aus den Orbitalen selbst bestimmt!</p>
+<p>Ein Molekülorbital kann sich über mehrere Atome erstrecken. Als Ansatz verwenden wir eine Linearkombination atomzentrierter Basisfunktionen, kurz <strong>LCAO</strong> (<em>linear combination of atomic orbitals</em>):</p>
+<div class="math notranslate nohighlight">
+\[
+\psi_a(\mathbf r)=\sum_{i=1}^{N}c_{ia}\chi_i(\mathbf r).
+\]</div>
+<p>Wir multiplizieren die Gleichung mit <span class="math notranslate nohighlight">\(\chi_i(\mathbf r)^*\)</span> und integrieren über den gesamten Raum. Damit ergibt sich</p>
+<div class="math notranslate nohighlight">
+\[
+\sum_j H_{ij}c_{ja}=\varepsilon_a\sum_j S_{ij}c_{ja},
+\]</div>
+<p>wobei die Matrixelemente durch die Integrale</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+H_{ij}&amp;=\int_{\mathbb R^3}\chi_i(\mathbf r)^*
+[\hat h_{\mathrm{eff}}\chi_j](\mathbf r)\,\mathrm d^3r,\\
+S_{ij}&amp;=\int_{\mathbb R^3}\chi_i(\mathbf r)^*\chi_j(\mathbf r)\,\mathrm d^3r
+\end{aligned}
+\end{split}\]</div>
+<p>gegeben sind.</p>
+<p>Damit wird aus einer Differentialgleichung das verallgemeinerte Matrix-Eigenwertproblem <span class="math notranslate nohighlight">\(H\mathbf c_a=\varepsilon_a S\mathbf c_a\)</span>. Die Koeffizienten beschreiben die Orbitalform, der Eigenwert die zugehörige Einelektronenenergie.</p>
+</section>
+<section id="die-huckel-naherung">
+<h2>2. Die Hückel-Näherung<a class="headerlink" href="#die-huckel-naherung" title="Permalink to this heading">#</a></h2>
+<p>Wir beginnen mit einem ebenen konjugierten Kohlenwasserstoff. Das <span class="math notranslate nohighlight">\(\sigma\)</span>-Gerüst legt die Geometrie fest. Für das <span class="math notranslate nohighlight">\(\pi\)</span>-System behalten wir <strong>ein senkrecht zur Molekülebene orientiertes <span class="math notranslate nohighlight">\(p_z\)</span>-Orbital pro beteiligtem Kohlenstoffatom</strong>. Wasserstoffatome und das <span class="math notranslate nohighlight">\(\sigma\)</span>-Gerüst werden nicht als eigene Basisfunktionen aufgenommen.</p>
+<p>Die Modellannahmen lauten:</p>
+<ol class="arabic simple">
+<li><p>Wir behandeln die Basis als orthonormal: <span class="math notranslate nohighlight">\(S_{ij}\approx\delta_{ij}\)</span>. Damit gilt <span class="math notranslate nohighlight">\(\sum_i|c_{ia}|^2=1\)</span>.</p></li>
+<li><p>Alle Kohlenstoffzentren besitzen dieselbe diagonale Energie <span class="math notranslate nohighlight">\(H_{ii}=\alpha\)</span>.</p></li>
+<li><p>Zwischen direkt benachbarten Zentren des konjugierten Netzes setzen wir <span class="math notranslate nohighlight">\(H_{ij}=\beta\)</span>; alle übrigen Kopplungen sind null.</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+H_{ij}=\begin{cases}
+\alpha,&amp;i=j,\\
+\beta,&amp;i,j\text{ sind im }\pi\text{-Netz benachbart},\\
+0,&amp;\text{sonst}.
+\end{cases}
+\qquad \beta&lt;0.
+\end{split}\]</div>
+<p><span class="math notranslate nohighlight">\(\alpha\)</span> legt den Energienullpunkt des Modells fest, <span class="math notranslate nohighlight">\(|\beta|\)</span> die Energieskala. Bei konsistent gewählten Phasen der <span class="math notranslate nohighlight">\(p_z\)</span>-Basisfunktionen wählen wir die übliche Konvention <span class="math notranslate nohighlight">\(\beta&lt;0\)</span>. Gleichphasige Beiträge an benachbarten Zentren können dadurch die Energie senken. <span class="math notranslate nohighlight">\(S_{ij}=0\)</span> und <span class="math notranslate nohighlight">\(H_{ij}\ne0\)</span> für Nachbarn sind eigenständige Modellannahmen: Die Orthogonalität der Basis bedeutet nicht, dass die Hamiltonmatrix diagonal ist.</p>
+<p>Diese Annahmen und ihre Anwendung auf Benzol sind beispielsweise in den <a class="reference external" href="https://ocw.mit.edu/courses/5-61-physical-chemistry-fall-2017/0d3d7427e4180c2e1b59bb0c09827092_MIT5_61F17_lec26.pdf">Hückel-Vorlesungsnotizen des MIT</a> dargestellt. Wir verwenden hier nur den Einelektronenteil des Modells.</p>
+</section>
+<section id="benzol-sechs-zentren-sechs-molekulorbitale">
+<h2>3. Benzol: sechs Zentren, sechs Molekülorbitale<a class="headerlink" href="#benzol-sechs-zentren-sechs-molekulorbitale" title="Permalink to this heading">#</a></h2>
+<p>Wir nummerieren die sechs Kohlenstoffzentren entlang des Rings. Die Hückel-Matrix lautet</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+H=\begin{pmatrix}
+\alpha&amp;\beta&amp;0&amp;0&amp;0&amp;\beta\\
+\beta&amp;\alpha&amp;\beta&amp;0&amp;0&amp;0\\
+0&amp;\beta&amp;\alpha&amp;\beta&amp;0&amp;0\\
+0&amp;0&amp;\beta&amp;\alpha&amp;\beta&amp;0\\
+0&amp;0&amp;0&amp;\beta&amp;\alpha&amp;\beta\\
+\beta&amp;0&amp;0&amp;0&amp;\beta&amp;\alpha
+\end{pmatrix}.
+\end{split}\]</div>
+<p>Alle sechs Verbindungen werden gleich behandelt. Wir müssen also nicht zwischen zwei alternierenden Doppelbindungsmustern wählen. In der Gleichung für ein einzelnes Zentrum stehen nur seine beiden Nachbarn:</p>
+<div class="math notranslate nohighlight">
+\[
+(\varepsilon-\alpha)c_i=\beta(c_{i-1}+c_{i+1}),
+\qquad c_{i+6}=c_i.
+\]</div>
+<p>Ein periodisches Muster <span class="math notranslate nohighlight">\(c_i\propto e^{\mathrm i q i}\)</span> liefert</p>
+<div class="math notranslate nohighlight">
+\[
+\varepsilon(q)=\alpha+2\beta\cos q,
+\qquad q=\frac{2\pi k}{6},\quad k=0,1,\ldots,5.
+\]</div>
+<p>Die sechs Energien sind damit, von unten nach oben,</p>
+<div class="math notranslate nohighlight">
+\[
+\alpha+2\beta,\qquad
+\alpha+\beta\;\text{(zweifach)},\qquad
+\alpha-\beta\;\text{(zweifach)},\qquad
+\alpha-2\beta.
+\]</div>
+<p><strong>Entartung</strong> bedeutet hier: Verschiedene linear unabhängige Orbitale besitzen denselben Eigenwert.</p>
+<section id="eine-kleine-matrixrechnung">
+<h3>Eine kleine Matrixrechnung<a class="headerlink" href="#eine-kleine-matrixrechnung" title="Permalink to this heading">#</a></h3>
+<p>Die Beispiele benötigen NumPy, Matplotlib und SymPy. Eine Kantenliste gibt an, welche Zentren gekoppelt sind. Im Python-Code beginnen die Indizes bei null, in den Abbildungen bei eins. Für die Rechnung setzen wir <span class="math notranslate nohighlight">\(\alpha=0\)</span>, <span class="math notranslate nohighlight">\(\beta=-1\)</span>; alle dargestellten Energien stehen damit in Einheiten von <span class="math notranslate nohighlight">\(|\beta|\)</span> relativ zu <span class="math notranslate nohighlight">\(\alpha\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">sympy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sp</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">itertools</span><span class="w"> </span><span class="kn">import</span> <span class="n">combinations</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">collections</span><span class="w"> </span><span class="kn">import</span> <span class="n">Counter</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">HTML</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s2">"font.size"</span><span class="p">:</span> <span class="mi">12</span><span class="p">,</span> <span class="s2">"figure.dpi"</span><span class="p">:</span> <span class="mi">120</span><span class="p">,</span>
+                     <span class="s2">"axes.spines.top"</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">"axes.spines.right"</span><span class="p">:</span> <span class="kc">False</span><span class="p">})</span>
+<span class="n">blue</span><span class="p">,</span> <span class="n">orange</span><span class="p">,</span> <span class="n">grey</span> <span class="o">=</span> <span class="s2">"#0072B2"</span><span class="p">,</span> <span class="s2">"#D55E00"</span><span class="p">,</span> <span class="s2">"#D8DEE5"</span>
+<span class="n">lam</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Symbol</span><span class="p">(</span><span class="s2">"lambda"</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">adjacency</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">edges</span><span class="p">):</span>
+    <span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">n</span><span class="p">,</span> <span class="n">n</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">int</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">edges</span><span class="p">:</span>
+        <span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">A</span><span class="p">[</span><span class="n">j</span><span class="p">,</span> <span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">A</span>
+
+<span class="n">benzene_edges</span> <span class="o">=</span> <span class="p">[(</span><span class="n">i</span><span class="p">,</span> <span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="mi">6</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">6</span><span class="p">)]</span>
+<span class="n">angles</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">3</span>
+<span class="n">benzene_xy</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">column_stack</span><span class="p">((</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">angles</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">angles</span><span class="p">)))</span>
+<span class="n">A_benzene</span> <span class="o">=</span> <span class="n">adjacency</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="n">benzene_edges</span><span class="p">)</span>
+<span class="n">energies</span><span class="p">,</span> <span class="n">orbitals</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">eigh</span><span class="p">(</span><span class="o">-</span><span class="n">A_benzene</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"(ε − α) / |β| ="</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">energies</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(ε − α) / |β| = [-2. -1. -1.  1.  1.  2.]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Die folgende Zeichenfunktion wird später auch für die Sachs-Graphen benutzt. Graue Linien zeigen das zugrunde liegende Netz. Ausgewählte Einzelkanten sind blau, ausgewählte Zykluskanten orange. Die Farben kennzeichnen mathematische Teile des Graphen, keine chemischen Bindungsordnungen.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">draw_graph</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">xy</span><span class="p">,</span> <span class="n">edges</span><span class="p">,</span> <span class="n">chosen</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">edges</span><span class="p">:</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="o">*</span><span class="n">xy</span><span class="p">[[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]]</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">grey</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">highlight</span> <span class="o">=</span> <span class="n">chosen</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+    <span class="n">chosen</span> <span class="o">=</span> <span class="n">edges</span> <span class="k">if</span> <span class="n">chosen</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">chosen</span>
+    <span class="n">degree</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">(</span><span class="n">v</span> <span class="k">for</span> <span class="n">edge</span> <span class="ow">in</span> <span class="n">chosen</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">edge</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">chosen</span><span class="p">:</span>
+        <span class="n">color</span> <span class="o">=</span> <span class="n">orange</span> <span class="k">if</span> <span class="n">highlight</span> <span class="ow">and</span> <span class="n">degree</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">degree</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">==</span> <span class="mi">2</span> <span class="k">else</span> <span class="n">blue</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="o">*</span><span class="n">xy</span><span class="p">[[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]]</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">point</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">xy</span><span class="p">):</span>
+        <span class="n">active</span> <span class="o">=</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">degree</span> <span class="ow">or</span> <span class="n">labels</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="o">*</span><span class="n">point</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">110</span> <span class="k">if</span> <span class="n">labels</span> <span class="k">else</span> <span class="mi">40</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+                   <span class="n">facecolor</span><span class="o">=</span><span class="s2">"white"</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s2">"#344054"</span> <span class="k">if</span> <span class="n">active</span> <span class="k">else</span> <span class="n">grey</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">labels</span><span class="p">:</span>
+            <span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="o">*</span><span class="n">point</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span> <span class="n">ha</span><span class="o">=</span><span class="s2">"center"</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s2">"center"</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_aspect</span><span class="p">(</span><span class="s2">"equal"</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">margins</span><span class="p">(</span><span class="mf">0.22</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">"off"</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="n">layout</span><span class="o">=</span><span class="s2">"constrained"</span><span class="p">)</span>
+<span class="n">draw_graph</span><span class="p">(</span><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">benzene_xy</span><span class="p">,</span> <span class="n">benzene_edges</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">"Benzol: sechs gekoppelte Zentren"</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">energy</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">energies</span><span class="p">,</span> <span class="mi">8</span><span class="p">)):</span>
+    <span class="n">multiplicity</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">count_nonzero</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">isclose</span><span class="p">(</span><span class="n">energies</span><span class="p">,</span> <span class="n">energy</span><span class="p">))</span>
+    <span class="k">for</span> <span class="n">centre</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="n">multiplicity</span><span class="p">)</span> <span class="k">if</span> <span class="n">multiplicity</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="k">else</span> <span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
+        <span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">centre</span> <span class="o">-</span> <span class="mf">0.18</span><span class="p">,</span> <span class="n">centre</span> <span class="o">+</span> <span class="mf">0.18</span><span class="p">],</span> <span class="p">[</span><span class="n">energy</span><span class="p">,</span> <span class="n">energy</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="n">blue</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+    <span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">0.65</span><span class="p">,</span> <span class="n">energy</span><span class="p">,</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">multiplicity</span><span class="si">}</span><span class="s2"> Orbital(e)"</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s2">"center"</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">11</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">xlim</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mf">0.7</span><span class="p">,</span> <span class="mf">1.65</span><span class="p">),</span> <span class="n">ylim</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mf">2.5</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">),</span> <span class="n">xticks</span><span class="o">=</span><span class="p">[],</span> <span class="n">yticks</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span>
+            <span class="n">ylabel</span><span class="o">=</span><span class="sa">r</span><span class="s2">"$(\varepsilon-\alpha)/|\beta|$"</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">"Einelektronenenergien"</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">spines</span><span class="p">[</span><span class="s2">"bottom"</span><span class="p">]</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/9f9c0901491d81f561234d5ee0213c382596140c5ab6684a719d9a1248e54c8a.png" src="_images/9f9c0901491d81f561234d5ee0213c382596140c5ab6684a719d9a1248e54c8a.png" />
+</div>
+</div>
+</section>
+<section id="wie-sehen-die-orbitale-aus">
+<h3>Wie sehen die Orbitale aus?<a class="headerlink" href="#wie-sehen-die-orbitale-aus" title="Permalink to this heading">#</a></h3>
+<p>Für reproduzierbare Bilder wählen wir reelle Sinus- und Kosinusmuster. Innerhalb eines entarteten Paars sind auch andere orthonormale Linearkombinationen möglich; eine numerische Diagonalisierung muss daher nicht genau dieselben Bilder liefern.</p>
+<p>In den folgenden Draufsichten steht jeder Kreis für den Koeffizienten eines <span class="math notranslate nohighlight">\(p_z\)</span>-Orbitals. Seine <strong>Fläche ist proportional zu <span class="math notranslate nohighlight">\(|c_i|^2\)</span></strong>, Farbe und Zeichen geben das Vorzeichen an. Wir zeigen also Koeffizienten in der atomaren Basis, keine räumlichen Elektronendichteflächen. Die unteren Lappen der <span class="math notranslate nohighlight">\(p_z\)</span>-Orbitale hätten jeweils das umgekehrte Vorzeichen. Ein globaler Vorzeichenwechsel des gesamten Orbitals ändert den Zustand nicht.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">modes</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="mi">6</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">angles</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">angles</span><span class="p">),</span>
+                  <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">angles</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">angles</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mf">1.</span><span class="p">)</span><span class="o">**</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">6</span><span class="p">)])</span>
+<span class="n">modes</span> <span class="o">/=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">modes</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)[:,</span> <span class="kc">None</span><span class="p">]</span>
+<span class="n">mode_energy</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
+<span class="k">assert</span> <span class="n">np</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span><span class="o">-</span><span class="n">A_benzene</span> <span class="o">@</span> <span class="n">modes</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">modes</span><span class="o">.</span><span class="n">T</span> <span class="o">*</span> <span class="n">mode_energy</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span> <span class="n">layout</span><span class="o">=</span><span class="s2">"constrained"</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">ax</span><span class="p">,</span> <span class="n">coefficients</span><span class="p">,</span> <span class="n">energy</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">axes</span><span class="o">.</span><span class="n">flat</span><span class="p">,</span> <span class="n">modes</span><span class="p">,</span> <span class="n">mode_energy</span><span class="p">):</span>
+    <span class="n">draw_graph</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">benzene_xy</span><span class="p">,</span> <span class="n">benzene_edges</span><span class="p">,</span> <span class="n">chosen</span><span class="o">=</span><span class="p">[])</span>
+    <span class="k">for</span> <span class="n">point</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">benzene_xy</span><span class="p">,</span> <span class="n">coefficients</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">abs</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mf">1e-10</span><span class="p">:</span>
+            <span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="o">*</span><span class="n">point</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">2000</span> <span class="o">*</span> <span class="n">value</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">blue</span> <span class="k">if</span> <span class="n">value</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="n">orange</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+            <span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="o">*</span><span class="n">point</span><span class="p">,</span> <span class="s2">"+"</span> <span class="k">if</span> <span class="n">value</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="s2">"−"</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">"white"</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s2">"center"</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s2">"center"</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">fr</span><span class="s2">"$(\varepsilon-\alpha)/|\beta|=</span><span class="si">{</span><span class="n">energy</span><span class="si">}</span><span class="s2">$"</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/a57efaa68846ff50ce80693baf70125a5a88aa0cc178ce00ace6aaa5a815d3ba.png" src="_images/a57efaa68846ff50ce80693baf70125a5a88aa0cc178ce00ace6aaa5a815d3ba.png" />
+</div>
+</div>
+<p>Im tiefsten Orbital haben alle benachbarten Beiträge dasselbe Vorzeichen. Im höchsten Orbital wechseln die Vorzeichen an jeder Kante. Weshalb dies energetisch relevant ist, zeigt für einen normierten Koeffizientenvektor unmittelbar</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+\varepsilon&amp;=\int_{\mathbb R^3}\psi(\mathbf r)^*
+[\hat h_{\mathrm{eff}}\psi](\mathbf r)\,\mathrm d^3r\\
+&amp;=\alpha+2\beta\sum_{\{i,j\}\in E}\operatorname{Re}(c_i^*c_j).
+\end{aligned}
+\end{split}\]</div>
+<p>Jede ungerichtete Kante wird in dieser Summe einmal gezählt. Wegen <span class="math notranslate nohighlight">\(\beta&lt;0\)</span> senken gleichphasige Nachbarbeiträge den Erwartungswert. Der Elektronenzustand gewinnt dabei seine Form aus dem <strong>gesamten zusammenhängenden Netz</strong>.</p>
+</section>
+</section>
+<section id="vom-kohlenwasserstoff-zum-graphen">
+<h2>4. Vom Kohlenwasserstoff zum Graphen<a class="headerlink" href="#vom-kohlenwasserstoff-zum-graphen" title="Permalink to this heading">#</a></h2>
+<p>Das gleiche Rezept funktioniert für Ketten, Ringe, verzweigte und kondensierte <span class="math notranslate nohighlight">\(\pi\)</span>-Systeme. Wir ersetzen jedes beteiligte <span class="math notranslate nohighlight">\(p\)</span>-Orbital durch einen <strong>Knoten</strong> und jede berücksichtigte Nachbarkopplung durch eine <strong>Kante</strong>. Der so entstehende Graph <span class="math notranslate nohighlight">\(G=(V,E)\)</span> beschreibt das konjugierte Netz. Eine Kante bedeutet hier Kopplung, nicht „Doppelbindung“; auch eine formal einfache Bindung zwischen zwei konjugierten Zentren gehört dazu.</p>
+<p>Die <strong>Adjazenzmatrix</strong> ist</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+A_{ij}=\begin{cases}1,&amp;\{i,j\}\in E,\\0,&amp;\text{sonst}.
+\end{cases}
+\qquad A_{ii}=0.
+\end{split}\]</div>
+<p>Damit lautet die Hückel-Matrix besonders einfach</p>
+<div class="math notranslate nohighlight">
+\[
+\boxed{H=\alpha I+\beta A.}
+\]</div>
+<p>Ist <span class="math notranslate nohighlight">\(A\mathbf c_a=\lambda_a\mathbf c_a\)</span>, dann ist derselbe Vektor ein Molekülorbital mit <span class="math notranslate nohighlight">\(\varepsilon_a=\alpha+\beta\lambda_a\)</span>. Die Graphenstruktur bestimmt somit die dimensionslosen Energien und die Koeffizienten. Weil <span class="math notranslate nohighlight">\(\beta&lt;0\)</span>, gehört der <strong>größte</strong> Adjazenz-Eigenwert zur <strong>kleinsten</strong> Orbitalenergie.</p>
+<p>Dieses Vorgehen lässt sich auf die konjugierten Netze von Kohlenwasserstoffen verallgemeinern. Seine Voraussetzungen bleiben aber sichtbar: gleiche Zentren, ein geeignetes <span class="math notranslate nohighlight">\(p\)</span>-Orbital pro Knoten und einheitliche Nachbarkopplungen. Unterschiedliche Bindungslängen oder verdrehte Gruppen führen zu <strong>gewichteten</strong> Kanten. Bei mehreren unterschiedlich orientierten <span class="math notranslate nohighlight">\(\pi\)</span>-Systemen, etwa in Cumulenen, muss auch die Basis entsprechend erweitert werden.</p>
+<section id="das-huckel-polynom">
+<h3>Das Hückel-Polynom<a class="headerlink" href="#das-huckel-polynom" title="Permalink to this heading">#</a></h3>
+<p>Wir definieren das charakteristische Polynom des Graphen als</p>
+<div class="math notranslate nohighlight">
+\[
+P_G(\lambda)=\det(\lambda I-A)
+=\lambda^N+a_1\lambda^{N-1}+\cdots+a_N.
+\]</div>
+<p>Seine Nullstellen sind die <span class="math notranslate nohighlight">\(\lambda_a\)</span>. Mit dieser Vorzeichenkonvention gilt</p>
+<div class="math notranslate nohighlight">
+\[
+\det(\varepsilon I-H)=\beta^N
+P_G\!\left(\frac{\varepsilon-\alpha}{\beta}\right).
+\]</div>
+<p>Für Benzol erhalten wir</p>
+<div class="math notranslate nohighlight">
+\[
+P_{\mathrm{Benzol}}(\lambda)
+=\lambda^6-6\lambda^4+9\lambda^2-4
+=(\lambda^2-4)(\lambda^2-1)^2.
+\]</div>
+<p>Die Faktoren reproduzieren die sechs Eigenwerte einschließlich ihrer Entartungen. Können wir die Koeffizienten <strong>direkt aus der Zeichnung des Molekülgraphen</strong> bestimmen?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">benzene_polynomial</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">(</span><span class="n">A_benzene</span><span class="p">)</span><span class="o">.</span><span class="n">charpoly</span><span class="p">(</span><span class="n">lam</span><span class="p">)</span><span class="o">.</span><span class="n">as_expr</span><span class="p">()</span>
+<span class="n">display</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">Eq</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">Function</span><span class="p">(</span><span class="s2">"P_Benzol"</span><span class="p">)(</span><span class="n">lam</span><span class="p">),</span> <span class="n">sp</span><span class="o">.</span><span class="n">factor</span><span class="p">(</span><span class="n">benzene_polynomial</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle P_{Benzol}{\left(\lambda \right)} = \left(\lambda - 2\right) \left(\lambda - 1\right)^{2} \left(\lambda + 1\right)^{2} \left(\lambda + 2\right)\]</div>
+</div>
+</div>
+</section>
+</section>
+<section id="der-satz-von-sachs-ein-beweis-in-bildern">
+<h2>5. Der Satz von Sachs: ein Beweis in Bildern<a class="headerlink" href="#der-satz-von-sachs-ein-beweis-in-bildern" title="Permalink to this heading">#</a></h2>
+<p>Warum kennt eine Determinante die Struktur eines Moleküls? Wir verfolgen einen einzelnen Term von <span class="math notranslate nohighlight">\(\det(\lambda I-A)\)</span> und übersetzen ihn in eine Zeichnung.</p>
+<section id="von-matrixeintragen-zu-wegen">
+<h3>5.1 Von Matrixeinträgen zu Wegen<a class="headerlink" href="#von-matrixeintragen-zu-wegen" title="Permalink to this heading">#</a></h3>
+<p><strong>Eine Auswahl pro Zeile und Spalte.</strong> Ein Determinantenterm wählt in jeder Zeile und Spalte genau einen Matrixeintrag, multipliziert diese Einträge und erhält das Vorzeichen der zugehörigen Permutation. Terme mit einem Nulleintrag fallen weg; die übrigen Einträge stehen auf der Diagonale oder gehören zu Molekülkanten. Zeichnen wir für <span class="math notranslate nohighlight">\(M_{ij}\)</span> einen Pfeil <span class="math notranslate nohighlight">\(i\to j\)</span>, besitzt jeder Knoten genau einen einlaufenden und einen auslaufenden Pfeil. Daher entstehen nur getrennte geschlossene Wege.</p>
+<p><a class="reference download internal" download="" href="_downloads/3f88ea326d1501e50073c73f00ace6cd/01_determinante_und_pfeile.png"><span class="xref download myst"><img alt="Ein ausgewähltes Produkt der Determinante entspricht einem Fixpunkt, einer Vertauschung und einem gerichteten Viererzyklus." src="_images/01_determinante_und_pfeile.png" /></span></a></p>
+<p><strong>Drei Bausteine.</strong> Ein Fixpunkt liefert <span class="math notranslate nohighlight">\(\lambda\)</span>. Ein Hin- und Rückweg entlang einer Kante liefert einschließlich des Permutationsvorzeichens <span class="math notranslate nohighlight">\(-1\)</span>. Ein längerer Zyklus liefert ebenfalls <span class="math notranslate nohighlight">\(-1\)</span> je Umlaufrichtung, also zusammen <span class="math notranslate nohighlight">\(-2\)</span>. Die gezeichnete Schleife am Fixpunkt steht für einen Diagonaleintrag, nicht für eine Molekülkante.</p>
+<p><a class="reference download internal" download="" href="_downloads/890ea4b725ca1f058a987b170c7094cb/02_bausteine_und_gewichte.png"><span class="xref download myst"><img alt="Fixpunkt mit Gewicht lambda, Kantenkomponente mit Gewicht minus eins und zwei Orientierungen eines Zyklus mit Gesamtgewicht minus zwei." src="_images/02_bausteine_und_gewichte.png" /></span></a></p>
+<p><strong>Gewichte multiplizieren und Beiträge addieren.</strong> Ohne Fixpunkte und Pfeilrichtungen bleibt ein <strong>Sachs-Teilgraph</strong>: einzelne Kanten und einfache Zyklen, die keine Knoten gemeinsam haben. Enthält er <span class="math notranslate nohighlight">\(m\)</span> Kantenkomponenten und <span class="math notranslate nohighlight">\(c\)</span> Zyklen auf insgesamt <span class="math notranslate nohighlight">\(k\)</span> Knoten, liefert er</p>
+<div class="math notranslate nohighlight">
+\[
+(-1)^m(-2)^c\lambda^{N-k}.
+\]</div>
+<p>Für den Koeffizienten <span class="math notranslate nohighlight">\(a_k\)</span> addieren wir die Gewichte aller Sachs-Teilgraphen <span class="math notranslate nohighlight">\(S\in\mathcal S_k\)</span> auf <span class="math notranslate nohighlight">\(k\)</span> Knoten:</p>
+<div class="math notranslate nohighlight">
+\[
+\boxed{a_k=\sum_{S\in\mathcal S_k}(-1)^{m(S)+c(S)}2^{c(S)}.}
+\]</div>
+<p>Verschiedene Lagen im nummerierten Graphen zählen getrennt; der leere Graph liefert <span class="math notranslate nohighlight">\(\lambda^N\)</span>.</p>
+<p><a class="reference download internal" download="" href="_downloads/a7071383d964916eeb194700fe7d2beb/03_sachs_formel.png"><span class="xref download myst"><img alt="Ein disjunktes Kanten-Zyklus-Paar liefert zwei lambda; die Summe aller Sachs-Gewichte auf k Knoten ergibt den Koeffizienten a_k." src="_images/03_sachs_formel.png" /></span></a></p>
+<p>Kanten dürfen weggelassen werden, auch wenn ihre Endknoten ausgewählt sind: Bei Naphthalin zählt beispielsweise der äußere Zehnerzyklus ohne die gemeinsame innere Kante.</p>
+</section>
+<section id="benzol-drei-beitrage-zum-konstanten-term">
+<h3>5.2 Benzol: drei Beiträge zum konstanten Term<a class="headerlink" href="#benzol-drei-beitrage-zum-konstanten-term" title="Permalink to this heading">#</a></h3>
+<p>Für <span class="math notranslate nohighlight">\(a_6\)</span> müssen alle sechs Knoten bedeckt sein. Das gelingt durch zwei vollständige Kantenpaarungen und den Sechserzyklus: <span class="math notranslate nohighlight">\(a_6=-1-1-2=-4\)</span>. Eine disjunkte Kantenpaarung heißt <strong>Matching</strong>; ein vollständiges Matching entspricht hier einer Kekulé-Zeichnung.</p>
+<p><a class="reference download internal" download="" href="_downloads/0574c17598bd1d0957c05cf6f017af03/04_benzol_konstanter_term.png"><span class="xref download myst"><img alt="Die beiden perfekten Matchings des Benzolrings liefern jeweils minus eins, der Sechserzyklus minus zwei." src="_images/04_benzol_konstanter_term.png" /></span></a></p>
+<p>Die übrigen Koeffizienten erhalten wir genauso. Der folgende kleine Zähler probiert alle Kantenauswahlen und behält nur disjunkte Kanten und Zyklen. Die Hilfsfunktionen sind im Buch aufklappbar; bei großen Graphen wächst der Aufwand wie <span class="math notranslate nohighlight">\(2^{|E|}\)</span>.</p>
+<div class="cell tag_hide-input docutils container">
+<details class="admonition hide above-input">
+<summary aria-label="Toggle hidden content">
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">count_cycles</span><span class="p">(</span><span class="n">neighbors</span><span class="p">):</span>
+    <span class="n">unseen</span> <span class="o">=</span> <span class="p">{</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">neighbors</span><span class="p">)</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">row</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span><span class="p">}</span>
+    <span class="n">cycles</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">while</span> <span class="n">unseen</span><span class="p">:</span>
+        <span class="n">stack</span> <span class="o">=</span> <span class="p">[</span><span class="n">unseen</span><span class="o">.</span><span class="n">pop</span><span class="p">()]</span>
+        <span class="k">while</span> <span class="n">stack</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">vertex</span> <span class="ow">in</span> <span class="n">neighbors</span><span class="p">[</span><span class="n">stack</span><span class="o">.</span><span class="n">pop</span><span class="p">()]</span> <span class="o">&amp;</span> <span class="n">unseen</span><span class="p">:</span>
+                <span class="n">unseen</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">vertex</span><span class="p">)</span>
+                <span class="n">stack</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">vertex</span><span class="p">)</span>
+        <span class="n">cycles</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">cycles</span>
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<div class="cell tag_hide-input docutils container">
+<details class="admonition hide above-input">
+<summary aria-label="Toggle hidden content">
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">sachs_subgraphs</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">edges</span><span class="p">):</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">size</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">edges</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">chosen</span> <span class="ow">in</span> <span class="n">combinations</span><span class="p">(</span><span class="n">edges</span><span class="p">,</span> <span class="n">size</span><span class="p">):</span>
+            <span class="n">neighbors</span> <span class="o">=</span> <span class="p">[</span><span class="nb">set</span><span class="p">()</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)]</span>
+            <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">chosen</span><span class="p">:</span>
+                <span class="n">neighbors</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">j</span><span class="p">)</span>
+                <span class="n">neighbors</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+            <span class="n">degree</span> <span class="o">=</span> <span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">row</span><span class="p">)</span> <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">neighbors</span><span class="p">]</span>
+            <span class="k">if</span> <span class="nb">any</span><span class="p">(</span><span class="n">d</span> <span class="o">&gt;</span> <span class="mi">2</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">degree</span><span class="p">):</span>
+                <span class="k">continue</span>
+            <span class="k">if</span> <span class="nb">any</span><span class="p">(</span><span class="n">degree</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">!=</span> <span class="n">degree</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">chosen</span><span class="p">):</span>
+                <span class="k">continue</span>
+            <span class="n">k</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">d</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">degree</span><span class="p">)</span>
+            <span class="n">m</span> <span class="o">=</span> <span class="n">degree</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span>
+            <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">chosen</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">count_cycles</span><span class="p">(</span><span class="n">neighbors</span><span class="p">)))</span>
+    <span class="k">return</span> <span class="n">result</span>
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<div class="cell tag_hide-input docutils container">
+<details class="admonition hide above-input">
+<summary aria-label="Toggle hidden content">
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">sachs_polynomial</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">subgraphs</span><span class="p">):</span>
+    <span class="n">coefficients</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">subgraphs</span><span class="p">:</span>
+        <span class="n">coefficients</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">+=</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="n">m</span> <span class="o">+</span> <span class="n">c</span><span class="p">)</span> <span class="o">*</span> <span class="mi">2</span><span class="o">**</span><span class="n">c</span>
+    <span class="k">return</span> <span class="n">sp</span><span class="o">.</span><span class="n">Poly</span><span class="o">.</span><span class="n">from_list</span><span class="p">(</span><span class="n">coefficients</span><span class="p">,</span> <span class="n">lam</span><span class="p">)</span><span class="o">.</span><span class="n">as_expr</span><span class="p">()</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">show_counts</span><span class="p">(</span><span class="n">subgraphs</span><span class="p">):</span>
+    <span class="n">counts</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">((</span><span class="n">k</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">subgraphs</span><span class="p">)</span>
+    <span class="n">headings</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"k"</span><span class="p">,</span> <span class="s2">"m"</span><span class="p">,</span> <span class="s2">"c"</span><span class="p">,</span> <span class="s2">"Anzahl"</span><span class="p">,</span> <span class="s2">"Gewicht je Graph"</span><span class="p">,</span> <span class="s2">"Beitrag zu aₖ"</span><span class="p">]</span>
+    <span class="n">rows</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"&lt;tr&gt;"</span> <span class="o">+</span> <span class="s2">""</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="sa">f</span><span class="s2">"&lt;th&gt;</span><span class="si">{</span><span class="n">h</span><span class="si">}</span><span class="s2">&lt;/th&gt;"</span> <span class="k">for</span> <span class="n">h</span> <span class="ow">in</span> <span class="n">headings</span><span class="p">)</span> <span class="o">+</span> <span class="s2">"&lt;/tr&gt;"</span><span class="p">]</span>
+    <span class="k">for</span> <span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">c</span><span class="p">),</span> <span class="n">number</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">counts</span><span class="o">.</span><span class="n">items</span><span class="p">()):</span>
+        <span class="n">weight</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="n">m</span> <span class="o">+</span> <span class="n">c</span><span class="p">)</span> <span class="o">*</span> <span class="mi">2</span><span class="o">**</span><span class="n">c</span>
+        <span class="n">values</span> <span class="o">=</span> <span class="p">[</span><span class="n">k</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">number</span><span class="p">,</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">weight</span><span class="si">:</span><span class="s2">+d</span><span class="si">}</span><span class="s2">"</span><span class="p">,</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">number</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">weight</span><span class="si">:</span><span class="s2">+d</span><span class="si">}</span><span class="s2">"</span><span class="p">]</span>
+        <span class="n">rows</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">"&lt;tr&gt;"</span> <span class="o">+</span> <span class="s2">""</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="sa">f</span><span class="s2">"&lt;td&gt;</span><span class="si">{</span><span class="n">v</span><span class="si">}</span><span class="s2">&lt;/td&gt;"</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">values</span><span class="p">)</span> <span class="o">+</span> <span class="s2">"&lt;/tr&gt;"</span><span class="p">)</span>
+    <span class="n">display</span><span class="p">(</span><span class="n">HTML</span><span class="p">(</span><span class="s1">'&lt;table style="text-align: right;"&gt;'</span> <span class="o">+</span> <span class="s2">""</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">rows</span><span class="p">)</span> <span class="o">+</span> <span class="s2">"&lt;/table&gt;"</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">benzene_sachs</span> <span class="o">=</span> <span class="n">sachs_subgraphs</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="n">benzene_edges</span><span class="p">)</span>
+<span class="n">show_counts</span><span class="p">(</span><span class="n">benzene_sachs</span><span class="p">)</span>
+<span class="k">assert</span> <span class="n">sp</span><span class="o">.</span><span class="n">expand</span><span class="p">(</span><span class="n">sachs_polynomial</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="n">benzene_sachs</span><span class="p">)</span> <span class="o">-</span> <span class="n">benzene_polynomial</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table style="text-align: right;"><tr><th>k</th><th>m</th><th>c</th><th>Anzahl</th><th>Gewicht je Graph</th><th>Beitrag zu aₖ</th></tr><tr><td>0</td><td>0</td><td>0</td><td>1</td><td>+1</td><td>+1</td></tr><tr><td>2</td><td>1</td><td>0</td><td>6</td><td>-1</td><td>-6</td></tr><tr><td>4</td><td>2</td><td>0</td><td>9</td><td>+1</td><td>+9</td></tr><tr><td>6</td><td>0</td><td>1</td><td>1</td><td>-2</td><td>-2</td></tr><tr><td>6</td><td>3</td><td>0</td><td>2</td><td>-1</td><td>-2</td></tr></table></div></div>
+</div>
+<p>Die Tabelle ergibt <span class="math notranslate nohighlight">\(P_{\mathrm{Benzol}}=\lambda^6-6\lambda^4+9\lambda^2-4\)</span> und stimmt exakt mit der Matrixrechnung überein. Der Satz stammt von <a class="reference external" href="https://publi.math.unideb.hu/paper/2926">Sachs (1964)</a>; seine Verbindung zur Molekülorbitaltheorie untersuchten unter anderem <a class="reference external" href="https://doi.org/10.1007/BF00527654">Graovac et al. (1972)</a>.</p>
+</section>
+</section>
+<section id="was-verrat-der-graph-uber-die-orbitale">
+<h2>6. Was verrät der Graph über die Orbitale?<a class="headerlink" href="#was-verrat-der-graph-uber-die-orbitale" title="Permalink to this heading">#</a></h2>
+<p>Ein Koeffizient <span class="math notranslate nohighlight">\(a_k\)</span> sammelt Muster auf <strong><span class="math notranslate nohighlight">\(k\)</span> Zentren</strong>. Mit <span class="math notranslate nohighlight">\(b\)</span> Kanten, <span class="math notranslate nohighlight">\(M_j\)</span> Auswahlen von <span class="math notranslate nohighlight">\(j\)</span> disjunkten Kanten und <span class="math notranslate nohighlight">\(C_j\)</span> einfachen Zyklen der Länge <span class="math notranslate nohighlight">\(j\)</span> gilt:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Koeffizient</p></th>
+<th class="head text-left"><p>Welche Struktur wird gezählt?</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p><span class="math notranslate nohighlight">\(a_2=-b\)</span></p></td>
+<td class="text-left"><p>Nachbarkopplungen</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><span class="math notranslate nohighlight">\(a_3=-2C_3\)</span></p></td>
+<td class="text-left"><p>Dreierzyklen</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><span class="math notranslate nohighlight">\(a_4=M_2-2C_4\)</span></p></td>
+<td class="text-left"><p>Disjunkte Kantenpaare und Viererzyklen</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><span class="math notranslate nohighlight">\(a_5=-2C_5\)</span>, ohne Dreierzyklen</p></td>
+<td class="text-left"><p>Fünferzyklen</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><span class="math notranslate nohighlight">\(a_6=-M_3-2C_6\)</span>, ohne Dreier- und Viererzyklen</p></td>
+<td class="text-left"><p>Kantentripel und Sechserzyklen</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Schon <span class="math notranslate nohighlight">\(a_2\)</span> hat eine spektrale Bedeutung: <span class="math notranslate nohighlight">\(\sum_i(\varepsilon_i-\alpha)^2=2b\beta^2\)</span>. Die Zahl der Kopplungen bestimmt also die gesamte quadratische Aufspaltung der Niveaus. Einzelne Energieabstände hängen vom <strong>gesamten Polynom</strong> ab.</p>
+<section id="verzweigung-erzeugt-nichtbindende-orbitale">
+<h3>6.1 Verzweigung erzeugt nichtbindende Orbitale<a class="headerlink" href="#verzweigung-erzeugt-nichtbindende-orbitale" title="Permalink to this heading">#</a></h3>
+<p>Butadien und das Trimethylenmethan-Gerüst besitzen jeweils vier Zentren und drei Kopplungen. Nur die Kette erlaubt zwei disjunkte Kanten.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">butadiene_edges</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)]</span>
+<span class="n">branched_edges</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">)]</span>
+<span class="n">butadiene_xy</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">.25</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mf">.25</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mf">.25</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mf">.25</span><span class="p">)])</span>
+<span class="n">branch_angles</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">3</span>
+<span class="n">branched_xy</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">(([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">np</span><span class="o">.</span><span class="n">column_stack</span><span class="p">((</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">branch_angles</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">branch_angles</span><span class="p">)))))</span>
+<span class="n">examples</span> <span class="o">=</span> <span class="p">[(</span><span class="s2">"Butadien"</span><span class="p">,</span> <span class="n">butadiene_edges</span><span class="p">,</span> <span class="n">butadiene_xy</span><span class="p">),</span>
+            <span class="p">(</span><span class="s2">"Trimethylenmethan-Gerüst"</span><span class="p">,</span> <span class="n">branched_edges</span><span class="p">,</span> <span class="n">branched_xy</span><span class="p">)]</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">layout</span><span class="o">=</span><span class="s2">"constrained"</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">ax</span><span class="p">,</span> <span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">edges</span><span class="p">,</span> <span class="n">xy</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">axes</span><span class="p">,</span> <span class="n">examples</span><span class="p">):</span>
+    <span class="n">draw_graph</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">xy</span><span class="p">,</span> <span class="n">edges</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="s2">":"</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">eigvalsh</span><span class="p">(</span><span class="o">-</span><span class="n">adjacency</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="n">edges</span><span class="p">)),</span> <span class="mi">3</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Butadien : [-1.618 -0.618  0.618  1.618]
+Trimethylenmethan-Gerüst : [-1.732  0.     0.     1.732]
+</pre></div>
+</div>
+<img alt="_images/993cfc6b3b50189a6384acb2b52ec166c15d52aec47388e69be26cf2e56488b9.png" src="_images/993cfc6b3b50189a6384acb2b52ec166c15d52aec47388e69be26cf2e56488b9.png" />
+</div>
+</div>
+<p>Der Unterschied lässt sich direkt abzählen:</p>
+<div class="math notranslate nohighlight">
+\[
+P_{\mathrm{Butadien}}=\lambda^4-3\lambda^2+1,
+\qquad
+P_{\mathrm{verzweigt}}=\lambda^4-3\lambda^2
+=\lambda^2(\lambda^2-3).
+\]</div>
+<p>Beide haben <span class="math notranslate nohighlight">\(a_2=-3\)</span>, aber nur die Kette besitzt ein vollständiges Matching. Das verzweigte Netz hat deshalb <strong>zwei nichtbindende Orbitale mit <span class="math notranslate nohighlight">\(\varepsilon=\alpha\)</span></strong>. Allgemein zählt der Faktor <span class="math notranslate nohighlight">\(\lambda^\nu\)</span> im Polynom die <span class="math notranslate nohighlight">\(\nu\)</span> nichtbindenden Orbitale. Welche davon besetzt werden, behandeln wir später.</p>
+</section>
+<section id="viererring-und-benzol-aufhebung-oder-verstarkung">
+<h3>6.2 Viererring und Benzol: Aufhebung oder Verstärkung?<a class="headerlink" href="#viererring-und-benzol-aufhebung-oder-verstarkung" title="Permalink to this heading">#</a></h3>
+<p>Jeder gerade Ring besitzt zwei vollständige Kantenpaarungen und den ganzen Zyklus. Für einen Ring mit <span class="math notranslate nohighlight">\(N\geq4\)</span> Zentren folgt deshalb</p>
+<div class="math notranslate nohighlight">
+\[
+a_N=2(-1)^{N/2}-2.
+\]</div>
+<p>Beim Viererring ergibt das <span class="math notranslate nohighlight">\(+2-2=0\)</span>, beim Sechserring <span class="math notranslate nohighlight">\(-2-2=-4\)</span>. Wir vergleichen die <strong>idealen, gleichmäßig gekoppelten Ringe</strong>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span> <span class="n">layout</span><span class="o">=</span><span class="s2">"constrained"</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">col</span><span class="p">,</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">]):</span>
+    <span class="n">edges</span> <span class="o">=</span> <span class="p">[(</span><span class="n">i</span><span class="p">,</span> <span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="n">n</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)]</span>
+    <span class="n">angle</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="n">n</span>
+    <span class="n">xy</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">column_stack</span><span class="p">((</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">angle</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">angle</span><span class="p">)))</span>
+    <span class="n">levels</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">eigvalsh</span><span class="p">(</span><span class="o">-</span><span class="n">adjacency</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">edges</span><span class="p">))</span>
+    <span class="n">draw_graph</span><span class="p">(</span><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">col</span><span class="p">],</span> <span class="n">xy</span><span class="p">,</span> <span class="n">edges</span><span class="p">)</span>
+    <span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">"Idealer Viererring"</span> <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">4</span> <span class="k">else</span> <span class="s2">"Benzol"</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">level</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">levels</span><span class="p">,</span> <span class="mi">8</span><span class="p">)):</span>
+        <span class="n">count</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">count_nonzero</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">isclose</span><span class="p">(</span><span class="n">levels</span><span class="p">,</span> <span class="n">level</span><span class="p">))</span>
+        <span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">hlines</span><span class="p">(</span><span class="n">level</span><span class="p">,</span> <span class="o">-</span><span class="mf">.35</span><span class="p">,</span> <span class="mf">.35</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">blue</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+        <span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">.45</span><span class="p">,</span> <span class="n">level</span><span class="p">,</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">count</span><span class="si">}</span><span class="s2"> Orbital(e)"</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s2">"center"</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
+                             <span class="n">bbox</span><span class="o">=</span><span class="p">{</span><span class="s2">"facecolor"</span><span class="p">:</span> <span class="s2">"white"</span><span class="p">,</span> <span class="s2">"edgecolor"</span><span class="p">:</span> <span class="s2">"none"</span><span class="p">,</span> <span class="s2">"pad"</span><span class="p">:</span> <span class="mi">1</span><span class="p">})</span>
+    <span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">"0.6"</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s2">"--"</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">xlim</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mf">.65</span><span class="p">,</span> <span class="mf">1.65</span><span class="p">),</span> <span class="n">ylim</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mf">2.4</span><span class="p">,</span> <span class="mf">2.4</span><span class="p">),</span> <span class="n">xticks</span><span class="o">=</span><span class="p">[],</span>
+                     <span class="n">ylabel</span><span class="o">=</span><span class="sa">r</span><span class="s2">"$(\varepsilon-\alpha)/|\beta|$"</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/8e3a86e39d7ace0fffedd0d9a97175ad47176eece97fc4709e01a5279ae87bf3.png" src="_images/8e3a86e39d7ace0fffedd0d9a97175ad47176eece97fc4709e01a5279ae87bf3.png" />
+</div>
+</div>
+<p>Beim Viererring gilt <span class="math notranslate nohighlight">\(P=\lambda^2(\lambda^2-4)\)</span>: Zwei Orbitale liegen genau bei <span class="math notranslate nohighlight">\(\alpha\)</span>. Benzol besitzt dort kein Niveau. Allgemein haben gleichmäßig gekoppelte <span class="math notranslate nohighlight">\(4q\)</span>-Ringe zwei solche Niveaus, <span class="math notranslate nohighlight">\((4q+2)\)</span>-Ringe keines. Das ist ein erster spektraler Baustein für die spätere Diskussion der Aromatizität; dafür benötigen wir zusätzlich Elektronenbesetzung und Molekülgeometrie.</p>
+</section>
+<section id="gleiche-summenformel-andere-verknupfung-anthracen-und-phenanthren">
+<h3>6.3 Gleiche Summenformel, andere Verknüpfung: Anthracen und Phenanthren<a class="headerlink" href="#gleiche-summenformel-andere-verknupfung-anthracen-und-phenanthren" title="Permalink to this heading">#</a></h3>
+<p>Anthracen und Phenanthren haben dieselbe Summenformel <span class="math notranslate nohighlight">\(\mathrm{C}_{14}\mathrm{H}_{10}\)</span>. Beide <span class="math notranslate nohighlight">\(\pi\)</span>-Graphen besitzen 14 Knoten, 16 Kanten und drei Sechserzyklen. Die drei Ringe sind jedoch <strong>linear</strong> beziehungsweise <strong>gewinkelt</strong> verknüpft. Kann unser einfaches Modell diese Isomere unterscheiden?</p>
+<p>Wir setzen regelmäßige Sechsecke zusammen; die Hilfsfunktion vereinigt die gemeinsamen Eckpunkte und Kanten. Die Zeichnungen legen hier nur die <strong>Verknüpfung</strong> fest, keine berechneten Bindungslängen. Anschließend vergleichen wir die Einelektronenenergien für dasselbe <span class="math notranslate nohighlight">\(\alpha\)</span> und <span class="math notranslate nohighlight">\(\beta\)</span>.</p>
+<div class="cell tag_hide-input docutils container">
+<details class="admonition hide above-input">
+<summary aria-label="Toggle hidden content">
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">compare_graph_spectra</span><span class="p">(</span><span class="n">examples</span><span class="p">,</span> <span class="n">mark_middle</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="n">spectra</span> <span class="o">=</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">eigvalsh</span><span class="p">(</span><span class="o">-</span><span class="n">adjacency</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">xy</span><span class="p">),</span> <span class="n">edges</span><span class="p">))</span> <span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">xy</span><span class="p">,</span> <span class="n">edges</span> <span class="ow">in</span> <span class="n">examples</span><span class="p">]</span>
+    <span class="n">limit</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">levels</span><span class="p">))</span> <span class="k">for</span> <span class="n">levels</span> <span class="ow">in</span> <span class="n">spectra</span><span class="p">)</span> <span class="o">+</span> <span class="mf">0.25</span>
+    <span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mf">6.8</span><span class="p">),</span> <span class="n">layout</span><span class="o">=</span><span class="s2">"constrained"</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">column</span><span class="p">,</span> <span class="p">((</span><span class="n">name</span><span class="p">,</span> <span class="n">xy</span><span class="p">,</span> <span class="n">edges</span><span class="p">),</span> <span class="n">levels</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">examples</span><span class="p">,</span> <span class="n">spectra</span><span class="p">)):</span>
+        <span class="n">draw_graph</span><span class="p">(</span><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">column</span><span class="p">],</span> <span class="n">xy</span><span class="p">,</span> <span class="n">edges</span><span class="p">)</span>
+        <span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">column</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+        <span class="n">ax</span> <span class="o">=</span> <span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="n">column</span><span class="p">]</span>
+        <span class="n">values</span><span class="p">,</span> <span class="n">multiplicities</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">levels</span><span class="p">,</span> <span class="mi">8</span><span class="p">),</span> <span class="n">return_counts</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">middle</span> <span class="o">=</span> <span class="n">levels</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">levels</span><span class="p">)</span><span class="o">//</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">1</span><span class="p">:</span><span class="nb">len</span><span class="p">(</span><span class="n">levels</span><span class="p">)</span><span class="o">//</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span>
+        <span class="k">for</span> <span class="n">value</span><span class="p">,</span> <span class="n">multiplicity</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="n">multiplicities</span><span class="p">):</span>
+            <span class="n">color</span> <span class="o">=</span> <span class="n">orange</span> <span class="k">if</span> <span class="n">mark_middle</span> <span class="ow">and</span> <span class="n">np</span><span class="o">.</span><span class="n">any</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">isclose</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">middle</span><span class="p">))</span> <span class="k">else</span> <span class="n">blue</span>
+            <span class="k">for</span> <span class="n">offset</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">multiplicity</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="n">multiplicity</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">:</span>
+                <span class="n">ax</span><span class="o">.</span><span class="n">hlines</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="mf">0.28</span><span class="o">*</span><span class="n">offset</span> <span class="o">-</span> <span class="mf">0.10</span><span class="p">,</span> <span class="mf">0.28</span><span class="o">*</span><span class="n">offset</span> <span class="o">+</span> <span class="mf">0.10</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">2.5</span><span class="p">)</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">"0.65"</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s2">"--"</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">0.8</span><span class="p">)</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">xlim</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mf">0.7</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">),</span> <span class="n">ylim</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="n">limit</span><span class="p">,</span> <span class="n">limit</span><span class="p">),</span> <span class="n">xticks</span><span class="o">=</span><span class="p">[],</span>
+               <span class="n">title</span><span class="o">=</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">levels</span><span class="p">)</span><span class="si">}</span><span class="s2"> Einelektronenniveaus"</span><span class="p">)</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">spines</span><span class="p">[</span><span class="s2">"bottom"</span><span class="p">]</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">mark_middle</span><span class="p">:</span>
+            <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="sa">fr</span><span class="s2">"$\Delta_</span><span class="se">{{</span><span class="s2">\mathrm</span><span class="se">{{</span><span class="s2">Mitte</span><span class="se">}}}}</span><span class="s2">=</span><span class="si">{</span><span class="n">middle</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">middle</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">\,|\beta|$"</span><span class="p">)</span>
+    <span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">"$(\varepsilon-\alpha)/|\beta|$"</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">spectra</span>
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<div class="cell tag_hide-input docutils container">
+<details class="admonition hide above-input">
+<summary aria-label="Toggle hidden content">
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">regular_ring</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">center</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">start</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+    <span class="n">angles</span> <span class="o">=</span> <span class="n">start</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="o">/</span> <span class="n">n</span>
+    <span class="n">radius</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="n">n</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">radius</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">column_stack</span><span class="p">((</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">angles</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">angles</span><span class="p">)))</span> <span class="o">+</span> <span class="n">center</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">graph_from_rings</span><span class="p">(</span><span class="n">rings</span><span class="p">):</span>
+    <span class="n">positions</span><span class="p">,</span> <span class="n">edges</span> <span class="o">=</span> <span class="p">[],</span> <span class="nb">set</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">ring</span> <span class="ow">in</span> <span class="n">rings</span><span class="p">:</span>
+        <span class="n">indices</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">point</span> <span class="ow">in</span> <span class="n">ring</span><span class="p">:</span>
+            <span class="n">point</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">point</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+            <span class="k">if</span> <span class="n">point</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">positions</span><span class="p">:</span>
+                <span class="n">positions</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">point</span><span class="p">)</span>
+            <span class="n">indices</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">positions</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">point</span><span class="p">))</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">indices</span><span class="p">)):</span>
+            <span class="n">edges</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="nb">tuple</span><span class="p">(</span><span class="nb">sorted</span><span class="p">((</span><span class="n">indices</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">indices</span><span class="p">[(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="nb">len</span><span class="p">(</span><span class="n">indices</span><span class="p">)]))))</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">positions</span><span class="p">),</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">edges</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hexagon</span> <span class="o">=</span> <span class="n">regular_ring</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">6</span><span class="p">)</span>
+<span class="n">anthracene_centers</span> <span class="o">=</span> <span class="p">[(</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span> <span class="mi">0</span><span class="p">)]</span>
+<span class="n">phenanthrene_centers</span> <span class="o">=</span> <span class="p">[(</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">)]</span>
+<span class="n">anthracene_xy</span><span class="p">,</span> <span class="n">anthracene_edges</span> <span class="o">=</span> <span class="n">graph_from_rings</span><span class="p">([</span><span class="n">hexagon</span> <span class="o">+</span> <span class="n">p</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">anthracene_centers</span><span class="p">])</span>
+<span class="n">phenanthrene_xy</span><span class="p">,</span> <span class="n">phenanthrene_edges</span> <span class="o">=</span> <span class="n">graph_from_rings</span><span class="p">([</span><span class="n">hexagon</span> <span class="o">+</span> <span class="n">p</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">phenanthrene_centers</span><span class="p">])</span>
+<span class="n">anthra_phen</span> <span class="o">=</span> <span class="p">[(</span><span class="s2">"Anthracen"</span><span class="p">,</span> <span class="n">anthracene_xy</span><span class="p">,</span> <span class="n">anthracene_edges</span><span class="p">),</span>
+              <span class="p">(</span><span class="s2">"Phenanthren"</span><span class="p">,</span> <span class="n">phenanthrene_xy</span><span class="p">,</span> <span class="n">phenanthrene_edges</span><span class="p">)]</span>
+<span class="n">anthra_phen_levels</span> <span class="o">=</span> <span class="n">compare_graph_spectra</span><span class="p">(</span><span class="n">anthra_phen</span><span class="p">,</span> <span class="n">mark_middle</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/21d766b5fb9837b7e24a345eb3c3d11830d05c97d8c0bda8b2ca3d743a0352fe.png" src="_images/21d766b5fb9837b7e24a345eb3c3d11830d05c97d8c0bda8b2ca3d743a0352fe.png" />
+</div>
+</div>
+<p>Die orange markierten Niveaus sind die beiden mittleren <strong>Einträge des sortierten Spektrums</strong>, also <span class="math notranslate nohighlight">\(\varepsilon_7\)</span> und <span class="math notranslate nohighlight">\(\varepsilon_8\)</span>. Ihr Abstand beträgt bei Anthracen etwa <span class="math notranslate nohighlight">\(0{,}8284\,|\beta|\)</span>, bei Phenanthren <span class="math notranslate nohighlight">\(1{,}2105\,|\beta|\)</span>. Hiermit bezeichnen wir zunächst nur eine Eigenschaft des Einelektronenspektrums.</p>
+<p>Auch der Satz von Sachs erkennt den Unterschied. Weil keine Drei- oder Viererzyklen vorhanden sind, gilt</p>
+<div class="math notranslate nohighlight">
+\[
+a_6=-M_3-2C_6.
+\]</div>
+<p>Die Zahl der Sechserzyklen ist gleich, aber die Zahl <span class="math notranslate nohighlight">\(M_3\)</span> der Auswahlen dreier knotendisjunkter Kanten unterscheidet sich. Das können wir mit einer kurzen Schleife nachzählen:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">"Molekül          M₃      a₆"</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">xy</span><span class="p">,</span> <span class="n">edges</span> <span class="ow">in</span> <span class="n">anthra_phen</span><span class="p">:</span>
+    <span class="n">m3</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="nb">len</span><span class="p">({</span><span class="n">v</span> <span class="k">for</span> <span class="n">edge</span> <span class="ow">in</span> <span class="n">chosen</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">edge</span><span class="p">})</span> <span class="o">==</span> <span class="mi">6</span>
+             <span class="k">for</span> <span class="n">chosen</span> <span class="ow">in</span> <span class="n">combinations</span><span class="p">(</span><span class="n">edges</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+    <span class="n">a6</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">(</span><span class="n">adjacency</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">xy</span><span class="p">),</span> <span class="n">edges</span><span class="p">))</span><span class="o">.</span><span class="n">charpoly</span><span class="p">()</span><span class="o">.</span><span class="n">all_coeffs</span><span class="p">()[</span><span class="mi">6</span><span class="p">]</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">name</span><span class="si">:</span><span class="s2">15s</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">m3</span><span class="si">:</span><span class="s2">3d</span><span class="si">}</span><span class="s2">    </span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">a6</span><span class="p">)</span><span class="si">:</span><span class="s2">&gt;4s</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+    <span class="k">assert</span> <span class="n">a6</span> <span class="o">==</span> <span class="o">-</span><span class="n">m3</span> <span class="o">-</span> <span class="mi">2</span><span class="o">*</span><span class="mi">3</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Molekül          M₃      a₆
+Anthracen       290    -296
+Phenanthren     291    -297
+</pre></div>
+</div>
+</div>
+</div>
+<p>Damit ergibt sich <span class="math notranslate nohighlight">\(a_6=-296\)</span> für Anthracen und <span class="math notranslate nohighlight">\(a_6=-297\)</span> für Phenanthren: <strong>Nicht nur die Zahl der Ringe, sondern ihre Verknüpfung bestimmt die möglichen Orbitalenergien.</strong> Aus dem größeren mittleren Niveauabstand allein folgt allerdings noch keine Aussage über die Gesamtstabilität des Moleküls oder eine konkrete Absorptionsbande.</p>
+</section>
+<section id="ungerade-ringe-andern-die-symmetrie-naphthalin-und-azulen">
+<h3>6.4 Ungerade Ringe ändern die Symmetrie: Naphthalin und Azulen<a class="headerlink" href="#ungerade-ringe-andern-die-symmetrie-naphthalin-und-azulen" title="Permalink to this heading">#</a></h3>
+<p>Auch Naphthalin und Azulen sind Isomere, diesmal mit der Summenformel <span class="math notranslate nohighlight">\(\mathrm{C}_{10}\mathrm{H}_8\)</span>. Beide Graphen haben zehn Knoten und elf Kanten. Naphthalin enthält zwei verschmolzene Sechsringe; bei Azulen sind ein Fünf- und ein Siebenring miteinander verschmolzen.</p>
+<p>Der Unterschied zeigt sich bereits im fünften Koeffizienten. Beide Graphen sind dreiecksfrei, also kann ein Sachs-Teilgraph auf fünf Knoten nur ein Fünferzyklus sein:</p>
+<div class="math notranslate nohighlight">
+\[
+a_5=-2C_5.
+\]</div>
+<p>Für Naphthalin gilt deshalb <span class="math notranslate nohighlight">\(a_5=0\)</span>, für Azulen dagegen <span class="math notranslate nohighlight">\(a_5=-2\)</span>. Der Term <span class="math notranslate nohighlight">\(-2\lambda^5\)</span> im Polynom zehnten Grades zeigt bereits, dass das Spektrum von Azulen <strong>nicht symmetrisch um <span class="math notranslate nohighlight">\(\alpha\)</span></strong> sein kann.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">naphthalene_pair</span> <span class="o">=</span> <span class="n">graph_from_rings</span><span class="p">([</span><span class="n">hexagon</span><span class="p">,</span> <span class="n">hexagon</span> <span class="o">+</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span> <span class="mi">0</span><span class="p">]])</span>
+<span class="n">pentagon</span> <span class="o">=</span> <span class="n">regular_ring</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="p">(</span><span class="o">-</span><span class="mf">0.5</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">tan</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">5</span><span class="p">),</span> <span class="mi">0</span><span class="p">),</span> <span class="n">start</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">heptagon</span> <span class="o">=</span> <span class="n">regular_ring</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="p">(</span><span class="mf">0.5</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">tan</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">7</span><span class="p">),</span> <span class="mi">0</span><span class="p">),</span> <span class="n">start</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">7</span><span class="p">)</span>
+<span class="n">azulene_xy</span><span class="p">,</span> <span class="n">azulene_edges</span> <span class="o">=</span> <span class="n">graph_from_rings</span><span class="p">([</span><span class="n">pentagon</span><span class="p">,</span> <span class="n">heptagon</span><span class="p">])</span>
+<span class="n">naph_azul</span> <span class="o">=</span> <span class="p">[(</span><span class="s2">"Naphthalin"</span><span class="p">,</span> <span class="o">*</span><span class="n">naphthalene_pair</span><span class="p">),</span> <span class="p">(</span><span class="s2">"Azulen"</span><span class="p">,</span> <span class="n">azulene_xy</span><span class="p">,</span> <span class="n">azulene_edges</span><span class="p">)]</span>
+<span class="n">naph_azul_levels</span> <span class="o">=</span> <span class="n">compare_graph_spectra</span><span class="p">(</span><span class="n">naph_azul</span><span class="p">)</span>
+<span class="k">for</span> <span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">xy</span><span class="p">,</span> <span class="n">edges</span><span class="p">),</span> <span class="n">levels</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">naph_azul</span><span class="p">,</span> <span class="n">naph_azul_levels</span><span class="p">):</span>
+    <span class="n">a5</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">(</span><span class="n">adjacency</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">xy</span><span class="p">),</span> <span class="n">edges</span><span class="p">))</span><span class="o">.</span><span class="n">charpoly</span><span class="p">()</span><span class="o">.</span><span class="n">all_coeffs</span><span class="p">()[</span><span class="mi">5</span><span class="p">]</span>
+    <span class="n">symmetric</span> <span class="o">=</span> <span class="s2">"ja"</span> <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span><span class="n">levels</span><span class="p">,</span> <span class="o">-</span><span class="n">levels</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="k">else</span> <span class="s2">"nein"</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">: a₅ = </span><span class="si">{</span><span class="n">a5</span><span class="si">}</span><span class="s2">; Spektrum symmetrisch um α: </span><span class="si">{</span><span class="n">symmetric</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/354a1e0471b2db061be1253ac89bd055747c38de7fd94bfd84c9fff2abb58ec7.png" src="_images/354a1e0471b2db061be1253ac89bd055747c38de7fd94bfd84c9fff2abb58ec7.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Naphthalin: a₅ = 0; Spektrum symmetrisch um α: ja
+Azulen: a₅ = -2; Spektrum symmetrisch um α: nein
+</pre></div>
+</div>
+</div>
+</div>
+<p>Naphthalin ist <strong>bipartit</strong>: Die Zentren lassen sich auf zwei Gruppen verteilen, und jede Kante verbindet verschiedene Gruppen. Ein Vorzeichenwechsel der Koeffizienten auf einer Gruppe macht dann aus einem Eigenvektor zu <span class="math notranslate nohighlight">\(\lambda\)</span> einen zu <span class="math notranslate nohighlight">\(-\lambda\)</span>. Die Orbitalenergien liegen paarweise symmetrisch um <span class="math notranslate nohighlight">\(\alpha\)</span>.</p>
+<p>Bei Azulen verhindern die ungeraden Ringe diese Zweiteilung. Trotz gleicher Summenformel und gleicher Anzahl von Kopplungen ist sein Spektrum asymmetrisch. Der Unterschied hat einen sichtbaren chemischen Bezug: <strong>Naphthalin ist farblos, Azulen blau.</strong> Für die Erklärung der Farbe brauchen wir im nächsten Schritt die Elektronenbesetzung und die möglichen Übergänge; das Einelektronenspektrum allein genügt noch nicht. <a class="reference external" href="https://pubs.rsc.org/en/content/articlehtml/2023/ob/d2ob01695h">Ein experimenteller Bezug zu Azulen-Verbindungen</a>.</p>
+</section>
+</section>
+<section id="weitere-einblicke-orbitalform-und-geometrie">
+<h2>7. Weitere Einblicke: Orbitalform und Geometrie<a class="headerlink" href="#weitere-einblicke-orbitalform-und-geometrie" title="Permalink to this heading">#</a></h2>
+<p>Die Koeffizienten des Polynoms bestimmen die Energien. Für lokale Änderungen brauchen wir außerdem die Orbitalformen; bei Verdrillungen ändern sich die Kopplungen. Zwei kurze Beispiele zeigen diese nächsten Schritte.</p>
+<section id="wo-wirkt-eine-lokale-chemische-anderung">
+<h3>7.1 Wo wirkt eine lokale chemische Änderung?<a class="headerlink" href="#wo-wirkt-eine-lokale-chemische-anderung" title="Permalink to this heading">#</a></h3>
+<p>Das dreizentrige <strong>Allyl-Gerüst</strong> liefert ein besonders anschauliches nichtbindendes Orbital:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+A=\begin{pmatrix}0&amp;1&amp;0\\1&amp;0&amp;1\\0&amp;1&amp;0\end{pmatrix},
+\qquad
+\mathbf c_{\mathrm{nb}}=\frac{1}{\sqrt2}\begin{pmatrix}1\\0\\-1\end{pmatrix},
+\qquad A\mathbf c_{\mathrm{nb}}=0.
+\end{split}\]</div>
+<p>Die Beiträge der beiden Enden löschen sich am mittleren Zentrum aus. Ändern wir nur die lokale Energie eines Zentrums <span class="math notranslate nohighlight">\(j\)</span> um <span class="math notranslate nohighlight">\(\delta\)</span>, ersetzen wir <span class="math notranslate nohighlight">\(H_{jj}\)</span> durch <span class="math notranslate nohighlight">\(H_{jj}+\delta\)</span> und lassen alle anderen Matrixelemente unverändert. Die Störmatrix <span class="math notranslate nohighlight">\(\Delta H\)</span> besitzt dann nur einen von null verschiedenen Eintrag: <span class="math notranslate nohighlight">\((\Delta H)_{jj}=\delta\)</span>. Für eine kleine Störung folgt in erster Ordnung</p>
+<div class="math notranslate nohighlight">
+\[
+\Delta\varepsilon\approx
+\sum_{k,l}c_{k,\mathrm{nb}}^*(\Delta H)_{kl}c_{l,\mathrm{nb}}
+=\delta|c_{j,\mathrm{nb}}|^2.
+\]</div>
+<p>Am Ende ist das <span class="math notranslate nohighlight">\(\delta/2\)</span>, in der Mitte null. In diesem speziellen Modell bleibt der nichtbindende Zustand bei einer rein diagonalen Änderung am mittleren Zentrum sogar <strong>exakt</strong> unverändert, weil dort sein Koeffizient null ist.</p>
+<p>Damit erhalten wir eine erste Entwurfsregel: <strong>Eine lokale Änderung wirkt auf verschiedene Orbitale unterschiedlich stark, abhängig von deren Amplitude am veränderten Zentrum.</strong> Das ist ein Ausgangspunkt, um Substituenteneinflüsse oder lokale elektrische Felder zu verstehen. Eine reale Substitution kann zusätzlich die Kopplungen und die Geometrie verändern; hier isolieren wir gezielt den lokalen Energieeffekt.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">allyl_edges</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)]</span>
+<span class="n">allyl_xy</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">)])</span>
+<span class="n">A_allyl</span> <span class="o">=</span> <span class="n">adjacency</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">allyl_edges</span><span class="p">)</span>
+<span class="n">nonbonding</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.</span><span class="p">])</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">deltas</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mf">0.6</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">,</span> <span class="mi">121</span><span class="p">)</span>
+<span class="n">shifted_levels</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">site</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]:</span>
+    <span class="n">values</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">delta</span> <span class="ow">in</span> <span class="n">deltas</span><span class="p">:</span>
+        <span class="n">H</span> <span class="o">=</span> <span class="o">-</span><span class="n">A_allyl</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span>
+        <span class="n">H</span><span class="p">[</span><span class="n">site</span><span class="p">,</span> <span class="n">site</span><span class="p">]</span> <span class="o">+=</span> <span class="n">delta</span>
+        <span class="n">values</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">eigvalsh</span><span class="p">(</span><span class="n">H</span><span class="p">)[</span><span class="mi">1</span><span class="p">])</span>
+    <span class="n">shifted_levels</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">values</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mf">3.8</span><span class="p">),</span> <span class="n">layout</span><span class="o">=</span><span class="s2">"constrained"</span><span class="p">)</span>
+<span class="n">draw_graph</span><span class="p">(</span><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">allyl_xy</span><span class="p">,</span> <span class="n">allyl_edges</span><span class="p">,</span> <span class="n">chosen</span><span class="o">=</span><span class="p">[])</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="o">-</span><span class="mf">0.65</span><span class="p">,</span> <span class="mf">0.65</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">point</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">allyl_xy</span><span class="p">,</span> <span class="n">nonbonding</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">value</span><span class="p">:</span>
+        <span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="o">*</span><span class="n">point</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">2000</span> <span class="o">*</span> <span class="n">value</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">blue</span> <span class="k">if</span> <span class="n">value</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="n">orange</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+        <span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="o">*</span><span class="n">point</span><span class="p">,</span> <span class="s2">"+"</span> <span class="k">if</span> <span class="n">value</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="s2">"−"</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s2">"center"</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s2">"center"</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">"white"</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">"Allyl: nichtbindendes Orbital</span><span class="se">\n</span><span class="s2">Koeffizient am Zentrum = 0"</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">deltas</span><span class="p">,</span> <span class="n">shifted_levels</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="n">orange</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">"Änderung am Ende"</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">deltas</span><span class="p">,</span> <span class="n">shifted_levels</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="n">blue</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">"Änderung in der Mitte"</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">deltas</span><span class="p">,</span> <span class="n">deltas</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">"k--"</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">"Erste Ordnung: δ/2"</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">xlabel</span><span class="o">=</span><span class="sa">r</span><span class="s2">"Lokale Änderung $\delta/|\beta|$"</span><span class="p">,</span>
+            <span class="n">ylabel</span><span class="o">=</span><span class="sa">r</span><span class="s2">"$(\varepsilon_{\mathrm</span><span class="si">{nb}</span><span class="s2">}-\alpha)/|\beta|$"</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">"Dasselbe Orbital reagiert ortsabhängig"</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">9</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/93b5978f592a11d59ed8fb4a245b7fbd624119036698f62dc38d955fc15df071.png" src="_images/93b5978f592a11d59ed8fb4a245b7fbd624119036698f62dc38d955fc15df071.png" />
+</div>
+</div>
+<p>Die durchgezogenen Kurven stammen aus der erneuten Diagonalisierung; die gestrichelte Linie ist die Vorhersage erster Ordnung. Wir verfolgen den mittleren Eigenwert, der bei <span class="math notranslate nohighlight">\(\delta=0\)</span> zum nichtbindenden Orbital gehört. Die Rechnung macht den Unterschied zwischen einem Zentrum mit großer Orbitalamplitude und einem Orbital-Knoten unmittelbar sichtbar.</p>
+</section>
+<section id="konjugation-durch-verdrehen-steuern-biphenyl">
+<h3>7.2 Konjugation durch Verdrehen steuern: Biphenyl<a class="headerlink" href="#konjugation-durch-verdrehen-steuern-biphenyl" title="Permalink to this heading">#</a></h3>
+<p>Biphenyl besteht aus zwei Sechsringen, die über eine C–C-Bindung verbunden sind. Drehen wir die Ringebenen gegeneinander, werden ihre <span class="math notranslate nohighlight">\(p\)</span>-Orbitale schlechter ausgerichtet. Als erste Näherung ersetzen wir die Kopplung zwischen den Ringen durch</p>
+<div class="math notranslate nohighlight">
+\[
+\beta_{\mathrm{Br\ddot ucke}}(\theta)=\beta\cos\theta,
+\]</div>
+<p>während alle Kopplungen innerhalb der Ringe gleich bleiben. Diese Winkelabhängigkeit wird beispielsweise bei <a class="reference external" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6236413/">Torrens (2001), Abschnitt „Electrostatic properties“</a> als Näherung für verdrehte <span class="math notranslate nohighlight">\(p\)</span>-Orbitale verwendet.</p>
+<p>Bei <span class="math notranslate nohighlight">\(\theta=0^\circ\)</span> ist die Kopplung maximal, bei <span class="math notranslate nohighlight">\(90^\circ\)</span> verschwindet sie im Modell. Dies bedeutet die Entkopplung der beiden <strong><span class="math notranslate nohighlight">\(\pi\)</span>-Systeme</strong>, nicht das Aufbrechen der verbindenden <span class="math notranslate nohighlight">\(\sigma\)</span>-Bindung. Wir verwenden nun eine gewichtete Matrix und diagonalisieren sie direkt; die oben implementierte Sachs-Zählung gilt für den ungewichteten Fall.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">biphenyl_edges</span> <span class="o">=</span> <span class="n">benzene_edges</span> <span class="o">+</span> <span class="p">[(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">6</span><span class="p">,</span> <span class="n">j</span> <span class="o">+</span> <span class="mi">6</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">benzene_edges</span><span class="p">]</span> <span class="o">+</span> <span class="p">[(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">9</span><span class="p">)]</span>
+<span class="n">biphenyl_xy</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">((</span><span class="n">benzene_xy</span> <span class="o">+</span> <span class="p">[</span><span class="o">-</span><span class="mf">1.6</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">benzene_xy</span> <span class="o">+</span> <span class="p">[</span><span class="mf">1.6</span><span class="p">,</span> <span class="mi">0</span><span class="p">]))</span>
+<span class="n">A_biphenyl</span> <span class="o">=</span> <span class="n">adjacency</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="n">biphenyl_edges</span><span class="p">)</span>
+<span class="n">twists</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">181</span><span class="p">)</span>
+<span class="n">twisted_energies</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">angle</span> <span class="ow">in</span> <span class="n">twists</span><span class="p">:</span>
+    <span class="n">H</span> <span class="o">=</span> <span class="o">-</span><span class="n">A_biphenyl</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span>
+    <span class="n">H</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">9</span><span class="p">]</span> <span class="o">=</span> <span class="n">H</span><span class="p">[</span><span class="mi">9</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">deg2rad</span><span class="p">(</span><span class="n">angle</span><span class="p">))</span>
+    <span class="n">twisted_energies</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">eigvalsh</span><span class="p">(</span><span class="n">H</span><span class="p">))</span>
+<span class="n">twisted_energies</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">twisted_energies</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mf">4.3</span><span class="p">),</span> <span class="n">layout</span><span class="o">=</span><span class="s2">"constrained"</span><span class="p">)</span>
+<span class="n">draw_graph</span><span class="p">(</span><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">biphenyl_xy</span><span class="p">,</span> <span class="n">biphenyl_edges</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="o">*</span><span class="n">biphenyl_xy</span><span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">9</span><span class="p">]]</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">orange</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">.3</span><span class="p">,</span> <span class="sa">r</span><span class="s2">"$\beta\cos\theta$"</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s2">"center"</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">orange</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">"Biphenyl: eine Kopplung wird verändert</span><span class="se">\n</span><span class="s2">Schematischer π-Graph"</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">twists</span><span class="p">,</span> <span class="n">twisted_energies</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">blue</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">1.6</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">xlabel</span><span class="o">=</span><span class="sa">r</span><span class="s2">"Verdrehwinkel $\theta$ / Grad"</span><span class="p">,</span> <span class="n">xticks</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="mi">90</span><span class="p">],</span>
+            <span class="n">ylabel</span><span class="o">=</span><span class="sa">r</span><span class="s2">"$(\varepsilon-\alpha)/|\beta|$"</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">"Zwölf Einelektronenenergien"</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="k">assert</span> <span class="n">np</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span><span class="n">twisted_energies</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">np</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">tile</span><span class="p">(</span><span class="n">energies</span><span class="p">,</span> <span class="mi">2</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/c420744a89a41761b8e112f48662785a8f949956ea86a589dc0d67bd3a77ec5f.png" src="_images/c420744a89a41761b8e112f48662785a8f949956ea86a589dc0d67bd3a77ec5f.png" />
+</div>
+</div>
+<p>Entartete Niveaus liegen in der Abbildung übereinander. Beim Verdrehen verschwinden die durch die Verbindung erzeugten Aufspaltungen. Bei <span class="math notranslate nohighlight">\(90^\circ\)</span> zerfällt die Matrix in zwei Benzolblöcke: Jedes Benzolniveau tritt mit der doppelten ursprünglichen Vielfachheit auf. Einzelne numerische Eigenvektoren müssen dabei nicht auf einem Ring lokalisiert erscheinen, weil beliebige Linearkombinationen entarteter Zustände weiterhin Eigenvektoren sind. Entscheidend ist hier die verschwindende Kopplung.</p>
+<p>Diese geometrische Steuerung hat einen experimentellen Bezug: <a class="reference external" href="https://arxiv.org/abs/cond-mat/0607836">Venkataraman und Mitarbeitende, <em>Nature</em> <strong>442</strong>, 904–907 (2006)</a> untersuchten Einzelmolekülkontakte mit unterschiedlich verdrehten Biphenyl-Derivaten. Die Leitfähigkeit nahm mit zunehmender Verdrehung ab, konsistent mit einer <span class="math notranslate nohighlight">\(\cos^2\theta\)</span>-Abhängigkeit. Unsere Abbildung berechnet <strong>Orbitalenergien</strong>, noch keine Leitfähigkeit; für letztere müssen unter anderem die Kontakte zu den Elektroden berücksichtigt werden. Sie zeigt aber bereits den Mechanismus, durch den eine geometrische Änderung die elektronische Kopplung steuert.</p>
+</section>
+</section>
+<section id="ein-vorgeschmack-auf-das-weitere">
+<h2>8. Ein Vorgeschmack auf das Weitere<a class="headerlink" href="#ein-vorgeschmack-auf-das-weitere" title="Permalink to this heading">#</a></h2>
+<p>Die Verknüpfung eines konjugierten Netzes bestimmt bereits nichtbindende Niveaus, spektrale Symmetrien und Energieabstände. Sachs-Teilgraphen machen diesen Zusammenhang sichtbar. Die Eigenvektoren ergänzen die räumlichen Amplituden und Vorzeichen; das Polynom allein liefert noch keine Orbitalformen.</p>
+<p>Für Aussagen über <strong>Bindungsenergien, Aromatizität, Reaktivität und optische Spektren</strong> brauchen wir nun Elektronenbesetzung, Spin und Pauli-Prinzip sowie eine bessere Behandlung der Elektronenwechselwirkung. Die Hückel-Näherung bereitet damit die nächsten Schritte vor: Wie werden die Orbitale besetzt, und wie bestimmt man das effektive Einelektronenproblem genauer?</p>
+<section id="kleine-aufgaben-zum-weiterdenken">
+<h3>Kleine Aufgaben zum Weiterdenken<a class="headerlink" href="#kleine-aufgaben-zum-weiterdenken" title="Permalink to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Öffnen Sie den Benzolring durch Entfernen einer Kante. Wie ändern sich <span class="math notranslate nohighlight">\(a_2\)</span>, <span class="math notranslate nohighlight">\(a_6\)</span> und die Niveaus?</p></li>
+<li><p>Vergleichen Sie ideale Acht- und Zehnerringe. Wie viele nichtbindende Orbitale erwarten Sie aus den Sachs-Beiträgen?</p></li>
+<li><p>Verändern Sie im Allyl-Beispiel beide Endenergien gleich stark. Bleibt das nichtbindende Orbital erhalten, und wie verschiebt sich seine Energie?</p></li>
+</ol>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "rolandmitric/quantum_chemistry_2025",
+            ref: "main",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="correlation_hylleraas.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Elektronenkorrelation</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="hartree_equation.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Optimales Hartree-Produkt und Hartree-Gleichung</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vom-vielteilchenproblem-zum-effektiven-hamiltonoperator">1. Vom Vielteilchenproblem zum effektiven Hamiltonoperator</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#die-huckel-naherung">2. Die Hückel-Näherung</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#benzol-sechs-zentren-sechs-molekulorbitale">3. Benzol: sechs Zentren, sechs Molekülorbitale</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eine-kleine-matrixrechnung">Eine kleine Matrixrechnung</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wie-sehen-die-orbitale-aus">Wie sehen die Orbitale aus?</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vom-kohlenwasserstoff-zum-graphen">4. Vom Kohlenwasserstoff zum Graphen</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#das-huckel-polynom">Das Hückel-Polynom</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#der-satz-von-sachs-ein-beweis-in-bildern">5. Der Satz von Sachs: ein Beweis in Bildern</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#von-matrixeintragen-zu-wegen">5.1 Von Matrixeinträgen zu Wegen</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#benzol-drei-beitrage-zum-konstanten-term">5.2 Benzol: drei Beiträge zum konstanten Term</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#was-verrat-der-graph-uber-die-orbitale">6. Was verrät der Graph über die Orbitale?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#verzweigung-erzeugt-nichtbindende-orbitale">6.1 Verzweigung erzeugt nichtbindende Orbitale</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#viererring-und-benzol-aufhebung-oder-verstarkung">6.2 Viererring und Benzol: Aufhebung oder Verstärkung?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gleiche-summenformel-andere-verknupfung-anthracen-und-phenanthren">6.3 Gleiche Summenformel, andere Verknüpfung: Anthracen und Phenanthren</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ungerade-ringe-andern-die-symmetrie-naphthalin-und-azulen">6.4 Ungerade Ringe ändern die Symmetrie: Naphthalin und Azulen</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#weitere-einblicke-orbitalform-und-geometrie">7. Weitere Einblicke: Orbitalform und Geometrie</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wo-wirkt-eine-lokale-chemische-anderung">7.1 Wo wirkt eine lokale chemische Änderung?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#konjugation-durch-verdrehen-steuern-biphenyl">7.2 Konjugation durch Verdrehen steuern: Biphenyl</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ein-vorgeschmack-auf-das-weitere">8. Ein Vorgeschmack auf das Weitere</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kleine-aufgaben-zum-weiterdenken">Kleine Aufgaben zum Weiterdenken</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Roland Mitric
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

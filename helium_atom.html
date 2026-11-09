@@ -69,7 +69,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Elektronenkorrelation" href="correlation_hylleraas.html" />
-    <link rel="prev" title="Beispiel aus der aktuellen Forschung: Das NCN-Molekül und der Renner-Teller-Effekt" href="renner_teller_example.html" />
+    <link rel="prev" title="Quasiteilchen und Korrelation" href="quasiteilchen_correlation.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -223,8 +223,10 @@
 <li class="toctree-l1"><a class="reference internal" href="lagrange_multipliers.html">Die Methode der Lagrange-Multiplikatoren</a></li>
 <li class="toctree-l1"><a class="reference internal" href="convergence_variational_principle.html">Über die Konvergenz des linearen Variationsprinzips: Verschachtelungs Satz</a></li>
 <li class="toctree-l1"><a class="reference internal" href="renner_teller_example.html">Beispiel aus der aktuellen Forschung: Das NCN-Molekül und der Renner-Teller-Effekt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quasiteilchen_correlation.html">Quasiteilchen und Korrelation</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Das Helium-Atom</a></li>
 <li class="toctree-l1"><a class="reference internal" href="correlation_hylleraas.html">Elektronenkorrelation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="molekuelorbitale.html">Ausblick: Molekülorbitale</a></li>
 <li class="toctree-l1"><a class="reference internal" href="hartree_equation.html">Optimales Hartree-Produkt und Hartree-Gleichung</a></li>
 
 
@@ -498,7 +500,19 @@
             <nav aria-label="Page">
                 <ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#der-atomare-hamiltonoperator">Der atomare Hamiltonoperator</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#schwerpunkt-und-relativkoordinaten">Schwerpunkt- und Relativkoordinaten</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#der-atomkern-koppelt-schwerpunkt-und-innere-bewegung">Der Atomkern koppelt Schwerpunkt und innere Bewegung</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vergleich-mit-einer-harmonischen-falle">Vergleich mit einer harmonischen Falle</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#was-ist-an-den-normalkoordinaten-besonders">Was ist an den Normalkoordinaten besonders?</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#naherung-ohne-elektronelektron-abstoszung">Näherung ohne Elektron–Elektron-Abstoßung</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#separationsansatz-hartree-produkt">Separationsansatz (Hartree-Produkt)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#warum-ein-einzelnes-hartree-produkt-fur-helium-nicht-exakt-ist">Warum ein einzelnes Hartree-Produkt für Helium nicht exakt ist</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#einsetzen-eines-produktansatzes">Einsetzen eines Produktansatzes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#der-widerspruch-durch-gemischte-ableitungen">Der Widerspruch durch gemischte Ableitungen</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#energie-des-heliumatoms-ohne-elektronelektron-abstoszung">Energie des Heliumatoms ohne Elektron–Elektron-Abstoßung</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wissenswerte-erganzung-experimenteller-zugang-zur-gesamtbindungsenergie">Wissenswerte Ergänzung: Experimenteller Zugang zur Gesamtbindungsenergie</a></li>
 </ul>
@@ -507,6 +521,14 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wie-grosz-ist-die-elektronelektron-wechselwirkung-eine-erste-abschatzung">Wie groß ist die Elektron–Elektron-Wechselwirkung? Eine erste Abschätzung.</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zusatz-symbolische-berechnung-des-erwartungswertes">Zusatz: Symbolische Berechnung des Erwartungswertes</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zweite-verbesserung-des-ansatzes-optimierung-der-effektiven-kernladung">Zweite Verbesserung des Ansatzes: Optimierung der effektiven Kernladung</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grenzen-des-produktansatzes-und-ausblick">Grenzen des Produktansatzes und Ausblick</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#explizite-abhangigkeit-vom-elektronenabstand">Explizite Abhängigkeit vom Elektronenabstand</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aufgaben-zur-vertiefung">Aufgaben zur Vertiefung</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ergebnisse-und-losungshinweise">Ergebnisse und Lösungshinweise</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -522,18 +544,214 @@
 <h1>Das Helium-Atom<a class="headerlink" href="#das-helium-atom" title="Permalink to this heading">#</a></h1>
 <p>Nachdem wir das Variationsprinzip als Werkzeug zur näherungsweisen Lösung quantenmechanischer Probleme kennengelernt haben, wenden wir uns nun dem Heliumatom zu. Obwohl es nur zwei Elektronen besitzt, ist es aufgrund der gegenseitigen Elektronenabstoßung deutlich schwieriger zu behandeln als das Wasserstoffatom. Bereits an diesem einfachen Beispiel begegnen uns zentrale Herausforderungen der Quantenchemie.</p>
 <p>Das Heliumatom eignet sich besonders gut, um grundlegende Konzepte und Näherungsverfahren zu entwickeln, da sich viele Rechenschritte noch „von Hand“ nachvollziehen lassen. Die dabei gewonnenen Einsichten und Ansätze werden wir anschließend auf größere Mehrelektronenatome und molekulare Systeme übertragen und verallgemeinern.</p>
+<p>Im <a class="reference internal" href="quasiteilchen_correlation.html"><span class="std std-doc">vorangegangenen Kapitel</span></a> haben wir am Beispiel gekoppelter Oszillatoren gesehen, wie kollektive Koordinaten eine Separation ermöglichen und wie die ursprünglichen Auslenkungen dennoch korreliert sein können. Nun prüfen wir, was sich davon auf zwei Elektronen im Feld eines Atomkerns übertragen lässt, und entwickeln anschließend schrittweise Näherungen für ihre Grundzustandsenergie.</p>
 <section id="der-atomare-hamiltonoperator">
 <h2>Der atomare Hamiltonoperator<a class="headerlink" href="#der-atomare-hamiltonoperator" title="Permalink to this heading">#</a></h2>
 <p>Das Heliumatom besteht aus einem Kern mit Ladungszahl <span class="math notranslate nohighlight">\(Z = 2\)</span> und zwei Elektronen.<br />
-Im <strong>nichtrelativistischen</strong> Fall lautet der Hamiltonoperator in Atomaren Einheiten<br />
+Wir behandeln den Kern als fest und vernachlässigen relativistische sowie spinabhängige Beiträge. Der elektronische Hamiltonoperator lautet in atomaren Einheiten<br />
 (a.u., also <span class="math notranslate nohighlight">\(\hbar = m_e = e = 4\pi\varepsilon_0 = 1\)</span>):</p>
 <div class="math notranslate nohighlight">
 \[
 H = \sum_{i=1}^2 \left(-\tfrac12 \nabla_i^2 - \frac{Z}{r_i}\right) + \frac{1}{r_{12}},
 \qquad r_i = |\mathbf r_i|,\quad r_{12}=|\mathbf r_1-\mathbf r_2|.
 \]</div>
-<p>Die <strong>exakte</strong> Lösung der Schrödingergleichung ist in diesem Fall nicht möglich, weil der Term <span class="math notranslate nohighlight">\(1/r_{12}\)</span> die beiden Elektronen koppelt.<br />
-Als Ausgangspunkt für unsere Behandlung des He-Atoms lassen wir im ersten Schritt die Elektron–Elektron-Abstoßung vollständig <strong>weg</strong> und erhalten damit den folgenden vereinfachten Hamiltonian:</p>
+</section>
+<section id="schwerpunkt-und-relativkoordinaten">
+<h2>Schwerpunkt- und Relativkoordinaten<a class="headerlink" href="#schwerpunkt-und-relativkoordinaten" title="Permalink to this heading">#</a></h2>
+<p>Kann eine geeignete Koordinatenwahl die Kopplung wie bei den harmonischen Oszillatoren beseitigen? Um dies zu untersuchen, betrachten wir zunächst zwei Elektronen ohne äußeres Potential, die sich nur gegenseitig abstoßen. Der Hamiltonoperator lautet dann</p>
+<div class="math notranslate nohighlight">
+\[
+\hat H=-\frac12(\nabla_1^2+\nabla_2^2)
++\frac{1}{r_{12}}.
+\]</div>
+<p>Wir führen den Schwerpunkt <span class="math notranslate nohighlight">\(\mathbf R\)</span> und den Relativvektor <span class="math notranslate nohighlight">\(\mathbf r\)</span> ein. Da beide Elektronen die Masse eins besitzen, sind die Gesamtmasse <span class="math notranslate nohighlight">\(M\)</span> und die reduzierte Masse <span class="math notranslate nohighlight">\(\mu\)</span> gegeben durch</p>
+<div class="math notranslate nohighlight">
+\[
+\mathbf R=\frac{\mathbf r_1+\mathbf r_2}{2},
+\qquad\mathbf r=\mathbf r_1-\mathbf r_2,
+\qquad M=2,\quad\mu=\frac12.
+\]</div>
+<p>Damit erhalten wir</p>
+<div class="math notranslate nohighlight">
+\[
+\hat H=-\frac14\nabla_R^2
++\left(-\nabla_r^2+\frac{1}{r}\right).
+\]</div>
+<p><strong>Der Hamiltonoperator separiert in Schwerpunkt- und Relativbewegung.</strong> Die Coulomb-Abstoßung hängt nur vom Elektronenabstand <span class="math notranslate nohighlight">\(r=r_{12}\)</span> ab und lässt die Schwerpunktbewegung frei. Das rein abstoßende Coulomb-Potential besitzt keine gebundenen relativen Zustände; es beschreibt Streuzustände. Wir erhalten daher kein gebundenes Elektronenpaar.</p>
+<section id="der-atomkern-koppelt-schwerpunkt-und-innere-bewegung">
+<h3>Der Atomkern koppelt Schwerpunkt und innere Bewegung<a class="headerlink" href="#der-atomkern-koppelt-schwerpunkt-und-innere-bewegung" title="Permalink to this heading">#</a></h3>
+<p>Nun setzen wir den Kern der Ladung <span class="math notranslate nohighlight">\(+Z\)</span> wieder in den Ursprung; für Helium ist <span class="math notranslate nohighlight">\(Z=2\)</span>. Damit erhalten wir den oben eingeführten atomaren Hamiltonoperator, den wir im Folgenden auch mit <span class="math notranslate nohighlight">\(\hat H_{\mathrm{He}}\)</span> bezeichnen.</p>
+<p>In den ursprünglichen Elektronenkoordinaten sind die beiden Kernanziehungen einfach; dafür koppelt <span class="math notranslate nohighlight">\(1/r_{12}\)</span> die Elektronen. Versuchen wir erneut die Schwerpunkt- und Relativkoordinaten, so folgt aus</p>
+<div class="math notranslate nohighlight">
+\[
+\mathbf r_1=\mathbf R+\frac{\mathbf r}{2},
+\qquad
+\mathbf r_2=\mathbf R-\frac{\mathbf r}{2}
+\]</div>
+<p>die Darstellung</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\boxed{
+\begin{aligned}
+\hat H_{\mathrm{He}}
+={}&amp;-\frac14\nabla_R^2
+-\nabla_r^2+\frac{1}{r}\\
+&amp;-\frac{Z}{|\mathbf R+\mathbf r/2|}
+-\frac{Z}{|\mathbf R-\mathbf r/2|}.
+\end{aligned}
+}
+\end{split}\]</div>
+<p>Die Elektronenabstoßung hängt jetzt nur von <span class="math notranslate nohighlight">\(r\)</span> ab. Dafür enthalten die <strong>Kernanziehungen beide Koordinaten gleichzeitig</strong>. Denn mit dem Winkel <span class="math notranslate nohighlight">\(\theta\)</span> zwischen <span class="math notranslate nohighlight">\(\mathbf R\)</span> und <span class="math notranslate nohighlight">\(\mathbf r\)</span> gilt</p>
+<div class="math notranslate nohighlight">
+\[
+\left|\mathbf R\pm\frac{\mathbf r}{2}\right|^2
+=R^2+\frac{r^2}{4}\pm\mathbf R\cdot\mathbf r
+=R^2+\frac{r^2}{4}\pm Rr\cos\theta.
+\]</div>
+<p>Ändern wir bei festem <span class="math notranslate nohighlight">\(R\)</span> und <span class="math notranslate nohighlight">\(r\)</span> die Orientierung des Relativvektors, ändern sich die Kernabstände. Eine Änderung der inneren Anordnung beeinflusst somit die Wechselwirkung des Paares mit dem Kern. Das Kernpotential lässt sich nicht als Summe <span class="math notranslate nohighlight">\(V_R(\mathbf R)+V_r(\mathbf r)\)</span> schreiben: Wegen der Rotationssymmetrie könnten getrennte Beiträge nur von den Beträgen <span class="math notranslate nohighlight">\(R\)</span> beziehungsweise <span class="math notranslate nohighlight">\(r\)</span> abhängen. Eine Abhängigkeit vom relativen Winkel ist damit nicht vereinbar.</p>
+<p>Hier bezeichnet <span class="math notranslate nohighlight">\(\mathbf R\)</span> den <strong>Schwerpunkt der beiden Elektronen relativ zum festen Kern</strong>. Bewegt sich auch der Kern, lässt sich die freie Translation des gesamten Atoms weiterhin abtrennen. Das verbleibende innere Dreiteilchenproblem bleibt gekoppelt.</p>
+</section>
+<section id="vergleich-mit-einer-harmonischen-falle">
+<h3>Vergleich mit einer harmonischen Falle<a class="headerlink" href="#vergleich-mit-einer-harmonischen-falle" title="Permalink to this heading">#</a></h3>
+<p>Um die Ursache dieser Kopplung genauer zu verstehen, ersetzen wir die Kernanziehung vorübergehend durch dasselbe isotrope harmonische Potential für beide Elektronen:</p>
+<div class="math notranslate nohighlight">
+\[
+V_{\mathrm{Falle}}=\frac12\omega^2(r_1^2+r_2^2).
+\]</div>
+<p>Nun gilt</p>
+<div class="math notranslate nohighlight">
+\[
+r_1^2+r_2^2
+=\left|\mathbf R+\frac{\mathbf r}{2}\right|^2
++\left|\mathbf R-\frac{\mathbf r}{2}\right|^2
+=2R^2+\frac{r^2}{2}.
+\]</div>
+<p>Die Skalarprodukte heben sich auf. Trotz der weiterhin vorhandenen Coulomb-Abstoßung erhalten wir</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+\hat H_{\mathrm{Falle}}
+={}&amp;\underbrace{\left(-\frac14\nabla_R^2
++\omega^2R^2\right)}_{\hat H_R}\\
+&amp;+\underbrace{\left(-\nabla_r^2
++\frac14\omega^2r^2+\frac{1}{r}\right)}_{\hat H_r}.
+\end{aligned}
+\end{split}\]</div>
+<p>Schwerpunkt- und Relativbewegung sind <strong>exakt getrennt</strong>. Das relative Problem enthält aber weiterhin die Elektronenabstoßung und ist kein einfacher harmonischer Oszillator. Auch eine Produktform in <span class="math notranslate nohighlight">\(\mathbf R,\mathbf r\)</span> macht die Elektronenorte nicht unabhängig.</p>
+<p>Die folgende Abbildung vergleicht die Winkelabhängigkeit beider äußeren Potentiale bei festen Beträgen <span class="math notranslate nohighlight">\(R=r=2\)</span> a.u. Links sind die Koordinaten für <span class="math notranslate nohighlight">\(\theta=60^\circ\)</span> eingezeichnet. Rechts ist jeweils die Änderung gegenüber <span class="math notranslate nohighlight">\(\theta=90^\circ\)</span> dargestellt:</p>
+<div class="math notranslate nohighlight">
+\[
+\Delta V(u)=V(u)-V(0),\qquad u=\cos\theta.
+\]</div>
+<p>Die Energieänderung <span class="math notranslate nohighlight">\(\Delta V\)</span> ist in atomaren Einheiten angegeben, also in Hartree. Beim Kernpotential verändert eine Drehung des Relativvektors die Energie; bei der harmonischen Falle bleibt sie gleich. Die Elektronenabstoßung <span class="math notranslate nohighlight">\(1/r\)</span> ist bei festem <span class="math notranslate nohighlight">\(r\)</span> in beiden Fällen winkelunabhängig.</p>
+<div class="cell tag_hide-input docutils container">
+<details class="admonition hide above-input">
+<summary aria-label="Toggle hidden content">
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="k">def</span><span class="w"> </span><span class="nf">plot_nuclear_coupling</span><span class="p">():</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib.patches</span><span class="w"> </span><span class="kn">import</span> <span class="n">Arc</span>
+
+    <span class="n">R_length</span><span class="p">,</span> <span class="n">r_length</span><span class="p">,</span> <span class="n">Z</span> <span class="o">=</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mf">2.0</span>  <span class="c1"># Atomare Einheiten: Längen in a_0, Energien in Hartree</span>
+    <span class="n">theta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">3</span>
+    <span class="n">R_vector</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">R_length</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">])</span>
+    <span class="n">r_vector</span> <span class="o">=</span> <span class="n">r_length</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)])</span>
+    <span class="n">electron_1</span> <span class="o">=</span> <span class="n">R_vector</span> <span class="o">+</span> <span class="n">r_vector</span> <span class="o">/</span> <span class="mi">2</span>
+    <span class="n">electron_2</span> <span class="o">=</span> <span class="n">R_vector</span> <span class="o">-</span> <span class="n">r_vector</span> <span class="o">/</span> <span class="mi">2</span>
+    <span class="n">u</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">501</span><span class="p">)</span>
+    <span class="n">nuclear_energy</span> <span class="o">=</span> <span class="o">-</span><span class="n">Z</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">R_length</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">r_length</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="mi">4</span> <span class="o">+</span> <span class="n">R_length</span> <span class="o">*</span> <span class="n">r_length</span> <span class="o">*</span> <span class="n">u</span><span class="p">)</span>
+    <span class="n">nuclear_energy</span> <span class="o">-=</span> <span class="n">Z</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">R_length</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">r_length</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="mi">4</span> <span class="o">-</span> <span class="n">R_length</span> <span class="o">*</span> <span class="n">r_length</span> <span class="o">*</span> <span class="n">u</span><span class="p">)</span>
+    <span class="n">reference</span> <span class="o">=</span> <span class="o">-</span><span class="mi">2</span> <span class="o">*</span> <span class="n">Z</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">R_length</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">r_length</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="mi">4</span><span class="p">)</span>
+    <span class="n">style</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"font.family"</span><span class="p">:</span> <span class="s2">"DejaVu Serif"</span><span class="p">,</span> <span class="s2">"font.size"</span><span class="p">:</span> <span class="mi">11</span><span class="p">,</span>
+             <span class="s2">"mathtext.fontset"</span><span class="p">:</span> <span class="s2">"dejavuserif"</span><span class="p">,</span> <span class="s2">"figure.dpi"</span><span class="p">:</span> <span class="mi">150</span><span class="p">}</span>
+
+    <span class="k">with</span> <span class="n">plt</span><span class="o">.</span><span class="n">rc_context</span><span class="p">(</span><span class="n">style</span><span class="p">):</span>
+        <span class="n">fig</span><span class="p">,</span> <span class="p">(</span><span class="n">geometry</span><span class="p">,</span> <span class="n">energy</span><span class="p">)</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span>
+            <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mf">4.1</span><span class="p">),</span> <span class="n">layout</span><span class="o">=</span><span class="s2">"constrained"</span><span class="p">,</span>
+            <span class="n">gridspec_kw</span><span class="o">=</span><span class="p">{</span><span class="s2">"width_ratios"</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mf">1.25</span><span class="p">]})</span>
+        <span class="k">for</span> <span class="n">point</span> <span class="ow">in</span> <span class="p">[</span><span class="n">electron_1</span><span class="p">,</span> <span class="n">electron_2</span><span class="p">]:</span>
+            <span class="n">geometry</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="n">point</span><span class="p">[</span><span class="mi">0</span><span class="p">]],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">point</span><span class="p">[</span><span class="mi">1</span><span class="p">]],</span> <span class="n">color</span><span class="o">=</span><span class="s2">"0.65"</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">geometry</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="s2">""</span><span class="p">,</span> <span class="n">xy</span><span class="o">=</span><span class="n">R_vector</span><span class="p">,</span> <span class="n">xytext</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
+                          <span class="n">arrowprops</span><span class="o">=</span><span class="p">{</span><span class="s2">"arrowstyle"</span><span class="p">:</span> <span class="s2">"-&gt;"</span><span class="p">,</span> <span class="s2">"color"</span><span class="p">:</span> <span class="s2">"black"</span><span class="p">,</span> <span class="s2">"lw"</span><span class="p">:</span> <span class="mf">1.8</span><span class="p">})</span>
+        <span class="n">geometry</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="s2">""</span><span class="p">,</span> <span class="n">xy</span><span class="o">=</span><span class="n">electron_1</span><span class="p">,</span> <span class="n">xytext</span><span class="o">=</span><span class="n">electron_2</span><span class="p">,</span>
+                          <span class="n">arrowprops</span><span class="o">=</span><span class="p">{</span><span class="s2">"arrowstyle"</span><span class="p">:</span> <span class="s2">"-&gt;"</span><span class="p">,</span> <span class="s2">"color"</span><span class="p">:</span> <span class="s2">"#3366aa"</span><span class="p">,</span> <span class="s2">"lw"</span><span class="p">:</span> <span class="mi">2</span><span class="p">})</span>
+        <span class="n">geometry</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">"o"</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">"black"</span><span class="p">,</span> <span class="n">ms</span><span class="o">=</span><span class="mi">9</span><span class="p">)</span>
+        <span class="n">geometry</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="o">*</span><span class="n">R_vector</span><span class="p">,</span> <span class="s2">"o"</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">"white"</span><span class="p">,</span> <span class="n">mec</span><span class="o">=</span><span class="s2">"black"</span><span class="p">,</span> <span class="n">ms</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
+        <span class="n">geometry</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="o">*</span><span class="n">electron_1</span><span class="p">,</span> <span class="s2">"o"</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">"#b65447"</span><span class="p">,</span> <span class="n">ms</span><span class="o">=</span><span class="mi">9</span><span class="p">)</span>
+        <span class="n">geometry</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="o">*</span><span class="n">electron_2</span><span class="p">,</span> <span class="s2">"o"</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">"#3366aa"</span><span class="p">,</span> <span class="n">ms</span><span class="o">=</span><span class="mi">9</span><span class="p">)</span>
+        <span class="n">geometry</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mf">2.7</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">ls</span><span class="o">=</span><span class="s2">":"</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">"gray"</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">geometry</span><span class="o">.</span><span class="n">add_patch</span><span class="p">(</span><span class="n">Arc</span><span class="p">(</span><span class="n">R_vector</span><span class="p">,</span> <span class="mf">0.85</span><span class="p">,</span> <span class="mf">0.85</span><span class="p">,</span> <span class="n">theta1</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">theta2</span><span class="o">=</span><span class="mi">60</span><span class="p">,</span>
+                               <span class="n">color</span><span class="o">=</span><span class="s2">"black"</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
+        <span class="n">geometry</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="o">-</span><span class="mf">0.05</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.25</span><span class="p">,</span> <span class="s2">"Kern"</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s2">"center"</span><span class="p">)</span>
+        <span class="n">geometry</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">0.95</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.22</span><span class="p">,</span> <span class="sa">r</span><span class="s2">"$\mathbf</span><span class="si">{R}</span><span class="s2">$"</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s2">"center"</span><span class="p">)</span>
+        <span class="n">geometry</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">2.03</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.28</span><span class="p">,</span> <span class="s2">"Paarzentrum"</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s2">"left"</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+        <span class="n">geometry</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">1.93</span><span class="p">,</span> <span class="mf">0.56</span><span class="p">,</span> <span class="sa">r</span><span class="s2">"$\mathbf</span><span class="si">{r}</span><span class="s2">$"</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">"#3366aa"</span><span class="p">)</span>
+        <span class="n">geometry</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">2.49</span><span class="p">,</span> <span class="mf">0.20</span><span class="p">,</span> <span class="sa">r</span><span class="s2">"$\theta$"</span><span class="p">)</span>
+        <span class="n">geometry</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">electron_1</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="mf">0.1</span><span class="p">,</span> <span class="n">electron_1</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="mf">0.06</span><span class="p">,</span>
+                      <span class="sa">r</span><span class="s2">"$e_1$"</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">"#b65447"</span><span class="p">)</span>
+        <span class="n">geometry</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">electron_2</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="mf">0.28</span><span class="p">,</span> <span class="n">electron_2</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="mf">0.14</span><span class="p">,</span>
+                      <span class="sa">r</span><span class="s2">"$e_2$"</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">"#3366aa"</span><span class="p">)</span>
+        <span class="n">geometry</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">xlim</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mf">0.35</span><span class="p">,</span> <span class="mf">3.2</span><span class="p">),</span> <span class="n">ylim</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mf">1.35</span><span class="p">,</span> <span class="mf">1.35</span><span class="p">),</span> <span class="n">aspect</span><span class="o">=</span><span class="s2">"equal"</span><span class="p">)</span>
+        <span class="n">geometry</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">r</span><span class="s2">"$\mathbf</span><span class="si">{r}</span><span class="s2">_{1,2}=\mathbf</span><span class="si">{R}</span><span class="s2">\pm\mathbf</span><span class="si">{r}</span><span class="s2">/2$"</span><span class="p">,</span> <span class="n">pad</span><span class="o">=</span><span class="mi">18</span><span class="p">)</span>
+        <span class="n">geometry</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">"off"</span><span class="p">)</span>
+
+        <span class="n">energy</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">nuclear_energy</span> <span class="o">-</span> <span class="n">reference</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">"#b65447"</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">2.3</span><span class="p">,</span>
+                    <span class="n">label</span><span class="o">=</span><span class="s2">"Coulomb-Kernpotential"</span><span class="p">)</span>
+        <span class="n">energy</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">"#3366aa"</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s2">"--"</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+                       <span class="n">label</span><span class="o">=</span><span class="s2">"Harmonische Falle"</span><span class="p">)</span>
+        <span class="n">energy</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">xlim</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">ylim</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mf">0.98</span><span class="p">,</span> <span class="mf">0.12</span><span class="p">),</span>
+                   <span class="n">xlabel</span><span class="o">=</span><span class="sa">r</span><span class="s2">"$u=\cos\theta$"</span><span class="p">,</span>
+                   <span class="n">ylabel</span><span class="o">=</span><span class="sa">r</span><span class="s2">"$V(u)-V(0)$ (a.u.)"</span><span class="p">,</span>
+                   <span class="n">title</span><span class="o">=</span><span class="sa">r</span><span class="s2">"Feste Abstände: $R=r=2$ a.u."</span><span class="p">)</span>
+        <span class="n">energy</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">([</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="s2">"−1</span><span class="se">\n</span><span class="s2">antiparallel"</span><span class="p">,</span> <span class="s2">"0</span><span class="se">\n</span><span class="s2">senkrecht"</span><span class="p">,</span> <span class="s2">"1</span><span class="se">\n</span><span class="s2">parallel"</span><span class="p">])</span>
+        <span class="n">energy</span><span class="o">.</span><span class="n">set_yticks</span><span class="p">([</span><span class="o">-</span><span class="mf">0.8</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.4</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+        <span class="n">energy</span><span class="o">.</span><span class="n">spines</span><span class="p">[[</span><span class="s2">"top"</span><span class="p">,</span> <span class="s2">"right"</span><span class="p">]]</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+        <span class="n">energy</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s2">"y"</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">"0.87"</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">0.8</span><span class="p">)</span>
+        <span class="n">energy</span><span class="o">.</span><span class="n">set_axisbelow</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">energy</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s2">"lower center"</span><span class="p">,</span> <span class="n">frameon</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+
+<span class="n">plot_nuclear_coupling</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<img alt="_images/eb52ced2de989c35e6e6cba197a8bd0d8a2565737084cc6b53fcfc409919f8d0.png" src="_images/eb52ced2de989c35e6e6cba197a8bd0d8a2565737084cc6b53fcfc409919f8d0.png" />
+</div>
+</div>
+</section>
+<section id="was-ist-an-den-normalkoordinaten-besonders">
+<h3>Was ist an den Normalkoordinaten besonders?<a class="headerlink" href="#was-ist-an-den-normalkoordinaten-besonders" title="Permalink to this heading">#</a></h3>
+<p>Für ein quadratisches Potential ist die Matrix der zweiten Ableitungen, die <strong>Hesse-Matrix</strong>, konstant. Beim gekoppelten Oszillator ist sie</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\mathbf K=
+\begin{pmatrix}
+m\omega_0^2&amp;\lambda\\
+\lambda&amp;m\omega_0^2
+\end{pmatrix}.
+\end{split}\]</div>
+<p>Eine feste orthogonale Transformation diagonalisiert diese Matrix überall im Konfigurationsraum. Bei den hier gleichen Massen bleibt dabei auch die kinetische Energie diagonal. Für unterschiedliche Massen verwendet man zuvor massengewichtete Koordinaten.</p>
+<p>Beim Coulomb-Potential hängt die Krümmung dagegen vom Ort ab. Eine lokale quadratische Näherung und ihre Normalmoden liefern daher keine globale exakte Entkopplung. <strong>Nichtquadratisch bedeutet jedoch nicht grundsätzlich unseparierbar:</strong> Das freie Coulomb-Paar hat gerade gezeigt, dass eine andere Struktur, hier die Translationsinvarianz, die Separation ermöglichen kann.</p>
+<p>Auch nichtlineare Koordinaten können ein Problem vereinfachen. Für den rotationsinvarianten räumlichen Heliumgrundzustand sind die drei Abstände <span class="math notranslate nohighlight">\(r_1,r_2,r_{12}\)</span> besonders zweckmäßig. In diesen Variablen ist das Potential einfach, aber die kinetische Energie enthält gekoppelte Ableitungen. Zudem sind die Abstände durch die Dreiecksungleichung</p>
+<div class="math notranslate nohighlight">
+\[
+|r_1-r_2|\le r_{12}\le r_1+r_2
+\]</div>
+<p>eingeschränkt. Die Wahl passender Koordinaten beseitigt somit nicht automatisch die Kopplung des gesamten Problems.</p>
+</section>
+</section>
+<section id="naherung-ohne-elektronelektron-abstoszung">
+<h2>Näherung ohne Elektron–Elektron-Abstoßung<a class="headerlink" href="#naherung-ohne-elektronelektron-abstoszung" title="Permalink to this heading">#</a></h2>
+<p>Die Schwerpunkt- und Relativkoordinaten zerlegen das elektronische Heliumproblem also nicht wie die Normalkoordinaten der gekoppelten Oszillatoren in unabhängige Teilprobleme. Wir wenden uns deshalb einer näherungsweisen Behandlung zu.</p>
+<p>Als Ausgangspunkt für unsere Behandlung des He-Atoms lassen wir im ersten Schritt die Elektron–Elektron-Abstoßung vollständig <strong>weg</strong> und erhalten damit den folgenden vereinfachten Hamiltonian:</p>
 <div class="math notranslate nohighlight">
 \[
 H_0 = \sum_{i=1}^2 \left(-\tfrac12 \nabla_i^2 - \frac{Z}{r_i}\right).
@@ -614,7 +832,75 @@ H_0\,\Psi = 2\varepsilon\,\Psi.
 \]</div>
 <p>Die Gesamtenergie ist also die Summe der beiden Einteilchenenergien.</p>
 <p>Wählen wir für <span class="math notranslate nohighlight">\(\phi\)</span> das exakte wasserstoffähnliche 1s-Orbital zur Kernladungszahl <span class="math notranslate nohighlight">\(Z\)</span>, so ist das Hartree-Produkt die <strong>exakte räumliche Grundzustandswellenfunktion des vereinfachten Hamiltonoperators <span class="math notranslate nohighlight">\(H_0\)</span></strong>. Dies liefert eine natürliche Motivation für den Produktansatz. Wir sehen also, dass wir mithilfe des Produktansatzes ein Zweielektronenproblem in zwei Einteilchenprobleme zerlegen können. Dies ist die generelle Idee die wir immer wieder anwenden werden.</p>
-<p>Beim tatsächlichen Heliumatom kommt die Elektronenabstoßung <span class="math notranslate nohighlight">\(1/r_{12}\)</span> hinzu. Für dieses wechselwirkende System ist das Hartree-Produkt im Allgemeinen keine exakte Lösung mehr, kann aber als Ansatz im Variationsverfahren verwendet werden.</p>
+<p>Beim tatsächlichen Heliumatom kommt die Elektronenabstoßung <span class="math notranslate nohighlight">\(1/r_{12}\)</span> hinzu. Für dieses wechselwirkende System ist ein einzelnes Hartree-Produkt keine exakte Lösung, kann aber als Ansatz im Variationsverfahren verwendet werden. Warum die Produktform hier nicht exakt sein kann, zeigen wir im nächsten Abschnitt.</p>
+</section>
+<section id="warum-ein-einzelnes-hartree-produkt-fur-helium-nicht-exakt-ist">
+<h2>Warum ein einzelnes Hartree-Produkt für Helium nicht exakt ist<a class="headerlink" href="#warum-ein-einzelnes-hartree-produkt-fur-helium-nicht-exakt-ist" title="Permalink to this heading">#</a></h2>
+<p>Wir müssen nun zwei unterschiedliche Aussagen auseinanderhalten:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Aussage</p></th>
+<th class="head text-left"><p>Form der Wellenfunktion</p></th>
+<th class="head text-left"><p>Bedeutung</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>Separation in kollektive Koordinaten</p></td>
+<td class="text-left"><p><span class="math notranslate nohighlight">\(\chi(\mathbf R)\phi(\mathbf r)\)</span></p></td>
+<td class="text-left"><p>Schwerpunkt und innere Bewegung werden getrennt.</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Ein einzelnes räumliches Hartree-Produkt</p></td>
+<td class="text-left"><p><span class="math notranslate nohighlight">\(f(\mathbf r_1)g(\mathbf r_2)\)</span></p></td>
+<td class="text-left"><p>Jedem Elektron wird eine eigene Ortsfunktion zugeordnet.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Die Rechnung am Kernpotential zeigt, warum die erste Form die elektronische Heliumgleichung nicht wie beim freien Paar in zwei unabhängige Gleichungen zerlegt. Für die zweite Form können wir direkt beweisen, dass sie keine exakte räumliche Eigenfunktion des wechselwirkenden Heliumatoms sein kann.</p>
+<section id="einsetzen-eines-produktansatzes">
+<h3>Einsetzen eines Produktansatzes<a class="headerlink" href="#einsetzen-eines-produktansatzes" title="Permalink to this heading">#</a></h3>
+<p>Nehmen wir an, eine exakte Eigenfunktion hätte die Form</p>
+<div class="math notranslate nohighlight">
+\[
+\Psi(\mathbf r_1,\mathbf r_2)=f(\mathbf r_1)g(\mathbf r_2).
+\]</div>
+<p>Wir setzen sie in <span class="math notranslate nohighlight">\(\hat H_{\mathrm{He}}\Psi=E\Psi\)</span> ein und dividieren durch <span class="math notranslate nohighlight">\(fg\)</span>. Dies geschieht in einem offenen Bereich, in dem beide Faktoren ungleich null sind und keine Teilchen zusammenfallen. Dann folgt</p>
+<div class="math notranslate nohighlight">
+\[
+\underbrace{-\frac12\frac{\nabla_1^2f}{f}
+-\frac{Z}{r_1}}_{A(\mathbf r_1)}
++\underbrace{-\frac12\frac{\nabla_2^2g}{g}
+-\frac{Z}{r_2}}_{B(\mathbf r_2)}
++\frac{1}{r_{12}}=E.
+\]</div>
+<p>Der erste Ausdruck hängt nur von <span class="math notranslate nohighlight">\(\mathbf r_1\)</span> ab, der zweite nur von <span class="math notranslate nohighlight">\(\mathbf r_2\)</span>. Die Gleichung würde daher verlangen, dass</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{1}{r_{12}}=E-A(\mathbf r_1)-B(\mathbf r_2).
+\]</div>
+<p>Die Paarwechselwirkung müsste also als Summe zweier Einteilchenfunktionen darstellbar sein.</p>
+</section>
+<section id="der-widerspruch-durch-gemischte-ableitungen">
+<h3>Der Widerspruch durch gemischte Ableitungen<a class="headerlink" href="#der-widerspruch-durch-gemischte-ableitungen" title="Permalink to this heading">#</a></h3>
+<p>Eine gemischte Ableitung nach einer kartesischen Komponente <span class="math notranslate nohighlight">\(r_{1a}\)</span> des ersten und einer Komponente <span class="math notranslate nohighlight">\(r_{2b}\)</span> des zweiten Elektrons verschwindet für jede solche Summe:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial^2}{\partial r_{1a}\partial r_{2b}}
+\left[E-A(\mathbf r_1)-B(\mathbf r_2)\right]=0.
+\]</div>
+<p>Für den Coulomb-Term gilt dagegen mit <span class="math notranslate nohighlight">\(\mathbf r=\mathbf r_1-\mathbf r_2\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial^2}{\partial r_{1a}\partial r_{2b}}\frac{1}{r}
+=\left(\frac{\delta_{ab}}{r^3}-\frac{3r_ar_b}{r^5}\right).
+\]</div>
+<p>Diese Matrix ist für <span class="math notranslate nohighlight">\(r&gt;0\)</span> nicht die Nullmatrix. Beispielsweise ist ihre Komponente entlang des Relativvektors gleich <span class="math notranslate nohighlight">\(-2/r^3\)</span>. Wir erhalten einen Widerspruch zur geforderten Produktform.</p>
+<div class="math notranslate nohighlight">
+\[
+\boxed{\text{Ein einzelnes räumliches Hartree-Produkt ist keine exakte Helium-Eigenfunktion.}}
+\]</div>
+<p>Dies ist eine Aussage über die räumliche Wellenfunktion. Die zusätzliche Forderung nach der richtigen Austausch- und Spinsymmetrie wird in den späteren Kapiteln behandelt. Für den Heliumgrundzustand ist eine symmetrische räumliche Funktion zusammen mit einem antisymmetrischen Spinzustand zulässig; die räumliche Coulomb-Korrelation bleibt trotzdem erforderlich. Der obige Beweis betrifft ein einzelnes Produkt und ist kein allgemeiner Beweis über beliebige Summen von Produkten oder über alle denkbaren Koordinatentransformationen.</p>
+</section>
 </section>
 <section id="energie-des-heliumatoms-ohne-elektronelektron-abstoszung">
 <h2>Energie des Heliumatoms ohne Elektron–Elektron-Abstoßung<a class="headerlink" href="#energie-des-heliumatoms-ohne-elektronelektron-abstoszung" title="Permalink to this heading">#</a></h2>
@@ -659,6 +945,7 @@ E_{\mathrm{exp}}=-(I_1+I_2)\approx-79{,}005\,\mathrm{eV}\approx-2{,}9034\,E_{\ma
 <section id="erste-verbesserung-energieerwartungswert-des-hartree-produktansatzes">
 <h2>Erste Verbesserung: Energieerwartungswert des Hartree-Produktansatzes<a class="headerlink" href="#erste-verbesserung-energieerwartungswert-des-hartree-produktansatzes" title="Permalink to this heading">#</a></h2>
 <p>Wir berechnen als Nächstes den <strong>Erwartungswert des vollen Hamiltonoperators</strong> für das Heliumatom unter Verwendung des Hartree-Produktansatzes. Das heißt, wir berechnen die Energie mit Hilfe einer genäherten Wellenfunktion, verwenden dafür aber nun den vollständigen Hamiltonoperator inklusive der Elektron–Elektron-Wechselwirkung.</p>
+<p>Mit einem solchen Produkt als Testfunktion können wir die mittlere Elektronenabstoßung berechnen. Es fehlt aber die Anpassung der räumlichen Verteilung eines Elektrons an den jeweiligen Ort des anderen. Dies ist die hier relevante Anwendung des <a class="reference internal" href="quasiteilchen_correlation.html#korrelation-und-statistische-unabhangigkeit"><span class="std std-ref">zuvor eingeführten Korrelationsbegriffs</span></a>.</p>
 <p>Für eine gegebene (nicht notwendigerweise exakte) Wellenfunktion <span class="math notranslate nohighlight">\(\Psi\)</span> ist der Energieerwartungswert definiert als</p>
 <div class="math notranslate nohighlight">
 \[
@@ -1170,7 +1457,46 @@ Die folgende Abbildung zeigt die Energie als Funktion der effektiven Kernladung 
 <img alt="_images/97a609c23180dad32d10df7db45157ab917594f91c344666195c36bc7ff61fe3.png" src="_images/97a609c23180dad32d10df7db45157ab917594f91c344666195c36bc7ff61fe3.png" />
 </div>
 </div>
-<p>Nun kann man sich die Frage Stellen ob man die Genauigkeit des Produktansatzes noch weiter treiben kann?</p>
+</section>
+<section id="grenzen-des-produktansatzes-und-ausblick">
+<h2>Grenzen des Produktansatzes und Ausblick<a class="headerlink" href="#grenzen-des-produktansatzes-und-ausblick" title="Permalink to this heading">#</a></h2>
+<p>Nun kann man sich die Frage stellen, ob man die Genauigkeit des Produktansatzes noch weiter steigern kann. Eine flexiblere Orbitalform bietet zusätzliche Variationsmöglichkeiten. Der Beweis mit den gemischten Ableitungen zeigt jedoch, dass auch ein optimal gewähltes einzelnes Produkt keine exakte Helium-Eigenfunktion ergibt. Um über die Grenze des optimalen Produktansatzes hinauszugelangen, müssen wir daher die Form der Zweielektronenwellenfunktion erweitern.</p>
+<section id="explizite-abhangigkeit-vom-elektronenabstand">
+<h3>Explizite Abhängigkeit vom Elektronenabstand<a class="headerlink" href="#explizite-abhangigkeit-vom-elektronenabstand" title="Permalink to this heading">#</a></h3>
+<p>Das <a class="reference internal" href="variational_principle.html"><span class="std std-doc">Variationsprinzip</span></a> erlaubt uns, auch erweiterte Ansätze systematisch zu optimieren. In diesem Kapitel haben wir dies zunächst mit einem Orbitalprodukt durchgeführt. Die anschließende <a class="reference internal" href="correlation_hylleraas.html"><span class="std std-doc">Hylleraas-Behandlung</span></a> ergänzt eine explizite Abhängigkeit vom Elektronenabstand, beispielsweise</p>
+<div class="math notranslate nohighlight">
+\[
+\Psi(\mathbf r_1,\mathbf r_2)
+=N e^{-\zeta(r_1+r_2)}(1+\gamma r_{12}).
+\]</div>
+<p>Für <span class="math notranslate nohighlight">\(\gamma=0\)</span> erhalten wir wieder ein Produkt; für <span class="math notranslate nohighlight">\(\gamma\ne0\)</span> kann die Funktion die relative Anordnung der Elektronen berücksichtigen. <span class="math notranslate nohighlight">\(N\)</span> normiert die Wellenfunktion, während <span class="math notranslate nohighlight">\(\zeta&gt;0\)</span> und <span class="math notranslate nohighlight">\(\gamma\)</span> Variationsparameter sind.</p>
+<div style="background-color:#e6f0ff; border:2px solid #3366cc; border-radius:8px; padding:10px; margin-top:1em;">
+<b>Geeignete kollektive Koordinaten können wechselwirkende Probleme in unabhängige Bewegungen zerlegen.</b><br>
+Für Helium bleibt das innere elektronische Problem gekoppelt. Ein unabhängiges Elektronenbild ist deshalb eine Näherung; eine exakte räumliche Beschreibung erfordert eine korrelierte Zweielektronen-Wellenfunktion.
+</div>
+</section>
+</section>
+<section id="aufgaben-zur-vertiefung">
+<h2>Aufgaben zur Vertiefung<a class="headerlink" href="#aufgaben-zur-vertiefung" title="Permalink to this heading">#</a></h2>
+<p><strong>1. Trennung trotz Wechselwirkung.</strong> Überprüfen Sie die Zerlegung für zwei Coulomb-abstoßende Elektronen in der harmonischen Falle. Welche Masse und Frequenz hat der Schwerpunktoszillator? Warum folgt daraus weder ein harmonisches relatives Problem noch die Unabhängigkeit der beiden Elektronenorte?</p>
+<p><strong>2. Warum gerade ein quadratisches äußeres Potential?</strong> Betrachten Sie in einer Dimension zwei gleiche Massen mit derselben zweimal stetig differenzierbaren äußeren Potentialfunktion <span class="math notranslate nohighlight">\(v\)</span> auf <span class="math notranslate nohighlight">\(\mathbb R\)</span>. Zeigen Sie</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial^2}{\partial R\partial r}
+\left[v(R+r/2)+v(R-r/2)\right]
+=\frac12\left[v''(R+r/2)-v''(R-r/2)\right].
+\]</div>
+<p>Folgern Sie, dass eine globale additive Zerlegung in eine Funktion von <span class="math notranslate nohighlight">\(R\)</span> und eine Funktion von <span class="math notranslate nohighlight">\(r\)</span> nur möglich ist, wenn <span class="math notranslate nohighlight">\(v''\)</span> konstant ist. Welche Form hat dann <span class="math notranslate nohighlight">\(v\)</span>? Weshalb widerspricht dieses Ergebnis nicht der Separation eines freien Coulomb-Paares?</p>
+<section id="ergebnisse-und-losungshinweise">
+<h3>Ergebnisse und Lösungshinweise<a class="headerlink" href="#ergebnisse-und-losungshinweise" title="Permalink to this heading">#</a></h3>
+<p><strong>Zu 1.</strong> Der Schwerpunkt ist ein dreidimensionaler harmonischer Oszillator mit Masse <span class="math notranslate nohighlight">\(M=2\)</span> und Frequenz <span class="math notranslate nohighlight">\(\omega\)</span> in atomaren Einheiten. Im relativen Operator verbleibt <span class="math notranslate nohighlight">\(1/r\)</span>. Eine Produktfunktion in Schwerpunkt- und Relativkoordinaten ist im Allgemeinen kein Produkt in den Elektronenkoordinaten.</p>
+<p><strong>Zu 2.</strong> Da <span class="math notranslate nohighlight">\(R+r/2\)</span> und <span class="math notranslate nohighlight">\(R-r/2\)</span> unabhängig alle reellen Werte annehmen können, muss <span class="math notranslate nohighlight">\(v''\)</span> überall denselben Wert besitzen. Zweimaliges Integrieren ergibt <span class="math notranslate nohighlight">\(v(x)=ax^2+bx+d\)</span>. Umgekehrt ist dann</p>
+<div class="math notranslate nohighlight">
+\[
+v(R+r/2)+v(R-r/2)=2aR^2+\frac a2r^2+2bR+2d.
+\]</div>
+<p>Diese Aussage betrifft zwei gleiche <strong>äußere</strong> Potentiale. Eine Paarwechselwirkung <span class="math notranslate nohighlight">\(U(x-y)=U(r)\)</span> hängt bereits ausschließlich von der Relativkoordinate ab und darf auch nichtquadratisch sein.</p>
+</section>
 </section>
 </section>
 
@@ -1205,12 +1531,12 @@ Die folgende Abbildung zeigt die Energie als Funktion der effektiven Kernladung 
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="renner_teller_example.html"
+       href="quasiteilchen_correlation.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Beispiel aus der aktuellen Forschung: Das NCN-Molekül und der Renner-Teller-Effekt</p>
+        <p class="prev-next-title">Quasiteilchen und Korrelation</p>
       </div>
     </a>
     <a class="right-next"
@@ -1241,7 +1567,19 @@ Die folgende Abbildung zeigt die Energie als Funktion der effektiven Kernladung 
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#der-atomare-hamiltonoperator">Der atomare Hamiltonoperator</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#schwerpunkt-und-relativkoordinaten">Schwerpunkt- und Relativkoordinaten</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#der-atomkern-koppelt-schwerpunkt-und-innere-bewegung">Der Atomkern koppelt Schwerpunkt und innere Bewegung</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vergleich-mit-einer-harmonischen-falle">Vergleich mit einer harmonischen Falle</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#was-ist-an-den-normalkoordinaten-besonders">Was ist an den Normalkoordinaten besonders?</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#naherung-ohne-elektronelektron-abstoszung">Näherung ohne Elektron–Elektron-Abstoßung</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#separationsansatz-hartree-produkt">Separationsansatz (Hartree-Produkt)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#warum-ein-einzelnes-hartree-produkt-fur-helium-nicht-exakt-ist">Warum ein einzelnes Hartree-Produkt für Helium nicht exakt ist</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#einsetzen-eines-produktansatzes">Einsetzen eines Produktansatzes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#der-widerspruch-durch-gemischte-ableitungen">Der Widerspruch durch gemischte Ableitungen</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#energie-des-heliumatoms-ohne-elektronelektron-abstoszung">Energie des Heliumatoms ohne Elektron–Elektron-Abstoßung</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wissenswerte-erganzung-experimenteller-zugang-zur-gesamtbindungsenergie">Wissenswerte Ergänzung: Experimenteller Zugang zur Gesamtbindungsenergie</a></li>
 </ul>
@@ -1250,6 +1588,14 @@ Die folgende Abbildung zeigt die Energie als Funktion der effektiven Kernladung 
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wie-grosz-ist-die-elektronelektron-wechselwirkung-eine-erste-abschatzung">Wie groß ist die Elektron–Elektron-Wechselwirkung? Eine erste Abschätzung.</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zusatz-symbolische-berechnung-des-erwartungswertes">Zusatz: Symbolische Berechnung des Erwartungswertes</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zweite-verbesserung-des-ansatzes-optimierung-der-effektiven-kernladung">Zweite Verbesserung des Ansatzes: Optimierung der effektiven Kernladung</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grenzen-des-produktansatzes-und-ausblick">Grenzen des Produktansatzes und Ausblick</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#explizite-abhangigkeit-vom-elektronenabstand">Explizite Abhängigkeit vom Elektronenabstand</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aufgaben-zur-vertiefung">Aufgaben zur Vertiefung</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ergebnisse-und-losungshinweise">Ergebnisse und Lösungshinweise</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
