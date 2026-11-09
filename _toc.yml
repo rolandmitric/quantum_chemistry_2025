@@ -6,7 +6,7 @@ chapters:
   - file: lagrange_multipliers
   - file: convergence_variational_principle
   - file: renner_teller_example
-  - file: normalmoden_quasiteilchen
+  - file: quasiteilchen_correlation
   - file: helium_atom
   - file: correlation_hylleraas.ipynb
   - file: molekuelorbitale.ipynb
