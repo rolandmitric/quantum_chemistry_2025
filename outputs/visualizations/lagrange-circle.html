@@ -72,19 +72,8 @@
     const nearZero = Math.abs(slope)<1e-10;
     detail.textContent = `Objective: ${f.toFixed(3)} · Slope along circle: ${nearZero?'0.000':slope.toFixed(3)}${nearZero?(f<0?' · Minimum':' · Maximum'):''}`;
   }
-  function restore(state) {
-    const degrees = state?.modelContent?.angleDegrees;
-    if (Number.isFinite(degrees) && degrees>=0 && degrees<=360) slider.value = String(degrees);
-    draw();
-  }
   slider.addEventListener('input', draw);
-  slider.addEventListener('change', () => {
-    if (window.openai?.setWidgetState) window.openai.setWidgetState({modelContent:{angleDegrees:Number(slider.value)},privateContent:null}).catch(()=>{});
-  });
-  window.addEventListener('openai:set_globals', e => {
-    if (e.detail?.globals?.widgetState) restore(e.detail.globals.widgetState);
-  });
   new ResizeObserver(draw).observe(holder);
-  restore(window.openai?.widgetState);
+  draw();
 })();
 </script>
